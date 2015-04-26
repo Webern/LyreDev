@@ -1,6 +1,5 @@
-/* matthew james briggs */
-
 #include "PitchSpecies.h"
+#include "Mod.h"
 #include <cmath>
 
 namespace music
@@ -11,88 +10,74 @@ namespace music
     {}
     
     PitchSpecies::PitchSpecies( const Integer value )
-    :myValue( 0 )
-    {
-        setValue( value );
-    }
+    :myValue( value )
+    {}
     
     PitchSpecies::~PitchSpecies() {}
     
     Integer PitchSpecies::getValue() const
     {
-        return myValue;
+        return myValue.getValue();
     }
     
     void PitchSpecies::setValue( const Integer value )
     {
-        if ( value >= 0 )
-        {
-            myValue = value % 12;
-        }
-        else
-        {
-            myValue = ( 12 - ( std::abs( value ) % 12 ) ) % 12;
-        }
+        myValue.setValue( value );
     }
-    
-    PitchSpecies::operator Integer() const
+    PitchSpecies& PitchSpecies::add( const Integer value )
     {
-        return myValue;
+        myValue.add( value );
+        return *this;
     }
-    
+    PitchSpecies& PitchSpecies::subtract( const Integer value )
+    {
+        myValue.subtract( value );
+        return *this;
+    }
     PitchSpecies& PitchSpecies::operator++()
     {
-        setValue( ( ++myValue ) );
+        ++myValue;
         return *this;
     }
     PitchSpecies PitchSpecies::operator++(int)
     {
         PitchSpecies temp = *this;
-        setValue( ( ++myValue ) );
+        myValue++;
         return temp;
     }
     PitchSpecies& PitchSpecies::operator--()
     {
-        setValue( ( --myValue ) );
+        --myValue;
         return *this;
     }
     PitchSpecies PitchSpecies::operator--(int)
     {
         PitchSpecies temp = *this;
-        setValue( ( --myValue ) );
+        myValue--;
         return temp;
     }
-    
-    bool operator==( const PitchSpecies& lhs, const PitchSpecies& rhs )
+    bool PitchSpecies::operator==( const PitchSpecies& rhs ) const
     {
-        return lhs.getValue() == rhs.getValue();
+        return this->myValue == rhs.myValue;
     }
-    bool operator!=( const PitchSpecies& lhs, const PitchSpecies& rhs )
+    bool PitchSpecies::operator!=( const PitchSpecies& rhs ) const
     {
-        return ! ( lhs == rhs );
+        return this->myValue != rhs.myValue;
     }
-    bool operator>=( const PitchSpecies& lhs, const PitchSpecies& rhs )
+    bool PitchSpecies::operator>=( const PitchSpecies& rhs ) const
     {
-        return ( lhs > rhs ) || ( lhs == rhs );
+        return this->myValue >= rhs.myValue;
     }
-    bool operator<=( const PitchSpecies& lhs, const PitchSpecies& rhs )
+    bool PitchSpecies::operator<=( const PitchSpecies& rhs ) const
     {
-        return ( lhs < rhs ) || ( lhs == rhs );
+        return this->myValue <= rhs.myValue;
     }
-    bool operator>( const PitchSpecies& lhs, const PitchSpecies& rhs )
+    bool PitchSpecies::operator>( const PitchSpecies& rhs ) const
     {
-        return rhs < lhs;
+        return this->myValue > rhs.myValue;
     }
-    bool operator<( const PitchSpecies& lhs, const PitchSpecies& rhs )
+    bool PitchSpecies::operator<( const PitchSpecies& rhs ) const
     {
-        return lhs.getValue() < rhs.getValue();
-    }
-    PitchSpecies operator+( const PitchSpecies& lhs, const PitchSpecies& rhs )
-    {
-        return PitchSpecies{ lhs.getValue() + rhs.getValue() };
-    }
-    PitchSpecies operator-( const PitchSpecies& lhs, const PitchSpecies& rhs )
-    {
-        return PitchSpecies{ lhs.getValue() - rhs.getValue() };
+        return this->myValue < rhs.myValue;
     }
 }

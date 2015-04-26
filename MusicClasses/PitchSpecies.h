@@ -1,8 +1,7 @@
-/* matthew james briggs */
-
 #pragma once
 #include <iostream>
 #include "Definitions.h"
+#include "Mod.h"
 
 namespace music
 {
@@ -11,25 +10,25 @@ namespace music
 
     public:
         PitchSpecies();
-        PitchSpecies( const Integer value );
+        explicit PitchSpecies( const Integer value );
         virtual ~PitchSpecies();
-        Integer getValue() const;
-        void setValue( const Integer value );
-        operator Integer() const;
-        PitchSpecies& operator++();
-        PitchSpecies operator++(int);
-        PitchSpecies& operator--();
-        PitchSpecies operator--(int);
+        virtual Integer getValue() const final;
+        virtual void setValue( const Integer value ) final;
+        virtual PitchSpecies& add( const Integer value );
+        virtual PitchSpecies& subtract( const Integer value );
+        virtual PitchSpecies& operator++();
+        virtual PitchSpecies operator++(int);
+        virtual PitchSpecies& operator--();
+        virtual PitchSpecies operator--(int);
+        //virtual Integer difference( const PitchSpecies& other ) const;
+        //virtual Integer equals( const PitchSpecies& other ) const;
+        bool operator==( const PitchSpecies& rhs ) const;
+        bool operator!=( const PitchSpecies& rhs ) const;
+        bool operator>=( const PitchSpecies& rhs ) const;
+        bool operator<=( const PitchSpecies& rhs ) const;
+        bool operator>( const PitchSpecies& rhs ) const;
+        bool operator<( const PitchSpecies& rhs ) const;
     private:
-        Integer myValue;
+        Mod<Integer,12> myValue;
     };
-    
-    bool operator==( const PitchSpecies& lhs, const PitchSpecies& rhs );
-    bool operator!=( const PitchSpecies& lhs, const PitchSpecies& rhs );
-    bool operator>=( const PitchSpecies& lhs, const PitchSpecies& rhs );
-    bool operator<=( const PitchSpecies& lhs, const PitchSpecies& rhs );
-    bool operator>( const PitchSpecies& lhs, const PitchSpecies& rhs );
-    bool operator<( const PitchSpecies& lhs, const PitchSpecies& rhs );
-    PitchSpecies operator+( const PitchSpecies& lhs, const PitchSpecies& rhs );
-    PitchSpecies operator-( const PitchSpecies& lhs, const PitchSpecies& rhs );
 }
