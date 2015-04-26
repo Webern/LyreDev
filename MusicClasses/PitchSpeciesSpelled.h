@@ -19,7 +19,7 @@ namespace music
         virtual ~PitchSpeciesSpelled();
         const PitchStep getPitchStep() const;
         const PitchAlter getPitchAlter() const;
-        
+        const PitchSpellerPtr getPitchSpeller() const;
     private:
         PitchSpellerPtr mySpeller;
     };
