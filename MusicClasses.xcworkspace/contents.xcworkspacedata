@@ -5,7 +5,7 @@
       location = "container:"
       name = "Documentation">
       <FileRef
-         location = "group:LICENSE">
+         location = "group:LICENSE.txt">
       </FileRef>
       <FileRef
          location = "group:README.md">
