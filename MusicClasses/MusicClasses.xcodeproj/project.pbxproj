@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29E77D481AECD19D008A51B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D471AECD19D008A51B0 /* main.cpp */; };
+		29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D511AECD34C008A51B0 /* Failure.cpp */; };
+		29E77D611AECD34C008A51B0 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D531AECD34C008A51B0 /* Test.cpp */; };
+		29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D561AECD34C008A51B0 /* TestRegistry.cpp */; };
+		29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D581AECD34C008A51B0 /* TestResult.cpp */; };
+		29E77D641AECD34C008A51B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D5C1AECD34C008A51B0 /* main.cpp */; };
+		29E77D651AECD34C008A51B0 /* PitchSpecies.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D5D1AECD34C008A51B0 /* PitchSpecies.cpp */; };
+		29E77D661AECD34C008A51B0 /* PitchSpeciesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D5F1AECD34C008A51B0 /* PitchSpeciesTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +30,21 @@
 
 /* Begin PBXFileReference section */
 		29E77D441AECD19D008A51B0 /* MusicClasses */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MusicClasses; sourceTree = BUILT_PRODUCTS_DIR; };
-		29E77D471AECD19D008A51B0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		29E77D511AECD34C008A51B0 /* Failure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Failure.cpp; sourceTree = "<group>"; };
+		29E77D521AECD34C008A51B0 /* Failure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Failure.h; sourceTree = "<group>"; };
+		29E77D531AECD34C008A51B0 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
+		29E77D541AECD34C008A51B0 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		29E77D551AECD34C008A51B0 /* TestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHarness.h; sourceTree = "<group>"; };
+		29E77D561AECD34C008A51B0 /* TestRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRegistry.cpp; sourceTree = "<group>"; };
+		29E77D571AECD34C008A51B0 /* TestRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRegistry.h; sourceTree = "<group>"; };
+		29E77D581AECD34C008A51B0 /* TestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestResult.cpp; sourceTree = "<group>"; };
+		29E77D591AECD34C008A51B0 /* TestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestResult.h; sourceTree = "<group>"; };
+		29E77D5A1AECD34C008A51B0 /* TestSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSelector.h; sourceTree = "<group>"; };
+		29E77D5B1AECD34C008A51B0 /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
+		29E77D5C1AECD34C008A51B0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../main.cpp; sourceTree = "<group>"; };
+		29E77D5D1AECD34C008A51B0 /* PitchSpecies.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpecies.cpp; sourceTree = "<group>"; };
+		29E77D5E1AECD34C008A51B0 /* PitchSpecies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchSpecies.h; sourceTree = "<group>"; };
+		29E77D5F1AECD34C008A51B0 /* PitchSpeciesTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpeciesTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +61,11 @@
 		29E77D3B1AECD19D008A51B0 = {
 			isa = PBXGroup;
 			children = (
-				29E77D461AECD19D008A51B0 /* MusicClasses */,
+				29E77D501AECD34C008A51B0 /* CppUnitLite */,
+				29E77D5B1AECD34C008A51B0 /* Definitions.h */,
+				29E77D5D1AECD34C008A51B0 /* PitchSpecies.cpp */,
+				29E77D5E1AECD34C008A51B0 /* PitchSpecies.h */,
+				29E77D5F1AECD34C008A51B0 /* PitchSpeciesTest.cpp */,
 				29E77D451AECD19D008A51B0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +78,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29E77D461AECD19D008A51B0 /* MusicClasses */ = {
+		29E77D501AECD34C008A51B0 /* CppUnitLite */ = {
 			isa = PBXGroup;
 			children = (
-				29E77D471AECD19D008A51B0 /* main.cpp */,
+				29E77D511AECD34C008A51B0 /* Failure.cpp */,
+				29E77D521AECD34C008A51B0 /* Failure.h */,
+				29E77D5C1AECD34C008A51B0 /* main.cpp */,
+				29E77D531AECD34C008A51B0 /* Test.cpp */,
+				29E77D541AECD34C008A51B0 /* Test.h */,
+				29E77D551AECD34C008A51B0 /* TestHarness.h */,
+				29E77D561AECD34C008A51B0 /* TestRegistry.cpp */,
+				29E77D571AECD34C008A51B0 /* TestRegistry.h */,
+				29E77D581AECD34C008A51B0 /* TestResult.cpp */,
+				29E77D591AECD34C008A51B0 /* TestResult.h */,
+				29E77D5A1AECD34C008A51B0 /* TestSelector.h */,
 			);
-			path = MusicClasses;
+			path = CppUnitLite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,7 +147,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E77D481AECD19D008A51B0 /* main.cpp in Sources */,
+				29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */,
+				29E77D611AECD34C008A51B0 /* Test.cpp in Sources */,
+				29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */,
+				29E77D651AECD34C008A51B0 /* PitchSpecies.cpp in Sources */,
+				29E77D641AECD34C008A51B0 /* main.cpp in Sources */,
+				29E77D661AECD34C008A51B0 /* PitchSpeciesTest.cpp in Sources */,
+				29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
