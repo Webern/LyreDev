@@ -13,6 +13,12 @@ namespace music
     :myValue( value )
     {}
     
+    PitchStep::PitchStep( const PitchStepName value )
+    :myValue( 0 )
+    {
+        setValue( value );
+    }
+    
     PitchStep::~PitchStep() {}
     
     PitchStepPtr PitchStep::make( const Integer value )
@@ -28,7 +34,66 @@ namespace music
     {
         myValue.setValue( value );
     }
-    
+    void PitchStep::setValue( const PitchStepName value )
+    {
+        switch ( value )
+        {
+            case PitchStepName::c:
+                myValue.setValue( 0 );
+                break;
+            case PitchStepName::d:
+                myValue.setValue( 1 );
+                break;
+            case PitchStepName::e:
+                myValue.setValue( 2 );
+                break;
+            case PitchStepName::f:
+                myValue.setValue( 3 );
+                break;
+            case PitchStepName::g:
+                myValue.setValue( 4 );
+                break;
+            case PitchStepName::a:
+                myValue.setValue( 5 );
+                break;
+            case PitchStepName::b:
+                myValue.setValue( 6 );
+                break;
+            default:
+                throw std::runtime_error( "PitchStep::setValue( const PitchStepName value ) unknown PitchStep value" );
+                break;
+        }
+    }
+    PitchStep::operator PitchStepName() const
+    {
+        switch ( myValue.getValue() )
+        {
+            case 0:
+                return PitchStepName::c;
+                break;
+            case 1:
+                return PitchStepName::d;
+                break;
+            case 2:
+                return PitchStepName::e;
+                break;
+            case 3:
+                return PitchStepName::f;
+                break;
+            case 4:
+                return PitchStepName::g;
+                break;
+            case 5:
+                return PitchStepName::a;
+                break;
+            case 6:
+                return PitchStepName::b;
+                break;
+            default:
+                throw std::runtime_error( "PitchStep::operator PitchStepName() unknown PitchStep value" );
+                break;
+        }
+    }
     Integer PitchStep::getPitchSpeciesEquivalent() const
     {
         switch ( myValue.getValue() )

@@ -277,7 +277,7 @@ TEST( Test34, PitchStep )
 TEST( Test35, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( 5 );
-    auto expected = 8;
+    auto expected = 9;
     auto actual = x->getPitchSpeciesEquivalent();
     CHECK_EQUAL( expected, actual )
 }
@@ -294,4 +294,20 @@ TEST( Test37, PitchStep )
     auto expected = 0;
     auto actual = x->getPitchSpeciesEquivalent();
     CHECK_EQUAL( expected, actual )
+}
+TEST( Test38, PitchStep )
+{
+    throw std::runtime_error( "test operator PitchStepName" );
+}
+TEST( Test39, PitchStep )
+{
+    throw std::runtime_error( "test setValue( PitchStepName )" );
+}
+TEST( Test40, PitchStep )
+{
+    throw std::runtime_error( "test constructor( PitchStepName )" );
+}
+TEST( Test41, PitchStep )
+{
+    throw std::runtime_error( "test make( PitchStepName )" );
 }

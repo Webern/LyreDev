@@ -1,12 +1,12 @@
 #include "PitchSpellerDefault.h"
 
+
 namespace music
 {
     PitchSpellerPtr PitchSpellerDefault::make()
     {
-        return PitchSpellerDefaultPtr;
+        return std::make_shared<PitchSpellerDefault>();
     }
-    
     const PitchStepPtr PitchSpellerDefault::getPitchStep( const PitchSpecies& pitchSpecies ) const
     {
         switch ( pitchSpecies.getValue() )
