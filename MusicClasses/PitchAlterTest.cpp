@@ -55,3 +55,8 @@ TEST( Test09, PitchAlter )
     r.subtract( 2 ).subtract( 2 );
     CHECK_EQUAL( -12, r.getValue() );
 }
+TEST( Test10, PitchAlter )
+{
+    PitchAlterPtr x = PitchAlter::make( -2 );
+    CHECK_EQUAL( -2, x->getValue() )
+}
