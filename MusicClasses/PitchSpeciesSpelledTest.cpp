@@ -1,84 +1,84 @@
 #include "TestHarness.h"
 #include "Definitions.h"
-#include "PitchSpeciesSpelled.h"
+#include "SpelledPitch.h"
 
 using namespace music;
 
-TEST( Test00, PitchSpeciesSpelled )
+TEST( Test00, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 0 };
+    SpelledPitch x{ 0 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::c } )
     CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
 }
-TEST( Test01, PitchSpeciesSpelled )
+TEST( Test01, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 1 };
+    SpelledPitch x{ 1 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::c } )
     CHECK_EQUAL( 1, x.getPitchAlter()->getValue() )
 }
-TEST( Test02, PitchSpeciesSpelled )
+TEST( Test02, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 2 };
+    SpelledPitch x{ 2 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::d } )
     CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
 }
-TEST( Test03, PitchSpeciesSpelled )
+TEST( Test03, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 3 };
+    SpelledPitch x{ 3 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::e } )
     CHECK_EQUAL( -1, x.getPitchAlter()->getValue() )
 }
-TEST( Test04, PitchSpeciesSpelled )
+TEST( Test04, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 4 };
+    SpelledPitch x{ 4 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::e } )
     CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
 }
-TEST( Test05, PitchSpeciesSpelled )
+TEST( Test05, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 5 };
+    SpelledPitch x{ 5 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::f } )
     CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
 }
-TEST( Test06, PitchSpeciesSpelled )
+TEST( Test06, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 6 };
+    SpelledPitch x{ 6 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::f } )
     CHECK_EQUAL( 1, x.getPitchAlter()->getValue() )
 }
-TEST( Test07, PitchSpeciesSpelled )
+TEST( Test07, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 7 };
+    SpelledPitch x{ 7 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::g } )
     CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
 }
-TEST( Test08, PitchSpeciesSpelled )
+TEST( Test08, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 8 };
+    SpelledPitch x{ 8 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::g } )
     CHECK_EQUAL( 1, x.getPitchAlter()->getValue() )
 }
-TEST( Test09, PitchSpeciesSpelled )
+TEST( Test09, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 9 };
+    SpelledPitch x{ 9 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::a } )
     CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
 }
-TEST( Test10, PitchSpeciesSpelled )
+TEST( Test10, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 10 };
+    SpelledPitch x{ 10 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::b } )
     CHECK_EQUAL( -1, x.getPitchAlter()->getValue() )
 }
-TEST( Test11, PitchSpeciesSpelled )
+TEST( Test11, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 11 };
+    SpelledPitch x{ 11 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::b } )
     CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
 }
-TEST( Test12, PitchSpeciesSpelled )
+TEST( Test12, SpelledPitch )
 {
-    PitchSpeciesSpelled x{ 12 };
+    SpelledPitch x{ 12 };
     CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::c } )
     CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
 }

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicClasses/PitchSpeciesSpelledTest.cpp"
+            timestampString = "451810569.014885"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "TEST( Test02, PitchSpeciesSpelled )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchSpeciesSpelledTest02Test::runTest(TestResult&amp;)"
+                  moduleName = "MusicClasses"
+                  urlString = "file:///Volumes/MusicClasses/MusicClasses/PitchSpeciesSpelledTest.cpp"
+                  timestampString = "451810635.255323"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "54">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchSpeciesSpelledTest02Test::runTest(TestResult&amp;)"
+                  moduleName = "MusicClasses"
+                  urlString = "file:///Volumes/MusicClasses/MusicClasses/PitchSpeciesSpelledTest.cpp"
+                  timestampString = "451810635.25554"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "218">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicClasses/PitchSpeciesSpelledTest.cpp"
+            timestampString = "451810639.737526"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "TEST( Test02, PitchSpeciesSpelled )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchSpeciesSpelledTest02Test::runTest(TestResult&amp;)"
+                  moduleName = "MusicClasses"
+                  urlString = "file:///Volumes/MusicClasses/MusicClasses/PitchSpeciesSpelledTest.cpp"
+                  timestampString = "451810639.739035"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "887">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchSpeciesSpelledTest02Test::runTest(TestResult&amp;)"
+                  moduleName = "MusicClasses"
+                  urlString = "file:///Volumes/MusicClasses/MusicClasses/PitchSpeciesSpelledTest.cpp"
+                  timestampString = "451810639.73924"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "2080">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchSpeciesSpelledTest02Test::runTest(TestResult&amp;)"
+                  moduleName = "MusicClasses"
+                  urlString = "file:///Volumes/MusicClasses/MusicClasses/PitchSpeciesSpelledTest.cpp"
+                  timestampString = "451810639.739346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "2805">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

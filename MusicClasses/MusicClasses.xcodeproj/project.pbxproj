@@ -13,16 +13,16 @@
 		2998100B1AED87DE0094DAE5 /* RangeIntTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810091AED87DD0094DAE5 /* RangeIntTest.cpp */; };
 		2998100E1AED8C4F0094DAE5 /* PitchAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998100C1AED8C4F0094DAE5 /* PitchAlter.cpp */; };
 		299810111AED8E110094DAE5 /* PitchAlterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998100F1AED8E110094DAE5 /* PitchAlterTest.cpp */; };
-		299810141AED90CA0094DAE5 /* PitchSpeciesSpelled.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810121AED90CA0094DAE5 /* PitchSpeciesSpelled.cpp */; };
+		299810141AED90CA0094DAE5 /* SpelledPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810121AED90CA0094DAE5 /* SpelledPitch.cpp */; };
 		2998101B1AED96600094DAE5 /* PitchSpellerInterfaceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810191AED96600094DAE5 /* PitchSpellerInterfaceTest.cpp */; };
 		2998101E1AED9A520094DAE5 /* PitchSpellerDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998101C1AED9A520094DAE5 /* PitchSpellerDefault.cpp */; };
+		29DBEA9E1AEE842F009D96BB /* SpelledPitchTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBEA9C1AEE842F009D96BB /* SpelledPitchTest.cpp */; };
 		29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D511AECD34C008A51B0 /* Failure.cpp */; };
 		29E77D611AECD34C008A51B0 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D531AECD34C008A51B0 /* Test.cpp */; };
 		29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D561AECD34C008A51B0 /* TestRegistry.cpp */; };
 		29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D581AECD34C008A51B0 /* TestResult.cpp */; };
 		29E77D641AECD34C008A51B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D5C1AECD34C008A51B0 /* main.cpp */; };
 		29E77D651AECD34C008A51B0 /* PitchSpecies.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D5D1AECD34C008A51B0 /* PitchSpecies.cpp */; };
-		29E77D661AECD34C008A51B0 /* PitchSpeciesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D5F1AECD34C008A51B0 /* PitchSpeciesTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,12 +48,13 @@
 		2998100C1AED8C4F0094DAE5 /* PitchAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchAlter.cpp; sourceTree = "<group>"; };
 		2998100D1AED8C4F0094DAE5 /* PitchAlter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchAlter.h; sourceTree = "<group>"; };
 		2998100F1AED8E110094DAE5 /* PitchAlterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchAlterTest.cpp; sourceTree = "<group>"; };
-		299810121AED90CA0094DAE5 /* PitchSpeciesSpelled.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpeciesSpelled.cpp; sourceTree = "<group>"; };
-		299810131AED90CA0094DAE5 /* PitchSpeciesSpelled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchSpeciesSpelled.h; sourceTree = "<group>"; };
+		299810121AED90CA0094DAE5 /* SpelledPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpelledPitch.cpp; sourceTree = "<group>"; };
+		299810131AED90CA0094DAE5 /* SpelledPitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpelledPitch.h; sourceTree = "<group>"; };
 		299810171AED936C0094DAE5 /* PitchSpellerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchSpellerInterface.h; sourceTree = "<group>"; };
 		299810191AED96600094DAE5 /* PitchSpellerInterfaceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpellerInterfaceTest.cpp; sourceTree = "<group>"; };
 		2998101C1AED9A520094DAE5 /* PitchSpellerDefault.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpellerDefault.cpp; sourceTree = "<group>"; };
 		2998101D1AED9A520094DAE5 /* PitchSpellerDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchSpellerDefault.h; sourceTree = "<group>"; };
+		29DBEA9C1AEE842F009D96BB /* SpelledPitchTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpelledPitchTest.cpp; sourceTree = "<group>"; };
 		29E77D441AECD19D008A51B0 /* MusicClasses */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MusicClasses; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E77D511AECD34C008A51B0 /* Failure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Failure.cpp; sourceTree = "<group>"; };
 		29E77D521AECD34C008A51B0 /* Failure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Failure.h; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		29E77D5C1AECD34C008A51B0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../main.cpp; sourceTree = "<group>"; };
 		29E77D5D1AECD34C008A51B0 /* PitchSpecies.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpecies.cpp; sourceTree = "<group>"; };
 		29E77D5E1AECD34C008A51B0 /* PitchSpecies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchSpecies.h; sourceTree = "<group>"; };
-		29E77D5F1AECD34C008A51B0 /* PitchSpeciesTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpeciesTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +91,8 @@
 				2998100F1AED8E110094DAE5 /* PitchAlterTest.cpp */,
 				29E77D5D1AECD34C008A51B0 /* PitchSpecies.cpp */,
 				29E77D5E1AECD34C008A51B0 /* PitchSpecies.h */,
-				299810121AED90CA0094DAE5 /* PitchSpeciesSpelled.cpp */,
-				299810131AED90CA0094DAE5 /* PitchSpeciesSpelled.h */,
-				29E77D5F1AECD34C008A51B0 /* PitchSpeciesTest.cpp */,
+				299810121AED90CA0094DAE5 /* SpelledPitch.cpp */,
+				299810131AED90CA0094DAE5 /* SpelledPitch.h */,
 				2998101C1AED9A520094DAE5 /* PitchSpellerDefault.cpp */,
 				2998101D1AED9A520094DAE5 /* PitchSpellerDefault.h */,
 				299810171AED936C0094DAE5 /* PitchSpellerInterface.h */,
@@ -101,6 +100,7 @@
 				29980FFF1AED606E0094DAE5 /* PitchStep.cpp */,
 				299810001AED606E0094DAE5 /* PitchStep.h */,
 				299810021AED607B0094DAE5 /* PitchStepTest.cpp */,
+				29DBEA9C1AEE842F009D96BB /* SpelledPitchTest.cpp */,
 			);
 			name = Pitch;
 			sourceTree = "<group>";
@@ -210,6 +210,7 @@
 				299810011AED606E0094DAE5 /* PitchStep.cpp in Sources */,
 				2998101E1AED9A520094DAE5 /* PitchSpellerDefault.cpp in Sources */,
 				2998100B1AED87DE0094DAE5 /* RangeIntTest.cpp in Sources */,
+				29DBEA9E1AEE842F009D96BB /* SpelledPitchTest.cpp in Sources */,
 				299810041AED607B0094DAE5 /* PitchStepTest.cpp in Sources */,
 				29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */,
 				29E77D651AECD34C008A51B0 /* PitchSpecies.cpp in Sources */,
@@ -217,8 +218,7 @@
 				299810111AED8E110094DAE5 /* PitchAlterTest.cpp in Sources */,
 				29E77D641AECD34C008A51B0 /* main.cpp in Sources */,
 				2998100E1AED8C4F0094DAE5 /* PitchAlter.cpp in Sources */,
-				299810141AED90CA0094DAE5 /* PitchSpeciesSpelled.cpp in Sources */,
-				29E77D661AECD34C008A51B0 /* PitchSpeciesTest.cpp in Sources */,
+				299810141AED90CA0094DAE5 /* SpelledPitch.cpp in Sources */,
 				29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
