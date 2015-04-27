@@ -4,8 +4,8 @@
 #include "PitchSpecies.h"
 #include "PitchStep.h"
 #include "PitchAlter.h"
-#include "PitchSpellerInterface.h"
-#include "PitchSpellerDefault.h"
+#include "SpellerInterface.h"
+#include "SpellerDefault.h"
 
 namespace music
 {
@@ -18,15 +18,15 @@ namespace music
     public:
         SpelledPitch();
         explicit SpelledPitch( const Integer value );
-        explicit SpelledPitch( const PitchSpellerPtr& speller, const Integer value );
-        explicit SpelledPitch( const PitchSpellerPtr& speller );
+        explicit SpelledPitch( const SpellerPtr& speller, const Integer value );
+        explicit SpelledPitch( const SpellerPtr& speller );
         virtual ~SpelledPitch() = default;
         static SpelledPitchPtr make();
         const PitchStepPtr getPitchStep() const;
         const PitchAlterPtr getPitchAlter() const;
-        const PitchSpellerPtr getPitchSpeller() const;
-        void setPitchSpeller( const PitchSpellerPtr& speller );
+        const SpellerPtr getSpeller() const;
+        void setSpeller( const SpellerPtr& speller );
     private:
-        PitchSpellerPtr mySpeller;
+        SpellerPtr mySpeller;
     };
 }

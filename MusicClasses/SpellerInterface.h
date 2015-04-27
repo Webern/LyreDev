@@ -7,13 +7,13 @@
 
 namespace music
 {
-    class PitchSpellerInterface;
-    using PitchSpellerPtr = std::shared_ptr<PitchSpellerInterface>;
-    using PitchSpellerUPtr = std::unique_ptr<PitchSpellerInterface>;
-    class PitchSpellerInterface
+    class SpellerInterface;
+    using SpellerPtr = std::shared_ptr<SpellerInterface>;
+    using SpellerUPtr = std::unique_ptr<SpellerInterface>;
+    class SpellerInterface
     {
     public:
-        virtual ~PitchSpellerInterface() = default;
+        virtual ~SpellerInterface() = default;
         virtual const PitchStepPtr getPitchStep( const PitchSpecies& ) const =0;
         virtual const PitchAlterPtr getPitchAlter( const PitchSpecies& ) const =0;
     };

@@ -1,24 +1,24 @@
 #include "SpelledPitch.h"
-#include "PitchSpellerDefault.h"
+#include "SpellerDefault.h"
 
 namespace music
 {
     SpelledPitch::SpelledPitch()
     :PitchSpecies( 0 )
-    ,mySpeller( PitchSpellerDefault::make() )
+    ,mySpeller( SpellerDefault::make() )
     {}
     
     SpelledPitch::SpelledPitch( const Integer value )
     :PitchSpecies( value )
-    ,mySpeller( PitchSpellerDefault::make() )
+    ,mySpeller( SpellerDefault::make() )
     {}
     
-    SpelledPitch::SpelledPitch( const PitchSpellerPtr& speller, const Integer value )
+    SpelledPitch::SpelledPitch( const SpellerPtr& speller, const Integer value )
     :PitchSpecies( value )
     ,mySpeller( speller )
     {}
     
-    SpelledPitch::SpelledPitch( const PitchSpellerPtr& speller )
+    SpelledPitch::SpelledPitch( const SpellerPtr& speller )
     :PitchSpecies( 0 )
     ,mySpeller( speller )
     {}
@@ -37,7 +37,7 @@ namespace music
     {
         return mySpeller->getPitchAlter( *this );
     }
-    void setPitchSpeller( const PitchSpellerPtr& speller )
+    void setSpeller( const SpellerPtr& speller )
     {
         
     }

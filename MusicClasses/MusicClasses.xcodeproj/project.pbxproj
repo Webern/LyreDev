@@ -14,8 +14,8 @@
 		2998100E1AED8C4F0094DAE5 /* PitchAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998100C1AED8C4F0094DAE5 /* PitchAlter.cpp */; };
 		299810111AED8E110094DAE5 /* PitchAlterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998100F1AED8E110094DAE5 /* PitchAlterTest.cpp */; };
 		299810141AED90CA0094DAE5 /* SpelledPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810121AED90CA0094DAE5 /* SpelledPitch.cpp */; };
-		2998101B1AED96600094DAE5 /* PitchSpellerInterfaceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810191AED96600094DAE5 /* PitchSpellerInterfaceTest.cpp */; };
-		2998101E1AED9A520094DAE5 /* PitchSpellerDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998101C1AED9A520094DAE5 /* PitchSpellerDefault.cpp */; };
+		2998101B1AED96600094DAE5 /* SpellerInterfaceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810191AED96600094DAE5 /* SpellerInterfaceTest.cpp */; };
+		2998101E1AED9A520094DAE5 /* SpellerDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998101C1AED9A520094DAE5 /* SpellerDefault.cpp */; };
 		29DBEA9E1AEE842F009D96BB /* SpelledPitchTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBEA9C1AEE842F009D96BB /* SpelledPitchTest.cpp */; };
 		29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D511AECD34C008A51B0 /* Failure.cpp */; };
 		29E77D611AECD34C008A51B0 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D531AECD34C008A51B0 /* Test.cpp */; };
@@ -50,10 +50,10 @@
 		2998100F1AED8E110094DAE5 /* PitchAlterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchAlterTest.cpp; sourceTree = "<group>"; };
 		299810121AED90CA0094DAE5 /* SpelledPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpelledPitch.cpp; sourceTree = "<group>"; };
 		299810131AED90CA0094DAE5 /* SpelledPitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpelledPitch.h; sourceTree = "<group>"; };
-		299810171AED936C0094DAE5 /* PitchSpellerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchSpellerInterface.h; sourceTree = "<group>"; };
-		299810191AED96600094DAE5 /* PitchSpellerInterfaceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpellerInterfaceTest.cpp; sourceTree = "<group>"; };
-		2998101C1AED9A520094DAE5 /* PitchSpellerDefault.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpellerDefault.cpp; sourceTree = "<group>"; };
-		2998101D1AED9A520094DAE5 /* PitchSpellerDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchSpellerDefault.h; sourceTree = "<group>"; };
+		299810171AED936C0094DAE5 /* SpellerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpellerInterface.h; sourceTree = "<group>"; };
+		299810191AED96600094DAE5 /* SpellerInterfaceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpellerInterfaceTest.cpp; sourceTree = "<group>"; };
+		2998101C1AED9A520094DAE5 /* SpellerDefault.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpellerDefault.cpp; sourceTree = "<group>"; };
+		2998101D1AED9A520094DAE5 /* SpellerDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpellerDefault.h; sourceTree = "<group>"; };
 		29DBEA9C1AEE842F009D96BB /* SpelledPitchTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpelledPitchTest.cpp; sourceTree = "<group>"; };
 		29E77D441AECD19D008A51B0 /* MusicClasses */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MusicClasses; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E77D511AECD34C008A51B0 /* Failure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Failure.cpp; sourceTree = "<group>"; };
@@ -91,15 +91,15 @@
 				2998100F1AED8E110094DAE5 /* PitchAlterTest.cpp */,
 				29E77D5D1AECD34C008A51B0 /* PitchSpecies.cpp */,
 				29E77D5E1AECD34C008A51B0 /* PitchSpecies.h */,
-				299810121AED90CA0094DAE5 /* SpelledPitch.cpp */,
-				299810131AED90CA0094DAE5 /* SpelledPitch.h */,
-				2998101C1AED9A520094DAE5 /* PitchSpellerDefault.cpp */,
-				2998101D1AED9A520094DAE5 /* PitchSpellerDefault.h */,
-				299810171AED936C0094DAE5 /* PitchSpellerInterface.h */,
-				299810191AED96600094DAE5 /* PitchSpellerInterfaceTest.cpp */,
+				2998101C1AED9A520094DAE5 /* SpellerDefault.cpp */,
+				2998101D1AED9A520094DAE5 /* SpellerDefault.h */,
+				299810171AED936C0094DAE5 /* SpellerInterface.h */,
+				299810191AED96600094DAE5 /* SpellerInterfaceTest.cpp */,
 				29980FFF1AED606E0094DAE5 /* PitchStep.cpp */,
 				299810001AED606E0094DAE5 /* PitchStep.h */,
 				299810021AED607B0094DAE5 /* PitchStepTest.cpp */,
+				299810121AED90CA0094DAE5 /* SpelledPitch.cpp */,
+				299810131AED90CA0094DAE5 /* SpelledPitch.h */,
 				29DBEA9C1AEE842F009D96BB /* SpelledPitchTest.cpp */,
 			);
 			name = Pitch;
@@ -206,9 +206,9 @@
 			files = (
 				29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */,
 				29E77D611AECD34C008A51B0 /* Test.cpp in Sources */,
-				2998101B1AED96600094DAE5 /* PitchSpellerInterfaceTest.cpp in Sources */,
+				2998101B1AED96600094DAE5 /* SpellerInterfaceTest.cpp in Sources */,
 				299810011AED606E0094DAE5 /* PitchStep.cpp in Sources */,
-				2998101E1AED9A520094DAE5 /* PitchSpellerDefault.cpp in Sources */,
+				2998101E1AED9A520094DAE5 /* SpellerDefault.cpp in Sources */,
 				2998100B1AED87DE0094DAE5 /* RangeIntTest.cpp in Sources */,
 				29DBEA9E1AEE842F009D96BB /* SpelledPitchTest.cpp in Sources */,
 				299810041AED607B0094DAE5 /* PitchStepTest.cpp in Sources */,
