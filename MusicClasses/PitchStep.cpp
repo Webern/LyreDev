@@ -1,6 +1,7 @@
 #include "PitchStep.h"
 #include "Mod.h"
 #include <cmath>
+#include "PitchSpecies.h"
 
 namespace music
 {
@@ -100,30 +101,30 @@ namespace music
                 break;
         }
     }
-    Integer PitchStep::getPitchSpeciesEquivalent() const
+    PitchSpeciesPtr PitchStep::getPitchSpeciesEquivalent() const
     {
         switch ( myValue.getValue() )
         {
             case 0:
-                return 0;
+                return PitchSpecies::make( 0 );
                 break;
             case 1:
-                return 2;
+                return PitchSpecies::make( 2 );
                 break;
             case 2:
-                return 4;
+                return PitchSpecies::make( 4 );
                 break;
             case 3:
-                return 5;
+                return PitchSpecies::make( 5 );
                 break;
             case 4:
-                return 7;
+                return PitchSpecies::make( 7 );
                 break;
             case 5:
-                return 9;
+                return PitchSpecies::make( 9 );
                 break;
             case 6:
-                return 11;
+                return PitchSpecies::make( 11 );
                 break;
             default:
                 throw std::runtime_error( "PitchStep::getPitchSpeciesEquivalent() unknown PitchStep value" );

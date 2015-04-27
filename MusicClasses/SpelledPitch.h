@@ -1,3 +1,4 @@
+#if 1==0
 #pragma once
 #include <iostream>
 #include "Definitions.h"
@@ -5,7 +6,7 @@
 #include "PitchStep.h"
 #include "PitchAlter.h"
 #include "SpellerInterface.h"
-#include "SpellerDefault.h"
+#include "DefaultSpeller.h"
 
 namespace music
 {
@@ -30,3 +31,4 @@ namespace music
         SpellerPtr mySpeller;
     };
 }
+#endif

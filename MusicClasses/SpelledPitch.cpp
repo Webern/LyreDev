@@ -1,16 +1,17 @@
+#if 1==0
 #include "SpelledPitch.h"
-#include "SpellerDefault.h"
+#include "DefaultSpeller.h"
 
 namespace music
 {
     SpelledPitch::SpelledPitch()
     :PitchSpecies( 0 )
-    ,mySpeller( SpellerDefault::make() )
+    ,mySpeller( DefaultSpeller::make() )
     {}
     
     SpelledPitch::SpelledPitch( const Integer value )
     :PitchSpecies( value )
-    ,mySpeller( SpellerDefault::make() )
+    ,mySpeller( DefaultSpeller::make() )
     {}
     
     SpelledPitch::SpelledPitch( const SpellerPtr& speller, const Integer value )
@@ -42,3 +43,4 @@ namespace music
         
     }
 }
+#endif

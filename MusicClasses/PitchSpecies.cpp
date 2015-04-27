@@ -1,6 +1,10 @@
 #include "PitchSpecies.h"
 #include "Mod.h"
 #include <cmath>
+#include "PitchAlter.h"
+#include "PitchStep.h"
+#include "SpellerInterface.h"
+#include "DefaultSpeller."
 
 namespace music
 {
@@ -14,6 +18,20 @@ namespace music
     {}
     
     PitchSpecies::~PitchSpecies() {}
+    
+    PitchSpeciesPtr PitchSpecies::make()
+    {
+        return std::make_shared<PitchSpecies>();
+    }
+    
+    PitchSpeciesPtr PitchSpecies::make(const Integer value )
+    {
+        return std::make_shared<PitchSpecies>( value );
+    }
+    PitchSpeciesPtr PitchSpecies::make( const PitchSpeciesPtr& other )
+    {
+        return std::make_shared<PitchSpecies>( *other );
+    }
     
     Integer PitchSpecies::getValue() const
     {
@@ -56,28 +74,29 @@ namespace music
         myValue--;
         return temp;
     }
-    bool PitchSpecies::operator==( const PitchSpecies& rhs ) const
-    {
-        return this->myValue == rhs.myValue;
-    }
-    bool PitchSpecies::operator!=( const PitchSpecies& rhs ) const
-    {
-        return this->myValue != rhs.myValue;
-    }
-    bool PitchSpecies::operator>=( const PitchSpecies& rhs ) const
-    {
-        return this->myValue >= rhs.myValue;
-    }
-    bool PitchSpecies::operator<=( const PitchSpecies& rhs ) const
-    {
-        return this->myValue <= rhs.myValue;
-    }
-    bool PitchSpecies::operator>( const PitchSpecies& rhs ) const
-    {
-        return this->myValue > rhs.myValue;
-    }
-    bool PitchSpecies::operator<( const PitchSpecies& rhs ) const
-    {
-        return this->myValue < rhs.myValue;
-    }
+//    bool PitchSpecies::operator==( const PitchSpecies& rhs ) const
+//    {
+//        return this->myValue == rhs.myValue;
+//    }
+//    bool PitchSpecies::operator!=( const PitchSpecies& rhs ) const
+//    {
+//        return this->myValue != rhs.myValue;
+//    }
+//    bool PitchSpecies::operator>=( const PitchSpecies& rhs ) const
+//    {
+//        return this->myValue >= rhs.myValue;
+//    }
+//    bool PitchSpecies::operator<=( const PitchSpecies& rhs ) const
+//    {
+//        return this->myValue <= rhs.myValue;
+//    }
+//    bool PitchSpecies::operator>( const PitchSpecies& rhs ) const
+//    {
+//        return this->myValue > rhs.myValue;
+//    }
+//    bool PitchSpecies::operator<( const PitchSpecies& rhs ) const
+//    {
+//        return this->myValue < rhs.myValue;
+//    }
+    
 }

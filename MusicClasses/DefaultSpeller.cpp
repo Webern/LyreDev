@@ -1,15 +1,17 @@
-#include "SpellerDefault.h"
-
+#include "DefaultSpeller.h"
+#include "PitchStep.h"
+#include "PitchSpecies.h"
+#include "PitchAlter.h"
 
 namespace music
 {
-    SpellerPtr SpellerDefault::make()
+    SpellerPtr DefaultSpeller::make()
     {
-        return std::make_shared<SpellerDefault>();
+        return std::make_shared<DefaultSpeller>();
     }
-    const PitchStepPtr SpellerDefault::getPitchStep( const PitchSpecies& pitchSpecies ) const
+    const PitchStepPtr DefaultSpeller::getPitchStep( const PitchSpeciesPtr& pitchSpecies ) const
     {
-        switch ( pitchSpecies.getValue() )
+        switch ( pitchSpecies->getValue() )
         {
             case 0:
                 return PitchStep::make( 0 ); // alter=0
@@ -48,14 +50,14 @@ namespace music
                 return PitchStep::make( 6 ); // alter=0
                 break;
             default:
-                throw std::runtime_error( "SpellerDefault::getPitchStep unknown PitchSpecies value" );
+                throw std::runtime_error( "DefaultSpeller::getPitchStep unknown PitchSpecies value" );
                 break;
         }
     }
-    const PitchAlterPtr SpellerDefault::getPitchAlter( const PitchSpecies& pitchSpecies ) const
+    const PitchAlterPtr DefaultSpeller::getPitchAlter( const PitchSpeciesPtr& pitchSpecies ) const
     {
-        Integer x = getPitchStep( pitchSpecies )->getPitchSpeciesEquivalent();
-        Integer s = pitchSpecies.getValue() - x;
+        Integer x = getPitchStep( pitchSpecies )->getPitchSpeciesEquivalent()->getValue();
+        Integer s = pitchSpecies->getValue() - x;
         return PitchAlter::make( s );
     }
 }

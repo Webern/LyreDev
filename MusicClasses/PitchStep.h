@@ -3,6 +3,7 @@
 #include "Definitions.h"
 #include "Mod.h"
 #include <memory>
+#include "PitchSpecies.h"
 
 namespace music
 {
@@ -39,7 +40,7 @@ namespace music
         Integer getValue() const;
         void setValue( const Integer value );
         void setValue( const PitchStepName value );
-        Integer getPitchSpeciesEquivalent() const;
+        PitchSpeciesPtr getPitchSpeciesEquivalent() const;
         
         /* math */
         PitchStep& add( const Integer value );

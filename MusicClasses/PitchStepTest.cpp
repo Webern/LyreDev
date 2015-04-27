@@ -237,62 +237,62 @@ TEST( Test29, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( -1 );
     auto expected = 11;
-    auto actual = x->getPitchSpeciesEquivalent();
+    auto actual = x->getPitchSpeciesEquivalent()->getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Test30, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( 0 );
     auto expected = 0;
-    auto actual = x->getPitchSpeciesEquivalent();
+    auto actual = x->getPitchSpeciesEquivalent()->getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Test31, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( 1 );
     auto expected = 2;
-    auto actual = x->getPitchSpeciesEquivalent();
+    auto actual = x->getPitchSpeciesEquivalent()->getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Test32, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( 2 );
     auto expected = 4;
-    auto actual = x->getPitchSpeciesEquivalent();
+    auto actual = x->getPitchSpeciesEquivalent()->getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Test33, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( 3 );
     auto expected = 5;
-    auto actual = x->getPitchSpeciesEquivalent();
+    auto actual = x->getPitchSpeciesEquivalent()->getValue();
     CHECK_EQUAL( expected, actual )}
 TEST( Test34, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( 4 );
     auto expected = 7;
-    auto actual = x->getPitchSpeciesEquivalent();
+    auto actual = x->getPitchSpeciesEquivalent()->getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Test35, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( 5 );
     auto expected = 9;
-    auto actual = x->getPitchSpeciesEquivalent();
+    auto actual = x->getPitchSpeciesEquivalent()->getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Test36, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( 6 );
     auto expected = 11;
-    auto actual = x->getPitchSpeciesEquivalent();
+    auto actual = x->getPitchSpeciesEquivalent()->getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Test37, PitchStep )
 {
     PitchStepPtr x = PitchStep::make( 7 );
     auto expected = 0;
-    auto actual = x->getPitchSpeciesEquivalent();
+    auto actual = x->getPitchSpeciesEquivalent()->getValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( Test38, PitchStep )
