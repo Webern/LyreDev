@@ -18,7 +18,7 @@ namespace music
                 return PitchStep::make( 0 ); // alter=1
                 break;
             case 2:
-                return PitchStep::make( 2 ); // alter=0
+                return PitchStep::make( 1 ); // alter=0
                 break;
             case 3:
                 return PitchStep::make( 2 ); // alter=-1
@@ -45,7 +45,7 @@ namespace music
                 return PitchStep::make( 6 ); // alter=-1
                 break;
             case 11:
-                return PitchStep::make( 0 ); // alter=0
+                return PitchStep::make( 6 ); // alter=0
                 break;
             default:
                 throw std::runtime_error( "PitchSpellerDefault::getPitchStep unknown PitchSpecies value" );
@@ -54,8 +54,8 @@ namespace music
     }
     const PitchAlterPtr PitchSpellerDefault::getPitchAlter( const PitchSpecies& pitchSpecies ) const
     {
-        Integer a = getPitchAlter( pitchSpecies )->getValue();
-        Integer s = pitchSpecies.getValue() - a;
+        Integer x = getPitchStep( pitchSpecies )->getPitchSpeciesEquivalent();
+        Integer s = pitchSpecies.getValue() - x;
         return PitchAlter::make( s );
     }
 }

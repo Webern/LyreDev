@@ -25,6 +25,12 @@ namespace music
     {
         return std::make_shared<PitchStep>( value );
     }
+    
+    PitchStepPtr PitchStep::make( const PitchStepName value )
+    {
+        return std::make_shared<PitchStep>( value );
+    }
+    
     Integer PitchStep::getValue() const
     {
         return myValue.getValue();

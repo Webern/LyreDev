@@ -297,17 +297,23 @@ TEST( Test37, PitchStep )
 }
 TEST( Test38, PitchStep )
 {
-    throw std::runtime_error( "test operator PitchStepName" );
+    PitchStepPtr x = PitchStep::make( 3 );
+    PitchStepName n = *x;
+    CHECK( n == PitchStepName::f )
 }
 TEST( Test39, PitchStep )
 {
-    throw std::runtime_error( "test setValue( PitchStepName )" );
+    PitchStepPtr x = PitchStep::make( 6 );
+    x->setValue( PitchStepName::a );
+    CHECK_EQUAL( 5, x->getValue() )
 }
 TEST( Test40, PitchStep )
 {
-    throw std::runtime_error( "test constructor( PitchStepName )" );
+    PitchStep x{ PitchStepName::d };
+    CHECK_EQUAL( 1, x.getValue() )
 }
 TEST( Test41, PitchStep )
 {
-    throw std::runtime_error( "test make( PitchStepName )" );
+    PitchStepPtr x = PitchStep::make( PitchStepName::e );
+    CHECK_EQUAL( 2, x->getValue() )
 }

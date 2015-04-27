@@ -9,6 +9,9 @@
 
 namespace music
 {
+    class PitchSpeciesSpelled;
+    using PitchSpeciesSpelledPtr = std::shared_ptr<PitchSpeciesSpelled>;
+    using PitchSpeciesSpelledUPtr = std::unique_ptr<PitchSpeciesSpelled>;
     class PitchSpeciesSpelled : public PitchSpecies
     {
         
@@ -16,10 +19,13 @@ namespace music
         PitchSpeciesSpelled();
         explicit PitchSpeciesSpelled( const Integer value );
         explicit PitchSpeciesSpelled( const PitchSpellerPtr& speller, const Integer value );
-        virtual ~PitchSpeciesSpelled();
-        const PitchStep getPitchStep() const;
-        const PitchAlter getPitchAlter() const;
+        explicit PitchSpeciesSpelled( const PitchSpellerPtr& speller );
+        virtual ~PitchSpeciesSpelled() = default;
+        static PitchSpeciesSpelledPtr make();
+        const PitchStepPtr getPitchStep() const;
+        const PitchAlterPtr getPitchAlter() const;
         const PitchSpellerPtr getPitchSpeller() const;
+        void setPitchSpeller( const PitchSpellerPtr& speller );
     private:
         PitchSpellerPtr mySpeller;
     };

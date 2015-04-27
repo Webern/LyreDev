@@ -30,7 +30,8 @@ namespace music
         PitchStep( const PitchStepName value );
         virtual ~PitchStep();
         static PitchStepPtr make( const Integer value );
-
+        static PitchStepPtr make( const PitchStepName value );
+        
         /* Conversion */
         operator PitchStepName() const;
         
