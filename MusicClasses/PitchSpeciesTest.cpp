@@ -1,6 +1,8 @@
 #include "TestHarness.h"
 #include "Definitions.h"
 #include "PitchSpecies.h"
+#include "PitchStep.h"
+#include "PitchAlter.h"
 
 using namespace music;
 
@@ -175,65 +177,7 @@ TEST( Test22, PitchSpecies )
     CHECK_EQUAL( expected, actual )
     CHECK_EQUAL( 7, ret.getValue() )
 }
-#if 1==0
-TEST( Test23, PitchSpecies )
-{
-    PitchSpecies x( 7 );
-    PitchSpecies y( 7 );
-    PitchSpecies z( 8 );
-    CHECK( x == y );
-    CHECK( ! (x == z ) );
-}
-TEST( Test24, PitchSpecies )
-{
-    PitchSpecies x( 7 );
-    PitchSpecies y( 7 );
-    PitchSpecies z( 8 );
-    CHECK( ! (x != y ) );
-    CHECK( x != z );
-}
-TEST( Test25, PitchSpecies )
-{
-    PitchSpecies w( 6 );
-    PitchSpecies x( 7 );
-    PitchSpecies y( 7 );
-    PitchSpecies z( 8 );
-    CHECK( ! ( w >= x ) )
-    CHECK( x >= y )
-    CHECK( z >= y )
-}
-TEST( Test26, PitchSpecies )
-{
-    PitchSpecies w( 6 );
-    PitchSpecies x( 7 );
-    PitchSpecies y( 7 );
-    PitchSpecies z( 8 );
-    CHECK( w <= x )
-    CHECK( x <= y )
-    CHECK( ! ( z <= y ) )
-}
 
-TEST( Test27, PitchSpecies )
-{
-    PitchSpecies w( 6 );
-    PitchSpecies x( 7 );
-    PitchSpecies y( 7 );
-    PitchSpecies z( 8 );
-    CHECK( ! ( w > x ) )
-    CHECK( ! ( x > y ) )
-    CHECK( z > y )
-}
-TEST( Test28, PitchSpecies )
-{
-    PitchSpecies w( 6 );
-    PitchSpecies x( 7 );
-    PitchSpecies y( 7 );
-    PitchSpecies z( 8 );
-    CHECK( w < x )
-    CHECK( ! ( x < y ) )
-    CHECK( ! ( z < y ) )
-}
-#endif
 TEST( Test29, PitchSpecies )
 {
     PitchSpeciesPtr p = PitchSpecies::make();
@@ -244,4 +188,83 @@ TEST( Test30, PitchSpecies )
 {
     PitchSpeciesPtr p = PitchSpecies::make( 7 );
     CHECK_EQUAL( 7, p->getValue() )
+}
+
+TEST( Test31, PitchSpecies )
+{
+    PitchSpecies x{ 1 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::c } )
+    CHECK_EQUAL( 1, x.getPitchAlter()->getValue() )
+}
+TEST( Test32, PitchSpecies )
+{
+    PitchSpecies x{ 2 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::d } )
+    CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
+}
+TEST( Test33, PitchSpecies )
+{
+    PitchSpecies x{ 3 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::e } )
+    CHECK_EQUAL( -1, x.getPitchAlter()->getValue() )
+}
+TEST( Test34, PitchSpecies )
+{
+    PitchSpecies x{ 4 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::e } )
+    CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
+}
+TEST( Test35, PitchSpecies )
+{
+    PitchSpecies x{ 5 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::f } )
+    CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
+}
+TEST( Test36, PitchSpecies )
+{
+    PitchSpecies x{ 6 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::f } )
+    CHECK_EQUAL( 1, x.getPitchAlter()->getValue() )
+}
+TEST( Test37, PitchSpecies )
+{
+    PitchSpecies x{ 7 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::g } )
+    CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
+}
+TEST( Test38, PitchSpecies )
+{
+    PitchSpecies x{ 8 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::g } )
+    CHECK_EQUAL( 1, x.getPitchAlter()->getValue() )
+}
+TEST( Test39, PitchSpecies )
+{
+    PitchSpecies x{ 9 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::a } )
+    CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
+}
+TEST( Test40, PitchSpecies )
+{
+    PitchSpecies x{ 10 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::b } )
+    CHECK_EQUAL( -1, x.getPitchAlter()->getValue() )
+}
+TEST( Test41, PitchSpecies )
+{
+    PitchSpecies x{ 11 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::b } )
+    CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
+}
+TEST( Test42, PitchSpecies )
+{
+    PitchSpecies x{ 12 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::c } )
+    CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
+}
+TEST( Test43, PitchSpecies )
+{
+    PitchSpecies x{ 0 };
+    CHECK( (*x.getPitchStep()) == PitchStep{ PitchStepName::c } )
+    CHECK_EQUAL( 0, x.getPitchAlter()->getValue() )
 }

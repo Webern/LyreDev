@@ -2,7 +2,6 @@
 #include <iostream>
 #include "Definitions.h"
 #include "Mod.h"
-#include "Forward.h"
 
 namespace music
 {
@@ -16,7 +15,7 @@ namespace music
         /* Construction */
         PitchSpecies();
         explicit PitchSpecies( const Integer value );
-        explicit PitchSpecies( const SpellerPtr& speller, const Integer value = 0 );
+        explicit PitchSpecies( const SpellerPtr& speller, const Integer value );
         virtual ~PitchSpecies();
         static PitchSpeciesPtr make();
         static PitchSpeciesPtr make( const Integer value );

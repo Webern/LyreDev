@@ -2,7 +2,7 @@
 #include <iostream>
 #include <memory>
 #include "PitchSpecies.h"
-#include "Forward.h"
+#include "Definitions.h"
 
 namespace music
 {
