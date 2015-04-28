@@ -15,7 +15,7 @@ namespace music
         /* Construction */
         IntervalSpecies();
         explicit IntervalSpecies( const Integer value );
-        explicit IntervalSpecies( const SpellerPtr& speller, const Integer value );
+        explicit IntervalSpecies( const PitchSpellerPtr& speller, const Integer value );
         virtual ~IntervalSpecies();
         static IntervalSpeciesPtr make();
         static IntervalSpeciesPtr make( const Integer value );

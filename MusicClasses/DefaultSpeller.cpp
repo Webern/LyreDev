@@ -5,7 +5,7 @@
 
 namespace music
 {
-    SpellerPtr DefaultSpeller::make()
+    PitchSpellerPtr DefaultSpeller::make()
     {
         return std::make_shared<DefaultSpeller>();
     }

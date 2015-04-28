@@ -15,7 +15,7 @@ namespace music
         /* Construction */
         PitchSpecies();
         explicit PitchSpecies( const Integer value );
-        explicit PitchSpecies( const SpellerPtr& speller, const Integer value );
+        explicit PitchSpecies( const PitchSpellerPtr& speller, const Integer value );
         virtual ~PitchSpecies();
         static PitchSpeciesPtr make();
         static PitchSpeciesPtr make( const Integer value );

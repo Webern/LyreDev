@@ -1,9 +1,9 @@
 #include "TestHarness.h"
-#include "SpellerInterface.h"
+#include "PitchSpeller.h"
 
 using namespace music;
 
-TEST( HFileExists, SpellerInterface )
+TEST( HFileExists, PitchSpeller )
 {
     CHECK( true );
 }

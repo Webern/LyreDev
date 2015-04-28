@@ -21,12 +21,12 @@ namespace music
     using PitchAlterPtr = std::shared_ptr<PitchAlter>;
     using PitchAlterUPtr = std::unique_ptr<PitchAlter>;
     
-    class SpellerInterface;
-    using SpellerPtr = std::shared_ptr<SpellerInterface>;
-    using SpellerUPtr = std::unique_ptr<SpellerInterface>;
+    class PitchSpeller;
+    using PitchSpellerPtr = std::shared_ptr<PitchSpeller>;
+    using SpellerUPtr = std::unique_ptr<PitchSpeller>;
     
     class DefaultSpeller;
-    using DefaultSpellerPtr = std::shared_ptr<DefaultSpeller>;
+    using DefaultPitchSpellerPtr = std::shared_ptr<DefaultSpeller>;
     using DefaultSpellerUPtr = std::unique_ptr<DefaultSpeller>;
     
     class IntervalSpecies;

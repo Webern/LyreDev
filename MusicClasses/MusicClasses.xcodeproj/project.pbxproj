@@ -54,6 +54,7 @@
 		299810191AED96600094DAE5 /* SpellerInterfaceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpellerInterfaceTest.cpp; sourceTree = "<group>"; };
 		2998101C1AED9A520094DAE5 /* DefaultSpeller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultSpeller.cpp; sourceTree = "<group>"; };
 		2998101D1AED9A520094DAE5 /* DefaultSpeller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSpeller.h; sourceTree = "<group>"; };
+		29A13EBF1AEF2EBF004233A7 /* IntervalSpeller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntervalSpeller.h; sourceTree = "<group>"; };
 		29DBEA9C1AEE842F009D96BB /* PitchSpeciesTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpeciesTest.cpp; sourceTree = "<group>"; };
 		29E77D441AECD19D008A51B0 /* MusicClasses */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MusicClasses; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E77D511AECD34C008A51B0 /* Failure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Failure.cpp; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 				299810191AED96600094DAE5 /* SpellerInterfaceTest.cpp */,
 				291B3DAC1AEF2D25004226EF /* IntervalSpecies.cpp */,
 				291B3DAD1AEF2D25004226EF /* IntervalSpecies.h */,
+				29A13EBF1AEF2EBF004233A7 /* IntervalSpeller.h */,
 			);
 			name = Pitch;
 			sourceTree = "<group>";

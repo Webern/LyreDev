@@ -3,7 +3,7 @@
 #include <cmath>
 #include "PitchAlter.h"
 #include "PitchStep.h"
-#include "SpellerInterface.h"
+#include "PitchSpeller.h"
 #include "DefaultSpeller.h"
 
 namespace music
@@ -20,7 +20,7 @@ namespace music
     ,mySpeller( new DefaultSpeller{} )
     {}
     
-    IntervalSpecies::IntervalSpecies( const SpellerPtr& speller, const Integer value )
+    IntervalSpecies::IntervalSpecies( const PitchSpellerPtr& speller, const Integer value )
     :myValue( value )
     ,mySpeller( speller->uclone() )
     {}
@@ -116,6 +116,4 @@ namespace music
         myValue--;
         return temp;
     }
-    
-    
 }
