@@ -16,7 +16,8 @@ namespace music
     public:
         virtual ~DefaultSpeller() = default;
         static SpellerPtr make();
-        virtual const PitchStepPtr getPitchStep( const PitchSpeciesPtr& pitchSpecies ) const;
-        virtual const PitchAlterPtr getPitchAlter( const PitchSpeciesPtr& pitchSpecies ) const;
+        virtual const PitchStepPtr getPitchStep( const PitchSpecies& pitchSpecies ) const;
+        virtual const PitchAlterPtr getPitchAlter( const PitchSpecies& pitchSpecies ) const;
+        virtual SpellerPtr clone() const;
     };
 }

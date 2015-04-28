@@ -13,11 +13,6 @@ namespace music
     PitchAlter::~PitchAlter()
     {}
     
-    PitchAlterPtr PitchAlter::make( const Integer value )
-    {
-        return std::make_shared<PitchAlter>( value );
-    }
-    
     Integer PitchAlter::getValue() const
     {
         return myValue.getValue();

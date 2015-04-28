@@ -9,9 +9,9 @@ namespace music
     {
         return std::make_shared<DefaultSpeller>();
     }
-    const PitchStepPtr DefaultSpeller::getPitchStep( const PitchSpeciesPtr& pitchSpecies ) const
+    const PitchStepPtr DefaultSpeller::getPitchStep( const PitchSpecies& pitchSpecies ) const
     {
-        switch ( pitchSpecies->getValue() )
+        switch ( pitchSpecies.getValue() )
         {
             case 0:
                 return PitchStep::make( 0 ); // alter=0
@@ -54,10 +54,14 @@ namespace music
                 break;
         }
     }
-    const PitchAlterPtr DefaultSpeller::getPitchAlter( const PitchSpeciesPtr& pitchSpecies ) const
+    const PitchAlterPtr DefaultSpeller::getPitchAlter( const PitchSpecies& pitchSpecies ) const
     {
         Integer x = getPitchStep( pitchSpecies )->getPitchSpeciesEquivalent()->getValue();
-        Integer s = pitchSpecies->getValue() - x;
+        Integer s = pitchSpecies.getValue() - x;
         return PitchAlter::make( s );
+    }
+    SpellerPtr DefaultSpeller::clone() const
+    {
+        return DefaultSpeller::make();
     }
 }

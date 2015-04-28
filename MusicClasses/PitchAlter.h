@@ -13,14 +13,13 @@ namespace music
     class PitchAlter;
     using PitchAlterPtr = std::shared_ptr<PitchAlter>;
     using PitchAlterUPtr = std::unique_ptr<PitchAlter>;
+    
     class PitchAlter
     {
-        
     public:
         PitchAlter();
         virtual ~PitchAlter();
         explicit PitchAlter( const Integer value );
-        static PitchAlterPtr make( const Integer value );
         Integer getValue() const;
         void setValue( const Integer value );
         PitchAlter& add( const Integer value );

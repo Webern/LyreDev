@@ -16,10 +16,17 @@ namespace music
         /* Construction */
         PitchSpecies();
         explicit PitchSpecies( const Integer value );
+        explicit PitchSpecies( const SpellerPtr& speller, const Integer value = 0 );
         virtual ~PitchSpecies();
         static PitchSpeciesPtr make();
         static PitchSpeciesPtr make( const Integer value );
         static PitchSpeciesPtr make( const PitchSpeciesPtr& other );
+        
+        /* Copy */
+        PitchSpecies( const PitchSpecies& other );
+        PitchSpecies( PitchSpecies&& other );
+        PitchSpecies& operator=( const PitchSpecies& other );
+        PitchSpecies& operator=( PitchSpecies&& other );
         
         /* Get Set */
         virtual Integer getValue() const final;

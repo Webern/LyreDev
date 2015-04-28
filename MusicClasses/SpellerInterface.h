@@ -13,7 +13,10 @@ namespace music
     {
     public:
         virtual ~SpellerInterface() = default;
-        virtual const PitchStepPtr getPitchStep( const PitchSpeciesPtr& ) const =0;
-        virtual const PitchAlterPtr getPitchAlter( const PitchSpeciesPtr& ) const =0;
+        virtual const PitchStepPtr getPitchStep( const PitchSpecies& ) const =0;
+        virtual const PitchAlterPtr getPitchAlter( const PitchSpecies& ) const =0;
+        
+        /* Deep Copy */
+        virtual SpellerPtr clone() const = 0;
     };
 }
