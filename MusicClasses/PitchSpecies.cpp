@@ -12,17 +12,17 @@ namespace music
     
     PitchSpecies::PitchSpecies()
     :myValue( 0 )
-    ,mySpeller( DefaultSpeller::make() )
+    ,mySpeller( new DefaultSpeller{} )
     {}
     
     PitchSpecies::PitchSpecies( const Integer value )
     :myValue( value )
-    ,mySpeller( DefaultSpeller::make() )
+    ,mySpeller( new DefaultSpeller{} )
     {}
     
     PitchSpecies::PitchSpecies( const SpellerPtr& speller, const Integer value )
     :myValue( value )
-    ,mySpeller( speller )
+    ,mySpeller( speller->uclone() )
     {}
     
     
@@ -46,7 +46,7 @@ namespace music
     
     PitchSpecies::PitchSpecies( const PitchSpecies& other )
     :myValue( other.myValue )
-    ,mySpeller( other.mySpeller->clone() )
+    ,mySpeller( other.mySpeller->uclone() )
     {}
     
     PitchSpecies::PitchSpecies( PitchSpecies&& other )
@@ -57,7 +57,7 @@ namespace music
     PitchSpecies& PitchSpecies::operator=( const PitchSpecies& other )
     {
         myValue = other.myValue;
-        mySpeller = other.mySpeller->clone();
+        mySpeller = other.mySpeller->uclone();
         return *this;
     }
     PitchSpecies& PitchSpecies::operator=( PitchSpecies&& other )
@@ -126,13 +126,16 @@ namespace music
     {
         return mySpeller->getPitchAlter( *this );
     }
-    const SpellerPtr& PitchSpecies::getSpeller() const
+    const SpellerUPtr& PitchSpecies::getSpeller() const
     {
         return mySpeller;
     }
-    void PitchSpecies::setSpeller( const SpellerPtr& speller )
+    void PitchSpecies::setSpeller( const SpellerUPtr& speller )
     {
-        
+        mySpeller = speller->uclone();
     }
-    
+    void PitchSpecies::setSpeller( SpellerUPtr&& speller )
+    {
+        mySpeller = std::move( speller );
+    }
 }

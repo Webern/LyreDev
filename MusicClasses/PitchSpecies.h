@@ -45,11 +45,12 @@ namespace music
         /* Spelling */
         const PitchStepPtr getPitchStep() const;
         const PitchAlterPtr getPitchAlter() const;
-        const SpellerPtr& getSpeller() const;
-        void setSpeller( const SpellerPtr& speller );
+        const SpellerUPtr& getSpeller() const;
+        void setSpeller( const SpellerUPtr& speller );
+        void setSpeller( SpellerUPtr&& speller );
 
     private:
         Mod<Integer,12> myValue;
-        SpellerPtr mySpeller;
+        SpellerUPtr mySpeller;
     };
 }

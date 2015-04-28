@@ -19,4 +19,8 @@ namespace music
     class SpellerInterface;
     using SpellerPtr = std::shared_ptr<SpellerInterface>;
     using SpellerUPtr = std::unique_ptr<SpellerInterface>;
+    
+    class DefaultSpeller;
+    using DefaultSpellerPtr = std::shared_ptr<DefaultSpeller>;
+    using DefaultSpellerUPtr = std::unique_ptr<DefaultSpeller>;
 }

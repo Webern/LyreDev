@@ -20,6 +20,7 @@ namespace music
         PitchAlter();
         virtual ~PitchAlter();
         explicit PitchAlter( const Integer value );
+        static PitchAlterPtr make( const Integer value );
         Integer getValue() const;
         void setValue( const Integer value );
         PitchAlter& add( const Integer value );

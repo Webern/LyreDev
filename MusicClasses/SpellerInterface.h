@@ -17,6 +17,6 @@ namespace music
         virtual const PitchAlterPtr getPitchAlter( const PitchSpecies& ) const =0;
         
         /* Deep Copy */
-        virtual SpellerPtr clone() const = 0;
+        virtual SpellerUPtr uclone() const = 0;
     };
 }
