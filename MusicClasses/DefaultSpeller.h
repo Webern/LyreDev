@@ -18,6 +18,6 @@ namespace music
         static PitchSpellerPtr make();
         virtual const PitchStepPtr getPitchStep( const PitchSpecies& pitchSpecies ) const;
         virtual const PitchAlterPtr getPitchAlter( const PitchSpecies& pitchSpecies ) const;
-        virtual SpellerUPtr uclone() const;
+        virtual PitchSpellerUPtr uclone() const;
     };
 }

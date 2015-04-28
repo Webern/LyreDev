@@ -14,7 +14,7 @@
 		2998100B1AED87DE0094DAE5 /* RangeIntTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810091AED87DD0094DAE5 /* RangeIntTest.cpp */; };
 		2998100E1AED8C4F0094DAE5 /* PitchAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998100C1AED8C4F0094DAE5 /* PitchAlter.cpp */; };
 		299810111AED8E110094DAE5 /* PitchAlterTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998100F1AED8E110094DAE5 /* PitchAlterTest.cpp */; };
-		2998101B1AED96600094DAE5 /* SpellerInterfaceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810191AED96600094DAE5 /* SpellerInterfaceTest.cpp */; };
+		2998101B1AED96600094DAE5 /* PitchSpellerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299810191AED96600094DAE5 /* PitchSpellerTest.cpp */; };
 		2998101E1AED9A520094DAE5 /* DefaultSpeller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2998101C1AED9A520094DAE5 /* DefaultSpeller.cpp */; };
 		29DBEA9E1AEE842F009D96BB /* PitchSpeciesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBEA9C1AEE842F009D96BB /* PitchSpeciesTest.cpp */; };
 		29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D511AECD34C008A51B0 /* Failure.cpp */; };
@@ -50,8 +50,8 @@
 		2998100C1AED8C4F0094DAE5 /* PitchAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchAlter.cpp; sourceTree = "<group>"; };
 		2998100D1AED8C4F0094DAE5 /* PitchAlter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchAlter.h; sourceTree = "<group>"; };
 		2998100F1AED8E110094DAE5 /* PitchAlterTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchAlterTest.cpp; sourceTree = "<group>"; };
-		299810171AED936C0094DAE5 /* SpellerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpellerInterface.h; sourceTree = "<group>"; };
-		299810191AED96600094DAE5 /* SpellerInterfaceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpellerInterfaceTest.cpp; sourceTree = "<group>"; };
+		299810171AED936C0094DAE5 /* PitchSpeller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchSpeller.h; sourceTree = "<group>"; };
+		299810191AED96600094DAE5 /* PitchSpellerTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchSpellerTest.cpp; sourceTree = "<group>"; };
 		2998101C1AED9A520094DAE5 /* DefaultSpeller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultSpeller.cpp; sourceTree = "<group>"; };
 		2998101D1AED9A520094DAE5 /* DefaultSpeller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSpeller.h; sourceTree = "<group>"; };
 		29A13EBF1AEF2EBF004233A7 /* IntervalSpeller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntervalSpeller.h; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 				29980FFF1AED606E0094DAE5 /* PitchStep.cpp */,
 				299810001AED606E0094DAE5 /* PitchStep.h */,
 				299810021AED607B0094DAE5 /* PitchStepTest.cpp */,
-				299810171AED936C0094DAE5 /* SpellerInterface.h */,
-				299810191AED96600094DAE5 /* SpellerInterfaceTest.cpp */,
+				299810171AED936C0094DAE5 /* PitchSpeller.h */,
+				299810191AED96600094DAE5 /* PitchSpellerTest.cpp */,
 				291B3DAC1AEF2D25004226EF /* IntervalSpecies.cpp */,
 				291B3DAD1AEF2D25004226EF /* IntervalSpecies.h */,
 				29A13EBF1AEF2EBF004233A7 /* IntervalSpeller.h */,
@@ -208,7 +208,7 @@
 			files = (
 				29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */,
 				29E77D611AECD34C008A51B0 /* Test.cpp in Sources */,
-				2998101B1AED96600094DAE5 /* SpellerInterfaceTest.cpp in Sources */,
+				2998101B1AED96600094DAE5 /* PitchSpellerTest.cpp in Sources */,
 				299810011AED606E0094DAE5 /* PitchStep.cpp in Sources */,
 				2998101E1AED9A520094DAE5 /* DefaultSpeller.cpp in Sources */,
 				291B3DAE1AEF2D25004226EF /* IntervalSpecies.cpp in Sources */,

@@ -8,7 +8,7 @@ namespace music
 {
     class PitchSpeller;
     using PitchSpellerPtr = std::shared_ptr<PitchSpeller>;
-    using SpellerUPtr = std::unique_ptr<PitchSpeller>;
+    using PitchSpellerUPtr = std::unique_ptr<PitchSpeller>;
     class PitchSpeller
     {
     public:
@@ -17,6 +17,6 @@ namespace music
         virtual const PitchAlterPtr getPitchAlter( const PitchSpecies& ) const =0;
         
         /* Deep Copy */
-        virtual SpellerUPtr uclone() const = 0;
+        virtual PitchSpellerUPtr uclone() const = 0;
     };
 }

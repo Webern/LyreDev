@@ -47,6 +47,6 @@ namespace music
         
     private:
         Mod<Integer,12> myValue;
-        SpellerUPtr mySpeller;
+        PitchSpellerUPtr mySpeller;
     };
 }

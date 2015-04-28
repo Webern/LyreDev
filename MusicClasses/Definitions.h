@@ -23,11 +23,11 @@ namespace music
     
     class PitchSpeller;
     using PitchSpellerPtr = std::shared_ptr<PitchSpeller>;
-    using SpellerUPtr = std::unique_ptr<PitchSpeller>;
+    using PitchSpellerUPtr = std::unique_ptr<PitchSpeller>;
     
     class DefaultSpeller;
     using DefaultPitchSpellerPtr = std::shared_ptr<DefaultSpeller>;
-    using DefaultSpellerUPtr = std::unique_ptr<DefaultSpeller>;
+    using DefaultPitchSpellerUPtr = std::unique_ptr<DefaultSpeller>;
     
     class IntervalSpecies;
     using IntervalSpeciesPtr = std::shared_ptr<IntervalSpecies>;

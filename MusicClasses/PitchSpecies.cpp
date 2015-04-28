@@ -126,15 +126,15 @@ namespace music
     {
         return mySpeller->getPitchAlter( *this );
     }
-    const SpellerUPtr& PitchSpecies::getSpeller() const
+    const PitchSpellerUPtr& PitchSpecies::getSpeller() const
     {
         return mySpeller;
     }
-    void PitchSpecies::setSpeller( const SpellerUPtr& speller )
+    void PitchSpecies::setSpeller( const PitchSpellerUPtr& speller )
     {
         mySpeller = speller->uclone();
     }
-    void PitchSpecies::setSpeller( SpellerUPtr&& speller )
+    void PitchSpecies::setSpeller( PitchSpellerUPtr&& speller )
     {
         mySpeller = std::move( speller );
     }

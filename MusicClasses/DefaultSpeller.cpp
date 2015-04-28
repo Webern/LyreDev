@@ -60,8 +60,8 @@ namespace music
         Integer s = pitchSpecies.getValue() - x;
         return PitchAlter::make( s );
     }
-    SpellerUPtr DefaultSpeller::uclone() const
+    PitchSpellerUPtr DefaultSpeller::uclone() const
     {
-        return DefaultSpellerUPtr{ new DefaultSpeller() };
+        return DefaultPitchSpellerUPtr{ new DefaultSpeller() };
     }
 }
