@@ -7,14 +7,14 @@
 
 namespace music
 {
-    class DefaultSpeller;
-    using DefaultPitchSpellerPtr = std::shared_ptr<DefaultSpeller>;
+    class DefaultPitchSpeller;
+    using DefaultPitchSpellerPtr = std::shared_ptr<DefaultPitchSpeller>;
     
-    class DefaultSpeller : public PitchSpeller
+    class DefaultPitchSpeller : public PitchSpeller
     {
 
     public:
-        virtual ~DefaultSpeller() = default;
+        virtual ~DefaultPitchSpeller() = default;
         static PitchSpellerPtr make();
         virtual const PitchStepPtr getPitchStep( const PitchSpecies& pitchSpecies ) const;
         virtual const PitchAlterPtr getPitchAlter( const PitchSpecies& pitchSpecies ) const;

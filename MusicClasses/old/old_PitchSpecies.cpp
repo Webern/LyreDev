@@ -4,7 +4,7 @@
 #include "PitchAlter.h"
 #include "PitchStep.h"
 #include "PitchSpeller.h"
-#include "DefaultSpeller.h"
+#include "DefaultPitchSpeller.h"
 
 namespace music
 {
@@ -12,12 +12,12 @@ namespace music
     
     PitchSpecies::PitchSpecies()
     :myValue( 0 )
-    ,mySpeller( new DefaultSpeller{} )
+    ,mySpeller( new DefaultPitchSpeller{} )
     {}
     
     PitchSpecies::PitchSpecies( const Integer value )
     :myValue( value )
-    ,mySpeller( new DefaultSpeller{} )
+    ,mySpeller( new DefaultPitchSpeller{} )
     {}
     
     PitchSpecies::PitchSpecies( const PitchSpellerPtr& speller, const Integer value )

@@ -1,15 +1,15 @@
-#include "DefaultSpeller.h"
+#include "DefaultPitchSpeller.h"
 #include "PitchStep.h"
 #include "PitchSpecies.h"
 #include "PitchAlter.h"
 
 namespace music
 {
-    PitchSpellerPtr DefaultSpeller::make()
+    PitchSpellerPtr DefaultPitchSpeller::make()
     {
-        return std::make_shared<DefaultSpeller>();
+        return std::make_shared<DefaultPitchSpeller>();
     }
-    const PitchStepPtr DefaultSpeller::getPitchStep( const PitchSpecies& pitchSpecies ) const
+    const PitchStepPtr DefaultPitchSpeller::getPitchStep( const PitchSpecies& pitchSpecies ) const
     {
         switch ( pitchSpecies.getValue() )
         {
@@ -50,18 +50,18 @@ namespace music
                 return PitchStep::make( 6 ); // alter=0
                 break;
             default:
-                throw std::runtime_error( "DefaultSpeller::getPitchStep unknown PitchSpecies value" );
+                throw std::runtime_error( "DefaultPitchSpeller::getPitchStep unknown PitchSpecies value" );
                 break;
         }
     }
-    const PitchAlterPtr DefaultSpeller::getPitchAlter( const PitchSpecies& pitchSpecies ) const
+    const PitchAlterPtr DefaultPitchSpeller::getPitchAlter( const PitchSpecies& pitchSpecies ) const
     {
         Integer x = getPitchStep( pitchSpecies )->getPitchSpeciesEquivalent()->getValue();
         Integer s = pitchSpecies.getValue() - x;
         return PitchAlter::make( s );
     }
-    PitchSpellerUPtr DefaultSpeller::uclone() const
+    PitchSpellerUPtr DefaultPitchSpeller::uclone() const
     {
-        return DefaultPitchSpellerUPtr{ new DefaultSpeller() };
+        return DefaultPitchSpellerUPtr{ new DefaultPitchSpeller() };
     }
 }

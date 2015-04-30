@@ -1,7 +1,7 @@
 #include "TestHarness.h"
 #include "Definitions.h"
 
-TEST( Test01, DefaultSpeller )
+TEST( Test01, DefaultPitchSpeller )
 {
     CHECK( false )
 }
