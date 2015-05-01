@@ -1,6 +1,6 @@
 
 ### Basic
-All 
+All Objects which represent items present in music notation will have an isHidden bool.
 
 ### Measures
 A Measure can only hold the correct total duration of Notes.  Additional Notes cannot be added to the Measure once the total duration of the Measure has been reached.
@@ -16,6 +16,9 @@ Every Measure has a beginning Clef.
 A Measure has a list of Clefs which represent mid-measure Clef changes.  These Clef changes are attached to notes via pointers to the first affected note.
 
 ### Time Signature
+A TimeSignature has Duration named "BeatType" which represents the bottom number in a Time Signature.
+
+A TimeSignature will have an Int representing the number of beats (the top number in a Time Signature).
 
 ### Iterators
 
