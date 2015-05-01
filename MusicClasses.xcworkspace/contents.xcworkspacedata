@@ -10,6 +10,9 @@
       <FileRef
          location = "group:README.md">
       </FileRef>
+      <FileRef
+         location = "group:Requirements.md">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:MusicClasses/MusicClasses.xcodeproj">
