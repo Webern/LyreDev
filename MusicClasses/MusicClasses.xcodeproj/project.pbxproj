@@ -11,7 +11,8 @@
 		29E77D611AECD34C008A51B0 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D531AECD34C008A51B0 /* Test.cpp */; };
 		29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D561AECD34C008A51B0 /* TestRegistry.cpp */; };
 		29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D581AECD34C008A51B0 /* TestResult.cpp */; };
-		29E77D641AECD34C008A51B0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D5C1AECD34C008A51B0 /* main.cpp */; };
+		29E967461AF4811F00F0B9EC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E967451AF4811F00F0B9EC /* main.cpp */; };
+		29E967491AF481D900F0B9EC /* PieceAcceptanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E967481AF481D900F0B9EC /* PieceAcceptanceTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +39,20 @@
 		29E77D581AECD34C008A51B0 /* TestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestResult.cpp; sourceTree = "<group>"; };
 		29E77D591AECD34C008A51B0 /* TestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestResult.h; sourceTree = "<group>"; };
 		29E77D5A1AECD34C008A51B0 /* TestSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSelector.h; sourceTree = "<group>"; };
-		29E77D5C1AECD34C008A51B0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../main.cpp; sourceTree = "<group>"; };
+		29E967391AF47EF200F0B9EC /* IClef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IClef.h; sourceTree = "<group>"; };
+		29E9673A1AF47EF200F0B9EC /* IEngravable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IEngravable.h; sourceTree = "<group>"; };
+		29E9673B1AF47EF200F0B9EC /* IMeasure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMeasure.h; sourceTree = "<group>"; };
+		29E9673C1AF47EF200F0B9EC /* IMeasureLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMeasureLayer.h; sourceTree = "<group>"; };
+		29E9673D1AF47EF200F0B9EC /* IMovement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMovement.h; sourceTree = "<group>"; };
+		29E9673E1AF47EF200F0B9EC /* INote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INote.h; sourceTree = "<group>"; };
+		29E9673F1AF47EF200F0B9EC /* IPart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPart.h; sourceTree = "<group>"; };
+		29E967401AF47EF200F0B9EC /* IPiece.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPiece.h; sourceTree = "<group>"; };
+		29E967411AF47EF200F0B9EC /* IPitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPitch.h; sourceTree = "<group>"; };
+		29E967421AF47EF200F0B9EC /* IRest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRest.h; sourceTree = "<group>"; };
+		29E967431AF47EF200F0B9EC /* IScoreGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IScoreGroup.h; sourceTree = "<group>"; };
+		29E967441AF47EF200F0B9EC /* ITimeSignature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITimeSignature.h; sourceTree = "<group>"; };
+		29E967451AF4811F00F0B9EC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		29E967481AF481D900F0B9EC /* PieceAcceptanceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PieceAcceptanceTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +83,8 @@
 		29E77D3B1AECD19D008A51B0 = {
 			isa = PBXGroup;
 			children = (
+				29E967471AF4813A00F0B9EC /* AcceptanceTests */,
+				29E967381AF47EC700F0B9EC /* Engravable */,
 				299810201AED9BDF0094DAE5 /* Primitive */,
 				2998101F1AED9BC90094DAE5 /* Pitch */,
 				29E77D501AECD34C008A51B0 /* CppUnitLite */,
@@ -87,9 +103,9 @@
 		29E77D501AECD34C008A51B0 /* CppUnitLite */ = {
 			isa = PBXGroup;
 			children = (
+				29E967451AF4811F00F0B9EC /* main.cpp */,
 				29E77D511AECD34C008A51B0 /* Failure.cpp */,
 				29E77D521AECD34C008A51B0 /* Failure.h */,
-				29E77D5C1AECD34C008A51B0 /* main.cpp */,
 				29E77D531AECD34C008A51B0 /* Test.cpp */,
 				29E77D541AECD34C008A51B0 /* Test.h */,
 				29E77D551AECD34C008A51B0 /* TestHarness.h */,
@@ -100,6 +116,33 @@
 				29E77D5A1AECD34C008A51B0 /* TestSelector.h */,
 			);
 			path = CppUnitLite;
+			sourceTree = "<group>";
+		};
+		29E967381AF47EC700F0B9EC /* Engravable */ = {
+			isa = PBXGroup;
+			children = (
+				29E967391AF47EF200F0B9EC /* IClef.h */,
+				29E9673A1AF47EF200F0B9EC /* IEngravable.h */,
+				29E9673B1AF47EF200F0B9EC /* IMeasure.h */,
+				29E9673C1AF47EF200F0B9EC /* IMeasureLayer.h */,
+				29E9673D1AF47EF200F0B9EC /* IMovement.h */,
+				29E9673E1AF47EF200F0B9EC /* INote.h */,
+				29E9673F1AF47EF200F0B9EC /* IPart.h */,
+				29E967401AF47EF200F0B9EC /* IPiece.h */,
+				29E967411AF47EF200F0B9EC /* IPitch.h */,
+				29E967421AF47EF200F0B9EC /* IRest.h */,
+				29E967431AF47EF200F0B9EC /* IScoreGroup.h */,
+				29E967441AF47EF200F0B9EC /* ITimeSignature.h */,
+			);
+			name = Engravable;
+			sourceTree = "<group>";
+		};
+		29E967471AF4813A00F0B9EC /* AcceptanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				29E967481AF481D900F0B9EC /* PieceAcceptanceTest.cpp */,
+			);
+			name = AcceptanceTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +199,8 @@
 				29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */,
 				29E77D611AECD34C008A51B0 /* Test.cpp in Sources */,
 				29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */,
-				29E77D641AECD34C008A51B0 /* main.cpp in Sources */,
+				29E967491AF481D900F0B9EC /* PieceAcceptanceTest.cpp in Sources */,
+				29E967461AF4811F00F0B9EC /* main.cpp in Sources */,
 				29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
