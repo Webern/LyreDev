@@ -13,9 +13,9 @@ namespace music
 	{
 	public:
 		virtual ~IPiece() = default;
-		IPiecePtr clone() const = 0;
-		IPieceUPtr uclone() const = 0;
-		bool getIsHidden() const = 0;
-		void setIsHidden( const bool ) = 0;
+		virtual IPiecePtr clone() const = 0;
+		virtual IPieceUPtr uclone() const = 0;
+		virtual bool getIsHidden() const = 0;
+		virtual void setIsHidden( const bool ) = 0;
 	};
 }

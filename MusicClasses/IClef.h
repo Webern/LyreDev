@@ -12,9 +12,9 @@ namespace music
 	{
 	public:
 		virtual ~IClef() = default;
-		IClefPtr clone() const = 0;
-		IClefUPtr uclone() const = 0;
-		bool getIsHidden() const = 0;
-		void setIsHidden( const bool ) = 0;
+		virtual IClefPtr clone() const = 0;
+		virtual IClefUPtr uclone() const = 0;
+		virtual bool getIsHidden() const = 0;
+		virtual void setIsHidden( const bool ) = 0;
 	};
 }

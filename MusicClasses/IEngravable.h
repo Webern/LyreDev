@@ -15,9 +15,7 @@ namespace music
 	{
 	public:
 		virtual ~IEngravable() = default;
-		IEngravablePtr clone() const = 0;
-		IEngravableUPtr uclone() const = 0;
-		bool getIsHidden() const = 0;
-		void setIsHidden( const bool ) = 0;
+		virtual bool getIsHidden() const = 0;
+		virtual void setIsHidden( const bool ) = 0;
 	};
 }
