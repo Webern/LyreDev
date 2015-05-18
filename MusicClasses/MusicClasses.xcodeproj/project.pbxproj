@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2940EA401B09AE6800436F11 /* Piece.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2940EA3E1B09AE6800436F11 /* Piece.cpp */; };
 		29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D511AECD34C008A51B0 /* Failure.cpp */; };
 		29E77D611AECD34C008A51B0 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D531AECD34C008A51B0 /* Test.cpp */; };
 		29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D561AECD34C008A51B0 /* TestRegistry.cpp */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2940EA3E1B09AE6800436F11 /* Piece.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Piece.cpp; sourceTree = "<group>"; };
+		2940EA3F1B09AE6800436F11 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
 		29E77D441AECD19D008A51B0 /* MusicClasses */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MusicClasses; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E77D511AECD34C008A51B0 /* Failure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Failure.cpp; sourceTree = "<group>"; };
 		29E77D521AECD34C008A51B0 /* Failure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Failure.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				29E967421AF47EF200F0B9EC /* IRest.h */,
 				29E967431AF47EF200F0B9EC /* IScoreGroup.h */,
 				29E967441AF47EF200F0B9EC /* ITimeSignature.h */,
+				2940EA3E1B09AE6800436F11 /* Piece.cpp */,
+				2940EA3F1B09AE6800436F11 /* Piece.h */,
 			);
 			name = Engravable;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			files = (
 				29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */,
 				29E77D611AECD34C008A51B0 /* Test.cpp in Sources */,
+				2940EA401B09AE6800436F11 /* Piece.cpp in Sources */,
 				29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */,
 				29E967491AF481D900F0B9EC /* PieceAcceptanceTest.cpp in Sources */,
 				29E967461AF4811F00F0B9EC /* main.cpp in Sources */,
