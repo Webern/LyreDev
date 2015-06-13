@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <memory>
@@ -31,15 +32,12 @@ namespace music
     {
     public:
         ~Part() = default;
-        bool getIsGrouped() const;
-        PartGroupPtr getPartGroup() const;
-        void setPartGroup( const PartGroupPtr& value ) const;
-        InstrumentPtr getInstrument() const;
-        void setInstrument( const InstrumentPtr& value );
         const MeasureSet getMeasureSet() const;
         void addMeasure( const MeasurePtr& measure );
         void removeMeasure( const MeasureSetIterConst& iter );
         void clearMeasureSet();
+        
+        PartPtr clone() const;
         
     private:
         InstrumentPtr myInstrument;

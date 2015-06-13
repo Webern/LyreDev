@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#pragma once
 #include <vector>
 
 namespace music
@@ -39,6 +40,8 @@ namespace music
         const MovementSet& getMovementSet() const;
         void addMovement( const MovementPtr& value );
         void removeMovement( const MovementSetIterConst& value );
+        
+        PiecePtr clone() const;
         
     private:
         std::string myTitle;

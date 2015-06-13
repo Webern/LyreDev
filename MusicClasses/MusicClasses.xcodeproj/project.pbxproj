@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29154F631B2C790000DBE963 /* PartProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29154F611B2C790000DBE963 /* PartProperties.cpp */; };
+		29154F661B2C7C9500DBE963 /* Instrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29154F641B2C7C9500DBE963 /* Instrument.cpp */; };
+		29154F691B2C7CE200DBE963 /* PartGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29154F671B2C7CE200DBE963 /* PartGroup.cpp */; };
 		2940EA431B09B04E00436F11 /* Piece.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2940EA411B09B04E00436F11 /* Piece.cpp */; };
 		2940EA461B09B05800436F11 /* Movement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2940EA441B09B05800436F11 /* Movement.cpp */; };
 		2949BC111B25467F00E760F4 /* MovementAcceptanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2949BC0F1B25467F00E760F4 /* MovementAcceptanceTest.cpp */; };
@@ -33,6 +36,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		29154F601B2C789100DBE963 /* TypeDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
+		29154F611B2C790000DBE963 /* PartProperties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartProperties.cpp; sourceTree = "<group>"; };
+		29154F621B2C790000DBE963 /* PartProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartProperties.h; sourceTree = "<group>"; };
+		29154F641B2C7C9500DBE963 /* Instrument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Instrument.cpp; sourceTree = "<group>"; };
+		29154F651B2C7C9500DBE963 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
+		29154F671B2C7CE200DBE963 /* PartGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartGroup.cpp; sourceTree = "<group>"; };
+		29154F681B2C7CE200DBE963 /* PartGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartGroup.h; sourceTree = "<group>"; };
 		2940EA411B09B04E00436F11 /* Piece.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Piece.cpp; sourceTree = "<group>"; };
 		2940EA421B09B04E00436F11 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
 		2940EA441B09B05800436F11 /* Movement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Movement.cpp; sourceTree = "<group>"; };
@@ -68,35 +78,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2998101F1AED9BC90094DAE5 /* Pitch */ = {
+		29154F6A1B2C7D4800DBE963 /* MusicClasses */ = {
 			isa = PBXGroup;
 			children = (
+				29154F641B2C7C9500DBE963 /* Instrument.cpp */,
+				29154F651B2C7C9500DBE963 /* Instrument.h */,
+				2940EA441B09B05800436F11 /* Movement.cpp */,
+				2940EA451B09B05800436F11 /* Movement.h */,
+				2949BC151B254C8400E760F4 /* Part.cpp */,
+				2949BC161B254C8400E760F4 /* Part.h */,
+				29154F671B2C7CE200DBE963 /* PartGroup.cpp */,
+				29154F681B2C7CE200DBE963 /* PartGroup.h */,
+				29154F611B2C790000DBE963 /* PartProperties.cpp */,
+				29154F621B2C790000DBE963 /* PartProperties.h */,
+				2949BC121B2549E100E760F4 /* PartStack.cpp */,
+				2949BC131B2549E100E760F4 /* PartStack.h */,
+				2940EA411B09B04E00436F11 /* Piece.cpp */,
+				2940EA421B09B04E00436F11 /* Piece.h */,
+				29154F601B2C789100DBE963 /* TypeDefs.h */,
 			);
-			name = Pitch;
-			sourceTree = "<group>";
-		};
-		299810201AED9BDF0094DAE5 /* Primitive */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Primitive;
+			name = MusicClasses;
 			sourceTree = "<group>";
 		};
 		29E77D3B1AECD19D008A51B0 = {
 			isa = PBXGroup;
 			children = (
-				2949BC151B254C8400E760F4 /* Part.cpp */,
-				2949BC161B254C8400E760F4 /* Part.h */,
-				2949BC121B2549E100E760F4 /* PartStack.cpp */,
-				2949BC131B2549E100E760F4 /* PartStack.h */,
-				2940EA441B09B05800436F11 /* Movement.cpp */,
-				2940EA451B09B05800436F11 /* Movement.h */,
-				2940EA411B09B04E00436F11 /* Piece.cpp */,
-				2940EA421B09B04E00436F11 /* Piece.h */,
+				29154F6A1B2C7D4800DBE963 /* MusicClasses */,
 				29E967471AF4813A00F0B9EC /* AcceptanceTests */,
-				29E967381AF47EC700F0B9EC /* Engravable */,
-				299810201AED9BDF0094DAE5 /* Primitive */,
-				2998101F1AED9BC90094DAE5 /* Pitch */,
 				29E77D501AECD34C008A51B0 /* CppUnitLite */,
 				29E77D451AECD19D008A51B0 /* Products */,
 			);
@@ -126,13 +134,6 @@
 				29E77D5A1AECD34C008A51B0 /* TestSelector.h */,
 			);
 			path = CppUnitLite;
-			sourceTree = "<group>";
-		};
-		29E967381AF47EC700F0B9EC /* Engravable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Engravable;
 			sourceTree = "<group>";
 		};
 		29E967471AF4813A00F0B9EC /* AcceptanceTests */ = {
@@ -198,11 +199,14 @@
 				2940EA461B09B05800436F11 /* Movement.cpp in Sources */,
 				2949BC141B2549E100E760F4 /* PartStack.cpp in Sources */,
 				29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */,
+				29154F631B2C790000DBE963 /* PartProperties.cpp in Sources */,
 				29E77D611AECD34C008A51B0 /* Test.cpp in Sources */,
 				2949BC111B25467F00E760F4 /* MovementAcceptanceTest.cpp in Sources */,
 				2949BC171B254C8400E760F4 /* Part.cpp in Sources */,
 				2940EA431B09B04E00436F11 /* Piece.cpp in Sources */,
+				29154F691B2C7CE200DBE963 /* PartGroup.cpp in Sources */,
 				29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */,
+				29154F661B2C7C9500DBE963 /* Instrument.cpp in Sources */,
 				29E967491AF481D900F0B9EC /* PieceAcceptanceTest.cpp in Sources */,
 				29E967461AF4811F00F0B9EC /* main.cpp in Sources */,
 				29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */,

@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <memory>
@@ -25,6 +26,8 @@ namespace music
         void setTitle( const std::string& value );
         PartStackPtr getPartStack() const;
         void setPartStack( const PartStackPtr& value );
+        
+        MovementPtr clone() const;
         
     private:
         std::string myTitle;
