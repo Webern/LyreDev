@@ -15,6 +15,9 @@
 		2949BC111B25467F00E760F4 /* MovementAcceptanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2949BC0F1B25467F00E760F4 /* MovementAcceptanceTest.cpp */; };
 		2949BC141B2549E100E760F4 /* PartStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2949BC121B2549E100E760F4 /* PartStack.cpp */; };
 		2949BC171B254C8400E760F4 /* Part.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2949BC151B254C8400E760F4 /* Part.cpp */; };
+		299DA3291B2F254A00254FFF /* Measure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299DA3271B2F254A00254FFF /* Measure.cpp */; };
+		299DA32C1B2F26B400254FFF /* TimeSignature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299DA32A1B2F26B400254FFF /* TimeSignature.cpp */; };
+		299DA32F1B2F274F00254FFF /* Note.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299DA32D1B2F274F00254FFF /* Note.cpp */; };
 		29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D511AECD34C008A51B0 /* Failure.cpp */; };
 		29E77D611AECD34C008A51B0 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D531AECD34C008A51B0 /* Test.cpp */; };
 		29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D561AECD34C008A51B0 /* TestRegistry.cpp */; };
@@ -52,6 +55,12 @@
 		2949BC131B2549E100E760F4 /* PartStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartStack.h; sourceTree = "<group>"; };
 		2949BC151B254C8400E760F4 /* Part.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part.cpp; sourceTree = "<group>"; };
 		2949BC161B254C8400E760F4 /* Part.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part.h; sourceTree = "<group>"; };
+		299DA3271B2F254A00254FFF /* Measure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Measure.cpp; sourceTree = "<group>"; };
+		299DA3281B2F254A00254FFF /* Measure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Measure.h; sourceTree = "<group>"; };
+		299DA32A1B2F26B400254FFF /* TimeSignature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeSignature.cpp; sourceTree = "<group>"; };
+		299DA32B1B2F26B400254FFF /* TimeSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSignature.h; sourceTree = "<group>"; };
+		299DA32D1B2F274F00254FFF /* Note.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Note.cpp; sourceTree = "<group>"; };
+		299DA32E1B2F274F00254FFF /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		29E77D441AECD19D008A51B0 /* MusicClasses */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MusicClasses; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E77D511AECD34C008A51B0 /* Failure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Failure.cpp; sourceTree = "<group>"; };
 		29E77D521AECD34C008A51B0 /* Failure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Failure.h; sourceTree = "<group>"; };
@@ -81,6 +90,10 @@
 		29154F6A1B2C7D4800DBE963 /* MusicClasses */ = {
 			isa = PBXGroup;
 			children = (
+				299DA32A1B2F26B400254FFF /* TimeSignature.cpp */,
+				299DA32B1B2F26B400254FFF /* TimeSignature.h */,
+				299DA3271B2F254A00254FFF /* Measure.cpp */,
+				299DA3281B2F254A00254FFF /* Measure.h */,
 				29154F641B2C7C9500DBE963 /* Instrument.cpp */,
 				29154F651B2C7C9500DBE963 /* Instrument.h */,
 				2940EA441B09B05800436F11 /* Movement.cpp */,
@@ -96,6 +109,8 @@
 				2940EA411B09B04E00436F11 /* Piece.cpp */,
 				2940EA421B09B04E00436F11 /* Piece.h */,
 				29154F601B2C789100DBE963 /* TypeDefs.h */,
+				299DA32D1B2F274F00254FFF /* Note.cpp */,
+				299DA32E1B2F274F00254FFF /* Note.h */,
 			);
 			name = MusicClasses;
 			sourceTree = "<group>";
@@ -199,9 +214,12 @@
 				2940EA461B09B05800436F11 /* Movement.cpp in Sources */,
 				2949BC141B2549E100E760F4 /* PartStack.cpp in Sources */,
 				29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */,
+				299DA32C1B2F26B400254FFF /* TimeSignature.cpp in Sources */,
 				29154F631B2C790000DBE963 /* PartProperties.cpp in Sources */,
 				29E77D611AECD34C008A51B0 /* Test.cpp in Sources */,
+				299DA3291B2F254A00254FFF /* Measure.cpp in Sources */,
 				2949BC111B25467F00E760F4 /* MovementAcceptanceTest.cpp in Sources */,
+				299DA32F1B2F274F00254FFF /* Note.cpp in Sources */,
 				2949BC171B254C8400E760F4 /* Part.cpp in Sources */,
 				2940EA431B09B04E00436F11 /* Piece.cpp in Sources */,
 				29154F691B2C7CE200DBE963 /* PartGroup.cpp in Sources */,
