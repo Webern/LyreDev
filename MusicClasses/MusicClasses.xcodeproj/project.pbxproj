@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2907F86F1B33C84100ADC737 /* Rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2907F86D1B33C84100ADC737 /* Rational.cpp */; };
+		2907F8711B33C9E100ADC737 /* RationalTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2907F8701B33C9E100ADC737 /* RationalTest.cpp */; };
 		29154F631B2C790000DBE963 /* PartProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29154F611B2C790000DBE963 /* PartProperties.cpp */; };
 		29154F661B2C7C9500DBE963 /* Instrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29154F641B2C7C9500DBE963 /* Instrument.cpp */; };
 		29154F691B2C7CE200DBE963 /* PartGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29154F671B2C7CE200DBE963 /* PartGroup.cpp */; };
@@ -39,6 +41,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2907F86D1B33C84100ADC737 /* Rational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rational.cpp; sourceTree = "<group>"; };
+		2907F86E1B33C84100ADC737 /* Rational.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rational.h; sourceTree = "<group>"; };
+		2907F8701B33C9E100ADC737 /* RationalTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RationalTest.cpp; sourceTree = "<group>"; };
 		29154F601B2C789100DBE963 /* TypeDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
 		29154F611B2C790000DBE963 /* PartProperties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartProperties.cpp; sourceTree = "<group>"; };
 		29154F621B2C790000DBE963 /* PartProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartProperties.h; sourceTree = "<group>"; };
@@ -90,14 +95,14 @@
 		29154F6A1B2C7D4800DBE963 /* MusicClasses */ = {
 			isa = PBXGroup;
 			children = (
-				299DA32A1B2F26B400254FFF /* TimeSignature.cpp */,
-				299DA32B1B2F26B400254FFF /* TimeSignature.h */,
-				299DA3271B2F254A00254FFF /* Measure.cpp */,
-				299DA3281B2F254A00254FFF /* Measure.h */,
 				29154F641B2C7C9500DBE963 /* Instrument.cpp */,
 				29154F651B2C7C9500DBE963 /* Instrument.h */,
+				299DA3271B2F254A00254FFF /* Measure.cpp */,
+				299DA3281B2F254A00254FFF /* Measure.h */,
 				2940EA441B09B05800436F11 /* Movement.cpp */,
 				2940EA451B09B05800436F11 /* Movement.h */,
+				299DA32D1B2F274F00254FFF /* Note.cpp */,
+				299DA32E1B2F274F00254FFF /* Note.h */,
 				2949BC151B254C8400E760F4 /* Part.cpp */,
 				2949BC161B254C8400E760F4 /* Part.h */,
 				29154F671B2C7CE200DBE963 /* PartGroup.cpp */,
@@ -108,9 +113,12 @@
 				2949BC131B2549E100E760F4 /* PartStack.h */,
 				2940EA411B09B04E00436F11 /* Piece.cpp */,
 				2940EA421B09B04E00436F11 /* Piece.h */,
+				2907F86D1B33C84100ADC737 /* Rational.cpp */,
+				2907F86E1B33C84100ADC737 /* Rational.h */,
+				2907F8701B33C9E100ADC737 /* RationalTest.cpp */,
+				299DA32A1B2F26B400254FFF /* TimeSignature.cpp */,
+				299DA32B1B2F26B400254FFF /* TimeSignature.h */,
 				29154F601B2C789100DBE963 /* TypeDefs.h */,
-				299DA32D1B2F274F00254FFF /* Note.cpp */,
-				299DA32E1B2F274F00254FFF /* Note.h */,
 			);
 			name = MusicClasses;
 			sourceTree = "<group>";
@@ -218,10 +226,12 @@
 				29154F631B2C790000DBE963 /* PartProperties.cpp in Sources */,
 				29E77D611AECD34C008A51B0 /* Test.cpp in Sources */,
 				299DA3291B2F254A00254FFF /* Measure.cpp in Sources */,
+				2907F86F1B33C84100ADC737 /* Rational.cpp in Sources */,
 				2949BC111B25467F00E760F4 /* MovementAcceptanceTest.cpp in Sources */,
 				299DA32F1B2F274F00254FFF /* Note.cpp in Sources */,
 				2949BC171B254C8400E760F4 /* Part.cpp in Sources */,
 				2940EA431B09B04E00436F11 /* Piece.cpp in Sources */,
+				2907F8711B33C9E100ADC737 /* RationalTest.cpp in Sources */,
 				29154F691B2C7CE200DBE963 /* PartGroup.cpp in Sources */,
 				29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */,
 				29154F661B2C7C9500DBE963 /* Instrument.cpp in Sources */,
@@ -308,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -315,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

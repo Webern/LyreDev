@@ -19,6 +19,8 @@ namespace music
     {
     public:
         virtual ~TimeSignature() = default;
+        void setNumerator( const Int value );
+        void setDenominator( const Int value );
     private:
         Int myNumerator;
         Int myDenominator;
