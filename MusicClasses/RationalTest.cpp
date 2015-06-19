@@ -71,12 +71,49 @@ TEST( gcd03, Rational )
     Int expected = 37;
     CHECK_EQUAL( expected, actual );
 }
-TEST( simplify01, Rational )
+TEST( reduce01, Rational )
 {
     Int a = 10397;
     Int b = 108706;
     Rational r{ a, b };
-    auto simplified = Rational::simplify( r );
-    CHECK_EQUAL( 281, simplified.getNumerator() );
-    CHECK_EQUAL( 2938, simplified.getDenominator() );
+    auto reduced = Rational::reduce( r );
+    CHECK_EQUAL( 281, reduced.getNumerator() );
+    CHECK_EQUAL( 2938, reduced.getDenominator() );
+}
+TEST( lcm01, Rational )
+{
+    Int a = 12;
+    Int b = 42;
+    Int expected = 84;
+    auto actual = Rational::lcm( a, b );
+    CHECK_EQUAL( expected, actual )
+}
+TEST( lcm02, Rational )
+{
+    Int a = -362;
+    Int b = 42;
+    Int expected = 7602;
+    auto actual = Rational::lcm( a, b );
+    CHECK_EQUAL( expected, actual )
+}
+TEST( lcd01, Rational )
+{
+    Rational a{ 12, 42 };
+    Rational b{ 1, -362 };
+    Rational::lcd( a, b );
+    CHECK_EQUAL( 2172, a.getNumerator() )
+    CHECK_EQUAL( 7602, a.getDenominator() )
+    CHECK_EQUAL( -21, b.getNumerator() )
+    CHECK_EQUAL( 7602, b.getDenominator() )
+    
+}
+TEST( lcd02, Rational )
+{
+    Rational a{ 1, 12 };
+    Rational b{ 1, 15 };
+    Rational::lcd( a, b );
+    CHECK_EQUAL( 5, a.getNumerator() )
+    CHECK_EQUAL( 60, a.getDenominator() )
+    CHECK_EQUAL( 4, b.getNumerator() )
+    CHECK_EQUAL( 60, b.getDenominator() )
 }

@@ -60,12 +60,35 @@ namespace music
         // http://stackoverflow.com/a/4229930/2779792
         auto temp = gcd(a, b);
         
-        return temp ? (a / temp * b) : 0;
+        auto answer = temp ? (a / temp * b) : 0;
+        if ( answer < 0 )
+        {
+            answer *= -1;
+        }
+        return answer;
     }
-    Rational Rational::simplify( const music::Rational& input )
+    void Rational::lcd( Rational& a, Rational& b )
     {
-        Int gcf = Rational::gcd( input.getNumerator(), input.getDenominator() );
-        return Rational{ input.getNumerator()/gcf, input.getDenominator()/gcf };
+        if ( a.getDenominator() == b.getDenominator() )
+        {
+            return;
+        }
+        else
+        {
+            auto lcm = Rational::lcm( a.getDenominator(), b.getDenominator() );
+            auto a_fact = lcm / a.getDenominator();
+            auto b_fact = lcm / b.getDenominator();
+            a.setNumerator( a.getNumerator() * a_fact );
+            a.setDenominator( lcm );
+            b.setNumerator( b.getNumerator() * b_fact );
+            b.setDenominator( lcm );
+            return;
+        }
+    }
+    Rational Rational::reduce( const music::Rational& r )
+    {
+        Int gcf = Rational::gcd( r.getNumerator(), r.getDenominator() );
+        return Rational{ r.getNumerator()/gcf, r.getDenominator()/gcf };
     }
     bool operator==( const Rational& left, const Rational& right )
     {
@@ -75,8 +98,18 @@ namespace music
         }
         else
         {
-            
+            auto copy_left = left;
+            auto copy_right = right;
+            Rational::lcd( copy_left, copy_right );
+            return copy_left == copy_right;
         }
-        throw "oops";
+    }
+    bool operator!=( const Rational& left, const Rational& right )
+    {
+        return ! ( left == right );
+    }
+    std::ostream& operator<<( std::ostream& os, const Rational& right )
+    {
+        return os << "( " << right.getNumerator() << " / " << right.getDenominator() << " )";
     }
 }
