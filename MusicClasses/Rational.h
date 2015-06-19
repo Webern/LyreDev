@@ -2,6 +2,8 @@
 #include <iostream>
 #include "TypeDefs.h"
 
+/* I need rational numbers for music and I don't want to include boost */
+
 namespace music
 {
     class Rational
