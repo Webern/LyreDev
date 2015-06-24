@@ -8,12 +8,6 @@
 
 namespace music
 {
-    class Duration;
-    using DurationPtr = std::shared_ptr<Duration>;
-    using DurationUPtr = std::unique_ptr<Duration>;
-    using DurationSet = std::vector<DurationPtr>;
-    using DurationSetIter = DurationSet::iterator;
-    using DurationSetIterConst = DurationSet::const_iterator;
     
     enum class DurationName
     {
@@ -33,7 +27,6 @@ namespace music
     class DurationBase
     {
     public:
-        virtual ~DurationBase() = default;
         DurationBase();
         explicit DurationBase( const DurationName& value );
         DurationName getDurationName() const;

@@ -145,4 +145,26 @@ namespace music
     {
         return os << "( " << right.getNumerator() << " / " << right.getDenominator() << " )";
     }
+    Rational Rational::getReciprocal() const
+    {
+        return Rational{ getDenominator(), getNumerator() };
+    }
+    
+    Rational& Rational::operator*=( const Rational& right )
+    {
+        auto result = *this * right;
+        *this = result;
+        return *this;
+    }
+    Rational operator/( const Rational& r, const Rational& l )
+    {
+        auto l_recip = l.getReciprocal();
+        auto value = r * l_recip;
+        value = Rational::reduce( value );
+        return value;
+    }
+    Rational operator*( const Rational& r, const Rational& l )
+    {
+        return Rational::reduce( Rational{ r.getNumerator() * l.getNumerator(), r.getDenominator() * l.getDenominator() } );
+    }
 }

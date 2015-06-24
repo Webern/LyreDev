@@ -181,3 +181,41 @@ TEST( comparisons05, Rational )
     CHECK( ! ( a <= b ) )
     CHECK(   ( a >= b ) )
 }
+TEST( getReciprocal, Rational )
+{
+    Rational a{ 10, 1  };
+    Rational b = a.getReciprocal();
+    CHECK_EQUAL( Rational( 1, 10 ), b )
+}
+TEST( operatorTimesEquals, Rational )
+{
+    Rational a{ 10, 5  };
+    Rational b{ 3, 33 };
+    a *= b;
+    CHECK_EQUAL( 2, a.getNumerator() )
+    CHECK_EQUAL( 11, a.getDenominator() )
+    CHECK( !( 30 == a.getNumerator() ) )
+}
+TEST( operatorTimes, Rational )
+{
+    Rational a{ 10, 5  };
+    Rational b{ 3, 33 };
+    Rational c = a * b;
+    CHECK_EQUAL( 2, c.getNumerator() )
+    CHECK_EQUAL( 11, c.getDenominator() )
+    CHECK_EQUAL( Rational( 10, 5 ), a )
+    CHECK_EQUAL( Rational( 3, 33 ), b )
+    CHECK_EQUAL( Rational( 2, 11 ), c )
+}
+
+TEST( operatorDivide, Rational )
+{
+    Rational a{ 10, 5  };
+    Rational b{ 3, 33 };
+    Rational c = a / b;
+    CHECK_EQUAL( 22, c.getNumerator() )
+    CHECK_EQUAL( 1, c.getDenominator() )
+    CHECK_EQUAL( Rational( 10, 5 ), a )
+    CHECK_EQUAL( Rational( 3, 33 ), b )
+    CHECK_EQUAL( Rational( 22, 1 ), c )
+}

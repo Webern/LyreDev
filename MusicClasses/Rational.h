@@ -41,7 +41,12 @@ namespace music
          positive numebrs. */
         static Rational reduce( const Rational& r );
         
+        /* return the reciprocal as a Rational */
+        Rational getReciprocal() const;
         
+        /* */
+        Rational& operator*=( const Rational& right );
+
     private:
         Int myNumerator;
         Int myDenominator;
@@ -54,6 +59,9 @@ namespace music
     bool operator>( const Rational& left, const Rational& right );
     bool operator<=( const Rational& left, const Rational& right );
     bool operator>=( const Rational& left, const Rational& right );
+    
+    Rational operator/( const Rational& r, const Rational& l );
+    Rational operator*( const Rational& r, const Rational& l );
     
     /* stream a textual representation of the Rational number */
     std::ostream& operator<<( std::ostream& os, const Rational& right );
