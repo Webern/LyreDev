@@ -80,6 +80,15 @@ TEST( reduce01, Rational )
     CHECK_EQUAL( 281, reduced.getNumerator() );
     CHECK_EQUAL( 2938, reduced.getDenominator() );
 }
+TEST( reduce02, Rational )
+{
+    Int a = -10397;
+    Int b = -108706;
+    Rational r{ a, b };
+    auto reduced = Rational::reduce( r );
+    CHECK_EQUAL( 281, reduced.getNumerator() );
+    CHECK_EQUAL( 2938, reduced.getDenominator() );
+}
 TEST( lcm01, Rational )
 {
     Int a = 12;
@@ -116,4 +125,59 @@ TEST( lcd02, Rational )
     CHECK_EQUAL( 60, a.getDenominator() )
     CHECK_EQUAL( 4, b.getNumerator() )
     CHECK_EQUAL( 60, b.getDenominator() )
+}
+TEST( comparisons01, Rational )
+{
+    Rational a{ 1, 12 };
+    Rational b{ 1, 15 };
+    CHECK( ! ( a == b ) )
+    CHECK(   ( a != b ) )
+    CHECK( ! ( a <  b ) )
+    CHECK(   ( a >  b ) )
+    CHECK( ! ( a <= b ) )
+    CHECK(   ( a >= b ) )
+}
+TEST( comparisons02, Rational )
+{
+    Rational a{ -1, 32 };
+    Rational b{ 1, 15 };
+    CHECK( ! ( a == b ) )
+    CHECK(   ( a != b ) )
+    CHECK(   ( a <  b ) )
+    CHECK( ! ( a >  b ) )
+    CHECK(   ( a <= b ) )
+    CHECK( ! ( a >= b ) )
+}
+TEST( comparisons03, Rational )
+{
+    Rational a{ 10, 32 };
+    Rational b{ 10, 32 };
+    CHECK(   ( a == b ) )
+    CHECK( ! ( a != b ) )
+    CHECK( ! ( a <  b ) )
+    CHECK( ! ( a >  b ) )
+    CHECK(   ( a <= b ) )
+    CHECK(   ( a >= b ) )
+}
+TEST( comparisons04, Rational )
+{
+    Rational a{ 10, 32 };
+    Rational b{ 10, 31 };
+    CHECK( ! ( a == b ) )
+    CHECK(   ( a != b ) )
+    CHECK(   ( a <  b ) )
+    CHECK( ! ( a >  b ) )
+    CHECK(   ( a <= b ) )
+    CHECK( ! ( a >= b ) )
+}
+TEST( comparisons05, Rational )
+{
+    Rational a{ 10, 1  };
+    Rational b{ 10, 32 };
+    CHECK( ! ( a == b ) )
+    CHECK(   ( a != b ) )
+    CHECK( ! ( a <  b ) )
+    CHECK(   ( a >  b ) )
+    CHECK( ! ( a <= b ) )
+    CHECK(   ( a >= b ) )
 }

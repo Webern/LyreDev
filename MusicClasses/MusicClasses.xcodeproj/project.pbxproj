@@ -20,6 +20,8 @@
 		299DA3291B2F254A00254FFF /* Measure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299DA3271B2F254A00254FFF /* Measure.cpp */; };
 		299DA32C1B2F26B400254FFF /* TimeSignature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299DA32A1B2F26B400254FFF /* TimeSignature.cpp */; };
 		299DA32F1B2F274F00254FFF /* Note.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299DA32D1B2F274F00254FFF /* Note.cpp */; };
+		29BC6C461B368D0F009FC014 /* DurationBaseTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29BC6C451B368D0F009FC014 /* DurationBaseTest.cpp */; };
+		29CE92181B34EC780024B3DA /* DurationBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CE92161B34EC780024B3DA /* DurationBase.cpp */; };
 		29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D511AECD34C008A51B0 /* Failure.cpp */; };
 		29E77D611AECD34C008A51B0 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D531AECD34C008A51B0 /* Test.cpp */; };
 		29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E77D561AECD34C008A51B0 /* TestRegistry.cpp */; };
@@ -66,6 +68,9 @@
 		299DA32B1B2F26B400254FFF /* TimeSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSignature.h; sourceTree = "<group>"; };
 		299DA32D1B2F274F00254FFF /* Note.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Note.cpp; sourceTree = "<group>"; };
 		299DA32E1B2F274F00254FFF /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		29BC6C451B368D0F009FC014 /* DurationBaseTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurationBaseTest.cpp; sourceTree = "<group>"; };
+		29CE92161B34EC780024B3DA /* DurationBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurationBase.cpp; sourceTree = "<group>"; };
+		29CE92171B34EC780024B3DA /* DurationBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurationBase.h; sourceTree = "<group>"; };
 		29E77D441AECD19D008A51B0 /* MusicClasses */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MusicClasses; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E77D511AECD34C008A51B0 /* Failure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Failure.cpp; sourceTree = "<group>"; };
 		29E77D521AECD34C008A51B0 /* Failure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Failure.h; sourceTree = "<group>"; };
@@ -95,6 +100,9 @@
 		29154F6A1B2C7D4800DBE963 /* MusicClasses */ = {
 			isa = PBXGroup;
 			children = (
+				29CE92161B34EC780024B3DA /* DurationBase.cpp */,
+				29CE92171B34EC780024B3DA /* DurationBase.h */,
+				29BC6C451B368D0F009FC014 /* DurationBaseTest.cpp */,
 				29154F641B2C7C9500DBE963 /* Instrument.cpp */,
 				29154F651B2C7C9500DBE963 /* Instrument.h */,
 				299DA3271B2F254A00254FFF /* Measure.cpp */,
@@ -219,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29BC6C461B368D0F009FC014 /* DurationBaseTest.cpp in Sources */,
 				2940EA461B09B05800436F11 /* Movement.cpp in Sources */,
 				2949BC141B2549E100E760F4 /* PartStack.cpp in Sources */,
 				29E77D601AECD34C008A51B0 /* Failure.cpp in Sources */,
@@ -231,6 +240,7 @@
 				299DA32F1B2F274F00254FFF /* Note.cpp in Sources */,
 				2949BC171B254C8400E760F4 /* Part.cpp in Sources */,
 				2940EA431B09B04E00436F11 /* Piece.cpp in Sources */,
+				29CE92181B34EC780024B3DA /* DurationBase.cpp in Sources */,
 				2907F8711B33C9E100ADC737 /* RationalTest.cpp in Sources */,
 				29154F691B2C7CE200DBE963 /* PartGroup.cpp in Sources */,
 				29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */,

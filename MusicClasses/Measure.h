@@ -29,6 +29,13 @@ namespace music
     using NoteSetIter = NoteSet::iterator;
     using NoteSetIterConst = NoteSet::const_iterator;
     
+    class Rest;
+    using RestPtr = std::shared_ptr<Rest>;
+    using RestUPtr = std::unique_ptr<Rest>;
+    using RestSet = std::vector<RestPtr>;
+    using RestSetIter = RestSet::iterator;
+    using RestSetIterConst = RestSet::const_iterator;
+    
     class Measure
     {
     public:

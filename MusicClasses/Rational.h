@@ -34,8 +34,11 @@ namespace music
          the same (least common) denominator */
         static void lcd( Rational& a, Rational& b );
         
-        /* return an equivalent Rational number
-         with the smallest possible denominator */
+        /* return the equivalent Rational number
+         with the smallest possible denominator.
+         also, if both numerator and denominator
+         are negative, they will be replaced by
+         positive numebrs. */
         static Rational reduce( const Rational& r );
         
         
@@ -47,6 +50,10 @@ namespace music
     /* Comparisons in the mathematical sense, i.e. 1/3 == 4/12 */
     bool operator==( const Rational& left, const Rational& right );
     bool operator!=( const Rational& left, const Rational& right );
+    bool operator<( const Rational& left, const Rational& right );
+    bool operator>( const Rational& left, const Rational& right );
+    bool operator<=( const Rational& left, const Rational& right );
+    bool operator>=( const Rational& left, const Rational& right );
     
     /* stream a textual representation of the Rational number */
     std::ostream& operator<<( std::ostream& os, const Rational& right );

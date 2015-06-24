@@ -87,8 +87,15 @@ namespace music
     }
     Rational Rational::reduce( const music::Rational& r )
     {
+        
         Int gcf = Rational::gcd( r.getNumerator(), r.getDenominator() );
-        return Rational{ r.getNumerator()/gcf, r.getDenominator()/gcf };
+        Rational temp{ r.getNumerator()/gcf, r.getDenominator()/gcf };
+        if ( temp.getNumerator() < 0 && temp.getDenominator() < 0 )
+        {
+            temp.setNumerator( ( -1 * temp.getNumerator() ) );
+            temp.setDenominator( ( -1 * temp.getDenominator() ) );
+        }
+        return temp;
     }
     bool operator==( const Rational& left, const Rational& right )
     {
@@ -107,6 +114,32 @@ namespace music
     bool operator!=( const Rational& left, const Rational& right )
     {
         return ! ( left == right );
+    }
+    bool operator<( const Rational& left, const Rational& right )
+    {
+        if ( left.getDenominator() == right.getDenominator() )
+        {
+            return left.getNumerator() < right.getNumerator();
+        }
+        else
+        {
+            auto copy_left = left;
+            auto copy_right = right;
+            Rational::lcd( copy_left, copy_right );
+            return copy_left < copy_right;
+        }
+    }
+    bool operator>( const Rational& left, const Rational& right )
+    {
+        return right < left;
+    }
+    bool operator<=( const Rational& left, const Rational& right )
+    {
+        return ( left < right ) || ( left == right );
+    }
+    bool operator>=( const Rational& left, const Rational& right )
+    {
+        return ( right < left ) || ( left == right );
     }
     std::ostream& operator<<( std::ostream& os, const Rational& right )
     {
