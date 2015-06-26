@@ -12,6 +12,7 @@
 		29154F631B2C790000DBE963 /* PartProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29154F611B2C790000DBE963 /* PartProperties.cpp */; };
 		29154F661B2C7C9500DBE963 /* Instrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29154F641B2C7C9500DBE963 /* Instrument.cpp */; };
 		29154F691B2C7CE200DBE963 /* PartGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29154F671B2C7CE200DBE963 /* PartGroup.cpp */; };
+		293869D31B3D16FE00041216 /* DurationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293869D11B3D16FE00041216 /* DurationTest.cpp */; };
 		2940EA431B09B04E00436F11 /* Piece.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2940EA411B09B04E00436F11 /* Piece.cpp */; };
 		2940EA461B09B05800436F11 /* Movement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2940EA441B09B05800436F11 /* Movement.cpp */; };
 		2949BC111B25467F00E760F4 /* MovementAcceptanceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2949BC0F1B25467F00E760F4 /* MovementAcceptanceTest.cpp */; };
@@ -56,6 +57,7 @@
 		29154F651B2C7C9500DBE963 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
 		29154F671B2C7CE200DBE963 /* PartGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartGroup.cpp; sourceTree = "<group>"; };
 		29154F681B2C7CE200DBE963 /* PartGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartGroup.h; sourceTree = "<group>"; };
+		293869D11B3D16FE00041216 /* DurationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurationTest.cpp; sourceTree = "<group>"; };
 		2940EA411B09B04E00436F11 /* Piece.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Piece.cpp; sourceTree = "<group>"; };
 		2940EA421B09B04E00436F11 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
 		2940EA441B09B05800436F11 /* Movement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Movement.cpp; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				295EC1E71B3A73DB00D7B228 /* Duration.cpp */,
 				295EC1E81B3A73DB00D7B228 /* Duration.h */,
+				293869D11B3D16FE00041216 /* DurationTest.cpp */,
 				29CE92161B34EC780024B3DA /* DurationBase.cpp */,
 				29CE92171B34EC780024B3DA /* DurationBase.h */,
 				29BC6C451B368D0F009FC014 /* DurationBaseTest.cpp */,
@@ -258,6 +261,7 @@
 				295EC1EF1B3A77F300D7B228 /* TupletRatio.cpp in Sources */,
 				295EC1EC1B3A759300D7B228 /* DurationCount.cpp in Sources */,
 				29CE92181B34EC780024B3DA /* DurationBase.cpp in Sources */,
+				293869D31B3D16FE00041216 /* DurationTest.cpp in Sources */,
 				2907F8711B33C9E100ADC737 /* RationalTest.cpp in Sources */,
 				29154F691B2C7CE200DBE963 /* PartGroup.cpp in Sources */,
 				29E77D631AECD34C008A51B0 /* TestResult.cpp in Sources */,

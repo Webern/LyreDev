@@ -46,7 +46,7 @@ namespace music
         
         /* */
         Rational& operator*=( const Rational& right );
-
+        Rational& operator/=( const Rational& right );
     private:
         Int myNumerator;
         Int myDenominator;
@@ -62,6 +62,8 @@ namespace music
     
     Rational operator/( const Rational& r, const Rational& l );
     Rational operator*( const Rational& r, const Rational& l );
+    Rational operator+( const Rational& r, const Rational& l );
+    Rational operator-( const Rational& r, const Rational& l );
     
     /* stream a textual representation of the Rational number */
     std::ostream& operator<<( std::ostream& os, const Rational& right );

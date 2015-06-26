@@ -156,6 +156,12 @@ namespace music
         *this = result;
         return *this;
     }
+    Rational& Rational::operator/=( const Rational& right )
+    {
+        auto result = *this / right;
+        *this = result;
+        return *this;
+    }
     Rational operator/( const Rational& r, const Rational& l )
     {
         auto l_recip = l.getReciprocal();
@@ -166,5 +172,23 @@ namespace music
     Rational operator*( const Rational& r, const Rational& l )
     {
         return Rational::reduce( Rational{ r.getNumerator() * l.getNumerator(), r.getDenominator() * l.getDenominator() } );
+    }
+    Rational operator+( const Rational& r, const Rational& l )
+    {
+        auto copy_r = r;
+        auto copy_l = l;
+        Rational::lcd( copy_r, copy_l );
+        Rational output{ copy_r.getNumerator() + copy_l.getNumerator(), copy_r.getDenominator() };
+        Rational::reduce( output );
+        return output;
+    }
+    Rational operator-( const Rational& r, const Rational& l )
+    {
+        auto copy_r = r;
+        auto copy_l = l;
+        Rational::lcd( copy_r, copy_l );
+        Rational output{ copy_r.getNumerator() - copy_l.getNumerator(), copy_r.getDenominator() };
+        Rational::reduce( output );
+        return output;
     }
 }

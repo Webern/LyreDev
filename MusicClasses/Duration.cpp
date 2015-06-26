@@ -16,7 +16,7 @@ namespace music
     
     Duration::Duration( const DurationBase& base, const Int dotCount )
     :myDurationBase{ base }
-    ,myDotCount{ 0 }
+    ,myDotCount{ dotCount }
     ,myTupletRatio{}
     {}
     
@@ -63,9 +63,9 @@ namespace music
         Rational value = myDurationBase.getRational();
         for ( Int i = 0; i < myDotCount; ++i )
         {
-            value *= Rational{ 1, 2 };
+            value = value + ( value * Rational{ 1, 2 } );
         }
-        throw std::runtime_error( "missing logic here" );
+        value /= myTupletRatio.getRational();
         return value;
     }
 }

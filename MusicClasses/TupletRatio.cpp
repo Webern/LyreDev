@@ -7,8 +7,8 @@ namespace music
     ,myDenominator{ DurationCount{ DurationBase{ DurationName::Quarter }, 1 } }
     {}
     TupletRatio::TupletRatio( const DurationCount& numerator, const DurationCount& denominator )
-    :myNumerator{ DurationCount{ DurationBase{ DurationName::Quarter }, 1 } }
-    ,myDenominator{ DurationCount{ DurationBase{ DurationName::Quarter }, 1 } }
+    :myNumerator{ numerator }
+    ,myDenominator{ denominator }
     {}
     DurationCount TupletRatio::getNumerator() const
     {
