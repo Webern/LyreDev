@@ -92,5 +92,28 @@ TEST( Constructor08, Duration )
     CHECK( d.getDurationBase().getDurationName() == DurationName::Eighth )
     CHECK_EQUAL( d.getDotCount(), 0 )
     auto t = d.getTupletRatio();
+    CHECK_EQUAL( Rational( 2, 3 ), t.getRational() )
+}
+
+TEST( GetSet, Duration )
+{
+    Duration d;
+    CHECK_EQUAL( Rational( 1, 1 ), d.getRational() )
+    CHECK( d.getDurationBase().getDurationName() == DurationName::Quarter )
+    CHECK_EQUAL( d.getDotCount(), 0 )
+    auto t = d.getTupletRatio();
+    CHECK_EQUAL( Rational( 1, 1 ), t.getRational() )
+    
+    DurationCount thr{ DurationBase{ DurationName::Eighth }, 3 };
+    DurationCount two{ DurationBase{ DurationName::Eighth }, 2 };
+    TupletRatio triplet{ thr, two };
+    d.setTupletRatio( triplet );
+    d.setDurationBase( DurationBase( DurationName::Half ) );
+    d.setDotCount( 1 );
+    
+    CHECK_EQUAL( Rational( 2, 1 ), d.getRational() )
+    CHECK( d.getDurationBase().getDurationName() == DurationName::Half )
+    CHECK_EQUAL( 1, d.getDotCount() )
+    t = d.getTupletRatio();
     CHECK_EQUAL( Rational( 3, 2 ), t.getRational() )
 }

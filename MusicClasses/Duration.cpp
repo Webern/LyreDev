@@ -57,6 +57,10 @@ namespace music
         {
             myDotCount = 0;
         }
+        else
+        {
+            myDotCount = value;
+        }
     }
     Rational Duration::getRational() const
     {
