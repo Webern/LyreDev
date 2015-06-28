@@ -4,6 +4,7 @@
 #include <memory>
 #include <vector>
 #include "TypeDefs.h"
+#include "Mod.h"
 
 namespace music
 {
@@ -31,9 +32,27 @@ namespace music
     public:
         virtual ~Step() = default;
         Step();
-        explicit Step( const StepName& value );
+        explicit Step( const StepName value );
         explicit Step( const Int value );
+        void setValue( const Int value );
+        void setValue( const StepName value );
+        Int getValue() const;
+        StepName getStepName() const;
+        operator Int() const;
+        Step& operator++();
+        Step& operator++(int);
+        Step& operator--();
+        Step& operator--(int);
+        Step& add( const Int value );
+        Step& subtract( const Int value );
     private:
-        Step myStep;
+        Mod<Int, 7> myValue;
     };
+    
+    bool operator==( const Step& r, const Step& l );
+    bool operator!=( const Step& r, const Step& l );
+    bool operator< ( const Step& r, const Step& l );
+    bool operator> ( const Step& r, const Step& l );
+    bool operator<=( const Step& r, const Step& l );
+    bool operator>=( const Step& r, const Step& l );
 }
