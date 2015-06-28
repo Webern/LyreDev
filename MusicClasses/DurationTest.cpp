@@ -109,8 +109,7 @@ TEST( GetSet, Duration )
     TupletRatio triplet{ thr, two };
     d.setTupletRatio( triplet );
     d.setDurationBase( DurationBase( DurationName::Half ) );
-    d.setDotCount( 1 );
-    
+    d.setDotCount( 1 );    
     CHECK_EQUAL( Rational( 2, 1 ), d.getRational() )
     CHECK( d.getDurationBase().getDurationName() == DurationName::Half )
     CHECK_EQUAL( 1, d.getDotCount() )
