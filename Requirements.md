@@ -1,3 +1,5 @@
+### Note, read more about spelling algorithms.
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.12.8569&rep=rep1&type=pdf
 
 ### Basic
 All Objects which represent items present in music notation will have an isHidden bool.

@@ -20,7 +20,7 @@ namespace music
     public:
         virtual ~Pitch() = default;
     private:
-        PitchBase myPitchBase;
+        Spelling mySpelling;
         Int myOctave;
     };
 }
