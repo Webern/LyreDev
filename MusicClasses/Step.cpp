@@ -99,20 +99,20 @@ namespace music
         ++myValue;
         return *this;
     }
-    Step& Step::operator++(int)
+    Step Step::operator++(int)
     {
-        myValue++;
-        return *this;
+        Step temp{ ( myValue++ ).getValue() };
+        return temp;
     }
     Step& Step::operator--()
     {
         --myValue;
         return *this;
     }
-    Step& Step::operator--(int)
+    Step Step::operator--(int)
     {
-        myValue--;
-        return *this;
+        Step temp{ ( myValue-- ).getValue() };
+        return temp;
     }
     Step& Step::add( const Int value )
     {

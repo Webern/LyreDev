@@ -40,13 +40,13 @@ namespace music
         StepName getStepName() const;
         operator Int() const;
         Step& operator++();
-        Step& operator++(int);
+        Step operator++(int);
         Step& operator--();
-        Step& operator--(int);
+        Step operator--(int);
         Step& add( const Int value );
         Step& subtract( const Int value );
     private:
-        Mod<Int, 7> myValue;
+        Mod<Int,7> myValue;
     };
     
     bool operator==( const Step& r, const Step& l );
