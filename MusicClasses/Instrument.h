@@ -3,6 +3,7 @@
 #include <string>
 #include <memory>
 #include <vector>
+#include "TypeDefs.h"
 
 namespace music
 {
@@ -16,5 +17,12 @@ namespace music
     
     class Instrument
     {
+    public:
+        Instrument();
+        Instrument( const String& name );
+        String getName() const;
+        void setName( const String& value );
+    private:
+        String myName;
     };
 }

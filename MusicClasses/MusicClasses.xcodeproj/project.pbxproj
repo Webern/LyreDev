@@ -25,6 +25,7 @@
 		296CE0FD1B3F87E300DEBD37 /* Spelling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296CE0FB1B3F87E300DEBD37 /* Spelling.cpp */; };
 		296CE1001B3F89B200DEBD37 /* Step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296CE0FE1B3F89B200DEBD37 /* Step.cpp */; };
 		296FD8561B65489E00922966 /* DurationCountTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296FD8541B65489E00922966 /* DurationCountTest.cpp */; };
+		2975A7E71B654C7D008645B7 /* InstrumentTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2975A7E51B654C7D008645B7 /* InstrumentTest.cpp */; };
 		299DA3291B2F254A00254FFF /* Measure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299DA3271B2F254A00254FFF /* Measure.cpp */; };
 		299DA32C1B2F26B400254FFF /* TimeSignature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299DA32A1B2F26B400254FFF /* TimeSignature.cpp */; };
 		299DA32F1B2F274F00254FFF /* Note.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299DA32D1B2F274F00254FFF /* Note.cpp */; };
@@ -87,6 +88,7 @@
 		296CE0FF1B3F89B200DEBD37 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
 		296CE1011B3F8B2200DEBD37 /* Mod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mod.h; sourceTree = "<group>"; };
 		296FD8541B65489E00922966 /* DurationCountTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurationCountTest.cpp; sourceTree = "<group>"; };
+		2975A7E51B654C7D008645B7 /* InstrumentTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InstrumentTest.cpp; sourceTree = "<group>"; };
 		299DA3271B2F254A00254FFF /* Measure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Measure.cpp; sourceTree = "<group>"; };
 		299DA3281B2F254A00254FFF /* Measure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Measure.h; sourceTree = "<group>"; };
 		299DA32A1B2F26B400254FFF /* TimeSignature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimeSignature.cpp; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				296FD8541B65489E00922966 /* DurationCountTest.cpp */,
 				29154F641B2C7C9500DBE963 /* Instrument.cpp */,
 				29154F651B2C7C9500DBE963 /* Instrument.h */,
+				2975A7E51B654C7D008645B7 /* InstrumentTest.cpp */,
 				299DA3271B2F254A00254FFF /* Measure.cpp */,
 				299DA3281B2F254A00254FFF /* Measure.h */,
 				296CE1011B3F8B2200DEBD37 /* Mod.h */,
@@ -301,6 +304,7 @@
 				295EC1E91B3A73DB00D7B228 /* Duration.cpp in Sources */,
 				29154F661B2C7C9500DBE963 /* Instrument.cpp in Sources */,
 				29E967491AF481D900F0B9EC /* PieceAcceptanceTest.cpp in Sources */,
+				2975A7E71B654C7D008645B7 /* InstrumentTest.cpp in Sources */,
 				29E967461AF4811F00F0B9EC /* main.cpp in Sources */,
 				296CE1001B3F89B200DEBD37 /* Step.cpp in Sources */,
 				29E77D621AECD34C008A51B0 /* TestRegistry.cpp in Sources */,
