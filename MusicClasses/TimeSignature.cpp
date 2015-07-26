@@ -2,26 +2,54 @@
 
 namespace music
 {
-    void TimeSignature::setNumerator( const Int value )
+    TimeSignature::TimeSignature()
+    :myBeatCount( 4 )
+    ,myBeatDuration( Duration( DurationBase( DurationName::Quarter ) ) )
+    {}
+    
+    TimeSignature::TimeSignature( Int beatCount, const Duration& beatDuration )
+    :myBeatCount( beatCount )
+    ,myBeatDuration( Duration( DurationBase( DurationName::Quarter ) ) )
+    {
+        setBeatCount( beatCount );
+    }
+    Int TimeSignature::getBeatCount() const
+    {
+        return myBeatCount;
+    }
+    Duration TimeSignature::getBeatDuration() const
+    {
+        return myBeatDuration;
+    }
+    Rational TimeSignature::getMeasureDuration() const
+    {
+        return myBeatDuration.getRational() * Rational{ myBeatCount, 1 };
+    }
+    void TimeSignature::setBeatCount( const Int value )
     {
         if ( value < 1 )
         {
-            myNumerator = 1;
+            myBeatCount = 1;
         }
         else
         {
-            myNumerator = value;
+            myBeatCount = value;
         }
     }
-    void TimeSignature::setDenominator( const Int value )
+    void TimeSignature::setBeatDuration( const Duration& value )
     {
-        if ( value < 1 )
+        myBeatDuration = value;
+    }
+    Int TimeSignature::getDenominator() const
+    {
+        Rational r = myBeatDuration.getRational();
+        Rational denominator = r.getReciprocal();
+        denominator *= Rational{ 4, 1 };
+        denominator = Rational::reduce( denominator );
+        if ( denominator.getDenominator() == 1 )
         {
-            myDenominator = 1;
+            return denominator.getNumerator();
         }
-        else
-        {
-            myDenominator = value;
-        }
+        throw std::runtime_error( "Impossible time signature" );
     }
 }
