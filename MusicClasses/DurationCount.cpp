@@ -30,5 +30,9 @@ namespace music
         {
             myCount = 1;
         }
+        else
+        {
+            myCount = value;
+        }
     }
 }
