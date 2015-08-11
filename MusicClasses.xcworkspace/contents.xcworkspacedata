@@ -14,7 +14,4 @@
          location = "group:Requirements.md">
       </FileRef>
    </Group>
-   <FileRef
-      location = "group:MusicClasses/MusicClasses.xcodeproj">
-   </FileRef>
 </Workspace>
