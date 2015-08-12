@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D6B2DB5A-7B27-4ADD-B02A-4BD09F55DB7E</string>
+	<string>C7787EC2-4A4E-469A-820E-1D0FF4A24CF0</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MusicClasses</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/Webern/Music-Classes.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MusicClasses.xcworkspace</string>
+	<string>MusicClasses/MusicClasses.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B10566F6-591B-4774-A1CD-6A878949D0EC</key>
-		<string>..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Webern/Music-Classes.git</string>
