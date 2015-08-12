@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "29E734071B7ABF610046F4F8"
-               BuildableName = "Test"
-               BlueprintName = "Test"
-               ReferencedContainer = "container:Test.xcodeproj">
+               BlueprintIdentifier = "29E7342E1B7ACB590046F4F8"
+               BuildableName = "LyreTests"
+               BlueprintName = "LyreTests"
+               ReferencedContainer = "container:LyreTests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "29E734071B7ABF610046F4F8"
-            BuildableName = "Test"
-            BlueprintName = "Test"
-            ReferencedContainer = "container:Test.xcodeproj">
+            BlueprintIdentifier = "29E7342E1B7ACB590046F4F8"
+            BuildableName = "LyreTests"
+            BlueprintName = "LyreTests"
+            ReferencedContainer = "container:LyreTests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "29E734071B7ABF610046F4F8"
-            BuildableName = "Test"
-            BlueprintName = "Test"
-            ReferencedContainer = "container:Test.xcodeproj">
+            BlueprintIdentifier = "29E7342E1B7ACB590046F4F8"
+            BuildableName = "LyreTests"
+            BlueprintName = "LyreTests"
+            ReferencedContainer = "container:LyreTests.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "29E734071B7ABF610046F4F8"
-            BuildableName = "Test"
-            BlueprintName = "Test"
-            ReferencedContainer = "container:Test.xcodeproj">
+            BlueprintIdentifier = "29E7342E1B7ACB590046F4F8"
+            BuildableName = "LyreTests"
+            BlueprintName = "LyreTests"
+            ReferencedContainer = "container:LyreTests.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

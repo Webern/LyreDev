@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Test/Test.xcodeproj">
+      location = "group:LyreTests/LyreTests.xcodeproj">
    </FileRef>
    <Group
       location = "container:"
