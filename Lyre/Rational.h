@@ -46,8 +46,10 @@ namespace lyre
             Rational getReciprocal() const;
             
             /* */
-            Rational& operator*=( const Rational& right );
             Rational& operator/=( const Rational& right );
+            Rational& operator*=( const Rational& right );
+            Rational& operator+=( const Rational& right ); /* not implemented */
+            Rational& operator-=( const Rational& right ); /* not implemented */
         private:
             Integer myNumerator;
             Integer myDenominator;

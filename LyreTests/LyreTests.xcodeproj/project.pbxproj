@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		294CD80E1B7BC61A0042DDF5 /* TestRational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */; };
 		29E734331B7ACB590046F4F8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734321B7ACB590046F4F8 /* main.cpp */; };
 		29E734591B7ACBA50046F4F8 /* cpulFailure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E7344D1B7ACBA50046F4F8 /* cpulFailure.cpp */; };
 		29E7345A1B7ACBA50046F4F8 /* cpulRun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E7344F1B7ACBA50046F4F8 /* cpulRun.cpp */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRational.cpp; sourceTree = "<group>"; };
 		29E7342F1B7ACB590046F4F8 /* LyreTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTests; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E734321B7ACB590046F4F8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		29E7344D1B7ACBA50046F4F8 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulFailure.cpp; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				29E734571B7ACBA50046F4F8 /* cpulTestResult.h */,
 				29E734321B7ACB590046F4F8 /* main.cpp */,
 				29E734581B7ACBA50046F4F8 /* TestMod.cpp */,
+				294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */,
 			);
 			path = LyreTests;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				29E7345A1B7ACBA50046F4F8 /* cpulRun.cpp in Sources */,
 				29E7345C1B7ACBA50046F4F8 /* cpulTestRegistry.cpp in Sources */,
 				29E7345B1B7ACBA50046F4F8 /* cpulTest.cpp in Sources */,
+				294CD80E1B7BC61A0042DDF5 /* TestRational.cpp in Sources */,
 				29E734591B7ACBA50046F4F8 /* cpulFailure.cpp in Sources */,
 				29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */,
 				29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */,
@@ -273,6 +277,7 @@
 				29E7343A1B7ACB590046F4F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
