@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29E734331B7ACB590046F4F8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734321B7ACB590046F4F8 /* main.cpp */; };
+		29E734591B7ACBA50046F4F8 /* cpulFailure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E7344D1B7ACBA50046F4F8 /* cpulFailure.cpp */; };
+		29E7345A1B7ACBA50046F4F8 /* cpulRun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E7344F1B7ACBA50046F4F8 /* cpulRun.cpp */; };
+		29E7345B1B7ACBA50046F4F8 /* cpulTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734511B7ACBA50046F4F8 /* cpulTest.cpp */; };
+		29E7345C1B7ACBA50046F4F8 /* cpulTestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734541B7ACBA50046F4F8 /* cpulTestRegistry.cpp */; };
+		29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */; };
+		29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734581B7ACBA50046F4F8 /* TestMod.cpp */; };
+		29E734781B7ACE750046F4F8 /* libLyre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E734771B7ACE750046F4F8 /* libLyre.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		29E7342D1B7ACB590046F4F8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		29E7342F1B7ACB590046F4F8 /* LyreTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTests; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E734321B7ACB590046F4F8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		29E7344D1B7ACBA50046F4F8 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulFailure.cpp; sourceTree = "<group>"; };
+		29E7344E1B7ACBA50046F4F8 /* cpulFailure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulFailure.h; sourceTree = "<group>"; };
+		29E7344F1B7ACBA50046F4F8 /* cpulRun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulRun.cpp; sourceTree = "<group>"; };
+		29E734501B7ACBA50046F4F8 /* cpulRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulRun.h; sourceTree = "<group>"; };
+		29E734511B7ACBA50046F4F8 /* cpulTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulTest.cpp; sourceTree = "<group>"; };
+		29E734521B7ACBA50046F4F8 /* cpulTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTest.h; sourceTree = "<group>"; };
+		29E734531B7ACBA50046F4F8 /* cpulTestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTestHarness.h; sourceTree = "<group>"; };
+		29E734541B7ACBA50046F4F8 /* cpulTestRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulTestRegistry.cpp; sourceTree = "<group>"; };
+		29E734551B7ACBA50046F4F8 /* cpulTestRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTestRegistry.h; sourceTree = "<group>"; };
+		29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulTestResult.cpp; sourceTree = "<group>"; };
+		29E734571B7ACBA50046F4F8 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTestResult.h; sourceTree = "<group>"; };
+		29E734581B7ACBA50046F4F8 /* TestMod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMod.cpp; sourceTree = "<group>"; };
+		29E734771B7ACE750046F4F8 /* libLyre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLyre.a; path = ../Build/Products/Debug/libLyre.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29E7342C1B7ACB590046F4F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29E734781B7ACE750046F4F8 /* libLyre.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29E734261B7ACB590046F4F8 = {
+			isa = PBXGroup;
+			children = (
+				29E734771B7ACE750046F4F8 /* libLyre.a */,
+				29E734311B7ACB590046F4F8 /* LyreTests */,
+				29E734301B7ACB590046F4F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		29E734301B7ACB590046F4F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29E7342F1B7ACB590046F4F8 /* LyreTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29E734311B7ACB590046F4F8 /* LyreTests */ = {
+			isa = PBXGroup;
+			children = (
+				29E7344D1B7ACBA50046F4F8 /* cpulFailure.cpp */,
+				29E7344E1B7ACBA50046F4F8 /* cpulFailure.h */,
+				29E7344F1B7ACBA50046F4F8 /* cpulRun.cpp */,
+				29E734501B7ACBA50046F4F8 /* cpulRun.h */,
+				29E734511B7ACBA50046F4F8 /* cpulTest.cpp */,
+				29E734521B7ACBA50046F4F8 /* cpulTest.h */,
+				29E734531B7ACBA50046F4F8 /* cpulTestHarness.h */,
+				29E734541B7ACBA50046F4F8 /* cpulTestRegistry.cpp */,
+				29E734551B7ACBA50046F4F8 /* cpulTestRegistry.h */,
+				29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */,
+				29E734571B7ACBA50046F4F8 /* cpulTestResult.h */,
+				29E734321B7ACB590046F4F8 /* main.cpp */,
+				29E734581B7ACBA50046F4F8 /* TestMod.cpp */,
+			);
+			path = LyreTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29E7342E1B7ACB590046F4F8 /* LyreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29E734381B7ACB590046F4F8 /* Build configuration list for PBXNativeTarget "LyreTests" */;
+			buildPhases = (
+				29E7342B1B7ACB590046F4F8 /* Sources */,
+				29E7342C1B7ACB590046F4F8 /* Frameworks */,
+				29E7342D1B7ACB590046F4F8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LyreTests;
+			productName = LyreTests;
+			productReference = 29E7342F1B7ACB590046F4F8 /* LyreTests */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29E734271B7ACB590046F4F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Matthew James Briggs";
+			};
+			buildConfigurationList = 29E7342A1B7ACB590046F4F8 /* Build configuration list for PBXProject "LyreTests" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29E734261B7ACB590046F4F8;
+			productRefGroup = 29E734301B7ACB590046F4F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29E7342E1B7ACB590046F4F8 /* LyreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29E7342B1B7ACB590046F4F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29E7345A1B7ACBA50046F4F8 /* cpulRun.cpp in Sources */,
+				29E7345C1B7ACBA50046F4F8 /* cpulTestRegistry.cpp in Sources */,
+				29E7345B1B7ACBA50046F4F8 /* cpulTest.cpp in Sources */,
+				29E734591B7ACBA50046F4F8 /* cpulFailure.cpp in Sources */,
+				29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */,
+				29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */,
+				29E734331B7ACB590046F4F8 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		29E734361B7ACB590046F4F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../Lyre/**";
+			};
+			name = Debug;
+		};
+		29E734371B7ACB590046F4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../Lyre/**";
+			};
+			name = Release;
+		};
+		29E734391B7ACB590046F4F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/MusicClasses/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		29E7343A1B7ACB590046F4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/MusicClasses/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29E7342A1B7ACB590046F4F8 /* Build configuration list for PBXProject "LyreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29E734361B7ACB590046F4F8 /* Debug */,
+				29E734371B7ACB590046F4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29E734381B7ACB590046F4F8 /* Build configuration list for PBXNativeTarget "LyreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29E734391B7ACB590046F4F8 /* Debug */,
+				29E7343A1B7ACB590046F4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29E734271B7ACB590046F4F8 /* Project object */;
+}
