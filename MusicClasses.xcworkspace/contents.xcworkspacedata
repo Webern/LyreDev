@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Lyre/Lyre.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:LyreTests/LyreTests.xcodeproj">
    </FileRef>
    <Group

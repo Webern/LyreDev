@@ -13,7 +13,8 @@
 		29E7345B1B7ACBA50046F4F8 /* cpulTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734511B7ACBA50046F4F8 /* cpulTest.cpp */; };
 		29E7345C1B7ACBA50046F4F8 /* cpulTestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734541B7ACBA50046F4F8 /* cpulTestRegistry.cpp */; };
 		29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */; };
-		29E7345E1B7ACBA50046F4F8 /* Test001.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734581B7ACBA50046F4F8 /* Test001.cpp */; };
+		29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734581B7ACBA50046F4F8 /* TestMod.cpp */; };
+		29E734781B7ACE750046F4F8 /* libLyre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E734771B7ACE750046F4F8 /* libLyre.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +43,8 @@
 		29E734551B7ACBA50046F4F8 /* cpulTestRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTestRegistry.h; sourceTree = "<group>"; };
 		29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulTestResult.cpp; sourceTree = "<group>"; };
 		29E734571B7ACBA50046F4F8 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTestResult.h; sourceTree = "<group>"; };
-		29E734581B7ACBA50046F4F8 /* Test001.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test001.cpp; sourceTree = "<group>"; };
+		29E734581B7ACBA50046F4F8 /* TestMod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMod.cpp; sourceTree = "<group>"; };
+		29E734771B7ACE750046F4F8 /* libLyre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLyre.a; path = ../Build/Products/Debug/libLyre.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E734781B7ACE750046F4F8 /* libLyre.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		29E734261B7ACB590046F4F8 = {
 			isa = PBXGroup;
 			children = (
+				29E734771B7ACE750046F4F8 /* libLyre.a */,
 				29E734311B7ACB590046F4F8 /* LyreTests */,
 				29E734301B7ACB590046F4F8 /* Products */,
 			);
@@ -87,7 +91,7 @@
 				29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */,
 				29E734571B7ACBA50046F4F8 /* cpulTestResult.h */,
 				29E734321B7ACB590046F4F8 /* main.cpp */,
-				29E734581B7ACBA50046F4F8 /* Test001.cpp */,
+				29E734581B7ACBA50046F4F8 /* TestMod.cpp */,
 			);
 			path = LyreTests;
 			sourceTree = "<group>";
@@ -147,7 +151,7 @@
 				29E7345C1B7ACBA50046F4F8 /* cpulTestRegistry.cpp in Sources */,
 				29E7345B1B7ACBA50046F4F8 /* cpulTest.cpp in Sources */,
 				29E734591B7ACBA50046F4F8 /* cpulFailure.cpp in Sources */,
-				29E7345E1B7ACBA50046F4F8 /* Test001.cpp in Sources */,
+				29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */,
 				29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */,
 				29E734331B7ACB590046F4F8 /* main.cpp in Sources */,
 			);
@@ -191,6 +195,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../Lyre/**";
 			};
 			name = Debug;
 		};
@@ -223,12 +228,17 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "../Lyre/**";
 			};
 			name = Release;
 		};
 		29E734391B7ACB590046F4F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/MusicClasses/Build/Products/Debug,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -236,6 +246,10 @@
 		29E7343A1B7ACB590046F4F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/MusicClasses/Build/Products/Debug,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
