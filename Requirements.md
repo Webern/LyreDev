@@ -43,7 +43,7 @@ A Staff (within each measure) has a beginning Clef.
 ### Time Signature
 A TimeSignature has Duration named "BeatType" which represents the bottom number in a Time Signature.
 
-A TimeSignature will have an Int representing the number of beats (the top number in a Time Signature).
+A TimeSignature will have an Integer representing the number of beats (the top number in a Time Signature).
 
 ### Piece
 A Piece can have one or many Movements.

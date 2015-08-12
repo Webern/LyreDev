@@ -1,43 +1,47 @@
 #pragma once
 #include <cmath>
 
+/* The Mod class restrics values of an integral
+ to be between x=zero and MODULUS-1 by using the
+ % operator. */
+
 namespace lyre
 {
     namespace p
     {
-        template <typename T, T M>
+        template <typename TYPE, TYPE MODULUS>
         class Mod
         {
         public:
             Mod()
             :myValue( 0 )
             {}
-            explicit Mod( const T value )
+            explicit Mod( const TYPE value )
             :myValue( value )
             {
                 setValue( value );
             }
-            T getValue() const
+            TYPE getValue() const
             {
                 return myValue;
             }
-            void setValue( const T value )
+            void setValue( const TYPE value )
             {
                 if ( value >= 0 )
                 {
-                    myValue = value % M;
+                    myValue = value % MODULUS;
                 }
                 else
                 {
-                    myValue = ( M - ( std::abs( value ) % M ) ) % M;
+                    myValue = ( MODULUS - ( std::abs( value ) % MODULUS ) ) % MODULUS;
                 }
             }
-            Mod& add( const T value )
+            Mod& add( const TYPE value )
             {
                 setValue( myValue + value );
                 return *this;
             }
-            Mod& subtract( const T value )
+            Mod& subtract( const TYPE value )
             {
                 setValue( myValue - value );
                 return *this;
@@ -89,7 +93,7 @@ namespace lyre
                 return this->getValue() < rhs.getValue();
             }
         private:
-            T myValue;
+            TYPE myValue;
         };
     }
 }

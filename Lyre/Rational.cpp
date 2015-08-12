@@ -5,7 +5,7 @@ namespace lyre
     namespace p
     {
         
-        Rational::Rational( const Int numerator, const Int denominator )
+        Rational::Rational( const Integer numerator, const Integer denominator )
         :myNumerator( numerator )
         ,myDenominator( denominator )
         {
@@ -22,11 +22,11 @@ namespace lyre
             return ((Float)myNumerator)/((Float)myDenominator);
         }
         
-        void Rational::setNumerator( const Int value )
+        void Rational::setNumerator( const Integer value )
         {
             myNumerator = value;
         }
-        void Rational::setDenominator( const Int value )
+        void Rational::setDenominator( const Integer value )
         {
             if ( value == 0 )
             {
@@ -38,15 +38,15 @@ namespace lyre
             }
         }
         
-        Int Rational::getDenominator() const
+        Integer Rational::getDenominator() const
         {
             return myDenominator;
         }
-        Int Rational::getNumerator() const
+        Integer Rational::getNumerator() const
         {
             return myNumerator;
         }
-        Int Rational::gcd( Int a, Int b )
+        Integer Rational::gcd( Integer a, Integer b )
         {
             // http://stackoverflow.com/a/4229930/2779792
             for (;;)
@@ -57,7 +57,7 @@ namespace lyre
                 a %= b;
             }
         }
-        Int Rational::lcm( Int a, Int b )
+        Integer Rational::lcm( Integer a, Integer b )
         {
             // http://stackoverflow.com/a/4229930/2779792
             auto temp = gcd(a, b);
@@ -90,7 +90,7 @@ namespace lyre
         Rational Rational::reduce( const lyre::p::Rational& r )
         {
             
-            Int gcf = Rational::gcd( r.getNumerator(), r.getDenominator() );
+            Integer gcf = Rational::gcd( r.getNumerator(), r.getDenominator() );
             Rational temp{ r.getNumerator()/gcf, r.getDenominator()/gcf };
             if ( temp.getNumerator() < 0 && temp.getDenominator() < 0 )
             {

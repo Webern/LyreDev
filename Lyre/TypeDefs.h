@@ -3,7 +3,7 @@
 
 namespace lyre
 {
-    using Int = int;
+    using Integer = int;
     using Float = long double;
     using String = std::string;
 }

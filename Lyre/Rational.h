@@ -11,25 +11,25 @@ namespace lyre
         {
         public:
             Rational();
-            Rational( const Int numerator, const Int denominator );
+            Rational( const Integer numerator, const Integer denominator );
             
             /* return the decimal approximation of the rational
              number as a calculator would. i.e. 1/3 -> 0.33333... */
             Float getFloat() const;
             
-            Int getNumerator() const;
-            void setNumerator( const Int value );
+            Integer getNumerator() const;
+            void setNumerator( const Integer value );
             
-            Int getDenominator() const;
-            void setDenominator( const Int value );
+            Integer getDenominator() const;
+            void setDenominator( const Integer value );
             
             /* return the greatest common divisor
              for a and b */
-            static Int gcd( Int a, Int b );
+            static Integer gcd( Integer a, Integer b );
             
             /* return the least common multiple
              for a and b */
-            static Int lcm( Int a, Int b );
+            static Integer lcm( Integer a, Integer b );
             
             /* convert a and b so that they have
              the same (least common) denominator */
@@ -49,8 +49,8 @@ namespace lyre
             Rational& operator*=( const Rational& right );
             Rational& operator/=( const Rational& right );
         private:
-            Int myNumerator;
-            Int myDenominator;
+            Integer myNumerator;
+            Integer myDenominator;
         };
         
         /* Comparisons in the mathematical sense, i.e. 1/3 == 4/12 */
