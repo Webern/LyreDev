@@ -3,7 +3,8 @@
 
 /* The Mod class restrics values of an integral
  to be between x=zero and MODULUS-1 by using the
- % operator. */
+ % operator. It probably only works for integral
+ types (int, long, short, char, etc) */
 
 namespace lyre
 {

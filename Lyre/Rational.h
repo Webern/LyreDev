@@ -2,7 +2,12 @@
 #include <iostream>
 #include "TypeDefs.h"
 
-/* I need rational numbers for music and I don't want to include boost */
+/* I need rational numbers for music and I don't
+ want to include boost.  This would be a good
+ candidate for template generalization, but I
+ don't anticipate needing it for anything other
+ than int. */
+
 namespace lyre
 {
     namespace p
@@ -10,6 +15,10 @@ namespace lyre
         class Rational
         {
         public:
+            /* Default constructor sets value to 0/1.
+             If you use the value constructor and try
+             to set the denominator to 0, the denominator
+             will be set to 1 instead. */
             Rational();
             Rational( const Integer numerator, const Integer denominator );
             
@@ -20,12 +29,16 @@ namespace lyre
             Integer getNumerator() const;
             void setNumerator( const Integer value );
             
+            /* Denominator cannot be zero,
+             attempting to set the denominator
+             to zero is a no-op. */
             Integer getDenominator() const;
             void setDenominator( const Integer value );
             
             /* return the greatest common divisor
              for a and b */
             static Integer gcd( Integer a, Integer b );
+            static Integer gcd( std::initializer_list<int> integers );
             
             /* return the least common multiple
              for a and b */

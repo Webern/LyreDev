@@ -33,18 +33,18 @@
 /* Begin PBXFileReference section */
 		294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRational.cpp; sourceTree = "<group>"; };
 		29E7342F1B7ACB590046F4F8 /* LyreTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTests; sourceTree = BUILT_PRODUCTS_DIR; };
-		29E734321B7ACB590046F4F8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		29E7344D1B7ACBA50046F4F8 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulFailure.cpp; sourceTree = "<group>"; };
-		29E7344E1B7ACBA50046F4F8 /* cpulFailure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulFailure.h; sourceTree = "<group>"; };
-		29E7344F1B7ACBA50046F4F8 /* cpulRun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulRun.cpp; sourceTree = "<group>"; };
-		29E734501B7ACBA50046F4F8 /* cpulRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulRun.h; sourceTree = "<group>"; };
-		29E734511B7ACBA50046F4F8 /* cpulTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulTest.cpp; sourceTree = "<group>"; };
-		29E734521B7ACBA50046F4F8 /* cpulTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTest.h; sourceTree = "<group>"; };
-		29E734531B7ACBA50046F4F8 /* cpulTestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTestHarness.h; sourceTree = "<group>"; };
-		29E734541B7ACBA50046F4F8 /* cpulTestRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulTestRegistry.cpp; sourceTree = "<group>"; };
-		29E734551B7ACBA50046F4F8 /* cpulTestRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTestRegistry.h; sourceTree = "<group>"; };
-		29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpulTestResult.cpp; sourceTree = "<group>"; };
-		29E734571B7ACBA50046F4F8 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpulTestResult.h; sourceTree = "<group>"; };
+		29E734321B7ACB590046F4F8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = LyreTests/main.cpp; sourceTree = "<group>"; };
+		29E7344D1B7ACBA50046F4F8 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulFailure.cpp; path = LyreTests/cpulFailure.cpp; sourceTree = "<group>"; };
+		29E7344E1B7ACBA50046F4F8 /* cpulFailure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulFailure.h; path = LyreTests/cpulFailure.h; sourceTree = "<group>"; };
+		29E7344F1B7ACBA50046F4F8 /* cpulRun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulRun.cpp; path = LyreTests/cpulRun.cpp; sourceTree = "<group>"; };
+		29E734501B7ACBA50046F4F8 /* cpulRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulRun.h; path = LyreTests/cpulRun.h; sourceTree = "<group>"; };
+		29E734511B7ACBA50046F4F8 /* cpulTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulTest.cpp; path = LyreTests/cpulTest.cpp; sourceTree = "<group>"; };
+		29E734521B7ACBA50046F4F8 /* cpulTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTest.h; path = LyreTests/cpulTest.h; sourceTree = "<group>"; };
+		29E734531B7ACBA50046F4F8 /* cpulTestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestHarness.h; path = LyreTests/cpulTestHarness.h; sourceTree = "<group>"; };
+		29E734541B7ACBA50046F4F8 /* cpulTestRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulTestRegistry.cpp; path = LyreTests/cpulTestRegistry.cpp; sourceTree = "<group>"; };
+		29E734551B7ACBA50046F4F8 /* cpulTestRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestRegistry.h; path = LyreTests/cpulTestRegistry.h; sourceTree = "<group>"; };
+		29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulTestResult.cpp; path = LyreTests/cpulTestResult.cpp; sourceTree = "<group>"; };
+		29E734571B7ACBA50046F4F8 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestResult.h; path = LyreTests/cpulTestResult.h; sourceTree = "<group>"; };
 		29E734581B7ACBA50046F4F8 /* TestMod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMod.cpp; sourceTree = "<group>"; };
 		29E734771B7ACE750046F4F8 /* libLyre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLyre.a; path = ../Build/Products/Debug/libLyre.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,9 +61,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29783A5E1B8639C9001E5C15 /* CppUnitLite */ = {
+			isa = PBXGroup;
+			children = (
+				29E7344D1B7ACBA50046F4F8 /* cpulFailure.cpp */,
+				29E7344E1B7ACBA50046F4F8 /* cpulFailure.h */,
+				29E7344F1B7ACBA50046F4F8 /* cpulRun.cpp */,
+				29E734501B7ACBA50046F4F8 /* cpulRun.h */,
+				29E734511B7ACBA50046F4F8 /* cpulTest.cpp */,
+				29E734521B7ACBA50046F4F8 /* cpulTest.h */,
+				29E734531B7ACBA50046F4F8 /* cpulTestHarness.h */,
+				29E734541B7ACBA50046F4F8 /* cpulTestRegistry.cpp */,
+				29E734551B7ACBA50046F4F8 /* cpulTestRegistry.h */,
+				29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */,
+				29E734571B7ACBA50046F4F8 /* cpulTestResult.h */,
+				29E734321B7ACB590046F4F8 /* main.cpp */,
+			);
+			name = CppUnitLite;
+			sourceTree = "<group>";
+		};
 		29E734261B7ACB590046F4F8 = {
 			isa = PBXGroup;
 			children = (
+				29783A5E1B8639C9001E5C15 /* CppUnitLite */,
 				29E734771B7ACE750046F4F8 /* libLyre.a */,
 				29E734311B7ACB590046F4F8 /* LyreTests */,
 				29E734301B7ACB590046F4F8 /* Products */,
@@ -81,18 +101,6 @@
 		29E734311B7ACB590046F4F8 /* LyreTests */ = {
 			isa = PBXGroup;
 			children = (
-				29E7344D1B7ACBA50046F4F8 /* cpulFailure.cpp */,
-				29E7344E1B7ACBA50046F4F8 /* cpulFailure.h */,
-				29E7344F1B7ACBA50046F4F8 /* cpulRun.cpp */,
-				29E734501B7ACBA50046F4F8 /* cpulRun.h */,
-				29E734511B7ACBA50046F4F8 /* cpulTest.cpp */,
-				29E734521B7ACBA50046F4F8 /* cpulTest.h */,
-				29E734531B7ACBA50046F4F8 /* cpulTestHarness.h */,
-				29E734541B7ACBA50046F4F8 /* cpulTestRegistry.cpp */,
-				29E734551B7ACBA50046F4F8 /* cpulTestRegistry.h */,
-				29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */,
-				29E734571B7ACBA50046F4F8 /* cpulTestResult.h */,
-				29E734321B7ACB590046F4F8 /* main.cpp */,
 				29E734581B7ACBA50046F4F8 /* TestMod.cpp */,
 				294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */,
 			);

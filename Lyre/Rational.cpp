@@ -1,4 +1,5 @@
 #include "Rational.h"
+#include <exception>
 
 namespace lyre
 {
@@ -7,7 +8,7 @@ namespace lyre
         
         Rational::Rational( const Integer numerator, const Integer denominator )
         :myNumerator( numerator )
-        ,myDenominator( denominator )
+        ,myDenominator( 1 )
         {
             setDenominator( denominator );
         }
@@ -28,11 +29,7 @@ namespace lyre
         }
         void Rational::setDenominator( const Integer value )
         {
-            if ( value == 0 )
-            {
-                myDenominator = 1;
-            }
-            else
+            if ( value != 0 )
             {
                 myDenominator = value;
             }
@@ -48,6 +45,8 @@ namespace lyre
         }
         Integer Rational::gcd( Integer a, Integer b )
         {
+            a = std::abs( a );
+            b = std::abs( b );
             // http://stackoverflow.com/a/4229930/2779792
             for (;;)
             {
@@ -56,6 +55,42 @@ namespace lyre
                 if ( b == 0 ) return a;
                 a %= b;
             }
+        }
+        Integer Rational::gcd( std::initializer_list<Integer> integers )
+        {
+            int gcd = 1;
+            if ( integers.size() == 0 )
+            {
+                return gcd;
+            }
+            else if( integers.size() == 1 )
+            {
+                gcd = std::abs( *( integers.begin() ) );
+                return gcd == 0 ? 1 : gcd;
+            }
+            else
+            {
+                bool zeroEncountered = false;
+                auto iter = integers.begin();
+                auto end = integers.end();
+                gcd = *iter;
+                zeroEncountered = ( gcd == 0 );
+                ++iter;
+                for (; iter != end; ++iter )
+                {
+                    if ( *iter == 0 )
+                    {
+                        if ( zeroEncountered )
+                        {
+                            throw std::runtime_error( "initializer list for gcd function may contain no more than a single 0" );
+                        }
+                        zeroEncountered = true;
+                    }
+                    gcd = Rational::gcd( gcd, *iter );
+                }
+                
+            }
+            return gcd;
         }
         Integer Rational::lcm( Integer a, Integer b )
         {
