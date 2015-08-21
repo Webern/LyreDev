@@ -294,16 +294,247 @@ TEST( lcm_list08, Rational )
     }
     CHECK_EQUAL( expected, actual )
 }
+
+TEST( lcm_vec01, Rational )
+{
+    Integers vec = { -100, 10 };
+    Integer actual = Rational::lcm( vec );
+    CHECK_EQUAL( 100, actual )
+}
+TEST( lcm_vec02, Rational )
+{
+    Integers vec = { -100, 10, 5 };
+    Integer actual = Rational::lcm( vec );
+    CHECK_EQUAL( 100, actual )
+}
+TEST( lcm_vec03, Rational )
+{
+    Integers vec = { -297, -231, -198, -66 };
+    Integer actual = Rational::lcm( vec );
+    CHECK_EQUAL( 4158, actual )
+}
+TEST( lcm_vec04, Rational )
+{
+    Integers vec;
+    Integer actual = Rational::lcm( vec );
+    CHECK_EQUAL( 0, actual )
+}
+TEST( lcm_vec05, Rational )
+{
+    Integers vec = { -2130 };
+    Integer actual = Rational::lcm( vec );
+    CHECK_EQUAL( 2130, actual )
+}
+TEST( lcm_vec06, Rational )
+{
+    Integers vec = { 9 };
+    Integer actual = Rational::lcm( vec );
+    CHECK_EQUAL( 9, actual )
+}
+TEST( lcm_vec07, Rational )
+{
+    Integers vec = { 9, -3, 33, -99, 0 };
+    std::string expected = "zeros not allowed";
+    std::string actual = "no exception was thrown";
+    try
+    {
+        Rational::lcm( vec );
+    }
+    catch ( const std::exception& e )
+    {
+        actual = e.what();
+    }
+    catch ( ... )
+    {
+        actual = "the wrong type of exception was caught";
+    }
+    CHECK_EQUAL( expected, actual )
+}
+TEST( lcm_vec08, Rational )
+{
+    Integers vec = { 0 };
+    std::string expected = "zeros not allowed";
+    std::string actual = "no exception was thrown";
+    try
+    {
+        Rational::lcm( vec );
+    }
+    catch ( const std::exception& e )
+    {
+        actual = e.what();
+    }
+    catch ( ... )
+    {
+        actual = "the wrong type of exception was caught";
+    }
+    CHECK_EQUAL( expected, actual )
+}
+
 TEST( lcd01, Rational )
+{
+    Rational a{ 2, 4 };
+    Rational b{ 1, 2 };
+    Rational::lcd( a, b );
+    Integer expectedDenominator = 2;
+    Integer expectedNumeratorA = 1;
+    Integer expectedNumeratorB = 1;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd02, Rational )
+{
+    Rational a{ 3, 12 };
+    Rational b{ 6, 48 };
+    Rational::lcd( a, b );
+    //std::cout << a << " " << b << std::endl;
+    Integer expectedDenominator = 8;
+    Integer expectedNumeratorA = 2;
+    Integer expectedNumeratorB = 1;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd03, Rational )
 {
     Rational a{ 12, 16 };
     Rational b{ 1, 20 };
     Rational::lcd( a, b );
+    //std::cout << a << " " << b << std::endl;
     Integer expectedDenominator = 20;
     Integer expectedNumeratorA = 15;
     Integer expectedNumeratorB = 1;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
-    CHECK_EQUAL( 99, b.getDenominator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd04, Rational )
+{
+    Rational a{ 7, 1582 };
+    Rational b{ 654, 12769 };
+    Rational::lcd( a, b );
+    //std::cout << a << " " << b << std::endl;
+    Integer expectedDenominator = 25538;
+    Integer expectedNumeratorA = 113;
+    Integer expectedNumeratorB = 1308;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd05, Rational )
+{
+    Rational a{ 0, 10 };
+    Rational b{ 11, -15 };
+    Rational::lcd( a, b );
+    //std::cout << a << " " << b << std::endl;
+    Integer expectedDenominator = 15;
+    Integer expectedNumeratorA = 0;
+    Integer expectedNumeratorB = -11;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd06, Rational )
+{
+    Rational a{ 1, -5 };
+    Rational b{ -11, -15 };
+    Rational::lcd( a, b );
+    // std::cout << a << " " << b << std::endl;
+    Integer expectedDenominator = 15;
+    Integer expectedNumeratorA = -3;
+    Integer expectedNumeratorB = 11;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd07, Rational )
+{
+    Rational a{ 3, 12 };
+    Rational b{ 6, 48 };
+    Rational::lcd( a, b, false );
+    //std::cout << a << " " << b << std::endl;
+    Integer expectedDenominator = 48;
+    Integer expectedNumeratorA = 12;
+    Integer expectedNumeratorB = 6;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd08, Rational )
+{
+    Rational a{ 12, 16 };
+    Rational b{ 1, 20 };
+    Rational::lcd( a, b, false );
+    //std::cout << a << " " << b << std::endl;
+    Integer expectedDenominator = 80;
+    Integer expectedNumeratorA = 60;
+    Integer expectedNumeratorB = 4;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd09, Rational )
+{
+    Rational a{ 7, 1582 };
+    Rational b{ 654, 12769 };
+    Rational::lcd( a, b, false );
+    //std::cout << a << " " << b << std::endl;
+    Integer expectedDenominator = 178766;
+    Integer expectedNumeratorA = 791;
+    Integer expectedNumeratorB = 9156;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd10, Rational )
+{
+    Rational a{ 0, 10 };
+    Rational b{ 11, -15 };
+    Rational::lcd( a, b, false );
+    //std::cout << a << " " << b << std::endl;
+    Integer expectedDenominator = 30;
+    Integer expectedNumeratorA = 0;
+    Integer expectedNumeratorB = -22;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcd11, Rational )
+{
+    Rational a{ 1, -5 };
+    Rational b{ -11, -15 };
+    Rational::lcd( a, b, false );
+    // std::cout << a << " " << b << std::endl;
+    Integer expectedDenominator = 15;
+    Integer expectedNumeratorA = -3;
+    Integer expectedNumeratorB = 11;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, b.getDenominator() )
+}
+TEST( lcdList01, Rational )
+{
+    Rationals rats;
+    Rational::lcd( rats );
+    CHECK_EQUAL( 0, rats.size() );
+    
+}
+TEST( lcdList02, Rational )
+{
+    Rationals rats;
+    rats.push_back( Rational{ 6, 4 } );
+    Rational::lcd( rats );
+    CHECK_EQUAL( "keep testing lcd( vector )", "" );
+    
 }

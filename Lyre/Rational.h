@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "TypeDefs.h"
+#include <vector>
 
 /* I need rational numbers for music and I don't
  want to include boost.  This would be a good
@@ -12,6 +13,9 @@ namespace lyre
 {
     namespace p
     {
+        class Rational;
+        using Rationals = std::vector<Rational>;
+        
         class Rational
         {
         public:
@@ -65,10 +69,17 @@ namespace lyre
              if you give it 1 term, it will return the
              absolute value of the term you gave it. */
             static Integer lcm( std::initializer_list<Integer> integers );
+            static Integer lcm( const Integers& integers );
             
             /* convert a and b so that they have
-             the same (least common) denominator */
-            static void lcd( Rational& a, Rational& b );
+             the same (least common) denominator.
+             when firstReduce is true, the funtion
+             will reduce a and b before finding
+             the common denominator */
+            static void lcd( Rational& a, Rational& b, const bool firstReduce = true );
+            
+            /**/
+            static void lcd( Rationals& rationals, const bool firstReduce = true );
             
             /* return the equivalent Rational number
              with the smallest possible denominator.

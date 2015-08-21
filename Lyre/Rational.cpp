@@ -1,5 +1,6 @@
 #include "Rational.h"
 #include <exception>
+#include <set>
 
 namespace lyre
 {
@@ -104,7 +105,7 @@ namespace lyre
             }
             return answer;
         }
-        Integer Rational::lcm( std::initializer_list<Integer> integers )
+        Integer Rational::lcm( const Integers& integers )
         {
             Integer answer = 0;
             if ( integers.size() == 0 )
@@ -113,7 +114,7 @@ namespace lyre
             }
             else if( integers.size() == 1 )
             {
-                if ( *( integers.begin() ) == 0 )
+                if ( *( integers.cbegin() ) == 0 )
                 {
                     throw std::runtime_error( "zeros not allowed" );
                 }
@@ -121,9 +122,9 @@ namespace lyre
             }
             else
             {
-                auto a = integers.begin();
-                auto b = integers.begin();
-                auto e = integers.end();
+                auto a = integers.cbegin();
+                auto b = integers.cbegin();
+                auto e = integers.cend();
                 ++b;
                 if ( *a == 0 || *b == 0 )
                 {
@@ -141,24 +142,51 @@ namespace lyre
             }
             return answer;
         }
-        void Rational::lcd( Rational& a, Rational& b )
+        Integer Rational::lcm( std::initializer_list<Integer> integers )
         {
-            a = Rational::reduce( a );
-            b = Rational::reduce( b );
-            if ( a.getDenominator() == b.getDenominator() )
+            Integers ints( integers.size() );
+            std::copy( integers.begin(), integers.end(), ints.begin() );
+            return Rational::lcm( ints );
+        }
+        void Rational::lcd( Rational& a, Rational& b, const bool firstReduce )
+        {
+            Rationals rats = { a, b };
+            Rational::lcd( rats, firstReduce );
+            auto r = rats.begin();
+            auto e = rats.end();
+            if ( r != e )
             {
-                return;
+                a = *r;
             }
-            else
+            ++r;
+            if ( r != e )
             {
-                auto lcm = Rational::lcm( a.getDenominator(), b.getDenominator() );
-                auto a_fact = lcm / a.getDenominator();
-                auto b_fact = lcm / b.getDenominator();
-                a.setNumerator( a.getNumerator() * a_fact );
-                a.setDenominator( lcm );
-                b.setNumerator( b.getNumerator() * b_fact );
-                b.setDenominator( lcm );
-                return;
+                b = *r;
+            }
+        }
+        void Rational::lcd( Rationals& rationals, const bool firstReduce )
+        {
+            if ( firstReduce )
+            {
+                for ( auto r = rationals.begin(); r != rationals.end(); ++r )
+                {
+                    *r = Rational::reduce( *r );
+                }
+            }
+            if ( rationals.size() > 1 )
+            {
+                Integers denominators;
+                for ( auto r = rationals.begin(); r != rationals.end(); ++r )
+                {
+                    denominators.push_back( r->getDenominator() );
+                }
+                auto lcm = Rational::lcm( denominators );
+                for ( auto r = rationals.begin(); r != rationals.end(); ++r )
+                {
+                    auto fact = lcm / r->getDenominator();
+                    r->setNumerator( r->getNumerator() * fact);
+                    r->setDenominator( r->getDenominator() * fact );
+                }
             }
         }
         Rational Rational::reduce( const lyre::p::Rational& r )
