@@ -36,13 +36,35 @@ namespace lyre
             void setDenominator( const Integer value );
             
             /* return the greatest common divisor
-             for a and b */
+             for a and b.  if both a and b are zero,
+             gcd returns zero. if a OR b is zero, the
+             absolute value of the non-zero term is
+             returned */
             static Integer gcd( Integer a, Integer b );
-            static Integer gcd( std::initializer_list<int> integers );
+            
+            /* return the greatest common divisor for
+             all of the integers in the list.  you should
+             only use this for lists of 2 or more non-
+             zero numbers.  otherwise... if zero is
+             encountered more than once, a std::runtime_error
+             is thrown. if zero is encountered once, it does
+             not affect the outcome.  if the list has a
+             single non-zero term, the absolute value of the
+             single term is returned.  if the list has a
+             single term which is a zero, 1 is returned */
+            static Integer gcd( std::initializer_list<Integer> integers );
             
             /* return the least common multiple
-             for a and b */
+             for a and b. if either a or b is
+             zero, returns zero. */
             static Integer lcm( Integer a, Integer b );
+            
+            /* don't give this any zeros, if you do
+             it will throw a std::runtime_error. If
+             you give it an empty list, returns zero.
+             if you give it 1 term, it will return the
+             absolute value of the term you gave it. */
+            static Integer lcm( std::initializer_list<Integer> integers );
             
             /* convert a and b so that they have
              the same (least common) denominator */

@@ -140,6 +140,14 @@ TEST( gcd08, Rational )
     Integer actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
+TEST( gcd09, Rational )
+{
+    Integer a = 0;
+    Integer b = 0;
+    Integer expected = 0;
+    Integer actual = Rational::gcd( a, b );
+    CHECK_EQUAL( expected, actual );
+}
 TEST( gcd_list01, Rational )
 {
     Integer expected = 77;
@@ -199,4 +207,103 @@ TEST( gcd_list08, Rational )
         actual = "the wrong type of exception was caught";
     }
     CHECK_EQUAL( expected, actual )
+}
+TEST( lcm01, Rational )
+{
+    CHECK_EQUAL( 6932583, Rational::lcm( 110041, 1071 ) )
+}
+TEST( lcm02, Rational )
+{
+    CHECK_EQUAL( 10710, Rational::lcm( 10710, -1071 ) )
+}
+TEST( lcm03, Rational )
+{
+    CHECK_EQUAL( 0, Rational::lcm( 10710, 0 ) )
+}
+TEST( lcm04, Rational )
+{
+    CHECK_EQUAL( 0, Rational::lcm( 0, 10 ) )
+}
+TEST( lcm05, Rational )
+{
+    CHECK_EQUAL( 100, Rational::lcm( -100, 10 ) )
+}
+TEST( lcm_list01, Rational )
+{
+    Integer actual = Rational::lcm( { -100, 10 } );
+    CHECK_EQUAL( 100, actual )
+}
+TEST( lcm_list02, Rational )
+{
+    Integer actual = Rational::lcm( { -100, 10, 5 } );
+    CHECK_EQUAL( 100, actual )
+}
+TEST( lcm_list03, Rational )
+{
+    Integer actual = Rational::lcm( { -297, -231, -198, -66 } );
+    CHECK_EQUAL( 4158, actual )
+}
+TEST( lcm_list04, Rational )
+{
+    Integer actual = Rational::lcm( { } );
+    CHECK_EQUAL( 0, actual )
+}
+TEST( lcm_list05, Rational )
+{
+    Integer actual = Rational::lcm( { -2130 } );
+    CHECK_EQUAL( 2130, actual )
+}
+TEST( lcm_list06, Rational )
+{
+    Integer actual = Rational::lcm( { 9 } );
+    CHECK_EQUAL( 9, actual )
+}
+TEST( lcm_list07, Rational )
+{
+    std::string expected = "zeros not allowed";
+    std::string actual = "no exception was thrown";
+    try
+    {
+        Rational::lcm( { 9, -3, 33, -99, 0 } );
+    }
+    catch ( const std::exception& e )
+    {
+        actual = e.what();
+    }
+    catch ( ... )
+    {
+        actual = "the wrong type of exception was caught";
+    }
+    CHECK_EQUAL( expected, actual )
+}
+TEST( lcm_list08, Rational )
+{
+    std::string expected = "zeros not allowed";
+    std::string actual = "no exception was thrown";
+    try
+    {
+        Rational::lcm( { 0 } );
+    }
+    catch ( const std::exception& e )
+    {
+        actual = e.what();
+    }
+    catch ( ... )
+    {
+        actual = "the wrong type of exception was caught";
+    }
+    CHECK_EQUAL( expected, actual )
+}
+TEST( lcd01, Rational )
+{
+    Rational a{ 12, 16 };
+    Rational b{ 1, 20 };
+    Rational::lcd( a, b );
+    Integer expectedDenominator = 20;
+    Integer expectedNumeratorA = 15;
+    Integer expectedNumeratorB = 1;
+    CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
+    CHECK_EQUAL( expectedDenominator, a.getDenominator() )
+    CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
+    CHECK_EQUAL( 99, b.getDenominator() )
 }

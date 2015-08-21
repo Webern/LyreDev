@@ -104,8 +104,47 @@ namespace lyre
             }
             return answer;
         }
+        Integer Rational::lcm( std::initializer_list<Integer> integers )
+        {
+            Integer answer = 0;
+            if ( integers.size() == 0 )
+            {
+                return 0;
+            }
+            else if( integers.size() == 1 )
+            {
+                if ( *( integers.begin() ) == 0 )
+                {
+                    throw std::runtime_error( "zeros not allowed" );
+                }
+                return std::abs( *( integers.begin() ) );
+            }
+            else
+            {
+                auto a = integers.begin();
+                auto b = integers.begin();
+                auto e = integers.end();
+                ++b;
+                if ( *a == 0 || *b == 0 )
+                {
+                    throw std::runtime_error( "zeros not allowed" );
+                }
+                answer = lcm( *a, *b );
+                for (; b != e ; ++b )
+                {
+                    if ( *b == 0 )
+                    {
+                        throw std::runtime_error( "zeros not allowed" );
+                    }
+                    answer = lcm( answer, *b );
+                }
+            }
+            return answer;
+        }
         void Rational::lcd( Rational& a, Rational& b )
         {
+            a = Rational::reduce( a );
+            b = Rational::reduce( b );
             if ( a.getDenominator() == b.getDenominator() )
             {
                 return;
