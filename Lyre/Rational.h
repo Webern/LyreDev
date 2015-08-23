@@ -78,7 +78,13 @@ namespace lyre
              the common denominator */
             static void lcd( Rational& a, Rational& b, const bool firstReduce = true );
             
-            /**/
+            /* convert each fraction to have the
+             lowest common denominator.  When
+             firstReduce is true, each fraction
+             will first be simplified to its
+             lowest possible positve denominator
+             before finding the lowest commond
+             denominator. */
             static void lcd( Rationals& rationals, const bool firstReduce = true );
             
             /* return the equivalent Rational number

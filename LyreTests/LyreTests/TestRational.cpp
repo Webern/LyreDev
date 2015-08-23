@@ -535,6 +535,102 @@ TEST( lcdList02, Rational )
     Rationals rats;
     rats.push_back( Rational{ 6, 4 } );
     Rational::lcd( rats );
-    CHECK_EQUAL( "keep testing lcd( vector )", "" );
+    CHECK_EQUAL( 1, rats.size() )
+    CHECK_EQUAL( 3, rats.cbegin()->getNumerator() )
+    CHECK_EQUAL( 2, rats.cbegin()->getDenominator() )
     
+}
+TEST( lcdList03, Rational )
+{
+    Rationals rats;
+    rats.push_back( Rational{ 6, 4 } );
+    rats.push_back( Rational{ 7, 9 } );
+    rats.push_back( Rational{ 1, 10 } );
+    Rational::lcd( rats );
+    CHECK_EQUAL( 3, rats.size() )
+    auto r = rats.cbegin();
+    Integer denom = 90;
+    CHECK_EQUAL( 135, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK_EQUAL( 70, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK_EQUAL( 9, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK( r == rats.cend() )
+}
+TEST( lcdList04, Rational )
+{
+    Rationals rats;
+    rats.push_back( Rational{ 17, -18 } );
+    rats.push_back( Rational{ -71, 9 } );
+    rats.push_back( Rational{ -1, -10 } );
+    Rational::lcd( rats );
+    CHECK_EQUAL( 3, rats.size() )
+    auto r = rats.cbegin();
+    Integer denom = 90;
+    CHECK_EQUAL( -85, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK_EQUAL( -710, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK_EQUAL( 9, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK( r == rats.cend() )
+}
+TEST( lcdList01noReduce, Rational )
+{
+    Rationals rats;
+    rats.push_back( Rational{ 6, 4 } );
+    Rational::lcd( rats, false );
+    CHECK_EQUAL( 1, rats.size() )
+    CHECK_EQUAL( 6, rats.cbegin()->getNumerator() )
+    CHECK_EQUAL( 4, rats.cbegin()->getDenominator() )
+    
+}
+TEST( lcdList02noReduce, Rational )
+{
+    Rationals rats;
+    rats.push_back( Rational{ 6, 4 } );
+    rats.push_back( Rational{ 7, 9 } );
+    rats.push_back( Rational{ 1, 10 } );
+    Rational::lcd( rats, false );
+    CHECK_EQUAL( 3, rats.size() )
+    auto r = rats.cbegin();
+    Integer denom = 180;
+    CHECK_EQUAL( 270, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK_EQUAL( 140, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK_EQUAL( 18, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK( r == rats.cend() )
+}
+TEST( lcdList03noReduce, Rational )
+{
+    Rationals rats;
+    rats.push_back( Rational{ 17, -18 } );
+    rats.push_back( Rational{ -71, 9 } );
+    rats.push_back( Rational{ -1, -10 } );
+    Rational::lcd( rats, false );
+    CHECK_EQUAL( 3, rats.size() )
+    auto r = rats.cbegin();
+    Integer denom = 90;
+    CHECK_EQUAL( -85, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK_EQUAL( -710, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK_EQUAL( 9, r->getNumerator() )
+    CHECK_EQUAL( denom, r->getDenominator() )
+    ++r;
+    CHECK( r == rats.cend() )
 }
