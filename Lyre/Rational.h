@@ -15,6 +15,8 @@ namespace lyre
     {
         class Rational;
         using Rationals = std::vector<Rational>;
+        using RationalsIter = Rationals::iterator;
+        using RationalsIterConst = Rationals::const_iterator;
         
         class Rational
         {
@@ -39,6 +41,50 @@ namespace lyre
             Integer getDenominator() const;
             void setDenominator( const Integer value );
             
+            /* change the fraction to the smallest
+             possible denominator.  if both numerator
+             and denominator are negative, they
+             replace both with positive numbers.
+             if numerator is positive and denominator
+             is negative, switch these so the numer-
+             ator is negative and denominator is pos-
+             itive. return true if 'this' was changed
+             return false if 'this' was already red-
+             uced */
+            bool reduce();
+            
+            /* flip the fraction, numerator
+             becomes denominator and vice
+             versa. if numerator is zero
+             then no-op */
+            void reciprocal();
+            
+            /* returns true/false if the fraction
+             represents a number less/greater than zero */
+            bool getIsNegative() const;
+            bool getIsPositive() const;
+            
+            /* if the fraction were written as a mixed
+             number (i.e.  1 1/2 instead of 3/2), get
+             the whole number part (i.e. 1) and the
+             fractional part (i.e. 1/2) */
+            Integer getMixedWholePart() const;
+            Rational getMixedFractionalPart() const;
+            
+            /* returns true of both numerators are equal
+             and both denominators are equal.  Note this
+             is different than the behavior of == */
+            bool getIsIdenticalTo( const Rational& other ) const;
+            
+            /* These will automatically reduce
+             the fraction after the mathematical
+             operation.  Note attempting to div-
+             ide by zero (i.e. 0/x) is a no-op */
+            Rational& operator/=( const Rational& right );
+            Rational& operator*=( const Rational& right );
+            Rational& operator+=( const Rational& right );
+            Rational& operator-=( const Rational& right );
+        
             /* return the greatest common divisor
              for a and b.  if both a and b are zero,
              gcd returns zero. if a OR b is zero, the
@@ -86,29 +132,14 @@ namespace lyre
              before finding the lowest commond
              denominator. */
             static void lcd( Rationals& rationals, const bool firstReduce = true );
-            
-            /* return the equivalent Rational number
-             with the smallest possible denominator.
-             also, if both numerator and denominator
-             are negative, they will be replaced by
-             positive numebrs. */
-            static Rational reduce( const Rational& r );
-            bool reduce();
-            
-            /* return the reciprocal as a Rational */
-            Rational getReciprocal() const;
-            
-            /* */
-            Rational& operator/=( const Rational& right );
-            Rational& operator*=( const Rational& right );
-            Rational& operator+=( const Rational& right ); /* not implemented */
-            Rational& operator-=( const Rational& right ); /* not implemented */
+        
         private:
             Integer myNumerator;
             Integer myDenominator;
         };
         
-        /* Comparisons in the mathematical sense, i.e. 1/3 == 4/12 */
+        /* Comparisons in the mathematical sense, i.e. 1/3 == 4/12,
+         to see if to fractions are identical use left.getIsIdenticalTo( right ) */
         bool operator==( const Rational& left, const Rational& right );
         bool operator!=( const Rational& left, const Rational& right );
         bool operator<( const Rational& left, const Rational& right );
@@ -116,6 +147,7 @@ namespace lyre
         bool operator<=( const Rational& left, const Rational& right );
         bool operator>=( const Rational& left, const Rational& right );
         
+        /* divide by zero (i.e. 0/x) returns 0/1 (i.e. instead of throwing) */
         Rational operator/( const Rational& r, const Rational& l );
         Rational operator*( const Rational& r, const Rational& l );
         Rational operator+( const Rational& r, const Rational& l );

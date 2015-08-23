@@ -682,8 +682,1709 @@ TEST( reduce06, Rational )
     CHECK_EQUAL( 1, r.getNumerator() )
     CHECK_EQUAL( 83459, r.getDenominator() )
 }
-TEST( nothing, Rational )
+TEST( reciprocal01, Rational )
 {
     Rational r;
-    CHECK_EQUAL( "get rid of the static reduce function", "" )
+    r.reciprocal();
+    CHECK_EQUAL( 0, r.getNumerator() )
+    CHECK_EQUAL( 1, r.getDenominator() )
+}
+TEST( reciprocal02, Rational )
+{
+    Rational r{ 0, 99 };
+    r.reciprocal();
+    CHECK_EQUAL( 0, r.getNumerator() )
+    CHECK_EQUAL( 99, r.getDenominator() )
+}
+TEST( reciprocal03, Rational )
+{
+    Rational r{ 1, 3 };
+    r.reciprocal();
+    CHECK_EQUAL( 3, r.getNumerator() )
+    CHECK_EQUAL( 1, r.getDenominator() )
+}
+TEST( reciprocal04, Rational )
+{
+    Rational r{ 31, -93 };
+    r.reciprocal();
+    CHECK_EQUAL( -93, r.getNumerator() )
+    CHECK_EQUAL( 31, r.getDenominator() )
+}
+TEST( reciprocal05, Rational )
+{
+    Rational r{ -19348, 8488302 };
+    r.reciprocal();
+    CHECK_EQUAL( 8488302, r.getNumerator() )
+    CHECK_EQUAL( -19348, r.getDenominator() )
+}
+TEST( reciprocal06, Rational )
+{
+    Rational r{ -9, -7 };
+    r.reciprocal();
+    CHECK_EQUAL( -7, r.getNumerator() )
+    CHECK_EQUAL( -9, r.getDenominator() )
+}
+TEST( divideEquals01, Rational )
+{
+    Integer aNumer = -9;
+    Integer aDenom = -7;
+    Integer bNumer = 10;
+    Integer bDenom = 11;
+    Integer resultNumer = 99;
+    Integer resultDenom = 70;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a /= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divideEquals02, Rational )
+{
+    Integer aNumer = 234;
+    Integer aDenom = 123;
+    Integer bNumer = 345;
+    Integer bDenom = 756;
+    Integer resultNumer = 19656;
+    Integer resultDenom = 4715;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a /= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divideEquals03, Rational )
+{
+    Integer aNumer = -4576;
+    Integer aDenom = 3478;
+    Integer bNumer = -3478;
+    Integer bDenom = 4578;
+    Integer resultNumer = 5237232;
+    Integer resultDenom = 3024121;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a /= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divideEquals04, Rational )
+{
+    Integer aNumer = 9405;
+    Integer aDenom = -9470;
+    Integer bNumer = 3789;
+    Integer bDenom = -9483;
+    Integer resultNumer = 1981947;
+    Integer resultDenom = 797374;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a /= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divideEquals05, Rational )
+{
+    Integer aNumer = 5;
+    Integer aDenom = 6;
+    Integer bNumer = -37;
+    Integer bDenom = -72;
+    Integer resultNumer = 60;
+    Integer resultDenom = 37;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a /= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divideEquals06, Rational )
+{
+    Integer aNumer = 51;
+    Integer aDenom = 26;
+    Integer bNumer = -3;
+    Integer bDenom = 7;
+    Integer resultNumer = -119;
+    Integer resultDenom = 26;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a /= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divideEquals07, Rational )
+{
+    Integer aNumer = 82;
+    Integer aDenom = 91;
+    Integer bNumer = 10;
+    Integer bDenom = -11;
+    Integer resultNumer = -451;
+    Integer resultDenom = 455;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a /= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divideEquals08, Rational )
+{
+    Integer aNumer = 0;
+    Integer aDenom = 26;
+    Integer bNumer = 3;
+    Integer bDenom = -7;
+    Integer resultNumer = 0;
+    Integer resultDenom = 1;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a /= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divideEquals09, Rational )
+{
+    Integer aNumer = 15;
+    Integer aDenom = 26;
+    Integer bNumer = 0;
+    Integer bDenom = -7;
+    Integer resultNumer = 15;
+    Integer resultDenom = 26;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a /= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( timesEquals01, Rational )
+{
+    Integer aNumer = -9;
+    Integer aDenom = -7;
+    Integer bNumer = 10;
+    Integer bDenom = 11;
+    Integer resultNumer = 90;
+    Integer resultDenom = 77;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a *= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( timesEquals02, Rational )
+{
+    Integer aNumer = 234;
+    Integer aDenom = 123;
+    Integer bNumer = 345;
+    Integer bDenom = 756;
+    Integer resultNumer = 1495;
+    Integer resultDenom = 1722;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a *= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( timesEquals03, Rational )
+{
+    Integer aNumer = -4576;
+    Integer aDenom = 3478;
+    Integer bNumer = -3478;
+    Integer bDenom = 4578;
+    Integer resultNumer = 2288;
+    Integer resultDenom = 2289;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a *= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( timesEquals04, Rational )
+{
+    Integer aNumer = 9405;
+    Integer aDenom = -9470;
+    Integer bNumer = 3789;
+    Integer bDenom = -9483;
+    Integer resultNumer = 2375703;
+    Integer resultDenom = 5986934;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a *= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( timesEquals05, Rational )
+{
+    Integer aNumer = 5;
+    Integer aDenom = 6;
+    Integer bNumer = -37;
+    Integer bDenom = -72;
+    Integer resultNumer = 185;
+    Integer resultDenom = 432;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a *= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( timesEquals06, Rational )
+{
+    Integer aNumer = 51;
+    Integer aDenom = 26;
+    Integer bNumer = -3;
+    Integer bDenom = 7;
+    Integer resultNumer = -153;
+    Integer resultDenom = 182;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a *= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( timesEquals07, Rational )
+{
+    Integer aNumer = 82;
+    Integer aDenom = 91;
+    Integer bNumer = 10;
+    Integer bDenom = -11;
+    Integer resultNumer = -820;
+    Integer resultDenom = 1001;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a *= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( timesEquals08, Rational )
+{
+    Integer aNumer = 0;
+    Integer aDenom = 26;
+    Integer bNumer = 3;
+    Integer bDenom = -7;
+    Integer resultNumer = 0;
+    Integer resultDenom = 1;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a *= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( timesEquals09, Rational )
+{
+    Integer aNumer = 15;
+    Integer aDenom = 26;
+    Integer bNumer = 0;
+    Integer bDenom = -7;
+    Integer resultNumer = 0;
+    Integer resultDenom = 1;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a *= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+
+TEST( plusEquals01, Rational )
+{
+    Integer aNumer = -9;
+    Integer aDenom = -7;
+    Integer bNumer = 10;
+    Integer bDenom = 11;
+    Integer resultNumer = 169;
+    Integer resultDenom = 77;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a += b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plusEquals02, Rational )
+{
+    Integer aNumer = 234;
+    Integer aDenom = 123;
+    Integer bNumer = 345;
+    Integer bDenom = 756;
+    Integer resultNumer = 24371;
+    Integer resultDenom = 10332;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a += b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plusEquals03, Rational )
+{
+    Integer aNumer = -4576;
+    Integer aDenom = 3478;
+    Integer bNumer = -3478;
+    Integer bDenom = 4578;
+    Integer resultNumer = -8261353;
+    Integer resultDenom = 3980571;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a += b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plusEquals04, Rational )
+{
+    Integer aNumer = 9405;
+    Integer aDenom = -9470;
+    Integer bNumer = 3789;
+    Integer bDenom = -9483;
+    Integer resultNumer = -8337963;
+    Integer resultDenom = 5986934;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a += b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plusEquals05, Rational )
+{
+    Integer aNumer = 5;
+    Integer aDenom = 6;
+    Integer bNumer = -37;
+    Integer bDenom = -72;
+    Integer resultNumer = 97;
+    Integer resultDenom = 72;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a += b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plusEquals06, Rational )
+{
+    Integer aNumer = 51;
+    Integer aDenom = 26;
+    Integer bNumer = -3;
+    Integer bDenom = 7;
+    Integer resultNumer = 279;
+    Integer resultDenom = 182;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a += b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plusEquals07, Rational )
+{
+    Integer aNumer = 82;
+    Integer aDenom = 91;
+    Integer bNumer = 10;
+    Integer bDenom = -11;
+    Integer resultNumer = -8;
+    Integer resultDenom = 1001;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a += b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plusEquals08, Rational )
+{
+    Integer aNumer = 0;
+    Integer aDenom = 26;
+    Integer bNumer = 3;
+    Integer bDenom = -7;
+    Integer resultNumer = -3;
+    Integer resultDenom = 7;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a += b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plusEquals09, Rational )
+{
+    Integer aNumer = 15;
+    Integer aDenom = 26;
+    Integer bNumer = 0;
+    Integer bDenom = -7;
+    Integer resultNumer = 15;
+    Integer resultDenom = 26;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a += b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+
+TEST( minusEquals01, Rational )
+{
+    Integer aNumer = -9;
+    Integer aDenom = -7;
+    Integer bNumer = 10;
+    Integer bDenom = 11;
+    Integer resultNumer = 29;
+    Integer resultDenom = 77;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a -= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minusEquals02, Rational )
+{
+    Integer aNumer = 234;
+    Integer aDenom = 123;
+    Integer bNumer = 345;
+    Integer bDenom = 756;
+    Integer resultNumer = 14941;
+    Integer resultDenom = 10332;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a -= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minusEquals03, Rational )
+{
+    Integer aNumer = -4576;
+    Integer aDenom = 3478;
+    Integer bNumer = -3478;
+    Integer bDenom = 4578;
+    Integer resultNumer = -2213111;
+    Integer resultDenom = 3980571;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a -= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minusEquals04, Rational )
+{
+    Integer aNumer = 9405;
+    Integer aDenom = -9470;
+    Integer bNumer = 3789;
+    Integer bDenom = -9483;
+    Integer resultNumer = -3553719;
+    Integer resultDenom = 5986934;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a -= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minusEquals05, Rational )
+{
+    Integer aNumer = 5;
+    Integer aDenom = 6;
+    Integer bNumer = -37;
+    Integer bDenom = -72;
+    Integer resultNumer = 23;
+    Integer resultDenom = 72;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a -= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minusEquals06, Rational )
+{
+    Integer aNumer = 51;
+    Integer aDenom = 26;
+    Integer bNumer = -3;
+    Integer bDenom = 7;
+    Integer resultNumer = 435;
+    Integer resultDenom = 182;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a -= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minusEquals07, Rational )
+{
+    Integer aNumer = 82;
+    Integer aDenom = 91;
+    Integer bNumer = 10;
+    Integer bDenom = -11;
+    Integer resultNumer = 1812;
+    Integer resultDenom = 1001;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a -= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minusEquals08, Rational )
+{
+    Integer aNumer = 0;
+    Integer aDenom = 26;
+    Integer bNumer = 3;
+    Integer bDenom = -7;
+    Integer resultNumer = 3;
+    Integer resultDenom = 7;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a -= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minusEquals09, Rational )
+{
+    Integer aNumer = 15;
+    Integer aDenom = 26;
+    Integer bNumer = 0;
+    Integer bDenom = -7;
+    Integer resultNumer = 15;
+    Integer resultDenom = 26;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a -= b;
+    CHECK_EQUAL( resultNumer, a.getNumerator() )
+    CHECK_EQUAL( resultDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+
+
+
+
+
+/*****************************/
+
+TEST( divide01, Rational )
+{
+    Integer aNumer = -9;
+    Integer aDenom = -7;
+    Integer bNumer = 10;
+    Integer bDenom = 11;
+    Integer resultNumer = 99;
+    Integer resultDenom = 70;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a / b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divide02, Rational )
+{
+    Integer aNumer = 234;
+    Integer aDenom = 123;
+    Integer bNumer = 345;
+    Integer bDenom = 756;
+    Integer resultNumer = 19656;
+    Integer resultDenom = 4715;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a / b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divide03, Rational )
+{
+    Integer aNumer = -4576;
+    Integer aDenom = 3478;
+    Integer bNumer = -3478;
+    Integer bDenom = 4578;
+    Integer resultNumer = 5237232;
+    Integer resultDenom = 3024121;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a / b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divide04, Rational )
+{
+    Integer aNumer = 9405;
+    Integer aDenom = -9470;
+    Integer bNumer = 3789;
+    Integer bDenom = -9483;
+    Integer resultNumer = 1981947;
+    Integer resultDenom = 797374;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a / b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divide05, Rational )
+{
+    Integer aNumer = 5;
+    Integer aDenom = 6;
+    Integer bNumer = -37;
+    Integer bDenom = -72;
+    Integer resultNumer = 60;
+    Integer resultDenom = 37;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a / b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divide06, Rational )
+{
+    Integer aNumer = 51;
+    Integer aDenom = 26;
+    Integer bNumer = -3;
+    Integer bDenom = 7;
+    Integer resultNumer = -119;
+    Integer resultDenom = 26;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a / b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divide07, Rational )
+{
+    Integer aNumer = 82;
+    Integer aDenom = 91;
+    Integer bNumer = 10;
+    Integer bDenom = -11;
+    Integer resultNumer = -451;
+    Integer resultDenom = 455;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a / b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divide08, Rational )
+{
+    Integer aNumer = 0;
+    Integer aDenom = 26;
+    Integer bNumer = 3;
+    Integer bDenom = -7;
+    Integer resultNumer = 0;
+    Integer resultDenom = 1;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a / b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( divide09, Rational )
+{
+    Integer aNumer = 15;
+    Integer aDenom = 26;
+    Integer bNumer = 0;
+    Integer bDenom = -7;
+    Integer resultNumer = 0;
+    Integer resultDenom = 1;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a / b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( times01, Rational )
+{
+    Integer aNumer = -9;
+    Integer aDenom = -7;
+    Integer bNumer = 10;
+    Integer bDenom = 11;
+    Integer resultNumer = 90;
+    Integer resultDenom = 77;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a * b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( times02, Rational )
+{
+    Integer aNumer = 234;
+    Integer aDenom = 123;
+    Integer bNumer = 345;
+    Integer bDenom = 756;
+    Integer resultNumer = 1495;
+    Integer resultDenom = 1722;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a * b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( times03, Rational )
+{
+    Integer aNumer = -4576;
+    Integer aDenom = 3478;
+    Integer bNumer = -3478;
+    Integer bDenom = 4578;
+    Integer resultNumer = 2288;
+    Integer resultDenom = 2289;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a * b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( times04, Rational )
+{
+    Integer aNumer = 9405;
+    Integer aDenom = -9470;
+    Integer bNumer = 3789;
+    Integer bDenom = -9483;
+    Integer resultNumer = 2375703;
+    Integer resultDenom = 5986934;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a * b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( times05, Rational )
+{
+    Integer aNumer = 5;
+    Integer aDenom = 6;
+    Integer bNumer = -37;
+    Integer bDenom = -72;
+    Integer resultNumer = 185;
+    Integer resultDenom = 432;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a * b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( times06, Rational )
+{
+    Integer aNumer = 51;
+    Integer aDenom = 26;
+    Integer bNumer = -3;
+    Integer bDenom = 7;
+    Integer resultNumer = -153;
+    Integer resultDenom = 182;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a * b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( times07, Rational )
+{
+    Integer aNumer = 82;
+    Integer aDenom = 91;
+    Integer bNumer = 10;
+    Integer bDenom = -11;
+    Integer resultNumer = -820;
+    Integer resultDenom = 1001;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a * b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( times08, Rational )
+{
+    Integer aNumer = 0;
+    Integer aDenom = 26;
+    Integer bNumer = 3;
+    Integer bDenom = -7;
+    Integer resultNumer = 0;
+    Integer resultDenom = 1;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a * b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( times09, Rational )
+{
+    Integer aNumer = 15;
+    Integer aDenom = 26;
+    Integer bNumer = 0;
+    Integer bDenom = -7;
+    Integer resultNumer = 0;
+    Integer resultDenom = 1;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a * b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+
+TEST( plus01, Rational )
+{
+    Integer aNumer = -9;
+    Integer aDenom = -7;
+    Integer bNumer = 10;
+    Integer bDenom = 11;
+    Integer resultNumer = 169;
+    Integer resultDenom = 77;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a + b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plus02, Rational )
+{
+    Integer aNumer = 234;
+    Integer aDenom = 123;
+    Integer bNumer = 345;
+    Integer bDenom = 756;
+    Integer resultNumer = 24371;
+    Integer resultDenom = 10332;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a + b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plus03, Rational )
+{
+    Integer aNumer = -4576;
+    Integer aDenom = 3478;
+    Integer bNumer = -3478;
+    Integer bDenom = 4578;
+    Integer resultNumer = -8261353;
+    Integer resultDenom = 3980571;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a + b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plus04, Rational )
+{
+    Integer aNumer = 9405;
+    Integer aDenom = -9470;
+    Integer bNumer = 3789;
+    Integer bDenom = -9483;
+    Integer resultNumer = -8337963;
+    Integer resultDenom = 5986934;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a + b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plus05, Rational )
+{
+    Integer aNumer = 5;
+    Integer aDenom = 6;
+    Integer bNumer = -37;
+    Integer bDenom = -72;
+    Integer resultNumer = 97;
+    Integer resultDenom = 72;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a + b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plus06, Rational )
+{
+    Integer aNumer = 51;
+    Integer aDenom = 26;
+    Integer bNumer = -3;
+    Integer bDenom = 7;
+    Integer resultNumer = 279;
+    Integer resultDenom = 182;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a + b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plus07, Rational )
+{
+    Integer aNumer = 82;
+    Integer aDenom = 91;
+    Integer bNumer = 10;
+    Integer bDenom = -11;
+    Integer resultNumer = -8;
+    Integer resultDenom = 1001;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a + b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plus08, Rational )
+{
+    Integer aNumer = 0;
+    Integer aDenom = 26;
+    Integer bNumer = 3;
+    Integer bDenom = -7;
+    Integer resultNumer = -3;
+    Integer resultDenom = 7;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a + b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( plus09, Rational )
+{
+    Integer aNumer = 15;
+    Integer aDenom = 26;
+    Integer bNumer = 0;
+    Integer bDenom = -7;
+    Integer resultNumer = 15;
+    Integer resultDenom = 26;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a + b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+
+TEST( minus01, Rational )
+{
+    Integer aNumer = -9;
+    Integer aDenom = -7;
+    Integer bNumer = 10;
+    Integer bDenom = 11;
+    Integer resultNumer = 29;
+    Integer resultDenom = 77;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a - b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minus02, Rational )
+{
+    Integer aNumer = 234;
+    Integer aDenom = 123;
+    Integer bNumer = 345;
+    Integer bDenom = 756;
+    Integer resultNumer = 14941;
+    Integer resultDenom = 10332;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a - b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minus03, Rational )
+{
+    Integer aNumer = -4576;
+    Integer aDenom = 3478;
+    Integer bNumer = -3478;
+    Integer bDenom = 4578;
+    Integer resultNumer = -2213111;
+    Integer resultDenom = 3980571;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a - b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minus04, Rational )
+{
+    Integer aNumer = 9405;
+    Integer aDenom = -9470;
+    Integer bNumer = 3789;
+    Integer bDenom = -9483;
+    Integer resultNumer = -3553719;
+    Integer resultDenom = 5986934;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a - b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minus05, Rational )
+{
+    Integer aNumer = 5;
+    Integer aDenom = 6;
+    Integer bNumer = -37;
+    Integer bDenom = -72;
+    Integer resultNumer = 23;
+    Integer resultDenom = 72;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a - b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minus06, Rational )
+{
+    Integer aNumer = 51;
+    Integer aDenom = 26;
+    Integer bNumer = -3;
+    Integer bDenom = 7;
+    Integer resultNumer = 435;
+    Integer resultDenom = 182;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a - b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minus07, Rational )
+{
+    Integer aNumer = 82;
+    Integer aDenom = 91;
+    Integer bNumer = 10;
+    Integer bDenom = -11;
+    Integer resultNumer = 1812;
+    Integer resultDenom = 1001;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a - b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minus08, Rational )
+{
+    Integer aNumer = 0;
+    Integer aDenom = 26;
+    Integer bNumer = 3;
+    Integer bDenom = -7;
+    Integer resultNumer = 3;
+    Integer resultDenom = 7;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a - b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( minus09, Rational )
+{
+    Integer aNumer = 15;
+    Integer aDenom = 26;
+    Integer bNumer = 0;
+    Integer bDenom = -7;
+    Integer resultNumer = 15;
+    Integer resultDenom = 26;
+    Rational a{ aNumer, aDenom };
+    Rational b{ bNumer, bDenom };
+    auto c = a - b;
+    CHECK_EQUAL( aNumer, a.getNumerator() )
+    CHECK_EQUAL( aDenom, a.getDenominator() )
+    CHECK_EQUAL( bNumer, b.getNumerator() )
+    CHECK_EQUAL( bDenom, b.getDenominator() )
+    CHECK_EQUAL( resultNumer, c.getNumerator() )
+    CHECK_EQUAL( resultDenom, c.getDenominator() )
+}
+TEST( getIsNegative01, Rational )
+{
+    Rational r{ 0, 1 };
+    CHECK( ! r.getIsNegative() )
+}
+TEST( getIsNegative02, Rational )
+{
+    Rational r{ 1, 10 };
+    CHECK( ! r.getIsNegative() )
+}
+TEST( getIsNegative03, Rational )
+{
+    Rational r{ -48, 90 };
+    CHECK( r.getIsNegative() )
+}
+TEST( getIsNegative04, Rational )
+{
+    Rational r{ 79, -23 };
+    CHECK( r.getIsNegative() )
+}
+TEST( getIsNegative05, Rational )
+{
+    Rational r{ -379, -234 };
+    CHECK( ! r.getIsNegative() )
+}
+TEST( getIsPositive01, Rational )
+{
+    Rational r{ 0, 1 };
+    CHECK( ! r.getIsPositive() )
+}
+TEST( getIsPositive02, Rational )
+{
+    Rational r{ 1, 10 };
+    CHECK( r.getIsPositive() )
+}
+TEST( getIsPositive03, Rational )
+{
+    Rational r{ -48, 90 };
+    CHECK( ! r.getIsPositive() )
+}
+TEST( getIsPositive04, Rational )
+{
+    Rational r{ 79, -23 };
+    CHECK( ! r.getIsPositive() )
+}
+TEST( getIsPositive05, Rational )
+{
+    Rational r{ -379, -234 };
+    CHECK( r.getIsPositive() )
+}
+TEST( getMixedWholePart01, Rational )
+{
+    Rational r{ 0, 1 };
+    CHECK_EQUAL( 0, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart02, Rational )
+{
+    Rational r{ 1, 2 };
+    CHECK_EQUAL( 0, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart03, Rational )
+{
+    Rational r{ 3, 3 };
+    CHECK_EQUAL( 1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart04, Rational )
+{
+    Rational r{ 5, 4 };
+    CHECK_EQUAL( 1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart06, Rational )
+{
+    Rational r{ 331, 100 };
+    CHECK_EQUAL( 3, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart07, Rational )
+{
+    Rational r{ -1, 1 };
+    CHECK_EQUAL( -1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart08, Rational )
+{
+    Rational r{ -1, 2 };
+    CHECK_EQUAL( 0, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart09, Rational )
+{
+    Rational r{ -3, 3 };
+    CHECK_EQUAL( -1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart10, Rational )
+{
+    Rational r{ -5, 4 };
+    CHECK_EQUAL( -1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart11, Rational )
+{
+    Rational r{ -331, 100 };
+    CHECK_EQUAL( -3, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart12, Rational )
+{
+    Rational r{ -1, -1 };
+    CHECK_EQUAL( 1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart13, Rational )
+{
+    Rational r{ -1, -2 };
+    CHECK_EQUAL( 0, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart14, Rational )
+{
+    Rational r{ -3, -3 };
+    CHECK_EQUAL( 1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart15, Rational )
+{
+    Rational r{ -5, -4 };
+    CHECK_EQUAL( 1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart16, Rational )
+{
+    Rational r{ -331, -100 };
+    CHECK_EQUAL( 3, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart17, Rational )
+{
+    Rational r{ 1, -1 };
+    CHECK_EQUAL( -1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart18, Rational )
+{
+    Rational r{ 1, -2 };
+    CHECK_EQUAL( 0, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart19, Rational )
+{
+    Rational r{ 3, -3 };
+    CHECK_EQUAL( -1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart20, Rational )
+{
+    Rational r{ 5, -4 };
+    CHECK_EQUAL( -1, r.getMixedWholePart() )
+}
+TEST( getMixedWholePart21, Rational )
+{
+    Rational r{ 331, -100 };
+    CHECK_EQUAL( -3, r.getMixedWholePart() )
+}
+
+TEST( getMixedFractionalPart01, Rational )
+{
+    Rational r{ 0, 1 };
+    CHECK_EQUAL( 0, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 1, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart02, Rational )
+{
+    Rational r{ 1, 2 };
+    CHECK_EQUAL( 1, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 2, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart03, Rational )
+{
+    Rational r{ 3, 3 };
+    CHECK_EQUAL( 0, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 3, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart04, Rational )
+{
+    Rational r{ 5, 4 };
+    CHECK_EQUAL( 1, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 4, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart06, Rational )
+{
+    Rational r{ 331, 100 };
+    CHECK_EQUAL( 31, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 100, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart07, Rational )
+{
+    Rational r{ -1, 1 };
+    CHECK_EQUAL( 0, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 1, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart08, Rational )
+{
+    Rational r{ -1, 2 };
+    CHECK_EQUAL( -1, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 2, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart09, Rational )
+{
+    Rational r{ -3, 3 };
+    CHECK_EQUAL( 0, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 3, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart10, Rational )
+{
+    Rational r{ -5, 4 };
+    CHECK_EQUAL( -1, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 4, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart11, Rational )
+{
+    Rational r{ -331, 100 };
+    CHECK_EQUAL( -31, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( 100, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart12, Rational )
+{
+    Rational r{ -1, -1 };
+    CHECK_EQUAL( 0, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -1, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart13, Rational )
+{
+    Rational r{ -1, -2 };
+    CHECK_EQUAL( -1, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -2, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart14, Rational )
+{
+    Rational r{ -3, -3 };
+    CHECK_EQUAL( 0, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -3, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart15, Rational )
+{
+    Rational r{ -5, -4 };
+    CHECK_EQUAL( -1, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -4, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart16, Rational )
+{
+    Rational r{ -331, -100 };
+    CHECK_EQUAL( -31, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -100, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart17, Rational )
+{
+    Rational r{ 1, -1 };
+    CHECK_EQUAL( 0, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -1, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart18, Rational )
+{
+    Rational r{ 1, -2 };
+    CHECK_EQUAL( 1, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -2, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart19, Rational )
+{
+    Rational r{ 3, -3 };
+    CHECK_EQUAL( 0, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -3, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart20, Rational )
+{
+    Rational r{ 5, -4 };
+    CHECK_EQUAL( 1, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -4, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getMixedFractionalPart21, Rational )
+{
+    Rational r{ 331, -100 };
+    CHECK_EQUAL( 31, r.getMixedFractionalPart().getNumerator() )
+    CHECK_EQUAL( -100, r.getMixedFractionalPart().getDenominator() )
+}
+TEST( getIsIdenticalTo01, Rational )
+{
+    Rational a{ 1, -2 };
+    Rational b{ 1, -2 };
+    CHECK( a.getIsIdenticalTo( b ) )
+    CHECK( b.getIsIdenticalTo( a ) )
+}
+TEST( getIsIdenticalTo02, Rational )
+{
+    Rational a{ 1, -2 };
+    Rational b{ 2, -4 };
+    CHECK( ! a.getIsIdenticalTo( b ) )
+    CHECK( ! b.getIsIdenticalTo( a ) )
+}
+TEST( comparisons01aEqualsb, Rational )
+{
+    Rational a{ 1, 2 };
+    Rational b{ 1, 2 };
+    CHECK( a.getIsIdenticalTo( b ) )
+    CHECK(   ( a == b ) )
+    CHECK( ! ( a != b ) )
+    CHECK( ! ( a  < b ) )
+    CHECK( ! ( a  > b ) )
+    CHECK(   ( a <= b ) )
+    CHECK(   ( a >= b ) )
+}
+TEST( comparisons01aGreaterThanb, Rational )
+{
+    Rational a{ 1, 2 };
+    Rational b{ 1, 3 };
+    CHECK( ! a.getIsIdenticalTo( b ) )
+    CHECK( ! ( a == b ) )
+    CHECK(   ( a != b ) )
+    CHECK( ! ( a  < b ) )
+    CHECK(   ( a  > b ) )
+    CHECK( ! ( a <= b ) )
+    CHECK(   ( a >= b ) )
+}
+TEST( comparisons01aLessThanb, Rational )
+{
+    Rational a{ -1, 2 };
+    Rational b{ -1, -3 };
+    CHECK( ! a.getIsIdenticalTo( b ) )
+    CHECK( ! ( a == b ) )
+    CHECK(   ( a != b ) )
+    CHECK(   ( a  < b ) )
+    CHECK( ! ( a  > b ) )
+    CHECK(   ( a <= b ) )
+    CHECK( ! ( a >= b ) )
+}
+TEST( comparisons02aEqualsb, Rational )
+{
+    Rational a{ 13, -21 };
+    Rational b{ -26, 42 };
+    CHECK( ! a.getIsIdenticalTo( b ) )
+    CHECK(   ( a == b ) )
+    CHECK( ! ( a != b ) )
+    CHECK( ! ( a  < b ) )
+    CHECK( ! ( a  > b ) )
+    CHECK(   ( a <= b ) )
+    CHECK(   ( a >= b ) )
+}
+TEST( comparisons02aGreaterThanb, Rational )
+{
+    Rational a{ -1, -2 };
+    Rational b{ -1, 323498 };
+    CHECK( ! a.getIsIdenticalTo( b ) )
+    CHECK( ! ( a == b ) )
+    CHECK(   ( a != b ) )
+    CHECK( ! ( a  < b ) )
+    CHECK(   ( a  > b ) )
+    CHECK( ! ( a <= b ) )
+    CHECK(   ( a >= b ) )
+}
+TEST( comparisons02aLessThanb, Rational )
+{
+    Rational a{ -1, -200 };
+    Rational b{ -1, -3 };
+    CHECK( ! a.getIsIdenticalTo( b ) )
+    CHECK( ! ( a == b ) )
+    CHECK(   ( a != b ) )
+    CHECK(   ( a  < b ) )
+    CHECK( ! ( a  > b ) )
+    CHECK(   ( a <= b ) )
+    CHECK( ! ( a >= b ) )
 }

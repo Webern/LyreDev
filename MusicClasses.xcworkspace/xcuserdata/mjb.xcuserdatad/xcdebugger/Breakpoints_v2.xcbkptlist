@@ -373,5 +373,51 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LyreTests/LyreTests/TestRational.cpp"
+            timestampString = "462044225.312339"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2206"
+            endingLineNumber = "2206"
+            landmarkName = "TEST( getMixedFractionalPart04, Rational )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RationalgetMixedFractionalPart04Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestRational.cpp"
+                  timestampString = "462044256.759742"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2206"
+                  endingLineNumber = "2206"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RationalgetMixedFractionalPart04Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestRational.cpp"
+                  timestampString = "462044256.75998"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2206"
+                  endingLineNumber = "2206"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -170,7 +170,7 @@ namespace lyre
             {
                 for ( auto r = rationals.begin(); r != rationals.end(); ++r )
                 {
-                    *r = Rational::reduce( *r );
+                    r->reduce();
                 }
             }
             if ( rationals.size() > 1 )
@@ -189,23 +189,21 @@ namespace lyre
                 }
             }
         }
-        Rational Rational::reduce( const lyre::p::Rational& r )
+        bool Rational::reduce()
         {
-            Integer gcf = Rational::gcd( r.getNumerator(), r.getDenominator() );
-            Rational temp{ r.getNumerator()/gcf, r.getDenominator()/gcf };
+            Integer gcf = Rational::gcd( this->getNumerator(), this->getDenominator() );
+            Rational temp{ this->getNumerator()/gcf, this->getDenominator()/gcf };
             if ( ( temp.getNumerator() < 0 && temp.getDenominator() < 0 ) ||
-                 ( temp.getNumerator() >= 0 && temp.getDenominator() < 0 ) )
+                ( temp.getNumerator() >= 0 && temp.getDenominator() < 0 ) )
             {
                 temp.setNumerator( ( -1 * temp.getNumerator() ) );
                 temp.setDenominator( ( -1 * temp.getDenominator() ) );
             }
-            return temp;
-        }
-        bool Rational::reduce()
-        {
-            Rational temp = Rational::reduce( *this );
             bool changed = ( temp.getNumerator() != this->getNumerator() ) || ( temp.getDenominator() != this->getDenominator() );
-            *this = temp;
+            if ( changed )
+            {
+                *this = temp;
+            }
             return changed;
         }
         bool operator==( const Rational& left, const Rational& right )
@@ -256,33 +254,115 @@ namespace lyre
         {
             return os << "( " << right.getNumerator() << " / " << right.getDenominator() << " )";
         }
-        Rational Rational::getReciprocal() const
+        void Rational::reciprocal()
         {
-            return Rational{ getDenominator(), getNumerator() };
+            if ( getNumerator() != 0 )
+            {
+                Integer tempNumerator = getNumerator();
+                setNumerator( getDenominator() );
+                setDenominator( tempNumerator );
+            }
         }
-        
+        /* returns true if the fraction
+         represents a number less than zero */
+        bool Rational::getIsNegative() const
+        {
+            if ( getNumerator() == 0 )
+            {
+                return false;
+            }
+            else if ( getNumerator() > 0 && getDenominator() > 0 )
+            {
+                return false;
+            }
+            else if ( getNumerator() < 0 && getDenominator() < 0 )
+            {
+                return false;
+            }
+            return true;
+        }
+        bool Rational::getIsPositive() const
+        {
+            if ( getNumerator() == 0 )
+            {
+                return false;
+            }
+            else if ( getNumerator() > 0 && getDenominator() > 0 )
+            {
+                return true;
+            }
+            else if ( getNumerator() < 0 && getDenominator() < 0 )
+            {
+                return true;
+            }
+            return false;
+        }
+        /* if the fraction were written as a mixed
+         number (i.e.  1 1/2 instead of 3/2), get
+         the whole number part (i.e. 1) and the
+         fractional part (i.e. 1/2) */
+        Integer Rational::getMixedWholePart() const
+        {
+            return getNumerator()/getDenominator();
+        }
+        Rational Rational::getMixedFractionalPart() const
+        {
+            Integer whole = getMixedWholePart();
+            Rational temp{ getNumerator(), getDenominator() };
+            temp.setNumerator( getNumerator() - ( whole * getDenominator() ) );
+            return temp;
+        }
+        /* returns true of both numerators are equal
+         and both denominators are equal.  Note this
+         is different than the behavior of == */
+        bool Rational::getIsIdenticalTo( const Rational& other ) const
+        {
+            return ( getNumerator() == other.getNumerator() ) && ( getDenominator() == other.getDenominator() );
+        }
         Rational& Rational::operator*=( const Rational& right )
         {
             auto result = *this * right;
             *this = result;
             return *this;
         }
+        /* attempting to divide by 0 (i.e. 0/x) is a no op */
         Rational& Rational::operator/=( const Rational& right )
         {
-            auto result = *this / right;
+            if ( right.getNumerator() != 0 )
+            {
+                auto result = *this / right;
+                *this = result;
+            }
+            return *this;
+        }
+        Rational& Rational::operator+=( const Rational& right )
+        {
+            auto result = *this + right;
             *this = result;
             return *this;
         }
+        Rational& Rational::operator-=( const Rational& right )
+        {
+            auto result = *this - right;
+            *this = result;
+            return *this;
+        }
+        /* divide by zero (i.e. 0/x) returns 0/1 (i.e. instead of throwing) */
         Rational operator/( const Rational& r, const Rational& l )
         {
-            auto l_recip = l.getReciprocal();
+            if ( l.getNumerator() == 0 )
+                return Rational{ 0, 1 };
+            auto l_recip = l;
+            l_recip.reciprocal();
             auto value = r * l_recip;
-            value = Rational::reduce( value );
+            value.reduce();
             return value;
         }
         Rational operator*( const Rational& r, const Rational& l )
         {
-            return Rational::reduce( Rational{ r.getNumerator() * l.getNumerator(), r.getDenominator() * l.getDenominator() } );
+            Rational temp{ r.getNumerator() * l.getNumerator(), r.getDenominator() * l.getDenominator() };
+            temp.reduce();
+            return temp;
         }
         Rational operator+( const Rational& r, const Rational& l )
         {
@@ -290,7 +370,7 @@ namespace lyre
             auto copy_l = l;
             Rational::lcd( copy_r, copy_l );
             Rational output{ copy_r.getNumerator() + copy_l.getNumerator(), copy_r.getDenominator() };
-            Rational::reduce( output );
+            output.reduce();
             return output;
         }
         Rational operator-( const Rational& r, const Rational& l )
@@ -299,7 +379,7 @@ namespace lyre
             auto copy_l = l;
             Rational::lcd( copy_r, copy_l );
             Rational output{ copy_r.getNumerator() - copy_l.getNumerator(), copy_r.getDenominator() };
-            Rational::reduce( output );
+            output.reduce();
             return output;
         }
     }
