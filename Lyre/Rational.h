@@ -93,6 +93,7 @@ namespace lyre
              are negative, they will be replaced by
              positive numebrs. */
             static Rational reduce( const Rational& r );
+            bool reduce();
             
             /* return the reciprocal as a Rational */
             Rational getReciprocal() const;

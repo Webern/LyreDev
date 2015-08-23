@@ -191,15 +191,22 @@ namespace lyre
         }
         Rational Rational::reduce( const lyre::p::Rational& r )
         {
-            
             Integer gcf = Rational::gcd( r.getNumerator(), r.getDenominator() );
             Rational temp{ r.getNumerator()/gcf, r.getDenominator()/gcf };
-            if ( temp.getNumerator() < 0 && temp.getDenominator() < 0 )
+            if ( ( temp.getNumerator() < 0 && temp.getDenominator() < 0 ) ||
+                 ( temp.getNumerator() >= 0 && temp.getDenominator() < 0 ) )
             {
                 temp.setNumerator( ( -1 * temp.getNumerator() ) );
                 temp.setDenominator( ( -1 * temp.getDenominator() ) );
             }
             return temp;
+        }
+        bool Rational::reduce()
+        {
+            Rational temp = Rational::reduce( *this );
+            bool changed = ( temp.getNumerator() != this->getNumerator() ) || ( temp.getDenominator() != this->getDenominator() );
+            *this = temp;
+            return changed;
         }
         bool operator==( const Rational& left, const Rational& right )
         {

@@ -634,3 +634,56 @@ TEST( lcdList03noReduce, Rational )
     ++r;
     CHECK( r == rats.cend() )
 }
+TEST( reduce01, Rational )
+{
+    Rational r{ 0, 10 };
+    bool changed = r.reduce();
+    CHECK( changed )
+    CHECK_EQUAL( 0, r.getNumerator() )
+    CHECK_EQUAL( 1, r.getDenominator() )
+}
+TEST( reduce02, Rational )
+{
+    Rational r{ 99, -99 };
+    bool changed = r.reduce();
+    CHECK( changed )
+    CHECK_EQUAL( -1, r.getNumerator() )
+    CHECK_EQUAL( 1, r.getDenominator() )
+}
+TEST( reduce03, Rational )
+{
+    Rational r{ -200, -100 };
+    bool changed = r.reduce();
+    CHECK( changed )
+    CHECK_EQUAL( 2, r.getNumerator() )
+    CHECK_EQUAL( 1, r.getDenominator() )
+}
+TEST( reduce04, Rational )
+{
+    Rational r{ 5, 15 };
+    bool changed = r.reduce();
+    CHECK( changed )
+    CHECK_EQUAL( 1, r.getNumerator() )
+    CHECK_EQUAL( 3, r.getDenominator() )
+}
+TEST( reduce05, Rational )
+{
+    Rational r{ 0, -115 };
+    bool changed = r.reduce();
+    CHECK( changed )
+    CHECK_EQUAL( 0, r.getNumerator() )
+    CHECK_EQUAL( 1, r.getDenominator() )
+}
+TEST( reduce06, Rational )
+{
+    Rational r{ -3, -250377 };
+    bool changed = r.reduce();
+    CHECK( changed )
+    CHECK_EQUAL( 1, r.getNumerator() )
+    CHECK_EQUAL( 83459, r.getDenominator() )
+}
+TEST( nothing, Rational )
+{
+    Rational r;
+    CHECK_EQUAL( "get rid of the static reduce function", "" )
+}
