@@ -8,93 +8,90 @@
 
 namespace lyre
 {
-    namespace p
+    template <typename TYPE, TYPE MODULUS>
+    class Mod
     {
-        template <typename TYPE, TYPE MODULUS>
-        class Mod
+    public:
+        Mod()
+        :myValue( 0 )
+        {}
+        explicit Mod( const TYPE value )
+        :myValue( value )
         {
-        public:
-            Mod()
-            :myValue( 0 )
-            {}
-            explicit Mod( const TYPE value )
-            :myValue( value )
+            setValue( value );
+        }
+        TYPE getValue() const
+        {
+            return myValue;
+        }
+        void setValue( const TYPE value )
+        {
+            if ( value >= 0 )
             {
-                setValue( value );
+                myValue = value % MODULUS;
             }
-            TYPE getValue() const
+            else
             {
-                return myValue;
+                myValue = ( MODULUS - ( std::abs( value ) % MODULUS ) ) % MODULUS;
             }
-            void setValue( const TYPE value )
-            {
-                if ( value >= 0 )
-                {
-                    myValue = value % MODULUS;
-                }
-                else
-                {
-                    myValue = ( MODULUS - ( std::abs( value ) % MODULUS ) ) % MODULUS;
-                }
-            }
-            Mod& add( const TYPE value )
-            {
-                setValue( myValue + value );
-                return *this;
-            }
-            Mod& subtract( const TYPE value )
-            {
-                setValue( myValue - value );
-                return *this;
-            }
-            Mod& operator++()
-            {
-                setValue( ( ++myValue ) );
-                return *this;
-            }
-            Mod operator++(int)
-            {
-                Mod temp = *this;
-                setValue( ( ++myValue ) );
-                return temp;
-            }
-            Mod& operator--()
-            {
-                setValue( ( --myValue ) );
-                return *this;
-            }
-            Mod operator--(int)
-            {
-                Mod temp = *this;
-                setValue( ( --myValue ) );
-                return temp;
-            }
-            bool operator==( const Mod& rhs ) const
-            {
-                return this->getValue() == rhs.getValue();
-            }
-            bool operator!=( const Mod& rhs ) const
-            {
-                return ! ( *this == rhs );
-            }
-            bool operator>=( const Mod& rhs ) const
-            {
-                return ( *this > rhs ) || ( *this == rhs );
-            }
-            bool operator<=( const Mod& rhs ) const
-            {
-                return ( *this < rhs ) || ( *this == rhs );
-            }
-            bool operator>( const Mod& rhs ) const
-            {
-                return rhs < *this;
-            }
-            bool operator<( const Mod& rhs ) const
-            {
-                return this->getValue() < rhs.getValue();
-            }
-        private:
-            TYPE myValue;
-        };
-    }
+        }
+        Mod& add( const TYPE value )
+        {
+            setValue( myValue + value );
+            return *this;
+        }
+        Mod& subtract( const TYPE value )
+        {
+            setValue( myValue - value );
+            return *this;
+        }
+        Mod& operator++()
+        {
+            setValue( ( ++myValue ) );
+            return *this;
+        }
+        Mod operator++(int)
+        {
+            Mod temp = *this;
+            setValue( ( ++myValue ) );
+            return temp;
+        }
+        Mod& operator--()
+        {
+            setValue( ( --myValue ) );
+            return *this;
+        }
+        Mod operator--(int)
+        {
+            Mod temp = *this;
+            setValue( ( --myValue ) );
+            return temp;
+        }
+        bool operator==( const Mod& rhs ) const
+        {
+            return this->getValue() == rhs.getValue();
+        }
+        bool operator!=( const Mod& rhs ) const
+        {
+            return ! ( *this == rhs );
+        }
+        bool operator>=( const Mod& rhs ) const
+        {
+            return ( *this > rhs ) || ( *this == rhs );
+        }
+        bool operator<=( const Mod& rhs ) const
+        {
+            return ( *this < rhs ) || ( *this == rhs );
+        }
+        bool operator>( const Mod& rhs ) const
+        {
+            return rhs < *this;
+        }
+        bool operator<( const Mod& rhs ) const
+        {
+            return this->getValue() < rhs.getValue();
+        }
+    private:
+        TYPE myValue;
+    };
 }

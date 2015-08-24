@@ -11,6 +11,9 @@
 		29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734711B7ACD4B0046F4F8 /* Rational.cpp */; };
 		29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E734721B7ACD4B0046F4F8 /* Rational.h */; };
 		29E734761B7ACDDD0046F4F8 /* TypeDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E734751B7ACDDD0046F4F8 /* TypeDefs.h */; };
+		29FCDEF31B8B03080092CBCB /* DurationBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FCDEF11B8B03080092CBCB /* DurationBase.cpp */; };
+		29FCDEF41B8B03080092CBCB /* DurationBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 29FCDEF21B8B03080092CBCB /* DurationBase.h */; };
+		29FCDEF81B8B06170092CBCB /* Dur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FCDEF61B8B06170092CBCB /* Dur.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		29E734711B7ACD4B0046F4F8 /* Rational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rational.cpp; sourceTree = "<group>"; };
 		29E734721B7ACD4B0046F4F8 /* Rational.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rational.h; sourceTree = "<group>"; };
 		29E734751B7ACDDD0046F4F8 /* TypeDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
+		29FCDEF11B8B03080092CBCB /* DurationBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurationBase.cpp; path = ../../old/DurationBase.cpp; sourceTree = "<group>"; };
+		29FCDEF21B8B03080092CBCB /* DurationBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurationBase.h; path = ../../old/DurationBase.h; sourceTree = "<group>"; };
+		29FCDEF51B8B04DF0092CBCB /* Dur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dur.h; sourceTree = "<group>"; };
+		29FCDEF61B8B06170092CBCB /* Dur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dur.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +42,10 @@
 		29E7345F1B7ACC0D0046F4F8 = {
 			isa = PBXGroup;
 			children = (
+				29FCDEF61B8B06170092CBCB /* Dur.cpp */,
+				29FCDEF51B8B04DF0092CBCB /* Dur.h */,
+				29FCDEF11B8B03080092CBCB /* DurationBase.cpp */,
+				29FCDEF21B8B03080092CBCB /* DurationBase.h */,
 				29E734751B7ACDDD0046F4F8 /* TypeDefs.h */,
 				29E734711B7ACD4B0046F4F8 /* Rational.cpp */,
 				29E734721B7ACD4B0046F4F8 /* Rational.h */,
@@ -59,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E734761B7ACDDD0046F4F8 /* TypeDefs.h in Headers */,
+				29FCDEF41B8B03080092CBCB /* DurationBase.h in Headers */,
 				29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */,
 				29E734701B7ACCB60046F4F8 /* Mod.h in Headers */,
 			);
@@ -115,6 +127,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29FCDEF81B8B06170092CBCB /* Dur.cpp in Sources */,
+				29FCDEF31B8B03080092CBCB /* DurationBase.cpp in Sources */,
 				29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +241,7 @@
 				29E7346E1B7ACC0D0046F4F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

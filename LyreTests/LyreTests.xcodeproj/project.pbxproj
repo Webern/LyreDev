@@ -16,6 +16,7 @@
 		29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734561B7ACBA50046F4F8 /* cpulTestResult.cpp */; };
 		29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734581B7ACBA50046F4F8 /* TestMod.cpp */; };
 		29E734781B7ACE750046F4F8 /* libLyre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E734771B7ACE750046F4F8 /* libLyre.a */; };
+		29FCDEFC1B8B0BA60092CBCB /* TestDur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FCDEFA1B8B0BA60092CBCB /* TestDur.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		29E734571B7ACBA50046F4F8 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestResult.h; path = LyreTests/cpulTestResult.h; sourceTree = "<group>"; };
 		29E734581B7ACBA50046F4F8 /* TestMod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestMod.cpp; sourceTree = "<group>"; };
 		29E734771B7ACE750046F4F8 /* libLyre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLyre.a; path = ../Build/Products/Debug/libLyre.a; sourceTree = "<group>"; };
+		29FCDEFA1B8B0BA60092CBCB /* TestDur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestDur.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				29E734581B7ACBA50046F4F8 /* TestMod.cpp */,
 				294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */,
+				29FCDEFA1B8B0BA60092CBCB /* TestDur.cpp */,
 			);
 			path = LyreTests;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				294CD80E1B7BC61A0042DDF5 /* TestRational.cpp in Sources */,
 				29E734591B7ACBA50046F4F8 /* cpulFailure.cpp in Sources */,
 				29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */,
+				29FCDEFC1B8B0BA60092CBCB /* TestDur.cpp in Sources */,
 				29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */,
 				29E734331B7ACB590046F4F8 /* main.cpp in Sources */,
 			);

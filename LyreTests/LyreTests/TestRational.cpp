@@ -2,7 +2,7 @@
 #include "Rational.h"
 #include "TypeDefs.h"
 
-using namespace lyre::p;
+using namespace lyre;
 
 TEST( Constructor01, Rational )
 {
