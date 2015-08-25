@@ -88,11 +88,11 @@ namespace lyre
         }
         else if ( r == Rational{ 1, 64 } )
         {
-            return Dur::OneTwentyEighth;
+            return Dur::TwoFiftySixth;
         }
         else
         {
-            throw std::runtime_error( "Rational could not be converted to a Dur type" );
+            throw std::runtime_error( "rational could not be converted to a dur type" );
         }
         return Dur::Quarter;
     }
@@ -155,6 +155,7 @@ namespace lyre
         {
             return Dur::TwoFiftySixth;
         }
+        throw std::runtime_error( "string could not be parsed to a dur type" );
         return Dur::Quarter;
     }
     String toString( const Dur d )
