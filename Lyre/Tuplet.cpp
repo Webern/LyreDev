@@ -46,6 +46,14 @@ namespace lyre
     {
         myDenominator = positiveInt( value );
     }
+    void Tuplet::setNumeratorDur( const Dur value )
+    {
+        myNumeratorDur = value;
+    }
+    void Tuplet::setDenominatorDur( const Dur value )
+    {
+        myDenominatorDur = value;
+    }
     Integer Tuplet::getNumerator() const
     {
         return myNumerator;

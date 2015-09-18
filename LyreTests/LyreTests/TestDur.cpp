@@ -347,3 +347,27 @@ TEST( toString10, Dur )
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
+TEST( convertDots01, Dur )
+{
+    auto d = Dur::Half;
+    Integer dots = 2;
+    auto r = convert( d, dots );
+    CHECK_EQUAL( 7, r.getNumerator() )
+    CHECK_EQUAL( 2, r.getDenominator() )
+}
+TEST( convertDots02, Dur )
+{
+    auto d = Dur::Whole;
+    Integer dots = 1;
+    auto r = convert( d, dots );
+    CHECK_EQUAL( 6, r.getNumerator() )
+    CHECK_EQUAL( 1, r.getDenominator() )
+}
+TEST( convertDots03, Dur )
+{
+    auto d = Dur::Quarter;
+    Integer dots = 3;
+    auto r = convert( d, dots );
+    CHECK_EQUAL( 15, r.getNumerator() )
+    CHECK_EQUAL( 8, r.getDenominator() )
+}

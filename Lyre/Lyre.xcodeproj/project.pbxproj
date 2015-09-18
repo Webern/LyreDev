@@ -13,6 +13,8 @@
 		29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734711B7ACD4B0046F4F8 /* Rational.cpp */; };
 		29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E734721B7ACD4B0046F4F8 /* Rational.h */; };
 		29E734761B7ACDDD0046F4F8 /* TypeDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E734751B7ACDDD0046F4F8 /* TypeDefs.h */; };
+		29EA94FB1BACC1570019FBFB /* DurDot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29EA94F91BACC1570019FBFB /* DurDot.cpp */; };
+		29EA94FC1BACC1570019FBFB /* DurDot.h in Headers */ = {isa = PBXBuildFile; fileRef = 29EA94FA1BACC1570019FBFB /* DurDot.h */; };
 		29FCDEF81B8B06170092CBCB /* Dur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FCDEF61B8B06170092CBCB /* Dur.cpp */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,8 @@
 		29E734711B7ACD4B0046F4F8 /* Rational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rational.cpp; sourceTree = "<group>"; };
 		29E734721B7ACD4B0046F4F8 /* Rational.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rational.h; sourceTree = "<group>"; };
 		29E734751B7ACDDD0046F4F8 /* TypeDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
+		29EA94F91BACC1570019FBFB /* DurDot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurDot.cpp; sourceTree = "<group>"; };
+		29EA94FA1BACC1570019FBFB /* DurDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurDot.h; sourceTree = "<group>"; };
 		29FCDEF51B8B04DF0092CBCB /* Dur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dur.h; sourceTree = "<group>"; };
 		29FCDEF61B8B06170092CBCB /* Dur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dur.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,6 +46,8 @@
 		29E7345F1B7ACC0D0046F4F8 = {
 			isa = PBXGroup;
 			children = (
+				29EA94F91BACC1570019FBFB /* DurDot.cpp */,
+				29EA94FA1BACC1570019FBFB /* DurDot.h */,
 				2927E4D01B8CC7FB00041459 /* Tuplet.cpp */,
 				2927E4D11B8CC7FB00041459 /* Tuplet.h */,
 				29FCDEF61B8B06170092CBCB /* Dur.cpp */,
@@ -69,6 +75,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EA94FC1BACC1570019FBFB /* DurDot.h in Headers */,
 				2927E4D31B8CC7FB00041459 /* Tuplet.h in Headers */,
 				29E734761B7ACDDD0046F4F8 /* TypeDefs.h in Headers */,
 				29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */,
@@ -128,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29FCDEF81B8B06170092CBCB /* Dur.cpp in Sources */,
+				29EA94FB1BACC1570019FBFB /* DurDot.cpp in Sources */,
 				2927E4D21B8CC7FB00041459 /* Tuplet.cpp in Sources */,
 				29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */,
 			);

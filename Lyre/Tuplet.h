@@ -22,6 +22,8 @@ namespace lyre
          instead */
         void setNumerator( const Integer value);
         void setDenominator( const Integer value );
+        void setNumeratorDur( const Dur value );
+        void setDenominatorDur( const Dur value );
         
         Integer getNumerator() const;
         Integer getDenominator() const;

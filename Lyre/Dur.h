@@ -20,6 +20,7 @@ namespace lyre
         TwoFiftySixth = 10 // 1/64
     };
     Rational convert( const Dur d );
+    Rational convert( const Dur d, const Integer dots );
     Dur convert( const Rational& r ); /* throws std::runtime_error */
     Dur parse( const String& s ); /* throws std::runtime_error */
     String toString( const Dur d );

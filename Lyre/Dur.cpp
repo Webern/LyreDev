@@ -44,6 +44,17 @@ namespace lyre
         }
         return Rational{ 1, 1 };
     }
+    Rational convert( const Dur d, const Integer dots )
+    {
+        auto value = convert( d );
+        auto add = value;
+        for ( int i=0; i<dots; ++i )
+        {
+            add *= Rational{ 1, 2 };
+            value += add;
+        }
+        return value;
+    }
     Dur convert( const Rational& r )
     {
         if ( r == Rational{ 16, 1 } )
