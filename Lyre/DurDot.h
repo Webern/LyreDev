@@ -17,8 +17,20 @@ namespace lyre
         void setDur( const Dur dur );
         Integer getDots() const;
         Dur getDur() const;
+        Rational getRational() const;
+        String toString() const;
+        std::ostream& toStream( std::ostream& os ) const;
+        
     private:
         Dur myDur;
         Integer myDots;
     };
+    
+    std::ostream& operator<<( std::ostream& os, const DurDot& dd );
+    bool operator==( const DurDot& l, const DurDot& r );
+    bool operator!=( const DurDot& l, const DurDot& r );
+    bool operator<=( const DurDot& l, const DurDot& r );
+    bool operator>=( const DurDot& l, const DurDot& r );
+    bool operator<( const DurDot& l, const DurDot& r );
+    bool operator>( const DurDot& l, const DurDot& r );
 }
