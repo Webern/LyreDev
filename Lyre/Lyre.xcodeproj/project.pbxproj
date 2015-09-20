@@ -43,19 +43,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		29E7345F1B7ACC0D0046F4F8 = {
+		293F50891BAF126600AC0C19 /* Rhythm */ = {
 			isa = PBXGroup;
 			children = (
-				29EA94F91BACC1570019FBFB /* DurDot.cpp */,
-				29EA94FA1BACC1570019FBFB /* DurDot.h */,
 				2927E4D01B8CC7FB00041459 /* Tuplet.cpp */,
 				2927E4D11B8CC7FB00041459 /* Tuplet.h */,
 				29FCDEF61B8B06170092CBCB /* Dur.cpp */,
 				29FCDEF51B8B04DF0092CBCB /* Dur.h */,
-				29E734751B7ACDDD0046F4F8 /* TypeDefs.h */,
+				29EA94F91BACC1570019FBFB /* DurDot.cpp */,
+				29EA94FA1BACC1570019FBFB /* DurDot.h */,
+			);
+			name = Rhythm;
+			sourceTree = "<group>";
+		};
+		293F508A1BAF128000AC0C19 /* General */ = {
+			isa = PBXGroup;
+			children = (
 				29E734711B7ACD4B0046F4F8 /* Rational.cpp */,
 				29E734721B7ACD4B0046F4F8 /* Rational.h */,
+				29E734751B7ACDDD0046F4F8 /* TypeDefs.h */,
 				29E7346F1B7ACCB60046F4F8 /* Mod.h */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		29E7345F1B7ACC0D0046F4F8 = {
+			isa = PBXGroup;
+			children = (
+				293F508A1BAF128000AC0C19 /* General */,
+				293F50891BAF126600AC0C19 /* Rhythm */,
 				29E734691B7ACC0D0046F4F8 /* Products */,
 			);
 			sourceTree = "<group>";

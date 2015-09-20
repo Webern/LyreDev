@@ -3,7 +3,7 @@
 namespace lyre
 {
     Tuplet::Tuplet()
-    :myNumeratorDur( Dur::Quarter )
+    :myNumeratorDur{ Dur::Quarter, 0 }
     ,myNumerator( 1 )
     ,myDenominatorDur( Dur::Quarter )
     ,myDenominator( 1 )
@@ -11,9 +11,9 @@ namespace lyre
     
     Tuplet::Tuplet( const Integer numerator, const Dur numeratorDur,
                     const Integer denominator, const Dur denominatorDur )
-    :myNumeratorDur( numeratorDur )
+    :myNumeratorDur{ numeratorDur, 0 }
     ,myNumerator( 1 )
-    ,myDenominatorDur( denominatorDur )
+    ,myDenominatorDur( denominatorDur, 0 )
     ,myDenominator( 1 )
     {
         setNumerator( numerator );
@@ -22,9 +22,9 @@ namespace lyre
     Tuplet::Tuplet( const Dur durNumeratorAndDenominator,
                     const Integer numerator,
                    const Integer denominator )
-    :myNumeratorDur( durNumeratorAndDenominator )
+    :myNumeratorDur{ durNumeratorAndDenominator, 0 }
     ,myNumerator( 1 )
-    ,myDenominatorDur( durNumeratorAndDenominator )
+    ,myDenominatorDur{ durNumeratorAndDenominator, 0 }
     ,myDenominator( 1 )
     {
         setNumerator( numerator );
@@ -46,11 +46,11 @@ namespace lyre
     {
         myDenominator = positiveInt( value );
     }
-    void Tuplet::setNumeratorDur( const Dur value )
+    void Tuplet::setNumeratorDur( const DurDot& value )
     {
         myNumeratorDur = value;
     }
-    void Tuplet::setDenominatorDur( const Dur value )
+    void Tuplet::setDenominatorDur( const DurDot& value )
     {
         myDenominatorDur = value;
     }
@@ -62,11 +62,11 @@ namespace lyre
     {
         return myDenominator;
     }
-    Dur Tuplet::getNumeratorDur() const
+    DurDot Tuplet::getNumeratorDur() const
     {
         return myNumeratorDur;
     }
-    Dur Tuplet::getDenominatorDur() const
+    DurDot Tuplet::getDenominatorDur() const
     {
         return myDenominatorDur;
     }

@@ -1,6 +1,6 @@
 #pragma once
 #include "TypeDefs.h"
-#include "Dur.h"
+#include "DurDot.h"
 
 namespace lyre
 {
@@ -22,18 +22,18 @@ namespace lyre
          instead */
         void setNumerator( const Integer value);
         void setDenominator( const Integer value );
-        void setNumeratorDur( const Dur value );
-        void setDenominatorDur( const Dur value );
+        void setNumeratorDur( const DurDot& value );
+        void setDenominatorDur( const DurDot& value );
         
         Integer getNumerator() const;
         Integer getDenominator() const;
-        Dur getNumeratorDur() const;
-        Dur getDenominatorDur() const;
+        DurDot getNumeratorDur() const;
+        DurDot getDenominatorDur() const;
         
     private:
-        Dur myNumeratorDur;
+        DurDot myNumeratorDur;
         Integer myNumerator;
-        Dur myDenominatorDur;
+        DurDot myDenominatorDur;
         Integer myDenominator;
         Integer positiveInt( const Integer input ) const;
     };
