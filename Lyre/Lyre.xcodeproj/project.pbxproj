@@ -9,18 +9,26 @@
 /* Begin PBXBuildFile section */
 		2927E4D21B8CC7FB00041459 /* Tuplet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2927E4D01B8CC7FB00041459 /* Tuplet.cpp */; };
 		2927E4D31B8CC7FB00041459 /* Tuplet.h in Headers */ = {isa = PBXBuildFile; fileRef = 2927E4D11B8CC7FB00041459 /* Tuplet.h */; };
+		293F508E1BAF130F00AC0C19 /* EnumInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F508C1BAF130F00AC0C19 /* EnumInterface.cpp */; };
+		293F508F1BAF130F00AC0C19 /* EnumInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 293F508D1BAF130F00AC0C19 /* EnumInterface.h */; };
 		29E734701B7ACCB60046F4F8 /* Mod.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E7346F1B7ACCB60046F4F8 /* Mod.h */; };
 		29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734711B7ACD4B0046F4F8 /* Rational.cpp */; };
 		29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E734721B7ACD4B0046F4F8 /* Rational.h */; };
 		29E734761B7ACDDD0046F4F8 /* TypeDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E734751B7ACDDD0046F4F8 /* TypeDefs.h */; };
 		29EA94FB1BACC1570019FBFB /* DurDot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29EA94F91BACC1570019FBFB /* DurDot.cpp */; };
 		29EA94FC1BACC1570019FBFB /* DurDot.h in Headers */ = {isa = PBXBuildFile; fileRef = 29EA94FA1BACC1570019FBFB /* DurDot.h */; };
+		29F735351BB067EA0067624F /* EnumSimple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F735331BB067EA0067624F /* EnumSimple.cpp */; };
+		29F735361BB067EA0067624F /* EnumSimple.h in Headers */ = {isa = PBXBuildFile; fileRef = 29F735341BB067EA0067624F /* EnumSimple.h */; };
+		29F7353C1BB07BAD0067624F /* StepInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F7353A1BB07BAD0067624F /* StepInterface.cpp */; };
+		29F7353D1BB07BAD0067624F /* StepInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 29F7353B1BB07BAD0067624F /* StepInterface.h */; };
 		29FCDEF81B8B06170092CBCB /* Dur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FCDEF61B8B06170092CBCB /* Dur.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2927E4D01B8CC7FB00041459 /* Tuplet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tuplet.cpp; sourceTree = "<group>"; };
 		2927E4D11B8CC7FB00041459 /* Tuplet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tuplet.h; sourceTree = "<group>"; };
+		293F508C1BAF130F00AC0C19 /* EnumInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnumInterface.cpp; sourceTree = "<group>"; };
+		293F508D1BAF130F00AC0C19 /* EnumInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumInterface.h; sourceTree = "<group>"; };
 		29E734681B7ACC0D0046F4F8 /* libLyre.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLyre.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E7346F1B7ACCB60046F4F8 /* Mod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mod.h; sourceTree = "<group>"; };
 		29E734711B7ACD4B0046F4F8 /* Rational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rational.cpp; sourceTree = "<group>"; };
@@ -28,6 +36,10 @@
 		29E734751B7ACDDD0046F4F8 /* TypeDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
 		29EA94F91BACC1570019FBFB /* DurDot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurDot.cpp; sourceTree = "<group>"; };
 		29EA94FA1BACC1570019FBFB /* DurDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurDot.h; sourceTree = "<group>"; };
+		29F735331BB067EA0067624F /* EnumSimple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnumSimple.cpp; sourceTree = "<group>"; };
+		29F735341BB067EA0067624F /* EnumSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumSimple.h; sourceTree = "<group>"; };
+		29F7353A1BB07BAD0067624F /* StepInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StepInterface.cpp; sourceTree = "<group>"; };
+		29F7353B1BB07BAD0067624F /* StepInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepInterface.h; sourceTree = "<group>"; };
 		29FCDEF51B8B04DF0092CBCB /* Dur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dur.h; sourceTree = "<group>"; };
 		29FCDEF61B8B06170092CBCB /* Dur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dur.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,17 +71,31 @@
 		293F508A1BAF128000AC0C19 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				293F508C1BAF130F00AC0C19 /* EnumInterface.cpp */,
+				293F508D1BAF130F00AC0C19 /* EnumInterface.h */,
+				29F735331BB067EA0067624F /* EnumSimple.cpp */,
+				29F735341BB067EA0067624F /* EnumSimple.h */,
+				29E7346F1B7ACCB60046F4F8 /* Mod.h */,
 				29E734711B7ACD4B0046F4F8 /* Rational.cpp */,
 				29E734721B7ACD4B0046F4F8 /* Rational.h */,
 				29E734751B7ACDDD0046F4F8 /* TypeDefs.h */,
-				29E7346F1B7ACCB60046F4F8 /* Mod.h */,
 			);
 			name = General;
+			sourceTree = "<group>";
+		};
+		293F508B1BAF12CA00AC0C19 /* Pitch */ = {
+			isa = PBXGroup;
+			children = (
+				29F7353A1BB07BAD0067624F /* StepInterface.cpp */,
+				29F7353B1BB07BAD0067624F /* StepInterface.h */,
+			);
+			name = Pitch;
 			sourceTree = "<group>";
 		};
 		29E7345F1B7ACC0D0046F4F8 = {
 			isa = PBXGroup;
 			children = (
+				293F508B1BAF12CA00AC0C19 /* Pitch */,
 				293F508A1BAF128000AC0C19 /* General */,
 				293F50891BAF126600AC0C19 /* Rhythm */,
 				29E734691B7ACC0D0046F4F8 /* Products */,
@@ -93,9 +119,12 @@
 			files = (
 				29EA94FC1BACC1570019FBFB /* DurDot.h in Headers */,
 				2927E4D31B8CC7FB00041459 /* Tuplet.h in Headers */,
+				29F7353D1BB07BAD0067624F /* StepInterface.h in Headers */,
+				29F735361BB067EA0067624F /* EnumSimple.h in Headers */,
 				29E734761B7ACDDD0046F4F8 /* TypeDefs.h in Headers */,
 				29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */,
 				29E734701B7ACCB60046F4F8 /* Mod.h in Headers */,
+				293F508F1BAF130F00AC0C19 /* EnumInterface.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,10 +179,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F735351BB067EA0067624F /* EnumSimple.cpp in Sources */,
+				293F508E1BAF130F00AC0C19 /* EnumInterface.cpp in Sources */,
 				29FCDEF81B8B06170092CBCB /* Dur.cpp in Sources */,
 				29EA94FB1BACC1570019FBFB /* DurDot.cpp in Sources */,
 				2927E4D21B8CC7FB00041459 /* Tuplet.cpp in Sources */,
 				29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */,
+				29F7353C1BB07BAD0067624F /* StepInterface.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
