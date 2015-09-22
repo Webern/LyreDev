@@ -1,14 +1,14 @@
 #include "cpulTestHarness.h"
-#include "EnumInterface.h"
+#include "IStep.h"
 #include <sstream>
 
 using namespace lyre;
 using namespace std;
 
-class MockEnum : public EnumInterface
+class MockStep : public IStep
 {
 public:
-    EnumPtr clone() const { return std::make_shared<MockEnum>( *this ); }
+    IStepPtr clone() const { return std::make_shared<MockStep>( *this ); }
     Integer getValue() const { return myValue; }
     void setValue( const Integer val ) { myValue = val; }
     Integer getMin() const { return 0; }
@@ -22,26 +22,26 @@ private:
     Integer myValue;
 };
 
-TEST( Compiles, EnumInterface )
+TEST( Compiles, IStep )
 {
-    MockEnum m;
+    MockStep m;
     CHECK( true )
 }
-TEST( SharedPtr, EnumInterface )
+TEST( SharedPtr, IStep )
 {
-    EnumPtr p = std::make_shared<MockEnum>();
+    IStepPtr p = std::make_shared<MockStep>();
     CHECK( true )
 }
-TEST( UniquePtr, EnumInterface )
+TEST( UniquePtr, IStep )
 {
-    EnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IStepUPtr p = unique_ptr<MockStep>( new MockStep() );
     CHECK( true )
 }
-TEST( clone, EnumInterface )
+TEST( clone, IStep )
 {
-    EnumPtr p1 = std::make_shared<MockEnum>();
+    IStepPtr p1 = std::make_shared<MockStep>();
     p1->setValue( 100 );
-    EnumPtr p2 = p1->clone();
+    IStepPtr p2 = p1->clone();
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 100, p1->getValue() );
     CHECK_EQUAL( 100, p2->getValue() );
@@ -49,11 +49,11 @@ TEST( clone, EnumInterface )
     CHECK_EQUAL( 100, p1->getValue() );
     CHECK_EQUAL( 200, p2->getValue() );
 }
-TEST( covariantClone, EnumInterface )
+TEST( covariantClone, IStep )
 {
-    std::shared_ptr<MockEnum> p1 = std::make_shared<MockEnum>();
+    std::shared_ptr<MockStep> p1 = std::make_shared<MockStep>();
     p1->setValue( 100 );
-    std::shared_ptr<MockEnum> p2;
+    std::shared_ptr<MockStep> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 100, p1->getValue() );
@@ -66,24 +66,24 @@ TEST( covariantClone, EnumInterface )
     CHECK( p1->extendedFunction() )
     CHECK( p2->extendedFunction() )
 }
-TEST( getMin, EnumInterface )
+TEST( getMin, IStep )
 {
-    EnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IStepUPtr p = unique_ptr<MockStep>( new MockStep() );
     CHECK_EQUAL( 0, p->getMin() )
 }
-TEST( getMax, EnumInterface )
+TEST( getMax, IStep )
 {
-    EnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IStepUPtr p = unique_ptr<MockStep>( new MockStep() );
     CHECK_EQUAL( 1, p->getMax() )
 }
-TEST( parse, EnumInterface )
+TEST( parse, IStep )
 {
-    EnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IStepUPtr p = unique_ptr<MockStep>( new MockStep() );
     CHECK( p->parse( "" ) )
 }
-TEST( toStream, EnumInterface )
+TEST( toStream, IStep )
 {
-    EnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IStepUPtr p = unique_ptr<MockStep>( new MockStep() );
     p->setValue( 13 );
     stringstream ss;
     p->toStream( ss );
@@ -91,17 +91,17 @@ TEST( toStream, EnumInterface )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString, EnumInterface )
+TEST( toString, IStep )
 {
-    EnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IStepUPtr p = unique_ptr<MockStep>( new MockStep() );
     p->setValue( 13 );
     String expected = "13";
     String actual{ p->toString() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( streamingOperator, EnumInterface )
+TEST( streamingOperator, IStep )
 {
-    EnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IStepUPtr p = unique_ptr<MockStep>( new MockStep() );
     p->setValue( 13 );
     stringstream ss;
     ss << ( *p );
@@ -109,10 +109,10 @@ TEST( streamingOperator, EnumInterface )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( comparisons_a_lessThan_b, EnumInterface )
+TEST( comparisons_a_lessThan_b, IStep )
 {
-    EnumUPtr a = unique_ptr<MockEnum>( new MockEnum() );
-    EnumUPtr b = unique_ptr<EnumInterface>( new MockEnum() );
+    IStepUPtr a = unique_ptr<MockStep>( new MockStep() );
+    IStepUPtr b = unique_ptr<IStep>( new MockStep() );
     a->setValue( 1 );
     b->setValue( 2 );
     CHECK(   a->lessThan   ( *b ) )
@@ -122,10 +122,10 @@ TEST( comparisons_a_lessThan_b, EnumInterface )
     CHECK( ! a->equals     ( *b ) )
     CHECK( ! b->equals     ( *a ) )
 }
-TEST( comparisons_a_greaterThan_b, EnumInterface )
+TEST( comparisons_a_greaterThan_b, IStep )
 {
-    EnumUPtr a = unique_ptr<EnumInterface>( new MockEnum() );
-    EnumUPtr b = unique_ptr<MockEnum>( new MockEnum() );
+    IStepUPtr a = unique_ptr<IStep>( new MockStep() );
+    IStepUPtr b = unique_ptr<MockStep>( new MockStep() );
     a->setValue( 2 );
     b->setValue( 1 );
     CHECK( ! a->lessThan   ( *b ) )
@@ -135,10 +135,10 @@ TEST( comparisons_a_greaterThan_b, EnumInterface )
     CHECK( ! a->equals     ( *b ) )
     CHECK( ! b->equals     ( *a ) )
 }
-TEST( comparisons_a_equals_b, EnumInterface )
+TEST( comparisons_a_equals_b, IStep )
 {
-    EnumUPtr a = unique_ptr<EnumInterface>( new MockEnum() );
-    EnumUPtr b = unique_ptr<MockEnum>( new MockEnum() );
+    IStepUPtr a = unique_ptr<IStep>( new MockStep() );
+    IStepUPtr b = unique_ptr<MockStep>( new MockStep() );
     a->setValue( 21 );
     b->setValue( 21 );
     CHECK( ! a->lessThan   ( *b ) )
@@ -148,16 +148,16 @@ TEST( comparisons_a_equals_b, EnumInterface )
     CHECK(   a->equals     ( *b ) )
     CHECK(   b->equals     ( *a ) )
 }
-TEST( increment, EnumInterface )
+TEST( increment, IStep )
 {
-    EnumUPtr a = unique_ptr<EnumInterface>( new MockEnum() );
+    IStepUPtr a = unique_ptr<IStep>( new MockStep() );
     a->setValue( 100 );
     a->increment();
     CHECK_EQUAL( 101, a->getValue() )
 }
-TEST( decrement, EnumInterface )
+TEST( decrement, IStep )
 {
-    EnumUPtr a = unique_ptr<EnumInterface>( new MockEnum() );
+    IStepUPtr a = unique_ptr<IStep>( new MockStep() );
     a->setValue( 100 );
     a->decrement();
     CHECK_EQUAL( 99, a->getValue() )

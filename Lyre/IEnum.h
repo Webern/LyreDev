@@ -4,17 +4,17 @@
 
 namespace lyre
 {
-    class EnumInterface;
-    using EnumPtr = std::shared_ptr<EnumInterface>;
-    using EnumUPtr = std::unique_ptr<EnumInterface>;
+    class IEnum;
+    using IEnumPtr = std::shared_ptr<IEnum>;
+    using IEnumUPtr = std::unique_ptr<IEnum>;
     
-    class EnumInterface
+    class IEnum
     {
     public:
-        virtual ~EnumInterface() = default;
+        virtual ~IEnum() = default;
         
         /* return a deep copy of "this" */
-        virtual EnumPtr clone() const = 0;
+        virtual IEnumPtr clone() const = 0;
         
         /* deep copy to "output", note
          the use of static_pointer_cast,
@@ -49,9 +49,9 @@ namespace lyre
         virtual String toString() const;
         
         /* compares the return values of getValue() */
-        virtual bool lessThan( const EnumInterface& other ) const;
-        virtual bool greaterThan( const EnumInterface& other ) const;
-        virtual bool equals( const EnumInterface& other ) const;
+        virtual bool lessThan( const IEnum& other ) const;
+        virtual bool greaterThan( const IEnum& other ) const;
+        virtual bool equals( const IEnum& other ) const;
         
         /* increments/decrements, should wraps around to min/max */
         virtual void increment() = 0;
@@ -59,5 +59,5 @@ namespace lyre
     };
     
     /* this calls toStream... syntactic sugar */
-    std::ostream& operator<<( std::ostream& os, const EnumInterface& EnumName );
+    std::ostream& operator<<( std::ostream& os, const IEnum& EnumName );
 }

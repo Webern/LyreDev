@@ -425,13 +425,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LyreTests/LyreTests/TestEnumInterface.cpp"
+            filePath = "LyreTests/LyreTests/TestIEnum.cpp"
             timestampString = "464548244.962278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "TEST( parse, EnumInterface )"
+            landmarkName = "TEST( parse, IEnum )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -441,7 +441,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LyreTests/LyreTests/TestEnumSimple.cpp"
+            filePath = "LyreTests/LyreTests/TestEnum.cpp"
             timestampString = "464548836.371446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -455,13 +455,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LyreTests/LyreTests/TestEnumSimple.cpp"
+            filePath = "LyreTests/LyreTests/TestEnum.cpp"
             timestampString = "464549834.035747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "TEST( clone, EnumSimple )"
+            landmarkName = "TEST( clone, Enum )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -471,13 +471,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LyreTests/LyreTests/TestEnumSimple.cpp"
+            filePath = "LyreTests/LyreTests/TestEnum.cpp"
             timestampString = "464550018.088941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "TEST( clone, EnumSimple )"
+            landmarkName = "TEST( clone, Enum )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

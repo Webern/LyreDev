@@ -1,8 +1,8 @@
-#include "EnumSimple.h"
+#include "Enum.h"
 
 namespace lyre
 {
-    EnumSimple::EnumSimple( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset )
+    Enum::Enum( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset )
     :myStrings( strs )
     ,myOffset( offset )
     ,myValue( 0 )
@@ -15,17 +15,17 @@ namespace lyre
         setValue( value );
     }
     
-    EnumPtr EnumSimple::clone() const
+    IEnumPtr Enum::clone() const
     {
-        return std::make_shared<EnumSimple>( *this );
+        return std::make_shared<Enum>( *this );
     }
     
-    Integer EnumSimple::getValue() const
+    Integer Enum::getValue() const
     {
         return myValue + myOffset;
     }
     
-    void EnumSimple::setValue( const Integer val )
+    void Enum::setValue( const Integer val )
     {
         if ( val > getMax() )
         {
@@ -41,12 +41,12 @@ namespace lyre
         }
     }
     
-    Integer EnumSimple::getMin() const
+    Integer Enum::getMin() const
     {
         return myOffset;
     }
     
-    Integer EnumSimple::getMax() const
+    Integer Enum::getMax() const
     {
         if ( myStrings )
         {
@@ -55,7 +55,7 @@ namespace lyre
         return 0;
     }
     
-    bool EnumSimple::parse( const String& str )
+    bool Enum::parse( const String& str )
     {
         Integer i = 0;
         for ( auto s : *myStrings )
@@ -70,7 +70,7 @@ namespace lyre
         return false;
     }
     
-    std::ostream& EnumSimple::toStream( std::ostream& os ) const
+    std::ostream& Enum::toStream( std::ostream& os ) const
     {
         if ( ! myStrings )
         {
@@ -83,7 +83,7 @@ namespace lyre
         return ( os << (*myStrings)[ myValue ] );
     }
     
-    void EnumSimple::increment()
+    void Enum::increment()
     {
         if ( myValue == getMax() - myOffset )
         {
@@ -94,7 +94,7 @@ namespace lyre
             myValue++;
         }
     }
-    void EnumSimple::decrement()
+    void Enum::decrement()
     {
         if ( myValue == getMin() - myOffset )
         {

@@ -1,31 +1,31 @@
-#include "EnumInterface.h"
+#include "IEnum.h"
 #include <sstream>
 
 namespace lyre
 {
-    String EnumInterface::toString() const
+    String IEnum::toString() const
     {
         std::stringstream ss;
         this->toStream( ss );
         return String{ ss.str() };
     }
-    std::ostream& operator<<( std::ostream& os, const EnumInterface& EnumName )
+    std::ostream& operator<<( std::ostream& os, const IEnum& EnumName )
     {
         return EnumName.toStream( os );
     }
-    bool EnumInterface::lessThan( const EnumInterface& other ) const
+    bool IEnum::lessThan( const IEnum& other ) const
     {
         return getValue() < other.getValue();
     }
-    bool EnumInterface::greaterThan( const EnumInterface& other ) const
+    bool IEnum::greaterThan( const IEnum& other ) const
     {
         return getValue() > other.getValue();
     }
-    bool EnumInterface::equals( const EnumInterface& other ) const
+    bool IEnum::equals( const IEnum& other ) const
     {
         return getValue() == other.getValue();
     }
-    void EnumInterface::increment()
+    void IEnum::increment()
     {
         if ( getValue() == getMax() )
         {
@@ -36,7 +36,7 @@ namespace lyre
             setValue( getValue() + 1 );
         }
     }
-    void EnumInterface::decrement()
+    void IEnum::decrement()
     {
         if ( getValue() == getMin() )
         {

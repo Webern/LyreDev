@@ -1,19 +1,19 @@
 #pragma once
-#include "EnumInterface.h"
+#include "IEnum.h"
 
 namespace lyre
 {
-    class EnumSimple;
-    using EnumSimplePtr = std::shared_ptr<EnumSimple>;
-    using EnumSimpleUPtr = std::unique_ptr<EnumSimple>;
+    class Enum;
+    using EnumPtr = std::shared_ptr<Enum>;
+    using EnumUPtr = std::unique_ptr<Enum>;
     
-    class EnumSimple : public EnumInterface
+    class Enum : public IEnum
     {
     public:
-        EnumSimple( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset = 0 );
+        Enum( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset = 0 );
         
         /* return a deep copy of "this" */
-        virtual EnumPtr clone() const;
+        virtual IEnumPtr clone() const;
         
         /* return the Enum as an integer */
         virtual Integer getValue() const;
@@ -38,9 +38,9 @@ namespace lyre
         virtual String toString() const; */
         
         /* compares the return values of getValue()
-        virtual bool lessThan( const EnumInterface& other ) const;
-        virtual bool greaterThan( const EnumInterface& other ) const;
-        virtual bool equals( const EnumInterface& other ) const; */
+        virtual bool lessThan( const IEnum& other ) const;
+        virtual bool greaterThan( const IEnum& other ) const;
+        virtual bool equals( const IEnum& other ) const; */
         
         /* increments/decrements, should wraps around to min/max */
         virtual void increment();
