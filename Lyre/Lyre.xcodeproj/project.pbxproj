@@ -13,6 +13,10 @@
 		292B939F1BB1ACE100A4F808 /* Step.h in Headers */ = {isa = PBXBuildFile; fileRef = 292B939D1BB1ACE100A4F808 /* Step.h */; };
 		293F508E1BAF130F00AC0C19 /* IEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F508C1BAF130F00AC0C19 /* IEnum.cpp */; };
 		293F508F1BAF130F00AC0C19 /* IEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 293F508D1BAF130F00AC0C19 /* IEnum.h */; };
+		29DB04F91BB301A90029014A /* Alter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04F71BB301A90029014A /* Alter.cpp */; };
+		29DB04FA1BB301A90029014A /* Alter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DB04F81BB301A90029014A /* Alter.h */; };
+		29DB04FD1BB301E10029014A /* IAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04FB1BB301E10029014A /* IAlter.cpp */; };
+		29DB04FE1BB301E10029014A /* IAlter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DB04FC1BB301E10029014A /* IAlter.h */; };
 		29E734701B7ACCB60046F4F8 /* Mod.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E7346F1B7ACCB60046F4F8 /* Mod.h */; };
 		29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734711B7ACD4B0046F4F8 /* Rational.cpp */; };
 		29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E734721B7ACD4B0046F4F8 /* Rational.h */; };
@@ -33,6 +37,10 @@
 		292B939D1BB1ACE100A4F808 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
 		293F508C1BAF130F00AC0C19 /* IEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IEnum.cpp; sourceTree = "<group>"; };
 		293F508D1BAF130F00AC0C19 /* IEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEnum.h; sourceTree = "<group>"; };
+		29DB04F71BB301A90029014A /* Alter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Alter.cpp; sourceTree = "<group>"; };
+		29DB04F81BB301A90029014A /* Alter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alter.h; sourceTree = "<group>"; };
+		29DB04FB1BB301E10029014A /* IAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAlter.cpp; sourceTree = "<group>"; };
+		29DB04FC1BB301E10029014A /* IAlter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAlter.h; sourceTree = "<group>"; };
 		29E734681B7ACC0D0046F4F8 /* libLyre.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLyre.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E7346F1B7ACCB60046F4F8 /* Mod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mod.h; sourceTree = "<group>"; };
 		29E734711B7ACD4B0046F4F8 /* Rational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rational.cpp; sourceTree = "<group>"; };
@@ -94,6 +102,10 @@
 				29F7353B1BB07BAD0067624F /* IStep.h */,
 				292B939C1BB1ACE100A4F808 /* Step.cpp */,
 				292B939D1BB1ACE100A4F808 /* Step.h */,
+				29DB04F71BB301A90029014A /* Alter.cpp */,
+				29DB04F81BB301A90029014A /* Alter.h */,
+				29DB04FB1BB301E10029014A /* IAlter.cpp */,
+				29DB04FC1BB301E10029014A /* IAlter.h */,
 			);
 			name = Pitch;
 			sourceTree = "<group>";
@@ -126,12 +138,14 @@
 				292B939F1BB1ACE100A4F808 /* Step.h in Headers */,
 				29EA94FC1BACC1570019FBFB /* DurDot.h in Headers */,
 				2927E4D31B8CC7FB00041459 /* Tuplet.h in Headers */,
+				29DB04FA1BB301A90029014A /* Alter.h in Headers */,
 				29F7353D1BB07BAD0067624F /* IStep.h in Headers */,
 				29F735361BB067EA0067624F /* Enum.h in Headers */,
 				29E734761B7ACDDD0046F4F8 /* TypeDefs.h in Headers */,
 				29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */,
 				29E734701B7ACCB60046F4F8 /* Mod.h in Headers */,
 				293F508F1BAF130F00AC0C19 /* IEnum.h in Headers */,
+				29DB04FE1BB301E10029014A /* IAlter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,9 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29DB04F91BB301A90029014A /* Alter.cpp in Sources */,
 				29F735351BB067EA0067624F /* Enum.cpp in Sources */,
 				293F508E1BAF130F00AC0C19 /* IEnum.cpp in Sources */,
 				29FCDEF81B8B06170092CBCB /* Dur.cpp in Sources */,
+				29DB04FD1BB301E10029014A /* IAlter.cpp in Sources */,
 				29EA94FB1BACC1570019FBFB /* DurDot.cpp in Sources */,
 				2927E4D21B8CC7FB00041459 /* Tuplet.cpp in Sources */,
 				292B939E1BB1ACE100A4F808 /* Step.cpp in Sources */,

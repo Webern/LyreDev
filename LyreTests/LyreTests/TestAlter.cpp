@@ -1,60 +1,60 @@
 #include "cpulTestHarness.h"
-#include "Step.h"
+#include "Alter.h"
 #include <sstream>
 
 using namespace lyre;
 using namespace std;
 
-TEST( Compiles, Step )
+TEST( Compiles, Alter )
 {
-    Step o;
+    Alter o;
     CHECK( true )
 }
-TEST( SharedPtr, Step )
+TEST( SharedPtr, Alter )
 {
-    IStepPtr p = std::make_shared<Step>();
+    IAlterPtr p = std::make_shared<Alter>();
     CHECK( true )
 }
-TEST( UniquePtr, Step )
+TEST( UniquePtr, Alter )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
     CHECK( true )
 }
 
-TEST( Constructor01a, Step )
+TEST( Constructor01a, Alter )
 {
-    Step s{ 5 };
+    Alter s{ 5 };
     CHECK_EQUAL( 5, s.getValue() )
 }
-TEST( Constructor01b, Step )
+TEST( Constructor01b, Alter )
 {
-    Step s{ INT_MIN };
+    Alter s{ INT_MIN };
     CHECK_EQUAL( 0, s.getValue() )
 }
-TEST( Constructor01c, Step )
+TEST( Constructor01c, Alter )
 {
-    Step s{ INT_MAX };
+    Alter s{ INT_MAX };
     CHECK_EQUAL( 6, s.getValue() )
 }
-TEST( Constructor02, Step )
+TEST( Constructor02, Alter )
 {
-    Step s{ StepValue::D };
+    Alter s{ AlterValue::D };
     CHECK_EQUAL( 1, s.getValue() )
 }
-TEST( Constructor03a, Step )
+TEST( Constructor03a, Alter )
 {
-    Step s{ String{ "F" } };
+    Alter s{ String{ "F" } };
     CHECK_EQUAL( 3, s.getValue() )
 }
-TEST( Constructor03b, Step )
+TEST( Constructor03b, Alter )
 {
-    Step s{ String{ "BADINPUT" } };
+    Alter s{ String{ "BADINPUT" } };
     CHECK_EQUAL( 0, s.getValue() )
 }
-TEST( CopyConstructor01, Step )
+TEST( CopyConstructor01, Alter )
 {
-    Step a{ 1 };
-    Step b{ a };
+    Alter a{ 1 };
+    Alter b{ a };
     CHECK_EQUAL( 1, a.getValue() )
     CHECK_EQUAL( 1, b.getValue() )
     a.setValue( 2 );
@@ -62,18 +62,18 @@ TEST( CopyConstructor01, Step )
     CHECK_EQUAL( 2, a.getValue() )
     CHECK_EQUAL( 5, b.getValue() )
 }
-TEST( MoveConstructor01, Step )
+TEST( MoveConstructor01, Alter )
 {
-    Step a{ 1 };
-    Step b{ std::move( a ) };
+    Alter a{ 1 };
+    Alter b{ std::move( a ) };
     CHECK_EQUAL( 1, b.getValue() )
     b.setValue( 5 );
     CHECK_EQUAL( 5, b.getValue() )
 }
-TEST( AssignmentOperator, Step )
+TEST( AssignmentOperator, Alter )
 {
-    Step a{ 1 };
-    Step b{ 4 };
+    Alter a{ 1 };
+    Alter b{ 4 };
     b = a;
     CHECK_EQUAL( 1, a.getValue() )
     CHECK_EQUAL( 1, b.getValue() )
@@ -82,20 +82,20 @@ TEST( AssignmentOperator, Step )
     CHECK_EQUAL( 2, a.getValue() )
     CHECK_EQUAL( 5, b.getValue() )
 }
-TEST( MoveAssignment, Step )
+TEST( MoveAssignment, Alter )
 {
-    Step a{ 1 };
-    Step b{ 4 };
+    Alter a{ 1 };
+    Alter b{ 4 };
     b = std::move( a );
     CHECK_EQUAL( 1, b.getValue() )
     b.setValue( 5 );
     CHECK_EQUAL( 5, b.getValue() )
 }
-TEST( clone, Step )
+TEST( clone, Alter )
 {
-    IStepPtr p1 = std::make_shared<Step>();
+    IAlterPtr p1 = std::make_shared<Alter>();
     p1->setValue( 4 );
-    IStepPtr p2 = p1->clone();
+    IAlterPtr p2 = p1->clone();
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 4, p1->getValue() );
     CHECK_EQUAL( 4, p2->getValue() );
@@ -103,11 +103,11 @@ TEST( clone, Step )
     CHECK_EQUAL( 4, p1->getValue() );
     CHECK_EQUAL( 2, p2->getValue() );
 }
-TEST( copyTo, Step )
+TEST( copyTo, Alter )
 {
-    std::shared_ptr<Step> p1 = std::make_shared<Step>();
+    std::shared_ptr<Alter> p1 = std::make_shared<Alter>();
     p1->setValue( -1 );
-    std::shared_ptr<Step> p2;
+    std::shared_ptr<Alter> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 0, p1->getValue() );
@@ -116,19 +116,19 @@ TEST( copyTo, Step )
     CHECK_EQUAL( 0, p1->getValue() );
     CHECK_EQUAL( 6, p2->getValue() );
 }
-TEST( getMin, Step )
+TEST( getMin, Alter )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
     CHECK_EQUAL( 0, p->getMin() )
 }
-TEST( getMax, Step )
+TEST( getMax, Alter )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
     CHECK_EQUAL( 6, p->getMax() )
 }
-TEST( parse, Step )
+TEST( parse, Alter )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
     p->setValue( 2 );
     CHECK_EQUAL( "E", p->toString() )
     CHECK( ! p->parse( "f" ) )
@@ -136,9 +136,9 @@ TEST( parse, Step )
     CHECK( p->parse( "F" ) )
     CHECK_EQUAL( "F", p->toString() )
 }
-TEST( toStream, Step )
+TEST( toStream, Alter )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
     p->setValue( 1 );
     stringstream ss;
     p->toStream( ss );
@@ -146,17 +146,17 @@ TEST( toStream, Step )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString, Step )
+TEST( toString, Alter )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
     p->setValue( 6 );
     String expected = "B";
     String actual{ p->toString() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( streamingOperator, Step )
+TEST( streamingOperator, Alter )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
     p->setValue( 4 );
     stringstream ss;
     ss << ( *p );
@@ -164,10 +164,10 @@ TEST( streamingOperator, Step )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( comparisons_a_lessThan_b, Step )
+TEST( comparisons_a_lessThan_b, Alter )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
-    IStepUPtr b = unique_ptr<Step>( new Step() );
+    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
+    IAlterUPtr b = unique_ptr<Alter>( new Alter() );
     a->setValue( 1 );
     b->setValue( 2 );
     CHECK(   a->lessThan   ( *b ) )
@@ -177,10 +177,10 @@ TEST( comparisons_a_lessThan_b, Step )
     CHECK( ! a->equals     ( *b ) )
     CHECK( ! b->equals     ( *a ) )
 }
-TEST( comparisons_a_greaterThan_b, Step )
+TEST( comparisons_a_greaterThan_b, Alter )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
-    IStepUPtr b = unique_ptr<Step>( new Step() );
+    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
+    IAlterUPtr b = unique_ptr<Alter>( new Alter() );
     a->setValue( 2 );
     b->setValue( 1 );
     CHECK( ! a->lessThan   ( *b ) )
@@ -190,10 +190,10 @@ TEST( comparisons_a_greaterThan_b, Step )
     CHECK( ! a->equals     ( *b ) )
     CHECK( ! b->equals     ( *a ) )
 }
-TEST( comparisons_a_equals_b, Step )
+TEST( comparisons_a_equals_b, Alter )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
-    IStepUPtr b = unique_ptr<Step>( new Step() );
+    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
+    IAlterUPtr b = unique_ptr<Alter>( new Alter() );
     a->setValue( 3 );
     b->setValue( 3 );
     CHECK( ! a->lessThan   ( *b ) )
@@ -203,16 +203,16 @@ TEST( comparisons_a_equals_b, Step )
     CHECK(   a->equals     ( *b ) )
     CHECK(   b->equals     ( *a ) )
 }
-TEST( increment01, Step )
+TEST( increment01, Alter )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
+    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
     a->setValue( 1 );
     a->increment();
     CHECK_EQUAL( 2, a->getValue() )
 }
-TEST( increment02, Step )
+TEST( increment02, Alter )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
+    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
     a->setValue( 2 );
     a->increment();
     CHECK_EQUAL( 3, a->getValue() )
@@ -229,16 +229,16 @@ TEST( increment02, Step )
     a->increment();
     CHECK_EQUAL( 2, a->getValue() )
 }
-TEST( decrement01, Step )
+TEST( decrement01, Alter )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
+    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
     a->setValue( 2 );
     a->decrement();
     CHECK_EQUAL( 1, a->getValue() )
 }
-TEST( decrement02, Step )
+TEST( decrement02, Alter )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
+    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
     a->setValue( 2 );
     a->decrement();
     CHECK_EQUAL( 1, a->getValue() )
@@ -255,37 +255,37 @@ TEST( decrement02, Step )
     a->decrement();
     CHECK_EQUAL( 2, a->getValue() )
 }
-TEST( checkAllStringAndStepValueOutputs, Step )
+TEST( checkAllStringAndAlterValueOutputs, Alter )
 {
-    auto a = unique_ptr<Step>( new Step() );
+    auto a = unique_ptr<Alter>( new Alter() );
     a->setValue( 0 );
     CHECK_EQUAL( "C", a->toString() )
-    CHECK( a->getStepValue() == StepValue::C )
+    CHECK( a->getAlterValue() == AlterValue::C )
     a->increment();
     CHECK_EQUAL( "D", a->toString() )
-    CHECK( a->getStepValue() == StepValue::D )
+    CHECK( a->getAlterValue() == AlterValue::D )
     a->increment();
     CHECK_EQUAL( "E", a->toString() )
-    CHECK( a->getStepValue() == StepValue::E )
+    CHECK( a->getAlterValue() == AlterValue::E )
     a->increment();
     CHECK_EQUAL( "F", a->toString() )
-    CHECK( a->getStepValue() == StepValue::F )
+    CHECK( a->getAlterValue() == AlterValue::F )
     a->increment();
     CHECK_EQUAL( "G", a->toString() )
-    CHECK( a->getStepValue() == StepValue::G )
+    CHECK( a->getAlterValue() == AlterValue::G )
     a->increment();
     CHECK_EQUAL( "A", a->toString() )
-    CHECK( a->getStepValue() == StepValue::A )
+    CHECK( a->getAlterValue() == AlterValue::A )
     a->increment();
     CHECK_EQUAL( "B", a->toString() )
-    CHECK( a->getStepValue() == StepValue::B )
+    CHECK( a->getAlterValue() == AlterValue::B )
     a->increment();
     CHECK_EQUAL( "C", a->toString() )
-    CHECK( a->getStepValue() == StepValue::C )
+    CHECK( a->getAlterValue() == AlterValue::C )
 }
-TEST( checkAllStringInputs, Step )
+TEST( checkAllStringInputs, Alter )
 {
-    auto a = unique_ptr<Step>( new Step() );
+    auto a = unique_ptr<Alter>( new Alter() );
     a->setValue( 0 );
     a->parse( "D" );
     CHECK_EQUAL( 1, a->getValue() )
@@ -302,22 +302,22 @@ TEST( checkAllStringInputs, Step )
     a->parse( "C" );
     CHECK_EQUAL( 0, a->getValue() )
 }
-TEST( checkAllStepValueInputs, Step )
+TEST( checkAllAlterValueInputs, Alter )
 {
-    auto a = unique_ptr<Step>( new Step() );
+    auto a = unique_ptr<Alter>( new Alter() );
     a->setValue( 0 );
-    a->setValue( StepValue::D );
+    a->setValue( AlterValue::D );
     CHECK_EQUAL( 1, a->getValue() )
-    a->setValue( StepValue::E );
+    a->setValue( AlterValue::E );
     CHECK_EQUAL( 2, a->getValue() )
-    a->setValue( StepValue::F );
+    a->setValue( AlterValue::F );
     CHECK_EQUAL( 3, a->getValue() )
-    a->setValue( StepValue::G );
+    a->setValue( AlterValue::G );
     CHECK_EQUAL( 4, a->getValue() )
-    a->setValue( StepValue::A );
+    a->setValue( AlterValue::A );
     CHECK_EQUAL( 5, a->getValue() )
-    a->setValue( StepValue::B );
+    a->setValue( AlterValue::B );
     CHECK_EQUAL( 6, a->getValue() )
-    a->setValue( StepValue::C );
+    a->setValue( AlterValue::C );
     CHECK_EQUAL( 0, a->getValue() )
 }

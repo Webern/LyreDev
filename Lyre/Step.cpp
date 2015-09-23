@@ -37,7 +37,7 @@ namespace lyre
     }
     Step& Step::operator=( Step&& other ) noexcept
     {
-        *this = std::move( other );
+        Step::swap( *this, other );
         return *this;
     }
     
