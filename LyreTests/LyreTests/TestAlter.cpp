@@ -1,6 +1,8 @@
 #include "cpulTestHarness.h"
 #include "Alter.h"
 #include <sstream>
+#include <limits>
+#include <iostream>
 
 using namespace lyre;
 using namespace std;
@@ -28,27 +30,22 @@ TEST( Constructor01a, Alter )
 }
 TEST( Constructor01b, Alter )
 {
-    Alter s{ INT_MIN };
-    CHECK_EQUAL( 0, s.getValue() )
+    Alter s{ std::numeric_limits<Integer>::min() };
+    CHECK_EQUAL( std::numeric_limits<Integer>::min(), s.getValue() )
 }
 TEST( Constructor01c, Alter )
 {
-    Alter s{ INT_MAX };
-    CHECK_EQUAL( 6, s.getValue() )
-}
-TEST( Constructor02, Alter )
-{
-    Alter s{ AlterValue::D };
-    CHECK_EQUAL( 1, s.getValue() )
+    Alter s{ std::numeric_limits<Integer>::max() };
+    CHECK_EQUAL( std::numeric_limits<Integer>::max(), s.getValue() )
 }
 TEST( Constructor03a, Alter )
 {
-    Alter s{ String{ "F" } };
+    Alter s{ String{ "x#" } };
     CHECK_EQUAL( 3, s.getValue() )
 }
 TEST( Constructor03b, Alter )
 {
-    Alter s{ String{ "BADINPUT" } };
+    Alter s{ String{ "#x" } };
     CHECK_EQUAL( 0, s.getValue() )
 }
 TEST( CopyConstructor01, Alter )
@@ -114,27 +111,263 @@ TEST( copyTo, Alter )
     CHECK_EQUAL( 0, p2->getValue() );
     p2->setValue( 200 );
     CHECK_EQUAL( 0, p1->getValue() );
-    CHECK_EQUAL( 6, p2->getValue() );
+    CHECK_EQUAL( 200, p2->getValue() );
 }
 TEST( getMin, Alter )
 {
     IAlterUPtr p = unique_ptr<Alter>( new Alter() );
-    CHECK_EQUAL( 0, p->getMin() )
+    CHECK_EQUAL( std::numeric_limits<Integer>::min(), p->getMin() )
 }
 TEST( getMax, Alter )
 {
     IAlterUPtr p = unique_ptr<Alter>( new Alter() );
-    CHECK_EQUAL( 6, p->getMax() )
+    CHECK_EQUAL( std::numeric_limits<Integer>::max(), p->getMax() )
 }
-TEST( parse, Alter )
+TEST( parseSuccess01, Alter )
 {
     IAlterUPtr p = unique_ptr<Alter>( new Alter() );
-    p->setValue( 2 );
-    CHECK_EQUAL( "E", p->toString() )
-    CHECK( ! p->parse( "f" ) )
-    CHECK_EQUAL( "E", p->toString() )
-    CHECK( p->parse( "F" ) )
-    CHECK_EQUAL( "F", p->toString() )
+    p->setValue( -6 );
+    CHECK( p->parse( "" ) )
+    CHECK_EQUAL( 0, p->getValue() )
+}
+TEST( parseSuccess02, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "ddd" ) )
+    CHECK_EQUAL( -6, p->getValue() )
+}
+TEST( parseSuccess03, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "ddb" ) )
+    CHECK_EQUAL( -5, p->getValue() )
+}
+TEST( parseSuccess04, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "dd" ) )
+    CHECK_EQUAL( -4, p->getValue() )
+}
+TEST( parseSuccess05, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "db" ) )
+    CHECK_EQUAL( -3, p->getValue() )
+}
+TEST( parseSuccess06, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "d" ) )
+    CHECK_EQUAL( -2, p->getValue() )
+}
+TEST( parseSuccess07, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "b" ) )
+    CHECK_EQUAL( -1, p->getValue() )
+}
+TEST( parseSuccess08, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "" ) )
+    CHECK_EQUAL( 0, p->getValue() )
+}
+TEST( parseSuccess09, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "#" ) )
+    CHECK_EQUAL( 1, p->getValue() )
+}
+TEST( parseSuccess10, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "x" ) )
+    CHECK_EQUAL( 2, p->getValue() )
+}
+TEST( parseSuccess11, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "x#" ) )
+    CHECK_EQUAL( 3, p->getValue() )
+}
+TEST( parseSuccess12, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "xx" ) )
+    CHECK_EQUAL( 4, p->getValue() )
+}
+TEST( parseSuccess13, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "xx#" ) )
+    CHECK_EQUAL( 5, p->getValue() )
+}
+TEST( parseSuccess14, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -999 );
+    CHECK( p->parse( "xxx" ) )
+    CHECK_EQUAL( 6, p->getValue() )
+}
+TEST( parseSuccess15, Alter )
+{
+    String dbl{ "d" };
+    String sgl{ "b" };
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    for( Integer i = 100000; i > 0; --i )
+    {
+        stringstream ss;
+        for ( Integer j = 2; j <= i; j += 2 )
+        {
+            ss << dbl;
+        }
+        if ( i % 2 != 0 )
+        {
+            ss << sgl;
+        }
+        p->parse( ss.str() );
+        CHECK_EQUAL( ( -1 * i ), p->getValue() )
+    }
+}
+TEST( parseSuccess16, Alter )
+{
+    String dbl{ "x" };
+    String sgl{ "#" };
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    for( Integer i = 0; i > 100000; ++i )
+    {
+        stringstream ss;
+        for ( Integer j = 2; j <= i; j += 2 )
+        {
+            ss << dbl;
+        }
+        if ( i % 2 != 0 )
+        {
+            ss << sgl;
+        }
+        p->parse( ss.str() );
+        CHECK_EQUAL( i, p->getValue() )
+    }
+}
+TEST( parseFail01, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( " " ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail02, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "bd" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail03, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "#b" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail04, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "xb" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail05, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "#d" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail06, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "xd" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail07, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "b#" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail08, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "d#" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail09, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "bx" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail10, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "dx" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail11, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "#x" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail12, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "##" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail13, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "xx##" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail14, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "xxx#x" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail15, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "bd" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail16, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "bb" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail17, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "ddbb" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( parseFail18, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    CHECK( ! ( p->parse( "dddbd" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( toStream, Alter )
 {
@@ -260,28 +493,20 @@ TEST( checkAllStringAndAlterValueOutputs, Alter )
     auto a = unique_ptr<Alter>( new Alter() );
     a->setValue( 0 );
     CHECK_EQUAL( "C", a->toString() )
-    CHECK( a->getAlterValue() == AlterValue::C )
     a->increment();
     CHECK_EQUAL( "D", a->toString() )
-    CHECK( a->getAlterValue() == AlterValue::D )
     a->increment();
     CHECK_EQUAL( "E", a->toString() )
-    CHECK( a->getAlterValue() == AlterValue::E )
     a->increment();
     CHECK_EQUAL( "F", a->toString() )
-    CHECK( a->getAlterValue() == AlterValue::F )
     a->increment();
     CHECK_EQUAL( "G", a->toString() )
-    CHECK( a->getAlterValue() == AlterValue::G )
     a->increment();
     CHECK_EQUAL( "A", a->toString() )
-    CHECK( a->getAlterValue() == AlterValue::A )
     a->increment();
     CHECK_EQUAL( "B", a->toString() )
-    CHECK( a->getAlterValue() == AlterValue::B )
     a->increment();
     CHECK_EQUAL( "C", a->toString() )
-    CHECK( a->getAlterValue() == AlterValue::C )
 }
 TEST( checkAllStringInputs, Alter )
 {
@@ -300,24 +525,5 @@ TEST( checkAllStringInputs, Alter )
     a->parse( "B" );
     CHECK_EQUAL( 6, a->getValue() )
     a->parse( "C" );
-    CHECK_EQUAL( 0, a->getValue() )
-}
-TEST( checkAllAlterValueInputs, Alter )
-{
-    auto a = unique_ptr<Alter>( new Alter() );
-    a->setValue( 0 );
-    a->setValue( AlterValue::D );
-    CHECK_EQUAL( 1, a->getValue() )
-    a->setValue( AlterValue::E );
-    CHECK_EQUAL( 2, a->getValue() )
-    a->setValue( AlterValue::F );
-    CHECK_EQUAL( 3, a->getValue() )
-    a->setValue( AlterValue::G );
-    CHECK_EQUAL( 4, a->getValue() )
-    a->setValue( AlterValue::A );
-    CHECK_EQUAL( 5, a->getValue() )
-    a->setValue( AlterValue::B );
-    CHECK_EQUAL( 6, a->getValue() )
-    a->setValue( AlterValue::C );
     CHECK_EQUAL( 0, a->getValue() )
 }

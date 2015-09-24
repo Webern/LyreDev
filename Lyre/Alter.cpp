@@ -6,24 +6,30 @@ namespace lyre
 {
     std::shared_ptr<Strings> ALTERS242152 = std::make_shared<Strings>( Strings{ "C","D","E","F","G","A","B" } );
     
-    class Alter::AlterImpl : public Enum
+    class Alter::AlterImpl
     {
     public:
-        AlterImpl( const Integer value ) :Enum( value, ALTERS242152, 0 ) {}
-        AlterImpl() :Enum( 0, ALTERS242152, 0 ) {}
+        AlterImpl() : myValue{ 0 } {}
+        AlterImpl( const Integer value ) : myValue{ value } {}
+        Integer getValue() const { return myValue; }
+        void setValue( const Integer value ) { myValue = value; }
+        char doubleFlat() const { return 'd'; }
+        char flat() const { return 'b'; }
+        char sharp() const { return '#'; }
+        char doubleSharp() const { return 'x'; }
+        bool sharpDirection() const { return myValue > 0; }
+        bool flatDirection() const { return myValue < 0; }
+    private:
+        Integer myValue;
     };
     Alter::~Alter() {}
     Alter::Alter() : myImpl( new AlterImpl{} ) {}
     
     Alter::Alter( const Integer value ) : myImpl( new AlterImpl{ value } ) {}
-    Alter::Alter( const AlterValue value ) : myImpl( new AlterImpl{} )
-    {
-        setValue( value );
-    }
     
     Alter::Alter( const String& value ) : myImpl( new AlterImpl{} )
     {
-        myImpl->parse( value );
+        parse( value );
     }
     
     Alter::Alter( const Alter& other ) : myImpl( new AlterImpl{ *other.myImpl } ) {}
@@ -52,71 +58,9 @@ namespace lyre
         return myImpl->getValue();
     }
     
-    AlterValue Alter::getAlterValue() const
-    {
-        auto value = AlterValue::C;
-        switch ( myImpl->getValue() )
-        {
-            case 0:
-                value = AlterValue::C;
-                break;
-            case 1:
-                value = AlterValue::D;
-                break;
-            case 2:
-                value = AlterValue::E;
-                break;
-            case 3:
-                value = AlterValue::F;
-                break;
-            case 4:
-                value = AlterValue::G;
-                break;
-            case 5:
-                value = AlterValue::A;
-                break;
-            case 6:
-                value = AlterValue::B;
-                break;
-            default:
-                break;
-        }
-        return value;
-    }
-    
     void Alter::setValue( const Integer value )
     {
         myImpl->setValue( value );
-    }
-    
-    void Alter::setValue( const AlterValue value )
-    {
-        switch ( value )
-        {
-            case AlterValue::C:
-                myImpl->setValue( 0 );
-                break;
-            case AlterValue::D:
-                myImpl->setValue( 1 );
-                break;
-            case AlterValue::E:
-                myImpl->setValue( 2 );
-                break;
-            case AlterValue::F:
-                myImpl->setValue( 3 );
-                break;
-            case AlterValue::G:
-                myImpl->setValue( 4 );
-                break;
-            case AlterValue::A:
-                myImpl->setValue( 5 );
-                break;
-            case AlterValue::B:
-                myImpl->setValue( 6 );
-                break;
-            default:
-                break;
-        }
     }
     
     Integer Alter::getMin() const
@@ -131,22 +75,95 @@ namespace lyre
     
     bool Alter::parse( const String& str )
     {
-        return myImpl->parse( str );
+        auto c = str.cbegin();
+        auto end = str.cend();
+        bool success = false;
+        Integer value = 0;
+        if ( c == end )
+        {
+            success = true;
+        }
+        else // if ( c != end )
+        {
+            Integer direction = 0;
+            bool singleFound = false;
+            
+            if ( *c == myImpl->sharp() || *c == myImpl->doubleSharp() )
+            {
+                direction = 1;
+            }
+            else if ( *c == myImpl->flat() || *c == myImpl->doubleFlat() )
+            {
+                direction = -1;
+            }
+            else
+            {
+                return false;
+            }
+            
+            while ( c != end )
+            {
+                
+                
+                if ( *c == myImpl->doubleSharp() || myImpl->doubleFlat() )
+                {
+                    value += 2;
+                }
+                else if ( *c == myImpl->flat() || *c == myImpl->sharp() )
+                {
+                    value += 1;
+                }
+                else
+                {
+                    return false;
+                }
+                ++c;
+            }
+            
+        }
+        
+        if ( success )
+        {
+            myImpl->setValue( value );
+        }
+        return success;
     }
     
     std::ostream& Alter::toStream( std::ostream& os ) const
     {
-        return myImpl->toStream( os );
+        /*
+        if ( myImpl->getValue() != 0 )
+        {
+            Integer val = myImpl->getValue();
+            char dbl = myImpl->doubleSharp();
+            char sgl = myImpl->sharp();
+            if ( myImpl->flatDirection() )
+            {
+                val *= -1;
+                dbl = myImpl->doubleFlat();
+                sgl = myImpl->flat();
+            }
+            for ( Integer i = 2; i <= val; i += 2 )
+            {
+                os << String{ dbl };
+            }
+            if ( val % 2 != 0 )
+            {
+                os << String{ sgl };
+            }
+        }
+         */
+        return os;
     }
     
     void Alter::increment()
     {
-        myImpl->increment();
+        myImpl->setValue( myImpl->getValue() + 1 );
     }
     
     void Alter::decrement()
     {
-        myImpl->decrement();
+        myImpl->setValue( myImpl->getValue() - 1 );
     }
     
     void Alter::swap( Alter& left, Alter& right ) noexcept

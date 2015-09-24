@@ -4,17 +4,6 @@
 
 namespace lyre
 {
-    enum class AlterValue
-    {
-        C = 0,
-        D = 1,
-        E = 2,
-        F = 3,
-        G = 4,
-        A = 5,
-        B = 7
-    };
-    
     class Alter;
     using AlterPtr = std::shared_ptr<Alter>;
     using AlterUPtr = std::unique_ptr<Alter>;
@@ -25,7 +14,6 @@ namespace lyre
         virtual ~Alter();
         Alter();
         explicit Alter( const Integer value );
-        explicit Alter( const AlterValue value );
         explicit Alter( const String& value );
         Alter( const Alter& other );
         Alter( Alter&& other ) noexcept;
@@ -43,11 +31,9 @@ namespace lyre
         
         /* return the Alter as an integer */
         virtual Integer getValue() const;
-        virtual AlterValue getAlterValue() const;
         
         /* set the value from an int */
         virtual void setValue( const Integer value );
-        virtual void setValue( const AlterValue value );
         
         /* get the min/max allowable Alter values */
         virtual Integer getMin() const;
@@ -58,7 +44,13 @@ namespace lyre
         virtual bool parse( const String& str );
         
         /* stream the Alter name's string representation to an ostream
-         object. this will be called by toString and operator<< */
+         object. this will be called by toString and operator<<
+         Double Flat  => d
+         Flat         => b
+         Natural      =>
+         Sharp        => #
+         Double Sharp => x
+         */
         virtual std::ostream& toStream( std::ostream& os ) const;
         
         /* return the Alter as a string, this has a definition
