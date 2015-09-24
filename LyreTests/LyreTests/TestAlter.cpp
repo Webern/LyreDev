@@ -107,10 +107,10 @@ TEST( copyTo, Alter )
     std::shared_ptr<Alter> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
-    CHECK_EQUAL( 0, p1->getValue() );
-    CHECK_EQUAL( 0, p2->getValue() );
+    CHECK_EQUAL( -1, p1->getValue() );
+    CHECK_EQUAL( -1, p2->getValue() );
     p2->setValue( 200 );
-    CHECK_EQUAL( 0, p1->getValue() );
+    CHECK_EQUAL( -1, p1->getValue() );
     CHECK_EQUAL( 200, p2->getValue() );
 }
 TEST( getMin, Alter )
@@ -226,7 +226,7 @@ TEST( parseSuccess15, Alter )
     String dbl{ "d" };
     String sgl{ "b" };
     IAlterUPtr p = unique_ptr<Alter>( new Alter() );
-    for( Integer i = 100000; i > 0; --i )
+    for( Integer i = 100; i > 0; --i )
     {
         stringstream ss;
         for ( Integer j = 2; j <= i; j += 2 )
@@ -246,7 +246,7 @@ TEST( parseSuccess16, Alter )
     String dbl{ "x" };
     String sgl{ "#" };
     IAlterUPtr p = unique_ptr<Alter>( new Alter() );
-    for( Integer i = 0; i > 100000; ++i )
+    for( Integer i = 0; i > 100; ++i )
     {
         stringstream ss;
         for ( Integer j = 2; j <= i; j += 2 )
@@ -369,22 +369,412 @@ TEST( parseFail18, Alter )
     CHECK( ! ( p->parse( "dddbd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
-TEST( toStream, Alter )
+TEST( parseFail19, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    char c = std::numeric_limits<char>::min();
+    for ( ; c <= std::numeric_limits<char>::min(); ++c )
+    {
+        if ( c == '#' || c == 'x' || c == 'd' || c == 'b' )
+        {
+            CHECK( p->parse( String{ c } ) );
+        }
+        else
+        {
+            CHECK( ! p->parse( String{ c } ) );
+        }
+    }
+    CHECK( ! ( p->parse( "dddbd" ) ) )
+    CHECK_EQUAL( -999, p->getValue() )
+}
+TEST( toStream01, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -6 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "ddd";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream02, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -5 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "ddb";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream03, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -4 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "dd";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream04, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -3 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "db";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream05, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -2 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "d";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream06, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -1 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "b";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream07, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 0 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream08, Alter )
 {
     IAlterUPtr p = unique_ptr<Alter>( new Alter() );
     p->setValue( 1 );
     stringstream ss;
     p->toStream( ss );
-    String expected = "D";
+    String expected = "#";
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString, Alter )
+TEST( toStream09, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 2 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "x";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream10, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 3 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "x#";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream11, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 4 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "xx";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream12, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 5 );
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "xx#";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toStream13, Alter )
 {
     IAlterUPtr p = unique_ptr<Alter>( new Alter() );
     p->setValue( 6 );
-    String expected = "B";
-    String actual{ p->toString() };
+    stringstream ss;
+    p->toStream( ss );
+    String expected = "xxx";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString01, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -6 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "ddd";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString02, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -5 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "ddb";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString03, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -4 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "dd";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString04, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -3 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "db";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString05, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -2 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "d";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString06, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -1 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "b";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString07, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 0 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString08, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 1 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "#";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString09, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 2 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "x";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString10, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 3 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "x#";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString11, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 4 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "xx";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString12, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 5 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "xx#";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( toString13, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 6 );
+    stringstream ss;
+    ss << p->toString();
+    String expected = "xxx";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator01, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -6 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "ddd";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator02, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -5 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "ddb";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator03, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -4 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "dd";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator04, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -3 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "db";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator05, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -2 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "d";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator06, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( -1 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "b";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator07, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 0 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator08, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 1 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "#";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator09, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 2 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "x";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator10, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 3 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "x#";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator11, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 4 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "xx";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator12, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 5 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "xx#";
+    String actual{ ss.str() };
+    CHECK_EQUAL( expected, actual )
+}
+TEST( streamingOperator13, Alter )
+{
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    p->setValue( 6 );
+    stringstream ss;
+    ss << ( *p );
+    String expected = "xxx";
+    String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
 TEST( streamingOperator, Alter )
@@ -393,7 +783,7 @@ TEST( streamingOperator, Alter )
     p->setValue( 4 );
     stringstream ss;
     ss << ( *p );
-    String expected = "G";
+    String expected = "xx";
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
@@ -446,21 +836,10 @@ TEST( increment01, Alter )
 TEST( increment02, Alter )
 {
     IAlterUPtr a = unique_ptr<Alter>( new Alter() );
-    a->setValue( 2 );
+    a->setValue( std::numeric_limits<Integer>::max() );
+    CHECK_EQUAL( std::numeric_limits<Integer>::max(), a->getValue() )
     a->increment();
-    CHECK_EQUAL( 3, a->getValue() )
-    a->increment();
-    CHECK_EQUAL( 4, a->getValue() )
-    a->increment();
-    CHECK_EQUAL( 5, a->getValue() )
-    a->increment();
-    CHECK_EQUAL( 6, a->getValue() )
-    a->increment();
-    CHECK_EQUAL( 0, a->getValue() )
-    a->increment();
-    CHECK_EQUAL( 1, a->getValue() )
-    a->increment();
-    CHECK_EQUAL( 2, a->getValue() )
+    CHECK_EQUAL( std::numeric_limits<Integer>::min(), a->getValue() )
 }
 TEST( decrement01, Alter )
 {
@@ -472,58 +851,62 @@ TEST( decrement01, Alter )
 TEST( decrement02, Alter )
 {
     IAlterUPtr a = unique_ptr<Alter>( new Alter() );
-    a->setValue( 2 );
+    a->setValue( std::numeric_limits<Integer>::min() );
+    CHECK_EQUAL( std::numeric_limits<Integer>::min(), a->getValue() )
     a->decrement();
-    CHECK_EQUAL( 1, a->getValue() )
-    a->decrement();
-    CHECK_EQUAL( 0, a->getValue() )
-    a->decrement();
-    CHECK_EQUAL( 6, a->getValue() )
-    a->decrement();
-    CHECK_EQUAL( 5, a->getValue() )
-    a->decrement();
-    CHECK_EQUAL( 4, a->getValue() )
-    a->decrement();
-    CHECK_EQUAL( 3, a->getValue() )
-    a->decrement();
-    CHECK_EQUAL( 2, a->getValue() )
+    CHECK_EQUAL( std::numeric_limits<Integer>::max(), a->getValue() )
 }
-TEST( checkAllStringAndAlterValueOutputs, Alter )
+TEST( checkManyFlatStrings, Alter )
 {
     auto a = unique_ptr<Alter>( new Alter() );
-    a->setValue( 0 );
-    CHECK_EQUAL( "C", a->toString() )
-    a->increment();
-    CHECK_EQUAL( "D", a->toString() )
-    a->increment();
-    CHECK_EQUAL( "E", a->toString() )
-    a->increment();
-    CHECK_EQUAL( "F", a->toString() )
-    a->increment();
-    CHECK_EQUAL( "G", a->toString() )
-    a->increment();
-    CHECK_EQUAL( "A", a->toString() )
-    a->increment();
-    CHECK_EQUAL( "B", a->toString() )
-    a->increment();
-    CHECK_EQUAL( "C", a->toString() )
+    Integer startValue = 0;
+    Integer endValue = 100;
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    String dbl{ "d" };
+    String sgl{ "b" };
+    for( Integer i = startValue; i <= endValue; ++i )
+    {
+        stringstream ss;
+        for ( Integer j = 2; j <= i; j += 2 )
+        {
+            if ( i != 0 )
+            {
+                ss << dbl;
+            }
+            
+        }
+        if ( ( i % 2 != 0 ) && i != 0 )
+        {
+            ss << sgl;
+        }
+        p->setValue( -1 * i );
+        CHECK_EQUAL( ss.str(), p->toString() )
+    }
 }
-TEST( checkAllStringInputs, Alter )
+TEST( checkManySharpStrings, Alter )
 {
     auto a = unique_ptr<Alter>( new Alter() );
-    a->setValue( 0 );
-    a->parse( "D" );
-    CHECK_EQUAL( 1, a->getValue() )
-    a->parse( "E" );
-    CHECK_EQUAL( 2, a->getValue() )
-    a->parse( "F" );
-    CHECK_EQUAL( 3, a->getValue() )
-    a->parse( "G" );
-    CHECK_EQUAL( 4, a->getValue() )
-    a->parse( "A" );
-    CHECK_EQUAL( 5, a->getValue() )
-    a->parse( "B" );
-    CHECK_EQUAL( 6, a->getValue() )
-    a->parse( "C" );
-    CHECK_EQUAL( 0, a->getValue() )
+    Integer startValue = 0;
+    Integer endValue = 100;
+    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    String dbl{ "x" };
+    String sgl{ "#" };
+    for( Integer i = startValue; i <= endValue; ++i )
+    {
+        stringstream ss;
+        for ( Integer j = 2; j <= i; j += 2 )
+        {
+            if ( i != 0 )
+            {
+                ss << dbl;
+            }
+            
+        }
+        if ( ( i % 2 != 0 ) && i != 0 )
+        {
+            ss << sgl;
+        }
+        p->setValue( i );
+        CHECK_EQUAL( ss.str(), p->toString() )
+    }
 }
