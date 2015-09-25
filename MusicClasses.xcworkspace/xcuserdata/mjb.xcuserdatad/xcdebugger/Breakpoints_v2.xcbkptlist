@@ -456,22 +456,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestEnum.cpp"
-            timestampString = "464549834.035747"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "TEST( clone, Enum )"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LyreTests/LyreTests/TestEnum.cpp"
             timestampString = "464550018.088941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -650,22 +634,6 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "TEST( covariantClone, IAlter )"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LyreTests/LyreTests/TestEnum.cpp"
-            timestampString = "464889500.791651"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "TEST( covariantClone, Enum )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
