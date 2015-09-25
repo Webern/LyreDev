@@ -107,7 +107,7 @@ TEST( copyTo, Step )
 {
     std::shared_ptr<Step> p1 = std::make_shared<Step>();
     p1->setValue( -1 );
-    std::shared_ptr<Step> p2;
+    std::unique_ptr<Step> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 0, p1->getValue() );

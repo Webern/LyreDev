@@ -8,7 +8,11 @@ using namespace std;
 class MockStep : public IStep
 {
 public:
-    IStepPtr clone() const { return std::make_shared<MockStep>( *this ); }
+    IStepUPtr clone() const
+    {
+        IStepUPtr value{ new MockStep{ *this } };
+        return value;
+    }
     Integer getValue() const { return myValue; }
     void setValue( const Integer val ) { myValue = val; }
     Integer getMin() const { return 0; }
@@ -53,7 +57,7 @@ TEST( covariantClone, IStep )
 {
     std::shared_ptr<MockStep> p1 = std::make_shared<MockStep>();
     p1->setValue( 100 );
-    std::shared_ptr<MockStep> p2;
+    std::unique_ptr<MockStep> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 100, p1->getValue() );

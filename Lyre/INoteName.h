@@ -1,18 +1,22 @@
 #pragma once
+#include "IStep.h"
+#include "IAlter.h"
 #include "TypeDefs.h"
+#include <memory>
 
 namespace lyre
 {
-    class IAlter;
-    using IAlterPtr = std::shared_ptr<IAlter>;
-    using IAlterUPtr = std::unique_ptr<IAlter>;
-    class IAlter
+    class INoteName;
+    using INoteNamePtr = std::shared_ptr<INoteName>;
+    using INoteNameUPtr = std::unique_ptr<INoteName>;
+    
+    class INoteName
     {
     public:
-        virtual ~IAlter() = default;
+        virtual ~INoteName() = default;
         
         /* return a deep copy of "this" */
-        virtual IAlterUPtr clone() const = 0;
+        virtual INoteNameUPtr clone() const = 0;
         
         /* deep copy to "output", note
          the use of static_cast, be careful */
@@ -22,15 +26,16 @@ namespace lyre
             output = std::move( std::unique_ptr<T>{ new T{ *(static_cast<T*>( clone().get() )) } } );
         }
         
-        /* return the Alter as an integer */
+        virtual const std::unique_ptr<const IStep> getStep() const = 0;
+        virtual const std::unique_ptr<const IAlter> getAlter() const = 0;
+        virtual void setStep( IStepUPtr&& value ) = 0;
+        virtual void setAlter( IAlterUPtr&& value ) = 0;
+        virtual void setStep( const IStepUPtr& value ) = 0;
+        virtual void setAlter( const IAlterUPtr& value ) = 0;
+        
+        /* returns the combined value of getStep()->getValue()
+         and getAlter()->getValue() */
         virtual Integer getValue() const = 0;
-        
-        /* set the value from an int */
-        virtual void setValue( const Integer val ) = 0;
-        
-        /* get the min/max allowable Alter values */
-        virtual Integer getMin() const = 0;
-        virtual Integer getMax() const = 0;
         
         /* parse a string, set value from string, return true if
          successful, return false if string was un-parseable */
@@ -48,12 +53,8 @@ namespace lyre
         virtual bool lessThan( const IAlter& other ) const;
         virtual bool greaterThan( const IAlter& other ) const;
         virtual bool equals( const IAlter& other ) const;
-        
-        /* increments/decrements, should wraps around to min/max */
-        virtual void increment() = 0;
-        virtual void decrement() = 0;
     };
     
     /* this calls toStream... syntactic sugar */
-    std::ostream& operator<<( std::ostream& os, const IAlter& AlterName );
+    std::ostream& operator<<( std::ostream& os, const IAlter& object );
 }

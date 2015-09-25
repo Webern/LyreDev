@@ -15,9 +15,10 @@ namespace lyre
         setValue( value );
     }
     
-    IEnumPtr Enum::clone() const
+    IEnumUPtr Enum::clone() const
     {
-        return std::make_shared<Enum>( *this );
+        IEnumUPtr value{ new Enum{ *this } };
+        return value;
     }
     
     Integer Enum::getValue() const

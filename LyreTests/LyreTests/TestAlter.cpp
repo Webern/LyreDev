@@ -104,7 +104,7 @@ TEST( copyTo, Alter )
 {
     std::shared_ptr<Alter> p1 = std::make_shared<Alter>();
     p1->setValue( -1 );
-    std::shared_ptr<Alter> p2;
+    std::unique_ptr<Alter> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( -1, p1->getValue() );

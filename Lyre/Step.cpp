@@ -41,9 +41,10 @@ namespace lyre
         return *this;
     }
     
-    IStepPtr Step::clone() const
+    IStepUPtr Step::clone() const
     {
-        return std::make_shared<Step>( *this );
+        IStepUPtr value{ new Step{ *this } };
+        return value;
     }
     
     Integer Step::getValue() const

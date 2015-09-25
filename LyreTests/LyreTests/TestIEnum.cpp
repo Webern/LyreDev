@@ -8,7 +8,11 @@ using namespace std;
 class MockEnum : public IEnum
 {
 public:
-    IEnumPtr clone() const { return std::make_shared<MockEnum>( *this ); }
+    IEnumUPtr clone() const
+    {
+        IEnumUPtr value{ new MockEnum{ *this } };
+        return value;
+    }
     Integer getValue() const { return myValue; }
     void setValue( const Integer val ) { myValue = val; }
     Integer getMin() const { return 0; }
@@ -53,7 +57,7 @@ TEST( covariantClone, IEnum )
 {
     std::shared_ptr<MockEnum> p1 = std::make_shared<MockEnum>();
     p1->setValue( 100 );
-    std::shared_ptr<MockEnum> p2;
+    std::unique_ptr<MockEnum> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 100, p1->getValue() );

@@ -73,9 +73,10 @@ namespace lyre
         return *this;
     }
     
-    IAlterPtr Alter::clone() const
+    IAlterUPtr Alter::clone() const
     {
-        return std::make_shared<Alter>( *this );
+        IAlterUPtr value{ new Alter{ *this } };
+        return value;
     }
     
     Integer Alter::getValue() const

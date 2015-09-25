@@ -12,16 +12,14 @@ namespace lyre
         virtual ~IStep() = default;
         
         /* return a deep copy of "this" */
-        virtual IStepPtr clone() const = 0;
+        virtual IStepUPtr clone() const = 0;
         
         /* deep copy to "output", note
-         the use of static_pointer_cast,
-         be careful */
+         the use of static_cast, be careful */
         template <typename T>
-        void copyTo( std::shared_ptr<T>& output ) const
+        void copyTo( std::unique_ptr<T>& output ) const
         {
-            auto copy = clone();
-            output = std::static_pointer_cast<T>( copy );
+            output = std::move( std::unique_ptr<T>{ new T{ *(static_cast<T*>( clone().get() )) } } );
         }
         
         /* return the Step as an integer */

@@ -13,7 +13,7 @@ namespace lyre
         Enum( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset = 0 );
         
         /* return a deep copy of "this" */
-        virtual IEnumPtr clone() const;
+        virtual IEnumUPtr clone() const;
         
         /* return the Enum as an integer */
         virtual Integer getValue() const;

@@ -33,13 +33,13 @@ namespace lyre
         Step& operator=( Step&& other ) noexcept;
         
         /* return a deep copy of "this" */
-        virtual IStepPtr clone() const;
+        virtual IStepUPtr clone() const;
         
         /* deep copy to "output", note
-         the use of static_pointer_cast,
+         the use of static_cast,
          be careful
         template <typename T>
-        void copyTo( std::shared_ptr<T>& output ) const  */
+        void copyTo( std::unique_ptr<T>& output ) const  */
         
         /* return the Step as an integer */
         virtual Integer getValue() const;

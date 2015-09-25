@@ -46,7 +46,7 @@ TEST( covariantClone, Enum )
 {
     std::shared_ptr<MockStringsEnum> p1 = std::make_shared<MockStringsEnum>();
     p1->setValue( -1 );
-    std::shared_ptr<MockStringsEnum> p2;
+    std::unique_ptr<MockStringsEnum> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 1, p1->getValue() );

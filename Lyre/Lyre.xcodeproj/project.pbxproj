@@ -13,6 +13,8 @@
 		292B939F1BB1ACE100A4F808 /* Step.h in Headers */ = {isa = PBXBuildFile; fileRef = 292B939D1BB1ACE100A4F808 /* Step.h */; };
 		293F508E1BAF130F00AC0C19 /* IEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F508C1BAF130F00AC0C19 /* IEnum.cpp */; };
 		293F508F1BAF130F00AC0C19 /* IEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 293F508D1BAF130F00AC0C19 /* IEnum.h */; };
+		29B384EB1BB4C9650056B4AC /* INoteName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B384E91BB4C9650056B4AC /* INoteName.cpp */; };
+		29B384EC1BB4C9650056B4AC /* INoteName.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B384EA1BB4C9650056B4AC /* INoteName.h */; };
 		29DB04F91BB301A90029014A /* Alter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04F71BB301A90029014A /* Alter.cpp */; };
 		29DB04FA1BB301A90029014A /* Alter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DB04F81BB301A90029014A /* Alter.h */; };
 		29DB04FD1BB301E10029014A /* IAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04FB1BB301E10029014A /* IAlter.cpp */; };
@@ -37,6 +39,8 @@
 		292B939D1BB1ACE100A4F808 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
 		293F508C1BAF130F00AC0C19 /* IEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IEnum.cpp; sourceTree = "<group>"; };
 		293F508D1BAF130F00AC0C19 /* IEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEnum.h; sourceTree = "<group>"; };
+		29B384E91BB4C9650056B4AC /* INoteName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = INoteName.cpp; sourceTree = "<group>"; };
+		29B384EA1BB4C9650056B4AC /* INoteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INoteName.h; sourceTree = "<group>"; };
 		29DB04F71BB301A90029014A /* Alter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Alter.cpp; sourceTree = "<group>"; };
 		29DB04F81BB301A90029014A /* Alter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alter.h; sourceTree = "<group>"; };
 		29DB04FB1BB301E10029014A /* IAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAlter.cpp; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				29DB04F81BB301A90029014A /* Alter.h */,
 				29DB04FB1BB301E10029014A /* IAlter.cpp */,
 				29DB04FC1BB301E10029014A /* IAlter.h */,
+				29B384E91BB4C9650056B4AC /* INoteName.cpp */,
+				29B384EA1BB4C9650056B4AC /* INoteName.h */,
 			);
 			name = Pitch;
 			sourceTree = "<group>";
@@ -140,6 +146,7 @@
 				2927E4D31B8CC7FB00041459 /* Tuplet.h in Headers */,
 				29DB04FA1BB301A90029014A /* Alter.h in Headers */,
 				29F7353D1BB07BAD0067624F /* IStep.h in Headers */,
+				29B384EC1BB4C9650056B4AC /* INoteName.h in Headers */,
 				29F735361BB067EA0067624F /* Enum.h in Headers */,
 				29E734761B7ACDDD0046F4F8 /* TypeDefs.h in Headers */,
 				29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */,
@@ -209,6 +216,7 @@
 				2927E4D21B8CC7FB00041459 /* Tuplet.cpp in Sources */,
 				292B939E1BB1ACE100A4F808 /* Step.cpp in Sources */,
 				29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */,
+				29B384EB1BB4C9650056B4AC /* INoteName.cpp in Sources */,
 				29F7353C1BB07BAD0067624F /* IStep.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

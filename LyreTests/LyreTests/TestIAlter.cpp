@@ -8,7 +8,11 @@ using namespace std;
 class MockAlter : public IAlter
 {
 public:
-    IAlterPtr clone() const { return std::make_shared<MockAlter>( *this ); }
+    IAlterUPtr clone() const
+    {
+        IAlterUPtr value{ new MockAlter{ *this } };
+        return value;
+    }
     Integer getValue() const { return myValue; }
     void setValue( const Integer val ) { myValue = val; }
     Integer getMin() const { return 0; }
@@ -53,7 +57,7 @@ TEST( covariantClone, IAlter )
 {
     std::shared_ptr<MockAlter> p1 = std::make_shared<MockAlter>();
     p1->setValue( 100 );
-    std::shared_ptr<MockAlter> p2;
+    std::unique_ptr<MockAlter> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 100, p1->getValue() );
