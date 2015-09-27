@@ -74,6 +74,10 @@ namespace lyre
         virtual void increment();
         virtual void decrement();
         
+        /* return pitch class equivalent
+         for the step: C = 0, D = 2, E = 4, F = 5... */
+        Integer getPitchClassValue() const;
+        
     private:
         class StepImpl;
         using StepImplUPtr = std::unique_ptr<StepImpl>;

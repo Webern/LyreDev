@@ -321,3 +321,22 @@ TEST( checkAllStepValueInputs, Step )
     a->setValue( StepValue::C );
     CHECK_EQUAL( 0, a->getValue() )
 }
+TEST( getPitchClassValue, Step )
+{
+    StepUPtr a = unique_ptr<Step>( new Step() );
+    a->setValue( 0 );
+    a->increment();
+    CHECK_EQUAL( 2, a->getPitchClassValue() )
+    a->increment();
+    CHECK_EQUAL( 4, a->getPitchClassValue() )
+    a->increment();
+    CHECK_EQUAL( 5, a->getPitchClassValue() )
+    a->increment();
+    CHECK_EQUAL( 7, a->getPitchClassValue() )
+    a->increment();
+    CHECK_EQUAL( 9, a->getPitchClassValue() )
+    a->increment();
+    CHECK_EQUAL( 11, a->getPitchClassValue() )
+    a->increment();
+    CHECK_EQUAL( 0, a->getPitchClassValue() )
+}

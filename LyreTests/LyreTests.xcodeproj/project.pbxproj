@@ -11,7 +11,9 @@
 		292B939B1BB1A9AF00A4F808 /* TestIStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292B93991BB1A9AF00A4F808 /* TestIStep.cpp */; };
 		292B93A21BB1CEE600A4F808 /* TestStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292B93A01BB1CEE600A4F808 /* TestStep.cpp */; };
 		293F50921BAF1BAB00AC0C19 /* TestIEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F50901BAF1BAB00AC0C19 /* TestIEnum.cpp */; };
+		2943AA841BB851EA00D0080D /* TestNoteName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2943AA821BB851EA00D0080D /* TestNoteName.cpp */; };
 		294CD80E1B7BC61A0042DDF5 /* TestRational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */; };
+		296265C11BB7253200EAFBD0 /* TestINoteName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296265BF1BB7253200EAFBD0 /* TestINoteName.cpp */; };
 		29DB05011BB3028C0029014A /* TestIAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04FF1BB3028C0029014A /* TestIAlter.cpp */; };
 		29DB05041BB302BA0029014A /* TestAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB05021BB302BA0029014A /* TestAlter.cpp */; };
 		29E734331B7ACB590046F4F8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734321B7ACB590046F4F8 /* main.cpp */; };
@@ -44,7 +46,9 @@
 		292B93991BB1A9AF00A4F808 /* TestIStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIStep.cpp; sourceTree = "<group>"; };
 		292B93A01BB1CEE600A4F808 /* TestStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestStep.cpp; sourceTree = "<group>"; };
 		293F50901BAF1BAB00AC0C19 /* TestIEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIEnum.cpp; sourceTree = "<group>"; };
+		2943AA821BB851EA00D0080D /* TestNoteName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestNoteName.cpp; sourceTree = "<group>"; };
 		294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRational.cpp; sourceTree = "<group>"; };
+		296265BF1BB7253200EAFBD0 /* TestINoteName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestINoteName.cpp; sourceTree = "<group>"; };
 		29DB04FF1BB3028C0029014A /* TestIAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIAlter.cpp; sourceTree = "<group>"; };
 		29DB05021BB302BA0029014A /* TestAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestAlter.cpp; sourceTree = "<group>"; };
 		29E7342F1B7ACB590046F4F8 /* LyreTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTests; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,17 +123,19 @@
 		29E734311B7ACB590046F4F8 /* LyreTests */ = {
 			isa = PBXGroup;
 			children = (
+				29DB05021BB302BA0029014A /* TestAlter.cpp */,
+				29FCDEFA1B8B0BA60092CBCB /* TestDur.cpp */,
+				29EA94FD1BACC31B0019FBFB /* TestDurDot.cpp */,
+				29F735371BB06E2F0067624F /* TestEnum.cpp */,
+				29DB04FF1BB3028C0029014A /* TestIAlter.cpp */,
+				293F50901BAF1BAB00AC0C19 /* TestIEnum.cpp */,
+				292B93991BB1A9AF00A4F808 /* TestIStep.cpp */,
 				29E734581B7ACBA50046F4F8 /* TestMod.cpp */,
 				294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */,
-				29FCDEFA1B8B0BA60092CBCB /* TestDur.cpp */,
-				2927E4D41B8CCC0C00041459 /* TestTuplet.cpp */,
-				29EA94FD1BACC31B0019FBFB /* TestDurDot.cpp */,
-				293F50901BAF1BAB00AC0C19 /* TestIEnum.cpp */,
-				29F735371BB06E2F0067624F /* TestEnum.cpp */,
-				292B93991BB1A9AF00A4F808 /* TestIStep.cpp */,
 				292B93A01BB1CEE600A4F808 /* TestStep.cpp */,
-				29DB04FF1BB3028C0029014A /* TestIAlter.cpp */,
-				29DB05021BB302BA0029014A /* TestAlter.cpp */,
+				2927E4D41B8CCC0C00041459 /* TestTuplet.cpp */,
+				296265BF1BB7253200EAFBD0 /* TestINoteName.cpp */,
+				2943AA821BB851EA00D0080D /* TestNoteName.cpp */,
 			);
 			path = LyreTests;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 			files = (
 				29DB05011BB3028C0029014A /* TestIAlter.cpp in Sources */,
 				29EA94FF1BACC31B0019FBFB /* TestDurDot.cpp in Sources */,
+				2943AA841BB851EA00D0080D /* TestNoteName.cpp in Sources */,
 				29E7345A1B7ACBA50046F4F8 /* cpulRun.cpp in Sources */,
 				29F735391BB06E2F0067624F /* TestEnum.cpp in Sources */,
 				29E7345C1B7ACBA50046F4F8 /* cpulTestRegistry.cpp in Sources */,
@@ -201,6 +208,7 @@
 				2927E4D61B8CCC0C00041459 /* TestTuplet.cpp in Sources */,
 				292B93A21BB1CEE600A4F808 /* TestStep.cpp in Sources */,
 				29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */,
+				296265C11BB7253200EAFBD0 /* TestINoteName.cpp in Sources */,
 				29E734331B7ACB590046F4F8 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

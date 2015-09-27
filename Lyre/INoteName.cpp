@@ -9,19 +9,19 @@ namespace lyre
         toStream( ss );
         return ss.str();
     }
-    bool INoteName::lessThan( const IAlter& other ) const
+    bool INoteName::lessThan( const INoteName& other ) const
     {
         return getValue() < other.getValue();
     }
-    bool INoteName::greaterThan( const IAlter& other ) const
+    bool INoteName::greaterThan( const INoteName& other ) const
     {
         return getValue() > other.getValue();
     }
-    bool INoteName::equals( const IAlter& other ) const
+    bool INoteName::equals( const INoteName& other ) const
     {
         return getValue() == other.getValue();
     }
-    std::ostream& operator<<( std::ostream& os, const IAlter& object )
+    std::ostream& operator<<( std::ostream& os, const INoteName& object )
     {
         return object.toStream( os );
     }

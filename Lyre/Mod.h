@@ -1,5 +1,4 @@
 #pragma once
-#include <cmath>
 
 /* The Mod class restrics values of an integral
  to be between x=zero and MODULUS-1 by using the
@@ -32,7 +31,8 @@ namespace lyre
             }
             else
             {
-                myValue = ( MODULUS - ( std::abs( value ) % MODULUS ) ) % MODULUS;
+                TYPE absval = value * -1;
+                myValue = ( MODULUS - ( absval % MODULUS ) ) % MODULUS;
             }
         }
         Mod& add( const TYPE value )

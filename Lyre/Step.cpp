@@ -148,7 +148,10 @@ namespace lyre
     {
         myImpl->decrement();
     }
-    
+    Integer Step::getPitchClassValue() const
+    {
+        return myImpl->getValue() <= 2 ? (myImpl->getValue() * 2) : (myImpl->getValue() * 2 - 1);
+    }
     void Step::swap( Step& left, Step& right ) noexcept
     {
         std::swap( left.myImpl, right.myImpl );
