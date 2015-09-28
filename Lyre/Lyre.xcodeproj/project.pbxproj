@@ -75,6 +75,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2928CAB31BB9924E0063D861 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				29DB04FB1BB301E10029014A /* IAlter.cpp */,
+				29DB04FC1BB301E10029014A /* IAlter.h */,
+				29B384E91BB4C9650056B4AC /* INoteName.cpp */,
+				29B384EA1BB4C9650056B4AC /* INoteName.h */,
+				29F7353A1BB07BAD0067624F /* IStep.cpp */,
+				29F7353B1BB07BAD0067624F /* IStep.h */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		2928CAB41BB992560063D861 /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+				29DB04F71BB301A90029014A /* Alter.cpp */,
+				29DB04F81BB301A90029014A /* Alter.h */,
+				298B7A6C1BB7CE0C00E39C72 /* NoteName.cpp */,
+				298B7A6D1BB7CE0C00E39C72 /* NoteName.h */,
+				292B939C1BB1ACE100A4F808 /* Step.cpp */,
+				292B939D1BB1ACE100A4F808 /* Step.h */,
+			);
+			name = Concrete;
+			sourceTree = "<group>";
+		};
+		2928CAB51BB9928E0063D861 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				293F508C1BAF130F00AC0C19 /* IEnum.cpp */,
+				293F508D1BAF130F00AC0C19 /* IEnum.h */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		2928CABA1BB992B70063D861 /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+				29F735331BB067EA0067624F /* Enum.cpp */,
+				29F735341BB067EA0067624F /* Enum.h */,
+			);
+			name = Concrete;
+			sourceTree = "<group>";
+		};
+		2928CABB1BB992D60063D861 /* Primitive */ = {
+			isa = PBXGroup;
+			children = (
+				29E7346F1B7ACCB60046F4F8 /* Mod.h */,
+				29E734711B7ACD4B0046F4F8 /* Rational.cpp */,
+				29E734721B7ACD4B0046F4F8 /* Rational.h */,
+				29E734751B7ACDDD0046F4F8 /* TypeDefs.h */,
+			);
+			name = Primitive;
+			sourceTree = "<group>";
+		};
 		293F50891BAF126600AC0C19 /* Rhythm */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,14 +146,9 @@
 		293F508A1BAF128000AC0C19 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				29F735331BB067EA0067624F /* Enum.cpp */,
-				29F735341BB067EA0067624F /* Enum.h */,
-				293F508C1BAF130F00AC0C19 /* IEnum.cpp */,
-				293F508D1BAF130F00AC0C19 /* IEnum.h */,
-				29E7346F1B7ACCB60046F4F8 /* Mod.h */,
-				29E734711B7ACD4B0046F4F8 /* Rational.cpp */,
-				29E734721B7ACD4B0046F4F8 /* Rational.h */,
-				29E734751B7ACDDD0046F4F8 /* TypeDefs.h */,
+				2928CABA1BB992B70063D861 /* Concrete */,
+				2928CAB51BB9928E0063D861 /* Interface */,
+				2928CABB1BB992D60063D861 /* Primitive */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -106,18 +156,8 @@
 		293F508B1BAF12CA00AC0C19 /* Pitch */ = {
 			isa = PBXGroup;
 			children = (
-				29DB04F71BB301A90029014A /* Alter.cpp */,
-				29DB04F81BB301A90029014A /* Alter.h */,
-				29DB04FB1BB301E10029014A /* IAlter.cpp */,
-				29DB04FC1BB301E10029014A /* IAlter.h */,
-				29B384E91BB4C9650056B4AC /* INoteName.cpp */,
-				29B384EA1BB4C9650056B4AC /* INoteName.h */,
-				29F7353A1BB07BAD0067624F /* IStep.cpp */,
-				29F7353B1BB07BAD0067624F /* IStep.h */,
-				292B939C1BB1ACE100A4F808 /* Step.cpp */,
-				292B939D1BB1ACE100A4F808 /* Step.h */,
-				298B7A6C1BB7CE0C00E39C72 /* NoteName.cpp */,
-				298B7A6D1BB7CE0C00E39C72 /* NoteName.h */,
+				2928CAB41BB992560063D861 /* Concrete */,
+				2928CAB31BB9924E0063D861 /* Interface */,
 			);
 			name = Pitch;
 			sourceTree = "<group>";
@@ -125,10 +165,10 @@
 		29E7345F1B7ACC0D0046F4F8 = {
 			isa = PBXGroup;
 			children = (
-				293F508B1BAF12CA00AC0C19 /* Pitch */,
 				293F508A1BAF128000AC0C19 /* General */,
-				293F50891BAF126600AC0C19 /* Rhythm */,
+				293F508B1BAF12CA00AC0C19 /* Pitch */,
 				29E734691B7ACC0D0046F4F8 /* Products */,
+				293F50891BAF126600AC0C19 /* Rhythm */,
 			);
 			sourceTree = "<group>";
 		};
