@@ -819,3 +819,327 @@ TEST( compare_a_greaterThan_b_02, NoteName )
     CHECK( ! ( a->equals( *b ) ) )
     CHECK(   ( a->greaterThan( *b ) ) )
 }
+TEST( getStepValue0, NoteName )
+{
+    String str = "C";
+    INoteNameUPtr n{ new NoteName{ str } };
+    CHECK_EQUAL( 0, n->getStepValue() )
+}
+TEST( getStepValue1, NoteName )
+{
+    String str = "Db";
+    INoteNameUPtr n{ new NoteName{ str } };
+    CHECK_EQUAL( 1, n->getStepValue() )
+}
+TEST( getStepValue2, NoteName )
+{
+    String str = "E#";
+    INoteNameUPtr n{ new NoteName{ str } };
+    CHECK_EQUAL( 2, n->getStepValue() )
+}
+TEST( getStepValue3, NoteName )
+{
+    String str = "F";
+    INoteNameUPtr n{ new NoteName{ str } };
+    CHECK_EQUAL( 3, n->getStepValue() )
+}
+TEST( getStepValue4, NoteName )
+{
+    String str = "Gb";
+    INoteNameUPtr n{ new NoteName{ str } };
+    CHECK_EQUAL( 4, n->getStepValue() )
+}
+TEST( getStepValue5, NoteName )
+{
+    String str = "A#";
+    INoteNameUPtr n{ new NoteName{ str } };
+    CHECK_EQUAL( 5, n->getStepValue() )
+}
+TEST( getStepValue6, NoteName )
+{
+    String str = "B";
+    INoteNameUPtr n{ new NoteName{ str } };
+    CHECK_EQUAL( 6, n->getStepValue() )
+}
+TEST( getMinStepValue, NoteName )
+{
+    INoteNameUPtr n{ new NoteName{ "F" } };
+    CHECK_EQUAL( 0, n->getMinStepValue() )
+}
+TEST( getMaxStepValue, NoteName )
+{
+    INoteNameUPtr n{ new NoteName{ "F" } };
+    CHECK_EQUAL( 6, n->getMaxStepValue() )
+}
+TEST( setStepValue0, NoteName )
+{
+    String str = "F";
+    Integer setTo = 0;
+    Integer expected = 0;
+    INoteNameUPtr n{ new NoteName{ str } };
+    n->setStepValue( setTo );
+    Integer actual = n->getStepValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( setStepValue1, NoteName )
+{
+    String str = "G";
+    Integer setTo = 7;
+    Integer expected = 6;
+    INoteNameUPtr n{ new NoteName{ str } };
+    n->setStepValue( setTo );
+    Integer actual = n->getStepValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( setStepValue2, NoteName )
+{
+    String str = "D";
+    Integer setTo = -1;
+    Integer expected = 0;
+    INoteNameUPtr n{ new NoteName{ str } };
+    n->setStepValue( setTo );
+    Integer actual = n->getStepValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( incrementStep, NoteName )
+{
+    INoteNameUPtr n{ new NoteName{ "C" } };
+    n->incrementStep();
+    CHECK_EQUAL( 1, n->getStepValue() )
+    n->incrementStep();
+    CHECK_EQUAL( 2, n->getStepValue() )
+    n->incrementStep();
+    CHECK_EQUAL( 3, n->getStepValue() )
+    n->incrementStep();
+    CHECK_EQUAL( 4, n->getStepValue() )
+    n->incrementStep();
+    CHECK_EQUAL( 5, n->getStepValue() )
+    n->incrementStep();
+    CHECK_EQUAL( 6, n->getStepValue() )
+    n->incrementStep();
+    CHECK_EQUAL( 0, n->getStepValue() )
+}
+TEST( decrementStep, NoteName )
+{
+    INoteNameUPtr n{ new NoteName{ "C" } };
+    n->decrementStep();
+    CHECK_EQUAL( 6, n->getStepValue() )
+    n->decrementStep();
+    CHECK_EQUAL( 5, n->getStepValue() )
+    n->decrementStep();
+    CHECK_EQUAL( 4, n->getStepValue() )
+    n->decrementStep();
+    CHECK_EQUAL( 3, n->getStepValue() )
+    n->decrementStep();
+    CHECK_EQUAL( 2, n->getStepValue() )
+    n->decrementStep();
+    CHECK_EQUAL( 1, n->getStepValue() )
+    n->decrementStep();
+    CHECK_EQUAL( 0, n->getStepValue() )
+}
+TEST( getAlterValue00, NoteName )
+{
+    String str{ "C" };
+    Integer expected = 0;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue01, NoteName )
+{
+    String str{ "Fb" };
+    Integer expected = -1;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue02, NoteName )
+{
+    String str{ "G#" };
+    Integer expected = 1;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue03, NoteName )
+{
+    String str{ "Bd" };
+    Integer expected = -2;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue04, NoteName )
+{
+    String str{ "Ax" };
+    Integer expected = 2;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue05, NoteName )
+{
+    String str{ "Ddb" };
+    Integer expected = -3;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue06, NoteName )
+{
+    String str{ "Cx#" };
+    Integer expected = 3;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue07, NoteName )
+{
+    String str{ "Edd" };
+    Integer expected = -4;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue08, NoteName )
+{
+    String str{ "Fxx" };
+    Integer expected = 4;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue09, NoteName )
+{
+    String str{ "Cddb" };
+    Integer expected = -5;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getAlterValue10, NoteName )
+{
+    String str{ "Cxx#" };
+    Integer expected = 5;
+    INoteNameUPtr n{ new NoteName{ str } };
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( setAlterValue01, NoteName )
+{
+    String str{ "Cxx#" };
+    Integer setTo = 3;
+    Integer expected = setTo;
+    INoteNameUPtr n{ new NoteName{ str } };
+    n->setAlterValue( setTo );
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( setAlterValue02, NoteName )
+{
+    String str{ "Cx" };
+    Integer setTo = 0;
+    Integer expected = setTo;
+    INoteNameUPtr n{ new NoteName{ str } };
+    n->setAlterValue( setTo );
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( setAlterValue03, NoteName )
+{
+    String str{ "Gb" };
+    Integer setTo = 100;
+    Integer expected = setTo;
+    INoteNameUPtr n{ new NoteName{ str } };
+    n->setAlterValue( setTo );
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( setAlterValue04, NoteName )
+{
+    String str{ "Gb" };
+    Integer setTo = -100;
+    Integer expected = setTo;
+    INoteNameUPtr n{ new NoteName{ str } };
+    n->setAlterValue( setTo );
+    Integer actual = n->getAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getMinAlterValue, NoteName )
+{
+    INoteNameUPtr n{ new NoteName{ "D" } };
+    Integer expected = std::numeric_limits<Integer>::min();
+    Integer actual = n->getMinAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( getMaxAlterValue, NoteName )
+{
+    INoteNameUPtr n{ new NoteName{ "E" } };
+    Integer expected = std::numeric_limits<Integer>::max();
+    Integer actual = n->getMaxAlterValue();
+    CHECK_EQUAL( expected, actual )
+}
+TEST( incrementAlter, NoteName )
+{
+    INoteNameUPtr n{ new NoteName{ "Eddd" } };
+    n->incrementAlter();
+    CHECK_EQUAL( -5, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( -4, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( -3, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( -2, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( -1, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( 0, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( 1, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( 2, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( 3, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( 4, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( 5, n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( 6, n->getAlterValue() )
+    n->setAlterValue( std::numeric_limits<Integer>::max() );
+    CHECK_EQUAL( std::numeric_limits<Integer>::max(), n->getAlterValue() )
+    n->incrementAlter();
+    CHECK_EQUAL( std::numeric_limits<Integer>::min(), n->getAlterValue() )
+}
+TEST( decrementAlter, NoteName )
+{
+    INoteNameUPtr n{ new NoteName{ "Exxx" } };
+    n->decrementAlter();
+    CHECK_EQUAL( 5, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( 4, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( 3, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( 2, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( 1, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( 0, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( -1, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( -2, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( -3, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( -4, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( -5, n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( -6, n->getAlterValue() )
+    n->setAlterValue( std::numeric_limits<Integer>::min() );
+    CHECK_EQUAL( std::numeric_limits<Integer>::min(), n->getAlterValue() )
+    n->decrementAlter();
+    CHECK_EQUAL( std::numeric_limits<Integer>::max(), n->getAlterValue() )
+}

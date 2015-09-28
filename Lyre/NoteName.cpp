@@ -119,22 +119,22 @@ namespace lyre
     
     Integer NoteName::getMinStepValue() const
     {
-        throw std::runtime_error( "not implemented" );
+        return myImpl->myStep.getMin();
     }
     
     Integer NoteName::getMaxStepValue() const
     {
-        throw std::runtime_error( "not implemented" );
+        return myImpl->myStep.getMax();
     }
     
     void NoteName::incrementStep()
     {
-        throw std::runtime_error( "not implemented" );
+        myImpl->myStep.increment();
     }
     
     void NoteName::decrementStep()
     {
-        throw std::runtime_error( "not implemented" );
+        myImpl->myStep.decrement();
     }
     
     Integer NoteName::getAlterValue() const
@@ -144,27 +144,27 @@ namespace lyre
     
     void NoteName::setAlterValue( const Integer val )
     {
-        throw std::runtime_error( "not implemented" );
+        myImpl->myAlter.setValue( val );
     }
     
     Integer NoteName::getMinAlterValue() const
     {
-        throw std::runtime_error( "not implemented" );
+        return myImpl->myAlter.getMin();
     }
     
     Integer NoteName::getMaxAlterValue() const
     {
-        throw std::runtime_error( "not implemented" );
+        return myImpl->myAlter.getMax();
     }
     
     void NoteName::incrementAlter()
     {
-        throw std::runtime_error( "not implemented" );
+        myImpl->myAlter.increment();
     }
     
     void NoteName::decrementAlter()
     {
-        throw std::runtime_error( "not implemented" );
+        myImpl->myAlter.decrement();
     }
     
     void NoteName::swap( NoteName& left, NoteName& right ) noexcept
