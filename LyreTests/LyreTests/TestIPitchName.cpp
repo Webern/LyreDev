@@ -1,26 +1,26 @@
 #include "cpulTestHarness.h"
-#include "INoteName.h"
+#include "IPitchName.h"
 #include <sstream>
 
 using namespace lyre;
 using namespace std;
 
-class TestNoteName;
-using TestNoteNameUPtr = unique_ptr<TestNoteName>;
-class TestNoteName : public INoteName
+class TestPitchName;
+using TestPitchNameUPtr = unique_ptr<TestPitchName>;
+class TestPitchName : public IPitchName
 {
 public:
-    virtual ~TestNoteName() {}
-    virtual INoteNameUPtr clone() const { return TestNoteNameUPtr{ new TestNoteName{} }; }
+    virtual ~TestPitchName() {}
+    virtual IPitchNameUPtr clone() const { return TestPitchNameUPtr{ new TestPitchName{} }; }
     /* template <typename T>
        void copyTo( std::unique_ptr<T>& output ) const */
     virtual Integer getValue() const { return 0; }
     virtual bool parse( const String& str ) { return true; }
     virtual std::ostream& toStream( std::ostream& os ) const { return os; }
     /* virtual String toString() const;
-       virtual bool lessThan( const NoteName& other ) const;
-       virtual bool greaterThan( const NoteName& other ) const;
-       virtual bool equals( const NoteName& other ) const; */
+       virtual bool lessThan( const PitchName& other ) const;
+       virtual bool greaterThan( const PitchName& other ) const;
+       virtual bool equals( const PitchName& other ) const; */
     virtual Integer getStepValue() const { return 0; }
     virtual void setStepValue( const Integer val ) {}
     virtual Integer getMinStepValue() const { return 0; }
@@ -35,11 +35,11 @@ public:
     virtual void decrementAlter() {}
 };
 
-TEST( compiles, INoteName )
+TEST( compiles, IPitchName )
 {
-    INoteNameUPtr p{ new TestNoteName{} };
+    IPitchNameUPtr p{ new TestPitchName{} };
     auto c = p->clone();
-    TestNoteNameUPtr x;
+    TestPitchNameUPtr x;
     p->copyTo( x );
     CHECK( p != c )
     CHECK( p != x )

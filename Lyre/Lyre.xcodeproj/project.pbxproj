@@ -15,10 +15,10 @@
 		293F508F1BAF130F00AC0C19 /* IEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 293F508D1BAF130F00AC0C19 /* IEnum.h */; };
 		295145F11BBAE3040067BFD9 /* IPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295145EF1BBAE3040067BFD9 /* IPitch.cpp */; };
 		295145F21BBAE3040067BFD9 /* IPitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 295145F01BBAE3040067BFD9 /* IPitch.h */; };
-		298B7A6E1BB7CE0C00E39C72 /* NoteName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B7A6C1BB7CE0C00E39C72 /* NoteName.cpp */; };
-		298B7A6F1BB7CE0C00E39C72 /* NoteName.h in Headers */ = {isa = PBXBuildFile; fileRef = 298B7A6D1BB7CE0C00E39C72 /* NoteName.h */; };
-		29B384EB1BB4C9650056B4AC /* INoteName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B384E91BB4C9650056B4AC /* INoteName.cpp */; };
-		29B384EC1BB4C9650056B4AC /* INoteName.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B384EA1BB4C9650056B4AC /* INoteName.h */; };
+		298B7A6E1BB7CE0C00E39C72 /* PitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B7A6C1BB7CE0C00E39C72 /* PitchName.cpp */; };
+		298B7A6F1BB7CE0C00E39C72 /* PitchName.h in Headers */ = {isa = PBXBuildFile; fileRef = 298B7A6D1BB7CE0C00E39C72 /* PitchName.h */; };
+		29B384EB1BB4C9650056B4AC /* IPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B384E91BB4C9650056B4AC /* IPitchName.cpp */; };
+		29B384EC1BB4C9650056B4AC /* IPitchName.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B384EA1BB4C9650056B4AC /* IPitchName.h */; };
 		29DB04F91BB301A90029014A /* Alter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04F71BB301A90029014A /* Alter.cpp */; };
 		29DB04FA1BB301A90029014A /* Alter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DB04F81BB301A90029014A /* Alter.h */; };
 		29DB04FD1BB301E10029014A /* IAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04FB1BB301E10029014A /* IAlter.cpp */; };
@@ -45,10 +45,10 @@
 		293F508D1BAF130F00AC0C19 /* IEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEnum.h; sourceTree = "<group>"; };
 		295145EF1BBAE3040067BFD9 /* IPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPitch.cpp; sourceTree = "<group>"; };
 		295145F01BBAE3040067BFD9 /* IPitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPitch.h; sourceTree = "<group>"; };
-		298B7A6C1BB7CE0C00E39C72 /* NoteName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NoteName.cpp; sourceTree = "<group>"; };
-		298B7A6D1BB7CE0C00E39C72 /* NoteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteName.h; sourceTree = "<group>"; };
-		29B384E91BB4C9650056B4AC /* INoteName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = INoteName.cpp; sourceTree = "<group>"; };
-		29B384EA1BB4C9650056B4AC /* INoteName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INoteName.h; sourceTree = "<group>"; };
+		298B7A6C1BB7CE0C00E39C72 /* PitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchName.cpp; sourceTree = "<group>"; };
+		298B7A6D1BB7CE0C00E39C72 /* PitchName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchName.h; sourceTree = "<group>"; };
+		29B384E91BB4C9650056B4AC /* IPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPitchName.cpp; sourceTree = "<group>"; };
+		29B384EA1BB4C9650056B4AC /* IPitchName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPitchName.h; sourceTree = "<group>"; };
 		29DB04F71BB301A90029014A /* Alter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Alter.cpp; sourceTree = "<group>"; };
 		29DB04F81BB301A90029014A /* Alter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alter.h; sourceTree = "<group>"; };
 		29DB04FB1BB301E10029014A /* IAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAlter.cpp; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 			children = (
 				29DB04FB1BB301E10029014A /* IAlter.cpp */,
 				29DB04FC1BB301E10029014A /* IAlter.h */,
-				29B384E91BB4C9650056B4AC /* INoteName.cpp */,
-				29B384EA1BB4C9650056B4AC /* INoteName.h */,
+				29B384E91BB4C9650056B4AC /* IPitchName.cpp */,
+				29B384EA1BB4C9650056B4AC /* IPitchName.h */,
 				29F7353A1BB07BAD0067624F /* IStep.cpp */,
 				29F7353B1BB07BAD0067624F /* IStep.h */,
 				295145EF1BBAE3040067BFD9 /* IPitch.cpp */,
@@ -99,8 +99,8 @@
 			children = (
 				29DB04F71BB301A90029014A /* Alter.cpp */,
 				29DB04F81BB301A90029014A /* Alter.h */,
-				298B7A6C1BB7CE0C00E39C72 /* NoteName.cpp */,
-				298B7A6D1BB7CE0C00E39C72 /* NoteName.h */,
+				298B7A6C1BB7CE0C00E39C72 /* PitchName.cpp */,
+				298B7A6D1BB7CE0C00E39C72 /* PitchName.h */,
 				292B939C1BB1ACE100A4F808 /* Step.cpp */,
 				292B939D1BB1ACE100A4F808 /* Step.h */,
 			);
@@ -193,13 +193,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				298B7A6F1BB7CE0C00E39C72 /* NoteName.h in Headers */,
+				298B7A6F1BB7CE0C00E39C72 /* PitchName.h in Headers */,
 				292B939F1BB1ACE100A4F808 /* Step.h in Headers */,
 				29EA94FC1BACC1570019FBFB /* DurDot.h in Headers */,
 				2927E4D31B8CC7FB00041459 /* Tuplet.h in Headers */,
 				29DB04FA1BB301A90029014A /* Alter.h in Headers */,
 				29F7353D1BB07BAD0067624F /* IStep.h in Headers */,
-				29B384EC1BB4C9650056B4AC /* INoteName.h in Headers */,
+				29B384EC1BB4C9650056B4AC /* IPitchName.h in Headers */,
 				295145F21BBAE3040067BFD9 /* IPitch.h in Headers */,
 				29F735361BB067EA0067624F /* Enum.h in Headers */,
 				29E734761B7ACDDD0046F4F8 /* TypeDefs.h in Headers */,
@@ -266,13 +266,13 @@
 				29F735351BB067EA0067624F /* Enum.cpp in Sources */,
 				293F508E1BAF130F00AC0C19 /* IEnum.cpp in Sources */,
 				29FCDEF81B8B06170092CBCB /* Dur.cpp in Sources */,
-				298B7A6E1BB7CE0C00E39C72 /* NoteName.cpp in Sources */,
+				298B7A6E1BB7CE0C00E39C72 /* PitchName.cpp in Sources */,
 				29DB04FD1BB301E10029014A /* IAlter.cpp in Sources */,
 				29EA94FB1BACC1570019FBFB /* DurDot.cpp in Sources */,
 				2927E4D21B8CC7FB00041459 /* Tuplet.cpp in Sources */,
 				292B939E1BB1ACE100A4F808 /* Step.cpp in Sources */,
 				29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */,
-				29B384EB1BB4C9650056B4AC /* INoteName.cpp in Sources */,
+				29B384EB1BB4C9650056B4AC /* IPitchName.cpp in Sources */,
 				29F7353C1BB07BAD0067624F /* IStep.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

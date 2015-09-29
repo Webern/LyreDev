@@ -4,17 +4,17 @@
 
 namespace lyre
 {
-    class INoteName;
-    using INoteNamePtr = std::shared_ptr<INoteName>;
-    using INoteNameUPtr = std::unique_ptr<INoteName>;
+    class IPitchName;
+    using IPitchNamePtr = std::shared_ptr<IPitchName>;
+    using IPitchNameUPtr = std::unique_ptr<IPitchName>;
     
-    class INoteName
+    class IPitchName
     {
     public:
-        virtual ~INoteName() = default;
+        virtual ~IPitchName() = default;
         
         /* return a deep copy of "this" */
-        virtual INoteNameUPtr clone() const = 0;
+        virtual IPitchNameUPtr clone() const = 0;
         
         /* deep copy to "output", note
          the use of static_cast, be careful */
@@ -32,18 +32,18 @@ namespace lyre
          successful, return false if string was un-parseable */
         virtual bool parse( const String& str ) = 0;
         
-        /* stream the NoteName's string representation to an ostream
+        /* stream the PitchName's string representation to an ostream
          object. this will be called by toString and operator<< */
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         
-        /* return the NoteName as a string, this has a definition
+        /* return the PitchName as a string, this has a definition
          which calls toStream. */
         virtual String toString() const;
         
         /* compares the return values of getValue() */
-        virtual bool lessThan( const INoteName& other ) const;
-        virtual bool greaterThan( const INoteName& other ) const;
-        virtual bool equals( const INoteName& other ) const;
+        virtual bool lessThan( const IPitchName& other ) const;
+        virtual bool greaterThan( const IPitchName& other ) const;
+        virtual bool equals( const IPitchName& other ) const;
         
         /* Step Functions */
         
@@ -81,5 +81,5 @@ namespace lyre
     };
     
     /* this calls toStream... syntactic sugar */
-    std::ostream& operator<<( std::ostream& os, const INoteName& object );
+    std::ostream& operator<<( std::ostream& os, const IPitchName& object );
 }

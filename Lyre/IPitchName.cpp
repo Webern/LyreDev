@@ -1,27 +1,27 @@
-#include "INoteName.h"
+#include "IPitchName.h"
 #include <sstream>
 
 namespace lyre
 {
-    String INoteName::toString() const
+    String IPitchName::toString() const
     {
         std::stringstream ss;
         toStream( ss );
         return ss.str();
     }
-    bool INoteName::lessThan( const INoteName& other ) const
+    bool IPitchName::lessThan( const IPitchName& other ) const
     {
         return getValue() < other.getValue();
     }
-    bool INoteName::greaterThan( const INoteName& other ) const
+    bool IPitchName::greaterThan( const IPitchName& other ) const
     {
         return getValue() > other.getValue();
     }
-    bool INoteName::equals( const INoteName& other ) const
+    bool IPitchName::equals( const IPitchName& other ) const
     {
         return getValue() == other.getValue();
     }
-    std::ostream& operator<<( std::ostream& os, const INoteName& object )
+    std::ostream& operator<<( std::ostream& os, const IPitchName& object )
     {
         return object.toStream( os );
     }

@@ -1,26 +1,26 @@
 #pragma once
-#include "INoteName.h"
+#include "IPitchName.h"
 
 namespace lyre
 {
-    class NoteName;
-    using NoteNamePtr = std::shared_ptr<NoteName>;
-    using NoteNameUPtr = std::unique_ptr<NoteName>;
+    class PitchName;
+    using PitchNamePtr = std::shared_ptr<PitchName>;
+    using PitchNameUPtr = std::unique_ptr<PitchName>;
     
-    class NoteName : public INoteName
+    class PitchName : public IPitchName
     {
     public:
-        virtual ~NoteName();
-        NoteName();
-        explicit NoteName( const Integer step, const Integer alter );
-        explicit NoteName( const String& str );
-        NoteName( const NoteName& other );
-        NoteName( NoteName&& other ) noexcept;
-        NoteName& operator=( const NoteName& other );
-        NoteName& operator=( NoteName&& other ) noexcept;
+        virtual ~PitchName();
+        PitchName();
+        explicit PitchName( const Integer step, const Integer alter );
+        explicit PitchName( const String& str );
+        PitchName( const PitchName& other );
+        PitchName( PitchName&& other ) noexcept;
+        PitchName& operator=( const PitchName& other );
+        PitchName& operator=( PitchName&& other ) noexcept;
         
         /* return a deep copy of "this" */
-        virtual INoteNameUPtr clone() const;
+        virtual IPitchNameUPtr clone() const;
         
         /* deep copy to "output", note
          the use of static_cast, be careful
@@ -35,18 +35,18 @@ namespace lyre
          successful, return false if string was un-parseable */
         virtual bool parse( const String& str );
         
-        /* stream the NoteName's string representation to an ostream
+        /* stream the PitchName's string representation to an ostream
          object. this will be called by toString and operator<< */
         virtual std::ostream& toStream( std::ostream& os ) const;
         
-        /* return the NoteName as a string, this has a definition
+        /* return the PitchName as a string, this has a definition
          which calls toStream.
         virtual String toString() const; */
         
         /* compares the return values of getValue()
-        virtual bool lessThan( const NoteName& other ) const;
-        virtual bool greaterThan( const NoteName& other ) const;
-        virtual bool equals( const NoteName& other ) const; */
+        virtual bool lessThan( const PitchName& other ) const;
+        virtual bool greaterThan( const PitchName& other ) const;
+        virtual bool equals( const PitchName& other ) const; */
         
         /* Step Functions */
         
@@ -81,9 +81,9 @@ namespace lyre
         virtual void incrementAlter();
         virtual void decrementAlter();
     private:
-        class NoteNameImpl;
-        using NoteNameImplUPtr = std::unique_ptr<NoteNameImpl>;
-        NoteNameImplUPtr myImpl;
-        static void swap( NoteName& left, NoteName& right ) noexcept;
+        class PitchNameImpl;
+        using PitchNameImplUPtr = std::unique_ptr<PitchNameImpl>;
+        PitchNameImplUPtr myImpl;
+        static void swap( PitchName& left, PitchName& right ) noexcept;
     };
 }

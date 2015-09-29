@@ -1,21 +1,21 @@
-#include "NoteName.h"
+#include "PitchName.h"
 #include "Step.h"
 #include "Alter.h"
 #include "Mod.h"
 
 namespace lyre
 {
-    class NoteName::NoteNameImpl
+    class PitchName::PitchNameImpl
     {
     public:
-        ~NoteNameImpl(){}
+        ~PitchNameImpl(){}
         
-        NoteNameImpl()
+        PitchNameImpl()
         :myStep{ 0 }
         ,myAlter{ 0 }
         {}
         
-        NoteNameImpl( const Integer step, const Integer alter )
+        PitchNameImpl( const Integer step, const Integer alter )
         :myStep{ step }
         ,myAlter{ alter }
         {}
@@ -24,57 +24,57 @@ namespace lyre
         Alter myAlter;
     };
     
-    NoteName::~NoteName(){}
+    PitchName::~PitchName(){}
 
-    NoteName::NoteName()
-    :myImpl{ new NoteNameImpl{} }
+    PitchName::PitchName()
+    :myImpl{ new PitchNameImpl{} }
     {}
     
-    NoteName::NoteName( const Integer step, const Integer alter )
-    :myImpl( new NoteNameImpl{ step, alter } )
+    PitchName::PitchName( const Integer step, const Integer alter )
+    :myImpl( new PitchNameImpl{ step, alter } )
     {}
     
-    NoteName::NoteName( const String& str )
-    :myImpl{ new NoteNameImpl{} }
+    PitchName::PitchName( const String& str )
+    :myImpl{ new PitchNameImpl{} }
     {
         parse( str );
     }
     
-    NoteName::NoteName( const NoteName& other )
-    :myImpl( new NoteNameImpl{ *other.myImpl } )
+    PitchName::PitchName( const PitchName& other )
+    :myImpl( new PitchNameImpl{ *other.myImpl } )
     {}
     
-    NoteName::NoteName( NoteName&& other ) noexcept
+    PitchName::PitchName( PitchName&& other ) noexcept
     :myImpl( std::move( other.myImpl ) )
     {}
     
-    NoteName& NoteName::operator=( const NoteName& other )
+    PitchName& PitchName::operator=( const PitchName& other )
     {
         auto temp = other;
-        NoteName::swap( temp, *this );
+        PitchName::swap( temp, *this );
         return *this;
     }
     
-    NoteName& NoteName::operator=( NoteName&& other ) noexcept
+    PitchName& PitchName::operator=( PitchName&& other ) noexcept
     {
-        NoteName::swap( other, *this );
+        PitchName::swap( other, *this );
         return *this;
     }
     
     
-    INoteNameUPtr NoteName::clone() const
+    IPitchNameUPtr PitchName::clone() const
     {
-        INoteNameUPtr value{ new NoteName{ *this } };
+        IPitchNameUPtr value{ new PitchName{ *this } };
         return value;
     }
     
-    Integer NoteName::getValue() const
+    Integer PitchName::getValue() const
     {
         Mod<Integer, 12> m{ ( myImpl->myStep.getPitchClassValue() ) + ( myImpl->myAlter.getValue() ) };
         return m.getValue();
     }
     
-    bool NoteName::parse( const String& str )
+    bool PitchName::parse( const String& str )
     {
         if ( str.length() < 1 )
         {
@@ -101,73 +101,73 @@ namespace lyre
         return false;
     }
     
-    std::ostream& NoteName::toStream( std::ostream& os ) const
+    std::ostream& PitchName::toStream( std::ostream& os ) const
     {
         os << myImpl->myStep;
         return os << myImpl->myAlter;
     }
     
-    Integer NoteName::getStepValue() const
+    Integer PitchName::getStepValue() const
     {
         return myImpl->myStep.getValue();
     }
     
-    void NoteName::setStepValue( const Integer val )
+    void PitchName::setStepValue( const Integer val )
     {
         myImpl->myStep.setValue( val );
     }
     
-    Integer NoteName::getMinStepValue() const
+    Integer PitchName::getMinStepValue() const
     {
         return myImpl->myStep.getMin();
     }
     
-    Integer NoteName::getMaxStepValue() const
+    Integer PitchName::getMaxStepValue() const
     {
         return myImpl->myStep.getMax();
     }
     
-    void NoteName::incrementStep()
+    void PitchName::incrementStep()
     {
         myImpl->myStep.increment();
     }
     
-    void NoteName::decrementStep()
+    void PitchName::decrementStep()
     {
         myImpl->myStep.decrement();
     }
     
-    Integer NoteName::getAlterValue() const
+    Integer PitchName::getAlterValue() const
     {
         return myImpl->myAlter.getValue();
     }
     
-    void NoteName::setAlterValue( const Integer val )
+    void PitchName::setAlterValue( const Integer val )
     {
         myImpl->myAlter.setValue( val );
     }
     
-    Integer NoteName::getMinAlterValue() const
+    Integer PitchName::getMinAlterValue() const
     {
         return myImpl->myAlter.getMin();
     }
     
-    Integer NoteName::getMaxAlterValue() const
+    Integer PitchName::getMaxAlterValue() const
     {
         return myImpl->myAlter.getMax();
     }
     
-    void NoteName::incrementAlter()
+    void PitchName::incrementAlter()
     {
         myImpl->myAlter.increment();
     }
     
-    void NoteName::decrementAlter()
+    void PitchName::decrementAlter()
     {
         myImpl->myAlter.decrement();
     }
     
-    void NoteName::swap( NoteName& left, NoteName& right ) noexcept
+    void PitchName::swap( PitchName& left, PitchName& right ) noexcept
     {
         std::swap( left.myImpl, right.myImpl );
     }

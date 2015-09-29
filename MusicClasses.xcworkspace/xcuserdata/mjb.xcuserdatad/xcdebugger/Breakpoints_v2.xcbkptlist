@@ -659,13 +659,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lyre/INoteName.cpp"
+            filePath = "Lyre/IPitchName.cpp"
             timestampString = "465088745.183684"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
             endingLineNumber = "14"
-            landmarkName = "INoteName::lessThan( const INoteName&amp; other )"
+            landmarkName = "IPitchName::lessThan( const IPitchName&amp; other )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -675,13 +675,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LyreTests/LyreTests/TestNoteName.cpp"
+            filePath = "LyreTests/LyreTests/TestPitchName.cpp"
             timestampString = "465088967.242492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "776"
             endingLineNumber = "776"
-            landmarkName = "TEST( compare_a_lessThan_b_02, NoteName )"
+            landmarkName = "TEST( compare_a_lessThan_b_02, PitchName )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -691,13 +691,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LyreTests/LyreTests/TestNoteName.cpp"
+            filePath = "LyreTests/LyreTests/TestPitchName.cpp"
             timestampString = "465146195.838154"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "880"
             endingLineNumber = "880"
-            landmarkName = "TEST( setStepValue0, NoteName )"
+            landmarkName = "TEST( setStepValue0, PitchName )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
