@@ -4,17 +4,17 @@
 
 namespace lyre
 {
-    class INoteName;
-    using INoteNamePtr = std::shared_ptr<INoteName>;
-    using INoteNameUPtr = std::unique_ptr<INoteName>;
+    class IPitch;
+    using IPitchPtr = std::shared_ptr<IPitch>;
+    using IPitchUPtr = std::unique_ptr<IPitch>;
     
-    class INoteName
+    class IPitch
     {
     public:
-        virtual ~INoteName() = default;
+        virtual ~IPitch() = default;
         
         /* return a deep copy of "this" */
-        virtual INoteNameUPtr clone() const = 0;
+        virtual IPitchUPtr clone() const = 0;
         
         /* deep copy to "output", note
          the use of static_cast, be careful */
@@ -24,26 +24,26 @@ namespace lyre
             output = std::move( std::unique_ptr<T>{ new T{ *(static_cast<T*>( clone().get() )) } } );
         }
         
-        /* return the Pitch Class value, e.g. C = 0,
-         C# = 1, Db = 1, D = 2, D# = 3, Eb = 3 ...*/
+        /* return the value as an Integer,
+         for example, C4 = 60, C#4 = 61, etc. */
         virtual Integer getValue() const = 0;
         
         /* parse a string, set value from string, return true if
          successful, return false if string was un-parseable */
         virtual bool parse( const String& str ) = 0;
         
-        /* stream the NoteName's string representation to an ostream
-         object. this will be called by toString and operator<< */
+        /* stream the Pitch's string representation to an ostream
+         object. this will be called by toString and operator<< 
+         e.g. C#5m A-1 Bd-1 etc*/
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         
-        /* return the NoteName as a string, this has a definition
-         which calls toStream. */
+        /* calls toStream. */
         virtual String toString() const;
         
         /* compares the return values of getValue() */
-        virtual bool lessThan( const INoteName& other ) const;
-        virtual bool greaterThan( const INoteName& other ) const;
-        virtual bool equals( const INoteName& other ) const;
+        virtual bool lessThan( const IPitch& other ) const;
+        virtual bool greaterThan( const IPitch& other ) const;
+        virtual bool equals( const IPitch& other ) const;
         
         /* Step Functions */
         
@@ -52,10 +52,6 @@ namespace lyre
         
         /* set the value from an int */
         virtual void setStepValue( const Integer val ) = 0;
-        
-        /* get the min/max allowable Step values */
-        virtual Integer getMinStepValue() const = 0;
-        virtual Integer getMaxStepValue() const = 0;
         
         /* increments/decrements the Step value,
          should wrap around to min/max */
@@ -70,16 +66,19 @@ namespace lyre
         /* set the value from an int */
         virtual void setAlterValue( const Integer val ) = 0;
         
-        /* get the min/max allowable Alter values */
-        virtual Integer getMinAlterValue() const = 0;
-        virtual Integer getMaxAlterValue() const = 0;
-        
         /* increments/decrements, should wraps around to min/max */
         virtual void incrementAlter() = 0;
         virtual void decrementAlter() = 0;
         
+        /* Octave Functions */
+        
+        virtual Integer getOctaveValue() const = 0;
+        virtual void setOctaveValue() const = 0;
+        virtual void incrementOctave() const = 0;
+        virtual void decrementOctave() const = 0;
+        
     };
     
     /* this calls toStream... syntactic sugar */
-    std::ostream& operator<<( std::ostream& os, const INoteName& object );
+    std::ostream& operator<<( std::ostream& os, const IPitch& object );
 }
