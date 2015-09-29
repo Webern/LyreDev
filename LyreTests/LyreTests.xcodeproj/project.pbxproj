@@ -13,6 +13,8 @@
 		293F50921BAF1BAB00AC0C19 /* TestIEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F50901BAF1BAB00AC0C19 /* TestIEnum.cpp */; };
 		2943AA841BB851EA00D0080D /* TestPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2943AA821BB851EA00D0080D /* TestPitchName.cpp */; };
 		294CD80E1B7BC61A0042DDF5 /* TestRational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */; };
+		295145F51BBAE6A60067BFD9 /* TestIPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295145F31BBAE6A60067BFD9 /* TestIPitch.cpp */; };
+		295145F81BBAE8B80067BFD9 /* TestPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295145F61BBAE8B80067BFD9 /* TestPitch.cpp */; };
 		296265C11BB7253200EAFBD0 /* TestIPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296265BF1BB7253200EAFBD0 /* TestIPitchName.cpp */; };
 		29DB05011BB3028C0029014A /* TestIAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04FF1BB3028C0029014A /* TestIAlter.cpp */; };
 		29DB05041BB302BA0029014A /* TestAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB05021BB302BA0029014A /* TestAlter.cpp */; };
@@ -48,6 +50,8 @@
 		293F50901BAF1BAB00AC0C19 /* TestIEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIEnum.cpp; sourceTree = "<group>"; };
 		2943AA821BB851EA00D0080D /* TestPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPitchName.cpp; sourceTree = "<group>"; };
 		294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRational.cpp; sourceTree = "<group>"; };
+		295145F31BBAE6A60067BFD9 /* TestIPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIPitch.cpp; sourceTree = "<group>"; };
+		295145F61BBAE8B80067BFD9 /* TestPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPitch.cpp; sourceTree = "<group>"; };
 		296265BF1BB7253200EAFBD0 /* TestIPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIPitchName.cpp; sourceTree = "<group>"; };
 		29DB04FF1BB3028C0029014A /* TestIAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIAlter.cpp; sourceTree = "<group>"; };
 		29DB05021BB302BA0029014A /* TestAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestAlter.cpp; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 				29DB04FF1BB3028C0029014A /* TestIAlter.cpp */,
 				296265BF1BB7253200EAFBD0 /* TestIPitchName.cpp */,
 				292B93991BB1A9AF00A4F808 /* TestIStep.cpp */,
+				295145F31BBAE6A60067BFD9 /* TestIPitch.cpp */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 		2928CABE1BB9936C0063D861 /* Concrete */ = {
 			isa = PBXGroup;
 			children = (
+				295145F61BBAE8B80067BFD9 /* TestPitch.cpp */,
 				29DB05021BB302BA0029014A /* TestAlter.cpp */,
 				2943AA821BB851EA00D0080D /* TestPitchName.cpp */,
 				292B93A01BB1CEE600A4F808 /* TestStep.cpp */,
@@ -258,6 +264,7 @@
 				29DB05011BB3028C0029014A /* TestIAlter.cpp in Sources */,
 				29EA94FF1BACC31B0019FBFB /* TestDurDot.cpp in Sources */,
 				2943AA841BB851EA00D0080D /* TestPitchName.cpp in Sources */,
+				295145F81BBAE8B80067BFD9 /* TestPitch.cpp in Sources */,
 				29E7345A1B7ACBA50046F4F8 /* cpulRun.cpp in Sources */,
 				29F735391BB06E2F0067624F /* TestEnum.cpp in Sources */,
 				29E7345C1B7ACBA50046F4F8 /* cpulTestRegistry.cpp in Sources */,
@@ -267,6 +274,7 @@
 				294CD80E1B7BC61A0042DDF5 /* TestRational.cpp in Sources */,
 				292B939B1BB1A9AF00A4F808 /* TestIStep.cpp in Sources */,
 				29E734591B7ACBA50046F4F8 /* cpulFailure.cpp in Sources */,
+				295145F51BBAE6A60067BFD9 /* TestIPitch.cpp in Sources */,
 				29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */,
 				29FCDEFC1B8B0BA60092CBCB /* TestDur.cpp in Sources */,
 				2927E4D61B8CCC0C00041459 /* TestTuplet.cpp in Sources */,

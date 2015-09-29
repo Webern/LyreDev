@@ -73,9 +73,9 @@ namespace lyre
         /* Octave Functions */
         
         virtual Integer getOctaveValue() const = 0;
-        virtual void setOctaveValue() const = 0;
-        virtual void incrementOctave() const = 0;
-        virtual void decrementOctave() const = 0;
+        virtual void setOctaveValue( const Integer val ) = 0;
+        virtual void incrementOctave() = 0;
+        virtual void decrementOctave() = 0;
         
     };
     

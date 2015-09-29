@@ -15,6 +15,8 @@
 		293F508F1BAF130F00AC0C19 /* IEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 293F508D1BAF130F00AC0C19 /* IEnum.h */; };
 		295145F11BBAE3040067BFD9 /* IPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295145EF1BBAE3040067BFD9 /* IPitch.cpp */; };
 		295145F21BBAE3040067BFD9 /* IPitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 295145F01BBAE3040067BFD9 /* IPitch.h */; };
+		295145FB1BBAEA220067BFD9 /* Pitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295145F91BBAEA220067BFD9 /* Pitch.cpp */; };
+		295145FC1BBAEA220067BFD9 /* Pitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 295145FA1BBAEA220067BFD9 /* Pitch.h */; };
 		298B7A6E1BB7CE0C00E39C72 /* PitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 298B7A6C1BB7CE0C00E39C72 /* PitchName.cpp */; };
 		298B7A6F1BB7CE0C00E39C72 /* PitchName.h in Headers */ = {isa = PBXBuildFile; fileRef = 298B7A6D1BB7CE0C00E39C72 /* PitchName.h */; };
 		29B384EB1BB4C9650056B4AC /* IPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B384E91BB4C9650056B4AC /* IPitchName.cpp */; };
@@ -45,6 +47,8 @@
 		293F508D1BAF130F00AC0C19 /* IEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEnum.h; sourceTree = "<group>"; };
 		295145EF1BBAE3040067BFD9 /* IPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPitch.cpp; sourceTree = "<group>"; };
 		295145F01BBAE3040067BFD9 /* IPitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPitch.h; sourceTree = "<group>"; };
+		295145F91BBAEA220067BFD9 /* Pitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pitch.cpp; sourceTree = "<group>"; };
+		295145FA1BBAEA220067BFD9 /* Pitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pitch.h; sourceTree = "<group>"; };
 		298B7A6C1BB7CE0C00E39C72 /* PitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchName.cpp; sourceTree = "<group>"; };
 		298B7A6D1BB7CE0C00E39C72 /* PitchName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchName.h; sourceTree = "<group>"; };
 		29B384E91BB4C9650056B4AC /* IPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPitchName.cpp; sourceTree = "<group>"; };
@@ -84,12 +88,12 @@
 			children = (
 				29DB04FB1BB301E10029014A /* IAlter.cpp */,
 				29DB04FC1BB301E10029014A /* IAlter.h */,
+				295145EF1BBAE3040067BFD9 /* IPitch.cpp */,
+				295145F01BBAE3040067BFD9 /* IPitch.h */,
 				29B384E91BB4C9650056B4AC /* IPitchName.cpp */,
 				29B384EA1BB4C9650056B4AC /* IPitchName.h */,
 				29F7353A1BB07BAD0067624F /* IStep.cpp */,
 				29F7353B1BB07BAD0067624F /* IStep.h */,
-				295145EF1BBAE3040067BFD9 /* IPitch.cpp */,
-				295145F01BBAE3040067BFD9 /* IPitch.h */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -103,6 +107,8 @@
 				298B7A6D1BB7CE0C00E39C72 /* PitchName.h */,
 				292B939C1BB1ACE100A4F808 /* Step.cpp */,
 				292B939D1BB1ACE100A4F808 /* Step.h */,
+				295145F91BBAEA220067BFD9 /* Pitch.cpp */,
+				295145FA1BBAEA220067BFD9 /* Pitch.h */,
 			);
 			name = Concrete;
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295145FC1BBAEA220067BFD9 /* Pitch.h in Headers */,
 				298B7A6F1BB7CE0C00E39C72 /* PitchName.h in Headers */,
 				292B939F1BB1ACE100A4F808 /* Step.h in Headers */,
 				29EA94FC1BACC1570019FBFB /* DurDot.h in Headers */,
@@ -273,6 +280,7 @@
 				292B939E1BB1ACE100A4F808 /* Step.cpp in Sources */,
 				29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */,
 				29B384EB1BB4C9650056B4AC /* IPitchName.cpp in Sources */,
+				295145FB1BBAEA220067BFD9 /* Pitch.cpp in Sources */,
 				29F7353C1BB07BAD0067624F /* IStep.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
