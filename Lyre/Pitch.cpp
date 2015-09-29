@@ -1,6 +1,6 @@
 #include "Pitch.h"
 #include "PitchName.h"
-#include "Mod.h"
+#include <string>
 
 namespace lyre
 {
@@ -10,7 +10,7 @@ namespace lyre
         ~PitchImpl(){}
         
         PitchImpl()
-        :myPitchName{ 0 }
+        :myPitchName{ 0, 0 }
         ,myOctave{ 0 }
         {}
         
@@ -79,8 +79,9 @@ namespace lyre
     
     std::ostream& Pitch::toStream( std::ostream& os ) const
     {
-        os << myImpl->myPitchName;
-        return os << std::to_string( myImpl->myOctave );
+        return os;
+        //os << myImpl->myPitchName;
+        //return os << std::to_string( myImpl->myOctave );
     }
     
     Integer Pitch::getStepValue() const
