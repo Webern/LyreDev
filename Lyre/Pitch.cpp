@@ -1,6 +1,7 @@
 #include "Pitch.h"
 #include "PitchName.h"
 #include <string>
+#include <sstream>
 
 namespace lyre
 {
@@ -16,12 +17,17 @@ namespace lyre
         
         PitchImpl( const Integer step, const Integer alter, const Integer octave )
         :myPitchName{ step, alter }
-        ,myOctave{ alter }
+        ,myOctave{ octave }
         {}
         
         PitchName myPitchName;
         Integer myOctave;
+        static const Integer ourMiddleCValue;
+        static const Pitch ourMiddleCPitch;
     };
+    
+    const Integer Pitch::PitchImpl::ourMiddleCValue = 60;
+    const Pitch Pitch::PitchImpl::ourMiddleCPitch{ 0, 0, 4 };
     
     Pitch::~Pitch(){}
     
@@ -64,24 +70,104 @@ namespace lyre
     IPitchUPtr Pitch::clone() const
     {
         IPitchUPtr value{ new Pitch{ *this } };
-        return value;
+        return std::move( value );
     }
     
     Integer Pitch::getValue() const
     {
-        throw std::runtime_error( "not implemented" );
+        Integer octave = myImpl->myOctave;
+        Integer alter = myImpl->myPitchName.getAlterValue();
+        bool alterNegative = ( alter < 0 );
+        if ( alterNegative )
+        {
+            alter *= -1;
+        }
+        Integer octaveOffset = 0;
+        PitchName tempPitchName{ myImpl->myPitchName.getStepValue(), 0 };
+        for ( Integer i = 0; i < alter; ++i )
+        {
+            tempPitchName.incrementAlter();
+            if ( tempPitchName.getValue() == 0 )
+            {
+                ++octaveOffset;
+            }
+        }
+        if ( alterNegative )
+        {
+            octave -= octaveOffset;
+        }
+        else
+        {
+            octave += octaveOffset;
+        }
+        Integer answer = myImpl->myPitchName.getValue();
+        answer += ( 12 * octave );
+        answer += ( myImpl->ourMiddleCValue ) - ( 12 * 4 );
+        return answer;
     }
     
     bool Pitch::parse( const String& str )
     {
-        throw std::runtime_error( "not implemented" );
+        auto octpos = str.find_first_of( "-0123456789" );
+        if ( octpos == String::npos )
+        {
+            return false;
+        }
+        bool negative = false;
+        if ( str.substr( octpos, 1 ) == "-" )
+        {
+            negative = true;
+        }
+        auto octstr = str.substr( octpos );
+        if ( negative && octstr.length() == 1 )
+        {
+            return false;
+        }
+        if ( negative )
+        {
+            octstr = octstr.substr( 1 );
+        }
+        if ( octstr.length() == 0 )
+        {
+            return false;
+        }
+        auto badcharcheck = octstr.find_first_not_of( "0123456789" );
+        if ( badcharcheck != String::npos )
+        {
+            return false;
+        }
+        if ( octstr.substr( 0, 1 ) == "0" && negative )
+        {
+            return false;
+        }
+        if ( ! negative && octstr.substr( 0, 1 ) == "0" && octstr.length() > 1 )
+        {
+            return false;
+        }
+        std::stringstream ss{ octstr };
+        Integer octave = 0;
+        ss >> octave;
+        if ( negative )
+        {
+            octave *= -1;
+        }
+        String pnstr = str.substr( 0, octpos );
+        PitchName pn;
+        bool success = pn.parse( pnstr );
+        if ( ! success )
+        {
+            return false;
+        }
+        myImpl->myPitchName = pn;
+        myImpl->myOctave = octave;
+        return true;
     }
     
     std::ostream& Pitch::toStream( std::ostream& os ) const
     {
         return os;
-        //os << myImpl->myPitchName;
-        //return os << std::to_string( myImpl->myOctave );
+        os << myImpl->myPitchName;
+        return os << std::to_string( myImpl->myOctave );
     }
     
     Integer Pitch::getStepValue() const
