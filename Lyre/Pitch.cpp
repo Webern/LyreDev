@@ -176,7 +176,6 @@ namespace lyre
     
     std::ostream& Pitch::toStream( std::ostream& os ) const
     {
-        return os;
         os << myImpl->myPitchName;
         return os << std::to_string( myImpl->myOctave );
     }
