@@ -260,181 +260,181 @@ TEST( getValue27, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "B#9" );;
-    CHECK_EQUAL( 0, n->getValue() )
+    CHECK_EQUAL( 132, n->getValue() )
 }
 TEST( getValue28, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "C10" );;
-    CHECK_EQUAL( 0, n->getValue() )
+    CHECK_EQUAL( 132, n->getValue() )
 }
 TEST( getValue29, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Db4" );;
-    CHECK_EQUAL( 1, n->getValue() )
+    CHECK_EQUAL( 61, n->getValue() )
 }
 TEST( getValue30, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "C#4" );;
-    CHECK_EQUAL( 1, n->getValue() )
+    CHECK_EQUAL( 61, n->getValue() )
 }
 TEST( getValue31, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "D4" );;
-    CHECK_EQUAL( 2, n->getValue() )
+    CHECK_EQUAL( 62, n->getValue() )
 }
 TEST( getValue32, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Cx4" );;
-    CHECK_EQUAL( 2, n->getValue() )
+    CHECK_EQUAL( 62, n->getValue() )
 }
 TEST( getValue33, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Eb4" );;
-    CHECK_EQUAL( 3, n->getValue() )
+    CHECK_EQUAL( 63, n->getValue() )
 }
 TEST( getValue34, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "D#4" );;
-    CHECK_EQUAL( 3, n->getValue() )
+    CHECK_EQUAL( 63, n->getValue() )
 }
 TEST( getValue37, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "E4" );;
-    CHECK_EQUAL( 4, n->getValue() )
+    CHECK_EQUAL( 64, n->getValue() )
 }
 TEST( getValue38, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Fb4" );;
-    CHECK_EQUAL( 4, n->getValue() )
+    CHECK_EQUAL( 64, n->getValue() )
 }
 TEST( getValue39, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "F4" );;
-    CHECK_EQUAL( 5, n->getValue() )
+    CHECK_EQUAL( 65, n->getValue() )
 }
 TEST( getValue40, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "E#4" );;
-    CHECK_EQUAL( 5, n->getValue() )
+    CHECK_EQUAL( 65, n->getValue() )
 }
 TEST( getValue41, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Gb4" );;
-    CHECK_EQUAL( 6, n->getValue() )
+    CHECK_EQUAL( 66, n->getValue() )
 }
 TEST( getValue42, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "F#4" );;
-    CHECK_EQUAL( 6, n->getValue() )
+    CHECK_EQUAL( 66, n->getValue() )
 }
 TEST( getValue43, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "G4" );;
-    CHECK_EQUAL( 7, n->getValue() )
+    CHECK_EQUAL( 67, n->getValue() )
 }
 TEST( getValue44, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Ad4" );;
-    CHECK_EQUAL( 7, n->getValue() )
+    CHECK_EQUAL( 67, n->getValue() )
 }
 TEST( getValue45, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Ab4" );;
-    CHECK_EQUAL( 8, n->getValue() )
+    CHECK_EQUAL( 68, n->getValue() )
 }
 TEST( getValue46, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "G#4" );;
-    CHECK_EQUAL( 8, n->getValue() )
+    CHECK_EQUAL( 68, n->getValue() )
 }
 TEST( getValue47, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "A4" );;
-    CHECK_EQUAL( 9, n->getValue() )
+    CHECK_EQUAL( 69, n->getValue() )
 }
 TEST( getValue48, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Gx4" );;
-    CHECK_EQUAL( 9, n->getValue() )
+    CHECK_EQUAL( 69, n->getValue() )
 }
 TEST( getValue49, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Bb4" );;
-    CHECK_EQUAL( 10, n->getValue() )
+    CHECK_EQUAL( 70, n->getValue() )
 }
 TEST( getValue50, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "A#4" );;
-    CHECK_EQUAL( 10, n->getValue() )
+    CHECK_EQUAL( 70, n->getValue() )
 }
 TEST( getValue51, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "B4" );;
-    CHECK_EQUAL( 11, n->getValue() )
+    CHECK_EQUAL( 71, n->getValue() )
 }
 TEST( getValue52, Pitch )
 {
     PitchUPtr n{ new Pitch{} };
     n->parse( "Cb4" );;
-    CHECK_EQUAL( 11, n->getValue() )
+    CHECK_EQUAL( 59, n->getValue() )
 }
-#if 1 == 0
+
 TEST( parse_fail01, Pitch )
 {
     PitchUPtr n{ new Pitch{ "F4" } };
-    CHECK_EQUAL( 5, n->getValue() )
+    CHECK_EQUAL( 65, n->getValue() )
     CHECK( ! n->parse( "Cbd3" ) )
-    CHECK_EQUAL( 5, n->getValue() )
+    CHECK_EQUAL( 65, n->getValue() )
 }
 TEST( parse_fail02, Pitch )
 {
-    PitchUPtr n{ new Pitch{ "F#" } };
-    CHECK_EQUAL( 6, n->getValue() )
+    PitchUPtr n{ new Pitch{ "F#2" } };
+    CHECK_EQUAL( 42, n->getValue() )
     CHECK( ! n->parse( "B-" ) )
-    CHECK_EQUAL( 6, n->getValue() )
+    CHECK_EQUAL( 42, n->getValue() )
 }
 TEST( parse_fail03, Pitch )
 {
-    PitchUPtr n{ new Pitch{ "G" } };
-    CHECK_EQUAL( 7, n->getValue() )
+    PitchUPtr n{ new Pitch{ "G6" } };
+    CHECK_EQUAL( 91, n->getValue() )
     CHECK( ! n->parse( "#6" ) )
-    CHECK_EQUAL( 7, n->getValue() )
+    CHECK_EQUAL( 91, n->getValue() )
 }
 TEST( parse_fail04, Pitch )
 {
-    PitchUPtr n{ new Pitch{ "Ab" } };
-    CHECK_EQUAL( 8, n->getValue() )
+    PitchUPtr n{ new Pitch{ "Ab3" } };
+    CHECK_EQUAL( 56, n->getValue() )
     CHECK( ! n->parse( "Ab" ) )
-    CHECK_EQUAL( 8, n->getValue() )
+    CHECK_EQUAL( 56, n->getValue() )
 }
 TEST( parse_success01, Pitch )
 {
-    PitchUPtr n{ new Pitch{ "F" } };
-    CHECK_EQUAL( 5, n->getValue() )
+    PitchUPtr n{ new Pitch{ "F1" } };
+    CHECK_EQUAL( 29, n->getValue() )
     CHECK( n->parse( "B#3" ) )
-    CHECK_EQUAL( 0, n->getValue() )
+    CHECK_EQUAL( 60, n->getValue() )
 }
 TEST( parse_success02, Pitch )
 {
@@ -457,6 +457,7 @@ TEST( parse_success04, Pitch )
     CHECK( n->parse( "Cdb1537" ) )
     CHECK_EQUAL( 9, n->getValue() )
 }
+#if 1 == 0
 TEST( toStream00, Pitch )
 {
     String str = "Bb4";
