@@ -58,7 +58,7 @@ private:
 // and CHECK_DOUBLES_EQUAL compare longs and doubles respectively.
 //
 // To make this an industrial strength test harness, you should
-// add equals macros for various low level types as you develop them.
+// add isEqualTo macros for various low level types as you develop them.
 // If, for instance, you have a daterange class, the ability to compare
 // them directly and prInteger out their values in the test output is
 // invaluable.

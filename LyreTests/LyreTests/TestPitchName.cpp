@@ -759,65 +759,65 @@ TEST( toString10, PitchName )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( compare_a_lessThan_b_01, PitchName )
+TEST( compare_a_isLessThan_b_01, PitchName )
 {
     String a_str = "B#";
     String b_str = "Db";
     IPitchNameUPtr a{ new PitchName{ a_str } };
     IPitchNameUPtr b{ new PitchName{ b_str } };
-    CHECK(   ( a->lessThan( *b ) ) )
-    CHECK( ! ( a->equals( *b ) ) )
-    CHECK( ! ( a->greaterThan( *b ) ) )
+    CHECK(   ( a->isLessThan( *b ) ) )
+    CHECK( ! ( a->isEqualTo( *b ) ) )
+    CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
-TEST( compare_a_lessThan_b_02, PitchName )
+TEST( compare_a_isLessThan_b_02, PitchName )
 {
     String a_str = "Axx";
     String b_str = "Eb";
     IPitchNameUPtr a{ new PitchName{ a_str } };
     IPitchNameUPtr b{ new PitchName{ b_str } };
-    CHECK(   ( a->lessThan( *b ) ) )
-    CHECK( ! ( a->equals( *b ) ) )
-    CHECK( ! ( a->greaterThan( *b ) ) )
+    CHECK(   ( a->isLessThan( *b ) ) )
+    CHECK( ! ( a->isEqualTo( *b ) ) )
+    CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
-TEST( compare_a_equals_b_01, PitchName )
+TEST( compare_a_isEqualTo_b_01, PitchName )
 {
     String a_str = "F#";
     String b_str = "Gb";
     IPitchNameUPtr a{ new PitchName{ a_str } };
     IPitchNameUPtr b{ new PitchName{ b_str } };
-    CHECK( ! ( a->lessThan( *b ) ) )
-    CHECK(   ( a->equals( *b ) ) )
-    CHECK( ! ( a->greaterThan( *b ) ) )
+    CHECK( ! ( a->isLessThan( *b ) ) )
+    CHECK(   ( a->isEqualTo( *b ) ) )
+    CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
-TEST( compare_a_equals_b_02, PitchName )
+TEST( compare_a_isEqualTo_b_02, PitchName )
 {
     String a_str = "Cd";
     String b_str = "Gx#";
     IPitchNameUPtr a{ new PitchName{ a_str } };
     IPitchNameUPtr b{ new PitchName{ b_str } };
-    CHECK( ! ( a->lessThan( *b ) ) )
-    CHECK(   ( a->equals( *b ) ) )
-    CHECK( ! ( a->greaterThan( *b ) ) )
+    CHECK( ! ( a->isLessThan( *b ) ) )
+    CHECK(   ( a->isEqualTo( *b ) ) )
+    CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
-TEST( compare_a_greaterThan_b_01, PitchName )
+TEST( compare_a_isGreaterThan_b_01, PitchName )
 {
     String a_str = "Cb";
     String b_str = "Gx#";
     IPitchNameUPtr a{ new PitchName{ a_str } };
     IPitchNameUPtr b{ new PitchName{ b_str } };
-    CHECK( ! ( a->lessThan( *b ) ) )
-    CHECK( ! ( a->equals( *b ) ) )
-    CHECK(   ( a->greaterThan( *b ) ) )
+    CHECK( ! ( a->isLessThan( *b ) ) )
+    CHECK( ! ( a->isEqualTo( *b ) ) )
+    CHECK(   ( a->isGreaterThan( *b ) ) )
 }
-TEST( compare_a_greaterThan_b_02, PitchName )
+TEST( compare_a_isGreaterThan_b_02, PitchName )
 {
     String a_str = "F";
     String b_str = "E";
     IPitchNameUPtr a{ new PitchName{ a_str } };
     IPitchNameUPtr b{ new PitchName{ b_str } };
-    CHECK( ! ( a->lessThan( *b ) ) )
-    CHECK( ! ( a->equals( *b ) ) )
-    CHECK(   ( a->greaterThan( *b ) ) )
+    CHECK( ! ( a->isLessThan( *b ) ) )
+    CHECK( ! ( a->isEqualTo( *b ) ) )
+    CHECK(   ( a->isGreaterThan( *b ) ) )
 }
 TEST( getStepValue0, PitchName )
 {

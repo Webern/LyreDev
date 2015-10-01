@@ -14,15 +14,15 @@ namespace lyre
     {
         return StepName.toStream( os );
     }
-    bool IStep::lessThan( const IStep& other ) const
+    bool IStep::isLessThan( const IStep& other ) const
     {
         return getValue() < other.getValue();
     }
-    bool IStep::greaterThan( const IStep& other ) const
+    bool IStep::isGreaterThan( const IStep& other ) const
     {
         return getValue() > other.getValue();
     }
-    bool IStep::equals( const IStep& other ) const
+    bool IStep::isEqualTo( const IStep& other ) const
     {
         return getValue() == other.getValue();
     }

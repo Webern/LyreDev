@@ -41,9 +41,9 @@ namespace lyre
         virtual String toString() const;
         
         /* compares the return values of getValue() */
-        virtual bool lessThan( const IPitchName& other ) const;
-        virtual bool greaterThan( const IPitchName& other ) const;
-        virtual bool equals( const IPitchName& other ) const;
+        virtual bool isLessThan( const IPitchName& other ) const;
+        virtual bool isGreaterThan( const IPitchName& other ) const;
+        virtual bool isEqualTo( const IPitchName& other ) const;
         
         /* Step Functions */
         

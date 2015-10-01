@@ -724,7 +724,7 @@ TEST( reciprocal06, Rational )
     CHECK_EQUAL( -7, r.getNumerator() )
     CHECK_EQUAL( -9, r.getDenominator() )
 }
-TEST( divideEquals01, Rational )
+TEST( divideisEqualTo01, Rational )
 {
     Integer aNumer = -9;
     Integer aDenom = -7;
@@ -742,7 +742,7 @@ TEST( divideEquals01, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( divideEquals02, Rational )
+TEST( divideisEqualTo02, Rational )
 {
     Integer aNumer = 234;
     Integer aDenom = 123;
@@ -760,7 +760,7 @@ TEST( divideEquals02, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( divideEquals03, Rational )
+TEST( divideisEqualTo03, Rational )
 {
     Integer aNumer = -4576;
     Integer aDenom = 3478;
@@ -778,7 +778,7 @@ TEST( divideEquals03, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( divideEquals04, Rational )
+TEST( divideisEqualTo04, Rational )
 {
     Integer aNumer = 9405;
     Integer aDenom = -9470;
@@ -796,7 +796,7 @@ TEST( divideEquals04, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( divideEquals05, Rational )
+TEST( divideisEqualTo05, Rational )
 {
     Integer aNumer = 5;
     Integer aDenom = 6;
@@ -814,7 +814,7 @@ TEST( divideEquals05, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( divideEquals06, Rational )
+TEST( divideisEqualTo06, Rational )
 {
     Integer aNumer = 51;
     Integer aDenom = 26;
@@ -832,7 +832,7 @@ TEST( divideEquals06, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( divideEquals07, Rational )
+TEST( divideisEqualTo07, Rational )
 {
     Integer aNumer = 82;
     Integer aDenom = 91;
@@ -850,7 +850,7 @@ TEST( divideEquals07, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( divideEquals08, Rational )
+TEST( divideisEqualTo08, Rational )
 {
     Integer aNumer = 0;
     Integer aDenom = 26;
@@ -868,7 +868,7 @@ TEST( divideEquals08, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( divideEquals09, Rational )
+TEST( divideisEqualTo09, Rational )
 {
     Integer aNumer = 15;
     Integer aDenom = 26;
@@ -886,7 +886,7 @@ TEST( divideEquals09, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( timesEquals01, Rational )
+TEST( timesisEqualTo01, Rational )
 {
     Integer aNumer = -9;
     Integer aDenom = -7;
@@ -904,7 +904,7 @@ TEST( timesEquals01, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( timesEquals02, Rational )
+TEST( timesisEqualTo02, Rational )
 {
     Integer aNumer = 234;
     Integer aDenom = 123;
@@ -922,7 +922,7 @@ TEST( timesEquals02, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( timesEquals03, Rational )
+TEST( timesisEqualTo03, Rational )
 {
     Integer aNumer = -4576;
     Integer aDenom = 3478;
@@ -940,7 +940,7 @@ TEST( timesEquals03, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( timesEquals04, Rational )
+TEST( timesisEqualTo04, Rational )
 {
     Integer aNumer = 9405;
     Integer aDenom = -9470;
@@ -958,7 +958,7 @@ TEST( timesEquals04, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( timesEquals05, Rational )
+TEST( timesisEqualTo05, Rational )
 {
     Integer aNumer = 5;
     Integer aDenom = 6;
@@ -976,7 +976,7 @@ TEST( timesEquals05, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( timesEquals06, Rational )
+TEST( timesisEqualTo06, Rational )
 {
     Integer aNumer = 51;
     Integer aDenom = 26;
@@ -994,7 +994,7 @@ TEST( timesEquals06, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( timesEquals07, Rational )
+TEST( timesisEqualTo07, Rational )
 {
     Integer aNumer = 82;
     Integer aDenom = 91;
@@ -1012,7 +1012,7 @@ TEST( timesEquals07, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( timesEquals08, Rational )
+TEST( timesisEqualTo08, Rational )
 {
     Integer aNumer = 0;
     Integer aDenom = 26;
@@ -1030,7 +1030,7 @@ TEST( timesEquals08, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( timesEquals09, Rational )
+TEST( timesisEqualTo09, Rational )
 {
     Integer aNumer = 15;
     Integer aDenom = 26;
@@ -1049,7 +1049,7 @@ TEST( timesEquals09, Rational )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
 
-TEST( plusEquals01, Rational )
+TEST( plusisEqualTo01, Rational )
 {
     Integer aNumer = -9;
     Integer aDenom = -7;
@@ -1067,7 +1067,7 @@ TEST( plusEquals01, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( plusEquals02, Rational )
+TEST( plusisEqualTo02, Rational )
 {
     Integer aNumer = 234;
     Integer aDenom = 123;
@@ -1085,7 +1085,7 @@ TEST( plusEquals02, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( plusEquals03, Rational )
+TEST( plusisEqualTo03, Rational )
 {
     Integer aNumer = -4576;
     Integer aDenom = 3478;
@@ -1103,7 +1103,7 @@ TEST( plusEquals03, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( plusEquals04, Rational )
+TEST( plusisEqualTo04, Rational )
 {
     Integer aNumer = 9405;
     Integer aDenom = -9470;
@@ -1121,7 +1121,7 @@ TEST( plusEquals04, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( plusEquals05, Rational )
+TEST( plusisEqualTo05, Rational )
 {
     Integer aNumer = 5;
     Integer aDenom = 6;
@@ -1139,7 +1139,7 @@ TEST( plusEquals05, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( plusEquals06, Rational )
+TEST( plusisEqualTo06, Rational )
 {
     Integer aNumer = 51;
     Integer aDenom = 26;
@@ -1157,7 +1157,7 @@ TEST( plusEquals06, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( plusEquals07, Rational )
+TEST( plusisEqualTo07, Rational )
 {
     Integer aNumer = 82;
     Integer aDenom = 91;
@@ -1175,7 +1175,7 @@ TEST( plusEquals07, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( plusEquals08, Rational )
+TEST( plusisEqualTo08, Rational )
 {
     Integer aNumer = 0;
     Integer aDenom = 26;
@@ -1193,7 +1193,7 @@ TEST( plusEquals08, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( plusEquals09, Rational )
+TEST( plusisEqualTo09, Rational )
 {
     Integer aNumer = 15;
     Integer aDenom = 26;
@@ -1212,7 +1212,7 @@ TEST( plusEquals09, Rational )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
 
-TEST( minusEquals01, Rational )
+TEST( minusisEqualTo01, Rational )
 {
     Integer aNumer = -9;
     Integer aDenom = -7;
@@ -1230,7 +1230,7 @@ TEST( minusEquals01, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( minusEquals02, Rational )
+TEST( minusisEqualTo02, Rational )
 {
     Integer aNumer = 234;
     Integer aDenom = 123;
@@ -1248,7 +1248,7 @@ TEST( minusEquals02, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( minusEquals03, Rational )
+TEST( minusisEqualTo03, Rational )
 {
     Integer aNumer = -4576;
     Integer aDenom = 3478;
@@ -1266,7 +1266,7 @@ TEST( minusEquals03, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( minusEquals04, Rational )
+TEST( minusisEqualTo04, Rational )
 {
     Integer aNumer = 9405;
     Integer aDenom = -9470;
@@ -1284,7 +1284,7 @@ TEST( minusEquals04, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( minusEquals05, Rational )
+TEST( minusisEqualTo05, Rational )
 {
     Integer aNumer = 5;
     Integer aDenom = 6;
@@ -1302,7 +1302,7 @@ TEST( minusEquals05, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( minusEquals06, Rational )
+TEST( minusisEqualTo06, Rational )
 {
     Integer aNumer = 51;
     Integer aDenom = 26;
@@ -1320,7 +1320,7 @@ TEST( minusEquals06, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( minusEquals07, Rational )
+TEST( minusisEqualTo07, Rational )
 {
     Integer aNumer = 82;
     Integer aDenom = 91;
@@ -1338,7 +1338,7 @@ TEST( minusEquals07, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( minusEquals08, Rational )
+TEST( minusisEqualTo08, Rational )
 {
     Integer aNumer = 0;
     Integer aDenom = 26;
@@ -1356,7 +1356,7 @@ TEST( minusEquals08, Rational )
     CHECK_EQUAL( resultNumer, c.getNumerator() )
     CHECK_EQUAL( resultDenom, c.getDenominator() )
 }
-TEST( minusEquals09, Rational )
+TEST( minusisEqualTo09, Rational )
 {
     Integer aNumer = 15;
     Integer aDenom = 26;
@@ -2316,7 +2316,7 @@ TEST( getIsIdenticalTo02, Rational )
     CHECK( ! a.getIsIdenticalTo( b ) )
     CHECK( ! b.getIsIdenticalTo( a ) )
 }
-TEST( comparisons01aEqualsb, Rational )
+TEST( comparisons01aisEqualTob, Rational )
 {
     Rational a{ 1, 2 };
     Rational b{ 1, 2 };
@@ -2328,7 +2328,7 @@ TEST( comparisons01aEqualsb, Rational )
     CHECK(   ( a <= b ) )
     CHECK(   ( a >= b ) )
 }
-TEST( comparisons01aGreaterThanb, Rational )
+TEST( comparisons01aisGreaterThanb, Rational )
 {
     Rational a{ 1, 2 };
     Rational b{ 1, 3 };
@@ -2340,7 +2340,7 @@ TEST( comparisons01aGreaterThanb, Rational )
     CHECK( ! ( a <= b ) )
     CHECK(   ( a >= b ) )
 }
-TEST( comparisons01aLessThanb, Rational )
+TEST( comparisons01aisLessThanb, Rational )
 {
     Rational a{ -1, 2 };
     Rational b{ -1, -3 };
@@ -2352,7 +2352,7 @@ TEST( comparisons01aLessThanb, Rational )
     CHECK(   ( a <= b ) )
     CHECK( ! ( a >= b ) )
 }
-TEST( comparisons02aEqualsb, Rational )
+TEST( comparisons02aisEqualTob, Rational )
 {
     Rational a{ 13, -21 };
     Rational b{ -26, 42 };
@@ -2364,7 +2364,7 @@ TEST( comparisons02aEqualsb, Rational )
     CHECK(   ( a <= b ) )
     CHECK(   ( a >= b ) )
 }
-TEST( comparisons02aGreaterThanb, Rational )
+TEST( comparisons02aisGreaterThanb, Rational )
 {
     Rational a{ -1, -2 };
     Rational b{ -1, 323498 };
@@ -2376,7 +2376,7 @@ TEST( comparisons02aGreaterThanb, Rational )
     CHECK( ! ( a <= b ) )
     CHECK(   ( a >= b ) )
 }
-TEST( comparisons02aLessThanb, Rational )
+TEST( comparisons02aisLessThanb, Rational )
 {
     Rational a{ -1, -200 };
     Rational b{ -1, -3 };

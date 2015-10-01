@@ -17,9 +17,9 @@ public:
     virtual bool parse( const String& str ) { return true; }
     virtual std::ostream& toStream( std::ostream& os ) const { return os; }
     /* virtual String toString() const;
-       virtual bool lessThan( const Pitch& other ) const;
-       virtual bool greaterThan( const Pitch& other ) const;
-       virtual bool equals( const Pitch& other ) const; */
+       virtual bool isLessThan( const Pitch& other ) const;
+       virtual bool isGreaterThan( const Pitch& other ) const;
+       virtual bool isEqualTo( const Pitch& other ) const; */
     virtual Integer getStepValue() const { return 0; }
     virtual void setStepValue( const Integer val ) {}
     virtual void incrementStep() {}
@@ -54,9 +54,9 @@ TEST( compiles, IPitch )
     CHECK_EQUAL( "", p->toString() )
     ss << (*p);
     CHECK_EQUAL( "", ss.str() )
-    CHECK( ! p->lessThan( *x ) )
-    CHECK( p->equals( *x ) )
-    CHECK( ! p->greaterThan( *c ) )
+    CHECK( ! p->isLessThan( *x ) )
+    CHECK( p->isEqualTo( *x ) )
+    CHECK( ! p->isGreaterThan( *c ) )
     CHECK_EQUAL( 0, p->getStepValue() )
     p->setStepValue( 0 );
     p->incrementStep();

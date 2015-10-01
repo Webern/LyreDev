@@ -113,44 +113,44 @@ TEST( streamingOperator, IAlter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( comparisons_a_lessThan_b, IAlter )
+TEST( comparisons_a_isLessThan_b, IAlter )
 {
     IAlterUPtr a = unique_ptr<MockAlter>( new MockAlter() );
     IAlterUPtr b = unique_ptr<IAlter>( new MockAlter() );
     a->setValue( 1 );
     b->setValue( 2 );
-    CHECK(   a->lessThan   ( *b ) )
-    CHECK( ! b->lessThan   ( *a ) )
-    CHECK( ! a->greaterThan( *b ) )
-    CHECK(   b->greaterThan( *a ) )
-    CHECK( ! a->equals     ( *b ) )
-    CHECK( ! b->equals     ( *a ) )
+    CHECK(   a->isLessThan   ( *b ) )
+    CHECK( ! b->isLessThan   ( *a ) )
+    CHECK( ! a->isGreaterThan( *b ) )
+    CHECK(   b->isGreaterThan( *a ) )
+    CHECK( ! a->isEqualTo     ( *b ) )
+    CHECK( ! b->isEqualTo     ( *a ) )
 }
-TEST( comparisons_a_greaterThan_b, IAlter )
+TEST( comparisons_a_isGreaterThan_b, IAlter )
 {
     IAlterUPtr a = unique_ptr<IAlter>( new MockAlter() );
     IAlterUPtr b = unique_ptr<MockAlter>( new MockAlter() );
     a->setValue( 2 );
     b->setValue( 1 );
-    CHECK( ! a->lessThan   ( *b ) )
-    CHECK(   b->lessThan   ( *a ) )
-    CHECK(   a->greaterThan( *b ) )
-    CHECK( ! b->greaterThan( *a ) )
-    CHECK( ! a->equals     ( *b ) )
-    CHECK( ! b->equals     ( *a ) )
+    CHECK( ! a->isLessThan   ( *b ) )
+    CHECK(   b->isLessThan   ( *a ) )
+    CHECK(   a->isGreaterThan( *b ) )
+    CHECK( ! b->isGreaterThan( *a ) )
+    CHECK( ! a->isEqualTo     ( *b ) )
+    CHECK( ! b->isEqualTo     ( *a ) )
 }
-TEST( comparisons_a_equals_b, IAlter )
+TEST( comparisons_a_isEqualTo_b, IAlter )
 {
     IAlterUPtr a = unique_ptr<IAlter>( new MockAlter() );
     IAlterUPtr b = unique_ptr<MockAlter>( new MockAlter() );
     a->setValue( 21 );
     b->setValue( 21 );
-    CHECK( ! a->lessThan   ( *b ) )
-    CHECK( ! b->lessThan   ( *a ) )
-    CHECK( ! a->greaterThan( *b ) )
-    CHECK( ! b->greaterThan( *a ) )
-    CHECK(   a->equals     ( *b ) )
-    CHECK(   b->equals     ( *a ) )
+    CHECK( ! a->isLessThan   ( *b ) )
+    CHECK( ! b->isLessThan   ( *a ) )
+    CHECK( ! a->isGreaterThan( *b ) )
+    CHECK( ! b->isGreaterThan( *a ) )
+    CHECK(   a->isEqualTo     ( *b ) )
+    CHECK(   b->isEqualTo     ( *a ) )
 }
 TEST( increment, IAlter )
 {

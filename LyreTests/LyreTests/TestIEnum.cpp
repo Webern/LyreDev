@@ -113,44 +113,44 @@ TEST( streamingOperator, IEnum )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( comparisons_a_lessThan_b, IEnum )
+TEST( comparisons_a_isLessThan_b, IEnum )
 {
     IEnumUPtr a = unique_ptr<MockEnum>( new MockEnum() );
     IEnumUPtr b = unique_ptr<IEnum>( new MockEnum() );
     a->setValue( 1 );
     b->setValue( 2 );
-    CHECK(   a->lessThan   ( *b ) )
-    CHECK( ! b->lessThan   ( *a ) )
-    CHECK( ! a->greaterThan( *b ) )
-    CHECK(   b->greaterThan( *a ) )
-    CHECK( ! a->equals     ( *b ) )
-    CHECK( ! b->equals     ( *a ) )
+    CHECK(   a->isLessThan   ( *b ) )
+    CHECK( ! b->isLessThan   ( *a ) )
+    CHECK( ! a->isGreaterThan( *b ) )
+    CHECK(   b->isGreaterThan( *a ) )
+    CHECK( ! a->isEqualTo     ( *b ) )
+    CHECK( ! b->isEqualTo     ( *a ) )
 }
-TEST( comparisons_a_greaterThan_b, IEnum )
+TEST( comparisons_a_isGreaterThan_b, IEnum )
 {
     IEnumUPtr a = unique_ptr<IEnum>( new MockEnum() );
     IEnumUPtr b = unique_ptr<MockEnum>( new MockEnum() );
     a->setValue( 2 );
     b->setValue( 1 );
-    CHECK( ! a->lessThan   ( *b ) )
-    CHECK(   b->lessThan   ( *a ) )
-    CHECK(   a->greaterThan( *b ) )
-    CHECK( ! b->greaterThan( *a ) )
-    CHECK( ! a->equals     ( *b ) )
-    CHECK( ! b->equals     ( *a ) )
+    CHECK( ! a->isLessThan   ( *b ) )
+    CHECK(   b->isLessThan   ( *a ) )
+    CHECK(   a->isGreaterThan( *b ) )
+    CHECK( ! b->isGreaterThan( *a ) )
+    CHECK( ! a->isEqualTo     ( *b ) )
+    CHECK( ! b->isEqualTo     ( *a ) )
 }
-TEST( comparisons_a_equals_b, IEnum )
+TEST( comparisons_a_isEqualTo_b, IEnum )
 {
     IEnumUPtr a = unique_ptr<IEnum>( new MockEnum() );
     IEnumUPtr b = unique_ptr<MockEnum>( new MockEnum() );
     a->setValue( 21 );
     b->setValue( 21 );
-    CHECK( ! a->lessThan   ( *b ) )
-    CHECK( ! b->lessThan   ( *a ) )
-    CHECK( ! a->greaterThan( *b ) )
-    CHECK( ! b->greaterThan( *a ) )
-    CHECK(   a->equals     ( *b ) )
-    CHECK(   b->equals     ( *a ) )
+    CHECK( ! a->isLessThan   ( *b ) )
+    CHECK( ! b->isLessThan   ( *a ) )
+    CHECK( ! a->isGreaterThan( *b ) )
+    CHECK( ! b->isGreaterThan( *a ) )
+    CHECK(   a->isEqualTo     ( *b ) )
+    CHECK(   b->isEqualTo     ( *a ) )
 }
 TEST( increment, IEnum )
 {

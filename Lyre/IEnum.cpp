@@ -13,15 +13,15 @@ namespace lyre
     {
         return EnumName.toStream( os );
     }
-    bool IEnum::lessThan( const IEnum& other ) const
+    bool IEnum::isLessThan( const IEnum& other ) const
     {
         return getValue() < other.getValue();
     }
-    bool IEnum::greaterThan( const IEnum& other ) const
+    bool IEnum::isGreaterThan( const IEnum& other ) const
     {
         return getValue() > other.getValue();
     }
-    bool IEnum::equals( const IEnum& other ) const
+    bool IEnum::isEqualTo( const IEnum& other ) const
     {
         return getValue() == other.getValue();
     }

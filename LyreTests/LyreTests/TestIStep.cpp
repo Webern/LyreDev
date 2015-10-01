@@ -113,44 +113,44 @@ TEST( streamingOperator, IStep )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( comparisons_a_lessThan_b, IStep )
+TEST( comparisons_a_isLessThan_b, IStep )
 {
     IStepUPtr a = unique_ptr<MockStep>( new MockStep() );
     IStepUPtr b = unique_ptr<IStep>( new MockStep() );
     a->setValue( 1 );
     b->setValue( 2 );
-    CHECK(   a->lessThan   ( *b ) )
-    CHECK( ! b->lessThan   ( *a ) )
-    CHECK( ! a->greaterThan( *b ) )
-    CHECK(   b->greaterThan( *a ) )
-    CHECK( ! a->equals     ( *b ) )
-    CHECK( ! b->equals     ( *a ) )
+    CHECK(   a->isLessThan   ( *b ) )
+    CHECK( ! b->isLessThan   ( *a ) )
+    CHECK( ! a->isGreaterThan( *b ) )
+    CHECK(   b->isGreaterThan( *a ) )
+    CHECK( ! a->isEqualTo     ( *b ) )
+    CHECK( ! b->isEqualTo     ( *a ) )
 }
-TEST( comparisons_a_greaterThan_b, IStep )
+TEST( comparisons_a_isGreaterThan_b, IStep )
 {
     IStepUPtr a = unique_ptr<IStep>( new MockStep() );
     IStepUPtr b = unique_ptr<MockStep>( new MockStep() );
     a->setValue( 2 );
     b->setValue( 1 );
-    CHECK( ! a->lessThan   ( *b ) )
-    CHECK(   b->lessThan   ( *a ) )
-    CHECK(   a->greaterThan( *b ) )
-    CHECK( ! b->greaterThan( *a ) )
-    CHECK( ! a->equals     ( *b ) )
-    CHECK( ! b->equals     ( *a ) )
+    CHECK( ! a->isLessThan   ( *b ) )
+    CHECK(   b->isLessThan   ( *a ) )
+    CHECK(   a->isGreaterThan( *b ) )
+    CHECK( ! b->isGreaterThan( *a ) )
+    CHECK( ! a->isEqualTo     ( *b ) )
+    CHECK( ! b->isEqualTo     ( *a ) )
 }
-TEST( comparisons_a_equals_b, IStep )
+TEST( comparisons_a_isEqualTo_b, IStep )
 {
     IStepUPtr a = unique_ptr<IStep>( new MockStep() );
     IStepUPtr b = unique_ptr<MockStep>( new MockStep() );
     a->setValue( 21 );
     b->setValue( 21 );
-    CHECK( ! a->lessThan   ( *b ) )
-    CHECK( ! b->lessThan   ( *a ) )
-    CHECK( ! a->greaterThan( *b ) )
-    CHECK( ! b->greaterThan( *a ) )
-    CHECK(   a->equals     ( *b ) )
-    CHECK(   b->equals     ( *a ) )
+    CHECK( ! a->isLessThan   ( *b ) )
+    CHECK( ! b->isLessThan   ( *a ) )
+    CHECK( ! a->isGreaterThan( *b ) )
+    CHECK( ! b->isGreaterThan( *a ) )
+    CHECK(   a->isEqualTo     ( *b ) )
+    CHECK(   b->isEqualTo     ( *a ) )
 }
 TEST( increment, IStep )
 {

@@ -9,15 +9,15 @@ namespace lyre
         toStream( ss );
         return ss.str();
     }
-    bool IPitch::lessThan( const IPitch& other ) const
+    bool IPitch::isLessThan( const IPitch& other ) const
     {
         return getValue() < other.getValue();
     }
-    bool IPitch::greaterThan( const IPitch& other ) const
+    bool IPitch::isGreaterThan( const IPitch& other ) const
     {
         return getValue() > other.getValue();
     }
-    bool IPitch::equals( const IPitch& other ) const
+    bool IPitch::isEqualTo( const IPitch& other ) const
     {
         return getValue() == other.getValue();
     }

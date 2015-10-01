@@ -103,44 +103,44 @@ TEST( streamingOperator, Enum )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( comparisons_a_lessThan_b, Enum )
+TEST( comparisons_a_isLessThan_b, Enum )
 {
     IEnumUPtr a = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
     IEnumUPtr b = unique_ptr<Enum>( new MockStringsEnum() );
     a->setValue( 1 );
     b->setValue( 2 );
-    CHECK(   a->lessThan   ( *b ) )
-    CHECK( ! b->lessThan   ( *a ) )
-    CHECK( ! a->greaterThan( *b ) )
-    CHECK(   b->greaterThan( *a ) )
-    CHECK( ! a->equals     ( *b ) )
-    CHECK( ! b->equals     ( *a ) )
+    CHECK(   a->isLessThan   ( *b ) )
+    CHECK( ! b->isLessThan   ( *a ) )
+    CHECK( ! a->isGreaterThan( *b ) )
+    CHECK(   b->isGreaterThan( *a ) )
+    CHECK( ! a->isEqualTo     ( *b ) )
+    CHECK( ! b->isEqualTo     ( *a ) )
 }
-TEST( comparisons_a_greaterThan_b, Enum )
+TEST( comparisons_a_isGreaterThan_b, Enum )
 {
     IEnumUPtr a = unique_ptr<Enum>( new MockStringsEnum() );
     IEnumUPtr b = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
     a->setValue( 2 );
     b->setValue( 1 );
-    CHECK( ! a->lessThan   ( *b ) )
-    CHECK(   b->lessThan   ( *a ) )
-    CHECK(   a->greaterThan( *b ) )
-    CHECK( ! b->greaterThan( *a ) )
-    CHECK( ! a->equals     ( *b ) )
-    CHECK( ! b->equals     ( *a ) )
+    CHECK( ! a->isLessThan   ( *b ) )
+    CHECK(   b->isLessThan   ( *a ) )
+    CHECK(   a->isGreaterThan( *b ) )
+    CHECK( ! b->isGreaterThan( *a ) )
+    CHECK( ! a->isEqualTo     ( *b ) )
+    CHECK( ! b->isEqualTo     ( *a ) )
 }
-TEST( comparisons_a_equals_b, Enum )
+TEST( comparisons_a_isEqualTo_b, Enum )
 {
     IEnumUPtr a = unique_ptr<Enum>( new MockStringsEnum() );
     IEnumUPtr b = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
     a->setValue( 3 );
     b->setValue( 3 );
-    CHECK( ! a->lessThan   ( *b ) )
-    CHECK( ! b->lessThan   ( *a ) )
-    CHECK( ! a->greaterThan( *b ) )
-    CHECK( ! b->greaterThan( *a ) )
-    CHECK(   a->equals     ( *b ) )
-    CHECK(   b->equals     ( *a ) )
+    CHECK( ! a->isLessThan   ( *b ) )
+    CHECK( ! b->isLessThan   ( *a ) )
+    CHECK( ! a->isGreaterThan( *b ) )
+    CHECK( ! b->isGreaterThan( *a ) )
+    CHECK(   a->isEqualTo     ( *b ) )
+    CHECK(   b->isEqualTo     ( *a ) )
 }
 TEST( increment01, Enum )
 {

@@ -66,9 +66,9 @@ namespace lyre
         /* virtual String toString() const; */
         
         /* compares the return values of getValue()
-        virtual bool lessThan( const Step& other ) const;
-        virtual bool greaterThan( const Step& other ) const;
-        virtual bool equals( const Step& other ) const;  */
+        virtual bool isLessThan( const Step& other ) const;
+        virtual bool isGreaterThan( const Step& other ) const;
+        virtual bool isEqualTo( const Step& other ) const;  */
         
         /* increments/decrements, should wraps around to min/max */
         virtual void increment();

@@ -161,7 +161,7 @@ TEST( minusMinus02, Mod)
     CHECK_EQUAL( 0, returned );
     CHECK_EQUAL( 99, m.getValue() );
 }
-TEST( comparisons01_LgreaterThanR, Mod)
+TEST( comparisons01_LisGreaterThanR, Mod)
 {
     Mod<long long int, 100> l{ 3 };
     Mod<long long int, 100> r{ 2 };
@@ -172,7 +172,7 @@ TEST( comparisons01_LgreaterThanR, Mod)
     CHECK(   ( l >= r ) )
     CHECK( ! ( l <= r ) )
 }
-TEST( comparisons01_LequalsR, Mod)
+TEST( comparisons01_LisEqualToR, Mod)
 {
     Mod<long long int, 77> l{ 3 };
     Mod<long long int, 77> r{ 80 };
@@ -183,7 +183,7 @@ TEST( comparisons01_LequalsR, Mod)
     CHECK(   ( l >= r ) )
     CHECK(   ( l <= r ) )
 }
-TEST( comparisons01_LlessThanR, Mod)
+TEST( comparisons01_LisLessThanR, Mod)
 {
     Mod<long long int, 77> l{ 2 };
     Mod<long long int, 77> r{ 3 };
