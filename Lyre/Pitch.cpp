@@ -179,7 +179,33 @@ namespace lyre
         os << myImpl->myPitchName;
         return os << std::to_string( myImpl->myOctave );
     }
-    
+    bool Pitch::isIdenticalTo( const IPitch& other ) const
+    {
+        if ( getValue() != other.getValue() )
+        {
+            return false;
+        }
+        else if ( getStepValue() != other.getStepValue() )
+        {
+            return false;
+        }
+        else if ( getAlterValue() != other.getAlterValue() )
+        {
+            return false;
+        }
+        else
+        {
+            if ( typeid(*this) == typeid(other) )
+            {
+                return true;
+            }
+            else if ( toString() == other.toString() )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     Integer Pitch::getStepValue() const
     {
         return myImpl->myPitchName.getStepValue();

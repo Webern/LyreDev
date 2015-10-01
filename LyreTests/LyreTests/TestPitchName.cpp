@@ -1143,3 +1143,85 @@ TEST( decrementAlter, PitchName )
     n->decrementAlter();
     CHECK_EQUAL( std::numeric_limits<Integer>::max(), n->getAlterValue() )
 }
+TEST( isIdenticalTo_true01, PitchName )
+{
+    PitchNameUPtr a = unique_ptr<PitchName>( new PitchName( "C#" ) );
+    PitchNameUPtr b = unique_ptr<PitchName>( new PitchName( "C#" ) );
+    CHECK( a->isIdenticalTo( *b ) )
+}
+TEST( isIdenticalTo_true02, PitchName )
+{
+    class MockPitchName1 : public IPitchName
+    {
+    public:
+        virtual ~MockPitchName1() {}
+        virtual IPitchNameUPtr clone() const { return std::unique_ptr<MockPitchName1>{ new MockPitchName1{} }; }
+        /* template <typename T>
+         void copyTo( std::unique_ptr<T>& output ) const */
+        virtual Integer getValue() const { return 1; }
+        virtual bool parse( const String& str ) { return true; }
+        virtual std::ostream& toStream( std::ostream& os ) const { return os << "C#"; }
+        /* virtual String toString() const;
+         virtual bool isLessThan( const PitchName& other ) const;
+         virtual bool isGreaterThan( const PitchName& other ) const;
+         virtual bool isEqualTo( const PitchName& other ) const; */
+        virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
+        virtual Integer getStepValue() const { return 0; }
+        virtual void setStepValue( const Integer val ) {}
+        virtual Integer getMinStepValue() const { return 0; }
+        virtual Integer getMaxStepValue() const { return 0; }
+        virtual void incrementStep() {}
+        virtual void decrementStep() {}
+        virtual Integer getAlterValue() const { return 1; }
+        virtual void setAlterValue( const Integer val ) {}
+        virtual Integer getMinAlterValue() const { return 0; }
+        virtual Integer getMaxAlterValue() const { return 0; }
+        virtual void incrementAlter() {}
+        virtual void decrementAlter() {}
+    };
+    
+    PitchNameUPtr a = unique_ptr<PitchName>( new PitchName( "C#" ) );
+    std::unique_ptr<MockPitchName1> b{ new MockPitchName1{} };
+    CHECK( a->isIdenticalTo( *b ) )
+}
+TEST( isIdenticalTo_false01, PitchName )
+{
+    PitchNameUPtr a = unique_ptr<PitchName>( new PitchName( "A" ) );
+    PitchNameUPtr b = unique_ptr<PitchName>( new PitchName( "B" ) );
+    CHECK( ! a->isIdenticalTo( *b ) )
+}
+TEST( isIdenticalTo_false02, PitchName )
+{
+    class MockPitchName2 : public IPitchName
+    {
+    public:
+        virtual ~MockPitchName2() {}
+        virtual IPitchNameUPtr clone() const { return std::unique_ptr<MockPitchName2>{ new MockPitchName2{} }; }
+        /* template <typename T>
+         void copyTo( std::unique_ptr<T>& output ) const */
+        virtual Integer getValue() const { return 1; }
+        virtual bool parse( const String& str ) { return true; }
+        virtual std::ostream& toStream( std::ostream& os ) const { return os << "C_"; }
+        /* virtual String toString() const;
+         virtual bool isLessThan( const PitchName& other ) const;
+         virtual bool isGreaterThan( const PitchName& other ) const;
+         virtual bool isEqualTo( const PitchName& other ) const; */
+        virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
+        virtual Integer getStepValue() const { return 0; }
+        virtual void setStepValue( const Integer val ) {}
+        virtual Integer getMinStepValue() const { return 0; }
+        virtual Integer getMaxStepValue() const { return 0; }
+        virtual void incrementStep() {}
+        virtual void decrementStep() {}
+        virtual Integer getAlterValue() const { return 1; }
+        virtual void setAlterValue( const Integer val ) {}
+        virtual Integer getMinAlterValue() const { return 0; }
+        virtual Integer getMaxAlterValue() const { return 0; }
+        virtual void incrementAlter() {}
+        virtual void decrementAlter() {}
+    };
+    
+    PitchNameUPtr a = unique_ptr<PitchName>( new PitchName( "C#" ) );
+    std::unique_ptr<MockPitchName2> b{ new MockPitchName2{} };
+    CHECK( ! a->isIdenticalTo( *b ) )
+}

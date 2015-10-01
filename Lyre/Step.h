@@ -70,6 +70,11 @@ namespace lyre
         virtual bool isGreaterThan( const Step& other ) const;
         virtual bool isEqualTo( const Step& other ) const;  */
         
+        /* returns true if the two objects are identical in value,
+         e.g. Ab is not identical to G# even though isEqualTo
+         returns true */
+        virtual bool isIdenticalTo( const IStep& other ) const;
+        
         /* increments/decrements, should wraps around to min/max */
         virtual void increment();
         virtual void decrement();

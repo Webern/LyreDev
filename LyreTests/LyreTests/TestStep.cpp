@@ -340,3 +340,67 @@ TEST( getPitchClassValue, Step )
     a->increment();
     CHECK_EQUAL( 0, a->getPitchClassValue() )
 }
+TEST( isIdenticalTo_true01, Step )
+{
+    StepUPtr a = unique_ptr<Step>( new Step( "A" ) );
+    StepUPtr b = unique_ptr<Step>( new Step( "A" ) );
+    CHECK( a->isIdenticalTo( *b ) )
+}
+TEST( isIdenticalTo_true02, Step )
+{
+    class MockStepA : public IStep
+    {
+    public:
+        IStepUPtr clone() const
+        {
+            IStepUPtr value{ new MockStepA{ *this } };
+            return value;
+        }
+        Integer getValue() const { return 5; }
+        void setValue( const Integer val ) {}
+        virtual bool isIdenticalTo( const IStep& other ) const { return true; }
+        Integer getMin() const { return 0; }
+        Integer getMax() const { return 6; }
+        bool parse( const String& str ) { return true; }
+        std::ostream& toStream( std::ostream& os ) const { return os << "A"; }
+        bool extendedFunction() const { return true; }
+        void increment() {}
+        void decrement() {}
+    };
+    
+    StepUPtr a = unique_ptr<Step>( new Step( "A" ) );
+    std::unique_ptr<MockStepA> b{ new MockStepA{} };
+    CHECK( a->isIdenticalTo( *b ) )
+}
+TEST( isIdenticalTo_false01, Step )
+{
+    StepUPtr a = unique_ptr<Step>( new Step( "A" ) );
+    StepUPtr b = unique_ptr<Step>( new Step( "B" ) );
+    CHECK( ! a->isIdenticalTo( *b ) )
+}
+TEST( isIdenticalTo_false02, Step )
+{
+    class MockStepX : public IStep
+    {
+    public:
+        IStepUPtr clone() const
+        {
+            IStepUPtr value{ new MockStepX{ *this } };
+            return value;
+        }
+        Integer getValue() const { return 5; }
+        void setValue( const Integer val ) {}
+        virtual bool isIdenticalTo( const IStep& other ) const { return true; }
+        Integer getMin() const { return 0; }
+        Integer getMax() const { return 6; }
+        bool parse( const String& str ) { return true; }
+        std::ostream& toStream( std::ostream& os ) const { return os << "X"; }
+        bool extendedFunction() const { return true; }
+        void increment() {}
+        void decrement() {}
+    };
+    
+    StepUPtr a = unique_ptr<Step>( new Step( "A" ) );
+    std::unique_ptr<MockStepX> b{ new MockStepX{} };
+    CHECK( ! a->isIdenticalTo( *b ) )
+}

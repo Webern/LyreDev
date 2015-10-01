@@ -612,11 +612,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestIAlter.cpp"
-            timestampString = "464888511.516951"
+            timestampString = "465428779.783337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "TEST( covariantClone, IAlter )"
             landmarkType = "7">
          </BreakpointContent>
@@ -628,11 +628,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestIAlter.cpp"
-            timestampString = "464889470.745122"
+            timestampString = "465428779.783337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "TEST( covariantClone, IAlter )"
             landmarkType = "7">
          </BreakpointContent>
@@ -665,7 +665,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
             endingLineNumber = "14"
-            landmarkName = "IPitchName::lessThan( const IPitchName&amp; other )"
+            landmarkName = "IPitchName::isLessThan( const IPitchName&amp; other )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -681,7 +681,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "776"
             endingLineNumber = "776"
-            landmarkName = "TEST( compare_a_lessThan_b_02, PitchName )"
+            landmarkName = "TEST( compare_a_isLessThan_b_02, PitchName )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -865,6 +865,126 @@
                   startingLineNumber = "105"
                   endingLineNumber = "105"
                   offsetFromSymbolStart = "2429">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LyreTests/LyreTests/TestPitchName.cpp"
+            timestampString = "465429485.4578"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1185"
+            endingLineNumber = "1185"
+            landmarkName = "TEST( isIdenticalTo_true02, PitchName )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchNameisIdenticalTo_true02Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestPitchName.cpp"
+                  timestampString = "465429529.725791"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1185"
+                  endingLineNumber = "1185"
+                  offsetFromSymbolStart = "790">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchNameisIdenticalTo_true02Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestPitchName.cpp"
+                  timestampString = "465429529.725928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1185"
+                  endingLineNumber = "1185"
+                  offsetFromSymbolStart = "919">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchNameisIdenticalTo_true02Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestPitchName.cpp"
+                  timestampString = "465429529.726029"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1185"
+                  endingLineNumber = "1185"
+                  offsetFromSymbolStart = "1591">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LyreTests/LyreTests/TestAlter.cpp"
+            timestampString = "465429639.632304"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "923"
+            endingLineNumber = "923"
+            landmarkName = "TEST( isIdenticalTo_false02, Alter )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlterisIdenticalTo_false02Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestAlter.cpp"
+                  timestampString = "465429640.814784"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "923"
+                  endingLineNumber = "923"
+                  offsetFromSymbolStart = "582">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlterisIdenticalTo_false02Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestAlter.cpp"
+                  timestampString = "465429640.814942"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "923"
+                  endingLineNumber = "923"
+                  offsetFromSymbolStart = "708">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlterisIdenticalTo_false02Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestAlter.cpp"
+                  timestampString = "465429640.815055"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "923"
+                  endingLineNumber = "923"
+                  offsetFromSymbolStart = "1308">
                </Location>
             </Locations>
          </BreakpointContent>

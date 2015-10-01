@@ -45,6 +45,11 @@ namespace lyre
         virtual bool isGreaterThan( const IPitch& other ) const;
         virtual bool isEqualTo( const IPitch& other ) const;
         
+        /* returns true if the two objects are identical in value,
+         e.g. Ab4 is not identical to G#3 even though isEqualTo
+         returns true */
+        virtual bool isIdenticalTo( const IPitch& other ) const = 0;
+        
         /* Step Functions */
         
         /* return the Step as an integer */

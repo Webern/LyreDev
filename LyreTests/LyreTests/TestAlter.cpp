@@ -910,3 +910,15 @@ TEST( checkManySharpStrings, Alter )
         CHECK_EQUAL( ss.str(), p->toString() )
     }
 }
+TEST( isIdenticalTo_true01, Alter )
+{
+    AlterUPtr a = unique_ptr<Alter>( new Alter( 5 ) );
+    AlterUPtr b = unique_ptr<Alter>( new Alter( 5 ) );
+    CHECK( a->isIdenticalTo( *b ) )
+}
+TEST( isIdenticalTo_false02, Alter )
+{
+    AlterUPtr a = unique_ptr<Alter>( new Alter( 5 ) );
+    AlterUPtr b = unique_ptr<Alter>( new Alter( 4 ) );
+    CHECK( ! a->isIdenticalTo( *b ) )
+}

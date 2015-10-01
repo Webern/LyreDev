@@ -20,6 +20,7 @@ public:
        virtual bool isLessThan( const Pitch& other ) const;
        virtual bool isGreaterThan( const Pitch& other ) const;
        virtual bool isEqualTo( const Pitch& other ) const; */
+    virtual bool isIdenticalTo( const IPitch& other ) const { return true; }
     virtual Integer getStepValue() const { return 0; }
     virtual void setStepValue( const Integer val ) {}
     virtual void incrementStep() {}
@@ -69,4 +70,5 @@ TEST( compiles, IPitch )
     p->setOctaveValue( 0 );
     p->incrementOctave();
     p->decrementOctave();
+    p->isIdenticalTo( *p );
 }

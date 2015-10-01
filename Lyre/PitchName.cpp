@@ -112,6 +112,34 @@ namespace lyre
         return myImpl->myStep.getValue();
     }
     
+    bool PitchName::isIdenticalTo( const IPitchName& other ) const
+    {
+        if ( !isEqualTo( other ) )
+        {
+            return false;
+        }
+        else if ( getStepValue() != other.getStepValue() )
+        {
+            return false;
+        }
+        else if ( getAlterValue() != other.getAlterValue() )
+        {
+            return false;
+        }
+        else
+        {
+            if ( typeid(*this) == typeid(other) )
+            {
+                return true;
+            }
+            else if ( toString() == other.toString() )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     void PitchName::setStepValue( const Integer val )
     {
         myImpl->myStep.setValue( val );

@@ -21,6 +21,7 @@ public:
        virtual bool isLessThan( const PitchName& other ) const;
        virtual bool isGreaterThan( const PitchName& other ) const;
        virtual bool isEqualTo( const PitchName& other ) const; */
+    virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
     virtual Integer getStepValue() const { return 0; }
     virtual void setStepValue( const Integer val ) {}
     virtual Integer getMinStepValue() const { return 0; }
@@ -70,4 +71,5 @@ TEST( compiles, IPitchName )
     CHECK_EQUAL( 0, p->getMaxAlterValue() )
     p->incrementAlter();
     p->decrementAlter();
+    p->isIdenticalTo( *p );
 }

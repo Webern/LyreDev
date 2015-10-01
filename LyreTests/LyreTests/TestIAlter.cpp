@@ -20,6 +20,7 @@ public:
     bool parse( const String& str ) { return true; }
     std::ostream& toStream( std::ostream& os ) const { return os << myValue; }
     bool extendedFunction() const { return true; }
+    virtual bool isIdenticalTo( const IAlter& other ) const { return true; }
     void increment() { myValue++; }
     void decrement() { myValue--; }
 private:
@@ -165,4 +166,9 @@ TEST( decrement, IAlter )
     a->setValue( 100 );
     a->decrement();
     CHECK_EQUAL( 99, a->getValue() )
+}
+TEST( isIdenticalTo, IAlter )
+{
+    IAlterUPtr a = unique_ptr<IAlter>( new MockAlter() );
+    CHECK( a->isIdenticalTo( *a ) )
 }

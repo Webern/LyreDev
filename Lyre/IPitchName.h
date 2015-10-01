@@ -74,6 +74,11 @@ namespace lyre
         virtual Integer getMinAlterValue() const = 0;
         virtual Integer getMaxAlterValue() const = 0;
         
+        /* returns true if the two objects are identical in value,
+         e.g. Ab is not identical to G# even though isEqualTo
+         returns true */
+        virtual bool isIdenticalTo( const IPitchName& other ) const = 0;
+        
         /* increments/decrements, should wraps around to min/max */
         virtual void incrementAlter() = 0;
         virtual void decrementAlter() = 0;

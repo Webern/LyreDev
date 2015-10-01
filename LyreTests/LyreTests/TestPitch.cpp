@@ -1269,6 +1269,16 @@ TEST( decrementOctave, Pitch )
     n->decrementOctave();
     CHECK_EQUAL( 6, n->getOctaveValue() )
 }
-
-#if 1 == 0
-#endif
+TEST( isIdenticalTo_true01, Pitch )
+{
+    IPitchUPtr a{ new Pitch{ "C4" } };
+    IPitchUPtr b{ new Pitch{ "C4" } };
+    CHECK( a->isIdenticalTo( *b ) )
+}
+TEST( isIdenticalTo_false01, Pitch )
+{
+    IPitchUPtr a{ new Pitch{ "C4" } };
+    IPitchUPtr b{ new Pitch{ "B#3" } };
+    CHECK( a->isEqualTo( *b ) );
+    CHECK( ! a->isIdenticalTo( *b ) )
+}

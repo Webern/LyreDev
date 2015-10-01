@@ -49,6 +49,11 @@ namespace lyre
         virtual bool isGreaterThan( const IAlter& other ) const;
         virtual bool isEqualTo( const IAlter& other ) const;
         
+        /* returns true if the two objects are identical in representation,
+         two IAlter objects are identical if getValue() == getValue()
+         and toString() == toString() */
+        virtual bool isIdenticalTo( const IAlter& other ) const = 0;
+        
         /* increments/decrements, should wraps around to min/max */
         virtual void increment() = 0;
         virtual void decrement() = 0;

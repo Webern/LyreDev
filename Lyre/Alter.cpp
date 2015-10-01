@@ -198,6 +198,26 @@ namespace lyre
         return os;
     }
     
+    bool Alter::isIdenticalTo( const IAlter& other ) const
+    {
+        if ( getValue() != other.getValue() )
+        {
+            return false;
+        }
+        else
+        {
+            if ( typeid(*this) == typeid(other) )
+            {
+                return true;
+            }
+            else if ( toString() == other.toString() )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     void Alter::increment()
     {
         if ( myImpl->getValue() == std::numeric_limits<Integer>::max() )

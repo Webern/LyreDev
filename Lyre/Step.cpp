@@ -1,5 +1,6 @@
 #include "Step.h"
 #include "Enum.h"
+#include <typeinfo>
 
 namespace lyre
 {
@@ -138,7 +139,25 @@ namespace lyre
     {
         return myImpl->toStream( os );
     }
-    
+    bool Step::isIdenticalTo( const IStep& other ) const
+    {
+        if ( ! isEqualTo( other ) )
+        {
+            return false;
+        }
+        else
+        {
+            if ( typeid(*this) == typeid(other) )
+            {
+                return true;
+            }
+            else if ( toString() == other.toString() )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     void Step::increment()
     {
         myImpl->increment();

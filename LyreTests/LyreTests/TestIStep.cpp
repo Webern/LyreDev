@@ -15,6 +15,7 @@ public:
     }
     Integer getValue() const { return myValue; }
     void setValue( const Integer val ) { myValue = val; }
+    virtual bool isIdenticalTo( const IStep& other ) const { return true; }
     Integer getMin() const { return 0; }
     Integer getMax() const { return 1; }
     bool parse( const String& str ) { return true; }
@@ -165,4 +166,9 @@ TEST( decrement, IStep )
     a->setValue( 100 );
     a->decrement();
     CHECK_EQUAL( 99, a->getValue() )
+}
+TEST( isIdenticalTo, IStep )
+{
+    IStepUPtr x = unique_ptr<IStep>( new MockStep() );
+    CHECK( x->isIdenticalTo( *x ) )
 }
