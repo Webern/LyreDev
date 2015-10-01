@@ -86,10 +86,21 @@ namespace lyre
         PitchName tempPitchName{ myImpl->myPitchName.getStepValue(), 0 };
         for ( Integer i = 0; i < alter; ++i )
         {
-            tempPitchName.incrementAlter();
-            if ( tempPitchName.getValue() == 0 )
+            if ( alterNegative )
             {
-                ++octaveOffset;
+                tempPitchName.decrementAlter();
+                if ( tempPitchName.getValue() == 11 )
+                {
+                    ++octaveOffset;
+                }
+            }
+            else
+            {
+                tempPitchName.incrementAlter();
+                if ( tempPitchName.getValue() == 0 )
+                {
+                    ++octaveOffset;
+                }
             }
         }
         if ( alterNegative )

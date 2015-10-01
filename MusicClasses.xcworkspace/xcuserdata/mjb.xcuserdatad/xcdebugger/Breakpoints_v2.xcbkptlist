@@ -724,11 +724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lyre/Pitch.cpp"
-            timestampString = "465375548.109115"
+            timestampString = "465409336.21875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "Pitch::parse( const String&amp; str )"
             landmarkType = "5">
          </BreakpointContent>
@@ -747,6 +747,126 @@
             endingLineNumber = "79"
             landmarkName = "Pitch::getValue()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LyreTests/LyreTests/TestPitch.cpp"
+            timestampString = "465408663.538183"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "TEST( getValue15, Pitch )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchgetValue15Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestPitch.cpp"
+                  timestampString = "465408761.338624"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "191"
+                  endingLineNumber = "191"
+                  offsetFromSymbolStart = "550">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchgetValue15Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestPitch.cpp"
+                  timestampString = "465408761.338852"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "191"
+                  endingLineNumber = "191"
+                  offsetFromSymbolStart = "1676">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchgetValue15Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestPitch.cpp"
+                  timestampString = "465408761.339048"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "191"
+                  endingLineNumber = "191"
+                  offsetFromSymbolStart = "2429">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LyreTests/LyreTests/TestPitch.cpp"
+            timestampString = "465408815.564529"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "TEST( getValue01, Pitch )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchgetValue01Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestPitch.cpp"
+                  timestampString = "465408819.745943"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "550">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchgetValue01Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestPitch.cpp"
+                  timestampString = "465408819.74608"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "1676">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PitchgetValue01Test::runTest(TestResult&amp;)"
+                  moduleName = "LyreTests"
+                  urlString = "file:///Volumes/MusicClasses/LyreTests/LyreTests/TestPitch.cpp"
+                  timestampString = "465408819.746195"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "2429">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
