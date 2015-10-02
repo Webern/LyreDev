@@ -239,3 +239,45 @@ TEST( comparisons03, DurDot )
     CHECK( ! ( a <= b ) );
     CHECK(   ( a >= b ) );
 }
+TEST( parse_success01, DurDot )
+{
+    DurDot d;
+    CHECK( d.parse( "[Eighth.]" ) )
+    CHECK_EQUAL( Dur::Eighth, d.getDur() )
+    CHECK_EQUAL( 1, d.getDots() )
+}
+TEST( parse_success02, DurDot )
+{
+    DurDot d;
+    CHECK( d.parse( "[ThirtySecond]" ) )
+    CHECK_EQUAL( Dur::ThirtySecond, d.getDur() )
+    CHECK_EQUAL( 0, d.getDots() )
+}
+TEST( parse_success03, DurDot )
+{
+    DurDot d;
+    CHECK( d.parse( "[Whole...]" ) )
+    CHECK_EQUAL( Dur::Whole, d.getDur() )
+    CHECK_EQUAL( 3, d.getDots() )
+}
+TEST( parse_fail01, DurDot )
+{
+    DurDot d;
+    CHECK( ! d.parse( "Whole...]" ) )
+    CHECK_EQUAL( Dur::Quarter, d.getDur() )
+    CHECK_EQUAL( 0, d.getDots() )
+}
+TEST( parse_fail02, DurDot )
+{
+    DurDot d{ Dur::OneTwentyEighth, 1 };
+    CHECK( ! d.parse( "[whole.]" ) )
+    CHECK_EQUAL( Dur::OneTwentyEighth, d.getDur() )
+    CHECK_EQUAL( 1, d.getDots() )
+}
+TEST( parse_fail03, DurDot )
+{
+    DurDot d{ Dur::Sixteenth, 2 };
+    CHECK( ! d.parse( "[Half .]" ) )
+    CHECK_EQUAL( Dur::Sixteenth, d.getDur() )
+    CHECK_EQUAL( 2, d.getDots() )
+}

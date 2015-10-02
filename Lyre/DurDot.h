@@ -20,7 +20,7 @@ namespace lyre
         Rational getRational() const;
         String toString() const;
         std::ostream& toStream( std::ostream& os ) const;
-        
+        bool parse( const String& str );
     private:
         Dur myDur;
         Integer myDots;

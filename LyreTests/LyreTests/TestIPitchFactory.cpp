@@ -105,22 +105,14 @@ private:
     Pitch myPitch;
 };
 
-inline void func242( Integer val, TestMockPitchFactory& f )
-{
-    f.setPitch( val );
-    auto p = f.makePitch();
-    cout << (*p) << endl;
-}
 TEST( compiles, IPitchFactory )
 {
     TestMockPitchFactory f;
-    func242( 60, f );
     f.setPitch( 0 );
-    auto p = f.makePitch();
     for ( int i = 0; i < 100; ++i )
     {
-        p = f.makePitch();
-        cout << (*p) << endl;
+        auto p = f.makePitch();
+        CHECK_EQUAL( i, p->getValue() )
         f.next();
     }
     

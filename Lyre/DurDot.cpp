@@ -103,4 +103,38 @@ namespace lyre
     {
         return r < l;
     }
+    bool DurDot::parse( const String& str )
+    {
+        if ( str.length() < 3 )
+        {
+            return false;
+        }
+        if ( str[0] != '[' || str[str.length()-1] != ']' )
+        {
+            return false;
+        }
+        String withoutBrackets = str.substr( 1, str.length() -2 );
+        Integer dots = 0;
+        for ( auto rit = withoutBrackets.crbegin();
+             rit != withoutBrackets.crend() && *rit == '.';
+             ++rit )
+        {
+            ++dots;
+        }
+        Dur d = Dur::Quarter;
+        bool success = false;
+        try
+        {
+            d = lyre::parse( withoutBrackets.substr( 0, withoutBrackets.length() - dots ) );
+            success = true;
+        }
+        catch (...) {}
+        if ( success )
+        {
+            setDots( dots );
+            setDur( d );
+            return true;
+        }
+        return false;
+    }
 }
