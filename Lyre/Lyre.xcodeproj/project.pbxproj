@@ -25,6 +25,8 @@
 		29DB04FA1BB301A90029014A /* Alter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DB04F81BB301A90029014A /* Alter.h */; };
 		29DB04FD1BB301E10029014A /* IAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04FB1BB301E10029014A /* IAlter.cpp */; };
 		29DB04FE1BB301E10029014A /* IAlter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DB04FC1BB301E10029014A /* IAlter.h */; };
+		29E7206B1BBE3343006FB7FD /* IPitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E720691BBE3343006FB7FD /* IPitchFactory.cpp */; };
+		29E7206C1BBE3343006FB7FD /* IPitchFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E7206A1BBE3343006FB7FD /* IPitchFactory.h */; };
 		29E734701B7ACCB60046F4F8 /* Mod.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E7346F1B7ACCB60046F4F8 /* Mod.h */; };
 		29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E734711B7ACD4B0046F4F8 /* Rational.cpp */; };
 		29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E734721B7ACD4B0046F4F8 /* Rational.h */; };
@@ -57,6 +59,8 @@
 		29DB04F81BB301A90029014A /* Alter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alter.h; sourceTree = "<group>"; };
 		29DB04FB1BB301E10029014A /* IAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAlter.cpp; sourceTree = "<group>"; };
 		29DB04FC1BB301E10029014A /* IAlter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAlter.h; sourceTree = "<group>"; };
+		29E720691BBE3343006FB7FD /* IPitchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPitchFactory.cpp; sourceTree = "<group>"; };
+		29E7206A1BBE3343006FB7FD /* IPitchFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPitchFactory.h; sourceTree = "<group>"; };
 		29E734681B7ACC0D0046F4F8 /* libLyre.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLyre.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E7346F1B7ACCB60046F4F8 /* Mod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mod.h; sourceTree = "<group>"; };
 		29E734711B7ACD4B0046F4F8 /* Rational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rational.cpp; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				29B384EA1BB4C9650056B4AC /* IPitchName.h */,
 				29F7353A1BB07BAD0067624F /* IStep.cpp */,
 				29F7353B1BB07BAD0067624F /* IStep.h */,
+				29E720691BBE3343006FB7FD /* IPitchFactory.cpp */,
+				29E7206A1BBE3343006FB7FD /* IPitchFactory.h */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 				29E734741B7ACD4B0046F4F8 /* Rational.h in Headers */,
 				29E734701B7ACCB60046F4F8 /* Mod.h in Headers */,
 				293F508F1BAF130F00AC0C19 /* IEnum.h in Headers */,
+				29E7206C1BBE3343006FB7FD /* IPitchFactory.h in Headers */,
 				29DB04FE1BB301E10029014A /* IAlter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +282,7 @@
 				29FCDEF81B8B06170092CBCB /* Dur.cpp in Sources */,
 				298B7A6E1BB7CE0C00E39C72 /* PitchName.cpp in Sources */,
 				29DB04FD1BB301E10029014A /* IAlter.cpp in Sources */,
+				29E7206B1BBE3343006FB7FD /* IPitchFactory.cpp in Sources */,
 				29EA94FB1BACC1570019FBFB /* DurDot.cpp in Sources */,
 				2927E4D21B8CC7FB00041459 /* Tuplet.cpp in Sources */,
 				292B939E1BB1ACE100A4F808 /* Step.cpp in Sources */,
