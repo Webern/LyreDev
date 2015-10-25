@@ -1,3 +1,4 @@
+//PRIVATE
 #pragma once
 #include "TypeDefs.h"
 #include "IStep.h"
@@ -16,8 +17,8 @@ namespace lyre
     };
     
     class Step;
-    using StepPtr = std::shared_ptr<Step>;
-    using StepUPtr = std::unique_ptr<Step>;
+    using StepSP = std::shared_ptr<Step>;
+    using StepUP = std::unique_ptr<Step>;
     
     class Step : public IStep
     {
@@ -33,7 +34,7 @@ namespace lyre
         Step& operator=( Step&& other ) noexcept;
         
         /* return a deep copy of "this" */
-        virtual IStepUPtr clone() const;
+        virtual IStepUP clone() const;
         
         /* deep copy to "output", note
          the use of static_cast,
@@ -85,8 +86,8 @@ namespace lyre
         
     private:
         class StepImpl;
-        using StepImplUPtr = std::unique_ptr<StepImpl>;
-        StepImplUPtr myImpl;
+        using StepImplUP = std::unique_ptr<StepImpl>;
+        StepImplUP myImpl;
         static void swap( Step& left, Step& right ) noexcept;
     };
     

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2927E4D61B8CCC0C00041459 /* TestTuplet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2927E4D41B8CCC0C00041459 /* TestTuplet.cpp */; };
 		292B939B1BB1A9AF00A4F808 /* TestIStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292B93991BB1A9AF00A4F808 /* TestIStep.cpp */; };
 		292B93A21BB1CEE600A4F808 /* TestStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292B93A01BB1CEE600A4F808 /* TestStep.cpp */; };
 		293F50921BAF1BAB00AC0C19 /* TestIEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F50901BAF1BAB00AC0C19 /* TestIEnum.cpp */; };
@@ -45,7 +44,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2927E4D41B8CCC0C00041459 /* TestTuplet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestTuplet.cpp; sourceTree = "<group>"; };
 		292B93991BB1A9AF00A4F808 /* TestIStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIStep.cpp; sourceTree = "<group>"; };
 		292B93A01BB1CEE600A4F808 /* TestStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestStep.cpp; sourceTree = "<group>"; };
 		293F50901BAF1BAB00AC0C19 /* TestIEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIEnum.cpp; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				29FCDEFA1B8B0BA60092CBCB /* TestDur.cpp */,
 				29EA94FD1BACC31B0019FBFB /* TestDurDot.cpp */,
-				2927E4D41B8CCC0C00041459 /* TestTuplet.cpp */,
 			);
 			name = Duration;
 			sourceTree = "<group>";
@@ -281,7 +278,6 @@
 				295145F51BBAE6A60067BFD9 /* TestIPitch.cpp in Sources */,
 				29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */,
 				29FCDEFC1B8B0BA60092CBCB /* TestDur.cpp in Sources */,
-				2927E4D61B8CCC0C00041459 /* TestTuplet.cpp in Sources */,
 				292B93A21BB1CEE600A4F808 /* TestStep.cpp in Sources */,
 				29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */,
 				296265C11BB7253200EAFBD0 /* TestIPitchName.cpp in Sources */,

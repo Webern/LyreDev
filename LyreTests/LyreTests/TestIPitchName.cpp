@@ -6,12 +6,12 @@ using namespace lyre;
 using namespace std;
 
 class TestPitchName;
-using TestPitchNameUPtr = unique_ptr<TestPitchName>;
+using TestPitchNameUP = unique_ptr<TestPitchName>;
 class TestPitchName : public IPitchName
 {
 public:
     virtual ~TestPitchName() {}
-    virtual IPitchNameUPtr clone() const { return TestPitchNameUPtr{ new TestPitchName{} }; }
+    virtual IPitchNameUP clone() const { return TestPitchNameUP{ new TestPitchName{} }; }
     /* template <typename T>
        void copyTo( std::unique_ptr<T>& output ) const */
     virtual Integer getValue() const { return 0; }
@@ -38,9 +38,9 @@ public:
 
 TEST( compiles, IPitchName )
 {
-    IPitchNameUPtr p{ new TestPitchName{} };
+    IPitchNameUP p{ new TestPitchName{} };
     auto c = p->clone();
-    TestPitchNameUPtr x;
+    TestPitchNameUP x;
     p->copyTo( x );
     CHECK( p != c )
     CHECK( p != x )

@@ -8,21 +8,21 @@ using namespace std;
 
 TEST( defaultConstructor, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     CHECK_EQUAL( 0, n->getStepValue() )
     CHECK_EQUAL( 0, n->getAlterValue() )
     CHECK_EQUAL( 0, n->getValue() )
 }
 TEST( constructor01, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ 1, 2 } };
+    PitchNameUP n{ new PitchName{ 1, 2 } };
     CHECK_EQUAL( 1, n->getStepValue() )
     CHECK_EQUAL( 2, n->getAlterValue() )
     CHECK_EQUAL( 4, n->getValue() )
 }
 TEST( constructor02, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ "Ab" } };
+    PitchNameUP n{ new PitchName{ "Ab" } };
     CHECK_EQUAL( 5, n->getStepValue() )
     CHECK_EQUAL( -1, n->getAlterValue() )
     CHECK_EQUAL( 8, n->getValue() )
@@ -67,8 +67,8 @@ TEST( moveAssignment, PitchName )
 }
 TEST( clone, PitchName )
 {
-    PitchNameUPtr orig{ new PitchName{ "B" } };
-    IPitchNameUPtr copy;
+    PitchNameUP orig{ new PitchName{ "B" } };
+    IPitchNameUP copy;
     CHECK( ! ( copy ) )
     copy = orig->clone();
     CHECK( ( copy ) )
@@ -81,8 +81,8 @@ TEST( clone, PitchName )
 }
 TEST( copyTo, PitchName )
 {
-    PitchNameUPtr orig{ new PitchName{ "B" } };
-    PitchNameUPtr copy;
+    PitchNameUP orig{ new PitchName{ "B" } };
+    PitchNameUP copy;
     CHECK( ! ( copy ) )
     orig->copyTo( copy );
     CHECK( ( copy ) )
@@ -96,356 +96,356 @@ TEST( copyTo, PitchName )
 
 TEST( getValue01, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gddd" );
     CHECK_EQUAL( 1, n->getValue() )
 }
 TEST( getValue02, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gddb" );;
     CHECK_EQUAL( 2, n->getValue() )
 }
 TEST( getValue03, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gdd" );;
     CHECK_EQUAL( 3, n->getValue() )
 }
 TEST( getValue04, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gdb" );;
     CHECK_EQUAL( 4, n->getValue() )
 }
 TEST( getValue05, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gd" );;
     CHECK_EQUAL( 5, n->getValue() )
 }
 TEST( getValue06, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gb" );;
     CHECK_EQUAL( 6, n->getValue() )
 }
 TEST( getValue07, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "G" );;
     CHECK_EQUAL( 7, n->getValue() )
 }
 TEST( getValue08, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "G#" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
 TEST( getValue09, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gx" );;
     CHECK_EQUAL( 9, n->getValue() )
 }
 TEST( getValue10, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gx#" );;
     CHECK_EQUAL( 10, n->getValue() )
 }
 TEST( getValue11, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gxx" );;
     CHECK_EQUAL( 11, n->getValue() )
 }
 TEST( getValue12, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gxx#" );;
     CHECK_EQUAL( 0, n->getValue() )
 }
 TEST( getValue13, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gxxx" );;
     CHECK_EQUAL( 1, n->getValue() )
 }
 TEST( getValue14, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Dddd" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
 TEST( getValue15, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Dddb" );;
     CHECK_EQUAL( 9, n->getValue() )
 }
 TEST( getValue16, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Ddd" );;
     CHECK_EQUAL( 10, n->getValue() )
 }
 TEST( getValue17, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Ddb" );;
     CHECK_EQUAL( 11, n->getValue() )
 }
 TEST( getValue18, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Dd" );;
     CHECK_EQUAL( 0, n->getValue() )
 }
 TEST( getValue19, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Db" );;
     CHECK_EQUAL( 1, n->getValue() )
 }
 TEST( getValue20, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "D" );;
     CHECK_EQUAL( 2, n->getValue() )
 }
 TEST( getValue21, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "D#" );;
     CHECK_EQUAL( 3, n->getValue() )
 }
 TEST( getValue22, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Dx" );;
     CHECK_EQUAL( 4, n->getValue() )
 }
 TEST( getValue23, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Dx#" );;
     CHECK_EQUAL( 5, n->getValue() )
 }
 TEST( getValue24, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Dxx" );;
     CHECK_EQUAL( 6, n->getValue() )
 }
 TEST( getValue25, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Dxx#" );;
     CHECK_EQUAL( 7, n->getValue() )
 }
 TEST( getValue26, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Dxxx" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
 TEST( getValue27, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "B#" );;
     CHECK_EQUAL( 0, n->getValue() )
 }
 TEST( getValue28, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "C" );;
     CHECK_EQUAL( 0, n->getValue() )
 }
 TEST( getValue29, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Db" );;
     CHECK_EQUAL( 1, n->getValue() )
 }
 TEST( getValue30, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "C#" );;
     CHECK_EQUAL( 1, n->getValue() )
 }
 TEST( getValue31, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "D" );;
     CHECK_EQUAL( 2, n->getValue() )
 }
 TEST( getValue32, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Cx" );;
     CHECK_EQUAL( 2, n->getValue() )
 }
 TEST( getValue33, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Eb" );;
     CHECK_EQUAL( 3, n->getValue() )
 }
 TEST( getValue34, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "D#" );;
     CHECK_EQUAL( 3, n->getValue() )
 }
 TEST( getValue37, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "E" );;
     CHECK_EQUAL( 4, n->getValue() )
 }
 TEST( getValue38, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Fb" );;
     CHECK_EQUAL( 4, n->getValue() )
 }
 TEST( getValue39, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "F" );;
     CHECK_EQUAL( 5, n->getValue() )
 }
 TEST( getValue40, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "E#" );;
     CHECK_EQUAL( 5, n->getValue() )
 }
 TEST( getValue41, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gb" );;
     CHECK_EQUAL( 6, n->getValue() )
 }
 TEST( getValue42, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "F#" );;
     CHECK_EQUAL( 6, n->getValue() )
 }
 TEST( getValue43, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "G" );;
     CHECK_EQUAL( 7, n->getValue() )
 }
 TEST( getValue44, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Ad" );;
     CHECK_EQUAL( 7, n->getValue() )
 }
 TEST( getValue45, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Ab" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
 TEST( getValue46, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "G#" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
 TEST( getValue47, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "A" );;
     CHECK_EQUAL( 9, n->getValue() )
 }
 TEST( getValue48, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Gx" );;
     CHECK_EQUAL( 9, n->getValue() )
 }
 TEST( getValue49, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Bb" );;
     CHECK_EQUAL( 10, n->getValue() )
 }
 TEST( getValue50, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "A#" );;
     CHECK_EQUAL( 10, n->getValue() )
 }
 TEST( getValue51, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "B" );;
     CHECK_EQUAL( 11, n->getValue() )
 }
 TEST( getValue52, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{} };
+    PitchNameUP n{ new PitchName{} };
     n->parse( "Cb" );;
     CHECK_EQUAL( 11, n->getValue() )
 }
 TEST( parse_fail01, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ "F" } };
+    PitchNameUP n{ new PitchName{ "F" } };
     CHECK_EQUAL( 5, n->getValue() )
     CHECK( ! n->parse( "Cbd" ) )
     CHECK_EQUAL( 5, n->getValue() )
 }
 TEST( parse_fail02, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ "F#" } };
+    PitchNameUP n{ new PitchName{ "F#" } };
     CHECK_EQUAL( 6, n->getValue() )
     CHECK( ! n->parse( "H" ) )
     CHECK_EQUAL( 6, n->getValue() )
 }
 TEST( parse_fail03, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ "G" } };
+    PitchNameUP n{ new PitchName{ "G" } };
     CHECK_EQUAL( 7, n->getValue() )
     CHECK( ! n->parse( "#" ) )
     CHECK_EQUAL( 7, n->getValue() )
 }
 TEST( parse_fail04, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ "Ab" } };
+    PitchNameUP n{ new PitchName{ "Ab" } };
     CHECK_EQUAL( 8, n->getValue() )
     CHECK( ! n->parse( "a" ) )
     CHECK_EQUAL( 8, n->getValue() )
 }
 TEST( parse_success01, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ "F" } };
+    PitchNameUP n{ new PitchName{ "F" } };
     CHECK_EQUAL( 5, n->getValue() )
     CHECK( n->parse( "B#" ) )
     CHECK_EQUAL( 0, n->getValue() )
 }
 TEST( parse_success02, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ "F#" } };
+    PitchNameUP n{ new PitchName{ "F#" } };
     CHECK_EQUAL( 6, n->getValue() )
     CHECK( n->parse( "Bb" ) )
     CHECK_EQUAL( 10, n->getValue() )
 }
 TEST( parse_success03, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ "G" } };
+    PitchNameUP n{ new PitchName{ "G" } };
     CHECK_EQUAL( 7, n->getValue() )
     CHECK( n->parse( "C#" ) )
     CHECK_EQUAL( 1, n->getValue() )
 }
 TEST( parse_success04, PitchName )
 {
-    PitchNameUPtr n{ new PitchName{ "Ab" } };
+    PitchNameUP n{ new PitchName{ "Ab" } };
     CHECK_EQUAL( 8, n->getValue() )
     CHECK( n->parse( "Cdb" ) )
     CHECK_EQUAL( 9, n->getValue() )
@@ -453,7 +453,7 @@ TEST( parse_success04, PitchName )
 TEST( toStream00, PitchName )
 {
     String str = "Bb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -463,7 +463,7 @@ TEST( toStream00, PitchName )
 TEST( toStream01, PitchName )
 {
     String str = "Cxxx";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -473,7 +473,7 @@ TEST( toStream01, PitchName )
 TEST( toStream02, PitchName )
 {
     String str = "G#";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -483,7 +483,7 @@ TEST( toStream02, PitchName )
 TEST( toStream03, PitchName )
 {
     String str = "Bb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -493,7 +493,7 @@ TEST( toStream03, PitchName )
 TEST( toStream04, PitchName )
 {
     String str = "Ed";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -503,7 +503,7 @@ TEST( toStream04, PitchName )
 TEST( toStream05, PitchName )
 {
     String str = "Fb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -513,7 +513,7 @@ TEST( toStream05, PitchName )
 TEST( toStream06, PitchName )
 {
     String str = "Gb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -523,7 +523,7 @@ TEST( toStream06, PitchName )
 TEST( toStream07, PitchName )
 {
     String str = "B";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -533,7 +533,7 @@ TEST( toStream07, PitchName )
 TEST( toStream08, PitchName )
 {
     String str = "A";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -543,7 +543,7 @@ TEST( toStream08, PitchName )
 TEST( toStream09, PitchName )
 {
     String str = "Axxxxxxx";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -553,7 +553,7 @@ TEST( toStream09, PitchName )
 TEST( toStream10, PitchName )
 {
     String str = "Edddddddddddddb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     n->toStream( ss );
     String expected = str;
@@ -563,7 +563,7 @@ TEST( toStream10, PitchName )
 TEST( streamingOperator00, PitchName )
 {
     String str = "Bb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -573,7 +573,7 @@ TEST( streamingOperator00, PitchName )
 TEST( streamingOperator01, PitchName )
 {
     String str = "Cxxx";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -583,7 +583,7 @@ TEST( streamingOperator01, PitchName )
 TEST( streamingOperator02, PitchName )
 {
     String str = "G#";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -593,7 +593,7 @@ TEST( streamingOperator02, PitchName )
 TEST( streamingOperator03, PitchName )
 {
     String str = "Bb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -603,7 +603,7 @@ TEST( streamingOperator03, PitchName )
 TEST( streamingOperator04, PitchName )
 {
     String str = "Ed";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -613,7 +613,7 @@ TEST( streamingOperator04, PitchName )
 TEST( streamingOperator05, PitchName )
 {
     String str = "Fb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -623,7 +623,7 @@ TEST( streamingOperator05, PitchName )
 TEST( streamingOperator06, PitchName )
 {
     String str = "Gb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -633,7 +633,7 @@ TEST( streamingOperator06, PitchName )
 TEST( streamingOperator07, PitchName )
 {
     String str = "B";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -643,7 +643,7 @@ TEST( streamingOperator07, PitchName )
 TEST( streamingOperator08, PitchName )
 {
     String str = "A";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -653,7 +653,7 @@ TEST( streamingOperator08, PitchName )
 TEST( streamingOperator09, PitchName )
 {
     String str = "Axxxxxxx";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -663,7 +663,7 @@ TEST( streamingOperator09, PitchName )
 TEST( streamingOperator10, PitchName )
 {
     String str = "Edddddddddddddb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     stringstream ss;
     ss << (*n);
     String expected = str;
@@ -673,7 +673,7 @@ TEST( streamingOperator10, PitchName )
 TEST( toString00, PitchName )
 {
     String str = "Bb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -681,7 +681,7 @@ TEST( toString00, PitchName )
 TEST( toString01, PitchName )
 {
     String str = "Cxxx";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -689,7 +689,7 @@ TEST( toString01, PitchName )
 TEST( toString02, PitchName )
 {
     String str = "G#";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -697,7 +697,7 @@ TEST( toString02, PitchName )
 TEST( toString03, PitchName )
 {
     String str = "Bb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -705,7 +705,7 @@ TEST( toString03, PitchName )
 TEST( toString04, PitchName )
 {
     String str = "Ed";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -713,7 +713,7 @@ TEST( toString04, PitchName )
 TEST( toString05, PitchName )
 {
     String str = "Fb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -721,7 +721,7 @@ TEST( toString05, PitchName )
 TEST( toString06, PitchName )
 {
     String str = "Gb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -729,7 +729,7 @@ TEST( toString06, PitchName )
 TEST( toString07, PitchName )
 {
     String str = "B";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -737,7 +737,7 @@ TEST( toString07, PitchName )
 TEST( toString08, PitchName )
 {
     String str = "A";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -745,7 +745,7 @@ TEST( toString08, PitchName )
 TEST( toString09, PitchName )
 {
     String str = "Axxxxxxx";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -753,7 +753,7 @@ TEST( toString09, PitchName )
 TEST( toString10, PitchName )
 {
     String str = "Edddddddddddddb";
-    PitchNameUPtr n{ new PitchName{ str } };
+    PitchNameUP n{ new PitchName{ str } };
     String expected = str;
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -763,8 +763,8 @@ TEST( compare_a_isLessThan_b_01, PitchName )
 {
     String a_str = "B#";
     String b_str = "Db";
-    IPitchNameUPtr a{ new PitchName{ a_str } };
-    IPitchNameUPtr b{ new PitchName{ b_str } };
+    IPitchNameUP a{ new PitchName{ a_str } };
+    IPitchNameUP b{ new PitchName{ b_str } };
     CHECK(   ( a->isLessThan( *b ) ) )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
@@ -773,8 +773,8 @@ TEST( compare_a_isLessThan_b_02, PitchName )
 {
     String a_str = "Axx";
     String b_str = "Eb";
-    IPitchNameUPtr a{ new PitchName{ a_str } };
-    IPitchNameUPtr b{ new PitchName{ b_str } };
+    IPitchNameUP a{ new PitchName{ a_str } };
+    IPitchNameUP b{ new PitchName{ b_str } };
     CHECK(   ( a->isLessThan( *b ) ) )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
@@ -783,8 +783,8 @@ TEST( compare_a_isEqualTo_b_01, PitchName )
 {
     String a_str = "F#";
     String b_str = "Gb";
-    IPitchNameUPtr a{ new PitchName{ a_str } };
-    IPitchNameUPtr b{ new PitchName{ b_str } };
+    IPitchNameUP a{ new PitchName{ a_str } };
+    IPitchNameUP b{ new PitchName{ b_str } };
     CHECK( ! ( a->isLessThan( *b ) ) )
     CHECK(   ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
@@ -793,8 +793,8 @@ TEST( compare_a_isEqualTo_b_02, PitchName )
 {
     String a_str = "Cd";
     String b_str = "Gx#";
-    IPitchNameUPtr a{ new PitchName{ a_str } };
-    IPitchNameUPtr b{ new PitchName{ b_str } };
+    IPitchNameUP a{ new PitchName{ a_str } };
+    IPitchNameUP b{ new PitchName{ b_str } };
     CHECK( ! ( a->isLessThan( *b ) ) )
     CHECK(   ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
@@ -803,8 +803,8 @@ TEST( compare_a_isGreaterThan_b_01, PitchName )
 {
     String a_str = "Cb";
     String b_str = "Gx#";
-    IPitchNameUPtr a{ new PitchName{ a_str } };
-    IPitchNameUPtr b{ new PitchName{ b_str } };
+    IPitchNameUP a{ new PitchName{ a_str } };
+    IPitchNameUP b{ new PitchName{ b_str } };
     CHECK( ! ( a->isLessThan( *b ) ) )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK(   ( a->isGreaterThan( *b ) ) )
@@ -813,8 +813,8 @@ TEST( compare_a_isGreaterThan_b_02, PitchName )
 {
     String a_str = "F";
     String b_str = "E";
-    IPitchNameUPtr a{ new PitchName{ a_str } };
-    IPitchNameUPtr b{ new PitchName{ b_str } };
+    IPitchNameUP a{ new PitchName{ a_str } };
+    IPitchNameUP b{ new PitchName{ b_str } };
     CHECK( ! ( a->isLessThan( *b ) ) )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK(   ( a->isGreaterThan( *b ) ) )
@@ -822,53 +822,53 @@ TEST( compare_a_isGreaterThan_b_02, PitchName )
 TEST( getStepValue0, PitchName )
 {
     String str = "C";
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 0, n->getStepValue() )
 }
 TEST( getStepValue1, PitchName )
 {
     String str = "Db";
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 1, n->getStepValue() )
 }
 TEST( getStepValue2, PitchName )
 {
     String str = "E#";
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 2, n->getStepValue() )
 }
 TEST( getStepValue3, PitchName )
 {
     String str = "F";
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 3, n->getStepValue() )
 }
 TEST( getStepValue4, PitchName )
 {
     String str = "Gb";
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 4, n->getStepValue() )
 }
 TEST( getStepValue5, PitchName )
 {
     String str = "A#";
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 5, n->getStepValue() )
 }
 TEST( getStepValue6, PitchName )
 {
     String str = "B";
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 6, n->getStepValue() )
 }
 TEST( getMinStepValue, PitchName )
 {
-    IPitchNameUPtr n{ new PitchName{ "F" } };
+    IPitchNameUP n{ new PitchName{ "F" } };
     CHECK_EQUAL( 0, n->getMinStepValue() )
 }
 TEST( getMaxStepValue, PitchName )
 {
-    IPitchNameUPtr n{ new PitchName{ "F" } };
+    IPitchNameUP n{ new PitchName{ "F" } };
     CHECK_EQUAL( 6, n->getMaxStepValue() )
 }
 TEST( setStepValue0, PitchName )
@@ -876,7 +876,7 @@ TEST( setStepValue0, PitchName )
     String str = "F";
     Integer setTo = 0;
     Integer expected = 0;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     n->setStepValue( setTo );
     Integer actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
@@ -886,7 +886,7 @@ TEST( setStepValue1, PitchName )
     String str = "G";
     Integer setTo = 7;
     Integer expected = 6;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     n->setStepValue( setTo );
     Integer actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
@@ -896,14 +896,14 @@ TEST( setStepValue2, PitchName )
     String str = "D";
     Integer setTo = -1;
     Integer expected = 0;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     n->setStepValue( setTo );
     Integer actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( incrementStep, PitchName )
 {
-    IPitchNameUPtr n{ new PitchName{ "C" } };
+    IPitchNameUP n{ new PitchName{ "C" } };
     n->incrementStep();
     CHECK_EQUAL( 1, n->getStepValue() )
     n->incrementStep();
@@ -921,7 +921,7 @@ TEST( incrementStep, PitchName )
 }
 TEST( decrementStep, PitchName )
 {
-    IPitchNameUPtr n{ new PitchName{ "C" } };
+    IPitchNameUP n{ new PitchName{ "C" } };
     n->decrementStep();
     CHECK_EQUAL( 6, n->getStepValue() )
     n->decrementStep();
@@ -941,7 +941,7 @@ TEST( getAlterValue00, PitchName )
 {
     String str{ "C" };
     Integer expected = 0;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -949,7 +949,7 @@ TEST( getAlterValue01, PitchName )
 {
     String str{ "Fb" };
     Integer expected = -1;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -957,7 +957,7 @@ TEST( getAlterValue02, PitchName )
 {
     String str{ "G#" };
     Integer expected = 1;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -965,7 +965,7 @@ TEST( getAlterValue03, PitchName )
 {
     String str{ "Bd" };
     Integer expected = -2;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -973,7 +973,7 @@ TEST( getAlterValue04, PitchName )
 {
     String str{ "Ax" };
     Integer expected = 2;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -981,7 +981,7 @@ TEST( getAlterValue05, PitchName )
 {
     String str{ "Ddb" };
     Integer expected = -3;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -989,7 +989,7 @@ TEST( getAlterValue06, PitchName )
 {
     String str{ "Cx#" };
     Integer expected = 3;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -997,7 +997,7 @@ TEST( getAlterValue07, PitchName )
 {
     String str{ "Edd" };
     Integer expected = -4;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -1005,7 +1005,7 @@ TEST( getAlterValue08, PitchName )
 {
     String str{ "Fxx" };
     Integer expected = 4;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -1013,7 +1013,7 @@ TEST( getAlterValue09, PitchName )
 {
     String str{ "Cddb" };
     Integer expected = -5;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -1021,7 +1021,7 @@ TEST( getAlterValue10, PitchName )
 {
     String str{ "Cxx#" };
     Integer expected = 5;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
@@ -1030,7 +1030,7 @@ TEST( setAlterValue01, PitchName )
     String str{ "Cxx#" };
     Integer setTo = 3;
     Integer expected = setTo;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     n->setAlterValue( setTo );
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
@@ -1040,7 +1040,7 @@ TEST( setAlterValue02, PitchName )
     String str{ "Cx" };
     Integer setTo = 0;
     Integer expected = setTo;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     n->setAlterValue( setTo );
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
@@ -1050,7 +1050,7 @@ TEST( setAlterValue03, PitchName )
     String str{ "Gb" };
     Integer setTo = 100;
     Integer expected = setTo;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     n->setAlterValue( setTo );
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
@@ -1060,28 +1060,28 @@ TEST( setAlterValue04, PitchName )
     String str{ "Gb" };
     Integer setTo = -100;
     Integer expected = setTo;
-    IPitchNameUPtr n{ new PitchName{ str } };
+    IPitchNameUP n{ new PitchName{ str } };
     n->setAlterValue( setTo );
     Integer actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getMinAlterValue, PitchName )
 {
-    IPitchNameUPtr n{ new PitchName{ "D" } };
+    IPitchNameUP n{ new PitchName{ "D" } };
     Integer expected = std::numeric_limits<Integer>::min();
     Integer actual = n->getMinAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getMaxAlterValue, PitchName )
 {
-    IPitchNameUPtr n{ new PitchName{ "E" } };
+    IPitchNameUP n{ new PitchName{ "E" } };
     Integer expected = std::numeric_limits<Integer>::max();
     Integer actual = n->getMaxAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( incrementAlter, PitchName )
 {
-    IPitchNameUPtr n{ new PitchName{ "Eddd" } };
+    IPitchNameUP n{ new PitchName{ "Eddd" } };
     n->incrementAlter();
     CHECK_EQUAL( -5, n->getAlterValue() )
     n->incrementAlter();
@@ -1113,7 +1113,7 @@ TEST( incrementAlter, PitchName )
 }
 TEST( decrementAlter, PitchName )
 {
-    IPitchNameUPtr n{ new PitchName{ "Exxx" } };
+    IPitchNameUP n{ new PitchName{ "Exxx" } };
     n->decrementAlter();
     CHECK_EQUAL( 5, n->getAlterValue() )
     n->decrementAlter();
@@ -1145,8 +1145,8 @@ TEST( decrementAlter, PitchName )
 }
 TEST( isIdenticalTo_true01, PitchName )
 {
-    PitchNameUPtr a = unique_ptr<PitchName>( new PitchName( "C#" ) );
-    PitchNameUPtr b = unique_ptr<PitchName>( new PitchName( "C#" ) );
+    PitchNameUP a = unique_ptr<PitchName>( new PitchName( "C#" ) );
+    PitchNameUP b = unique_ptr<PitchName>( new PitchName( "C#" ) );
     CHECK( a->isIdenticalTo( *b ) )
 }
 TEST( isIdenticalTo_true02, PitchName )
@@ -1155,7 +1155,7 @@ TEST( isIdenticalTo_true02, PitchName )
     {
     public:
         virtual ~MockPitchName1() {}
-        virtual IPitchNameUPtr clone() const { return std::unique_ptr<MockPitchName1>{ new MockPitchName1{} }; }
+        virtual IPitchNameUP clone() const { return std::unique_ptr<MockPitchName1>{ new MockPitchName1{} }; }
         /* template <typename T>
          void copyTo( std::unique_ptr<T>& output ) const */
         virtual Integer getValue() const { return 1; }
@@ -1180,14 +1180,14 @@ TEST( isIdenticalTo_true02, PitchName )
         virtual void decrementAlter() {}
     };
     
-    PitchNameUPtr a = unique_ptr<PitchName>( new PitchName( "C#" ) );
+    PitchNameUP a = unique_ptr<PitchName>( new PitchName( "C#" ) );
     std::unique_ptr<MockPitchName1> b{ new MockPitchName1{} };
     CHECK( a->isIdenticalTo( *b ) )
 }
 TEST( isIdenticalTo_false01, PitchName )
 {
-    PitchNameUPtr a = unique_ptr<PitchName>( new PitchName( "A" ) );
-    PitchNameUPtr b = unique_ptr<PitchName>( new PitchName( "B" ) );
+    PitchNameUP a = unique_ptr<PitchName>( new PitchName( "A" ) );
+    PitchNameUP b = unique_ptr<PitchName>( new PitchName( "B" ) );
     CHECK( ! a->isIdenticalTo( *b ) )
 }
 TEST( isIdenticalTo_false02, PitchName )
@@ -1196,7 +1196,7 @@ TEST( isIdenticalTo_false02, PitchName )
     {
     public:
         virtual ~MockPitchName2() {}
-        virtual IPitchNameUPtr clone() const { return std::unique_ptr<MockPitchName2>{ new MockPitchName2{} }; }
+        virtual IPitchNameUP clone() const { return std::unique_ptr<MockPitchName2>{ new MockPitchName2{} }; }
         /* template <typename T>
          void copyTo( std::unique_ptr<T>& output ) const */
         virtual Integer getValue() const { return 1; }
@@ -1221,7 +1221,7 @@ TEST( isIdenticalTo_false02, PitchName )
         virtual void decrementAlter() {}
     };
     
-    PitchNameUPtr a = unique_ptr<PitchName>( new PitchName( "C#" ) );
+    PitchNameUP a = unique_ptr<PitchName>( new PitchName( "C#" ) );
     std::unique_ptr<MockPitchName2> b{ new MockPitchName2{} };
     CHECK( ! a->isIdenticalTo( *b ) )
 }

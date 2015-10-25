@@ -1,11 +1,12 @@
+//PRIVATE
 #pragma once
 #include "IPitch.h"
 
 namespace lyre
 {
     class Pitch;
-    using PitchPtr = std::shared_ptr<Pitch>;
-    using PitchUPtr = std::unique_ptr<Pitch>;
+    using PitchSP = std::shared_ptr<Pitch>;
+    using PitchUP = std::unique_ptr<Pitch>;
     
     class Pitch : public IPitch
     {
@@ -20,7 +21,7 @@ namespace lyre
         Pitch& operator=( Pitch&& other ) noexcept;
         
         /* return a deep copy of "this" */
-        virtual IPitchUPtr clone() const;
+        virtual IPitchUP clone() const;
         
         /* deep copy to "output", note
          the use of static_cast, be careful
@@ -87,8 +88,8 @@ namespace lyre
         
     private:
         class PitchImpl;
-        using PitchImplUPtr = std::unique_ptr<PitchImpl>;
-        PitchImplUPtr myImpl;
+        using PitchImplUP = std::unique_ptr<PitchImpl>;
+        PitchImplUP myImpl;
         static void swap( Pitch& left, Pitch& right ) noexcept;
     };
 }

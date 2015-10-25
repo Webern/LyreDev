@@ -6,12 +6,12 @@ using namespace lyre;
 using namespace std;
 
 class TestPitchMock;
-using TestPitchMockUPtr = unique_ptr<TestPitchMock>;
+using TestPitchMockUP = unique_ptr<TestPitchMock>;
 class TestPitchMock : public IPitch
 {
 public:
     virtual ~TestPitchMock() {}
-    virtual IPitchUPtr clone() const { return TestPitchMockUPtr{ new TestPitchMock{} }; }
+    virtual IPitchUP clone() const { return TestPitchMockUP{ new TestPitchMock{} }; }
     /* void copyTo( std::unique_ptr<T>& output ) const */
     virtual Integer getValue() const { return 0; }
     virtual bool parse( const String& str ) { return true; }
@@ -37,9 +37,9 @@ public:
 
 TEST( compiles, IPitch )
 {
-    IPitchUPtr p{ new TestPitchMock{} };
+    IPitchUP p{ new TestPitchMock{} };
     auto c = p->clone();
-    TestPitchMockUPtr x;
+    TestPitchMockUP x;
     p->copyTo( x );
     CHECK( p != c )
     CHECK( p != x )

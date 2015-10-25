@@ -1,3 +1,4 @@
+//PRIVATE
 #pragma once
 #include "TypeDefs.h"
 #include "IAlter.h"
@@ -5,8 +6,8 @@
 namespace lyre
 {
     class Alter;
-    using AlterPtr = std::shared_ptr<Alter>;
-    using AlterUPtr = std::unique_ptr<Alter>;
+    using AlterSP = std::shared_ptr<Alter>;
+    using AlterUP = std::unique_ptr<Alter>;
     
     class Alter : public IAlter
     {
@@ -21,7 +22,7 @@ namespace lyre
         Alter& operator=( Alter&& other ) noexcept;
         
         /* return a deep copy of "this" */
-        virtual IAlterUPtr clone() const;
+        virtual IAlterUP clone() const;
         
         /* deep copy to "output", note
          the use of static_cast,
@@ -73,8 +74,8 @@ namespace lyre
         
     private:
         class AlterImpl;
-        using AlterImplUPtr = std::unique_ptr<AlterImpl>;
-        AlterImplUPtr myImpl;
+        using AlterImplUP = std::unique_ptr<AlterImpl>;
+        AlterImplUP myImpl;
         static void swap( Alter& left, Alter& right ) noexcept;
     };
     

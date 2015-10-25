@@ -1,18 +1,19 @@
+//PRIVATE
 #pragma once
 #include "TypeDefs.h"
 
 namespace lyre
 {
     class IStep;
-    using IStepPtr = std::shared_ptr<IStep>;
-    using IStepUPtr = std::unique_ptr<IStep>;
+    using IStepSP = std::shared_ptr<IStep>;
+    using IStepUP = std::unique_ptr<IStep>;
     class IStep
     {
     public:
         virtual ~IStep() = default;
         
         /* return a deep copy of "this" */
-        virtual IStepUPtr clone() const = 0;
+        virtual IStepUP clone() const = 0;
         
         /* deep copy to "output", note
          the use of static_cast, be careful */

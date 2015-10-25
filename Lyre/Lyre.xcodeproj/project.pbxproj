@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2927E4D21B8CC7FB00041459 /* Tuplet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2927E4D01B8CC7FB00041459 /* Tuplet.cpp */; };
-		2927E4D31B8CC7FB00041459 /* Tuplet.h in Headers */ = {isa = PBXBuildFile; fileRef = 2927E4D11B8CC7FB00041459 /* Tuplet.h */; };
 		292B939E1BB1ACE100A4F808 /* Step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292B939C1BB1ACE100A4F808 /* Step.cpp */; };
 		292B939F1BB1ACE100A4F808 /* Step.h in Headers */ = {isa = PBXBuildFile; fileRef = 292B939D1BB1ACE100A4F808 /* Step.h */; };
 		293F508E1BAF130F00AC0C19 /* IEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F508C1BAF130F00AC0C19 /* IEnum.cpp */; };
@@ -41,8 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2927E4D01B8CC7FB00041459 /* Tuplet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tuplet.cpp; sourceTree = "<group>"; };
-		2927E4D11B8CC7FB00041459 /* Tuplet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tuplet.h; sourceTree = "<group>"; };
 		292B939C1BB1ACE100A4F808 /* Step.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step.cpp; sourceTree = "<group>"; };
 		292B939D1BB1ACE100A4F808 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
 		293F508C1BAF130F00AC0C19 /* IEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IEnum.cpp; sourceTree = "<group>"; };
@@ -148,15 +144,21 @@
 			name = Primitive;
 			sourceTree = "<group>";
 		};
-		293F50891BAF126600AC0C19 /* Rhythm */ = {
+		29299E4B1BCACD0100D1A00A /* Concrete */ = {
 			isa = PBXGroup;
 			children = (
-				2927E4D01B8CC7FB00041459 /* Tuplet.cpp */,
-				2927E4D11B8CC7FB00041459 /* Tuplet.h */,
 				29FCDEF61B8B06170092CBCB /* Dur.cpp */,
 				29FCDEF51B8B04DF0092CBCB /* Dur.h */,
 				29EA94F91BACC1570019FBFB /* DurDot.cpp */,
 				29EA94FA1BACC1570019FBFB /* DurDot.h */,
+			);
+			name = Concrete;
+			sourceTree = "<group>";
+		};
+		293F50891BAF126600AC0C19 /* Rhythm */ = {
+			isa = PBXGroup;
+			children = (
+				29299E4B1BCACD0100D1A00A /* Concrete */,
 			);
 			name = Rhythm;
 			sourceTree = "<group>";
@@ -209,7 +211,6 @@
 				298B7A6F1BB7CE0C00E39C72 /* PitchName.h in Headers */,
 				292B939F1BB1ACE100A4F808 /* Step.h in Headers */,
 				29EA94FC1BACC1570019FBFB /* DurDot.h in Headers */,
-				2927E4D31B8CC7FB00041459 /* Tuplet.h in Headers */,
 				29DB04FA1BB301A90029014A /* Alter.h in Headers */,
 				29F7353D1BB07BAD0067624F /* IStep.h in Headers */,
 				29B384EC1BB4C9650056B4AC /* IPitchName.h in Headers */,
@@ -284,7 +285,6 @@
 				29DB04FD1BB301E10029014A /* IAlter.cpp in Sources */,
 				29E7206B1BBE3343006FB7FD /* IPitchFactory.cpp in Sources */,
 				29EA94FB1BACC1570019FBFB /* DurDot.cpp in Sources */,
-				2927E4D21B8CC7FB00041459 /* Tuplet.cpp in Sources */,
 				292B939E1BB1ACE100A4F808 /* Step.cpp in Sources */,
 				29E734731B7ACD4B0046F4F8 /* Rational.cpp in Sources */,
 				29B384EB1BB4C9650056B4AC /* IPitchName.cpp in Sources */,

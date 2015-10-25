@@ -12,12 +12,12 @@ TEST( Compiles, Step )
 }
 TEST( SharedPtr, Step )
 {
-    IStepPtr p = std::make_shared<Step>();
+    IStepSP p = std::make_shared<Step>();
     CHECK( true )
 }
 TEST( UniquePtr, Step )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IStepUP p = unique_ptr<Step>( new Step() );
     CHECK( true )
 }
 
@@ -93,9 +93,9 @@ TEST( MoveAssignment, Step )
 }
 TEST( clone, Step )
 {
-    IStepPtr p1 = std::make_shared<Step>();
+    IStepSP p1 = std::make_shared<Step>();
     p1->setValue( 4 );
-    IStepPtr p2 = p1->clone();
+    IStepSP p2 = p1->clone();
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 4, p1->getValue() );
     CHECK_EQUAL( 4, p2->getValue() );
@@ -118,17 +118,17 @@ TEST( copyTo, Step )
 }
 TEST( getMin, Step )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IStepUP p = unique_ptr<Step>( new Step() );
     CHECK_EQUAL( 0, p->getMin() )
 }
 TEST( getMax, Step )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IStepUP p = unique_ptr<Step>( new Step() );
     CHECK_EQUAL( 6, p->getMax() )
 }
 TEST( parse, Step )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IStepUP p = unique_ptr<Step>( new Step() );
     p->setValue( 2 );
     CHECK_EQUAL( "E", p->toString() )
     CHECK( ! p->parse( "f" ) )
@@ -138,7 +138,7 @@ TEST( parse, Step )
 }
 TEST( toStream, Step )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IStepUP p = unique_ptr<Step>( new Step() );
     p->setValue( 1 );
     stringstream ss;
     p->toStream( ss );
@@ -148,7 +148,7 @@ TEST( toStream, Step )
 }
 TEST( toString, Step )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IStepUP p = unique_ptr<Step>( new Step() );
     p->setValue( 6 );
     String expected = "B";
     String actual{ p->toString() };
@@ -156,7 +156,7 @@ TEST( toString, Step )
 }
 TEST( streamingOperator, Step )
 {
-    IStepUPtr p = unique_ptr<Step>( new Step() );
+    IStepUP p = unique_ptr<Step>( new Step() );
     p->setValue( 4 );
     stringstream ss;
     ss << ( *p );
@@ -166,8 +166,8 @@ TEST( streamingOperator, Step )
 }
 TEST( comparisons_a_isLessThan_b, Step )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
-    IStepUPtr b = unique_ptr<Step>( new Step() );
+    IStepUP a = unique_ptr<Step>( new Step() );
+    IStepUP b = unique_ptr<Step>( new Step() );
     a->setValue( 1 );
     b->setValue( 2 );
     CHECK(   a->isLessThan   ( *b ) )
@@ -179,8 +179,8 @@ TEST( comparisons_a_isLessThan_b, Step )
 }
 TEST( comparisons_a_isGreaterThan_b, Step )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
-    IStepUPtr b = unique_ptr<Step>( new Step() );
+    IStepUP a = unique_ptr<Step>( new Step() );
+    IStepUP b = unique_ptr<Step>( new Step() );
     a->setValue( 2 );
     b->setValue( 1 );
     CHECK( ! a->isLessThan   ( *b ) )
@@ -192,8 +192,8 @@ TEST( comparisons_a_isGreaterThan_b, Step )
 }
 TEST( comparisons_a_isEqualTo_b, Step )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
-    IStepUPtr b = unique_ptr<Step>( new Step() );
+    IStepUP a = unique_ptr<Step>( new Step() );
+    IStepUP b = unique_ptr<Step>( new Step() );
     a->setValue( 3 );
     b->setValue( 3 );
     CHECK( ! a->isLessThan   ( *b ) )
@@ -205,14 +205,14 @@ TEST( comparisons_a_isEqualTo_b, Step )
 }
 TEST( increment01, Step )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
+    IStepUP a = unique_ptr<Step>( new Step() );
     a->setValue( 1 );
     a->increment();
     CHECK_EQUAL( 2, a->getValue() )
 }
 TEST( increment02, Step )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
+    IStepUP a = unique_ptr<Step>( new Step() );
     a->setValue( 2 );
     a->increment();
     CHECK_EQUAL( 3, a->getValue() )
@@ -231,14 +231,14 @@ TEST( increment02, Step )
 }
 TEST( decrement01, Step )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
+    IStepUP a = unique_ptr<Step>( new Step() );
     a->setValue( 2 );
     a->decrement();
     CHECK_EQUAL( 1, a->getValue() )
 }
 TEST( decrement02, Step )
 {
-    IStepUPtr a = unique_ptr<Step>( new Step() );
+    IStepUP a = unique_ptr<Step>( new Step() );
     a->setValue( 2 );
     a->decrement();
     CHECK_EQUAL( 1, a->getValue() )
@@ -323,7 +323,7 @@ TEST( checkAllStepValueInputs, Step )
 }
 TEST( getPitchClassValue, Step )
 {
-    StepUPtr a = unique_ptr<Step>( new Step() );
+    StepUP a = unique_ptr<Step>( new Step() );
     a->setValue( 0 );
     a->increment();
     CHECK_EQUAL( 2, a->getPitchClassValue() )
@@ -342,8 +342,8 @@ TEST( getPitchClassValue, Step )
 }
 TEST( isIdenticalTo_true01, Step )
 {
-    StepUPtr a = unique_ptr<Step>( new Step( "A" ) );
-    StepUPtr b = unique_ptr<Step>( new Step( "A" ) );
+    StepUP a = unique_ptr<Step>( new Step( "A" ) );
+    StepUP b = unique_ptr<Step>( new Step( "A" ) );
     CHECK( a->isIdenticalTo( *b ) )
 }
 TEST( isIdenticalTo_true02, Step )
@@ -351,9 +351,9 @@ TEST( isIdenticalTo_true02, Step )
     class MockStepA : public IStep
     {
     public:
-        IStepUPtr clone() const
+        IStepUP clone() const
         {
-            IStepUPtr value{ new MockStepA{ *this } };
+            IStepUP value{ new MockStepA{ *this } };
             return value;
         }
         Integer getValue() const { return 5; }
@@ -368,14 +368,14 @@ TEST( isIdenticalTo_true02, Step )
         void decrement() {}
     };
     
-    StepUPtr a = unique_ptr<Step>( new Step( "A" ) );
+    StepUP a = unique_ptr<Step>( new Step( "A" ) );
     std::unique_ptr<MockStepA> b{ new MockStepA{} };
     CHECK( a->isIdenticalTo( *b ) )
 }
 TEST( isIdenticalTo_false01, Step )
 {
-    StepUPtr a = unique_ptr<Step>( new Step( "A" ) );
-    StepUPtr b = unique_ptr<Step>( new Step( "B" ) );
+    StepUP a = unique_ptr<Step>( new Step( "A" ) );
+    StepUP b = unique_ptr<Step>( new Step( "B" ) );
     CHECK( ! a->isIdenticalTo( *b ) )
 }
 TEST( isIdenticalTo_false02, Step )
@@ -383,9 +383,9 @@ TEST( isIdenticalTo_false02, Step )
     class MockStepX : public IStep
     {
     public:
-        IStepUPtr clone() const
+        IStepUP clone() const
         {
-            IStepUPtr value{ new MockStepX{ *this } };
+            IStepUP value{ new MockStepX{ *this } };
             return value;
         }
         Integer getValue() const { return 5; }
@@ -400,7 +400,7 @@ TEST( isIdenticalTo_false02, Step )
         void decrement() {}
     };
     
-    StepUPtr a = unique_ptr<Step>( new Step( "A" ) );
+    StepUP a = unique_ptr<Step>( new Step( "A" ) );
     std::unique_ptr<MockStepX> b{ new MockStepX{} };
     CHECK( ! a->isIdenticalTo( *b ) )
 }

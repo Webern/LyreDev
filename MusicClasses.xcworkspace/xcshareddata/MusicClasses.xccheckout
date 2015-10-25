@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4FF31EBC-73C2-4D4D-B9C4-88397B2E255F</string>
+	<string>3F78CEB4-7D91-4042-BD74-6902CCC575D6</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MusicClasses</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B10566F6-591B-4774-A1CD-6A878949D0EC</key>
+		<key>7B1F379C-E22D-4015-AFF4-1E24065E1080</key>
 		<string>https://github.com/Webern/Music-Classes.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MusicClasses.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B10566F6-591B-4774-A1CD-6A878949D0EC</key>
+		<key>7B1F379C-E22D-4015-AFF4-1E24065E1080</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B10566F6-591B-4774-A1CD-6A878949D0EC</string>
+	<string>7B1F379C-E22D-4015-AFF4-1E24065E1080</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B10566F6-591B-4774-A1CD-6A878949D0EC</string>
+			<string>7B1F379C-E22D-4015-AFF4-1E24065E1080</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MusicClasses</string>
 		</dict>

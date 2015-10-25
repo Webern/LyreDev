@@ -1,11 +1,12 @@
+//PRIVATE
 #pragma once
 #include "IEnum.h"
 
 namespace lyre
 {
     class Enum;
-    using EnumPtr = std::shared_ptr<Enum>;
-    using EnumUPtr = std::unique_ptr<Enum>;
+    using EnumSP = std::shared_ptr<Enum>;
+    using EnumUP = std::unique_ptr<Enum>;
     
     class Enum : public IEnum
     {
@@ -13,7 +14,7 @@ namespace lyre
         Enum( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset = 0 );
         
         /* return a deep copy of "this" */
-        virtual IEnumUPtr clone() const;
+        virtual IEnumUP clone() const;
         
         /* return the Enum as an integer */
         virtual Integer getValue() const;

@@ -73,9 +73,9 @@ namespace lyre
         return *this;
     }
     
-    IAlterUPtr Alter::clone() const
+    IAlterUP Alter::clone() const
     {
-        IAlterUPtr value{ new Alter{ *this } };
+        IAlterUP value{ new Alter{ *this } };
         return value;
     }
     

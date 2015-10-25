@@ -14,12 +14,12 @@ TEST( Compiles, Alter )
 }
 TEST( SharedPtr, Alter )
 {
-    IAlterPtr p = std::make_shared<Alter>();
+    IAlterSP p = std::make_shared<Alter>();
     CHECK( true )
 }
 TEST( UniquePtr, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     CHECK( true )
 }
 
@@ -90,9 +90,9 @@ TEST( MoveAssignment, Alter )
 }
 TEST( clone, Alter )
 {
-    IAlterPtr p1 = std::make_shared<Alter>();
+    IAlterSP p1 = std::make_shared<Alter>();
     p1->setValue( 4 );
-    IAlterPtr p2 = p1->clone();
+    IAlterSP p2 = p1->clone();
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 4, p1->getValue() );
     CHECK_EQUAL( 4, p2->getValue() );
@@ -115,108 +115,108 @@ TEST( copyTo, Alter )
 }
 TEST( getMin, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     CHECK_EQUAL( std::numeric_limits<Integer>::min(), p->getMin() )
 }
 TEST( getMax, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     CHECK_EQUAL( std::numeric_limits<Integer>::max(), p->getMax() )
 }
 TEST( parseSuccess01, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -6 );
     CHECK( p->parse( "" ) )
     CHECK_EQUAL( 0, p->getValue() )
 }
 TEST( parseSuccess02, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "ddd" ) )
     CHECK_EQUAL( -6, p->getValue() )
 }
 TEST( parseSuccess03, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "ddb" ) )
     CHECK_EQUAL( -5, p->getValue() )
 }
 TEST( parseSuccess04, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "dd" ) )
     CHECK_EQUAL( -4, p->getValue() )
 }
 TEST( parseSuccess05, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "db" ) )
     CHECK_EQUAL( -3, p->getValue() )
 }
 TEST( parseSuccess06, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "d" ) )
     CHECK_EQUAL( -2, p->getValue() )
 }
 TEST( parseSuccess07, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "b" ) )
     CHECK_EQUAL( -1, p->getValue() )
 }
 TEST( parseSuccess08, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "" ) )
     CHECK_EQUAL( 0, p->getValue() )
 }
 TEST( parseSuccess09, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "#" ) )
     CHECK_EQUAL( 1, p->getValue() )
 }
 TEST( parseSuccess10, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "x" ) )
     CHECK_EQUAL( 2, p->getValue() )
 }
 TEST( parseSuccess11, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "x#" ) )
     CHECK_EQUAL( 3, p->getValue() )
 }
 TEST( parseSuccess12, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "xx" ) )
     CHECK_EQUAL( 4, p->getValue() )
 }
 TEST( parseSuccess13, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "xx#" ) )
     CHECK_EQUAL( 5, p->getValue() )
 }
 TEST( parseSuccess14, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -999 );
     CHECK( p->parse( "xxx" ) )
     CHECK_EQUAL( 6, p->getValue() )
@@ -225,7 +225,7 @@ TEST( parseSuccess15, Alter )
 {
     String dbl{ "d" };
     String sgl{ "b" };
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     for( Integer i = 100; i > 0; --i )
     {
         stringstream ss;
@@ -245,7 +245,7 @@ TEST( parseSuccess16, Alter )
 {
     String dbl{ "x" };
     String sgl{ "#" };
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     for( Integer i = 0; i > 100; ++i )
     {
         stringstream ss;
@@ -263,115 +263,115 @@ TEST( parseSuccess16, Alter )
 }
 TEST( parseFail01, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( " " ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail02, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "bd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail03, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "#b" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail04, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "xb" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail05, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "#d" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail06, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "xd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail07, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "b#" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail08, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "d#" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail09, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "bx" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail10, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "dx" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail11, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "#x" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail12, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "##" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail13, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "xx##" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail14, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "xxx#x" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail15, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "bd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail16, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "bb" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail17, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "ddbb" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail18, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "dddbd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
 TEST( parseFail19, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter( -999 ) );
+    IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     char c = std::numeric_limits<char>::min();
     for ( ; c <= std::numeric_limits<char>::min(); ++c )
     {
@@ -389,7 +389,7 @@ TEST( parseFail19, Alter )
 }
 TEST( toStream01, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -6 );
     stringstream ss;
     p->toStream( ss );
@@ -399,7 +399,7 @@ TEST( toStream01, Alter )
 }
 TEST( toStream02, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -5 );
     stringstream ss;
     p->toStream( ss );
@@ -409,7 +409,7 @@ TEST( toStream02, Alter )
 }
 TEST( toStream03, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -4 );
     stringstream ss;
     p->toStream( ss );
@@ -419,7 +419,7 @@ TEST( toStream03, Alter )
 }
 TEST( toStream04, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -3 );
     stringstream ss;
     p->toStream( ss );
@@ -429,7 +429,7 @@ TEST( toStream04, Alter )
 }
 TEST( toStream05, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -2 );
     stringstream ss;
     p->toStream( ss );
@@ -439,7 +439,7 @@ TEST( toStream05, Alter )
 }
 TEST( toStream06, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -1 );
     stringstream ss;
     p->toStream( ss );
@@ -449,7 +449,7 @@ TEST( toStream06, Alter )
 }
 TEST( toStream07, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 0 );
     stringstream ss;
     p->toStream( ss );
@@ -459,7 +459,7 @@ TEST( toStream07, Alter )
 }
 TEST( toStream08, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 1 );
     stringstream ss;
     p->toStream( ss );
@@ -469,7 +469,7 @@ TEST( toStream08, Alter )
 }
 TEST( toStream09, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 2 );
     stringstream ss;
     p->toStream( ss );
@@ -479,7 +479,7 @@ TEST( toStream09, Alter )
 }
 TEST( toStream10, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 3 );
     stringstream ss;
     p->toStream( ss );
@@ -489,7 +489,7 @@ TEST( toStream10, Alter )
 }
 TEST( toStream11, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 4 );
     stringstream ss;
     p->toStream( ss );
@@ -499,7 +499,7 @@ TEST( toStream11, Alter )
 }
 TEST( toStream12, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 5 );
     stringstream ss;
     p->toStream( ss );
@@ -509,7 +509,7 @@ TEST( toStream12, Alter )
 }
 TEST( toStream13, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 6 );
     stringstream ss;
     p->toStream( ss );
@@ -519,7 +519,7 @@ TEST( toStream13, Alter )
 }
 TEST( toString01, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -6 );
     stringstream ss;
     ss << p->toString();
@@ -529,7 +529,7 @@ TEST( toString01, Alter )
 }
 TEST( toString02, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -5 );
     stringstream ss;
     ss << p->toString();
@@ -539,7 +539,7 @@ TEST( toString02, Alter )
 }
 TEST( toString03, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -4 );
     stringstream ss;
     ss << p->toString();
@@ -549,7 +549,7 @@ TEST( toString03, Alter )
 }
 TEST( toString04, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -3 );
     stringstream ss;
     ss << p->toString();
@@ -559,7 +559,7 @@ TEST( toString04, Alter )
 }
 TEST( toString05, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -2 );
     stringstream ss;
     ss << p->toString();
@@ -569,7 +569,7 @@ TEST( toString05, Alter )
 }
 TEST( toString06, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -1 );
     stringstream ss;
     ss << p->toString();
@@ -579,7 +579,7 @@ TEST( toString06, Alter )
 }
 TEST( toString07, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 0 );
     stringstream ss;
     ss << p->toString();
@@ -589,7 +589,7 @@ TEST( toString07, Alter )
 }
 TEST( toString08, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 1 );
     stringstream ss;
     ss << p->toString();
@@ -599,7 +599,7 @@ TEST( toString08, Alter )
 }
 TEST( toString09, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 2 );
     stringstream ss;
     ss << p->toString();
@@ -609,7 +609,7 @@ TEST( toString09, Alter )
 }
 TEST( toString10, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 3 );
     stringstream ss;
     ss << p->toString();
@@ -619,7 +619,7 @@ TEST( toString10, Alter )
 }
 TEST( toString11, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 4 );
     stringstream ss;
     ss << p->toString();
@@ -629,7 +629,7 @@ TEST( toString11, Alter )
 }
 TEST( toString12, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 5 );
     stringstream ss;
     ss << p->toString();
@@ -639,7 +639,7 @@ TEST( toString12, Alter )
 }
 TEST( toString13, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 6 );
     stringstream ss;
     ss << p->toString();
@@ -649,7 +649,7 @@ TEST( toString13, Alter )
 }
 TEST( streamingOperator01, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -6 );
     stringstream ss;
     ss << ( *p );
@@ -659,7 +659,7 @@ TEST( streamingOperator01, Alter )
 }
 TEST( streamingOperator02, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -5 );
     stringstream ss;
     ss << ( *p );
@@ -669,7 +669,7 @@ TEST( streamingOperator02, Alter )
 }
 TEST( streamingOperator03, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -4 );
     stringstream ss;
     ss << ( *p );
@@ -679,7 +679,7 @@ TEST( streamingOperator03, Alter )
 }
 TEST( streamingOperator04, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -3 );
     stringstream ss;
     ss << ( *p );
@@ -689,7 +689,7 @@ TEST( streamingOperator04, Alter )
 }
 TEST( streamingOperator05, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -2 );
     stringstream ss;
     ss << ( *p );
@@ -699,7 +699,7 @@ TEST( streamingOperator05, Alter )
 }
 TEST( streamingOperator06, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( -1 );
     stringstream ss;
     ss << ( *p );
@@ -709,7 +709,7 @@ TEST( streamingOperator06, Alter )
 }
 TEST( streamingOperator07, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 0 );
     stringstream ss;
     ss << ( *p );
@@ -719,7 +719,7 @@ TEST( streamingOperator07, Alter )
 }
 TEST( streamingOperator08, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 1 );
     stringstream ss;
     ss << ( *p );
@@ -729,7 +729,7 @@ TEST( streamingOperator08, Alter )
 }
 TEST( streamingOperator09, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 2 );
     stringstream ss;
     ss << ( *p );
@@ -739,7 +739,7 @@ TEST( streamingOperator09, Alter )
 }
 TEST( streamingOperator10, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 3 );
     stringstream ss;
     ss << ( *p );
@@ -749,7 +749,7 @@ TEST( streamingOperator10, Alter )
 }
 TEST( streamingOperator11, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 4 );
     stringstream ss;
     ss << ( *p );
@@ -759,7 +759,7 @@ TEST( streamingOperator11, Alter )
 }
 TEST( streamingOperator12, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 5 );
     stringstream ss;
     ss << ( *p );
@@ -769,7 +769,7 @@ TEST( streamingOperator12, Alter )
 }
 TEST( streamingOperator13, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 6 );
     stringstream ss;
     ss << ( *p );
@@ -779,7 +779,7 @@ TEST( streamingOperator13, Alter )
 }
 TEST( streamingOperator, Alter )
 {
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     p->setValue( 4 );
     stringstream ss;
     ss << ( *p );
@@ -789,8 +789,8 @@ TEST( streamingOperator, Alter )
 }
 TEST( comparisons_a_isLessThan_b, Alter )
 {
-    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
-    IAlterUPtr b = unique_ptr<Alter>( new Alter() );
+    IAlterUP a = unique_ptr<Alter>( new Alter() );
+    IAlterUP b = unique_ptr<Alter>( new Alter() );
     a->setValue( 1 );
     b->setValue( 2 );
     CHECK(   a->isLessThan   ( *b ) )
@@ -802,8 +802,8 @@ TEST( comparisons_a_isLessThan_b, Alter )
 }
 TEST( comparisons_a_isGreaterThan_b, Alter )
 {
-    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
-    IAlterUPtr b = unique_ptr<Alter>( new Alter() );
+    IAlterUP a = unique_ptr<Alter>( new Alter() );
+    IAlterUP b = unique_ptr<Alter>( new Alter() );
     a->setValue( 2 );
     b->setValue( 1 );
     CHECK( ! a->isLessThan   ( *b ) )
@@ -815,8 +815,8 @@ TEST( comparisons_a_isGreaterThan_b, Alter )
 }
 TEST( comparisons_a_isEqualTo_b, Alter )
 {
-    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
-    IAlterUPtr b = unique_ptr<Alter>( new Alter() );
+    IAlterUP a = unique_ptr<Alter>( new Alter() );
+    IAlterUP b = unique_ptr<Alter>( new Alter() );
     a->setValue( 3 );
     b->setValue( 3 );
     CHECK( ! a->isLessThan   ( *b ) )
@@ -828,14 +828,14 @@ TEST( comparisons_a_isEqualTo_b, Alter )
 }
 TEST( increment01, Alter )
 {
-    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
+    IAlterUP a = unique_ptr<Alter>( new Alter() );
     a->setValue( 1 );
     a->increment();
     CHECK_EQUAL( 2, a->getValue() )
 }
 TEST( increment02, Alter )
 {
-    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
+    IAlterUP a = unique_ptr<Alter>( new Alter() );
     a->setValue( std::numeric_limits<Integer>::max() );
     CHECK_EQUAL( std::numeric_limits<Integer>::max(), a->getValue() )
     a->increment();
@@ -843,14 +843,14 @@ TEST( increment02, Alter )
 }
 TEST( decrement01, Alter )
 {
-    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
+    IAlterUP a = unique_ptr<Alter>( new Alter() );
     a->setValue( 2 );
     a->decrement();
     CHECK_EQUAL( 1, a->getValue() )
 }
 TEST( decrement02, Alter )
 {
-    IAlterUPtr a = unique_ptr<Alter>( new Alter() );
+    IAlterUP a = unique_ptr<Alter>( new Alter() );
     a->setValue( std::numeric_limits<Integer>::min() );
     CHECK_EQUAL( std::numeric_limits<Integer>::min(), a->getValue() )
     a->decrement();
@@ -861,7 +861,7 @@ TEST( checkManyFlatStrings, Alter )
     auto a = unique_ptr<Alter>( new Alter() );
     Integer startValue = 0;
     Integer endValue = 100;
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     String dbl{ "d" };
     String sgl{ "b" };
     for( Integer i = startValue; i <= endValue; ++i )
@@ -888,7 +888,7 @@ TEST( checkManySharpStrings, Alter )
     auto a = unique_ptr<Alter>( new Alter() );
     Integer startValue = 0;
     Integer endValue = 100;
-    IAlterUPtr p = unique_ptr<Alter>( new Alter() );
+    IAlterUP p = unique_ptr<Alter>( new Alter() );
     String dbl{ "x" };
     String sgl{ "#" };
     for( Integer i = startValue; i <= endValue; ++i )
@@ -912,13 +912,13 @@ TEST( checkManySharpStrings, Alter )
 }
 TEST( isIdenticalTo_true01, Alter )
 {
-    AlterUPtr a = unique_ptr<Alter>( new Alter( 5 ) );
-    AlterUPtr b = unique_ptr<Alter>( new Alter( 5 ) );
+    AlterUP a = unique_ptr<Alter>( new Alter( 5 ) );
+    AlterUP b = unique_ptr<Alter>( new Alter( 5 ) );
     CHECK( a->isIdenticalTo( *b ) )
 }
 TEST( isIdenticalTo_false02, Alter )
 {
-    AlterUPtr a = unique_ptr<Alter>( new Alter( 5 ) );
-    AlterUPtr b = unique_ptr<Alter>( new Alter( 4 ) );
+    AlterUP a = unique_ptr<Alter>( new Alter( 5 ) );
+    AlterUP b = unique_ptr<Alter>( new Alter( 4 ) );
     CHECK( ! a->isIdenticalTo( *b ) )
 }

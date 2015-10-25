@@ -42,9 +42,9 @@ namespace lyre
         return *this;
     }
     
-    IStepUPtr Step::clone() const
+    IStepUP Step::clone() const
     {
-        IStepUPtr value{ new Step{ *this } };
+        IStepUP value{ new Step{ *this } };
         return value;
     }
     

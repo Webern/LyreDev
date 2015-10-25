@@ -10,13 +10,13 @@ using namespace std;
 class TestMockPitchFactory : public IPitchFactory
 {
     public:
-    virtual IPitchFactoryUPtr clone() const
+    virtual IPitchFactoryUP clone() const
     {
         return std::unique_ptr<TestMockPitchFactory>{ new TestMockPitchFactory( *this ) };
     }
-    virtual IPitchUPtr makePitch() const
+    virtual IPitchUP makePitch() const
     {
-        return PitchUPtr{ new Pitch{ myPitch } };
+        return PitchUP{ new Pitch{ myPitch } };
     }
     virtual void setPitch( const Integer pitchValue )
     {
@@ -90,7 +90,7 @@ class TestMockPitchFactory : public IPitchFactory
                 break;
         }
     }
-    virtual void setPitch( const IPitchUPtr& pitch )
+    virtual void setPitch( const IPitchUP& pitch )
     {
         if ( pitch )
         {

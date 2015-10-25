@@ -1,3 +1,4 @@
+//PRIVATE
 #pragma once
 #include "TypeDefs.h"
 #include "Rational.h"

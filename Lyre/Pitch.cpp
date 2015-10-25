@@ -67,9 +67,9 @@ namespace lyre
     }
     
     
-    IPitchUPtr Pitch::clone() const
+    IPitchUP Pitch::clone() const
     {
-        IPitchUPtr value{ new Pitch{ *this } };
+        IPitchUP value{ new Pitch{ *this } };
         return std::move( value );
     }
     

@@ -1,7 +1,8 @@
+//PRIVATE
 #pragma once
 
 /* The Mod class restrics values of an integral
- to be between x=zero and MODULUS-1 by using the
+ to be between zero and MODULUS-1 by using the
  % operator. It probably only works for integral
  types (int, long, short, char, etc) */
 

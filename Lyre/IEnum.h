@@ -1,3 +1,4 @@
+//PRIVATE
 #pragma once
 #include "TypeDefs.h"
 #include <memory>
@@ -5,8 +6,8 @@
 namespace lyre
 {
     class IEnum;
-    using IEnumPtr = std::shared_ptr<IEnum>;
-    using IEnumUPtr = std::unique_ptr<IEnum>;
+    using IEnumSP = std::shared_ptr<IEnum>;
+    using IEnumUP = std::unique_ptr<IEnum>;
     
     class IEnum
     {
@@ -14,7 +15,7 @@ namespace lyre
         virtual ~IEnum() = default;
         
         /* return a deep copy of "this" */
-        virtual IEnumUPtr clone() const = 0;
+        virtual IEnumUP clone() const = 0;
         
         /* deep copy to "output", note
          the use of static_cast, be careful */

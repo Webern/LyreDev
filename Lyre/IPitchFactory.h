@@ -1,3 +1,4 @@
+//PRIVATE
 #pragma once
 #include "TypeDefs.h"
 #include <memory>
@@ -6,8 +7,8 @@
 namespace lyre
 {
     class IPitchFactory;
-    using IPitchFactoryPtr = std::shared_ptr<IPitchFactory>;
-    using IPitchFactoryUPtr = std::unique_ptr<IPitchFactory>;
+    using IPitchFactorySP = std::shared_ptr<IPitchFactory>;
+    using IPitchFactoryUP = std::unique_ptr<IPitchFactory>;
     
     class IPitchFactory
     {
@@ -15,7 +16,7 @@ namespace lyre
         virtual ~IPitchFactory() = default;
         
         /* return a deep copy of "this" */
-        virtual IPitchFactoryUPtr clone() const = 0;
+        virtual IPitchFactoryUP clone() const = 0;
         
         /* deep copy to "output", note
          the use of static_cast, be careful */
@@ -25,9 +26,9 @@ namespace lyre
             output = std::move( std::unique_ptr<T>{ new T{ *(static_cast<T*>( clone().get() )) } } );
         }
         
-        virtual IPitchUPtr makePitch() const = 0;
+        virtual IPitchUP makePitch() const = 0;
         virtual void setPitch( const Integer pitchValue ) = 0;
-        virtual void setPitch( const IPitchUPtr& pitch ) = 0;
+        virtual void setPitch( const IPitchUP& pitch ) = 0;
         
         virtual void next() = 0;
         virtual void previous() = 0;

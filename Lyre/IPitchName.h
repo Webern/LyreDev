@@ -1,3 +1,4 @@
+//PRIVATE
 #pragma once
 #include "TypeDefs.h"
 #include <memory>
@@ -5,8 +6,8 @@
 namespace lyre
 {
     class IPitchName;
-    using IPitchNamePtr = std::shared_ptr<IPitchName>;
-    using IPitchNameUPtr = std::unique_ptr<IPitchName>;
+    using IPitchNameSP = std::shared_ptr<IPitchName>;
+    using IPitchNameUP = std::unique_ptr<IPitchName>;
     
     class IPitchName
     {
@@ -14,7 +15,7 @@ namespace lyre
         virtual ~IPitchName() = default;
         
         /* return a deep copy of "this" */
-        virtual IPitchNameUPtr clone() const = 0;
+        virtual IPitchNameUP clone() const = 0;
         
         /* deep copy to "output", note
          the use of static_cast, be careful */

@@ -8,9 +8,9 @@ using namespace std;
 class MockEnum : public IEnum
 {
 public:
-    IEnumUPtr clone() const
+    IEnumUP clone() const
     {
-        IEnumUPtr value{ new MockEnum{ *this } };
+        IEnumUP value{ new MockEnum{ *this } };
         return value;
     }
     Integer getValue() const { return myValue; }
@@ -33,19 +33,19 @@ TEST( Compiles, IEnum )
 }
 TEST( SharedPtr, IEnum )
 {
-    IEnumPtr p = std::make_shared<MockEnum>();
+    IEnumSP p = std::make_shared<MockEnum>();
     CHECK( true )
 }
 TEST( UniquePtr, IEnum )
 {
-    IEnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     CHECK( true )
 }
 TEST( clone, IEnum )
 {
-    IEnumPtr p1 = std::make_shared<MockEnum>();
+    IEnumSP p1 = std::make_shared<MockEnum>();
     p1->setValue( 100 );
-    IEnumPtr p2 = p1->clone();
+    IEnumSP p2 = p1->clone();
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 100, p1->getValue() );
     CHECK_EQUAL( 100, p2->getValue() );
@@ -72,22 +72,22 @@ TEST( covariantClone, IEnum )
 }
 TEST( getMin, IEnum )
 {
-    IEnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     CHECK_EQUAL( 0, p->getMin() )
 }
 TEST( getMax, IEnum )
 {
-    IEnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     CHECK_EQUAL( 1, p->getMax() )
 }
 TEST( parse, IEnum )
 {
-    IEnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     CHECK( p->parse( "" ) )
 }
 TEST( toStream, IEnum )
 {
-    IEnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     p->setValue( 13 );
     stringstream ss;
     p->toStream( ss );
@@ -97,7 +97,7 @@ TEST( toStream, IEnum )
 }
 TEST( toString, IEnum )
 {
-    IEnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     p->setValue( 13 );
     String expected = "13";
     String actual{ p->toString() };
@@ -105,7 +105,7 @@ TEST( toString, IEnum )
 }
 TEST( streamingOperator, IEnum )
 {
-    IEnumUPtr p = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     p->setValue( 13 );
     stringstream ss;
     ss << ( *p );
@@ -115,8 +115,8 @@ TEST( streamingOperator, IEnum )
 }
 TEST( comparisons_a_isLessThan_b, IEnum )
 {
-    IEnumUPtr a = unique_ptr<MockEnum>( new MockEnum() );
-    IEnumUPtr b = unique_ptr<IEnum>( new MockEnum() );
+    IEnumUP a = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP b = unique_ptr<IEnum>( new MockEnum() );
     a->setValue( 1 );
     b->setValue( 2 );
     CHECK(   a->isLessThan   ( *b ) )
@@ -128,8 +128,8 @@ TEST( comparisons_a_isLessThan_b, IEnum )
 }
 TEST( comparisons_a_isGreaterThan_b, IEnum )
 {
-    IEnumUPtr a = unique_ptr<IEnum>( new MockEnum() );
-    IEnumUPtr b = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP a = unique_ptr<IEnum>( new MockEnum() );
+    IEnumUP b = unique_ptr<MockEnum>( new MockEnum() );
     a->setValue( 2 );
     b->setValue( 1 );
     CHECK( ! a->isLessThan   ( *b ) )
@@ -141,8 +141,8 @@ TEST( comparisons_a_isGreaterThan_b, IEnum )
 }
 TEST( comparisons_a_isEqualTo_b, IEnum )
 {
-    IEnumUPtr a = unique_ptr<IEnum>( new MockEnum() );
-    IEnumUPtr b = unique_ptr<MockEnum>( new MockEnum() );
+    IEnumUP a = unique_ptr<IEnum>( new MockEnum() );
+    IEnumUP b = unique_ptr<MockEnum>( new MockEnum() );
     a->setValue( 21 );
     b->setValue( 21 );
     CHECK( ! a->isLessThan   ( *b ) )
@@ -154,14 +154,14 @@ TEST( comparisons_a_isEqualTo_b, IEnum )
 }
 TEST( increment, IEnum )
 {
-    IEnumUPtr a = unique_ptr<IEnum>( new MockEnum() );
+    IEnumUP a = unique_ptr<IEnum>( new MockEnum() );
     a->setValue( 100 );
     a->increment();
     CHECK_EQUAL( 101, a->getValue() )
 }
 TEST( decrement, IEnum )
 {
-    IEnumUPtr a = unique_ptr<IEnum>( new MockEnum() );
+    IEnumUP a = unique_ptr<IEnum>( new MockEnum() );
     a->setValue( 100 );
     a->decrement();
     CHECK_EQUAL( 99, a->getValue() )

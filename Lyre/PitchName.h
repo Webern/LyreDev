@@ -1,11 +1,12 @@
+//PRIVATE
 #pragma once
 #include "IPitchName.h"
 
 namespace lyre
 {
     class PitchName;
-    using PitchNamePtr = std::shared_ptr<PitchName>;
-    using PitchNameUPtr = std::unique_ptr<PitchName>;
+    using PitchNameSP = std::shared_ptr<PitchName>;
+    using PitchNameUP = std::unique_ptr<PitchName>;
     
     class PitchName : public IPitchName
     {
@@ -20,7 +21,7 @@ namespace lyre
         PitchName& operator=( PitchName&& other ) noexcept;
         
         /* return a deep copy of "this" */
-        virtual IPitchNameUPtr clone() const;
+        virtual IPitchNameUP clone() const;
         
         /* deep copy to "output", note
          the use of static_cast, be careful
@@ -87,8 +88,8 @@ namespace lyre
         virtual void decrementAlter();
     private:
         class PitchNameImpl;
-        using PitchNameImplUPtr = std::unique_ptr<PitchNameImpl>;
-        PitchNameImplUPtr myImpl;
+        using PitchNameImplUP = std::unique_ptr<PitchNameImpl>;
+        PitchNameImplUP myImpl;
         static void swap( PitchName& left, PitchName& right ) noexcept;
     };
 }

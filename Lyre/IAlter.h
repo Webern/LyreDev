@@ -1,18 +1,19 @@
+//PRIVATE
 #pragma once
 #include "TypeDefs.h"
 
 namespace lyre
 {
     class IAlter;
-    using IAlterPtr = std::shared_ptr<IAlter>;
-    using IAlterUPtr = std::unique_ptr<IAlter>;
+    using IAlterSP = std::shared_ptr<IAlter>;
+    using IAlterUP = std::unique_ptr<IAlter>;
     class IAlter
     {
     public:
         virtual ~IAlter() = default;
         
         /* return a deep copy of "this" */
-        virtual IAlterUPtr clone() const = 0;
+        virtual IAlterUP clone() const = 0;
         
         /* deep copy to "output", note
          the use of static_cast, be careful */

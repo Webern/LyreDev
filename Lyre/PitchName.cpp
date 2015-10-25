@@ -62,9 +62,9 @@ namespace lyre
     }
     
     
-    IPitchNameUPtr PitchName::clone() const
+    IPitchNameUP PitchName::clone() const
     {
-        IPitchNameUPtr value{ new PitchName{ *this } };
+        IPitchNameUP value{ new PitchName{ *this } };
         return value;
     }
     

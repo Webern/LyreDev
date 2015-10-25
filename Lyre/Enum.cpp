@@ -15,9 +15,9 @@ namespace lyre
         setValue( value );
     }
     
-    IEnumUPtr Enum::clone() const
+    IEnumUP Enum::clone() const
     {
-        IEnumUPtr value{ new Enum{ *this } };
+        IEnumUP value{ new Enum{ *this } };
         return value;
     }
     
