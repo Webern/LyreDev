@@ -1,4 +1,4 @@
-//PRIVATE
+//PUBLIC
 #pragma once
 #include "TypeDefs.h"
 #include <memory>
