@@ -5,3 +5,8 @@ DerivedData/
 .TemporaryItems
 .Trashes
 .fseventsd
+.xcuserdata
+xcshareddata
+xcuserdata
+.xccheckout
+.xcuserstate
