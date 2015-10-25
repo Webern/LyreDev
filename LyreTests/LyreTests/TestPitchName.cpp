@@ -1,8 +1,10 @@
+//PRIVATE
 #include "cpulTestHarness.h"
 #include "PitchName.h"
 #include <sstream>
 
 using namespace lyre;
+using namespace lyre::impl;
 using namespace std;
 
 

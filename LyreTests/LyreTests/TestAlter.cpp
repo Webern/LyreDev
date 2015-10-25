@@ -1,3 +1,4 @@
+//PRIVATE
 #include "cpulTestHarness.h"
 #include "Alter.h"
 #include <sstream>
@@ -5,6 +6,7 @@
 #include <iostream>
 
 using namespace lyre;
+using namespace lyre::impl;
 using namespace std;
 
 TEST( Compiles, Alter )

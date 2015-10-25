@@ -1,3 +1,4 @@
+//PUBLIC
 #include "cpulTestHarness.h"
 #include "Pitch.h"
 #include "IPitchFactory.h"
@@ -5,6 +6,7 @@
 #include <iostream>
 
 using namespace lyre;
+using namespace lyre::impl;
 using namespace std;
 
 class TestMockPitchFactory : public IPitchFactory

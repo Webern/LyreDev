@@ -1,8 +1,10 @@
+//PRIVATE
 #include "cpulTestHarness.h"
 #include "Mod.h"
 #include "TypeDefs.h"
 
 using namespace lyre;
+using namespace lyre::impl;
 
 TEST( Constructor01, Mod)
 {

@@ -1,8 +1,10 @@
+//PRIVATE
 #include "cpulTestHarness.h"
 #include "Enum.h"
 #include <sstream>
 
 using namespace lyre;
+using namespace lyre::impl;
 using namespace std;
 
 const static std::shared_ptr<Strings> mockenumstrings = std::make_shared<Strings>( Strings{"Bones","Bishop","Mabel"} );

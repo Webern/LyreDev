@@ -270,12 +270,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestMod.cpp"
-            timestampString = "461095921.630431"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "TEST( comparisons01_LgreaterThanR, Mod)"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "TEST( comparisons01_LisGreaterThanR, Mod)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -286,11 +286,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestRational.cpp"
-            timestampString = "461868406.489476"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
+            startingLineNumber = "408"
+            endingLineNumber = "408"
             landmarkName = "TEST( lcd03, Rational )"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,11 +302,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestRational.cpp"
-            timestampString = "461868406.489476"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "418"
-            endingLineNumber = "418"
+            startingLineNumber = "419"
+            endingLineNumber = "419"
             landmarkName = "TEST( lcd04, Rational )"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,11 +318,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestRational.cpp"
-            timestampString = "461868741.836874"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
             landmarkName = "TEST( lcd01, Rational )"
             landmarkType = "7">
             <Locations>
@@ -364,11 +364,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestRational.cpp"
-            timestampString = "461868747.626128"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
             landmarkName = "TEST( lcd01, Rational )"
             landmarkType = "7">
          </BreakpointContent>
@@ -380,11 +380,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestRational.cpp"
-            timestampString = "462044225.312339"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2206"
-            endingLineNumber = "2206"
+            startingLineNumber = "2207"
+            endingLineNumber = "2207"
             landmarkName = "TEST( getMixedFractionalPart04, Rational )"
             landmarkType = "7">
             <Locations>
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestIEnum.cpp"
-            timestampString = "464889645.750363"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "TEST( parse, IEnum )"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestEnum.cpp"
-            timestampString = "464548836.371446"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8"
-            endingLineNumber = "8">
+            startingLineNumber = "10"
+            endingLineNumber = "10">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -456,11 +456,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestEnum.cpp"
-            timestampString = "464550018.088941"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "TEST( clone, Enum )"
             landmarkType = "7">
          </BreakpointContent>
@@ -472,11 +472,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lyre/Alter.cpp"
-            timestampString = "464887998.508579"
+            timestampString = "467442957.869494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "Alter::parse( const String&amp; str )"
             landmarkType = "5">
          </BreakpointContent>
@@ -488,11 +488,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestAlter.cpp"
-            timestampString = "464827736.966545"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "TEST( parseFail12, Alter )"
             landmarkType = "7">
             <Locations>
@@ -534,11 +534,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestAlter.cpp"
-            timestampString = "464827867.354622"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
             landmarkName = "TEST( toStream01, Alter )"
             landmarkType = "7">
          </BreakpointContent>
@@ -550,11 +550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lyre/Alter.cpp"
-            timestampString = "464887998.508579"
+            timestampString = "467442957.869494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "Alter::toStream( std::ostream&amp; os )"
             landmarkType = "5">
          </BreakpointContent>
@@ -566,11 +566,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lyre/IAlter.h"
-            timestampString = "464891714.566244"
+            timestampString = "467439877.837535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "copyTo( std::unique_ptr&lt;T&gt;&amp; output )"
             landmarkType = "5">
             <Locations>
@@ -612,7 +612,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestIAlter.cpp"
-            timestampString = "465428779.783337"
+            timestampString = "467443255.207669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "TEST( covariantClone, IAlter )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LyreTests/LyreTests/TestIAlter.cpp"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -627,28 +643,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LyreTests/LyreTests/TestIAlter.cpp"
-            timestampString = "465428779.783337"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "TEST( covariantClone, IAlter )"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Lyre/Enum.cpp"
-            timestampString = "464889998.734441"
+            timestampString = "467442957.869494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "Enum::clone()"
             landmarkType = "5">
          </BreakpointContent>
@@ -676,11 +676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestPitchName.cpp"
-            timestampString = "465088967.242492"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "776"
-            endingLineNumber = "776"
+            startingLineNumber = "778"
+            endingLineNumber = "778"
             landmarkName = "TEST( compare_a_isLessThan_b_02, PitchName )"
             landmarkType = "7">
          </BreakpointContent>
@@ -692,11 +692,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestPitchName.cpp"
-            timestampString = "465146195.838154"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "880"
-            endingLineNumber = "880"
+            startingLineNumber = "882"
+            endingLineNumber = "882"
             landmarkName = "TEST( setStepValue0, PitchName )"
             landmarkType = "7">
          </BreakpointContent>
@@ -708,11 +708,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestPitch.cpp"
-            timestampString = "465236727.395019"
+            timestampString = "467442957.869494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "TEST( defaultConstructor, Pitch )"
             landmarkType = "7">
          </BreakpointContent>
@@ -724,11 +724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lyre/Pitch.cpp"
-            timestampString = "465409336.21875"
+            timestampString = "467442957.869494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "Pitch::parse( const String&amp; str )"
             landmarkType = "5">
          </BreakpointContent>
@@ -740,11 +740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lyre/Pitch.cpp"
-            timestampString = "465375548.109115"
+            timestampString = "467442957.869494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "Pitch::getValue()"
             landmarkType = "5">
          </BreakpointContent>
@@ -756,11 +756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestPitch.cpp"
-            timestampString = "465408663.538183"
+            timestampString = "467442957.869494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "TEST( getValue15, Pitch )"
             landmarkType = "7">
             <Locations>
@@ -816,11 +816,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestPitch.cpp"
-            timestampString = "465408815.564529"
+            timestampString = "467442957.869494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "TEST( getValue01, Pitch )"
             landmarkType = "7">
             <Locations>
@@ -876,11 +876,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestPitchName.cpp"
-            timestampString = "465429485.4578"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1185"
-            endingLineNumber = "1185"
+            startingLineNumber = "1187"
+            endingLineNumber = "1187"
             landmarkName = "TEST( isIdenticalTo_true02, PitchName )"
             landmarkType = "7">
             <Locations>
@@ -936,11 +936,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestAlter.cpp"
-            timestampString = "465429639.632304"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "923"
-            endingLineNumber = "923"
+            startingLineNumber = "925"
+            endingLineNumber = "925"
             landmarkName = "TEST( isIdenticalTo_false02, Alter )"
             landmarkType = "7">
             <Locations>
@@ -996,11 +996,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LyreTests/LyreTests/TestIPitchFactory.cpp"
-            timestampString = "465451309.078276"
+            timestampString = "467443255.207669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "setPitch( const Integer pitchValue )"
             landmarkType = "5">
          </BreakpointContent>

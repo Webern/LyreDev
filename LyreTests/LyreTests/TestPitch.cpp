@@ -1,9 +1,10 @@
-
+//PRIVATE
 #include "cpulTestHarness.h"
 #include "Pitch.h"
 #include <sstream>
 
 using namespace lyre;
+using namespace lyre::impl;
 using namespace std;
 
 TEST( defaultConstructor, Pitch )

@@ -1,3 +1,4 @@
+//PUBLIC
 #include "cpulTestHarness.h"
 #include "DurDot.h"
 
