@@ -1,169 +1,169 @@
 //PUBLIC
 #include "cpulTestHarness.h"
-#include "Dur.h"
+#include "DurOld.h"
 
 using namespace lyre;
 
-TEST( Compiles, Dur )
+TEST( Compiles, DurOld )
 {
-    Dur d = Dur::Quarter;
-    CHECK( d == Dur::Quarter )
+    DurOld d = DurOld::Quarter;
+    CHECK( d == DurOld::Quarter )
 }
-TEST( convertToRational_Longa, Dur )
+TEST( convertToRational_Longa, DurOld )
 {
-    Dur d = Dur::Longa;
+    DurOld d = DurOld::Longa;
     Rational r = convert( d );
     CHECK_EQUAL( 16, r.getNumerator() );
     CHECK_EQUAL( 1, r.getDenominator() );
 }
-TEST( convertToRational_Breve, Dur )
+TEST( convertToRational_Breve, DurOld )
 {
-    Dur d = Dur::Breve;
+    DurOld d = DurOld::Breve;
     Rational r = convert( d );
     CHECK_EQUAL( 8, r.getNumerator() );
     CHECK_EQUAL( 1, r.getDenominator() );
 }
-TEST( convertToRational_Whole, Dur )
+TEST( convertToRational_Whole, DurOld )
 {
-    Dur d = Dur::Whole;
+    DurOld d = DurOld::Whole;
     Rational r = convert( d );
     CHECK_EQUAL( 4, r.getNumerator() );
     CHECK_EQUAL( 1, r.getDenominator() );
 }
-TEST( convertToRational_Half, Dur )
+TEST( convertToRational_Half, DurOld )
 {
-    Dur d = Dur::Half;
+    DurOld d = DurOld::Half;
     Rational r = convert( d );
     CHECK_EQUAL( 2, r.getNumerator() );
     CHECK_EQUAL( 1, r.getDenominator() );
 }
-TEST( convertToRational_Quarter, Dur )
+TEST( convertToRational_Quarter, DurOld )
 {
-    Dur d = Dur::Quarter;
+    DurOld d = DurOld::Quarter;
     Rational r = convert( d );
     CHECK_EQUAL( 1, r.getNumerator() );
     CHECK_EQUAL( 1, r.getDenominator() );
 }
-TEST( convertToRational_Eighth, Dur )
+TEST( convertToRational_Eighth, DurOld )
 {
-    Dur d = Dur::Eighth;
+    DurOld d = DurOld::Eighth;
     Rational r = convert( d );
     CHECK_EQUAL( 1, r.getNumerator() );
     CHECK_EQUAL( 2, r.getDenominator() );
 }
-TEST( convertToRational_Sixteenth, Dur )
+TEST( convertToRational_Sixteenth, DurOld )
 {
-    Dur d = Dur::Sixteenth;
+    DurOld d = DurOld::Sixteenth;
     Rational r = convert( d );
     CHECK_EQUAL( 1, r.getNumerator() );
     CHECK_EQUAL( 4, r.getDenominator() );
 }
-TEST( convertToRational_ThirtySecond, Dur )
+TEST( convertToRational_ThirtySecond, DurOld )
 {
-    Dur d = Dur::ThirtySecond;
+    DurOld d = DurOld::ThirtySecond;
     Rational r = convert( d );
     CHECK_EQUAL( 1, r.getNumerator() );
     CHECK_EQUAL( 8, r.getDenominator() );
 }
-TEST( convertToRational_SixtyFourth, Dur )
+TEST( convertToRational_SixtyFourth, DurOld )
 {
-    Dur d = Dur::SixtyFourth;
+    DurOld d = DurOld::SixtyFourth;
     Rational r = convert( d );
     CHECK_EQUAL( 1, r.getNumerator() );
     CHECK_EQUAL( 16, r.getDenominator() );
 }
-TEST( convertToRational_OneTwentyEighth, Dur )
+TEST( convertToRational_OneTwentyEighth, DurOld )
 {
-    Dur d = Dur::OneTwentyEighth;
+    DurOld d = DurOld::OneTwentyEighth;
     Rational r = convert( d );
     CHECK_EQUAL( 1, r.getNumerator() );
     CHECK_EQUAL( 32, r.getDenominator() );
 }
-TEST( convertToRational_TwoFiftySixth, Dur )
+TEST( convertToRational_TwoFiftySixth, DurOld )
 {
-    Dur d = Dur::TwoFiftySixth;
+    DurOld d = DurOld::TwoFiftySixth;
     Rational r = convert( d );
     CHECK_EQUAL( 1, r.getNumerator() );
     CHECK_EQUAL( 64, r.getDenominator() );
 }
-TEST( convertToDur_Longa, Dur )
+TEST( convertToDurOld_Longa, DurOld )
 {
     Rational r{ 16, 1 };
-    Dur expected = Dur::Longa;
+    DurOld expected = DurOld::Longa;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_Breve, Dur )
+TEST( convertToDurOld_Breve, DurOld )
 {
     Rational r{ 8, 1 };
-    Dur expected = Dur::Breve;
+    DurOld expected = DurOld::Breve;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_Whole, Dur )
+TEST( convertToDurOld_Whole, DurOld )
 {
     Rational r{ 4, 1 };
-    Dur expected = Dur::Whole;
+    DurOld expected = DurOld::Whole;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_Half, Dur )
+TEST( convertToDurOld_Half, DurOld )
 {
     Rational r{ 2, 1 };
-    Dur expected = Dur::Half;
+    DurOld expected = DurOld::Half;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_Quarter, Dur )
+TEST( convertToDurOld_Quarter, DurOld )
 {
     Rational r{ 1, 1 };
-    Dur expected = Dur::Quarter;
+    DurOld expected = DurOld::Quarter;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_Eighth, Dur )
+TEST( convertToDurOld_Eighth, DurOld )
 {
     Rational r{ 1, 2 };
-    Dur expected = Dur::Eighth;
+    DurOld expected = DurOld::Eighth;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_Sixteenth, Dur )
+TEST( convertToDurOld_Sixteenth, DurOld )
 {
     Rational r{ 1, 4 };
-    Dur expected = Dur::Sixteenth;
+    DurOld expected = DurOld::Sixteenth;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_ThirtySecond, Dur )
+TEST( convertToDurOld_ThirtySecond, DurOld )
 {
     Rational r{ 1, 8 };
-    Dur expected = Dur::ThirtySecond;
+    DurOld expected = DurOld::ThirtySecond;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_SixtyFourth, Dur )
+TEST( convertToDurOld_SixtyFourth, DurOld )
 {
     Rational r{ 1, 16 };
-    Dur expected = Dur::SixtyFourth;
+    DurOld expected = DurOld::SixtyFourth;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_OneTwentyEighth, Dur )
+TEST( convertToDurOld_OneTwentyEighth, DurOld )
 {
     Rational r{ 1, 32 };
-    Dur expected = Dur::OneTwentyEighth;
+    DurOld expected = DurOld::OneTwentyEighth;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_TwoFiftySixth, Dur )
+TEST( convertToDurOld_TwoFiftySixth, DurOld )
 {
     Rational r{ 1, 64 };
-    Dur expected = Dur::TwoFiftySixth;
+    DurOld expected = DurOld::TwoFiftySixth;
     auto actual = convert( r );
     CHECK( expected == actual )
 }
-TEST( convertToDur_Throw01, Dur )
+TEST( convertToDurOld_Throw01, DurOld )
 {
     String expected = "rational could not be converted to a dur type";
     String actual = "no exception was thrown";
@@ -178,84 +178,84 @@ TEST( convertToDur_Throw01, Dur )
     }
     CHECK_EQUAL( expected, actual )
 }
-TEST( parseFromString00, Dur )
+TEST( parseFromString00, DurOld )
 {
     String s = "Longa";
-    auto expected = Dur::Longa;
+    auto expected = DurOld::Longa;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString01, Dur )
+TEST( parseFromString01, DurOld )
 {
     String s = "Breve";
-    auto expected = Dur::Breve;
+    auto expected = DurOld::Breve;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString02, Dur )
+TEST( parseFromString02, DurOld )
 {
     String s = "Whole";
-    auto expected = Dur::Whole;
+    auto expected = DurOld::Whole;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString03, Dur )
+TEST( parseFromString03, DurOld )
 {
     String s = "Half";
-    auto expected = Dur::Half;
+    auto expected = DurOld::Half;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString04, Dur )
+TEST( parseFromString04, DurOld )
 {
     String s = "Quarter";
-    auto expected = Dur::Quarter;
+    auto expected = DurOld::Quarter;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString05, Dur )
+TEST( parseFromString05, DurOld )
 {
     String s = "Eighth";
-    auto expected = Dur::Eighth;
+    auto expected = DurOld::Eighth;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString06, Dur )
+TEST( parseFromString06, DurOld )
 {
     String s = "Sixteenth";
-    auto expected = Dur::Sixteenth;
+    auto expected = DurOld::Sixteenth;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString07, Dur )
+TEST( parseFromString07, DurOld )
 {
     String s = "ThirtySecond";
-    auto expected = Dur::ThirtySecond;
+    auto expected = DurOld::ThirtySecond;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString08, Dur )
+TEST( parseFromString08, DurOld )
 {
     String s = "SixtyFourth";
-    auto expected = Dur::SixtyFourth;
+    auto expected = DurOld::SixtyFourth;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString09, Dur )
+TEST( parseFromString09, DurOld )
 {
     String s = "OneTwentyEighth";
-    auto expected = Dur::OneTwentyEighth;
+    auto expected = DurOld::OneTwentyEighth;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString10, Dur )
+TEST( parseFromString10, DurOld )
 {
     String s = "TwoFiftySixth";
-    auto expected = Dur::TwoFiftySixth;
+    auto expected = DurOld::TwoFiftySixth;
     auto actual = parse( s );
     CHECK( expected == actual )
 }
-TEST( parseFromString_Throw01, Dur )
+TEST( parseFromString_Throw01, DurOld )
 {
     /* note parse function is case sensitive */
     String expected = "string could not be parsed to a dur type";
@@ -271,96 +271,96 @@ TEST( parseFromString_Throw01, Dur )
     }
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString00, Dur )
+TEST( toString00, DurOld )
 {
-    auto d = Dur::Longa;
+    auto d = DurOld::Longa;
     String expected = "Longa";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString01, Dur )
+TEST( toString01, DurOld )
 {
-    auto d = Dur::Breve;
+    auto d = DurOld::Breve;
     String expected = "Breve";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString02, Dur )
+TEST( toString02, DurOld )
 {
-    auto d = Dur::Whole;
+    auto d = DurOld::Whole;
     String expected = "Whole";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString03, Dur )
+TEST( toString03, DurOld )
 {
-    auto d = Dur::Half;
+    auto d = DurOld::Half;
     String expected = "Half";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString04, Dur )
+TEST( toString04, DurOld )
 {
-    auto d = Dur::Quarter;
+    auto d = DurOld::Quarter;
     String expected = "Quarter";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString05, Dur )
+TEST( toString05, DurOld )
 {
-    auto d = Dur::Eighth;
+    auto d = DurOld::Eighth;
     String expected = "Eighth";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString06, Dur )
+TEST( toString06, DurOld )
 {
-    auto d = Dur::Sixteenth;
+    auto d = DurOld::Sixteenth;
     String expected = "Sixteenth";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString07, Dur )
+TEST( toString07, DurOld )
 {
-    auto d = Dur::ThirtySecond;
+    auto d = DurOld::ThirtySecond;
     String expected = "ThirtySecond";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString08, Dur )
+TEST( toString08, DurOld )
 {
-    auto d = Dur::SixtyFourth;
+    auto d = DurOld::SixtyFourth;
     String expected = "SixtyFourth";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString09, Dur )
+TEST( toString09, DurOld )
 {
-    auto d = Dur::OneTwentyEighth;
+    auto d = DurOld::OneTwentyEighth;
     String expected = "OneTwentyEighth";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString10, Dur )
+TEST( toString10, DurOld )
 {
-    auto d = Dur::TwoFiftySixth;
+    auto d = DurOld::TwoFiftySixth;
     String expected = "TwoFiftySixth";
     String actual = toString( d );
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( streamingOperator01,  Dur )
+TEST( streamingOperator01,  DurOld )
 {
-    auto d = Dur::Breve;
+    auto d = DurOld::Breve;
     std::stringstream ss;
     ss << d;
     String expected = "Breve";
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
-TEST( streamingOperator02,  Dur )
+TEST( streamingOperator02,  DurOld )
 {
-    auto d = Dur::OneTwentyEighth;
+    auto d = DurOld::OneTwentyEighth;
     std::stringstream ss;
     ss << d;
     String expected = "OneTwentyEighth";

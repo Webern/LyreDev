@@ -16,7 +16,7 @@ class TestMockPitchFactory : public IPitchFactory
     {
         return std::unique_ptr<TestMockPitchFactory>{ new TestMockPitchFactory( *this ) };
     }
-    virtual IPitchUP makePitch() const
+    virtual IPitchUP createPitch() const
     {
         return PitchUP{ new Pitch{ myPitch } };
     }
@@ -102,7 +102,7 @@ class TestMockPitchFactory : public IPitchFactory
     
     virtual void next() { add( 1 ); }
     virtual void previous() { add( -1 ); }
-    virtual void add( const Integer value ) { setPitch( makePitch()->getValue() + value ); }
+    virtual void add( const Integer value ) { setPitch( createPitch()->getValue() + value ); }
 private:
     Pitch myPitch;
 };
@@ -113,7 +113,7 @@ TEST( compiles, IPitchFactory )
     f.setPitch( 0 );
     for ( int i = 0; i < 100; ++i )
     {
-        auto p = f.makePitch();
+        auto p = f.createPitch();
         CHECK_EQUAL( i, p->getValue() )
         f.next();
     }

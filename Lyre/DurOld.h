@@ -5,7 +5,7 @@
 
 namespace lyre
 {
-    enum class Dur
+    enum class DurOld
     {
         // Name // NumQuarterNotes //
         Longa = 0, // 16
@@ -20,9 +20,9 @@ namespace lyre
         OneTwentyEighth = 9,  // 1/32
         TwoFiftySixth = 10 // 1/64
     };
-    Rational convert( const Dur d );
-    Dur convert( const Rational& r ); /* throws std::runtime_error */
-    Dur parse( const String& s ); /* throws std::runtime_error */
-    String toString( const Dur d );
-    std::ostream& operator<<( std::ostream& os, const Dur dur );
+    Rational convert( const DurOld d );
+    DurOld convert( const Rational& r ); /* throws std::runtime_error */
+    DurOld parse( const String& s ); /* throws std::runtime_error */
+    String toString( const DurOld d );
+    std::ostream& operator<<( std::ostream& os, const DurOld dur );
 }

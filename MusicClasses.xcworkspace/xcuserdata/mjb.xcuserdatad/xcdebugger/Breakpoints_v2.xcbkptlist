@@ -1011,13 +1011,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lyre/DurDot.cpp"
+            filePath = "Lyre/DurOldDot.cpp"
             timestampString = "465495128.627348"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
             endingLineNumber = "108"
-            landmarkName = "DurDot::parse( const String&amp; str )"
+            landmarkName = "DurOldDot::parse( const String&amp; str )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

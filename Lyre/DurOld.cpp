@@ -1,42 +1,42 @@
-#include "Dur.h"
+#include "DurOld.h"
 
 namespace lyre
 {
-    Rational convert( const Dur d )
+    Rational convert( const DurOld d )
     {
         switch ( d )
         {
-            case Dur::Longa:
+            case DurOld::Longa:
                 return Rational{ 16, 1 };
                 break;
-            case Dur::Breve:
+            case DurOld::Breve:
                 return Rational{ 8, 1 };
                 break;
-            case Dur::Whole:
+            case DurOld::Whole:
                 return Rational{ 4, 1 };
                 break;
-            case Dur::Half:
+            case DurOld::Half:
                 return Rational{ 2, 1 };
                 break;
-            case Dur::Quarter:
+            case DurOld::Quarter:
                 return Rational{ 1, 1 };
                 break;
-            case Dur::Eighth:
+            case DurOld::Eighth:
                 return Rational{ 1, 2 };
                 break;
-            case Dur::Sixteenth:
+            case DurOld::Sixteenth:
                 return Rational{ 1, 4 };
                 break;
-            case Dur::ThirtySecond:
+            case DurOld::ThirtySecond:
                 return Rational{ 1, 8 };
                 break;
-            case Dur::SixtyFourth:
+            case DurOld::SixtyFourth:
                 return Rational{ 1, 16 };
                 break;
-            case Dur::OneTwentyEighth:
+            case DurOld::OneTwentyEighth:
                 return Rational{ 1, 32 };
                 break;
-            case Dur::TwoFiftySixth:
+            case DurOld::TwoFiftySixth:
                 return Rational{ 1, 64 };
                 break;
             default:
@@ -44,59 +44,59 @@ namespace lyre
         }
         return Rational{ 1, 1 };
     }
-    Dur convert( const Rational& r )
+    DurOld convert( const Rational& r )
     {
         if ( r == Rational{ 16, 1 } )
         {
-            return Dur::Longa;
+            return DurOld::Longa;
         }
         else if ( r == Rational{ 8, 1 } )
         {
-            return Dur::Breve;
+            return DurOld::Breve;
         }
         else if ( r == Rational{ 4, 1 } )
         {
-            return Dur::Whole;
+            return DurOld::Whole;
         }
         else if ( r == Rational{ 2, 1 } )
         {
-            return Dur::Half;
+            return DurOld::Half;
         }
         else if ( r == Rational{ 1, 1 } )
         {
-            return Dur::Quarter;
+            return DurOld::Quarter;
         }
         else if ( r == Rational{ 1, 2 } )
         {
-            return Dur::Eighth;
+            return DurOld::Eighth;
         }
         else if ( r == Rational{ 1, 4 } )
         {
-            return Dur::Sixteenth;
+            return DurOld::Sixteenth;
         }
         else if ( r == Rational{ 1, 8 } )
         {
-            return Dur::ThirtySecond;
+            return DurOld::ThirtySecond;
         }
         else if ( r == Rational{ 1, 16 } )
         {
-            return Dur::SixtyFourth;
+            return DurOld::SixtyFourth;
         }
         else if ( r == Rational{ 1, 32 } )
         {
-            return Dur::OneTwentyEighth;
+            return DurOld::OneTwentyEighth;
         }
         else if ( r == Rational{ 1, 64 } )
         {
-            return Dur::TwoFiftySixth;
+            return DurOld::TwoFiftySixth;
         }
         else
         {
             throw std::runtime_error( "rational could not be converted to a dur type" );
         }
-        return Dur::Quarter;
+        return DurOld::Quarter;
     }
-    Dur parse( const String& s )
+    DurOld parse( const String& s )
     {
         /*
          Longa = 0, // 16
@@ -113,86 +113,86 @@ namespace lyre
          */
         if ( s == "Longa" )
         {
-            return Dur::Longa;
+            return DurOld::Longa;
         }
         else if ( s == "Breve" )
         {
-            return Dur::Breve;
+            return DurOld::Breve;
         }
         else if ( s == "Whole" )
         {
-            return Dur::Whole;
+            return DurOld::Whole;
         }
         else if ( s == "Half" )
         {
-            return Dur::Half;
+            return DurOld::Half;
         }
         else if ( s == "Quarter" )
         {
-            return Dur::Quarter;
+            return DurOld::Quarter;
         }
         else if ( s == "Eighth" )
         {
-            return Dur::Eighth;
+            return DurOld::Eighth;
         }
         else if ( s == "Sixteenth" )
         {
-            return Dur::Sixteenth;
+            return DurOld::Sixteenth;
         }
         else if ( s == "ThirtySecond" )
         {
-            return Dur::ThirtySecond;
+            return DurOld::ThirtySecond;
         }
         else if ( s == "SixtyFourth" )
         {
-            return Dur::SixtyFourth;
+            return DurOld::SixtyFourth;
         }
         else if ( s == "OneTwentyEighth" )
         {
-            return Dur::OneTwentyEighth;
+            return DurOld::OneTwentyEighth;
         }
         else if ( s == "TwoFiftySixth" )
         {
-            return Dur::TwoFiftySixth;
+            return DurOld::TwoFiftySixth;
         }
         throw std::runtime_error( "string could not be parsed to a dur type" );
-        return Dur::Quarter;
+        return DurOld::Quarter;
     }
-    String toString( const Dur d )
+    String toString( const DurOld d )
     {
         switch ( d )
         {
-            case Dur::Longa:
+            case DurOld::Longa:
                 return "Longa";
                 break;
-            case Dur::Breve:
+            case DurOld::Breve:
                 return "Breve";
                 break;
-            case Dur::Whole:
+            case DurOld::Whole:
                 return "Whole";
                 break;
-            case Dur::Half:
+            case DurOld::Half:
                 return "Half";
                 break;
-            case Dur::Quarter:
+            case DurOld::Quarter:
                 return "Quarter";
                 break;
-            case Dur::Eighth:
+            case DurOld::Eighth:
                 return "Eighth";
                 break;
-            case Dur::Sixteenth:
+            case DurOld::Sixteenth:
                 return "Sixteenth";
                 break;
-            case Dur::ThirtySecond:
+            case DurOld::ThirtySecond:
                 return "ThirtySecond";
                 break;
-            case Dur::SixtyFourth:
+            case DurOld::SixtyFourth:
                 return "SixtyFourth";
                 break;
-            case Dur::OneTwentyEighth:
+            case DurOld::OneTwentyEighth:
                 return "OneTwentyEighth";
                 break;
-            case Dur::TwoFiftySixth:
+            case DurOld::TwoFiftySixth:
                 return "TwoFiftySixth";
                 break;
             default:
@@ -200,7 +200,7 @@ namespace lyre
         }
         return "error";
     }
-    std::ostream& operator<<( std::ostream& os, const Dur dur )
+    std::ostream& operator<<( std::ostream& os, const DurOld dur )
     {
         os << toString( dur );
         return os;

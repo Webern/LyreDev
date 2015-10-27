@@ -1,25 +1,25 @@
-#include "DurDot.h"
+#include "DurOldDot.h"
 #include <sstream>
 
 namespace lyre
 {
-    DurDot::DurDot()
-    :myDur( Dur::Quarter )
+    DurOldDot::DurOldDot()
+    :myDurOld( DurOld::Quarter )
     ,myDots( 0 )
     {}
     
-    DurDot::DurDot( const Dur dur )
-    :myDur( dur )
+    DurOldDot::DurOldDot( const DurOld dur )
+    :myDurOld( dur )
     ,myDots( 0 )
     {}
     
-    DurDot::DurDot( const Dur dur, const Integer dots )
-    :myDur( dur )
+    DurOldDot::DurOldDot( const DurOld dur, const Integer dots )
+    :myDurOld( dur )
     ,myDots( 0 )
     {
         setDots( dots );
     }
-    void DurDot::setDots( const Integer dots )
+    void DurOldDot::setDots( const Integer dots )
     {
         if ( dots >= 0 )
         {
@@ -30,24 +30,24 @@ namespace lyre
             myDots = 0;
         }
     }
-    void DurDot::setDur( const Dur dur )
+    void DurOldDot::setDurOld( const DurOld dur )
     {
-        myDur = dur;
+        myDurOld = dur;
     }
-    Integer DurDot::getDots() const
+    Integer DurOldDot::getDots() const
     {
         return myDots;
     }
-    Dur DurDot::getDur() const
+    DurOld DurOldDot::getDurOld() const
     {
-        return myDur;
+        return myDurOld;
     }
-    Rational DurDot::getRational() const
+    Rational DurOldDot::getRational() const
     {
         Rational value{ 1, 1 };
         try
         {
-            value = convert( myDur );
+            value = convert( myDurOld );
         }
         catch( ... ) {} /* ignore error */
         auto add = value;
@@ -58,16 +58,16 @@ namespace lyre
         }
         return value;
     }
-    String DurDot::toString() const
+    String DurOldDot::toString() const
     {
         std::stringstream ss;
         toStream( ss );
         return ss.str();
     }
-    std::ostream& DurDot::toStream( std::ostream& os ) const
+    std::ostream& DurOldDot::toStream( std::ostream& os ) const
     {
         os << "[";
-        os << myDur;
+        os << myDurOld;
         for ( int i = 0; i < myDots; ++i )
         {
             os << ".";
@@ -75,35 +75,35 @@ namespace lyre
         os << "]";
         return os;
     }
-    std::ostream& operator<<( std::ostream& os, const DurDot& dd )
+    std::ostream& operator<<( std::ostream& os, const DurOldDot& dd )
     {
         return dd.toStream( os );
     }
-    bool operator==( const DurDot& l, const DurDot& r )
+    bool operator==( const DurOldDot& l, const DurOldDot& r )
     {
         return ( ! ( l < r ) ) && ( ! ( r < l ) );
     }
-    bool operator!=( const DurDot& l, const DurDot& r )
+    bool operator!=( const DurOldDot& l, const DurOldDot& r )
     {
         return ! ( l == r );
     }
-    bool operator<=( const DurDot& l, const DurDot& r )
+    bool operator<=( const DurOldDot& l, const DurOldDot& r )
     {
         return ( l < r ) || ( l == r );
     }
-    bool operator>=( const DurDot& l, const DurDot& r )
+    bool operator>=( const DurOldDot& l, const DurOldDot& r )
     {
         return ( l > r ) || ( l == r );
     }
-    bool operator<( const DurDot& l, const DurDot& r )
+    bool operator<( const DurOldDot& l, const DurOldDot& r )
     {
         return l.getRational() < r.getRational();
     }
-    bool operator>( const DurDot& l, const DurDot& r )
+    bool operator>( const DurOldDot& l, const DurOldDot& r )
     {
         return r < l;
     }
-    bool DurDot::parse( const String& str )
+    bool DurOldDot::parse( const String& str )
     {
         if ( str.length() < 3 )
         {
@@ -121,7 +121,7 @@ namespace lyre
         {
             ++dots;
         }
-        Dur d = Dur::Quarter;
+        DurOld d = DurOld::Quarter;
         bool success = false;
         try
         {
@@ -132,7 +132,7 @@ namespace lyre
         if ( success )
         {
             setDots( dots );
-            setDur( d );
+            setDurOld( d );
             return true;
         }
         return false;

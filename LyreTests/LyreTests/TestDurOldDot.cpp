@@ -1,214 +1,214 @@
 //PUBLIC
 #include "cpulTestHarness.h"
-#include "DurDot.h"
+#include "DurOldDot.h"
 
 using namespace lyre;
 
-TEST( Compiles, DurDot )
+TEST( Compiles, DurOldDot )
 {
-    DurDot dd;
+    DurOldDot dd;
     CHECK( true )
 }
-TEST( DefaultConstructor, DurDot )
+TEST( DefaultConstructor, DurOldDot )
 {
-    DurDot dd;
+    DurOldDot dd;
     CHECK_EQUAL( 0, dd.getDots() )
-    CHECK_EQUAL( Dur::Quarter, dd.getDur() )
+    CHECK_EQUAL( DurOld::Quarter, dd.getDurOld() )
 }
-TEST( Constructor01, DurDot )
+TEST( Constructor01, DurOldDot )
 {
-    DurDot dd{ Dur::Sixteenth };
+    DurOldDot dd{ DurOld::Sixteenth };
     CHECK_EQUAL( 0, dd.getDots() )
-    CHECK_EQUAL( Dur::Sixteenth, dd.getDur() )
+    CHECK_EQUAL( DurOld::Sixteenth, dd.getDurOld() )
 }
-TEST( Constructor02, DurDot )
+TEST( Constructor02, DurOldDot )
 {
-    DurDot dd{ Dur::Eighth, 0 };
+    DurOldDot dd{ DurOld::Eighth, 0 };
     CHECK_EQUAL( 0, dd.getDots() )
-    CHECK_EQUAL( Dur::Eighth, dd.getDur() )
+    CHECK_EQUAL( DurOld::Eighth, dd.getDurOld() )
 }
-TEST( Constructor03, DurDot )
+TEST( Constructor03, DurOldDot )
 {
-    DurDot dd{ Dur::ThirtySecond, -1 };
+    DurOldDot dd{ DurOld::ThirtySecond, -1 };
     CHECK_EQUAL( 0, dd.getDots() )
-    CHECK_EQUAL( Dur::ThirtySecond, dd.getDur() )
+    CHECK_EQUAL( DurOld::ThirtySecond, dd.getDurOld() )
 }
-TEST( Constructor04, DurDot )
+TEST( Constructor04, DurOldDot )
 {
-    DurDot dd{ Dur::Longa, 9999 };
+    DurOldDot dd{ DurOld::Longa, 9999 };
     CHECK_EQUAL( 9999, dd.getDots() )
-    CHECK_EQUAL( Dur::Longa, dd.getDur() )
+    CHECK_EQUAL( DurOld::Longa, dd.getDurOld() )
 }
-TEST( setDots01, DurDot )
+TEST( setDots01, DurOldDot )
 {
-    DurDot dd{ Dur::TwoFiftySixth, 9999 };
+    DurOldDot dd{ DurOld::TwoFiftySixth, 9999 };
     dd.setDots( 23 );
     CHECK_EQUAL( 23, dd.getDots() )
-    CHECK_EQUAL( Dur::TwoFiftySixth, dd.getDur() )
+    CHECK_EQUAL( DurOld::TwoFiftySixth, dd.getDurOld() )
 }
-TEST( setDots02, DurDot )
+TEST( setDots02, DurOldDot )
 {
-    DurDot dd{ Dur::Quarter, 9999 };
+    DurOldDot dd{ DurOld::Quarter, 9999 };
     dd.setDots( -93 );
     CHECK_EQUAL( 0, dd.getDots() )
-    CHECK_EQUAL( Dur::Quarter, dd.getDur() )
+    CHECK_EQUAL( DurOld::Quarter, dd.getDurOld() )
 }
-TEST( setDur01, DurDot )
+TEST( setDurOld01, DurOldDot )
 {
-    DurDot dd{ Dur::Half };
-    dd.setDur( Dur::Eighth );
+    DurOldDot dd{ DurOld::Half };
+    dd.setDurOld( DurOld::Eighth );
     CHECK_EQUAL( 0, dd.getDots() )
-    CHECK_EQUAL( Dur::Eighth, dd.getDur() )
+    CHECK_EQUAL( DurOld::Eighth, dd.getDurOld() )
 }
-TEST( setDur02, DurDot )
+TEST( setDurOld02, DurOldDot )
 {
-    DurDot dd{ Dur::ThirtySecond, 1 };
-    dd.setDur( Dur::Longa );
+    DurOldDot dd{ DurOld::ThirtySecond, 1 };
+    dd.setDurOld( DurOld::Longa );
     CHECK_EQUAL( 1, dd.getDots() )
-    CHECK_EQUAL( Dur::Longa, dd.getDur() )
+    CHECK_EQUAL( DurOld::Longa, dd.getDurOld() )
 }
 
-TEST( toStream01, DurDot )
+TEST( toStream01, DurOldDot )
 {
-    DurDot dd{ Dur::ThirtySecond, 1 };
+    DurOldDot dd{ DurOld::ThirtySecond, 1 };
     std::stringstream ss;
     dd.toStream( ss );
     String expected = "[ThirtySecond.]";
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( toStream02, DurDot )
+TEST( toStream02, DurOldDot )
 {
-    DurDot dd{ Dur::Half, 3 };
+    DurOldDot dd{ DurOld::Half, 3 };
     std::stringstream ss;
     dd.toStream( ss );
     String expected = "[Half...]";
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( toStream03, DurDot )
+TEST( toStream03, DurOldDot )
 {
-    DurDot dd{ Dur::Whole };
+    DurOldDot dd{ DurOld::Whole };
     std::stringstream ss;
     dd.toStream( ss );
     String expected = "[Whole]";
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( streamingOperator01, DurDot )
+TEST( streamingOperator01, DurOldDot )
 {
-    DurDot dd{ Dur::ThirtySecond, 1 };
+    DurOldDot dd{ DurOld::ThirtySecond, 1 };
     std::stringstream ss;
     ss << dd;
     String expected = "[ThirtySecond.]";
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( streamingOperator02, DurDot )
+TEST( streamingOperator02, DurOldDot )
 {
-    DurDot dd{ Dur::Half, 3 };
+    DurOldDot dd{ DurOld::Half, 3 };
     std::stringstream ss;
     ss << dd;
     String expected = "[Half...]";
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( streamingOperator03, DurDot )
+TEST( streamingOperator03, DurOldDot )
 {
-    DurDot dd{ Dur::Whole };
+    DurOldDot dd{ DurOld::Whole };
     std::stringstream ss;
     ss << dd;
     String expected = "[Whole]";
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString01, DurDot )
+TEST( toString01, DurOldDot )
 {
-    DurDot dd{ Dur::ThirtySecond, 1 };
+    DurOldDot dd{ DurOld::ThirtySecond, 1 };
     String expected = "[ThirtySecond.]";
     String actual = dd.toString();
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString02, DurDot )
+TEST( toString02, DurOldDot )
 {
-    DurDot dd{ Dur::Half, 3 };
+    DurOldDot dd{ DurOld::Half, 3 };
     String expected = "[Half...]";
     String actual = dd.toString();
     CHECK_EQUAL( expected, actual )
 }
-TEST( toString03, DurDot )
+TEST( toString03, DurOldDot )
 {
-    DurDot dd{ Dur::Whole };
+    DurOldDot dd{ DurOld::Whole };
     String expected = "[Whole]";
     String actual = dd.toString();
     CHECK_EQUAL( expected, actual )
 }
-TEST( getRational01, DurDot )
+TEST( getRational01, DurOldDot )
 {
-    auto d = Dur::Half;
+    auto d = DurOld::Half;
     Integer dots = 2;
-    DurDot dd{ d, dots };
+    DurOldDot dd{ d, dots };
     auto r = dd.getRational();
     CHECK_EQUAL( 7, r.getNumerator() )
     CHECK_EQUAL( 2, r.getDenominator() )
 }
-TEST( getRational02, DurDot )
+TEST( getRational02, DurOldDot )
 {
-    auto d = Dur::Whole;
+    auto d = DurOld::Whole;
     Integer dots = 1;
-    DurDot dd{ d, dots };
+    DurOldDot dd{ d, dots };
     auto r = dd.getRational();
     CHECK_EQUAL( 6, r.getNumerator() )
     CHECK_EQUAL( 1, r.getDenominator() )
 }
-TEST( getRational03, DurDot )
+TEST( getRational03, DurOldDot )
 {
-    auto d = Dur::Quarter;
+    auto d = DurOld::Quarter;
     Integer dots = 3;
-    DurDot dd{ d, dots };
+    DurOldDot dd{ d, dots };
     auto r = dd.getRational();
     CHECK_EQUAL( 15, r.getNumerator() )
     CHECK_EQUAL( 8, r.getDenominator() )
 }
-TEST( getRational04, DurDot )
+TEST( getRational04, DurOldDot )
 {
-    auto d = Dur::Quarter;
+    auto d = DurOld::Quarter;
     Integer dots = 10;
-    DurDot dd{ d, dots };
+    DurOldDot dd{ d, dots };
     auto r = dd.getRational();
     CHECK_EQUAL( 2047, r.getNumerator() )
     CHECK_EQUAL( 1024, r.getDenominator() )
     CHECK_DOUBLES_EQUAL( 2.0, r.getFloat(), 0.01 )
 }
-TEST( getRational05, DurDot )
+TEST( getRational05, DurOldDot )
 {
-    Dur d = Dur::Whole;
-    DurDot dd{ d };
+    DurOld d = DurOld::Whole;
+    DurOldDot dd{ d };
     Rational r = dd.getRational();
     CHECK_EQUAL( 4, r.getNumerator() );
     CHECK_EQUAL( 1, r.getDenominator() );
 }
-TEST( getRational06, DurDot )
+TEST( getRational06, DurOldDot )
 {
-    Dur d = Dur::Half;
-    DurDot dd{ d };
+    DurOld d = DurOld::Half;
+    DurOldDot dd{ d };
     Rational r = dd.getRational();
     CHECK_EQUAL( 2, r.getNumerator() );
     CHECK_EQUAL( 1, r.getDenominator() );
 }
-TEST( getRational07, DurDot )
+TEST( getRational07, DurOldDot )
 {
-    Dur d = Dur::Quarter;
-    DurDot dd{ d };
+    DurOld d = DurOld::Quarter;
+    DurOldDot dd{ d };
     Rational r = dd.getRational();
     CHECK_EQUAL( 1, r.getNumerator() );
     CHECK_EQUAL( 1, r.getDenominator() );
 }
-TEST( comparisons01, DurDot )
+TEST( comparisons01, DurOldDot )
 {
     /* a == b */
-    DurDot a{ Dur::Quarter, 0 };
-    DurDot b{ Dur::Quarter, 0 };
+    DurOldDot a{ DurOld::Quarter, 0 };
+    DurOldDot b{ DurOld::Quarter, 0 };
     CHECK(   ( a == b ) );
     CHECK( ! ( a != b ) );
     CHECK( ! ( a <  b ) );
@@ -216,11 +216,11 @@ TEST( comparisons01, DurDot )
     CHECK(   ( a <= b ) );
     CHECK(   ( a >= b ) );
 }
-TEST( comparisons02, DurDot )
+TEST( comparisons02, DurOldDot )
 {
     /* a < b */
-    DurDot a{ Dur::Eighth, 0 };
-    DurDot b{ Dur::Eighth, 1 };
+    DurOldDot a{ DurOld::Eighth, 0 };
+    DurOldDot b{ DurOld::Eighth, 1 };
     CHECK( ! ( a == b ) );
     CHECK(   ( a != b ) );
     CHECK(   ( a <  b ) );
@@ -228,11 +228,11 @@ TEST( comparisons02, DurDot )
     CHECK(   ( a <= b ) );
     CHECK( ! ( a >= b ) );
 }
-TEST( comparisons03, DurDot )
+TEST( comparisons03, DurOldDot )
 {
     /* a > b */
-    DurDot a{ Dur::Whole, 0 };
-    DurDot b{ Dur::Half, 4 };
+    DurOldDot a{ DurOld::Whole, 0 };
+    DurOldDot b{ DurOld::Half, 4 };
     CHECK( ! ( a == b ) );
     CHECK(   ( a != b ) );
     CHECK( ! ( a <  b ) );
@@ -240,45 +240,45 @@ TEST( comparisons03, DurDot )
     CHECK( ! ( a <= b ) );
     CHECK(   ( a >= b ) );
 }
-TEST( parse_success01, DurDot )
+TEST( parse_success01, DurOldDot )
 {
-    DurDot d;
+    DurOldDot d;
     CHECK( d.parse( "[Eighth.]" ) )
-    CHECK_EQUAL( Dur::Eighth, d.getDur() )
+    CHECK_EQUAL( DurOld::Eighth, d.getDurOld() )
     CHECK_EQUAL( 1, d.getDots() )
 }
-TEST( parse_success02, DurDot )
+TEST( parse_success02, DurOldDot )
 {
-    DurDot d;
+    DurOldDot d;
     CHECK( d.parse( "[ThirtySecond]" ) )
-    CHECK_EQUAL( Dur::ThirtySecond, d.getDur() )
+    CHECK_EQUAL( DurOld::ThirtySecond, d.getDurOld() )
     CHECK_EQUAL( 0, d.getDots() )
 }
-TEST( parse_success03, DurDot )
+TEST( parse_success03, DurOldDot )
 {
-    DurDot d;
+    DurOldDot d;
     CHECK( d.parse( "[Whole...]" ) )
-    CHECK_EQUAL( Dur::Whole, d.getDur() )
+    CHECK_EQUAL( DurOld::Whole, d.getDurOld() )
     CHECK_EQUAL( 3, d.getDots() )
 }
-TEST( parse_fail01, DurDot )
+TEST( parse_fail01, DurOldDot )
 {
-    DurDot d;
+    DurOldDot d;
     CHECK( ! d.parse( "Whole...]" ) )
-    CHECK_EQUAL( Dur::Quarter, d.getDur() )
+    CHECK_EQUAL( DurOld::Quarter, d.getDurOld() )
     CHECK_EQUAL( 0, d.getDots() )
 }
-TEST( parse_fail02, DurDot )
+TEST( parse_fail02, DurOldDot )
 {
-    DurDot d{ Dur::OneTwentyEighth, 1 };
+    DurOldDot d{ DurOld::OneTwentyEighth, 1 };
     CHECK( ! d.parse( "[whole.]" ) )
-    CHECK_EQUAL( Dur::OneTwentyEighth, d.getDur() )
+    CHECK_EQUAL( DurOld::OneTwentyEighth, d.getDurOld() )
     CHECK_EQUAL( 1, d.getDots() )
 }
-TEST( parse_fail03, DurDot )
+TEST( parse_fail03, DurOldDot )
 {
-    DurDot d{ Dur::Sixteenth, 2 };
+    DurOldDot d{ DurOld::Sixteenth, 2 };
     CHECK( ! d.parse( "[Half .]" ) )
-    CHECK_EQUAL( Dur::Sixteenth, d.getDur() )
+    CHECK_EQUAL( DurOld::Sixteenth, d.getDurOld() )
     CHECK_EQUAL( 2, d.getDots() )
 }
