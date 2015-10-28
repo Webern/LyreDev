@@ -9,14 +9,14 @@ namespace lyre
 {
     namespace impl
     {
-        class DurQuarter;
-        using DurQuarterSP = std::shared_ptr<DurQuarter>;
-        using DurQuarterUP = std::unique_ptr<DurQuarter>;
+        class DurLonga;
+        using DurLongaSP = std::shared_ptr<DurLonga>;
+        using DurLongaUP = std::unique_ptr<DurLonga>;
         
-        class DurQuarter : public IDur
+        class DurLonga : public IDur
         {
         public:
-            virtual ~DurQuarter();
+            virtual ~DurLonga();
             virtual Rational getValue() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
         private:

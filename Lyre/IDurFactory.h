@@ -23,10 +23,10 @@ namespace lyre
     {
     public:
         
-        virtual ~IDurFactory() = default;
+        virtual ~IDurFactory();
         
         static IDurFactorySP createDurFactory( const DurFactoryType t );
         
-        virtual IDurSP createDur( const String& durName ) const;
+        virtual IDurSP createDur( const String& durName ) const = 0;
     };
 }

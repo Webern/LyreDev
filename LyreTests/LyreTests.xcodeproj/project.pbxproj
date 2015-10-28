@@ -14,6 +14,7 @@
 		294CD80E1B7BC61A0042DDF5 /* TestRational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */; };
 		295145F51BBAE6A60067BFD9 /* TestIPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295145F31BBAE6A60067BFD9 /* TestIPitch.cpp */; };
 		295145F81BBAE8B80067BFD9 /* TestPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295145F61BBAE8B80067BFD9 /* TestPitch.cpp */; };
+		29575D341BE095AD00E80CC5 /* TestDurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29575D321BE095AD00E80CC5 /* TestDurFactory.cpp */; };
 		296265C11BB7253200EAFBD0 /* TestIPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296265BF1BB7253200EAFBD0 /* TestIPitchName.cpp */; };
 		29DB05011BB3028C0029014A /* TestIAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB04FF1BB3028C0029014A /* TestIAlter.cpp */; };
 		29DB05041BB302BA0029014A /* TestAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DB05021BB302BA0029014A /* TestAlter.cpp */; };
@@ -51,6 +52,7 @@
 		294CD80C1B7BC61A0042DDF5 /* TestRational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestRational.cpp; sourceTree = "<group>"; };
 		295145F31BBAE6A60067BFD9 /* TestIPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIPitch.cpp; sourceTree = "<group>"; };
 		295145F61BBAE8B80067BFD9 /* TestPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestPitch.cpp; sourceTree = "<group>"; };
+		29575D321BE095AD00E80CC5 /* TestDurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestDurFactory.cpp; sourceTree = "<group>"; };
 		296265BF1BB7253200EAFBD0 /* TestIPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIPitchName.cpp; sourceTree = "<group>"; };
 		29DB04FF1BB3028C0029014A /* TestIAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestIAlter.cpp; sourceTree = "<group>"; };
 		29DB05021BB302BA0029014A /* TestAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestAlter.cpp; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				29FCDEFA1B8B0BA60092CBCB /* TestDurOld.cpp */,
 				29EA94FD1BACC31B0019FBFB /* TestDurOldDot.cpp */,
+				29575D321BE095AD00E80CC5 /* TestDurFactory.cpp */,
 			);
 			name = Duration;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				29E7345E1B7ACBA50046F4F8 /* TestMod.cpp in Sources */,
 				29FCDEFC1B8B0BA60092CBCB /* TestDurOld.cpp in Sources */,
 				292B93A21BB1CEE600A4F808 /* TestStep.cpp in Sources */,
+				29575D341BE095AD00E80CC5 /* TestDurFactory.cpp in Sources */,
 				29E7345D1B7ACBA50046F4F8 /* cpulTestResult.cpp in Sources */,
 				296265C11BB7253200EAFBD0 /* TestIPitchName.cpp in Sources */,
 				29E734331B7ACB590046F4F8 /* main.cpp in Sources */,

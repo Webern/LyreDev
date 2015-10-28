@@ -3,6 +3,8 @@
 
 namespace lyre
 {
+    IDurFactory::~IDurFactory() {}
+    
     IDurFactorySP IDurFactory::createDurFactory( const DurFactoryType t )
     {
         IDurFactorySP output;
