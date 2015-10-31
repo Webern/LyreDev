@@ -89,6 +89,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		291FB2FD1BE4F99A00654382 /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Concrete;
+			sourceTree = "<group>";
+		};
+		291FB2FE1BE4F9A300654382 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
 		2928CABC1BB9933A0063D861 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,14 +135,16 @@
 			name = Concrete;
 			sourceTree = "<group>";
 		};
-		2928CABF1BB9938E0063D861 /* Duration */ = {
+		2928CABF1BB9938E0063D861 /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				291FB2FE1BE4F9A300654382 /* Interface */,
+				291FB2FD1BE4F99A00654382 /* Concrete */,
 				29FCDEFA1B8B0BA60092CBCB /* TestDurOld.cpp */,
 				29EA94FD1BACC31B0019FBFB /* TestDurOldDot.cpp */,
 				29575D321BE095AD00E80CC5 /* TestDurFactory.cpp */,
 			);
-			name = Duration;
+			name = Time;
 			sourceTree = "<group>";
 		};
 		2928CAC01BB993C00063D861 /* General */ = {
@@ -206,7 +222,7 @@
 		29E734311B7ACB590046F4F8 /* LyreTests */ = {
 			isa = PBXGroup;
 			children = (
-				2928CABF1BB9938E0063D861 /* Duration */,
+				2928CABF1BB9938E0063D861 /* Time */,
 				2928CAC01BB993C00063D861 /* General */,
 				2928CABD1BB993610063D861 /* Pitch */,
 			);

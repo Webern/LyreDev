@@ -237,13 +237,13 @@
 			name = Concrete;
 			sourceTree = "<group>";
 		};
-		293F50891BAF126600AC0C19 /* Rhythm */ = {
+		293F50891BAF126600AC0C19 /* Time */ = {
 			isa = PBXGroup;
 			children = (
 				2942F7BC1BDF2965006B7BF6 /* Interface */,
 				29299E4B1BCACD0100D1A00A /* Concrete */,
 			);
-			name = Rhythm;
+			name = Time;
 			sourceTree = "<group>";
 		};
 		293F508A1BAF128000AC0C19 /* General */ = {
@@ -294,7 +294,7 @@
 				293F508A1BAF128000AC0C19 /* General */,
 				293F508B1BAF12CA00AC0C19 /* Pitch */,
 				29E734691B7ACC0D0046F4F8 /* Products */,
-				293F50891BAF126600AC0C19 /* Rhythm */,
+				293F50891BAF126600AC0C19 /* Time */,
 			);
 			sourceTree = "<group>";
 		};
