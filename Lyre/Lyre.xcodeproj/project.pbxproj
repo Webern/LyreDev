@@ -6,8 +6,123 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		29B8657A1BE515EC00081409 /* Alter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865421BE515EC00081409 /* Alter.cpp */; };
+		29B8657B1BE515EC00081409 /* Alter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865431BE515EC00081409 /* Alter.h */; };
+		29B8657C1BE515EC00081409 /* Dur16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865441BE515EC00081409 /* Dur16th.cpp */; };
+		29B8657D1BE515EC00081409 /* Dur16th.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865451BE515EC00081409 /* Dur16th.h */; };
+		29B8657E1BE515EC00081409 /* Dur32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865461BE515EC00081409 /* Dur32nd.cpp */; };
+		29B8657F1BE515EC00081409 /* Dur32nd.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865471BE515EC00081409 /* Dur32nd.h */; };
+		29B865801BE515EC00081409 /* Dur64th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865481BE515EC00081409 /* Dur64th.cpp */; };
+		29B865811BE515EC00081409 /* Dur64th.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865491BE515EC00081409 /* Dur64th.h */; };
+		29B865821BE515EC00081409 /* Dur128th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B8654A1BE515EC00081409 /* Dur128th.cpp */; };
+		29B865831BE515EC00081409 /* Dur128th.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B8654B1BE515EC00081409 /* Dur128th.h */; };
+		29B865841BE515EC00081409 /* Dur256th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B8654C1BE515EC00081409 /* Dur256th.cpp */; };
+		29B865851BE515EC00081409 /* Dur256th.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B8654D1BE515EC00081409 /* Dur256th.h */; };
+		29B865861BE515EC00081409 /* DurBreve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B8654E1BE515EC00081409 /* DurBreve.cpp */; };
+		29B865871BE515EC00081409 /* DurBreve.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B8654F1BE515EC00081409 /* DurBreve.h */; };
+		29B865881BE515EC00081409 /* DurEighth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865501BE515EC00081409 /* DurEighth.cpp */; };
+		29B865891BE515EC00081409 /* DurEighth.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865511BE515EC00081409 /* DurEighth.h */; };
+		29B8658A1BE515EC00081409 /* DurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865521BE515EC00081409 /* DurFactory.cpp */; };
+		29B8658B1BE515EC00081409 /* DurFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865531BE515EC00081409 /* DurFactory.h */; };
+		29B8658C1BE515EC00081409 /* DurHalf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865541BE515EC00081409 /* DurHalf.cpp */; };
+		29B8658D1BE515EC00081409 /* DurHalf.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865551BE515EC00081409 /* DurHalf.h */; };
+		29B8658E1BE515EC00081409 /* DurLonga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865561BE515EC00081409 /* DurLonga.cpp */; };
+		29B8658F1BE515EC00081409 /* DurLonga.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865571BE515EC00081409 /* DurLonga.h */; };
+		29B865901BE515EC00081409 /* DurQuarter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865581BE515EC00081409 /* DurQuarter.cpp */; };
+		29B865911BE515EC00081409 /* DurQuarter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865591BE515EC00081409 /* DurQuarter.h */; };
+		29B865921BE515EC00081409 /* DurWhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B8655A1BE515EC00081409 /* DurWhole.cpp */; };
+		29B865931BE515EC00081409 /* DurWhole.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B8655B1BE515EC00081409 /* DurWhole.h */; };
+		29B865941BE515EC00081409 /* Enum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B8655C1BE515EC00081409 /* Enum.cpp */; };
+		29B865951BE515EC00081409 /* Enum.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B8655D1BE515EC00081409 /* Enum.h */; };
+		29B865961BE515EC00081409 /* IAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B8655E1BE515EC00081409 /* IAlter.cpp */; };
+		29B865971BE515EC00081409 /* IAlter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B8655F1BE515EC00081409 /* IAlter.h */; };
+		29B865981BE515EC00081409 /* IDur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865601BE515EC00081409 /* IDur.cpp */; };
+		29B865991BE515EC00081409 /* IDur.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865611BE515EC00081409 /* IDur.h */; };
+		29B8659A1BE515EC00081409 /* IDurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865621BE515EC00081409 /* IDurFactory.cpp */; };
+		29B8659B1BE515EC00081409 /* IDurFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865631BE515EC00081409 /* IDurFactory.h */; };
+		29B8659C1BE515EC00081409 /* IEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865641BE515EC00081409 /* IEnum.cpp */; };
+		29B8659D1BE515EC00081409 /* IEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865651BE515EC00081409 /* IEnum.h */; };
+		29B8659E1BE515EC00081409 /* IPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865661BE515EC00081409 /* IPitch.cpp */; };
+		29B8659F1BE515EC00081409 /* IPitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865671BE515EC00081409 /* IPitch.h */; };
+		29B865A01BE515EC00081409 /* IPitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865681BE515EC00081409 /* IPitchFactory.cpp */; };
+		29B865A11BE515EC00081409 /* IPitchFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865691BE515EC00081409 /* IPitchFactory.h */; };
+		29B865A21BE515EC00081409 /* IPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B8656A1BE515EC00081409 /* IPitchName.cpp */; };
+		29B865A31BE515EC00081409 /* IPitchName.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B8656B1BE515EC00081409 /* IPitchName.h */; };
+		29B865A41BE515EC00081409 /* IStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B8656C1BE515EC00081409 /* IStep.cpp */; };
+		29B865A51BE515EC00081409 /* IStep.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B8656D1BE515EC00081409 /* IStep.h */; };
+		29B865A61BE515EC00081409 /* Mod.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B8656E1BE515EC00081409 /* Mod.h */; };
+		29B865A71BE515EC00081409 /* Pitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B8656F1BE515EC00081409 /* Pitch.cpp */; };
+		29B865A81BE515EC00081409 /* Pitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865701BE515EC00081409 /* Pitch.h */; };
+		29B865A91BE515EC00081409 /* PitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865711BE515EC00081409 /* PitchFactory.cpp */; };
+		29B865AA1BE515EC00081409 /* PitchFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865721BE515EC00081409 /* PitchFactory.h */; };
+		29B865AB1BE515EC00081409 /* PitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865731BE515EC00081409 /* PitchName.cpp */; };
+		29B865AC1BE515EC00081409 /* PitchName.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865741BE515EC00081409 /* PitchName.h */; };
+		29B865AD1BE515EC00081409 /* Rational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865751BE515EC00081409 /* Rational.cpp */; };
+		29B865AE1BE515EC00081409 /* Rational.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865761BE515EC00081409 /* Rational.h */; };
+		29B865AF1BE515EC00081409 /* Step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B865771BE515EC00081409 /* Step.cpp */; };
+		29B865B01BE515EC00081409 /* Step.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865781BE515EC00081409 /* Step.h */; };
+		29B865B11BE515EC00081409 /* TypeDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B865791BE515EC00081409 /* TypeDefs.h */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		29B8647A1BE510D100081409 /* libLyre.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLyre.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		29B865421BE515EC00081409 /* Alter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Alter.cpp; sourceTree = "<group>"; };
+		29B865431BE515EC00081409 /* Alter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alter.h; sourceTree = "<group>"; };
+		29B865441BE515EC00081409 /* Dur16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dur16th.cpp; sourceTree = "<group>"; };
+		29B865451BE515EC00081409 /* Dur16th.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dur16th.h; sourceTree = "<group>"; };
+		29B865461BE515EC00081409 /* Dur32nd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dur32nd.cpp; sourceTree = "<group>"; };
+		29B865471BE515EC00081409 /* Dur32nd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dur32nd.h; sourceTree = "<group>"; };
+		29B865481BE515EC00081409 /* Dur64th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dur64th.cpp; sourceTree = "<group>"; };
+		29B865491BE515EC00081409 /* Dur64th.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dur64th.h; sourceTree = "<group>"; };
+		29B8654A1BE515EC00081409 /* Dur128th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dur128th.cpp; sourceTree = "<group>"; };
+		29B8654B1BE515EC00081409 /* Dur128th.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dur128th.h; sourceTree = "<group>"; };
+		29B8654C1BE515EC00081409 /* Dur256th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dur256th.cpp; sourceTree = "<group>"; };
+		29B8654D1BE515EC00081409 /* Dur256th.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dur256th.h; sourceTree = "<group>"; };
+		29B8654E1BE515EC00081409 /* DurBreve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurBreve.cpp; sourceTree = "<group>"; };
+		29B8654F1BE515EC00081409 /* DurBreve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurBreve.h; sourceTree = "<group>"; };
+		29B865501BE515EC00081409 /* DurEighth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurEighth.cpp; sourceTree = "<group>"; };
+		29B865511BE515EC00081409 /* DurEighth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurEighth.h; sourceTree = "<group>"; };
+		29B865521BE515EC00081409 /* DurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurFactory.cpp; sourceTree = "<group>"; };
+		29B865531BE515EC00081409 /* DurFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurFactory.h; sourceTree = "<group>"; };
+		29B865541BE515EC00081409 /* DurHalf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurHalf.cpp; sourceTree = "<group>"; };
+		29B865551BE515EC00081409 /* DurHalf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurHalf.h; sourceTree = "<group>"; };
+		29B865561BE515EC00081409 /* DurLonga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurLonga.cpp; sourceTree = "<group>"; };
+		29B865571BE515EC00081409 /* DurLonga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurLonga.h; sourceTree = "<group>"; };
+		29B865581BE515EC00081409 /* DurQuarter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurQuarter.cpp; sourceTree = "<group>"; };
+		29B865591BE515EC00081409 /* DurQuarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurQuarter.h; sourceTree = "<group>"; };
+		29B8655A1BE515EC00081409 /* DurWhole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DurWhole.cpp; sourceTree = "<group>"; };
+		29B8655B1BE515EC00081409 /* DurWhole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurWhole.h; sourceTree = "<group>"; };
+		29B8655C1BE515EC00081409 /* Enum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enum.cpp; sourceTree = "<group>"; };
+		29B8655D1BE515EC00081409 /* Enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enum.h; sourceTree = "<group>"; };
+		29B8655E1BE515EC00081409 /* IAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IAlter.cpp; sourceTree = "<group>"; };
+		29B8655F1BE515EC00081409 /* IAlter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAlter.h; sourceTree = "<group>"; };
+		29B865601BE515EC00081409 /* IDur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IDur.cpp; sourceTree = "<group>"; };
+		29B865611BE515EC00081409 /* IDur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDur.h; sourceTree = "<group>"; };
+		29B865621BE515EC00081409 /* IDurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IDurFactory.cpp; sourceTree = "<group>"; };
+		29B865631BE515EC00081409 /* IDurFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDurFactory.h; sourceTree = "<group>"; };
+		29B865641BE515EC00081409 /* IEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IEnum.cpp; sourceTree = "<group>"; };
+		29B865651BE515EC00081409 /* IEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEnum.h; sourceTree = "<group>"; };
+		29B865661BE515EC00081409 /* IPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPitch.cpp; sourceTree = "<group>"; };
+		29B865671BE515EC00081409 /* IPitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPitch.h; sourceTree = "<group>"; };
+		29B865681BE515EC00081409 /* IPitchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPitchFactory.cpp; sourceTree = "<group>"; };
+		29B865691BE515EC00081409 /* IPitchFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPitchFactory.h; sourceTree = "<group>"; };
+		29B8656A1BE515EC00081409 /* IPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IPitchName.cpp; sourceTree = "<group>"; };
+		29B8656B1BE515EC00081409 /* IPitchName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPitchName.h; sourceTree = "<group>"; };
+		29B8656C1BE515EC00081409 /* IStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IStep.cpp; sourceTree = "<group>"; };
+		29B8656D1BE515EC00081409 /* IStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IStep.h; sourceTree = "<group>"; };
+		29B8656E1BE515EC00081409 /* Mod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mod.h; sourceTree = "<group>"; };
+		29B8656F1BE515EC00081409 /* Pitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pitch.cpp; sourceTree = "<group>"; };
+		29B865701BE515EC00081409 /* Pitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pitch.h; sourceTree = "<group>"; };
+		29B865711BE515EC00081409 /* PitchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchFactory.cpp; sourceTree = "<group>"; };
+		29B865721BE515EC00081409 /* PitchFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchFactory.h; sourceTree = "<group>"; };
+		29B865731BE515EC00081409 /* PitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchName.cpp; sourceTree = "<group>"; };
+		29B865741BE515EC00081409 /* PitchName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchName.h; sourceTree = "<group>"; };
+		29B865751BE515EC00081409 /* Rational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rational.cpp; sourceTree = "<group>"; };
+		29B865761BE515EC00081409 /* Rational.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rational.h; sourceTree = "<group>"; };
+		29B865771BE515EC00081409 /* Step.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Step.cpp; sourceTree = "<group>"; };
+		29B865781BE515EC00081409 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Step.h; sourceTree = "<group>"; };
+		29B865791BE515EC00081409 /* TypeDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +139,8 @@
 		29B864711BE510D100081409 = {
 			isa = PBXGroup;
 			children = (
+				29B865B21BE515F800081409 /* Private */,
+				29B865B31BE5160500081409 /* Public */,
 				29B8647B1BE510D100081409 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -36,6 +153,124 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		29B865B21BE515F800081409 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				29B865B61BE5172D00081409 /* General */,
+				29B865B51BE5172600081409 /* Pitch */,
+				29B865B41BE5172000081409 /* Time */,
+			);
+			name = Private;
+			sourceTree = "<group>";
+		};
+		29B865B31BE5160500081409 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				29B865B91BE5177B00081409 /* General */,
+				29B865B71BE5176F00081409 /* Pitch */,
+				29B865B81BE5177400081409 /* Time */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		29B865B41BE5172000081409 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				29B8654A1BE515EC00081409 /* Dur128th.cpp */,
+				29B8654B1BE515EC00081409 /* Dur128th.h */,
+				29B865441BE515EC00081409 /* Dur16th.cpp */,
+				29B865451BE515EC00081409 /* Dur16th.h */,
+				29B8654C1BE515EC00081409 /* Dur256th.cpp */,
+				29B8654D1BE515EC00081409 /* Dur256th.h */,
+				29B865461BE515EC00081409 /* Dur32nd.cpp */,
+				29B865471BE515EC00081409 /* Dur32nd.h */,
+				29B865481BE515EC00081409 /* Dur64th.cpp */,
+				29B865491BE515EC00081409 /* Dur64th.h */,
+				29B8654E1BE515EC00081409 /* DurBreve.cpp */,
+				29B8654F1BE515EC00081409 /* DurBreve.h */,
+				29B865501BE515EC00081409 /* DurEighth.cpp */,
+				29B865511BE515EC00081409 /* DurEighth.h */,
+				29B865521BE515EC00081409 /* DurFactory.cpp */,
+				29B865531BE515EC00081409 /* DurFactory.h */,
+				29B865541BE515EC00081409 /* DurHalf.cpp */,
+				29B865551BE515EC00081409 /* DurHalf.h */,
+				29B865561BE515EC00081409 /* DurLonga.cpp */,
+				29B865571BE515EC00081409 /* DurLonga.h */,
+				29B865581BE515EC00081409 /* DurQuarter.cpp */,
+				29B865591BE515EC00081409 /* DurQuarter.h */,
+				29B8655A1BE515EC00081409 /* DurWhole.cpp */,
+				29B8655B1BE515EC00081409 /* DurWhole.h */,
+			);
+			name = Time;
+			sourceTree = "<group>";
+		};
+		29B865B51BE5172600081409 /* Pitch */ = {
+			isa = PBXGroup;
+			children = (
+				29B865421BE515EC00081409 /* Alter.cpp */,
+				29B865431BE515EC00081409 /* Alter.h */,
+				29B8656F1BE515EC00081409 /* Pitch.cpp */,
+				29B865701BE515EC00081409 /* Pitch.h */,
+				29B865711BE515EC00081409 /* PitchFactory.cpp */,
+				29B865721BE515EC00081409 /* PitchFactory.h */,
+				29B865731BE515EC00081409 /* PitchName.cpp */,
+				29B865741BE515EC00081409 /* PitchName.h */,
+				29B865771BE515EC00081409 /* Step.cpp */,
+				29B865781BE515EC00081409 /* Step.h */,
+			);
+			name = Pitch;
+			sourceTree = "<group>";
+		};
+		29B865B61BE5172D00081409 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				29B8655C1BE515EC00081409 /* Enum.cpp */,
+				29B8655D1BE515EC00081409 /* Enum.h */,
+				29B8656E1BE515EC00081409 /* Mod.h */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		29B865B71BE5176F00081409 /* Pitch */ = {
+			isa = PBXGroup;
+			children = (
+				29B8655E1BE515EC00081409 /* IAlter.cpp */,
+				29B8655F1BE515EC00081409 /* IAlter.h */,
+				29B865661BE515EC00081409 /* IPitch.cpp */,
+				29B865671BE515EC00081409 /* IPitch.h */,
+				29B865681BE515EC00081409 /* IPitchFactory.cpp */,
+				29B865691BE515EC00081409 /* IPitchFactory.h */,
+				29B8656A1BE515EC00081409 /* IPitchName.cpp */,
+				29B8656B1BE515EC00081409 /* IPitchName.h */,
+				29B8656C1BE515EC00081409 /* IStep.cpp */,
+				29B8656D1BE515EC00081409 /* IStep.h */,
+			);
+			name = Pitch;
+			sourceTree = "<group>";
+		};
+		29B865B81BE5177400081409 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				29B865601BE515EC00081409 /* IDur.cpp */,
+				29B865611BE515EC00081409 /* IDur.h */,
+				29B865621BE515EC00081409 /* IDurFactory.cpp */,
+				29B865631BE515EC00081409 /* IDurFactory.h */,
+			);
+			name = Time;
+			sourceTree = "<group>";
+		};
+		29B865B91BE5177B00081409 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				29B865641BE515EC00081409 /* IEnum.cpp */,
+				29B865651BE515EC00081409 /* IEnum.h */,
+				29B865751BE515EC00081409 /* Rational.cpp */,
+				29B865761BE515EC00081409 /* Rational.h */,
+				29B865791BE515EC00081409 /* TypeDefs.h */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -43,6 +278,35 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29B8659B1BE515EC00081409 /* IDurFactory.h in Headers */,
+				29B865AE1BE515EC00081409 /* Rational.h in Headers */,
+				29B865991BE515EC00081409 /* IDur.h in Headers */,
+				29B865811BE515EC00081409 /* Dur64th.h in Headers */,
+				29B8657B1BE515EC00081409 /* Alter.h in Headers */,
+				29B865851BE515EC00081409 /* Dur256th.h in Headers */,
+				29B8658B1BE515EC00081409 /* DurFactory.h in Headers */,
+				29B865A31BE515EC00081409 /* IPitchName.h in Headers */,
+				29B865931BE515EC00081409 /* DurWhole.h in Headers */,
+				29B8657D1BE515EC00081409 /* Dur16th.h in Headers */,
+				29B865AA1BE515EC00081409 /* PitchFactory.h in Headers */,
+				29B865911BE515EC00081409 /* DurQuarter.h in Headers */,
+				29B8657F1BE515EC00081409 /* Dur32nd.h in Headers */,
+				29B865891BE515EC00081409 /* DurEighth.h in Headers */,
+				29B865971BE515EC00081409 /* IAlter.h in Headers */,
+				29B8658D1BE515EC00081409 /* DurHalf.h in Headers */,
+				29B865B01BE515EC00081409 /* Step.h in Headers */,
+				29B865871BE515EC00081409 /* DurBreve.h in Headers */,
+				29B865A11BE515EC00081409 /* IPitchFactory.h in Headers */,
+				29B865831BE515EC00081409 /* Dur128th.h in Headers */,
+				29B865B11BE515EC00081409 /* TypeDefs.h in Headers */,
+				29B865A61BE515EC00081409 /* Mod.h in Headers */,
+				29B8659D1BE515EC00081409 /* IEnum.h in Headers */,
+				29B865AC1BE515EC00081409 /* PitchName.h in Headers */,
+				29B8658F1BE515EC00081409 /* DurLonga.h in Headers */,
+				29B8659F1BE515EC00081409 /* IPitch.h in Headers */,
+				29B865A81BE515EC00081409 /* Pitch.h in Headers */,
+				29B865A51BE515EC00081409 /* IStep.h in Headers */,
+				29B865951BE515EC00081409 /* Enum.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +361,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29B865AF1BE515EC00081409 /* Step.cpp in Sources */,
+				29B865A71BE515EC00081409 /* Pitch.cpp in Sources */,
+				29B865AD1BE515EC00081409 /* Rational.cpp in Sources */,
+				29B865861BE515EC00081409 /* DurBreve.cpp in Sources */,
+				29B865921BE515EC00081409 /* DurWhole.cpp in Sources */,
+				29B8658A1BE515EC00081409 /* DurFactory.cpp in Sources */,
+				29B8657E1BE515EC00081409 /* Dur32nd.cpp in Sources */,
+				29B8659C1BE515EC00081409 /* IEnum.cpp in Sources */,
+				29B8659A1BE515EC00081409 /* IDurFactory.cpp in Sources */,
+				29B865A21BE515EC00081409 /* IPitchName.cpp in Sources */,
+				29B865961BE515EC00081409 /* IAlter.cpp in Sources */,
+				29B865A91BE515EC00081409 /* PitchFactory.cpp in Sources */,
+				29B865A01BE515EC00081409 /* IPitchFactory.cpp in Sources */,
+				29B865881BE515EC00081409 /* DurEighth.cpp in Sources */,
+				29B865841BE515EC00081409 /* Dur256th.cpp in Sources */,
+				29B865AB1BE515EC00081409 /* PitchName.cpp in Sources */,
+				29B8659E1BE515EC00081409 /* IPitch.cpp in Sources */,
+				29B865801BE515EC00081409 /* Dur64th.cpp in Sources */,
+				29B865901BE515EC00081409 /* DurQuarter.cpp in Sources */,
+				29B865941BE515EC00081409 /* Enum.cpp in Sources */,
+				29B8658E1BE515EC00081409 /* DurLonga.cpp in Sources */,
+				29B8658C1BE515EC00081409 /* DurHalf.cpp in Sources */,
+				29B865821BE515EC00081409 /* Dur128th.cpp in Sources */,
+				29B865981BE515EC00081409 /* IDur.cpp in Sources */,
+				29B865A41BE515EC00081409 /* IStep.cpp in Sources */,
+				29B8657C1BE515EC00081409 /* Dur16th.cpp in Sources */,
+				29B8657A1BE515EC00081409 /* Alter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
