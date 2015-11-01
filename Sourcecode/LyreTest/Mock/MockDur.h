@@ -11,7 +11,7 @@ namespace Lyre
         using MockDurSP = std::shared_ptr<MockDur>;
         using MockDurUP = std::unique_ptr<MockDur>;
         
-        Lyre::IDurUP createMockDur( const Rational value, const String name );
+        Lyre::IDurSP createMockDur( const Rational value, const String name );
         
         class MockDur : public Lyre::IDur
         {
