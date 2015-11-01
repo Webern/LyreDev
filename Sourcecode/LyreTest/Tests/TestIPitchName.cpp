@@ -1,47 +1,20 @@
 //PRIVATE
+
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "Lyre/IPitchName.h"
+
+#include "LyreTest/Mock/MockPitchName.h"
+
 #include <sstream>
 
 using namespace Lyre;
+using namespace Lyre::Mock;
 using namespace std;
-
-class TestPitchName;
-using TestPitchNameUP = unique_ptr<TestPitchName>;
-class TestPitchName : public IPitchName
-{
-public:
-    virtual ~TestPitchName() {}
-    virtual IPitchNameUP clone() const { return TestPitchNameUP{ new TestPitchName{} }; }
-    /* template <typename T>
-       void copyTo( std::unique_ptr<T>& output ) const */
-    virtual Integer getValue() const { return 0; }
-    virtual bool parse( const String& str ) { return true; }
-    virtual std::ostream& toStream( std::ostream& os ) const { return os; }
-    /* virtual String toString() const;
-       virtual bool isLessThan( const PitchName& other ) const;
-       virtual bool isGreaterThan( const PitchName& other ) const;
-       virtual bool isEqualTo( const PitchName& other ) const; */
-    virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
-    virtual Integer getStepValue() const { return 0; }
-    virtual void setStepValue( const Integer val ) {}
-    virtual Integer getMinStepValue() const { return 0; }
-    virtual Integer getMaxStepValue() const { return 0; }
-    virtual void incrementStep() {}
-    virtual void decrementStep() {}
-    virtual Integer getAlterValue() const { return 0; }
-    virtual void setAlterValue( const Integer val ) {}
-    virtual Integer getMinAlterValue() const { return 0; }
-    virtual Integer getMaxAlterValue() const { return 0; }
-    virtual void incrementAlter() {}
-    virtual void decrementAlter() {}
-};
 
 TEST( compiles, IPitchName )
 {
-    IPitchNameUP p{ new TestPitchName{} };
+    IPitchNameUP p{ new MockPitchName{} };
     auto c = p->clone();
-    TestPitchNameUP x;
+    MockPitchNameUP x;
     p->copyTo( x );
     CHECK( p != c )
     CHECK( p != x )

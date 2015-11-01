@@ -41,6 +41,13 @@
 		29CAD4391BE661B400C0CA90 /* TestRational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD41E1BE661B400C0CA90 /* TestRational.cpp */; };
 		29CAD43A1BE661B400C0CA90 /* TestStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD41F1BE661B400C0CA90 /* TestStep.cpp */; };
 		29CAD43C1BE661D500C0CA90 /* libLyre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAD43B1BE661D500C0CA90 /* libLyre.a */; };
+		29CAD44D1BE6673C00C0CA90 /* MockAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4411BE6673C00C0CA90 /* MockAlter.cpp */; };
+		29CAD44E1BE6673C00C0CA90 /* MockEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4431BE6673C00C0CA90 /* MockEnum.cpp */; };
+		29CAD44F1BE6673C00C0CA90 /* MockPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4451BE6673C00C0CA90 /* MockPitch.cpp */; };
+		29CAD4501BE6673C00C0CA90 /* MockPitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4471BE6673C00C0CA90 /* MockPitchFactory.cpp */; };
+		29CAD4511BE6673C00C0CA90 /* MockPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4491BE6673C00C0CA90 /* MockPitchName.cpp */; };
+		29CAD4521BE6673C00C0CA90 /* MockStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD44B1BE6673C00C0CA90 /* MockStep.cpp */; };
+		29CAD4551BE66B0800C0CA90 /* MockEnumCats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4531BE66B0800C0CA90 /* MockEnumCats.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,6 +104,20 @@
 		29CAD41E1BE661B400C0CA90 /* TestRational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestRational.cpp; path = ../../Sourcecode/LyreTest/Tests/TestRational.cpp; sourceTree = "<group>"; };
 		29CAD41F1BE661B400C0CA90 /* TestStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestStep.cpp; path = ../../Sourcecode/LyreTest/Tests/TestStep.cpp; sourceTree = "<group>"; };
 		29CAD43B1BE661D500C0CA90 /* libLyre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLyre.a; path = ../Build/Products/Debug/libLyre.a; sourceTree = "<group>"; };
+		29CAD4411BE6673C00C0CA90 /* MockAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockAlter.cpp; path = ../../Sourcecode/LyreTest/Mock/MockAlter.cpp; sourceTree = "<group>"; };
+		29CAD4421BE6673C00C0CA90 /* MockAlter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockAlter.h; path = ../../Sourcecode/LyreTest/Mock/MockAlter.h; sourceTree = "<group>"; };
+		29CAD4431BE6673C00C0CA90 /* MockEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockEnum.cpp; path = ../../Sourcecode/LyreTest/Mock/MockEnum.cpp; sourceTree = "<group>"; };
+		29CAD4441BE6673C00C0CA90 /* MockEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockEnum.h; path = ../../Sourcecode/LyreTest/Mock/MockEnum.h; sourceTree = "<group>"; };
+		29CAD4451BE6673C00C0CA90 /* MockPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockPitch.cpp; path = ../../Sourcecode/LyreTest/Mock/MockPitch.cpp; sourceTree = "<group>"; };
+		29CAD4461BE6673C00C0CA90 /* MockPitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockPitch.h; path = ../../Sourcecode/LyreTest/Mock/MockPitch.h; sourceTree = "<group>"; };
+		29CAD4471BE6673C00C0CA90 /* MockPitchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockPitchFactory.cpp; path = ../../Sourcecode/LyreTest/Mock/MockPitchFactory.cpp; sourceTree = "<group>"; };
+		29CAD4481BE6673C00C0CA90 /* MockPitchFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockPitchFactory.h; path = ../../Sourcecode/LyreTest/Mock/MockPitchFactory.h; sourceTree = "<group>"; };
+		29CAD4491BE6673C00C0CA90 /* MockPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockPitchName.cpp; path = ../../Sourcecode/LyreTest/Mock/MockPitchName.cpp; sourceTree = "<group>"; };
+		29CAD44A1BE6673C00C0CA90 /* MockPitchName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockPitchName.h; path = ../../Sourcecode/LyreTest/Mock/MockPitchName.h; sourceTree = "<group>"; };
+		29CAD44B1BE6673C00C0CA90 /* MockStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockStep.cpp; path = ../../Sourcecode/LyreTest/Mock/MockStep.cpp; sourceTree = "<group>"; };
+		29CAD44C1BE6673C00C0CA90 /* MockStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockStep.h; path = ../../Sourcecode/LyreTest/Mock/MockStep.h; sourceTree = "<group>"; };
+		29CAD4531BE66B0800C0CA90 /* MockEnumCats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockEnumCats.cpp; path = ../../Sourcecode/LyreTest/Mock/MockEnumCats.cpp; sourceTree = "<group>"; };
+		29CAD4541BE66B0800C0CA90 /* MockEnumCats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockEnumCats.h; path = ../../Sourcecode/LyreTest/Mock/MockEnumCats.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +135,7 @@
 		29CAD3DE1BE6610F00C0CA90 = {
 			isa = PBXGroup;
 			children = (
+				29CAD4401BE6649C00C0CA90 /* Mock */,
 				29CAD43F1BE6621300C0CA90 /* Bin */,
 				29CAD43D1BE661EB00C0CA90 /* Cpul */,
 				29CAD3E81BE6610F00C0CA90 /* Products */,
@@ -190,6 +212,27 @@
 			name = Bin;
 			sourceTree = "<group>";
 		};
+		29CAD4401BE6649C00C0CA90 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				29CAD4411BE6673C00C0CA90 /* MockAlter.cpp */,
+				29CAD4421BE6673C00C0CA90 /* MockAlter.h */,
+				29CAD4431BE6673C00C0CA90 /* MockEnum.cpp */,
+				29CAD4441BE6673C00C0CA90 /* MockEnum.h */,
+				29CAD4531BE66B0800C0CA90 /* MockEnumCats.cpp */,
+				29CAD4541BE66B0800C0CA90 /* MockEnumCats.h */,
+				29CAD4451BE6673C00C0CA90 /* MockPitch.cpp */,
+				29CAD4461BE6673C00C0CA90 /* MockPitch.h */,
+				29CAD4471BE6673C00C0CA90 /* MockPitchFactory.cpp */,
+				29CAD4481BE6673C00C0CA90 /* MockPitchFactory.h */,
+				29CAD4491BE6673C00C0CA90 /* MockPitchName.cpp */,
+				29CAD44A1BE6673C00C0CA90 /* MockPitchName.h */,
+				29CAD44B1BE6673C00C0CA90 /* MockStep.cpp */,
+				29CAD44C1BE6673C00C0CA90 /* MockStep.h */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,10 +291,13 @@
 				29CAD4011BE6613400C0CA90 /* cpulTest.cpp in Sources */,
 				29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */,
 				29CAD4371BE661B400C0CA90 /* TestPitch.cpp in Sources */,
+				29CAD4521BE6673C00C0CA90 /* MockStep.cpp in Sources */,
 				29CAD4041BE6613400C0CA90 /* main.cpp in Sources */,
 				29CAD4021BE6613400C0CA90 /* cpulTestRegistry.cpp in Sources */,
+				29CAD44E1BE6673C00C0CA90 /* MockEnum.cpp in Sources */,
 				29CAD4291BE661B400C0CA90 /* TestDurHalf.cpp in Sources */,
 				29CAD42C1BE661B400C0CA90 /* TestDurWhole.cpp in Sources */,
+				29CAD44F1BE6673C00C0CA90 /* MockPitch.cpp in Sources */,
 				29CAD42E1BE661B400C0CA90 /* TestIAlter.cpp in Sources */,
 				29CAD4271BE661B400C0CA90 /* TestDurEighth.cpp in Sources */,
 				29CAD4381BE661B400C0CA90 /* TestPitchName.cpp in Sources */,
@@ -263,15 +309,19 @@
 				29CAD4241BE661B400C0CA90 /* TestDur128th.cpp in Sources */,
 				29CAD4031BE6613400C0CA90 /* cpulTestResult.cpp in Sources */,
 				29CAD4201BE661B400C0CA90 /* TestAlter.cpp in Sources */,
+				29CAD44D1BE6673C00C0CA90 /* MockAlter.cpp in Sources */,
 				29CAD4261BE661B400C0CA90 /* TestDurBreve.cpp in Sources */,
 				29CAD4341BE661B400C0CA90 /* TestIPitchName.cpp in Sources */,
 				29CAD42F1BE661B400C0CA90 /* TestIDur.cpp in Sources */,
 				29CAD4211BE661B400C0CA90 /* TestDur16th.cpp in Sources */,
 				29CAD42A1BE661B400C0CA90 /* TestDurLonga.cpp in Sources */,
 				29CAD42B1BE661B400C0CA90 /* TestDurQuarter.cpp in Sources */,
+				29CAD4511BE6673C00C0CA90 /* MockPitchName.cpp in Sources */,
+				29CAD4501BE6673C00C0CA90 /* MockPitchFactory.cpp in Sources */,
 				29CAD4391BE661B400C0CA90 /* TestRational.cpp in Sources */,
 				29CAD4301BE661B400C0CA90 /* TestIDurFactory.cpp in Sources */,
 				29CAD4001BE6613400C0CA90 /* cpulRun.cpp in Sources */,
+				29CAD4551BE66B0800C0CA90 /* MockEnumCats.cpp in Sources */,
 				29CAD4331BE661B400C0CA90 /* TestIPitchFactory.cpp in Sources */,
 				29CAD4361BE661B400C0CA90 /* TestMod.cpp in Sources */,
 			);

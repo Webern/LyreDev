@@ -1,40 +1,31 @@
 //PRIVATE
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "Lyre/Private/Enum.h"
+#include "LyreTest/Mock/MockEnumCats.h"
 #include <sstream>
 
 using namespace Lyre;
 using namespace Lyre::Private;
+using namespace Lyre::Mock;
 using namespace std;
-
-const static std::shared_ptr<Strings> mockenumstrings = std::make_shared<Strings>( Strings{"Bones","Bishop","Mabel"} );
-
-class MockStringsEnum : public Enum
-{
-public:
-    MockStringsEnum()
-    :Enum( 0, mockenumstrings, 1 )
-    {}
-};
 
 TEST( Compiles, Enum )
 {
-    MockStringsEnum m;
+    MockEnumCats m;
     CHECK( true )
 }
 TEST( SharedPtr, Enum )
 {
-    IEnumSP p = std::make_shared<MockStringsEnum>();
+    IEnumSP p = std::make_shared<MockEnumCats>();
     CHECK( true )
 }
 TEST( UniquePtr, Enum )
 {
-    IEnumUP p = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
+    IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     CHECK( true )
 }
 TEST( clone, Enum )
 {
-    IEnumSP p1 = std::make_shared<MockStringsEnum>();
+    IEnumSP p1 = std::make_shared<MockEnumCats>();
     p1->setValue( 4 );
     IEnumSP p2 = p1->clone();
     CHECK( p1.get() != p2.get() )
@@ -46,9 +37,9 @@ TEST( clone, Enum )
 }
 TEST( covariantClone, Enum )
 {
-    std::shared_ptr<MockStringsEnum> p1 = std::make_shared<MockStringsEnum>();
+    std::shared_ptr<MockEnumCats> p1 = std::make_shared<MockEnumCats>();
     p1->setValue( -1 );
-    std::unique_ptr<MockStringsEnum> p2;
+    std::unique_ptr<MockEnumCats> p2;
     p1->copyTo( p2 );
     CHECK( p1.get() != p2.get() )
     CHECK_EQUAL( 1, p1->getValue() );
@@ -59,17 +50,17 @@ TEST( covariantClone, Enum )
 }
 TEST( getMin, Enum )
 {
-    IEnumUP p = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
+    IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     CHECK_EQUAL( 1, p->getMin() )
 }
 TEST( getMax, Enum )
 {
-    IEnumUP p = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
+    IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     CHECK_EQUAL( 3, p->getMax() )
 }
 TEST( parse, Enum )
 {
-    IEnumUP p = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
+    IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     p->setValue( 3 );
     CHECK_EQUAL( "Mabel", p->toString() )
     CHECK( ! p->parse( "BONES" ) )
@@ -79,7 +70,7 @@ TEST( parse, Enum )
 }
 TEST( toStream, Enum )
 {
-    IEnumUP p = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
+    IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     p->setValue( 2 );
     stringstream ss;
     p->toStream( ss );
@@ -89,7 +80,7 @@ TEST( toStream, Enum )
 }
 TEST( toString, Enum )
 {
-    IEnumUP p = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
+    IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     p->setValue( 1 );
     String expected = "Bones";
     String actual{ p->toString() };
@@ -97,7 +88,7 @@ TEST( toString, Enum )
 }
 TEST( streamingOperator, Enum )
 {
-    IEnumUP p = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
+    IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     p->setValue( 3 );
     stringstream ss;
     ss << ( *p );
@@ -107,8 +98,8 @@ TEST( streamingOperator, Enum )
 }
 TEST( comparisons_a_isLessThan_b, Enum )
 {
-    IEnumUP a = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
-    IEnumUP b = unique_ptr<Enum>( new MockStringsEnum() );
+    IEnumUP a = unique_ptr<MockEnumCats>( new MockEnumCats() );
+    IEnumUP b = unique_ptr<Enum>( new MockEnumCats() );
     a->setValue( 1 );
     b->setValue( 2 );
     CHECK(   a->isLessThan   ( *b ) )
@@ -120,8 +111,8 @@ TEST( comparisons_a_isLessThan_b, Enum )
 }
 TEST( comparisons_a_isGreaterThan_b, Enum )
 {
-    IEnumUP a = unique_ptr<Enum>( new MockStringsEnum() );
-    IEnumUP b = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
+    IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
+    IEnumUP b = unique_ptr<MockEnumCats>( new MockEnumCats() );
     a->setValue( 2 );
     b->setValue( 1 );
     CHECK( ! a->isLessThan   ( *b ) )
@@ -133,8 +124,8 @@ TEST( comparisons_a_isGreaterThan_b, Enum )
 }
 TEST( comparisons_a_isEqualTo_b, Enum )
 {
-    IEnumUP a = unique_ptr<Enum>( new MockStringsEnum() );
-    IEnumUP b = unique_ptr<MockStringsEnum>( new MockStringsEnum() );
+    IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
+    IEnumUP b = unique_ptr<MockEnumCats>( new MockEnumCats() );
     a->setValue( 3 );
     b->setValue( 3 );
     CHECK( ! a->isLessThan   ( *b ) )
@@ -146,14 +137,14 @@ TEST( comparisons_a_isEqualTo_b, Enum )
 }
 TEST( increment01, Enum )
 {
-    IEnumUP a = unique_ptr<Enum>( new MockStringsEnum() );
+    IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
     a->setValue( 1 );
     a->increment();
     CHECK_EQUAL( 2, a->getValue() )
 }
 TEST( increment02, Enum )
 {
-    IEnumUP a = unique_ptr<Enum>( new MockStringsEnum() );
+    IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
     a->setValue( 2 );
     a->increment();
     CHECK_EQUAL( 3, a->getValue() )
@@ -168,14 +159,14 @@ TEST( increment02, Enum )
 }
 TEST( decrement01, Enum )
 {
-    IEnumUP a = unique_ptr<Enum>( new MockStringsEnum() );
+    IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
     a->setValue( 2 );
     a->decrement();
     CHECK_EQUAL( 1, a->getValue() )
 }
 TEST( decrement02, Enum )
 {
-    IEnumUP a = unique_ptr<Enum>( new MockStringsEnum() );
+    IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
     a->setValue( 1 );
     a->decrement();
     CHECK_EQUAL( 3, a->getValue() )

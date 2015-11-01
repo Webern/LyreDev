@@ -1,46 +1,20 @@
 //PUBLIC
 #include "LyreTest/cpul/cpulTestHarness.h"
+#include "LyreTest/Mock/MockPitch.h"
 #include "Lyre/IPitch.h"
 #include <sstream>
 
 using namespace Lyre;
+using namespace Lyre::Mock;
 using namespace std;
 
-class TestPitchMock;
-using TestPitchMockUP = unique_ptr<TestPitchMock>;
-class TestPitchMock : public IPitch
-{
-public:
-    virtual ~TestPitchMock() {}
-    virtual IPitchUP clone() const { return TestPitchMockUP{ new TestPitchMock{} }; }
-    /* void copyTo( std::unique_ptr<T>& output ) const */
-    virtual Integer getValue() const { return 0; }
-    virtual bool parse( const String& str ) { return true; }
-    virtual std::ostream& toStream( std::ostream& os ) const { return os; }
-    /* virtual String toString() const;
-       virtual bool isLessThan( const Pitch& other ) const;
-       virtual bool isGreaterThan( const Pitch& other ) const;
-       virtual bool isEqualTo( const Pitch& other ) const; */
-    virtual bool isIdenticalTo( const IPitch& other ) const { return true; }
-    virtual Integer getStepValue() const { return 0; }
-    virtual void setStepValue( const Integer val ) {}
-    virtual void incrementStep() {}
-    virtual void decrementStep() {}
-    virtual Integer getAlterValue() const { return 0; }
-    virtual void setAlterValue( const Integer val ) {}
-    virtual void incrementAlter() {}
-    virtual void decrementAlter() {}
-    virtual Integer getOctaveValue() const { return 0; }
-    virtual void setOctaveValue( const Integer val ) {}
-    virtual void incrementOctave() {}
-    virtual void decrementOctave() {}
-};
+
 
 TEST( compiles, IPitch )
 {
-    IPitchUP p{ new TestPitchMock{} };
+    IPitchUP p{ new MockPitch{} };
     auto c = p->clone();
-    TestPitchMockUP x;
+    MockPitchUP x;
     p->copyTo( x );
     CHECK( p != c )
     CHECK( p != x )
