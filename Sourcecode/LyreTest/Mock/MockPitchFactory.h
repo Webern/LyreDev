@@ -20,6 +20,8 @@ namespace Lyre
             }
             virtual void setPitch( const Integer pitchValue )
             {
+                myPitch.setStepValue( pitchValue );
+#if 1==0
                 auto octaves = pitchValue / 12;
                 octaves -= 1;
                 auto p = pitchValue - ( (octaves+1) * 12 );
@@ -89,6 +91,7 @@ namespace Lyre
                         throw std::runtime_error( "boom" );
                         break;
                 }
+#endif
             }
             virtual void setPitch( const IPitchUP& pitch )
             {

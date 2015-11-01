@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>2203F737-77F3-432D-AAF2-D207FCD743AA</string>
+	<string>FDDF5281-D240-44D3-915E-F44A18D749C7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>LyreSpace</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/Webern/Lyre.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LyreSpace.xcworkspace</string>
+	<string>Xcode/LyreSpace.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6E5A987D-9527-4351-BEEC-D3E3CCB24A28</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Webern/Lyre.git</string>
