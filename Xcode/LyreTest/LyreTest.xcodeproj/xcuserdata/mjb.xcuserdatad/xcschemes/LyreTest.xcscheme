@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2968176C1BE5A18700C86B91"
+               BlueprintIdentifier = "29CAD3E61BE6610F00C0CA90"
                BuildableName = "LyreTest"
                BlueprintName = "LyreTest"
                ReferencedContainer = "container:LyreTest.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2968176C1BE5A18700C86B91"
+            BlueprintIdentifier = "29CAD3E61BE6610F00C0CA90"
             BuildableName = "LyreTest"
             BlueprintName = "LyreTest"
             ReferencedContainer = "container:LyreTest.xcodeproj">
@@ -51,7 +51,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2968176C1BE5A18700C86B91"
+            BlueprintIdentifier = "29CAD3E61BE6610F00C0CA90"
             BuildableName = "LyreTest"
             BlueprintName = "LyreTest"
             ReferencedContainer = "container:LyreTest.xcodeproj">
@@ -69,7 +69,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2968176C1BE5A18700C86B91"
+            BlueprintIdentifier = "29CAD3E61BE6610F00C0CA90"
             BuildableName = "LyreTest"
             BlueprintName = "LyreTest"
             ReferencedContainer = "container:LyreTest.xcodeproj">

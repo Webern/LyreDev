@@ -7,44 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		296817861BE5A1CF00C86B91 /* cpulFailure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968177A1BE5A1CF00C86B91 /* cpulFailure.cpp */; };
-		296817871BE5A1CF00C86B91 /* cpulRun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968177B1BE5A1CF00C86B91 /* cpulRun.cpp */; };
-		296817881BE5A1CF00C86B91 /* cpulTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968177D1BE5A1CF00C86B91 /* cpulTest.cpp */; };
-		296817891BE5A1CF00C86B91 /* cpulTestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968177F1BE5A1CF00C86B91 /* cpulTestRegistry.cpp */; };
-		2968178A1BE5A1CF00C86B91 /* cpulTestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817801BE5A1CF00C86B91 /* cpulTestResult.cpp */; };
-		2968178B1BE5A1CF00C86B91 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817811BE5A1CF00C86B91 /* main.cpp */; };
-		296817A71BE5A1E000C86B91 /* TestAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968178C1BE5A1E000C86B91 /* TestAlter.cpp */; };
-		296817A81BE5A1E000C86B91 /* TestDur16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968178D1BE5A1E000C86B91 /* TestDur16th.cpp */; };
-		296817A91BE5A1E000C86B91 /* TestDur32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968178E1BE5A1E000C86B91 /* TestDur32nd.cpp */; };
-		296817AA1BE5A1E000C86B91 /* TestDur64th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968178F1BE5A1E000C86B91 /* TestDur64th.cpp */; };
-		296817AB1BE5A1E000C86B91 /* TestDur128th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817901BE5A1E000C86B91 /* TestDur128th.cpp */; };
-		296817AC1BE5A1E000C86B91 /* TestDur256th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817911BE5A1E000C86B91 /* TestDur256th.cpp */; };
-		296817AD1BE5A1E000C86B91 /* TestDurBreve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817921BE5A1E000C86B91 /* TestDurBreve.cpp */; };
-		296817AE1BE5A1E000C86B91 /* TestDurEighth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817931BE5A1E000C86B91 /* TestDurEighth.cpp */; };
-		296817AF1BE5A1E000C86B91 /* TestDurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817941BE5A1E000C86B91 /* TestDurFactory.cpp */; };
-		296817B01BE5A1E000C86B91 /* TestDurHalf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817951BE5A1E000C86B91 /* TestDurHalf.cpp */; };
-		296817B11BE5A1E000C86B91 /* TestDurLonga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817961BE5A1E000C86B91 /* TestDurLonga.cpp */; };
-		296817B21BE5A1E000C86B91 /* TestDurQuarter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817971BE5A1E000C86B91 /* TestDurQuarter.cpp */; };
-		296817B31BE5A1E000C86B91 /* TestDurWhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817981BE5A1E000C86B91 /* TestDurWhole.cpp */; };
-		296817B41BE5A1E000C86B91 /* TestEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817991BE5A1E000C86B91 /* TestEnum.cpp */; };
-		296817B51BE5A1E000C86B91 /* TestIAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968179A1BE5A1E000C86B91 /* TestIAlter.cpp */; };
-		296817B61BE5A1E000C86B91 /* TestIDur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968179B1BE5A1E000C86B91 /* TestIDur.cpp */; };
-		296817B71BE5A1E000C86B91 /* TestIDurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968179C1BE5A1E000C86B91 /* TestIDurFactory.cpp */; };
-		296817B81BE5A1E000C86B91 /* TestIEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968179D1BE5A1E000C86B91 /* TestIEnum.cpp */; };
-		296817B91BE5A1E000C86B91 /* TestIPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968179E1BE5A1E000C86B91 /* TestIPitch.cpp */; };
-		296817BA1BE5A1E000C86B91 /* TestIPitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2968179F1BE5A1E000C86B91 /* TestIPitchFactory.cpp */; };
-		296817BB1BE5A1E000C86B91 /* TestIPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817A01BE5A1E000C86B91 /* TestIPitchName.cpp */; };
-		296817BC1BE5A1E000C86B91 /* TestIStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817A11BE5A1E000C86B91 /* TestIStep.cpp */; };
-		296817BD1BE5A1E000C86B91 /* TestMod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817A21BE5A1E000C86B91 /* TestMod.cpp */; };
-		296817BE1BE5A1E000C86B91 /* TestPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817A31BE5A1E000C86B91 /* TestPitch.cpp */; };
-		296817BF1BE5A1E000C86B91 /* TestPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817A41BE5A1E000C86B91 /* TestPitchName.cpp */; };
-		296817C01BE5A1E000C86B91 /* TestRational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817A51BE5A1E000C86B91 /* TestRational.cpp */; };
-		296817C11BE5A1E000C86B91 /* TestStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296817A61BE5A1E000C86B91 /* TestStep.cpp */; };
-		296817C31BE5A42600C86B91 /* libLyre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 296817C21BE5A42600C86B91 /* libLyre.a */; };
+		29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */; };
+		29CAD4001BE6613400C0CA90 /* cpulRun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F51BE6613400C0CA90 /* cpulRun.cpp */; };
+		29CAD4011BE6613400C0CA90 /* cpulTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F71BE6613400C0CA90 /* cpulTest.cpp */; };
+		29CAD4021BE6613400C0CA90 /* cpulTestRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F91BE6613400C0CA90 /* cpulTestRegistry.cpp */; };
+		29CAD4031BE6613400C0CA90 /* cpulTestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3FA1BE6613400C0CA90 /* cpulTestResult.cpp */; };
+		29CAD4041BE6613400C0CA90 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3FB1BE6613400C0CA90 /* main.cpp */; };
+		29CAD4201BE661B400C0CA90 /* TestAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4051BE661B400C0CA90 /* TestAlter.cpp */; };
+		29CAD4211BE661B400C0CA90 /* TestDur16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4061BE661B400C0CA90 /* TestDur16th.cpp */; };
+		29CAD4221BE661B400C0CA90 /* TestDur32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4071BE661B400C0CA90 /* TestDur32nd.cpp */; };
+		29CAD4231BE661B400C0CA90 /* TestDur64th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4081BE661B400C0CA90 /* TestDur64th.cpp */; };
+		29CAD4241BE661B400C0CA90 /* TestDur128th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4091BE661B400C0CA90 /* TestDur128th.cpp */; };
+		29CAD4251BE661B400C0CA90 /* TestDur256th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40A1BE661B400C0CA90 /* TestDur256th.cpp */; };
+		29CAD4261BE661B400C0CA90 /* TestDurBreve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40B1BE661B400C0CA90 /* TestDurBreve.cpp */; };
+		29CAD4271BE661B400C0CA90 /* TestDurEighth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40C1BE661B400C0CA90 /* TestDurEighth.cpp */; };
+		29CAD4281BE661B400C0CA90 /* TestDurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40D1BE661B400C0CA90 /* TestDurFactory.cpp */; };
+		29CAD4291BE661B400C0CA90 /* TestDurHalf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40E1BE661B400C0CA90 /* TestDurHalf.cpp */; };
+		29CAD42A1BE661B400C0CA90 /* TestDurLonga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40F1BE661B400C0CA90 /* TestDurLonga.cpp */; };
+		29CAD42B1BE661B400C0CA90 /* TestDurQuarter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4101BE661B400C0CA90 /* TestDurQuarter.cpp */; };
+		29CAD42C1BE661B400C0CA90 /* TestDurWhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4111BE661B400C0CA90 /* TestDurWhole.cpp */; };
+		29CAD42D1BE661B400C0CA90 /* TestEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4121BE661B400C0CA90 /* TestEnum.cpp */; };
+		29CAD42E1BE661B400C0CA90 /* TestIAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4131BE661B400C0CA90 /* TestIAlter.cpp */; };
+		29CAD42F1BE661B400C0CA90 /* TestIDur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4141BE661B400C0CA90 /* TestIDur.cpp */; };
+		29CAD4301BE661B400C0CA90 /* TestIDurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4151BE661B400C0CA90 /* TestIDurFactory.cpp */; };
+		29CAD4311BE661B400C0CA90 /* TestIEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4161BE661B400C0CA90 /* TestIEnum.cpp */; };
+		29CAD4321BE661B400C0CA90 /* TestIPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4171BE661B400C0CA90 /* TestIPitch.cpp */; };
+		29CAD4331BE661B400C0CA90 /* TestIPitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4181BE661B400C0CA90 /* TestIPitchFactory.cpp */; };
+		29CAD4341BE661B400C0CA90 /* TestIPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4191BE661B400C0CA90 /* TestIPitchName.cpp */; };
+		29CAD4351BE661B400C0CA90 /* TestIStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD41A1BE661B400C0CA90 /* TestIStep.cpp */; };
+		29CAD4361BE661B400C0CA90 /* TestMod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD41B1BE661B400C0CA90 /* TestMod.cpp */; };
+		29CAD4371BE661B400C0CA90 /* TestPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD41C1BE661B400C0CA90 /* TestPitch.cpp */; };
+		29CAD4381BE661B400C0CA90 /* TestPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD41D1BE661B400C0CA90 /* TestPitchName.cpp */; };
+		29CAD4391BE661B400C0CA90 /* TestRational.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD41E1BE661B400C0CA90 /* TestRational.cpp */; };
+		29CAD43A1BE661B400C0CA90 /* TestStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD41F1BE661B400C0CA90 /* TestStep.cpp */; };
+		29CAD43C1BE661D500C0CA90 /* libLyre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CAD43B1BE661D500C0CA90 /* libLyre.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2968176B1BE5A18700C86B91 /* CopyFiles */ = {
+		29CAD3E51BE6610F00C0CA90 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -56,151 +56,150 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2968176D1BE5A18700C86B91 /* LyreTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2968177A1BE5A1CF00C86B91 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulFailure.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulFailure.cpp; sourceTree = "<group>"; };
-		2968177B1BE5A1CF00C86B91 /* cpulRun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulRun.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulRun.cpp; sourceTree = "<group>"; };
-		2968177C1BE5A1CF00C86B91 /* cpulRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulRun.h; path = ../../Sourcecode/LyreTest/Cpul/cpulRun.h; sourceTree = "<group>"; };
-		2968177D1BE5A1CF00C86B91 /* cpulTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulTest.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulTest.cpp; sourceTree = "<group>"; };
-		2968177E1BE5A1CF00C86B91 /* cpulTestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestHarness.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestHarness.h; sourceTree = "<group>"; };
-		2968177F1BE5A1CF00C86B91 /* cpulTestRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulTestRegistry.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulTestRegistry.cpp; sourceTree = "<group>"; };
-		296817801BE5A1CF00C86B91 /* cpulTestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulTestResult.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulTestResult.cpp; sourceTree = "<group>"; };
-		296817811BE5A1CF00C86B91 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../Sourcecode/LyreTest/Cpul/main.cpp; sourceTree = "<group>"; };
-		296817821BE5A1CF00C86B91 /* cpulTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTest.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTest.h; sourceTree = "<group>"; };
-		296817831BE5A1CF00C86B91 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestResult.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestResult.h; sourceTree = "<group>"; };
-		296817841BE5A1CF00C86B91 /* cpulFailure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulFailure.h; path = ../../Sourcecode/LyreTest/Cpul/cpulFailure.h; sourceTree = "<group>"; };
-		296817851BE5A1CF00C86B91 /* cpulTestRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestRegistry.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestRegistry.h; sourceTree = "<group>"; };
-		2968178C1BE5A1E000C86B91 /* TestAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestAlter.cpp; path = ../../../Sourcecode/LyreTest/TestAlter.cpp; sourceTree = "<group>"; };
-		2968178D1BE5A1E000C86B91 /* TestDur16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur16th.cpp; path = ../../../Sourcecode/LyreTest/TestDur16th.cpp; sourceTree = "<group>"; };
-		2968178E1BE5A1E000C86B91 /* TestDur32nd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur32nd.cpp; path = ../../../Sourcecode/LyreTest/TestDur32nd.cpp; sourceTree = "<group>"; };
-		2968178F1BE5A1E000C86B91 /* TestDur64th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur64th.cpp; path = ../../../Sourcecode/LyreTest/TestDur64th.cpp; sourceTree = "<group>"; };
-		296817901BE5A1E000C86B91 /* TestDur128th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur128th.cpp; path = ../../../Sourcecode/LyreTest/TestDur128th.cpp; sourceTree = "<group>"; };
-		296817911BE5A1E000C86B91 /* TestDur256th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur256th.cpp; path = ../../../Sourcecode/LyreTest/TestDur256th.cpp; sourceTree = "<group>"; };
-		296817921BE5A1E000C86B91 /* TestDurBreve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBreve.cpp; path = ../../../Sourcecode/LyreTest/TestDurBreve.cpp; sourceTree = "<group>"; };
-		296817931BE5A1E000C86B91 /* TestDurEighth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurEighth.cpp; path = ../../../Sourcecode/LyreTest/TestDurEighth.cpp; sourceTree = "<group>"; };
-		296817941BE5A1E000C86B91 /* TestDurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurFactory.cpp; path = ../../../Sourcecode/LyreTest/TestDurFactory.cpp; sourceTree = "<group>"; };
-		296817951BE5A1E000C86B91 /* TestDurHalf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurHalf.cpp; path = ../../../Sourcecode/LyreTest/TestDurHalf.cpp; sourceTree = "<group>"; };
-		296817961BE5A1E000C86B91 /* TestDurLonga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurLonga.cpp; path = ../../../Sourcecode/LyreTest/TestDurLonga.cpp; sourceTree = "<group>"; };
-		296817971BE5A1E000C86B91 /* TestDurQuarter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurQuarter.cpp; path = ../../../Sourcecode/LyreTest/TestDurQuarter.cpp; sourceTree = "<group>"; };
-		296817981BE5A1E000C86B91 /* TestDurWhole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurWhole.cpp; path = ../../../Sourcecode/LyreTest/TestDurWhole.cpp; sourceTree = "<group>"; };
-		296817991BE5A1E000C86B91 /* TestEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestEnum.cpp; path = ../../../Sourcecode/LyreTest/TestEnum.cpp; sourceTree = "<group>"; };
-		2968179A1BE5A1E000C86B91 /* TestIAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIAlter.cpp; path = ../../../Sourcecode/LyreTest/TestIAlter.cpp; sourceTree = "<group>"; };
-		2968179B1BE5A1E000C86B91 /* TestIDur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDur.cpp; path = ../../../Sourcecode/LyreTest/TestIDur.cpp; sourceTree = "<group>"; };
-		2968179C1BE5A1E000C86B91 /* TestIDurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDurFactory.cpp; path = ../../../Sourcecode/LyreTest/TestIDurFactory.cpp; sourceTree = "<group>"; };
-		2968179D1BE5A1E000C86B91 /* TestIEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIEnum.cpp; path = ../../../Sourcecode/LyreTest/TestIEnum.cpp; sourceTree = "<group>"; };
-		2968179E1BE5A1E000C86B91 /* TestIPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIPitch.cpp; path = ../../../Sourcecode/LyreTest/TestIPitch.cpp; sourceTree = "<group>"; };
-		2968179F1BE5A1E000C86B91 /* TestIPitchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIPitchFactory.cpp; path = ../../../Sourcecode/LyreTest/TestIPitchFactory.cpp; sourceTree = "<group>"; };
-		296817A01BE5A1E000C86B91 /* TestIPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIPitchName.cpp; path = ../../../Sourcecode/LyreTest/TestIPitchName.cpp; sourceTree = "<group>"; };
-		296817A11BE5A1E000C86B91 /* TestIStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIStep.cpp; path = ../../../Sourcecode/LyreTest/TestIStep.cpp; sourceTree = "<group>"; };
-		296817A21BE5A1E000C86B91 /* TestMod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestMod.cpp; path = ../../../Sourcecode/LyreTest/TestMod.cpp; sourceTree = "<group>"; };
-		296817A31BE5A1E000C86B91 /* TestPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestPitch.cpp; path = ../../../Sourcecode/LyreTest/TestPitch.cpp; sourceTree = "<group>"; };
-		296817A41BE5A1E000C86B91 /* TestPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestPitchName.cpp; path = ../../../Sourcecode/LyreTest/TestPitchName.cpp; sourceTree = "<group>"; };
-		296817A51BE5A1E000C86B91 /* TestRational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestRational.cpp; path = ../../../Sourcecode/LyreTest/TestRational.cpp; sourceTree = "<group>"; };
-		296817A61BE5A1E000C86B91 /* TestStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestStep.cpp; path = ../../../Sourcecode/LyreTest/TestStep.cpp; sourceTree = "<group>"; };
-		296817C21BE5A42600C86B91 /* libLyre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLyre.a; path = ../Build/Products/Debug/libLyre.a; sourceTree = "<group>"; };
+		29CAD3E71BE6610F00C0CA90 /* LyreTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29CAD3F31BE6613400C0CA90 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestResult.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestResult.h; sourceTree = "<group>"; };
+		29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulFailure.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulFailure.cpp; sourceTree = "<group>"; };
+		29CAD3F51BE6613400C0CA90 /* cpulRun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulRun.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulRun.cpp; sourceTree = "<group>"; };
+		29CAD3F61BE6613400C0CA90 /* cpulRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulRun.h; path = ../../Sourcecode/LyreTest/Cpul/cpulRun.h; sourceTree = "<group>"; };
+		29CAD3F71BE6613400C0CA90 /* cpulTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulTest.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulTest.cpp; sourceTree = "<group>"; };
+		29CAD3F81BE6613400C0CA90 /* cpulTestHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestHarness.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestHarness.h; sourceTree = "<group>"; };
+		29CAD3F91BE6613400C0CA90 /* cpulTestRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulTestRegistry.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulTestRegistry.cpp; sourceTree = "<group>"; };
+		29CAD3FA1BE6613400C0CA90 /* cpulTestResult.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulTestResult.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulTestResult.cpp; sourceTree = "<group>"; };
+		29CAD3FB1BE6613400C0CA90 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../Sourcecode/LyreTest/Cpul/main.cpp; sourceTree = "<group>"; };
+		29CAD3FC1BE6613400C0CA90 /* cpulTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTest.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTest.h; sourceTree = "<group>"; };
+		29CAD3FD1BE6613400C0CA90 /* cpulFailure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulFailure.h; path = ../../Sourcecode/LyreTest/Cpul/cpulFailure.h; sourceTree = "<group>"; };
+		29CAD3FE1BE6613400C0CA90 /* cpulTestRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestRegistry.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestRegistry.h; sourceTree = "<group>"; };
+		29CAD4051BE661B400C0CA90 /* TestAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestAlter.cpp; path = ../../Sourcecode/LyreTest/Tests/TestAlter.cpp; sourceTree = "<group>"; };
+		29CAD4061BE661B400C0CA90 /* TestDur16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur16th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur16th.cpp; sourceTree = "<group>"; };
+		29CAD4071BE661B400C0CA90 /* TestDur32nd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur32nd.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur32nd.cpp; sourceTree = "<group>"; };
+		29CAD4081BE661B400C0CA90 /* TestDur64th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur64th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur64th.cpp; sourceTree = "<group>"; };
+		29CAD4091BE661B400C0CA90 /* TestDur128th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur128th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur128th.cpp; sourceTree = "<group>"; };
+		29CAD40A1BE661B400C0CA90 /* TestDur256th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur256th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur256th.cpp; sourceTree = "<group>"; };
+		29CAD40B1BE661B400C0CA90 /* TestDurBreve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBreve.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBreve.cpp; sourceTree = "<group>"; };
+		29CAD40C1BE661B400C0CA90 /* TestDurEighth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurEighth.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurEighth.cpp; sourceTree = "<group>"; };
+		29CAD40D1BE661B400C0CA90 /* TestDurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurFactory.cpp; sourceTree = "<group>"; };
+		29CAD40E1BE661B400C0CA90 /* TestDurHalf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurHalf.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurHalf.cpp; sourceTree = "<group>"; };
+		29CAD40F1BE661B400C0CA90 /* TestDurLonga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurLonga.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurLonga.cpp; sourceTree = "<group>"; };
+		29CAD4101BE661B400C0CA90 /* TestDurQuarter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurQuarter.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurQuarter.cpp; sourceTree = "<group>"; };
+		29CAD4111BE661B400C0CA90 /* TestDurWhole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurWhole.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurWhole.cpp; sourceTree = "<group>"; };
+		29CAD4121BE661B400C0CA90 /* TestEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestEnum.cpp; path = ../../Sourcecode/LyreTest/Tests/TestEnum.cpp; sourceTree = "<group>"; };
+		29CAD4131BE661B400C0CA90 /* TestIAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIAlter.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIAlter.cpp; sourceTree = "<group>"; };
+		29CAD4141BE661B400C0CA90 /* TestIDur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDur.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDur.cpp; sourceTree = "<group>"; };
+		29CAD4151BE661B400C0CA90 /* TestIDurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDurFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDurFactory.cpp; sourceTree = "<group>"; };
+		29CAD4161BE661B400C0CA90 /* TestIEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIEnum.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIEnum.cpp; sourceTree = "<group>"; };
+		29CAD4171BE661B400C0CA90 /* TestIPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIPitch.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIPitch.cpp; sourceTree = "<group>"; };
+		29CAD4181BE661B400C0CA90 /* TestIPitchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIPitchFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIPitchFactory.cpp; sourceTree = "<group>"; };
+		29CAD4191BE661B400C0CA90 /* TestIPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIPitchName.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIPitchName.cpp; sourceTree = "<group>"; };
+		29CAD41A1BE661B400C0CA90 /* TestIStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIStep.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIStep.cpp; sourceTree = "<group>"; };
+		29CAD41B1BE661B400C0CA90 /* TestMod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestMod.cpp; path = ../../Sourcecode/LyreTest/Tests/TestMod.cpp; sourceTree = "<group>"; };
+		29CAD41C1BE661B400C0CA90 /* TestPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestPitch.cpp; path = ../../Sourcecode/LyreTest/Tests/TestPitch.cpp; sourceTree = "<group>"; };
+		29CAD41D1BE661B400C0CA90 /* TestPitchName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestPitchName.cpp; path = ../../Sourcecode/LyreTest/Tests/TestPitchName.cpp; sourceTree = "<group>"; };
+		29CAD41E1BE661B400C0CA90 /* TestRational.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestRational.cpp; path = ../../Sourcecode/LyreTest/Tests/TestRational.cpp; sourceTree = "<group>"; };
+		29CAD41F1BE661B400C0CA90 /* TestStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestStep.cpp; path = ../../Sourcecode/LyreTest/Tests/TestStep.cpp; sourceTree = "<group>"; };
+		29CAD43B1BE661D500C0CA90 /* libLyre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLyre.a; path = ../Build/Products/Debug/libLyre.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2968176A1BE5A18700C86B91 /* Frameworks */ = {
+		29CAD3E41BE6610F00C0CA90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				296817C31BE5A42600C86B91 /* libLyre.a in Frameworks */,
+				29CAD43C1BE661D500C0CA90 /* libLyre.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		296817641BE5A18700C86B91 = {
+		29CAD3DE1BE6610F00C0CA90 = {
 			isa = PBXGroup;
 			children = (
-				296817791BE5A1A500C86B91 /* cpul */,
-				296817C41BE5A43600C86B91 /* Link */,
-				2968176E1BE5A18700C86B91 /* Products */,
-				2968176F1BE5A18700C86B91 /* Tests */,
+				29CAD43F1BE6621300C0CA90 /* Bin */,
+				29CAD43D1BE661EB00C0CA90 /* Cpul */,
+				29CAD3E81BE6610F00C0CA90 /* Products */,
+				29CAD43E1BE661F500C0CA90 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
-		2968176E1BE5A18700C86B91 /* Products */ = {
+		29CAD3E81BE6610F00C0CA90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2968176D1BE5A18700C86B91 /* LyreTest */,
+				29CAD3E71BE6610F00C0CA90 /* LyreTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2968176F1BE5A18700C86B91 /* Tests */ = {
+		29CAD43D1BE661EB00C0CA90 /* Cpul */ = {
 			isa = PBXGroup;
 			children = (
-				2968178C1BE5A1E000C86B91 /* TestAlter.cpp */,
-				2968178D1BE5A1E000C86B91 /* TestDur16th.cpp */,
-				2968178E1BE5A1E000C86B91 /* TestDur32nd.cpp */,
-				2968178F1BE5A1E000C86B91 /* TestDur64th.cpp */,
-				296817901BE5A1E000C86B91 /* TestDur128th.cpp */,
-				296817911BE5A1E000C86B91 /* TestDur256th.cpp */,
-				296817921BE5A1E000C86B91 /* TestDurBreve.cpp */,
-				296817931BE5A1E000C86B91 /* TestDurEighth.cpp */,
-				296817941BE5A1E000C86B91 /* TestDurFactory.cpp */,
-				296817951BE5A1E000C86B91 /* TestDurHalf.cpp */,
-				296817961BE5A1E000C86B91 /* TestDurLonga.cpp */,
-				296817971BE5A1E000C86B91 /* TestDurQuarter.cpp */,
-				296817981BE5A1E000C86B91 /* TestDurWhole.cpp */,
-				296817991BE5A1E000C86B91 /* TestEnum.cpp */,
-				2968179A1BE5A1E000C86B91 /* TestIAlter.cpp */,
-				2968179B1BE5A1E000C86B91 /* TestIDur.cpp */,
-				2968179C1BE5A1E000C86B91 /* TestIDurFactory.cpp */,
-				2968179D1BE5A1E000C86B91 /* TestIEnum.cpp */,
-				2968179E1BE5A1E000C86B91 /* TestIPitch.cpp */,
-				2968179F1BE5A1E000C86B91 /* TestIPitchFactory.cpp */,
-				296817A01BE5A1E000C86B91 /* TestIPitchName.cpp */,
-				296817A11BE5A1E000C86B91 /* TestIStep.cpp */,
-				296817A21BE5A1E000C86B91 /* TestMod.cpp */,
-				296817A31BE5A1E000C86B91 /* TestPitch.cpp */,
-				296817A41BE5A1E000C86B91 /* TestPitchName.cpp */,
-				296817A51BE5A1E000C86B91 /* TestRational.cpp */,
-				296817A61BE5A1E000C86B91 /* TestStep.cpp */,
+				29CAD3FB1BE6613400C0CA90 /* main.cpp */,
+				29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */,
+				29CAD3FD1BE6613400C0CA90 /* cpulFailure.h */,
+				29CAD3F51BE6613400C0CA90 /* cpulRun.cpp */,
+				29CAD3F61BE6613400C0CA90 /* cpulRun.h */,
+				29CAD3F71BE6613400C0CA90 /* cpulTest.cpp */,
+				29CAD3FC1BE6613400C0CA90 /* cpulTest.h */,
+				29CAD3F81BE6613400C0CA90 /* cpulTestHarness.h */,
+				29CAD3F91BE6613400C0CA90 /* cpulTestRegistry.cpp */,
+				29CAD3FE1BE6613400C0CA90 /* cpulTestRegistry.h */,
+				29CAD3FA1BE6613400C0CA90 /* cpulTestResult.cpp */,
+				29CAD3F31BE6613400C0CA90 /* cpulTestResult.h */,
+			);
+			name = Cpul;
+			sourceTree = "<group>";
+		};
+		29CAD43E1BE661F500C0CA90 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				29CAD4051BE661B400C0CA90 /* TestAlter.cpp */,
+				29CAD4091BE661B400C0CA90 /* TestDur128th.cpp */,
+				29CAD4061BE661B400C0CA90 /* TestDur16th.cpp */,
+				29CAD40A1BE661B400C0CA90 /* TestDur256th.cpp */,
+				29CAD4071BE661B400C0CA90 /* TestDur32nd.cpp */,
+				29CAD4081BE661B400C0CA90 /* TestDur64th.cpp */,
+				29CAD40B1BE661B400C0CA90 /* TestDurBreve.cpp */,
+				29CAD40C1BE661B400C0CA90 /* TestDurEighth.cpp */,
+				29CAD40D1BE661B400C0CA90 /* TestDurFactory.cpp */,
+				29CAD40E1BE661B400C0CA90 /* TestDurHalf.cpp */,
+				29CAD40F1BE661B400C0CA90 /* TestDurLonga.cpp */,
+				29CAD4101BE661B400C0CA90 /* TestDurQuarter.cpp */,
+				29CAD4111BE661B400C0CA90 /* TestDurWhole.cpp */,
+				29CAD4121BE661B400C0CA90 /* TestEnum.cpp */,
+				29CAD4131BE661B400C0CA90 /* TestIAlter.cpp */,
+				29CAD4141BE661B400C0CA90 /* TestIDur.cpp */,
+				29CAD4151BE661B400C0CA90 /* TestIDurFactory.cpp */,
+				29CAD4161BE661B400C0CA90 /* TestIEnum.cpp */,
+				29CAD4171BE661B400C0CA90 /* TestIPitch.cpp */,
+				29CAD4181BE661B400C0CA90 /* TestIPitchFactory.cpp */,
+				29CAD4191BE661B400C0CA90 /* TestIPitchName.cpp */,
+				29CAD41A1BE661B400C0CA90 /* TestIStep.cpp */,
+				29CAD41B1BE661B400C0CA90 /* TestMod.cpp */,
+				29CAD41C1BE661B400C0CA90 /* TestPitch.cpp */,
+				29CAD41D1BE661B400C0CA90 /* TestPitchName.cpp */,
+				29CAD41E1BE661B400C0CA90 /* TestRational.cpp */,
+				29CAD41F1BE661B400C0CA90 /* TestStep.cpp */,
 			);
 			name = Tests;
-			path = LyreTest;
 			sourceTree = "<group>";
 		};
-		296817791BE5A1A500C86B91 /* cpul */ = {
+		29CAD43F1BE6621300C0CA90 /* Bin */ = {
 			isa = PBXGroup;
 			children = (
-				2968177A1BE5A1CF00C86B91 /* cpulFailure.cpp */,
-				2968177B1BE5A1CF00C86B91 /* cpulRun.cpp */,
-				2968177C1BE5A1CF00C86B91 /* cpulRun.h */,
-				2968177D1BE5A1CF00C86B91 /* cpulTest.cpp */,
-				2968177E1BE5A1CF00C86B91 /* cpulTestHarness.h */,
-				2968177F1BE5A1CF00C86B91 /* cpulTestRegistry.cpp */,
-				296817801BE5A1CF00C86B91 /* cpulTestResult.cpp */,
-				296817811BE5A1CF00C86B91 /* main.cpp */,
-				296817821BE5A1CF00C86B91 /* cpulTest.h */,
-				296817831BE5A1CF00C86B91 /* cpulTestResult.h */,
-				296817841BE5A1CF00C86B91 /* cpulFailure.h */,
-				296817851BE5A1CF00C86B91 /* cpulTestRegistry.h */,
+				29CAD43B1BE661D500C0CA90 /* libLyre.a */,
 			);
-			name = cpul;
-			sourceTree = "<group>";
-		};
-		296817C41BE5A43600C86B91 /* Link */ = {
-			isa = PBXGroup;
-			children = (
-				296817C21BE5A42600C86B91 /* libLyre.a */,
-			);
-			name = Link;
+			name = Bin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2968176C1BE5A18700C86B91 /* LyreTest */ = {
+		29CAD3E61BE6610F00C0CA90 /* LyreTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 296817761BE5A18700C86B91 /* Build configuration list for PBXNativeTarget "LyreTest" */;
+			buildConfigurationList = 29CAD3F01BE6610F00C0CA90 /* Build configuration list for PBXNativeTarget "LyreTest" */;
 			buildPhases = (
-				296817691BE5A18700C86B91 /* Sources */,
-				2968176A1BE5A18700C86B91 /* Frameworks */,
-				2968176B1BE5A18700C86B91 /* CopyFiles */,
+				29CAD3E31BE6610F00C0CA90 /* Sources */,
+				29CAD3E41BE6610F00C0CA90 /* Frameworks */,
+				29CAD3E51BE6610F00C0CA90 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -208,80 +207,80 @@
 			);
 			name = LyreTest;
 			productName = LyreTest;
-			productReference = 2968176D1BE5A18700C86B91 /* LyreTest */;
+			productReference = 29CAD3E71BE6610F00C0CA90 /* LyreTest */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		296817651BE5A18700C86B91 /* Project object */ = {
+		29CAD3DF1BE6610F00C0CA90 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Matthew James Briggs";
 			};
-			buildConfigurationList = 296817681BE5A18700C86B91 /* Build configuration list for PBXProject "LyreTest" */;
+			buildConfigurationList = 29CAD3E21BE6610F00C0CA90 /* Build configuration list for PBXProject "LyreTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 296817641BE5A18700C86B91;
-			productRefGroup = 2968176E1BE5A18700C86B91 /* Products */;
+			mainGroup = 29CAD3DE1BE6610F00C0CA90;
+			productRefGroup = 29CAD3E81BE6610F00C0CA90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2968176C1BE5A18700C86B91 /* LyreTest */,
+				29CAD3E61BE6610F00C0CA90 /* LyreTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		296817691BE5A18700C86B91 /* Sources */ = {
+		29CAD3E31BE6610F00C0CA90 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				296817A91BE5A1E000C86B91 /* TestDur32nd.cpp in Sources */,
-				296817AC1BE5A1E000C86B91 /* TestDur256th.cpp in Sources */,
-				296817B91BE5A1E000C86B91 /* TestIPitch.cpp in Sources */,
-				296817BC1BE5A1E000C86B91 /* TestIStep.cpp in Sources */,
-				296817881BE5A1CF00C86B91 /* cpulTest.cpp in Sources */,
-				296817861BE5A1CF00C86B91 /* cpulFailure.cpp in Sources */,
-				296817BE1BE5A1E000C86B91 /* TestPitch.cpp in Sources */,
-				2968178B1BE5A1CF00C86B91 /* main.cpp in Sources */,
-				296817891BE5A1CF00C86B91 /* cpulTestRegistry.cpp in Sources */,
-				296817B01BE5A1E000C86B91 /* TestDurHalf.cpp in Sources */,
-				296817B31BE5A1E000C86B91 /* TestDurWhole.cpp in Sources */,
-				296817B51BE5A1E000C86B91 /* TestIAlter.cpp in Sources */,
-				296817AE1BE5A1E000C86B91 /* TestDurEighth.cpp in Sources */,
-				296817BF1BE5A1E000C86B91 /* TestPitchName.cpp in Sources */,
-				296817AA1BE5A1E000C86B91 /* TestDur64th.cpp in Sources */,
-				296817B41BE5A1E000C86B91 /* TestEnum.cpp in Sources */,
-				296817B81BE5A1E000C86B91 /* TestIEnum.cpp in Sources */,
-				296817AF1BE5A1E000C86B91 /* TestDurFactory.cpp in Sources */,
-				296817C11BE5A1E000C86B91 /* TestStep.cpp in Sources */,
-				296817AB1BE5A1E000C86B91 /* TestDur128th.cpp in Sources */,
-				2968178A1BE5A1CF00C86B91 /* cpulTestResult.cpp in Sources */,
-				296817A71BE5A1E000C86B91 /* TestAlter.cpp in Sources */,
-				296817AD1BE5A1E000C86B91 /* TestDurBreve.cpp in Sources */,
-				296817BB1BE5A1E000C86B91 /* TestIPitchName.cpp in Sources */,
-				296817B61BE5A1E000C86B91 /* TestIDur.cpp in Sources */,
-				296817A81BE5A1E000C86B91 /* TestDur16th.cpp in Sources */,
-				296817B11BE5A1E000C86B91 /* TestDurLonga.cpp in Sources */,
-				296817B21BE5A1E000C86B91 /* TestDurQuarter.cpp in Sources */,
-				296817C01BE5A1E000C86B91 /* TestRational.cpp in Sources */,
-				296817B71BE5A1E000C86B91 /* TestIDurFactory.cpp in Sources */,
-				296817871BE5A1CF00C86B91 /* cpulRun.cpp in Sources */,
-				296817BA1BE5A1E000C86B91 /* TestIPitchFactory.cpp in Sources */,
-				296817BD1BE5A1E000C86B91 /* TestMod.cpp in Sources */,
+				29CAD4221BE661B400C0CA90 /* TestDur32nd.cpp in Sources */,
+				29CAD4251BE661B400C0CA90 /* TestDur256th.cpp in Sources */,
+				29CAD4321BE661B400C0CA90 /* TestIPitch.cpp in Sources */,
+				29CAD4351BE661B400C0CA90 /* TestIStep.cpp in Sources */,
+				29CAD4011BE6613400C0CA90 /* cpulTest.cpp in Sources */,
+				29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */,
+				29CAD4371BE661B400C0CA90 /* TestPitch.cpp in Sources */,
+				29CAD4041BE6613400C0CA90 /* main.cpp in Sources */,
+				29CAD4021BE6613400C0CA90 /* cpulTestRegistry.cpp in Sources */,
+				29CAD4291BE661B400C0CA90 /* TestDurHalf.cpp in Sources */,
+				29CAD42C1BE661B400C0CA90 /* TestDurWhole.cpp in Sources */,
+				29CAD42E1BE661B400C0CA90 /* TestIAlter.cpp in Sources */,
+				29CAD4271BE661B400C0CA90 /* TestDurEighth.cpp in Sources */,
+				29CAD4381BE661B400C0CA90 /* TestPitchName.cpp in Sources */,
+				29CAD4231BE661B400C0CA90 /* TestDur64th.cpp in Sources */,
+				29CAD42D1BE661B400C0CA90 /* TestEnum.cpp in Sources */,
+				29CAD4311BE661B400C0CA90 /* TestIEnum.cpp in Sources */,
+				29CAD4281BE661B400C0CA90 /* TestDurFactory.cpp in Sources */,
+				29CAD43A1BE661B400C0CA90 /* TestStep.cpp in Sources */,
+				29CAD4241BE661B400C0CA90 /* TestDur128th.cpp in Sources */,
+				29CAD4031BE6613400C0CA90 /* cpulTestResult.cpp in Sources */,
+				29CAD4201BE661B400C0CA90 /* TestAlter.cpp in Sources */,
+				29CAD4261BE661B400C0CA90 /* TestDurBreve.cpp in Sources */,
+				29CAD4341BE661B400C0CA90 /* TestIPitchName.cpp in Sources */,
+				29CAD42F1BE661B400C0CA90 /* TestIDur.cpp in Sources */,
+				29CAD4211BE661B400C0CA90 /* TestDur16th.cpp in Sources */,
+				29CAD42A1BE661B400C0CA90 /* TestDurLonga.cpp in Sources */,
+				29CAD42B1BE661B400C0CA90 /* TestDurQuarter.cpp in Sources */,
+				29CAD4391BE661B400C0CA90 /* TestRational.cpp in Sources */,
+				29CAD4301BE661B400C0CA90 /* TestIDurFactory.cpp in Sources */,
+				29CAD4001BE6613400C0CA90 /* cpulRun.cpp in Sources */,
+				29CAD4331BE661B400C0CA90 /* TestIPitchFactory.cpp in Sources */,
+				29CAD4361BE661B400C0CA90 /* TestMod.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		296817741BE5A18700C86B91 /* Debug */ = {
+		29CAD3EE1BE6610F00C0CA90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -320,7 +319,7 @@
 			};
 			name = Debug;
 		};
-		296817751BE5A18700C86B91 /* Release */ = {
+		29CAD3EF1BE6610F00C0CA90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -353,7 +352,7 @@
 			};
 			name = Release;
 		};
-		296817771BE5A18700C86B91 /* Debug */ = {
+		29CAD3F11BE6610F00C0CA90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
@@ -364,7 +363,7 @@
 			};
 			name = Debug;
 		};
-		296817781BE5A18700C86B91 /* Release */ = {
+		29CAD3F21BE6610F00C0CA90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
@@ -378,24 +377,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		296817681BE5A18700C86B91 /* Build configuration list for PBXProject "LyreTest" */ = {
+		29CAD3E21BE6610F00C0CA90 /* Build configuration list for PBXProject "LyreTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				296817741BE5A18700C86B91 /* Debug */,
-				296817751BE5A18700C86B91 /* Release */,
+				29CAD3EE1BE6610F00C0CA90 /* Debug */,
+				29CAD3EF1BE6610F00C0CA90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		296817761BE5A18700C86B91 /* Build configuration list for PBXNativeTarget "LyreTest" */ = {
+		29CAD3F01BE6610F00C0CA90 /* Build configuration list for PBXNativeTarget "LyreTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				296817771BE5A18700C86B91 /* Debug */,
-				296817781BE5A18700C86B91 /* Release */,
+				29CAD3F11BE6610F00C0CA90 /* Debug */,
+				29CAD3F21BE6610F00C0CA90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 296817651BE5A18700C86B91 /* Project object */;
+	rootObject = 29CAD3DF1BE6610F00C0CA90 /* Project object */;
 }
