@@ -2,7 +2,7 @@
 #include <exception>
 #include <set>
 
-namespace lyre
+namespace Lyre
 {
     Rational::Rational( const Integer numerator, const Integer denominator )
     :myNumerator( numerator )

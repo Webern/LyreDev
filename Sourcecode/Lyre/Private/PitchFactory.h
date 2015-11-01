@@ -3,9 +3,9 @@
 #include "Lyre/IPitchFactory.h"
 #include "Lyre/Private/Pitch.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class PitchFactory;
         using PitchFactorySP = std::shared_ptr<PitchFactory>;
@@ -27,7 +27,7 @@ namespace lyre
             virtual void previous();
             virtual void add( const Integer value );
         private:
-            impl::Pitch myCurrent;
+            Private::Pitch myCurrent;
         };
     }
 }

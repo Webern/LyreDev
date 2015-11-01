@@ -1,8 +1,8 @@
 #include "Lyre/Private/DurWhole.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         const Rational DurWhole::ourRational = Rational { 4, 1 };
         

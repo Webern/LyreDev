@@ -1,7 +1,7 @@
 #include "Lyre/IPitchName.h"
 #include <sstream>
 
-namespace lyre
+namespace Lyre
 {
     String IPitchName::toString() const
     {

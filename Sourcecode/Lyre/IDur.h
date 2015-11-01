@@ -4,7 +4,7 @@
 #include "Lyre/Rational.h"
 #include <memory>
 
-namespace lyre
+namespace Lyre
 {
     class IDur;
     using IDurSP = std::shared_ptr<IDur>;

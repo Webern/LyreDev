@@ -2,9 +2,9 @@
 #pragma once
 #include "Lyre/IPitch.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class Pitch;
         using PitchSP = std::shared_ptr<Pitch>;

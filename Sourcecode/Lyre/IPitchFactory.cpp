@@ -1,9 +1,9 @@
 #include "Lyre/IPitchFactory.h"
 #include "Lyre/Private/PitchFactory.h"
 
-namespace lyre
+namespace Lyre
 {
-    using namespace lyre::impl;
+    using namespace Lyre::Private;
     IPitchFactoryUP IPitchFactory::createPitchFactory( const PitchFactoryType t)
     {
         IPitchFactoryUP output;

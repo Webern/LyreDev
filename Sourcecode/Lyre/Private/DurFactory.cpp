@@ -11,9 +11,9 @@
 #include "Lyre/Private/DurBreve.h"
 #include "Lyre/Private/DurLonga.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         std::map<String, IDurSP> DurFactory::ourDurMap;
         

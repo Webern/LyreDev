@@ -1,8 +1,8 @@
 #include "Lyre/Private/Dur64th.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         const Rational Dur64th::ourRational = Rational { 1, 16 };
         

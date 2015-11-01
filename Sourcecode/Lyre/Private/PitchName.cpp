@@ -3,9 +3,9 @@
 #include "Lyre/Private/Alter.h"
 #include "Lyre/Private/Mod.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class PitchName::PitchNameImpl
         {

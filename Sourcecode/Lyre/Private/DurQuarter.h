@@ -5,9 +5,9 @@
 #include "Lyre/Rational.h"
 #include <memory>
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class DurQuarter;
         using DurQuarterSP = std::shared_ptr<DurQuarter>;

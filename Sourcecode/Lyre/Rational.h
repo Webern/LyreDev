@@ -10,7 +10,7 @@
  don't anticipate needing it for anything other
  than int. */
 
-namespace lyre
+namespace Lyre
 {
     class Rational;
     using Rationals = std::vector<Rational>;
@@ -126,7 +126,7 @@ namespace lyre
         /* convert each fraction to have the
          lowest common denominator.  When
          firstReduce is true, each fraction
-         will first be simplified to its
+         will first be sPrivateified to its
          lowest possible positve denominator
          before finding the lowest commond
          denominator. */

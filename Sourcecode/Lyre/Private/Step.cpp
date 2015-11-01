@@ -2,17 +2,17 @@
 #include "Lyre/Private/Enum.h"
 #include <typeinfo>
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
-        std::shared_ptr<Strings> STEPS23408 = std::make_shared<Strings>( Strings{ "C","D","E","F","G","A","B" } );
+        std::shared_ptr<Strings> StepImplStringsSP = std::make_shared<Strings>( Strings{ "C","D","E","F","G","A","B" } );
         
         class Step::StepImpl : public Enum
         {
         public:
-            StepImpl( const Integer value ) :Enum( value, STEPS23408, 0 ) {}
-            StepImpl() :Enum( 0, STEPS23408, 0 ) {}
+            StepImpl( const Integer value ) : Enum( value, StepImplStringsSP, 0 ) {}
+            StepImpl() : Enum( 0, StepImplStringsSP, 0 ) {}
         };
         Step::~Step() {}
         Step::Step() : myImpl( new StepImpl{} ) {}

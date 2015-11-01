@@ -3,7 +3,7 @@
 #include "Lyre/TypeDefs.h"
 #include <memory>
 
-namespace lyre
+namespace Lyre
 {
     enum class DurFactoryType
     {

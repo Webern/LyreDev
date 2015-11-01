@@ -1,9 +1,9 @@
 #include "Lyre/Private/PitchFactory.h"
 #include "Lyre/Private/Pitch.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         IPitchFactoryUP PitchFactory::clone() const
         {

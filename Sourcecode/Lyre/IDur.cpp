@@ -1,7 +1,7 @@
 #include "Lyre/IDur.h"
 #include <sstream>
 
-namespace lyre
+namespace Lyre
 {
     IDur::~IDur() {}
     

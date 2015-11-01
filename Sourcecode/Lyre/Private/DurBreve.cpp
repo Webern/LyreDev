@@ -1,8 +1,8 @@
 #include "Lyre/Private/DurBreve.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         const Rational DurBreve::ourRational = Rational { 8, 1 };
         

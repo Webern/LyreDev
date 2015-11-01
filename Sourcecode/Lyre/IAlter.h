@@ -2,7 +2,7 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 
-namespace lyre
+namespace Lyre
 {
     class IAlter;
     using IAlterSP = std::shared_ptr<IAlter>;

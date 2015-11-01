@@ -3,9 +3,9 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IStep.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         enum class StepValue
         {

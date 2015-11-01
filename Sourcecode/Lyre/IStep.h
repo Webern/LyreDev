@@ -2,7 +2,7 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 
-namespace lyre
+namespace Lyre
 {
     class IStep;
     using IStepSP = std::shared_ptr<IStep>;

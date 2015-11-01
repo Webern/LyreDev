@@ -2,7 +2,7 @@
 
 #include <sstream>
 
-namespace lyre
+namespace Lyre
 {
     String IStep::toString() const
     {

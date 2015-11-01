@@ -1,7 +1,7 @@
 #include "Lyre/IDurFactory.h"
 #include "Lyre/Private/DurFactory.h"
 
-namespace lyre
+namespace Lyre
 {
     IDurFactory::~IDurFactory() {}
     
@@ -11,7 +11,7 @@ namespace lyre
         switch ( t )
         {
             case DurFactoryType::Standard:
-                output = std::make_shared<impl::DurFactory>();
+                output = std::make_shared<Private::DurFactory>();
                 break;
                 
             default:

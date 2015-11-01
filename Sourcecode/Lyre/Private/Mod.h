@@ -6,9 +6,9 @@
  % operator. It probably only works for integral
  types (int, long, short, char, etc) */
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         template <typename TYPE, TYPE MODULUS>
         class Mod

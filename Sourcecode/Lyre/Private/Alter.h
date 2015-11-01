@@ -3,9 +3,9 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IAlter.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class Alter;
         using AlterSP = std::shared_ptr<Alter>;

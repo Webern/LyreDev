@@ -1,7 +1,7 @@
 #include "Lyre/IEnum.h"
 #include <sstream>
 
-namespace lyre
+namespace Lyre
 {
     String IEnum::toString() const
     {

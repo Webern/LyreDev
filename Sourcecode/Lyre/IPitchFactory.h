@@ -4,7 +4,7 @@
 #include <memory>
 #include "Lyre/IPitch.h"
 
-namespace lyre
+namespace Lyre
 {
     class IPitchFactory;
     using IPitchFactorySP = std::shared_ptr<IPitchFactory>;

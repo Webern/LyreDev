@@ -5,9 +5,9 @@
 #include "Lyre/Rational.h"
 #include <memory>
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class DurBreve;
         using DurBreveSP = std::shared_ptr<DurBreve>;

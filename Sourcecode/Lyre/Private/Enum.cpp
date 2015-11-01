@@ -1,8 +1,8 @@
 #include "Lyre/Private/Enum.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         Enum::Enum( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset )
         :myStrings( strs )

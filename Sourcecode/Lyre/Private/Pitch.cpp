@@ -3,9 +3,9 @@
 #include <string>
 #include <sstream>
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class Pitch::PitchImpl
         {

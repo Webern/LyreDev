@@ -2,9 +2,9 @@
 #pragma once
 #include "Lyre/IEnum.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class Enum;
         using EnumSP = std::shared_ptr<Enum>;

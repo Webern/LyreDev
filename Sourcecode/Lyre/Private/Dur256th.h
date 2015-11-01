@@ -5,9 +5,9 @@
 #include "Lyre/Rational.h"
 #include <memory>
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class Dur256th;
         using Dur256thSP = std::shared_ptr<Dur256th>;

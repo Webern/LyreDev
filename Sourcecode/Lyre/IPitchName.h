@@ -3,7 +3,7 @@
 #include "Lyre/TypeDefs.h"
 #include <memory>
 
-namespace lyre
+namespace Lyre
 {
     class IPitchName;
     using IPitchNameSP = std::shared_ptr<IPitchName>;

@@ -5,9 +5,9 @@
 #include <memory>
 #include <map>
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         class DurFactory;
         using DurFactorySP = std::shared_ptr<DurFactory>;

@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-namespace lyre
+namespace Lyre
 {
     using Integer = int;
     using Integers = std::vector<Integer>;

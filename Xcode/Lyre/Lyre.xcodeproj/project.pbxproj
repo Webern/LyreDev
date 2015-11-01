@@ -111,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				29109DFD1BE55A00001FF3E6 /* Private */,
-				29109DFC1BE559FB001FF3E6 /* Public */,
 				29109DD01BE557F4001FF3E6 /* Products */,
+				29109DFC1BE559FB001FF3E6 /* Public */,
 			);
 			sourceTree = "<group>";
 		};
@@ -384,6 +384,7 @@
 				29109DD51BE557F4001FF3E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

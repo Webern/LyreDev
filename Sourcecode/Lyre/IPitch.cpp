@@ -1,7 +1,7 @@
 #include "Lyre/IPitch.h"
 #include <sstream>
 
-namespace lyre
+namespace Lyre
 {
     String IPitch::toString() const
     {

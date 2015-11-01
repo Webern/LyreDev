@@ -1,8 +1,8 @@
 #include "Lyre/Private/DurHalf.h"
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
         const Rational DurHalf::ourRational = Rational { 2, 1 };
         

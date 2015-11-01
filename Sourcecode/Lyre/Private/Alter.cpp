@@ -3,12 +3,10 @@
 #include <limits>
 #include <sstream>
 
-namespace lyre
+namespace Lyre
 {
-    namespace impl
+    namespace Private
     {
-        std::shared_ptr<Strings> ALTERS242152 = std::make_shared<Strings>( Strings{ "C","D","E","F","G","A","B" } );
-        
         class Alter::AlterImpl
         {
         public:
