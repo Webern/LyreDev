@@ -31,7 +31,6 @@ TEST( constructor02, Pitch )
     CHECK_EQUAL( 3, n->getOctaveValue() )
     CHECK_EQUAL( 56, n->getValue() )
 }
-
 TEST( copyConstructor, Pitch )
 {
     Pitch orig{ "B6" };

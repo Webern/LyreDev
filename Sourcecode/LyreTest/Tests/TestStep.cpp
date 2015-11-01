@@ -22,7 +22,6 @@ TEST( UniquePtr, Step )
     IStepUP p = unique_ptr<Step>( new Step() );
     CHECK( true )
 }
-
 TEST( Constructor01a, Step )
 {
     Step s{ 5 };

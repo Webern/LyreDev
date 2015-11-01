@@ -24,7 +24,6 @@ TEST( UniquePtr, Alter )
     IAlterUP p = unique_ptr<Alter>( new Alter() );
     CHECK( true )
 }
-
 TEST( Constructor01a, Alter )
 {
     Alter s{ 5 };

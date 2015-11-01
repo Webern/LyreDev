@@ -6,5 +6,5 @@ using namespace Lyre;
 
 TEST( Test01, IDur )
 {
-    
+    CHECK(false)
 }

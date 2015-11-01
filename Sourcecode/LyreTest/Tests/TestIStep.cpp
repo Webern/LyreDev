@@ -11,8 +11,6 @@ using namespace Lyre;
 using namespace Lyre::Mock;
 using namespace std;
 
-
-
 TEST( Compiles, IStep )
 {
     MockStep m;

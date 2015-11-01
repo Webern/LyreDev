@@ -25,3 +25,9 @@ TEST( compiles, IPitchFactory )
         f.next();
     }
 }
+
+
+TEST( moretestsneeded, IPitchFactory )
+{
+    CHECK(false)
+}
