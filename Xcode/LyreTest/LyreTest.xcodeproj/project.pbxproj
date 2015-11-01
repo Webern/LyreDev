@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29935EAA1BE6C18C0003552B /* MockDur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EA81BE6C18C0003552B /* MockDur.cpp */; };
 		29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */; };
 		29CAD4001BE6613400C0CA90 /* cpulRun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F51BE6613400C0CA90 /* cpulRun.cpp */; };
 		29CAD4011BE6613400C0CA90 /* cpulTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F71BE6613400C0CA90 /* cpulTest.cpp */; };
@@ -63,6 +64,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		29935EA81BE6C18C0003552B /* MockDur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockDur.cpp; path = ../../Sourcecode/LyreTest/Mock/MockDur.cpp; sourceTree = "<group>"; };
+		29935EA91BE6C18C0003552B /* MockDur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDur.h; path = ../../Sourcecode/LyreTest/Mock/MockDur.h; sourceTree = "<group>"; };
 		29CAD3E71BE6610F00C0CA90 /* LyreTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAD3F31BE6613400C0CA90 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestResult.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestResult.h; sourceTree = "<group>"; };
 		29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulFailure.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulFailure.cpp; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 		29CAD4401BE6649C00C0CA90 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				29935EA81BE6C18C0003552B /* MockDur.cpp */,
+				29935EA91BE6C18C0003552B /* MockDur.h */,
 				29CAD4411BE6673C00C0CA90 /* MockAlter.cpp */,
 				29CAD4421BE6673C00C0CA90 /* MockAlter.h */,
 				29CAD4431BE6673C00C0CA90 /* MockEnum.cpp */,
@@ -308,6 +313,7 @@
 				29CAD43A1BE661B400C0CA90 /* TestStep.cpp in Sources */,
 				29CAD4241BE661B400C0CA90 /* TestDur128th.cpp in Sources */,
 				29CAD4031BE6613400C0CA90 /* cpulTestResult.cpp in Sources */,
+				29935EAA1BE6C18C0003552B /* MockDur.cpp in Sources */,
 				29CAD4201BE661B400C0CA90 /* TestAlter.cpp in Sources */,
 				29CAD44D1BE6673C00C0CA90 /* MockAlter.cpp in Sources */,
 				29CAD4261BE661B400C0CA90 /* TestDurBreve.cpp in Sources */,
@@ -443,6 +449,7 @@
 				29CAD3F21BE6610F00C0CA90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
