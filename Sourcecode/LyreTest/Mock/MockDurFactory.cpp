@@ -17,8 +17,15 @@ namespace Lyre
             auto it = myDurs.find( durName );
             if ( it != std::end( myDurs ) )
             {
+                if ( ! it->second )
+                {
+                    throw std::runtime_error{ "MockDurFactory attempted to dereference a null IDur pointer" };
+                }
                 return it->second;
             }
+            throw std::runtime_error{ "invalid mock dur name" };
+            
+            // unreachable code
             IDurSP nullIDurSP;
             return nullIDurSP;
         }

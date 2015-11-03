@@ -26,10 +26,11 @@ TEST( compiles, IPitch )
     CHECK( p->parse( "" ) )
     stringstream ss;
     p->toStream( ss );
-    CHECK_EQUAL( "", ss.str() )
-    CHECK_EQUAL( "", p->toString() )
+    CHECK_EQUAL( "0", ss.str() )
+    CHECK_EQUAL( "0", p->toString() )
+    ss.str( "" );
     ss << (*p);
-    CHECK_EQUAL( "", ss.str() )
+    CHECK_EQUAL( "0", ss.str() )
     CHECK( ! p->isLessThan( *x ) )
     CHECK( p->isEqualTo( *x ) )
     CHECK( ! p->isGreaterThan( *c ) )

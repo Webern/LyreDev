@@ -26,8 +26,13 @@ TEST( compiles, IPitchFactory )
     }
 }
 
+TEST( standardChromaticExists, IPitchFactory )
+{
+    IPitchFactorySP f = IPitchFactory::createPitchFactory( PitchFactoryType::StandardChromatic );
+    CHECK( f != nullptr )
+}
 
 TEST( moretestsneeded, IPitchFactory )
 {
-    CHECK(false)
+    CHECK_EQUAL( "more tests needed", "" )
 }

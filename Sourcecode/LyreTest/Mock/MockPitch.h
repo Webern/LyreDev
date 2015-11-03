@@ -17,7 +17,7 @@ namespace Lyre
             /* void copyTo( std::unique_ptr<T>& output ) const */
             virtual Integer getValue() const { return myValue; }
             virtual bool parse( const String& str ) { return true; }
-            virtual std::ostream& toStream( std::ostream& os ) const { return os; }
+            virtual std::ostream& toStream( std::ostream& os ) const { return os << myValue; }
             /* virtual String toString() const;
              virtual bool isLessThan( const Pitch& other ) const;
              virtual bool isGreaterThan( const Pitch& other ) const;

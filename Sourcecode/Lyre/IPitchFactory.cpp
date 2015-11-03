@@ -10,7 +10,7 @@ namespace Lyre
         switch ( t )
         {
             case PitchFactoryType::StandardChromatic:
-                output = nullptr;
+                output = IPitchFactoryUP{ new PitchFactory{} };
                 break;
                 
             default:
