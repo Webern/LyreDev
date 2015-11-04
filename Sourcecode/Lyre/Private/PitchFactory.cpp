@@ -21,7 +21,7 @@ namespace Lyre
                 //TODO Test Correctness of Algorithm
                 //TODO Better Algorithm
                 Integer increment = 1;
-                if ( pitchValue > myCurrent.getValue() )
+                if ( pitchValue < myCurrent.getValue() )
                 {
                     increment = -1;
                 }
