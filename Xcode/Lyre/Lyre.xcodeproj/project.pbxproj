@@ -34,6 +34,7 @@
 		29109E421BE55A1B001FF3E6 /* PitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29109E1D1BE55A1B001FF3E6 /* PitchFactory.cpp */; };
 		29109E441BE55A1B001FF3E6 /* PitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29109E1F1BE55A1B001FF3E6 /* PitchName.cpp */; };
 		29109E461BE55A1B001FF3E6 /* Step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29109E211BE55A1B001FF3E6 /* Step.cpp */; };
+		291F98111BF03F89008026BF /* INote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291F980F1BF03F89008026BF /* INote.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,8 @@
 		29109E201BE55A1B001FF3E6 /* PitchName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PitchName.h; path = ../../Sourcecode/Lyre/Private/PitchName.h; sourceTree = "<group>"; };
 		29109E211BE55A1B001FF3E6 /* Step.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Step.cpp; path = ../../Sourcecode/Lyre/Private/Step.cpp; sourceTree = "<group>"; };
 		29109E221BE55A1B001FF3E6 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Step.h; path = ../../Sourcecode/Lyre/Private/Step.h; sourceTree = "<group>"; };
+		291F980F1BF03F89008026BF /* INote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = INote.cpp; path = ../../Sourcecode/Lyre/INote.cpp; sourceTree = "<group>"; };
+		291F98101BF03F89008026BF /* INote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INote.h; path = ../../Sourcecode/Lyre/INote.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 		29109DFC1BE559FB001FF3E6 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				291F980F1BF03F89008026BF /* INote.cpp */,
+				291F98101BF03F89008026BF /* INote.h */,
 				29109DD61BE559F2001FF3E6 /* IAlter.cpp */,
 				29109DD71BE559F2001FF3E6 /* IAlter.h */,
 				29109DD81BE559F2001FF3E6 /* IDur.cpp */,
@@ -265,6 +270,7 @@
 				29109E2D1BE55A1B001FF3E6 /* Dur256th.cpp in Sources */,
 				29109E251BE55A1B001FF3E6 /* Dur16th.cpp in Sources */,
 				29109E2F1BE55A1B001FF3E6 /* DurBreve.cpp in Sources */,
+				291F98111BF03F89008026BF /* INote.cpp in Sources */,
 				29109E401BE55A1B001FF3E6 /* Pitch.cpp in Sources */,
 				29109E2B1BE55A1B001FF3E6 /* Dur128th.cpp in Sources */,
 				29109E391BE55A1B001FF3E6 /* DurQuarter.cpp in Sources */,

@@ -24,14 +24,6 @@ namespace Lyre
         /* return a deep copy of "this" */
         virtual IPitchFactoryUP clone() const = 0;
         
-        /* deep copy to "output", note
-         the use of static_cast, be careful */
-//        template <typename T>
-//        void copyTo( std::unique_ptr<T>& output ) const
-//        {
-//            output = std::move( std::unique_ptr<T>{ new T{ *(static_cast<T*>( clone().get() )) } } );
-//        }
-        
         virtual IPitchUP createPitch() const = 0;
         virtual void setPitch( const Integer pitchValue ) = 0;
         virtual void setPitch( const IPitchUP& pitch ) = 0;
