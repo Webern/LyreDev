@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296D728F1BF8EB960049B0EA /* TestDurBase8th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */; };
+		296D72901BF8EB960049B0EA /* TestDurBase16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */; };
+		296D72911BF8EB960049B0EA /* TestDurBase32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72861BF8EB960049B0EA /* TestDurBase32nd.cpp */; };
+		296D72921BF8EB960049B0EA /* TestDurBase64th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72871BF8EB960049B0EA /* TestDurBase64th.cpp */; };
+		296D72931BF8EB960049B0EA /* TestDurBase128th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72881BF8EB960049B0EA /* TestDurBase128th.cpp */; };
+		296D72941BF8EB960049B0EA /* TestDurBase256th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72891BF8EB960049B0EA /* TestDurBase256th.cpp */; };
+		296D72951BF8EB960049B0EA /* TestDurBaseBreve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D728A1BF8EB960049B0EA /* TestDurBaseBreve.cpp */; };
+		296D72961BF8EB960049B0EA /* TestDurBaseHalf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D728B1BF8EB960049B0EA /* TestDurBaseHalf.cpp */; };
+		296D72971BF8EB960049B0EA /* TestDurBaseLonga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D728C1BF8EB960049B0EA /* TestDurBaseLonga.cpp */; };
+		296D72981BF8EB960049B0EA /* TestDurBaseQuarter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D728D1BF8EB960049B0EA /* TestDurBaseQuarter.cpp */; };
+		296D72991BF8EB960049B0EA /* TestDurBaseWhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D728E1BF8EB960049B0EA /* TestDurBaseWhole.cpp */; };
 		29935EAA1BE6C18C0003552B /* MockDur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EA81BE6C18C0003552B /* MockDur.cpp */; };
 		29935EAD1BE6C3700003552B /* MockDurBaseFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */; };
 		29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */; };
@@ -16,22 +27,10 @@
 		29CAD4031BE6613400C0CA90 /* cpulTestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3FA1BE6613400C0CA90 /* cpulTestResult.cpp */; };
 		29CAD4041BE6613400C0CA90 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3FB1BE6613400C0CA90 /* main.cpp */; };
 		29CAD4201BE661B400C0CA90 /* TestAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4051BE661B400C0CA90 /* TestAlter.cpp */; };
-		29CAD4211BE661B400C0CA90 /* TestDur16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4061BE661B400C0CA90 /* TestDur16th.cpp */; };
-		29CAD4221BE661B400C0CA90 /* TestDur32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4071BE661B400C0CA90 /* TestDur32nd.cpp */; };
-		29CAD4231BE661B400C0CA90 /* TestDur64th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4081BE661B400C0CA90 /* TestDur64th.cpp */; };
-		29CAD4241BE661B400C0CA90 /* TestDur128th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4091BE661B400C0CA90 /* TestDur128th.cpp */; };
-		29CAD4251BE661B400C0CA90 /* TestDur256th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40A1BE661B400C0CA90 /* TestDur256th.cpp */; };
-		29CAD4261BE661B400C0CA90 /* TestDurBreve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40B1BE661B400C0CA90 /* TestDurBreve.cpp */; };
-		29CAD4271BE661B400C0CA90 /* TestDurEighth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40C1BE661B400C0CA90 /* TestDurEighth.cpp */; };
-		29CAD4281BE661B400C0CA90 /* TestDurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40D1BE661B400C0CA90 /* TestDurFactory.cpp */; };
-		29CAD4291BE661B400C0CA90 /* TestDurHalf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40E1BE661B400C0CA90 /* TestDurHalf.cpp */; };
-		29CAD42A1BE661B400C0CA90 /* TestDurLonga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD40F1BE661B400C0CA90 /* TestDurLonga.cpp */; };
-		29CAD42B1BE661B400C0CA90 /* TestDurQuarter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4101BE661B400C0CA90 /* TestDurQuarter.cpp */; };
-		29CAD42C1BE661B400C0CA90 /* TestDurWhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4111BE661B400C0CA90 /* TestDurWhole.cpp */; };
 		29CAD42D1BE661B400C0CA90 /* TestEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4121BE661B400C0CA90 /* TestEnum.cpp */; };
 		29CAD42E1BE661B400C0CA90 /* TestIAlter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4131BE661B400C0CA90 /* TestIAlter.cpp */; };
-		29CAD42F1BE661B400C0CA90 /* TestIDur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4141BE661B400C0CA90 /* TestIDur.cpp */; };
-		29CAD4301BE661B400C0CA90 /* TestIDurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4151BE661B400C0CA90 /* TestIDurFactory.cpp */; };
+		29CAD42F1BE661B400C0CA90 /* TestIDurBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4141BE661B400C0CA90 /* TestIDurBase.cpp */; };
+		29CAD4301BE661B400C0CA90 /* TestIDurBaseFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4151BE661B400C0CA90 /* TestIDurBaseFactory.cpp */; };
 		29CAD4311BE661B400C0CA90 /* TestIEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4161BE661B400C0CA90 /* TestIEnum.cpp */; };
 		29CAD4321BE661B400C0CA90 /* TestIPitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4171BE661B400C0CA90 /* TestIPitch.cpp */; };
 		29CAD4331BE661B400C0CA90 /* TestIPitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4181BE661B400C0CA90 /* TestIPitchFactory.cpp */; };
@@ -65,6 +64,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase8th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase8th.cpp; sourceTree = "<group>"; };
+		296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase16th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase16th.cpp; sourceTree = "<group>"; };
+		296D72861BF8EB960049B0EA /* TestDurBase32nd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase32nd.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase32nd.cpp; sourceTree = "<group>"; };
+		296D72871BF8EB960049B0EA /* TestDurBase64th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase64th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase64th.cpp; sourceTree = "<group>"; };
+		296D72881BF8EB960049B0EA /* TestDurBase128th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase128th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase128th.cpp; sourceTree = "<group>"; };
+		296D72891BF8EB960049B0EA /* TestDurBase256th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase256th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase256th.cpp; sourceTree = "<group>"; };
+		296D728A1BF8EB960049B0EA /* TestDurBaseBreve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBaseBreve.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBaseBreve.cpp; sourceTree = "<group>"; };
+		296D728B1BF8EB960049B0EA /* TestDurBaseHalf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBaseHalf.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBaseHalf.cpp; sourceTree = "<group>"; };
+		296D728C1BF8EB960049B0EA /* TestDurBaseLonga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBaseLonga.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBaseLonga.cpp; sourceTree = "<group>"; };
+		296D728D1BF8EB960049B0EA /* TestDurBaseQuarter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBaseQuarter.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBaseQuarter.cpp; sourceTree = "<group>"; };
+		296D728E1BF8EB960049B0EA /* TestDurBaseWhole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBaseWhole.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBaseWhole.cpp; sourceTree = "<group>"; };
 		29935EA81BE6C18C0003552B /* MockDur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockDur.cpp; path = ../../Sourcecode/LyreTest/Mock/MockDur.cpp; sourceTree = "<group>"; };
 		29935EA91BE6C18C0003552B /* MockDur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDur.h; path = ../../Sourcecode/LyreTest/Mock/MockDur.h; sourceTree = "<group>"; };
 		29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockDurBaseFactory.cpp; path = ../../Sourcecode/LyreTest/Mock/MockDurBaseFactory.cpp; sourceTree = "<group>"; };
@@ -83,22 +93,10 @@
 		29CAD3FD1BE6613400C0CA90 /* cpulFailure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulFailure.h; path = ../../Sourcecode/LyreTest/Cpul/cpulFailure.h; sourceTree = "<group>"; };
 		29CAD3FE1BE6613400C0CA90 /* cpulTestRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestRegistry.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestRegistry.h; sourceTree = "<group>"; };
 		29CAD4051BE661B400C0CA90 /* TestAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestAlter.cpp; path = ../../Sourcecode/LyreTest/Tests/TestAlter.cpp; sourceTree = "<group>"; };
-		29CAD4061BE661B400C0CA90 /* TestDur16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur16th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur16th.cpp; sourceTree = "<group>"; };
-		29CAD4071BE661B400C0CA90 /* TestDur32nd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur32nd.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur32nd.cpp; sourceTree = "<group>"; };
-		29CAD4081BE661B400C0CA90 /* TestDur64th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur64th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur64th.cpp; sourceTree = "<group>"; };
-		29CAD4091BE661B400C0CA90 /* TestDur128th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur128th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur128th.cpp; sourceTree = "<group>"; };
-		29CAD40A1BE661B400C0CA90 /* TestDur256th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDur256th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDur256th.cpp; sourceTree = "<group>"; };
-		29CAD40B1BE661B400C0CA90 /* TestDurBreve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBreve.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBreve.cpp; sourceTree = "<group>"; };
-		29CAD40C1BE661B400C0CA90 /* TestDurEighth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurEighth.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurEighth.cpp; sourceTree = "<group>"; };
-		29CAD40D1BE661B400C0CA90 /* TestDurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurFactory.cpp; sourceTree = "<group>"; };
-		29CAD40E1BE661B400C0CA90 /* TestDurHalf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurHalf.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurHalf.cpp; sourceTree = "<group>"; };
-		29CAD40F1BE661B400C0CA90 /* TestDurLonga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurLonga.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurLonga.cpp; sourceTree = "<group>"; };
-		29CAD4101BE661B400C0CA90 /* TestDurQuarter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurQuarter.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurQuarter.cpp; sourceTree = "<group>"; };
-		29CAD4111BE661B400C0CA90 /* TestDurWhole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurWhole.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurWhole.cpp; sourceTree = "<group>"; };
 		29CAD4121BE661B400C0CA90 /* TestEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestEnum.cpp; path = ../../Sourcecode/LyreTest/Tests/TestEnum.cpp; sourceTree = "<group>"; };
 		29CAD4131BE661B400C0CA90 /* TestIAlter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIAlter.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIAlter.cpp; sourceTree = "<group>"; };
-		29CAD4141BE661B400C0CA90 /* TestIDur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDur.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDur.cpp; sourceTree = "<group>"; };
-		29CAD4151BE661B400C0CA90 /* TestIDurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDurFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDurFactory.cpp; sourceTree = "<group>"; };
+		29CAD4141BE661B400C0CA90 /* TestIDurBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDurBase.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDurBase.cpp; sourceTree = "<group>"; };
+		29CAD4151BE661B400C0CA90 /* TestIDurBaseFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDurBaseFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDurBaseFactory.cpp; sourceTree = "<group>"; };
 		29CAD4161BE661B400C0CA90 /* TestIEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIEnum.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIEnum.cpp; sourceTree = "<group>"; };
 		29CAD4171BE661B400C0CA90 /* TestIPitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIPitch.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIPitch.cpp; sourceTree = "<group>"; };
 		29CAD4181BE661B400C0CA90 /* TestIPitchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIPitchFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIPitchFactory.cpp; sourceTree = "<group>"; };
@@ -179,23 +177,22 @@
 		29CAD43E1BE661F500C0CA90 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */,
+				296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */,
+				296D72861BF8EB960049B0EA /* TestDurBase32nd.cpp */,
+				296D72871BF8EB960049B0EA /* TestDurBase64th.cpp */,
+				296D72881BF8EB960049B0EA /* TestDurBase128th.cpp */,
+				296D72891BF8EB960049B0EA /* TestDurBase256th.cpp */,
+				296D728A1BF8EB960049B0EA /* TestDurBaseBreve.cpp */,
+				296D728B1BF8EB960049B0EA /* TestDurBaseHalf.cpp */,
+				296D728C1BF8EB960049B0EA /* TestDurBaseLonga.cpp */,
+				296D728D1BF8EB960049B0EA /* TestDurBaseQuarter.cpp */,
+				296D728E1BF8EB960049B0EA /* TestDurBaseWhole.cpp */,
 				29CAD4051BE661B400C0CA90 /* TestAlter.cpp */,
-				29CAD4091BE661B400C0CA90 /* TestDur128th.cpp */,
-				29CAD4061BE661B400C0CA90 /* TestDur16th.cpp */,
-				29CAD40A1BE661B400C0CA90 /* TestDur256th.cpp */,
-				29CAD4071BE661B400C0CA90 /* TestDur32nd.cpp */,
-				29CAD4081BE661B400C0CA90 /* TestDur64th.cpp */,
-				29CAD40B1BE661B400C0CA90 /* TestDurBreve.cpp */,
-				29CAD40C1BE661B400C0CA90 /* TestDurEighth.cpp */,
-				29CAD40D1BE661B400C0CA90 /* TestDurFactory.cpp */,
-				29CAD40E1BE661B400C0CA90 /* TestDurHalf.cpp */,
-				29CAD40F1BE661B400C0CA90 /* TestDurLonga.cpp */,
-				29CAD4101BE661B400C0CA90 /* TestDurQuarter.cpp */,
-				29CAD4111BE661B400C0CA90 /* TestDurWhole.cpp */,
 				29CAD4121BE661B400C0CA90 /* TestEnum.cpp */,
 				29CAD4131BE661B400C0CA90 /* TestIAlter.cpp */,
-				29CAD4141BE661B400C0CA90 /* TestIDur.cpp */,
-				29CAD4151BE661B400C0CA90 /* TestIDurFactory.cpp */,
+				29CAD4141BE661B400C0CA90 /* TestIDurBase.cpp */,
+				29CAD4151BE661B400C0CA90 /* TestIDurBaseFactory.cpp */,
 				29CAD4161BE661B400C0CA90 /* TestIEnum.cpp */,
 				29CAD4171BE661B400C0CA90 /* TestIPitch.cpp */,
 				29CAD4181BE661B400C0CA90 /* TestIPitchFactory.cpp */,
@@ -294,44 +291,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29CAD4221BE661B400C0CA90 /* TestDur32nd.cpp in Sources */,
-				29CAD4251BE661B400C0CA90 /* TestDur256th.cpp in Sources */,
 				29CAD4321BE661B400C0CA90 /* TestIPitch.cpp in Sources */,
 				29CAD4351BE661B400C0CA90 /* TestIStep.cpp in Sources */,
+				296D728F1BF8EB960049B0EA /* TestDurBase8th.cpp in Sources */,
 				29CAD4011BE6613400C0CA90 /* cpulTest.cpp in Sources */,
 				29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */,
 				29CAD4371BE661B400C0CA90 /* TestPitch.cpp in Sources */,
 				29CAD4521BE6673C00C0CA90 /* MockStep.cpp in Sources */,
+				296D72911BF8EB960049B0EA /* TestDurBase32nd.cpp in Sources */,
 				29CAD4041BE6613400C0CA90 /* main.cpp in Sources */,
 				29CAD4021BE6613400C0CA90 /* cpulTestRegistry.cpp in Sources */,
+				296D72971BF8EB960049B0EA /* TestDurBaseLonga.cpp in Sources */,
 				29CAD44E1BE6673C00C0CA90 /* MockEnum.cpp in Sources */,
-				29CAD4291BE661B400C0CA90 /* TestDurHalf.cpp in Sources */,
-				29CAD42C1BE661B400C0CA90 /* TestDurWhole.cpp in Sources */,
+				296D72961BF8EB960049B0EA /* TestDurBaseHalf.cpp in Sources */,
 				29CAD44F1BE6673C00C0CA90 /* MockPitch.cpp in Sources */,
+				296D72941BF8EB960049B0EA /* TestDurBase256th.cpp in Sources */,
 				29CAD42E1BE661B400C0CA90 /* TestIAlter.cpp in Sources */,
-				29CAD4271BE661B400C0CA90 /* TestDurEighth.cpp in Sources */,
 				29CAD4381BE661B400C0CA90 /* TestPitchName.cpp in Sources */,
-				29CAD4231BE661B400C0CA90 /* TestDur64th.cpp in Sources */,
+				296D72901BF8EB960049B0EA /* TestDurBase16th.cpp in Sources */,
 				29CAD42D1BE661B400C0CA90 /* TestEnum.cpp in Sources */,
 				29CAD4311BE661B400C0CA90 /* TestIEnum.cpp in Sources */,
-				29CAD4281BE661B400C0CA90 /* TestDurFactory.cpp in Sources */,
 				29CAD43A1BE661B400C0CA90 /* TestStep.cpp in Sources */,
-				29CAD4241BE661B400C0CA90 /* TestDur128th.cpp in Sources */,
 				29CAD4031BE6613400C0CA90 /* cpulTestResult.cpp in Sources */,
 				29935EAA1BE6C18C0003552B /* MockDur.cpp in Sources */,
 				29CAD4201BE661B400C0CA90 /* TestAlter.cpp in Sources */,
 				29CAD44D1BE6673C00C0CA90 /* MockAlter.cpp in Sources */,
-				29CAD4261BE661B400C0CA90 /* TestDurBreve.cpp in Sources */,
 				29CAD4341BE661B400C0CA90 /* TestIPitchName.cpp in Sources */,
-				29CAD42F1BE661B400C0CA90 /* TestIDur.cpp in Sources */,
-				29CAD4211BE661B400C0CA90 /* TestDur16th.cpp in Sources */,
-				29CAD42A1BE661B400C0CA90 /* TestDurLonga.cpp in Sources */,
+				29CAD42F1BE661B400C0CA90 /* TestIDurBase.cpp in Sources */,
 				29935EAD1BE6C3700003552B /* MockDurBaseFactory.cpp in Sources */,
-				29CAD42B1BE661B400C0CA90 /* TestDurQuarter.cpp in Sources */,
 				29CAD4511BE6673C00C0CA90 /* MockPitchName.cpp in Sources */,
+				296D72921BF8EB960049B0EA /* TestDurBase64th.cpp in Sources */,
 				29CAD4501BE6673C00C0CA90 /* MockPitchFactory.cpp in Sources */,
+				296D72951BF8EB960049B0EA /* TestDurBaseBreve.cpp in Sources */,
+				296D72991BF8EB960049B0EA /* TestDurBaseWhole.cpp in Sources */,
 				29CAD4391BE661B400C0CA90 /* TestRational.cpp in Sources */,
-				29CAD4301BE661B400C0CA90 /* TestIDurFactory.cpp in Sources */,
+				296D72981BF8EB960049B0EA /* TestDurBaseQuarter.cpp in Sources */,
+				29CAD4301BE661B400C0CA90 /* TestIDurBaseFactory.cpp in Sources */,
+				296D72931BF8EB960049B0EA /* TestDurBase128th.cpp in Sources */,
 				29CAD4001BE6613400C0CA90 /* cpulRun.cpp in Sources */,
 				29CAD4551BE66B0800C0CA90 /* MockEnumCats.cpp in Sources */,
 				29CAD4331BE661B400C0CA90 /* TestIPitchFactory.cpp in Sources */,

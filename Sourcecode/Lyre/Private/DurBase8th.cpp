@@ -1,0 +1,22 @@
+#include "Lyre/Private/DurBase8th.h"
+
+namespace Lyre
+{
+    namespace Private
+    {
+        const Rational DurBase8th::ourRational = Rational { 1, 2 };
+        
+        const String DurBase8th::ourName = "Eighth";
+        
+        DurBase8th::~DurBase8th() {}
+        
+        Rational DurBase8th::getValue() const
+        {
+            return ourRational;
+        }
+        std::ostream& DurBase8th::toStream( std::ostream& os ) const
+        {
+            return os << ourName;
+        }
+    }
+}
