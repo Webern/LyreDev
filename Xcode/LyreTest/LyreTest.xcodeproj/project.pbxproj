@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29935EAA1BE6C18C0003552B /* MockDur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EA81BE6C18C0003552B /* MockDur.cpp */; };
-		29935EAD1BE6C3700003552B /* MockDurFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EAB1BE6C3700003552B /* MockDurFactory.cpp */; };
+		29935EAD1BE6C3700003552B /* MockDurBaseFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */; };
 		29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */; };
 		29CAD4001BE6613400C0CA90 /* cpulRun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F51BE6613400C0CA90 /* cpulRun.cpp */; };
 		29CAD4011BE6613400C0CA90 /* cpulTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F71BE6613400C0CA90 /* cpulTest.cpp */; };
@@ -67,8 +67,8 @@
 /* Begin PBXFileReference section */
 		29935EA81BE6C18C0003552B /* MockDur.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockDur.cpp; path = ../../Sourcecode/LyreTest/Mock/MockDur.cpp; sourceTree = "<group>"; };
 		29935EA91BE6C18C0003552B /* MockDur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDur.h; path = ../../Sourcecode/LyreTest/Mock/MockDur.h; sourceTree = "<group>"; };
-		29935EAB1BE6C3700003552B /* MockDurFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockDurFactory.cpp; path = ../../Sourcecode/LyreTest/Mock/MockDurFactory.cpp; sourceTree = "<group>"; };
-		29935EAC1BE6C3700003552B /* MockDurFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDurFactory.h; path = ../../Sourcecode/LyreTest/Mock/MockDurFactory.h; sourceTree = "<group>"; };
+		29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockDurBaseFactory.cpp; path = ../../Sourcecode/LyreTest/Mock/MockDurBaseFactory.cpp; sourceTree = "<group>"; };
+		29935EAC1BE6C3700003552B /* MockDurBaseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDurBaseFactory.h; path = ../../Sourcecode/LyreTest/Mock/MockDurBaseFactory.h; sourceTree = "<group>"; };
 		29CAD3E71BE6610F00C0CA90 /* LyreTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAD3F31BE6613400C0CA90 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestResult.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestResult.h; sourceTree = "<group>"; };
 		29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulFailure.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulFailure.cpp; sourceTree = "<group>"; };
@@ -237,8 +237,8 @@
 				29CAD44A1BE6673C00C0CA90 /* MockPitchName.h */,
 				29CAD44B1BE6673C00C0CA90 /* MockStep.cpp */,
 				29CAD44C1BE6673C00C0CA90 /* MockStep.h */,
-				29935EAB1BE6C3700003552B /* MockDurFactory.cpp */,
-				29935EAC1BE6C3700003552B /* MockDurFactory.h */,
+				29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */,
+				29935EAC1BE6C3700003552B /* MockDurBaseFactory.h */,
 			);
 			name = Mock;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 				29CAD42F1BE661B400C0CA90 /* TestIDur.cpp in Sources */,
 				29CAD4211BE661B400C0CA90 /* TestDur16th.cpp in Sources */,
 				29CAD42A1BE661B400C0CA90 /* TestDurLonga.cpp in Sources */,
-				29935EAD1BE6C3700003552B /* MockDurFactory.cpp in Sources */,
+				29935EAD1BE6C3700003552B /* MockDurBaseFactory.cpp in Sources */,
 				29CAD42B1BE661B400C0CA90 /* TestDurQuarter.cpp in Sources */,
 				29CAD4511BE6673C00C0CA90 /* MockPitchName.cpp in Sources */,
 				29CAD4501BE6673C00C0CA90 /* MockPitchFactory.cpp in Sources */,

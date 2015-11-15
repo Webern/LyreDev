@@ -1,14 +1,14 @@
 //PRIVATE
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "Lyre/IDur.h"
-#include "Lyre/Private/DurFactory.h"
+#include "Lyre/IDurBase.h"
+#include "Lyre/Private/DurBaseFactory.h"
 
 using namespace Lyre;
 using namespace Lyre::Private;
 
-TEST( Works, DurFactory )
+TEST( Works, DurBaseFactory )
 {
-    DurFactory f;
+    DurBaseFactory f;
     CHECK( f.createDur( "256th" )->getValue() == Rational( 1, 64 ) )
     CHECK( f.createDur( "128th" )->getValue() == Rational( 1, 32 ) )
     CHECK( f.createDur( "64th" )->getValue() == Rational( 1, 16 ) )

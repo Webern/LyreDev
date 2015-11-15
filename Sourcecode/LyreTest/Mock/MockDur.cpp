@@ -4,7 +4,7 @@ namespace Lyre
 {
     namespace Mock
     {
-        Lyre::IDurSP createMockDur( const Rational value, const String name )
+        Lyre::IDurBaseSP createMockDur( const Rational value, const String name )
         {
             return std::make_shared<MockDur>( value, name );
         }

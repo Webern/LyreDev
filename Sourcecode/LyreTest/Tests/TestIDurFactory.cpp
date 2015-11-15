@@ -1,98 +1,98 @@
 //PUBLIC
 
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "LyreTest/Mock/MockDurFactory.h"
+#include "LyreTest/Mock/MockDurBaseFactory.h"
 #include "LyreTest/Mock/MockDur.h"
 
-#include "Lyre/IDurFactory.h"
+#include "Lyre/IDurBaseFactory.h"
 
 using namespace Lyre;
 using namespace Lyre::Mock;
 using namespace std;
 
-TEST( createMockDurFactory, IDurFactory )
+TEST( createMockDurBaseFactory, IDurBaseFactory )
 {
     Mock::MockDurs durs;
     
     Rational val{ 1, 4 };
     String name{ "OneFourth" };
     auto dur = createMockDur( val, name );
-    durs.insert( std::pair<String, IDurSP>( name, dur ) );
+    durs.insert( std::pair<String, IDurBaseSP>( name, dur ) );
     
     val = Rational{ 7, 3 };
     name = String{ "SevenThirds" };
     dur = createMockDur( val, name );
-    durs.insert( std::pair<String, IDurSP>( name, dur ) );
+    durs.insert( std::pair<String, IDurBaseSP>( name, dur ) );
     
-    IDurFactorySP factory = createMockDurFactory( std::move( durs ) );
+    IDurBaseFactorySP factory = createMockDurBaseFactory( std::move( durs ) );
     
     CHECK( factory != nullptr )
 }
 
-TEST( createDur, IDurFactory )
+TEST( createDur, IDurBaseFactory )
 {
     Mock::MockDurs durs;
     
     Rational val{ 13, 1 };
     String name{ "Bones" };
     auto dur = createMockDur( val, name );
-    durs.insert( std::pair<String, IDurSP>( name, dur ) );
+    durs.insert( std::pair<String, IDurBaseSP>( name, dur ) );
     
     val = Rational{ 12, 1 };
     name = String{ "Bishop" };
     dur = createMockDur( val, name );
-    durs.insert( std::pair<String, IDurSP>( name, dur ) );
+    durs.insert( std::pair<String, IDurBaseSP>( name, dur ) );
     
-    IDurFactorySP factory = createMockDurFactory( std::move( durs ) );
-    IDurSP d = factory->createDur( "Bones" );
+    IDurBaseFactorySP factory = createMockDurBaseFactory( std::move( durs ) );
+    IDurBaseSP d = factory->createDur( "Bones" );
     
     CHECK_EQUAL( ( Rational{ 13, 1 } ), d->getValue() )
     CHECK_EQUAL( "Bones", d->toString() )
 }
 
-TEST( createDur2, IDurFactory )
+TEST( createDur2, IDurBaseFactory )
 {
     Mock::MockDurs durs;
     
     Rational val{ -1, 2 };
     String name{ "Cheese" };
     auto dur = createMockDur( val, name );
-    durs.insert( std::pair<String, IDurSP>( name, dur ) );
+    durs.insert( std::pair<String, IDurBaseSP>( name, dur ) );
     
     val = Rational{ 2, 1 };
     name = String{ "Pizza" };
     dur = createMockDur( val, name );
-    durs.insert( std::pair<String, IDurSP>( name, dur ) );
+    durs.insert( std::pair<String, IDurBaseSP>( name, dur ) );
     
-    IDurFactorySP factory = createMockDurFactory( std::move( durs ) );
-    IDurSP d = factory->createDur( "Cheese" );
+    IDurBaseFactorySP factory = createMockDurBaseFactory( std::move( durs ) );
+    IDurBaseSP d = factory->createDur( "Cheese" );
     
     CHECK_EQUAL( ( Rational{ -1, 2 } ), d->getValue() )
     CHECK_EQUAL( "Cheese", d->toString() )
 }
 
-TEST( throw1, IDurFactory )
+TEST( throw1, IDurBaseFactory )
 {
     Mock::MockDurs durs;
     
     Rational val{ -1, 2 };
     String name{ "Cheese" };
     auto dur = createMockDur( val, name );
-    durs.insert( std::pair<String, IDurSP>( name, dur ) );
+    durs.insert( std::pair<String, IDurBaseSP>( name, dur ) );
     
     val = Rational{ 2, 1 };
     name = String{ "Pizza" };
     dur = createMockDur( val, name );
-    durs.insert( std::pair<String, IDurSP>( name, dur ) );
+    durs.insert( std::pair<String, IDurBaseSP>( name, dur ) );
     
-    IDurFactorySP factory = createMockDurFactory( std::move( durs ) );
+    IDurBaseFactorySP factory = createMockDurBaseFactory( std::move( durs ) );
     
     String expected{ "invalid mock dur name" };
     String actual{ "" };
     
     try
     {
-        IDurSP d = factory->createDur( "Bogus" );
+        IDurBaseSP d = factory->createDur( "Bogus" );
     }
     catch ( std::exception& ex )
     {
@@ -102,22 +102,22 @@ TEST( throw1, IDurFactory )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( throw2, IDurFactory )
+TEST( throw2, IDurBaseFactory )
 {
     Mock::MockDurs durs;
     
-    IDurSP dur;
-    durs.insert( std::pair<String, IDurSP>( "Null1", dur ) );
-    durs.insert( std::pair<String, IDurSP>( "Null2", dur ) );
+    IDurBaseSP dur;
+    durs.insert( std::pair<String, IDurBaseSP>( "Null1", dur ) );
+    durs.insert( std::pair<String, IDurBaseSP>( "Null2", dur ) );
 
-    IDurFactorySP factory = createMockDurFactory( std::move( durs ) );
+    IDurBaseFactorySP factory = createMockDurBaseFactory( std::move( durs ) );
     
-    String expected{ "MockDurFactory attempted to dereference a null IDur pointer" };
+    String expected{ "MockDurBaseFactory attempted to dereference a null IDurBase pointer" };
     String actual{ "" };
     
     try
     {
-        IDurSP d = factory->createDur( "Null2" );
+        IDurBaseSP d = factory->createDur( "Null2" );
     }
     catch ( std::exception& ex )
     {

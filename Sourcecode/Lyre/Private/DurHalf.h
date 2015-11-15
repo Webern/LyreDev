@@ -1,7 +1,7 @@
 //PRIVATE
 #pragma once
 #include "Lyre/TypeDefs.h"
-#include "Lyre/IDur.h"
+#include "Lyre/IDurBase.h"
 #include "Lyre/Rational.h"
 #include <memory>
 
@@ -13,7 +13,7 @@ namespace Lyre
         using DurHalfSP = std::shared_ptr<DurHalf>;
         using DurHalfUP = std::unique_ptr<DurHalf>;
         
-        class DurHalf : public IDur
+        class DurHalf : public IDurBase
         {
         public:
             virtual ~DurHalf();

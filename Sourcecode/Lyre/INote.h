@@ -13,17 +13,17 @@ namespace Lyre
     using IPitchSP = std::shared_ptr<IPitch>;
     using IPitchUP = std::unique_ptr<IPitch>;
     
-    class IDur;
-    using IDurSP = std::shared_ptr<IDur>;
-    using IDurUP = std::unique_ptr<IDur>;
+    class IDurBase;
+    using IDurBaseSP = std::shared_ptr<IDurBase>;
+    using IDurBaseUP = std::unique_ptr<IDurBase>;
     
     class INote
     {
     public:
         virtual ~INote() = default;
         
-        virtual IDurUP getDur() const =0;
-        virtual IPitchUP getPitch() const =0;
+        virtual IDurBaseUP getDur() const = 0;
+        virtual IPitchUP getPitch() const = 0;
         
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         virtual String toString() const;

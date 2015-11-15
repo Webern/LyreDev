@@ -1,17 +1,17 @@
-#include "Lyre/IDur.h"
+#include "Lyre/IDurBase.h"
 #include <sstream>
 
 namespace Lyre
 {
-    IDur::~IDur() {}
+    IDurBase::~IDurBase() {}
     
-    String IDur::toString() const
+    String IDurBase::toString() const
     {
         std::stringstream ss;
         toStream( ss );
         return ss.str();
     }
-    std::ostream& operator<<( std::ostream& os, const IDur& object )
+    std::ostream& operator<<( std::ostream& os, const IDurBase& object )
     {
         return object.toStream( os );
     }

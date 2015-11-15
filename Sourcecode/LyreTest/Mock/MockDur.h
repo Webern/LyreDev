@@ -1,7 +1,7 @@
 //PRIVATE
 #pragma once
 
-#include "Lyre/IDur.h"
+#include "Lyre/IDurBase.h"
 
 namespace Lyre
 {
@@ -11,9 +11,9 @@ namespace Lyre
         using MockDurSP = std::shared_ptr<MockDur>;
         using MockDurUP = std::unique_ptr<MockDur>;
         
-        Lyre::IDurSP createMockDur( const Rational value, const String name );
+        Lyre::IDurBaseSP createMockDur( const Rational value, const String name );
         
-        class MockDur : public Lyre::IDur
+        class MockDur : public Lyre::IDurBase
         {
         public:
             MockDur( const Rational value, const String name );

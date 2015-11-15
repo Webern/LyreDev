@@ -1,7 +1,7 @@
 //PRIVATE
 #pragma once
 #include "Lyre/TypeDefs.h"
-#include "Lyre/IDur.h"
+#include "Lyre/IDurBase.h"
 #include "Lyre/Rational.h"
 #include <memory>
 
@@ -13,7 +13,7 @@ namespace Lyre
         using DurWholeSP = std::shared_ptr<DurWhole>;
         using DurWholeUP = std::unique_ptr<DurWhole>;
         
-        class DurWhole : public IDur
+        class DurWhole : public IDurBase
         {
         public:
             virtual ~DurWhole();

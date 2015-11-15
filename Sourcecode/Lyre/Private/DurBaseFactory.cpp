@@ -1,4 +1,4 @@
-#include "Lyre/Private/DurFactory.h"
+#include "Lyre/Private/DurBaseFactory.h"
 #include "Lyre/Private/Dur256th.h"
 #include "Lyre/Private/Dur128th.h"
 #include "Lyre/Private/Dur64th.h"
@@ -15,9 +15,9 @@ namespace Lyre
 {
     namespace Private
     {
-        std::map<String, IDurSP> DurFactory::ourDurMap;
+        std::map<String, IDurBaseSP> DurBaseFactory::ourDurMap;
         
-        DurFactory::DurFactory()
+        DurBaseFactory::DurBaseFactory()
         {
             if ( ourDurMap.size() == 0 )
             {
@@ -35,9 +35,9 @@ namespace Lyre
             }
         }
         
-        DurFactory::~DurFactory() {}
+        DurBaseFactory::~DurBaseFactory() {}
         
-        IDurSP DurFactory::createDur( const String& durName ) const
+        IDurBaseSP DurBaseFactory::createDur( const String& durName ) const
         {
             auto it = ourDurMap.find( durName );
             if ( it == ourDurMap.cend() )
