@@ -25,8 +25,8 @@ namespace Lyre
         
         virtual ~IDurBaseFactory();
         
-        static IDurBaseFactorySP createDurBaseFactory( const DurBaseFactoryType t );
+        static IDurBaseFactoryUP createDurBaseFactory( const DurBaseFactoryType t );
         
-        virtual IDurBaseSP createDur( const String& durName ) const = 0;
+        virtual IDurBaseUP createDur( const String& durName ) const = 0;
     };
 }

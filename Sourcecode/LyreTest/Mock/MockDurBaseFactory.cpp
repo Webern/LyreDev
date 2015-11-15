@@ -4,15 +4,15 @@ namespace Lyre
 {
     namespace Mock
     {
-        IDurBaseFactorySP createMockDurBaseFactory( MockDurs&& durs )
+        IDurBaseFactorySP createMockDurBaseFactory( MockDurBases&& durs )
         {
             return std::make_shared<MockDurBaseFactory>( std::move( durs ) );
         }
-        MockDurBaseFactory::MockDurBaseFactory( MockDurs&& durs )
+        MockDurBaseFactory::MockDurBaseFactory( MockDurBases&& durs )
         :myDurs( std::move( durs ) )
         {}
         
-        IDurBaseSP MockDurBaseFactory::createDur( const String& durName ) const
+        IDurBaseUP MockDurBaseFactory::createDur( const String& durName ) const
         {
             auto it = myDurs.find( durName );
             if ( it != std::end( myDurs ) )
@@ -21,13 +21,15 @@ namespace Lyre
                 {
                     throw std::runtime_error{ "MockDurBaseFactory attempted to dereference a null IDurBase pointer" };
                 }
-                return it->second;
+                IDurBaseUP output;
+                it->second->copyTo( output );
+                return std::move( output );
             }
             throw std::runtime_error{ "invalid mock dur name" };
             
             // unreachable code
-            IDurBaseSP nullIDurBaseSP;
-            return nullIDurBaseSP;
+            IDurBaseUP nullIDurBaseUP;
+            return nullIDurBaseUP;
         }
     }
 }

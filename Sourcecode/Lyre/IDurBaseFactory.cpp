@@ -1,23 +1,24 @@
 #include "Lyre/IDurBaseFactory.h"
 #include "Lyre/Private/DurBaseFactory.h"
+#include "Lyre/makeUnique.h"
 
 namespace Lyre
 {
     IDurBaseFactory::~IDurBaseFactory() {}
     
-    IDurBaseFactorySP IDurBaseFactory::createDurBaseFactory( const DurBaseFactoryType t )
+    IDurBaseFactoryUP IDurBaseFactory::createDurBaseFactory( const DurBaseFactoryType t )
     {
-        IDurBaseFactorySP output;
+        IDurBaseFactoryUP output;
         switch ( t )
         {
             case DurBaseFactoryType::Standard:
-                output = std::make_shared<Private::DurBaseFactory>();
+                output = makeUnique<Private::DurBaseFactory>();
                 break;
                 
             default:
                 throw std::runtime_error( "unknown DurBaseFactoryType" );
                 break;
         }
-        return output;
+        return std::move( output );
     }
 }

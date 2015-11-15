@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IAlter.h"
+#include "Lyre/copyTo.h"
 
 namespace Lyre
 {
@@ -74,7 +75,7 @@ namespace Lyre
             virtual void increment();
             virtual void decrement();
             
-        private:
+        private: // MJBTODO Implement without Pimpl
             class AlterImpl;
             using AlterImplUP = std::unique_ptr<AlterImpl>;
             AlterImplUP myImpl;

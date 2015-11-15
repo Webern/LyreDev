@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/Rational.h"
+#include "Lyre/copyTo.h"
 #include <memory>
 
 namespace Lyre
@@ -14,6 +15,9 @@ namespace Lyre
     {
     public:
         virtual ~IDurBase();
+        virtual IDurBaseUP clone() const = 0;
+        virtual void copyTo( IDurBaseUP& output ) const = 0; // copy to downcasted pointer
+        
         virtual Rational getValue() const = 0;
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         virtual String toString() const;

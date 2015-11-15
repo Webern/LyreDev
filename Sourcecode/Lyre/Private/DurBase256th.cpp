@@ -10,6 +10,17 @@ namespace Lyre
         
         DurBase256th::~DurBase256th() {}
         
+        IDurBaseUP DurBase256th::clone() const
+        {
+            return makeUnique<DurBase256th>();
+        }
+        
+        void DurBase256th::copyTo( IDurBaseUP& output ) const
+        {
+            auto tempP = static_cast<const IDurBase*>( this );
+            Lyre::copyTo<IDurBase>( tempP, output );
+        }
+        
         Rational DurBase256th::getValue() const
         {
             return ourRational;

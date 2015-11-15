@@ -10,6 +10,17 @@ namespace Lyre
         
         DurBase128th::~DurBase128th() {}
         
+        IDurBaseUP DurBase128th::clone() const
+        {
+            return makeUnique<DurBase128th>();
+        }
+        
+        void DurBase128th::copyTo( IDurBaseUP& output ) const
+        {
+            auto tempP = static_cast<const IDurBase*>( this );
+            Lyre::copyTo<IDurBase>( tempP, output );
+        }
+        
         Rational DurBase128th::getValue() const
         {
             return ourRational;

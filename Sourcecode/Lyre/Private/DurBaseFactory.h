@@ -18,10 +18,10 @@ namespace Lyre
         public:
             DurBaseFactory();
             virtual ~DurBaseFactory();
-            virtual IDurBaseSP createDur( const String& durName ) const;
+            virtual IDurBaseUP createDur( const String& durName ) const;
         private:
-            using DurMap = std::map<String, IDurBaseSP>;
-            using DurPair = std::pair<String, IDurBaseSP>;
+            using DurMap = std::map<String, IDurBaseUP>;
+            using DurPair = std::pair<String, IDurBaseUP>;
             static DurMap ourDurMap;
         };
     }

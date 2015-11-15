@@ -10,6 +10,17 @@ namespace Lyre
         
         DurBaseBreve::~DurBaseBreve() {}
         
+        IDurBaseUP DurBaseBreve::clone() const
+        {
+            return makeUnique<DurBaseBreve>();
+        }
+        
+        void DurBaseBreve::copyTo( IDurBaseUP& output ) const
+        {
+            auto tempP = static_cast<const IDurBase*>( this );
+            Lyre::copyTo<IDurBase>( tempP, output );
+        }
+        
         Rational DurBaseBreve::getValue() const
         {
             return ourRational;

@@ -10,6 +10,17 @@ namespace Lyre
         
         DurBaseHalf::~DurBaseHalf() {}
         
+        IDurBaseUP DurBaseHalf::clone() const
+        {
+            return makeUnique<DurBaseHalf>();
+        }
+        
+        void DurBaseHalf::copyTo( IDurBaseUP& output ) const
+        {
+            auto tempP = static_cast<const IDurBase*>( this );
+            Lyre::copyTo<IDurBase>( tempP, output );
+        }
+        
         Rational DurBaseHalf::getValue() const
         {
             return ourRational;

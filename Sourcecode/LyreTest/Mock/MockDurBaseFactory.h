@@ -15,17 +15,17 @@ namespace Lyre
         using MockDurBaseFactoryUP = std::unique_ptr<MockDurBaseFactory>;
         using MockDurBaseFactorySP = std::shared_ptr<MockDurBaseFactory>;
         
-        using MockDurs = std::map<String, IDurBaseSP>;
+        using MockDurBases = std::map<String, IDurBaseUP>;
         
-        IDurBaseFactorySP createMockDurBaseFactory( MockDurs&& durs );
+        IDurBaseFactorySP createMockDurBaseFactory( MockDurBases&& durs );
         
         class MockDurBaseFactory : public IDurBaseFactory
         {
         public:
-            MockDurBaseFactory( MockDurs&& durs );
-            IDurBaseSP createDur( const String& durName ) const;
+            MockDurBaseFactory( MockDurBases&& durs );
+            IDurBaseUP createDur( const String& durName ) const;
         private:
-            MockDurs myDurs;
+            MockDurBases myDurs;
         };
     }
 }
