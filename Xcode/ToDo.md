@@ -2,7 +2,9 @@
 [DONE] Make Private::makeUnique.h private
 Change all copyTo functions to use copyTo.h
 Delete most comments
+See if it's possible/necessary for copyTo to throw on bad cast
 
 Create DurDot class
 Create TupletModifier class
-Create Duration class with list of TupletModifier shared pointers
+Create Duration class with list of TupletModifier weak pointers
+Create Note class
