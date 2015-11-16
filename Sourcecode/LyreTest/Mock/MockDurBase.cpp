@@ -1,5 +1,5 @@
 #include "MockDurBase.h"
-#include "Lyre/makeUnique.h"
+#include "Lyre/Private/makeUnique.h"
 
 namespace Lyre
 {
@@ -7,18 +7,18 @@ namespace Lyre
     {
         Lyre::IDurBaseUP createMockDurBase( const Rational value, const String name )
         {
-            return makeUnique<MockDurBase>( value, name );
+            return Private::makeUnique<MockDurBase>( value, name );
         }
         
         IDurBaseUP MockDurBase::clone() const
         {
-            return makeUnique<MockDurBase>( myRational, myName );
+            return Private::makeUnique<MockDurBase>( myRational, myName );
         }
         
         void MockDurBase::copyTo( IDurBaseUP& output ) const
         {
-            auto temp = makeUnique<MockDurBase>( myRational, myName );
-            Lyre::copyTo<IDurBase>( temp.get(), output );
+            auto temp = Private::makeUnique<MockDurBase>( myRational, myName );
+            Private::copyTo<IDurBase>( temp.get(), output );
         }
         
         MockDurBase::MockDurBase( const Rational value, const String name )

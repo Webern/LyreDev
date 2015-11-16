@@ -1,5 +1,5 @@
-Make copyTo.h private
-Make makeUnique.h private
+[DONE] Make copyTo.h private
+[DONE] Make Private::makeUnique.h private
 Change all copyTo functions to use copyTo.h
 Delete most comments
 

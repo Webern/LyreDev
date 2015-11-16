@@ -1,6 +1,6 @@
 #include "Lyre/IDurBaseFactory.h"
 #include "Lyre/Private/DurBaseFactory.h"
-#include "Lyre/makeUnique.h"
+#include "Lyre/Private/makeUnique.h"
 
 namespace Lyre
 {
@@ -12,7 +12,7 @@ namespace Lyre
         switch ( t )
         {
             case DurBaseFactoryType::Standard:
-                output = makeUnique<Private::DurBaseFactory>();
+                output = Private::makeUnique<Private::DurBaseFactory>();
                 break;
                 
             default:

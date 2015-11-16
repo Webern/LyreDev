@@ -98,6 +98,8 @@
 		296D72601BF8E9EE0049B0EA /* DurBaseQuarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurBaseQuarter.h; path = ../../Sourcecode/Lyre/Private/DurBaseQuarter.h; sourceTree = "<group>"; };
 		296D72611BF8E9EE0049B0EA /* DurBaseWhole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurBaseWhole.cpp; path = ../../Sourcecode/Lyre/Private/DurBaseWhole.cpp; sourceTree = "<group>"; };
 		296D72621BF8E9EE0049B0EA /* DurBaseWhole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurBaseWhole.h; path = ../../Sourcecode/Lyre/Private/DurBaseWhole.h; sourceTree = "<group>"; };
+		298227441BF9997500277C67 /* makeUnique.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = makeUnique.h; path = ../../Sourcecode/Lyre/Private/makeUnique.h; sourceTree = "<group>"; };
+		298227451BF9998200277C67 /* copyTo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = copyTo.h; path = ../../Sourcecode/Lyre/Private/copyTo.h; sourceTree = "<group>"; };
 		29FD78841BF79CD300BBDC4D /* IDurDot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IDurDot.cpp; path = ../../Sourcecode/Lyre/IDurDot.cpp; sourceTree = "<group>"; };
 		29FD78851BF79CD300BBDC4D /* IDurDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDurDot.h; path = ../../Sourcecode/Lyre/IDurDot.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,20 +165,25 @@
 		29109DFD1BE55A00001FF3E6 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
+				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
+				298227451BF9998200277C67 /* copyTo.h */,
+				296D72531BF8E9EE0049B0EA /* DurBase128th.cpp */,
+				296D72541BF8E9EE0049B0EA /* DurBase128th.h */,
 				296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */,
 				296D724E1BF8E9EE0049B0EA /* DurBase16th.h */,
+				296D72551BF8E9EE0049B0EA /* DurBase256th.cpp */,
+				296D72561BF8E9EE0049B0EA /* DurBase256th.h */,
 				296D724F1BF8E9EE0049B0EA /* DurBase32nd.cpp */,
 				296D72501BF8E9EE0049B0EA /* DurBase32nd.h */,
 				296D72511BF8E9EE0049B0EA /* DurBase64th.cpp */,
 				296D72521BF8E9EE0049B0EA /* DurBase64th.h */,
-				296D72531BF8E9EE0049B0EA /* DurBase128th.cpp */,
-				296D72541BF8E9EE0049B0EA /* DurBase128th.h */,
-				296D72551BF8E9EE0049B0EA /* DurBase256th.cpp */,
-				296D72561BF8E9EE0049B0EA /* DurBase256th.h */,
-				296D72571BF8E9EE0049B0EA /* DurBaseBreve.cpp */,
-				296D72581BF8E9EE0049B0EA /* DurBaseBreve.h */,
 				296D72591BF8E9EE0049B0EA /* DurBase8th.cpp */,
 				296D725A1BF8E9EE0049B0EA /* DurBase8th.h */,
+				296D72571BF8E9EE0049B0EA /* DurBaseBreve.cpp */,
+				296D72581BF8E9EE0049B0EA /* DurBaseBreve.h */,
+				29109E0E1BE55A1B001FF3E6 /* DurBaseFactory.cpp */,
+				29109E0F1BE55A1B001FF3E6 /* DurBaseFactory.h */,
 				296D725B1BF8E9EE0049B0EA /* DurBaseHalf.cpp */,
 				296D725C1BF8E9EE0049B0EA /* DurBaseHalf.h */,
 				296D725D1BF8E9EE0049B0EA /* DurBaseLonga.cpp */,
@@ -185,12 +192,9 @@
 				296D72601BF8E9EE0049B0EA /* DurBaseQuarter.h */,
 				296D72611BF8E9EE0049B0EA /* DurBaseWhole.cpp */,
 				296D72621BF8E9EE0049B0EA /* DurBaseWhole.h */,
-				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
-				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
-				29109E0E1BE55A1B001FF3E6 /* DurBaseFactory.cpp */,
-				29109E0F1BE55A1B001FF3E6 /* DurBaseFactory.h */,
 				29109E181BE55A1B001FF3E6 /* Enum.cpp */,
 				29109E191BE55A1B001FF3E6 /* Enum.h */,
+				298227441BF9997500277C67 /* makeUnique.h */,
 				29109E1A1BE55A1B001FF3E6 /* Mod.h */,
 				29109E1B1BE55A1B001FF3E6 /* Pitch.cpp */,
 				29109E1C1BE55A1B001FF3E6 /* Pitch.h */,

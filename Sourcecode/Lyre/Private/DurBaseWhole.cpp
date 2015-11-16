@@ -12,13 +12,13 @@ namespace Lyre
         
         IDurBaseUP DurBaseWhole::clone() const
         {
-            return makeUnique<DurBaseWhole>();
+            return Private::makeUnique<DurBaseWhole>();
         }
         
         void DurBaseWhole::copyTo( IDurBaseUP& output ) const
         {
             auto tempP = static_cast<const IDurBase*>( this );
-            Lyre::copyTo<IDurBase>( tempP, output );
+            Private::copyTo<IDurBase>( tempP, output );
         }
         
         Rational DurBaseWhole::getValue() const

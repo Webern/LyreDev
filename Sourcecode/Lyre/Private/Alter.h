@@ -2,7 +2,7 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IAlter.h"
-#include "Lyre/copyTo.h"
+#include "Lyre/Private/copyTo.h"
 
 namespace Lyre
 {
