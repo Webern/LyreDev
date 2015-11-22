@@ -1,4 +1,5 @@
 #include "LyreTest/Mock/MockDurBaseFactory.h"
+#include "Lyre/Private/throw.h"
 
 namespace Lyre
 {
@@ -19,13 +20,13 @@ namespace Lyre
             {
                 if ( ! it->second )
                 {
-                    throw std::runtime_error{ "MockDurBaseFactory attempted to dereference a null IDurBase pointer" };
+                    THROW( "MockDurBaseFactory attempted to dereference a null IDurBase pointer" )
                 }
                 IDurBaseUP output;
                 it->second->copyTo( output );
                 return std::move( output );
             }
-            throw std::runtime_error{ "invalid mock dur name" };
+            THROW( "invalid mock dur name" )
             
             // unreachable code
             IDurBaseUP nullIDurBaseUP;

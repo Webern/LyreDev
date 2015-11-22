@@ -1,6 +1,7 @@
 //PRIVATE
 #pragma once
 #include "Lyre/Private/makeUnique.h"
+#include "Lyre/Private/throw.h"
 
 namespace Lyre
 {
@@ -11,7 +12,7 @@ namespace Lyre
         {
             if ( input == nullptr )
             {
-                throw std::runtime_error( "copyTo received a nullptr as input" );
+                THROW("nullptr received as input")
             }
             auto tempUP = input->clone();
             auto rawP = tempUP.get();

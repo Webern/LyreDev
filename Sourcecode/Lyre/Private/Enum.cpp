@@ -79,11 +79,11 @@ namespace Lyre
             {
                 return ( os << String{ "error" } );
             }
-            if ( myValue < 0 || myValue >= myStrings->size() )
+            if ( myValue < 0 || myValue >= static_cast<int>( myStrings->size() ) )
             {
                 return ( os << String{ "error" } );
             }
-            return ( os << (*myStrings)[ myValue ] );
+            return ( os << (*myStrings)[ static_cast<size_t>( myValue ) ] );
         }
         
         void Enum::increment()

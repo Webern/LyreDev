@@ -1,6 +1,7 @@
 #include "Lyre/Rational.h"
 #include <exception>
 #include <set>
+#include "Lyre/Private/throw.h"
 
 namespace Lyre
 {
@@ -80,7 +81,7 @@ namespace Lyre
                 {
                     if ( zeroEncountered )
                     {
-                        throw std::runtime_error( "initializer list for gcd function may contain no more than a single 0" );
+                        THROW("initializer list for gcd function may contain no more than a single 0")
                     }
                     zeroEncountered = true;
                 }
@@ -113,7 +114,7 @@ namespace Lyre
         {
             if ( *( integers.cbegin() ) == 0 )
             {
-                throw std::runtime_error( "zeros not allowed" );
+                THROW( "zeros not allowed" )
             }
             return std::abs( *( integers.begin() ) );
         }
@@ -125,14 +126,14 @@ namespace Lyre
             ++b;
             if ( *a == 0 || *b == 0 )
             {
-                throw std::runtime_error( "zeros not allowed" );
+                THROW( "zeros not allowed" )
             }
             answer = lcm( *a, *b );
             for (; b != e ; ++b )
             {
                 if ( *b == 0 )
                 {
-                    throw std::runtime_error( "zeros not allowed" );
+                    THROW( "zeros not allowed")
                 }
                 answer = lcm( answer, *b );
             }

@@ -98,8 +98,9 @@ TEST( throw1, IDurBaseFactory )
     {
         actual = ex.what();
     }
-    
-    CHECK_EQUAL( expected, actual )
+    auto foundPosition = actual.find( expected );
+    bool success = ( foundPosition != String::npos );
+    CHECK( success )
 }
 
 TEST( throw2, IDurBaseFactory )
@@ -124,6 +125,7 @@ TEST( throw2, IDurBaseFactory )
     {
         actual = ex.what();
     }
-    
-    CHECK_EQUAL( expected, actual )
+    auto foundPosition = actual.find( expected );
+    bool success = ( foundPosition != String::npos );
+    CHECK( success )
 }

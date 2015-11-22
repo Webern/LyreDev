@@ -22,3 +22,19 @@ TEST( Works, DurBaseFactory )
     CHECK( f.createDur( "Longa" )->getValue() == Rational( 16, 1 ) )
     
 }
+TEST( Throws, DurBaseFactory )
+{
+    DurBaseFactory f;
+    std::string message;
+    try
+    {
+        f.createDur( "Invalid String" );
+    }
+    catch (std::exception& e)
+    {
+        message = e.what();
+    }
+    std::string expected = "error in DurBaseFactory.cpp (line 47) createDur: invalid DurBase name";
+    std::string actual = message;
+    CHECK_EQUAL( expected, actual )
+}

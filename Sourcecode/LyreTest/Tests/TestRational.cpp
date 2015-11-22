@@ -207,7 +207,9 @@ TEST( gcd_list08, Rational )
     {
         actual = "the wrong type of exception was caught";
     }
-    CHECK_EQUAL( expected, actual )
+    auto foundPosition = actual.find( expected );
+    bool success = ( foundPosition != String::npos );
+    CHECK( success )
 }
 TEST( lcm01, Rational )
 {
@@ -275,7 +277,9 @@ TEST( lcm_list07, Rational )
     {
         actual = "the wrong type of exception was caught";
     }
-    CHECK_EQUAL( expected, actual )
+    auto foundPosition = actual.find( expected );
+    bool success = ( foundPosition != String::npos );
+    CHECK( success )
 }
 TEST( lcm_list08, Rational )
 {
@@ -293,7 +297,9 @@ TEST( lcm_list08, Rational )
     {
         actual = "the wrong type of exception was caught";
     }
-    CHECK_EQUAL( expected, actual )
+    auto foundPosition = actual.find( expected );
+    bool success = ( foundPosition != String::npos );
+    CHECK( success )
 }
 
 TEST( lcm_vec01, Rational )
@@ -349,7 +355,9 @@ TEST( lcm_vec07, Rational )
     {
         actual = "the wrong type of exception was caught";
     }
-    CHECK_EQUAL( expected, actual )
+    auto foundPosition = actual.find( expected );
+    bool success = ( foundPosition != String::npos );
+    CHECK( success )
 }
 TEST( lcm_vec08, Rational )
 {
@@ -368,7 +376,9 @@ TEST( lcm_vec08, Rational )
     {
         actual = "the wrong type of exception was caught";
     }
-    CHECK_EQUAL( expected, actual )
+    auto foundPosition = actual.find( expected );
+    bool success = ( foundPosition != String::npos );
+    CHECK( success )
 }
 
 TEST( lcd01, Rational )

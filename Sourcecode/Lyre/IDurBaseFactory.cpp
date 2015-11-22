@@ -1,6 +1,7 @@
 #include "Lyre/IDurBaseFactory.h"
 #include "Lyre/Private/DurBaseFactory.h"
 #include "Lyre/Private/makeUnique.h"
+#include "Lyre/Private/throw.h"
 
 namespace Lyre
 {
@@ -16,7 +17,7 @@ namespace Lyre
                 break;
                 
             default:
-                throw std::runtime_error( "unknown DurBaseFactoryType" );
+                THROW( "unknown DurBaseFactoryType" )
                 break;
         }
         return std::move( output );

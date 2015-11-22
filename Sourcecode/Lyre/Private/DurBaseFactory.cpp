@@ -11,6 +11,7 @@
 #include "Lyre/Private/DurBaseBreve.h"
 #include "Lyre/Private/DurBaseLonga.h"
 #include "Lyre/Private/makeUnique.h"
+#include "Lyre/Private/throw.h"
 
 namespace Lyre
 {
@@ -43,7 +44,7 @@ namespace Lyre
             auto it = ourDurMap.find( durName );
             if ( it == ourDurMap.cend() )
             {
-                throw std::runtime_error( "invalid Dur string" );
+                THROW("invalid DurBase name")
             }
             IDurBaseUP temp;
             it->second->copyTo( temp );
