@@ -28,13 +28,13 @@ TEST( Throws, DurBaseFactory )
     std::string message;
     try
     {
-        f.createDur( "Invalid String" );
+        f.createDur( "Gobbledeegook" );
     }
     catch (std::exception& e)
     {
         message = e.what();
     }
-    std::string expected = "error in DurBaseFactory.cpp (line 47) createDur: invalid DurBase name";
+    std::string expected = "'Gobbledeegook' is not a valid DurBase name";
     std::string actual = message;
-    CHECK_EQUAL( expected, actual )
+    CHECK( actual.find( expected ) != String::npos );
 }

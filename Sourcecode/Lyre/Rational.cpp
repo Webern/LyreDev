@@ -190,6 +190,10 @@ namespace Lyre
     bool Rational::reduce()
     {
         Integer gcf = Rational::gcd( this->getNumerator(), this->getDenominator() );
+        if ( gcf == 0 )
+        {
+            THROW( "divide by zero error" )
+        }
         Rational temp{ this->getNumerator()/gcf, this->getDenominator()/gcf };
         if ( ( temp.getNumerator() < 0 && temp.getDenominator() < 0 ) ||
             ( temp.getNumerator() >= 0 && temp.getDenominator() < 0 ) )

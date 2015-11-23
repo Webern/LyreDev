@@ -14,6 +14,8 @@ namespace Lyre
     using IDurBaseSP = std::shared_ptr<IDurBase>;
     using IDurBaseUP = std::unique_ptr<IDurBase>;
     
+    static const Integer DURATION_MAX_DOTS = 20;
+    
     class IDuration
     {
     public:
@@ -39,7 +41,6 @@ namespace Lyre
         virtual bool isEqualTo( const IDuration& other ) const = 0;
         virtual bool isGreaterThan( const IDuration& other ) const = 0;
         virtual bool isLessThan( const IDuration& other ) const = 0;
-        virtual bool isIdenticalTo( const IDuration& other ) const = 0;
     };
     
     std::ostream& operator<<( std::ostream& os, const IDuration& object );
