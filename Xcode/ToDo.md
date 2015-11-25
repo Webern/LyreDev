@@ -6,5 +6,5 @@ See if it's possible/necessary for copyTo to throw on bad cast
 
 Create DurDot class
 Create TupletModifier class
-Create Duration class with list of TupletModifier weak pointers
+Create DurDot class with list of TupletModifier weak pointers
 Create Note class

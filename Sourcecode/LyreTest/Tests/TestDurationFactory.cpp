@@ -1,26 +1,26 @@
 //PUBLIC
 
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "Lyre/IDurationFactory.h"
+#include "Lyre/IDurDotFactory.h"
 
 using namespace Lyre;
 using namespace std;
 
-TEST( exists, IDurationFactory )
+TEST( exists, IDurDotFactory )
 {
-    IDurationFactoryUP factory = createDurationFactory( DurationFactoryType::Standard );
+    IDurDotFactoryUP factory = createDurDotFactory( DurDotFactoryType::Standard );
     CHECK( factory != nullptr )
 }
-TEST( doesSomething, IDurationFactory )
+TEST( doesSomething, IDurDotFactory )
 {
-    IDurationFactoryUP factory = createDurationFactory( DurationFactoryType::Standard );
-    IDurationUP dur = factory->createDuration( "Quarter", 1 );
+    IDurDotFactoryUP factory = createDurDotFactory( DurDotFactoryType::Standard );
+    IDurDotUP dur = factory->createDurDot( "Quarter", 1 );
     CHECK( dur != nullptr )
 }
 
-TEST( doesSomething2, IDurationFactory )
+TEST( doesSomething2, IDurDotFactory )
 {
-    IDurationFactoryUP factory = createDurationFactory( DurationFactoryType::Standard );
-    IDurationUP dur = factory->createDuration( "Quarter" );
+    IDurDotFactoryUP factory = createDurDotFactory( DurDotFactoryType::Standard );
+    IDurDotUP dur = factory->createDurDot( "Quarter" );
     CHECK( dur != nullptr )
 }

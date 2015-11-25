@@ -1,11 +1,11 @@
-#include "Lyre/Private/Duration.h"
+#include "Lyre/Private/DurDot.h"
 #include <sstream>
 
 namespace Lyre
 {
     namespace Private
     {
-        Duration::Duration( const String& durName )
+        DurDot::DurDot( const String& durName )
         : myDurBaseFactory( IDurBaseFactory::createDurBaseFactory( DurBaseFactoryType::Standard ) )
         , myDurBase( nullptr )
         , myDotCount( 0 )
@@ -13,7 +13,7 @@ namespace Lyre
             setDurBase( durName );
         }
         
-        Duration::Duration( const String& durName,
+        DurDot::DurDot( const String& durName,
                            const Integer dotCount )
         : myDurBaseFactory( IDurBaseFactory::createDurBaseFactory( DurBaseFactoryType::Standard ) )
         , myDurBase( nullptr )
@@ -23,19 +23,19 @@ namespace Lyre
             setDotCount( dotCount );
         }
         
-        Duration::~Duration() {}
+        DurDot::~DurDot() {}
         
-        IDurationUP Duration::clone() const
+        IDurDotUP DurDot::clone() const
         {
-            return IDurationUP{ new Duration{ "Quarter" } };
+            return IDurDotUP{ new DurDot{ "Quarter" } };
         }
         
-        void Duration::copyTo( IDurationUP& output ) const
+        void DurDot::copyTo( IDurDotUP& output ) const
         {
-            output = IDurationUP{ new Duration{ "Quarter" } };
+            output = IDurDotUP{ new DurDot{ "Quarter" } };
         }
         
-        Rational Duration::getValue() const
+        Rational DurDot::getValue() const
         {
             Rational temp = myDurBase->getValue();
             Rational additional = myDurBase->getValue();
@@ -47,17 +47,17 @@ namespace Lyre
             return temp;
         }
         
-        Rational Duration::getDurBaseValue() const
+        Rational DurDot::getDurBaseValue() const
         {
             return myDurBase->getValue();
         }
         
-        Integer Duration::getDotCount() const
+        Integer DurDot::getDotCount() const
         {
             return myDotCount;
         }
         
-        void Duration::setDotCount( const Integer dots )
+        void DurDot::setDotCount( const Integer dots )
         {
             if ( dots < 0 )
             {
@@ -73,7 +73,7 @@ namespace Lyre
             myDotCount = dots;
         }
         
-        std::ostream& Duration::toStream( std::ostream& os ) const
+        std::ostream& DurDot::toStream( std::ostream& os ) const
         {
             os << ( *myDurBase );
             for ( Integer i = 0; i < getDotCount(); ++i )
@@ -83,39 +83,39 @@ namespace Lyre
             return os;
         }
         
-        std::ostream& Duration::durBaseToStream( std::ostream& os ) const
+        std::ostream& DurDot::durBaseToStream( std::ostream& os ) const
         {
             return os << ( *myDurBase );
         };
         
-        String Duration::toString() const
+        String DurDot::toString() const
         {
             std::stringstream ss;
             toStream( ss );
             return ss.str();
         }
         
-        String Duration::durBaseToString() const
+        String DurDot::durBaseToString() const
         {
             return myDurBase->toString();
         }
         
-        bool Duration::isEqualTo( const IDuration& other ) const
+        bool DurDot::isEqualTo( const IDurDot& other ) const
         {
             return getValue() == other.getValue();
         }
         
-        bool Duration::isGreaterThan( const IDuration& other ) const
+        bool DurDot::isGreaterThan( const IDurDot& other ) const
         {
             return getValue() > other.getValue();
         }
         
-        bool Duration::isLessThan( const IDuration& other ) const
+        bool DurDot::isLessThan( const IDurDot& other ) const
         {
             return getValue() < other.getValue();
         }
         
-        void Duration::setDurBase( const String& durName )
+        void DurDot::setDurBase( const String& durName )
         {
             auto temp = myDurBaseFactory->createDur( durName );
             if ( temp )

@@ -1,7 +1,7 @@
 //PRIVATE
 #pragma once
 #include "Lyre/TypeDefs.h"
-#include "Lyre/IDuration.h"
+#include "Lyre/IDurDot.h"
 #include "Lyre/Rational.h"
 #include "Lyre/IDurBase.h"
 #include "Lyre/IDurBaseFactory.h"
@@ -11,23 +11,23 @@ namespace Lyre
 {
     namespace Private
     {
-        class Duration;
-        using DurationSP = std::shared_ptr<Duration>;
-        using DurationUP = std::unique_ptr<Duration>;
+        class DurDot;
+        using DurDotSP = std::shared_ptr<DurDot>;
+        using DurDotUP = std::unique_ptr<DurDot>;
         
-        class Duration : public IDuration
+        class DurDot : public IDurDot
         {
         public:
-            Duration( const String& durName );
+            DurDot( const String& durName );
             
-            Duration( const String& durName,
+            DurDot( const String& durName,
                 const Integer dotCount );
             
-            virtual ~Duration();
+            virtual ~DurDot();
             
-            virtual IDurationUP clone() const;
+            virtual IDurDotUP clone() const;
             
-            virtual void copyTo( IDurationUP& output ) const;
+            virtual void copyTo( IDurDotUP& output ) const;
             
             virtual Rational getValue() const;
             virtual Rational getDurBaseValue() const;
@@ -42,9 +42,9 @@ namespace Lyre
             virtual String toString() const;
             virtual String durBaseToString() const;
             
-            virtual bool isEqualTo( const IDuration& other ) const;
-            virtual bool isGreaterThan( const IDuration& other ) const;
-            virtual bool isLessThan( const IDuration& other ) const;
+            virtual bool isEqualTo( const IDurDot& other ) const;
+            virtual bool isGreaterThan( const IDurDot& other ) const;
+            virtual bool isLessThan( const IDurDot& other ) const;
         
         private:
             IDurBaseFactoryUP myDurBaseFactory;

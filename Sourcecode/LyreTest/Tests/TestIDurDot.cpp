@@ -1,52 +1,52 @@
 //PUBLIC
 
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "Lyre/IDurationFactory.h"
-#include "Lyre/IDuration.h"
+#include "Lyre/IDurDotFactory.h"
+#include "Lyre/IDurDot.h"
 
 using namespace Lyre;
 using namespace std;
 
 namespace
 {
-    IDurationFactoryUP factory() { return createDurationFactory( DurationFactoryType::Standard ); }
+    IDurDotFactoryUP factory() { return createDurDotFactory( DurDotFactoryType::Standard ); }
 }
 
-TEST( testSetupWorks, IDuration )
+TEST( testSetupWorks, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Quarter", 0 );
+    IDurDotUP dur = factory()->createDurDot( "Quarter", 0 );
     CHECK( factory != nullptr )
     CHECK( dur != nullptr )
 }
 
-TEST( constructorA_1, IDuration )
+TEST( constructorA_1, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Quarter", 1 );
+    IDurDotUP dur = factory()->createDurDot( "Quarter", 1 );
     CHECK_EQUAL( 1, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 1 ), dur->getDurBaseValue() )
 }
 
-TEST( constructorA_2, IDuration )
+TEST( constructorA_2, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth", 0 );
+    IDurDotUP dur = factory()->createDurDot( "Eighth", 0 );
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 2 ), dur->getDurBaseValue() )
 }
 
-TEST( constructorA_3_InvalidDotInput, IDuration )
+TEST( constructorA_3_InvalidDotInput, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth", -1 );
+    IDurDotUP dur = factory()->createDurDot( "Eighth", -1 );
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 2 ), dur->getDurBaseValue() )
 }
 
-TEST( constructorA_4_InvalidDurName, IDuration )
+TEST( constructorA_4_InvalidDurName, IDurDot )
 {
     String expected = "not a valid DurBase name";
     String actual = "no exception was thrown";
     try
     {
-        IDurationUP dur = factory()->createDuration( "X", 0 );
+        IDurDotUP dur = factory()->createDurDot( "X", 0 );
     }
     catch (std::runtime_error& e)
     {
@@ -55,27 +55,27 @@ TEST( constructorA_4_InvalidDurName, IDuration )
     CHECK( actual.find( expected ) != String::npos )
 }
 
-TEST( constructorB_1, IDuration )
+TEST( constructorB_1, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Quarter" );
+    IDurDotUP dur = factory()->createDurDot( "Quarter" );
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 1 ), dur->getDurBaseValue() )
 }
 
-TEST( constructorB_2, IDuration )
+TEST( constructorB_2, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth" );
+    IDurDotUP dur = factory()->createDurDot( "Eighth" );
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 2 ), dur->getDurBaseValue() )
 }
 
-TEST( constructorB_3_InvalidDurName, IDuration )
+TEST( constructorB_3_InvalidDurName, IDurDot )
 {
     String expected = "not a valid DurBase name";
     String actual = "no exception was thrown";
     try
     {
-        IDurationUP dur = factory()->createDuration( "X" );
+        IDurDotUP dur = factory()->createDurDot( "X" );
     }
     catch (std::runtime_error& e)
     {
@@ -84,78 +84,78 @@ TEST( constructorB_3_InvalidDurName, IDuration )
     CHECK( actual.find( expected ) != String::npos )
 }
 
-TEST( setDotsInvalid, IDuration )
+TEST( setDotsInvalid, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth", 1 );
+    IDurDotUP dur = factory()->createDurDot( "Eighth", 1 );
     CHECK_EQUAL( 1, dur->getDotCount() )
     dur->setDotCount( -1 );
     CHECK_EQUAL( 0, dur->getDotCount() )
 }
 
-TEST( setDotsValid, IDuration )
+TEST( setDotsValid, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth", 1 );
+    IDurDotUP dur = factory()->createDurDot( "Eighth", 1 );
     CHECK_EQUAL( 1, dur->getDotCount() )
     dur->setDotCount( 2 );
     CHECK_EQUAL( 2, dur->getDotCount() )
 }
 
-TEST( getValue_noDots, IDuration )
+TEST( getValue_noDots, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth", 0 );
+    IDurDotUP dur = factory()->createDurDot( "Eighth", 0 );
     Rational expected{ 1, 2 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( getValue_with1Dot, IDuration )
+TEST( getValue_with1Dot, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth", 1 );
+    IDurDotUP dur = factory()->createDurDot( "Eighth", 1 );
     Rational expected{ 3, 4 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( getValue_with2Dots, IDuration )
+TEST( getValue_with2Dots, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth", 2 );
+    IDurDotUP dur = factory()->createDurDot( "Eighth", 2 );
     Rational expected{ 7, 8 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( getValue_with3Dots, IDuration )
+TEST( getValue_with3Dots, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth", 3 );
+    IDurDotUP dur = factory()->createDurDot( "Eighth", 3 );
     Rational expected{ 15, 16 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( getValue_with4Dots, IDuration )
+TEST( getValue_with4Dots, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Eighth", 4 );
+    IDurDotUP dur = factory()->createDurDot( "Eighth", 4 );
     Rational expected{ 31, 32 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( getValue_withMaxDots, IDuration )
+TEST( getValue_withMaxDots, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Quarter", DURATION_MAX_DOTS );
+    IDurDotUP dur = factory()->createDurDot( "Quarter", DURATION_MAX_DOTS );
     Float expected = 1.9999999999999;
     Float actual = dur->getValue().getFloat();
     CHECK_DOUBLES_EQUAL( expected, actual, 0.0001 )
 }
 
-TEST( getValue_withTooManyDots, IDuration )
+TEST( getValue_withTooManyDots, IDurDot )
 {
     Integer tooManyDots = DURATION_MAX_DOTS + 1;
     String expected = "too many dots";
     String actual = "no exception was thrown";
     try
     {
-        IDurationUP dur = factory()->createDuration( "Quarter" );
+        IDurDotUP dur = factory()->createDurDot( "Quarter" );
         dur->setDotCount( tooManyDots );
     }
     catch (std::runtime_error& e)
@@ -165,10 +165,10 @@ TEST( getValue_withTooManyDots, IDuration )
     CHECK( actual.find( expected ) != String::npos )
 }
 
-TEST( clone, IDuration )
+TEST( clone, IDurDot )
 {
-    IDurationUP orig = factory()->createDuration( "Half", 1 );
-    IDurationUP cloned = orig->clone();
+    IDurDotUP orig = factory()->createDurDot( "Half", 1 );
+    IDurDotUP cloned = orig->clone();
     orig->setDotCount( 2 );
     cloned->setDotCount( 3 );
     CHECK( orig != nullptr )
@@ -178,10 +178,10 @@ TEST( clone, IDuration )
     CHECK_EQUAL( 3, cloned->getDotCount() )
 }
 
-TEST( copyTo, IDuration )
+TEST( copyTo, IDurDot )
 {
-    IDurationUP orig = factory()->createDuration( "Half", 1 );
-    IDurationUP copied;
+    IDurDotUP orig = factory()->createDurDot( "Half", 1 );
+    IDurDotUP copied;
     orig->copyTo( copied );
     orig->setDotCount( 2 );
     copied->setDotCount( 3 );
@@ -192,9 +192,9 @@ TEST( copyTo, IDuration )
     CHECK_EQUAL( 3, copied->getDotCount() )
 }
 
-TEST( toStream, IDuration )
+TEST( toStream, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Half", 1 );
+    IDurDotUP dur = factory()->createDurDot( "Half", 1 );
     stringstream ss;
     dur->toStream( ss );
     String expected = "Half.";
@@ -202,17 +202,17 @@ TEST( toStream, IDuration )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( toString, IDuration )
+TEST( toString, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "Whole", 0 );
+    IDurDotUP dur = factory()->createDurDot( "Whole", 0 );
     String expected = "Whole";
     String actual = dur->toString();
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( streamingOperator, IDuration )
+TEST( streamingOperator, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "64th", 7 );
+    IDurDotUP dur = factory()->createDurDot( "64th", 7 );
     stringstream ss;
     ss << ( *dur );
     String expected = "64th.......";
@@ -220,18 +220,18 @@ TEST( streamingOperator, IDuration )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( durBaseToString, IDuration )
+TEST( durBaseToString, IDurDot )
 {
-    IDurationUP dur = factory()->createDuration( "32nd", 2 );
+    IDurDotUP dur = factory()->createDurDot( "32nd", 2 );
     String expected = "32nd..";
     String actual = dur->toString();
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( isEqualTo1, IDuration )
+TEST( isEqualTo1, IDurDot )
 {
-    auto durA = factory()->createDuration( "16th", 1 );
-    auto durB = factory()->createDuration( "16th", 1 );
+    auto durA = factory()->createDurDot( "16th", 1 );
+    auto durB = factory()->createDurDot( "16th", 1 );
     CHECK(   durA->isEqualTo( *durB ) )
     CHECK(   durB->isEqualTo( *durA ) )
     CHECK( ! durA->isGreaterThan( *durB ) )
@@ -253,10 +253,10 @@ TEST( isEqualTo1, IDuration )
     CHECK( ! ( *durB < *durA ) )
 }
 
-TEST( isEqualTo2, IDuration )
+TEST( isEqualTo2, IDurDot )
 {
-    auto durA = factory()->createDuration( "Whole", 0 );
-    auto durB = factory()->createDuration( "Whole", 0 );
+    auto durA = factory()->createDurDot( "Whole", 0 );
+    auto durB = factory()->createDurDot( "Whole", 0 );
     CHECK(   durA->isEqualTo( *durB ) )
     CHECK(   durB->isEqualTo( *durA ) )
     CHECK( ! durA->isGreaterThan( *durB ) )
@@ -278,10 +278,10 @@ TEST( isEqualTo2, IDuration )
     CHECK( ! ( *durB < *durA ) )
 }
 
-TEST( isGreaterThan, IDuration )
+TEST( isGreaterThan, IDurDot )
 {
-    auto durA = factory()->createDuration( "Eighth", 2 );
-    auto durB = factory()->createDuration( "Eighth", 1 );
+    auto durA = factory()->createDurDot( "Eighth", 2 );
+    auto durB = factory()->createDurDot( "Eighth", 1 );
     CHECK( ! durA->isEqualTo( *durB ) )
     CHECK( ! durB->isEqualTo( *durA ) )
     CHECK(   durA->isGreaterThan( *durB ) )
@@ -303,10 +303,10 @@ TEST( isGreaterThan, IDuration )
     CHECK(   ( *durB < *durA ) )
 }
 
-TEST( isLessThan, IDuration )
+TEST( isLessThan, IDurDot )
 {
-    auto durA = factory()->createDuration( "32nd", 0 );
-    auto durB = factory()->createDuration( "Quarter", 0 );
+    auto durA = factory()->createDurDot( "32nd", 0 );
+    auto durB = factory()->createDurDot( "Quarter", 0 );
     CHECK( ! durA->isEqualTo( *durB ) )
     CHECK( ! durB->isEqualTo( *durA ) )
     CHECK( ! durA->isGreaterThan( *durB ) )

@@ -10,9 +10,9 @@ namespace Lyre
     using ITupletDefSP = std::shared_ptr<ITupletDef>;
     using ITupletDefUP = std::unique_ptr<ITupletDef>;
     
-    class IDuration;
-    using IDurationSP = std::shared_ptr<IDuration>;
-    using IDurationUP = std::unique_ptr<IDuration>;
+    class IDurDot;
+    using IDurDotSP = std::shared_ptr<IDurDot>;
+    using IDurDotUP = std::unique_ptr<IDurDot>;
     
     class ITupletDef
     {
@@ -25,11 +25,11 @@ namespace Lyre
         
         virtual Rational getValue() const = 0;
         
-        virtual IDurationUP getNumeratorDuration() const = 0;
+        virtual IDurDotUP getNumeratorDurDot() const = 0;
         
         virtual Integer getNumeratorCount() const = 0;
         
-        virtual IDurationUP getDenominatorDuration() const = 0;
+        virtual IDurDotUP getDenominatorDurDot() const = 0;
         
         virtual Integer getDenominatorCount() const = 0;
         

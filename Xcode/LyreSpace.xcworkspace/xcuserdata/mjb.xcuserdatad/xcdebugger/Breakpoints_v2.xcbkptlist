@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/LyreTest/Tests/TestIDuration.cpp"
+            filePath = "../Sourcecode/LyreTest/Tests/TestIDurDot.cpp"
             timestampString = "470005025.916626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
             endingLineNumber = "159"
-            landmarkName = "TEST( getValue_withTooManyDots, IDuration )"
+            landmarkName = "TEST( getValue_withTooManyDots, IDurDot )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
+            filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
             timestampString = "470005473.05821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "Duration::Duration( const String&amp; durName, const Integer dotCount )"
+            landmarkName = "DurDot::DurDot( const String&amp; durName, const Integer dotCount )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +73,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
+            filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
             timestampString = "470005474.607612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "Duration::Duration( const String&amp; durName, const Integer dotCount )"
+            landmarkName = "DurDot::DurDot( const String&amp; durName, const Integer dotCount )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +89,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
+            filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
             timestampString = "470005668.593768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
-            landmarkName = "Duration::setDotCount( const Integer dots )"
+            landmarkName = "DurDot::setDotCount( const Integer dots )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,13 +105,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
+            filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
             timestampString = "470005710.6824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
-            landmarkName = "Duration::getValue()"
+            landmarkName = "DurDot::getValue()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,13 +121,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/LyreTest/Tests/TestIDuration.cpp"
+            filePath = "../Sourcecode/LyreTest/Tests/TestIDurDot.cpp"
             timestampString = "470005873.519838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "TEST( constructorA_4_InvalidDurName, IDuration )"
+            landmarkName = "TEST( constructorA_4_InvalidDurName, IDurDot )"
             landmarkType = "7">
             <Locations>
                <Location
@@ -181,13 +181,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/LyreTest/Tests/TestIDuration.cpp"
+            filePath = "../Sourcecode/LyreTest/Tests/TestIDurDot.cpp"
             timestampString = "470005997.044553"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
             endingLineNumber = "148"
-            landmarkName = "TEST( getValue_withMaxDots, IDuration )"
+            landmarkName = "TEST( getValue_withMaxDots, IDurDot )"
             landmarkType = "7">
             <Locations>
                <Location
