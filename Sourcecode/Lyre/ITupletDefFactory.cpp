@@ -1,0 +1,22 @@
+#include "Lyre/ITupletDefFactory.h"
+#include "Lyre/Private/TupletDefFatory.h"
+
+namespace Lyre
+{
+    
+    
+    ITupletDefFactoryUP createTupletDefFactory( const TupletDefFactoryType  t )
+    {
+        switch ( t )
+        {
+            case TupletDefFactoryType::Standard:
+                return ITupletDefFactoryUP{ new Private::TupletDefFactory{} };
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
+    
+}
