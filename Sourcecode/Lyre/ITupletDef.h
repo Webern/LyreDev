@@ -25,17 +25,16 @@ namespace Lyre
         
         virtual ITupletDefUP clone() const = 0;
         
-        void copyTo( ITupletDef& output ) const;
+        virtual void copyTo( ITupletDefUP& output ) const = 0;
         
-        virtual Rational getValue() const = 0;
+        virtual Rational getMultiplier() const = 0;
+        virtual Rational getTotalLength() const = 0;
         
-        virtual IDurDotUPC getNumeratorDurDot() const = 0;
+        virtual Integer getCount() const = 0;
+        virtual IDurDotUPC getCountType() const = 0;
         
-        virtual Integer getNumeratorCount() const = 0;
-        
-        virtual IDurDotUPC getDenominatorDurDot() const = 0;
-        
-        virtual Integer getDenominatorCount() const = 0;
+        virtual Integer getInTheSpaceOf() const = 0;
+        virtual IDurDotUPC getInTheSpaceOfType() const = 0;
         
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         

@@ -1,4 +1,5 @@
 #include "Lyre/ITupletDef.h"
+#include "Lyre/Private/copyTo.h"
 
 #include <sstream>
 

@@ -12,7 +12,7 @@ namespace Lyre
         {
             if ( input == nullptr )
             {
-                THROW("nullptr received as input")
+                THROW( "nullptr received as input" )
             }
             auto tempUP = input->clone();
             auto rawP = tempUP.get();

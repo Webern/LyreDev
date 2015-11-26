@@ -2,6 +2,7 @@
 #include "Lyre/ITupletDef.h"
 #include "Lyre/Private/DurBaseQuarter.h"
 #include "Lyre/Private/DurDot.h"
+#include "Lyre/Private/TupletDef.h"
 
 namespace Lyre
 {
@@ -10,55 +11,10 @@ namespace Lyre
         class TempFakeTupletDef : public ITupletDef
         {
         public:
-            virtual ~TempFakeTupletDef() = default;
             
-            virtual ITupletDefUP clone() const
-            {
-                return ITupletDefUP{ new TempFakeTupletDef() };
-            }
-            
-            void copyTo( ITupletDefUP& output ) const
-            {
-                output = ITupletDefUP{ new TempFakeTupletDef() };
-            }
-            
-            virtual Rational getValue() const
-            {
-                return Rational{ 1, 1 };
-            }
-            
-            virtual IDurDotUPC getNumeratorDurDot() const
-            {
-                return IDurDotUPC{ new Private::DurDot{ "Quarter", 0 } };
-            }
-            
-            virtual Integer getNumeratorCount() const
-            {
-                return -1;
-            }
-            
-            virtual IDurDotUPC getDenominatorDurDot() const
-            {
-                return IDurDotUPC{ new Private::DurDot{ "Quarter", 0 } };
-            }
-            
-            virtual Integer getDenominatorCount() const
-            {
-                return -1;
-            }
-            
-            virtual std::ostream& toStream( std::ostream& os ) const
-            {
-                return os << "not implemented";
-            }
-            
-            virtual String toString() const
-            {
-                return "string not implemented";
-            }
         };
 
-////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
         
         ITupletDefUP TupletDefFactory::createTupletDef(
             const Integer numeratorCount,
@@ -74,7 +30,7 @@ namespace Lyre
             ss.clear();
             auto tt = denomintorType.toString();
             tt.clear();
-            return ITupletDefUP{ new TempFakeTupletDef{} };
+            return ITupletDefUP{ new Private::TupletDef{} };
         }
         
         ITupletDefUP TupletDefFactory::createTupletDef(
@@ -88,7 +44,7 @@ namespace Lyre
             ++yy;
             auto ss = durationType.toString();
             ss.clear();
-            return ITupletDefUP{ new TempFakeTupletDef{} };
+            return ITupletDefUP{ new Private::TupletDef{} };
         }
         
         ITupletDefUP TupletDefFactory::createTupletDef(
@@ -102,7 +58,7 @@ namespace Lyre
             ++yy;
             auto ss = durBaseName;
             ss.clear();
-            return ITupletDefUP{ new TempFakeTupletDef{} };
+            return ITupletDefUP{ new Private::TupletDef{} };
         }
     }
 }
