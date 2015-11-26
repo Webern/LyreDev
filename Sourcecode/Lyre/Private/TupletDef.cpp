@@ -18,36 +18,46 @@ namespace Lyre
         
         Rational TupletDef::getMultiplier() const
         {
-            return Rational{ 1, 1 };
+            auto numerator = getInTheSpaceOfType()->getValue() * Rational{ getInTheSpaceOf(), 1 };
+            auto denominator = getCountType()->getValue() * Rational{ getCount(), 1 };
+            return numerator / denominator;
         }
 
         Rational TupletDef::getTotalLength() const
         {
-            return Rational{ 1, 1 };
+            return getInTheSpaceOfType()->getValue() * Rational{ getInTheSpaceOf(), 1 };
         }
         
         Integer TupletDef::getCount() const
         {
-            return -1;
+            return myCount;
         }
         
         IDurDotUPC TupletDef::getCountType() const
         {
-            return IDurDotUPC{ new Private::DurDot{ "Quarter", 0 } };
+            return myCountType.clone();
         }
         
         Integer TupletDef::getInTheSpaceOf() const
         {
-            return -1;
+            return myInTheSpaceOf;
         }
         
         IDurDotUPC TupletDef::getInTheSpaceOfType() const
         {
-            return IDurDotUPC{ new Private::DurDot{ "Quarter", 0 } };
+            return myInTheSpaceOfType.clone();
         }
         
         std::ostream& TupletDef::toStream( std::ostream& os ) const
         {
+            os << myCount;
+            os << "[";
+            os << myCountType;
+            os << "]:";
+            os << myInTheSpaceOf;
+            os << "[";
+            os << myInTheSpaceOfType;
+            os << "]";
             return os << "not implemented";
         }
         

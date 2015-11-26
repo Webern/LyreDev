@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/ITupletDef.h"
+#include "Lyre/Private/DurDot.h"
 #include <memory>
 
 namespace Lyre
@@ -29,7 +30,11 @@ namespace Lyre
             virtual std::ostream& toStream( std::ostream& os ) const ;
             
             virtual String toString() const ;
-            
+        private:
+            Integer myCount;
+            DurDot myCountType;
+            Integer myInTheSpaceOf;
+            DurDot myInTheSpaceOfType;
         };
     }
 }
