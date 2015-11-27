@@ -32,7 +32,8 @@ namespace Lyre
         
         void DurDot::copyTo( IDurDotUP& output ) const
         {
-            output = IDurDotUP{ new DurDot{ "Quarter" } };
+            auto tempP = static_cast<const IDurDot*>( this );
+            Private::copyTo<IDurDot>( tempP, output );
         }
         
         Rational DurDot::getValue() const
@@ -95,7 +96,7 @@ namespace Lyre
             return ss.str();
         }
         
-        String DurDot::durBaseToString() const
+        String DurDot::getDurBaseName() const
         {
             return myDurBase->toString();
         }

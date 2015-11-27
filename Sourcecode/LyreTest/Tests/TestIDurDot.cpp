@@ -220,7 +220,7 @@ TEST( streamingOperator, IDurDot )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( durBaseToString, IDurDot )
+TEST( getDurBaseName, IDurDot )
 {
     IDurDotUP dur = factory()->createDurDot( "32nd", 2 );
     String expected = "32nd..";

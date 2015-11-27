@@ -14,19 +14,19 @@ namespace Lyre
             virtual ~TupletDefFactory() = default;
             
             virtual ITupletDefUP createTupletDef(
-                const Integer numeratorCount,
-                const IDurDot& numeratorType,
-                const Integer noteCountXXXX,
-                const IDurDot& denomintorType );
+                const Integer countCount,
+                const IDurDot& countType,
+                const Integer inTheSpaceOf,
+                const IDurDot& inTheSpaceOfType );
             
             virtual ITupletDefUP createTupletDef(
-                const Integer numerator,
-                const Integer denominator,
+                const Integer count,
+                const Integer inTheSpaceOf,
                 const IDurDot& durationType );
             
             virtual ITupletDefUP createTupletDef(
-                const Integer numerator,
-                const Integer denominator,
+                const Integer count,
+                const Integer inTheSpaceOf,
                 const String& durBaseName );
         };
 

@@ -12,6 +12,22 @@ namespace Lyre
         class TupletDef : public ITupletDef
         {
         public:
+            TupletDef(
+                const Integer count,
+                const Lyre::IDurDot& countType,
+                const Integer inTheSpaceOf,
+                const Lyre::IDurDot& inTheSpaceOfType );
+            
+            TupletDef(
+                const Integer count,
+                const Integer inTheSpaceOf,
+                const IDurDot& durationType );
+            
+            TupletDef(
+                const Integer count,
+                const Integer inTheSpaceOf,
+                const String& durBaseName );
+            
             virtual ~TupletDef() = default;
             
             virtual ITupletDefUP clone() const ;
@@ -32,9 +48,21 @@ namespace Lyre
             virtual String toString() const ;
         private:
             Integer myCount;
-            DurDot myCountType;
+            IDurDotUP myCountType;
             Integer myInTheSpaceOf;
-            DurDot myInTheSpaceOfType;
+            IDurDotUP myInTheSpaceOfType;
+            
+        private:
+            void throwIfNonPositive( const Integer value ) const;
+            void throwIfNull( const IDurDotUP& up ) const;
+            void nullCheckThrow() const;
+            void constructor(
+                const Integer count,
+                const String& countTypeName,
+                const Integer countTypeDots,
+                const Integer itso,
+                const String& itsoType,
+                const Integer itsoDots );
         };
     }
 }

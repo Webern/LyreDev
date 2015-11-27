@@ -36,7 +36,7 @@ namespace Lyre
         virtual std::ostream& durBaseToStream( std::ostream& os ) const = 0;
         
         virtual String toString() const = 0;
-        virtual String durBaseToString() const = 0;
+        virtual String getDurBaseName() const = 0;
         
         virtual bool isEqualTo( const IDurDot& other ) const = 0;
         virtual bool isGreaterThan( const IDurDot& other ) const = 0;
