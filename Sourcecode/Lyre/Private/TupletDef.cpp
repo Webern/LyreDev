@@ -3,6 +3,7 @@
 #include "Lyre/IDurDotFactory.h"
 #include "Lyre/IDurDot.h"
 #include "Lyre/Private/throw.h"
+#include <sstream>
 
 namespace Lyre
 {
@@ -96,13 +97,7 @@ namespace Lyre
             nullCheckThrow();
             return ITupletDefUP{ new TupletDef( myCount, *myCountType, myInTheSpaceOf, *myInTheSpaceOfType ) };
         }
-        
-        void TupletDef::copyTo( ITupletDefUP& output ) const
-        {
-            auto tempP = static_cast<const ITupletDef*>( this );
-            Private::copyTo<ITupletDef>( tempP, output );
-        }
-        
+ 
         Rational TupletDef::getMultiplier() const
         {
             auto count = getInTheSpaceOfType()->getValue() * Rational{ getInTheSpaceOf(), 1 };
@@ -112,7 +107,9 @@ namespace Lyre
 
         Rational TupletDef::getTotalLength() const
         {
-            return getInTheSpaceOfType()->getValue() * Rational{ getInTheSpaceOf(), 1 };
+            Rational itsoValue = getInTheSpaceOfType()->getValue();
+            Rational itsoCount{ getInTheSpaceOf(), 1 };
+            return itsoValue * itsoCount;
         }
         
         Integer TupletDef::getCount() const
@@ -123,8 +120,8 @@ namespace Lyre
         IDurDotUPC TupletDef::getCountType() const
         {
             nullCheckThrow();
-            IDurDotUP output;
-            myCountType->copyTo( output );
+            IDurDotUP output = myCountType->clone();
+            //myCountType->copyTo( output );
             return std::move( output );
         }
         
@@ -136,8 +133,8 @@ namespace Lyre
         IDurDotUPC TupletDef::getInTheSpaceOfType() const
         {
             nullCheckThrow();
-            IDurDotUP output;
-            myInTheSpaceOfType->copyTo( output );
+            IDurDotUP output = myInTheSpaceOfType->clone();
+//            myInTheSpaceOfType->copyTo( output );
             return std::move( output );
         }
         
@@ -151,12 +148,14 @@ namespace Lyre
             os << "[";
             os << (*myInTheSpaceOfType);
             os << "]";
-            return os << "not implemented";
+            return os;
         }
         
         String TupletDef::toString() const
         {
-            return "string not implemented";
+            std::stringstream ss;
+            toStream( ss );
+            return ss.str();
         }
     }
 }

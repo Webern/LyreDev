@@ -42,7 +42,7 @@ namespace Lyre
              the use of static_cast,
              be careful
              template <typename T>
-             void copyTo( std::unique_ptr<T>& output ) const  */
+             // void copyTo( std::unique_ptr<T>& output ) const  */
             
             /* return the Step as an integer */
             virtual Integer getValue() const;

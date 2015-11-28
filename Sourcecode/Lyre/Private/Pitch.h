@@ -28,7 +28,7 @@ namespace Lyre
             /* deep copy to "output", note
              the use of static_cast, be careful
              template <typename T>
-             void copyTo( std::unique_ptr<T>& output ) const */
+             // void copyTo( std::unique_ptr<T>& output ) const */
             
             /* return the Pitch Class value, e.g. C = 0,
              C# = 1, Db = 1, D = 2, D# = 3, Eb = 3 ...*/

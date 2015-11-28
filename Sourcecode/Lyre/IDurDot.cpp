@@ -6,12 +6,12 @@ namespace Lyre
 {
     IDurDot::~IDurDot() {}
     
-    void IDurDot::copyTo( IDurDotUP& output ) const
-    {
-        auto tempP = static_cast<const IDurDot*>( this );
-        Private::copyTo<IDurDot>( tempP, output );
-    }
-    
+//    void IDurDot::copyTo( IDurDotUP& output ) const
+//    {
+//        auto tempP = static_cast<const IDurDot*>( this );
+//        Private::copyTo<IDurDot>( tempP, output );
+//    }
+//    
     bool operator==( const IDurDot& l, const IDurDot& r )
     {
         return l.isEqualTo( r );

@@ -14,7 +14,7 @@ namespace Lyre
             MockPitch() : myValue(0) {}
             virtual ~MockPitch() {}
             virtual IPitchUP clone() const { return MockPitchUP{ new MockPitch{} }; }
-            /* void copyTo( std::unique_ptr<T>& output ) const */
+            /* // void copyTo( std::unique_ptr<T>& output ) const */
             virtual Integer getValue() const { return myValue; }
             virtual bool parse( const String& str ) { return true; }
             virtual std::ostream& toStream( std::ostream& os ) const { return os << myValue; }

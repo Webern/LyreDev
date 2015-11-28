@@ -35,19 +35,19 @@ TEST( clone, Enum )
     CHECK_EQUAL( 3, p1->getValue() );
     CHECK_EQUAL( 2, p2->getValue() );
 }
-TEST( covariantClone, Enum )
-{
-    std::shared_ptr<MockEnumCats> p1 = std::make_shared<MockEnumCats>();
-    p1->setValue( -1 );
-    std::unique_ptr<MockEnumCats> p2;
-    p1->copyTo( p2 );
-    CHECK( p1.get() != p2.get() )
-    CHECK_EQUAL( 1, p1->getValue() );
-    CHECK_EQUAL( 1, p2->getValue() );
-    p2->setValue( 200 );
-    CHECK_EQUAL( 1, p1->getValue() );
-    CHECK_EQUAL( 3, p2->getValue() );
-}
+//TEST( covariantClone, Enum )
+//{
+//    std::shared_ptr<MockEnumCats> p1 = std::make_shared<MockEnumCats>();
+//    p1->setValue( -1 );
+//    std::unique_ptr<MockEnumCats> p2;
+//    p1->copyTo( p2 );
+//    CHECK( p1.get() != p2.get() )
+//    CHECK_EQUAL( 1, p1->getValue() );
+//    CHECK_EQUAL( 1, p2->getValue() );
+//    p2->setValue( 200 );
+//    CHECK_EQUAL( 1, p1->getValue() );
+//    CHECK_EQUAL( 3, p2->getValue() );
+//}
 TEST( getMin, Enum )
 {
     IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );

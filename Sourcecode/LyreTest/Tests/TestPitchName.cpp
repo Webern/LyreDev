@@ -81,20 +81,20 @@ TEST( clone, PitchName )
     CHECK_EQUAL( 11, orig->getValue() )
     CHECK_EQUAL( 0, copy->getValue() )
 }
-TEST( copyTo, PitchName )
-{
-    PitchNameUP orig{ new PitchName{ "B" } };
-    PitchNameUP copy;
-    CHECK( ! ( copy ) )
-    orig->copyTo( copy );
-    CHECK( ( copy ) )
-    CHECK( ! ( copy.get() == orig.get() ) )
-    CHECK_EQUAL( 11, orig->getValue() )
-    CHECK_EQUAL( 11, copy->getValue() )
-    copy->setStepValue( 0 );
-    CHECK_EQUAL( 11, orig->getValue() )
-    CHECK_EQUAL( 0, copy->getValue() )
-}
+//TEST( copyTo, PitchName )
+//{
+//    PitchNameUP orig{ new PitchName{ "B" } };
+//    PitchNameUP copy;
+//    CHECK( ! ( copy ) )
+//    orig->copyTo( copy );
+//    CHECK( ( copy ) )
+//    CHECK( ! ( copy.get() == orig.get() ) )
+//    CHECK_EQUAL( 11, orig->getValue() )
+//    CHECK_EQUAL( 11, copy->getValue() )
+//    copy->setStepValue( 0 );
+//    CHECK_EQUAL( 11, orig->getValue() )
+//    CHECK_EQUAL( 0, copy->getValue() )
+//}
 
 TEST( getValue01, PitchName )
 {
@@ -1159,7 +1159,7 @@ TEST( isIdenticalTo_true02, PitchName )
         virtual ~MockPitchName1() {}
         virtual IPitchNameUP clone() const { return std::unique_ptr<MockPitchName1>{ new MockPitchName1{} }; }
         /* template <typename T>
-         void copyTo( std::unique_ptr<T>& output ) const */
+         // void copyTo( std::unique_ptr<T>& output ) const */
         virtual Integer getValue() const { return 1; }
         virtual bool parse( const String& str ) { return true; }
         virtual std::ostream& toStream( std::ostream& os ) const { return os << "C#"; }
@@ -1200,7 +1200,7 @@ TEST( isIdenticalTo_false02, PitchName )
         virtual ~MockPitchName2() {}
         virtual IPitchNameUP clone() const { return std::unique_ptr<MockPitchName2>{ new MockPitchName2{} }; }
         /* template <typename T>
-         void copyTo( std::unique_ptr<T>& output ) const */
+         // void copyTo( std::unique_ptr<T>& output ) const */
         virtual Integer getValue() const { return 1; }
         virtual bool parse( const String& str ) { return true; }
         virtual std::ostream& toStream( std::ostream& os ) const { return os << "C_"; }

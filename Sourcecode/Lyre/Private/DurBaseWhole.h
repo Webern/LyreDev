@@ -18,7 +18,7 @@ namespace Lyre
         public:
             virtual ~DurBaseWhole();
             virtual IDurBaseUP clone() const;
-            virtual void copyTo( IDurBaseUP& output ) const;
+            virtual // void copyTo( IDurBaseUP& output ) const;
             
             virtual Rational getValue() const;
             virtual std::ostream& toStream( std::ostream& os ) const;

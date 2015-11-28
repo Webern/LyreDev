@@ -50,7 +50,7 @@ namespace Lyre
                 THROW( ( ss.str() ) )
             }
             IDurBaseUP temp;
-            it->second->copyTo( temp );
+            temp = it->second->clone();
             return temp;
         }
     }

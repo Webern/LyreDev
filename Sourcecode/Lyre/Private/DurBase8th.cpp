@@ -15,11 +15,11 @@ namespace Lyre
             return Private::makeUnique<DurBase8th>();
         }
         
-        void DurBase8th::copyTo( IDurBaseUP& output ) const
-        {
-            auto tempP = static_cast<const IDurBase*>( this );
-            Private::copyTo<IDurBase>( tempP, output );
-        }
+//        void DurBase8th::copyTo( IDurBaseUP& output ) const
+//        {
+//            auto tempP = static_cast<const IDurBase*>( this );
+//            Private::copyTo<IDurBase>( tempP, output );
+//        }
         
         Rational DurBase8th::getValue() const
         {

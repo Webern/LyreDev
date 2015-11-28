@@ -178,19 +178,19 @@ TEST( clone, IDurDot )
     CHECK_EQUAL( 3, cloned->getDotCount() )
 }
 
-TEST( copyTo, IDurDot )
-{
-    IDurDotUP orig = factory()->createDurDot( "Half", 1 );
-    IDurDotUP copied;
-    orig->copyTo( copied );
-    orig->setDotCount( 2 );
-    copied->setDotCount( 3 );
-    CHECK( orig != nullptr )
-    CHECK( copied != nullptr )
-    CHECK( orig.get() != copied.get() )
-    CHECK_EQUAL( 2, orig->getDotCount() )
-    CHECK_EQUAL( 3, copied->getDotCount() )
-}
+//TEST( copyTo, IDurDot )
+//{
+//    IDurDotUP orig = factory()->createDurDot( "Half", 1 );
+//    IDurDotUP copied;
+//    orig->copyTo( copied );
+//    orig->setDotCount( 2 );
+//    copied->setDotCount( 3 );
+//    CHECK( orig != nullptr )
+//    CHECK( copied != nullptr )
+//    CHECK( orig.get() != copied.get() )
+//    CHECK_EQUAL( 2, orig->getDotCount() )
+//    CHECK_EQUAL( 3, copied->getDotCount() )
+//}
 
 TEST( toStream, IDurDot )
 {

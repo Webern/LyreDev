@@ -22,8 +22,8 @@ namespace Lyre
                 {
                     THROW( "MockDurBaseFactory attempted to dereference a null IDurBase pointer" )
                 }
-                IDurBaseUP output;
-                it->second->copyTo( output );
+                IDurBaseUP output = it->second->clone();
+                //it->second->copyTo( output );
                 return std::move( output );
             }
             THROW( "invalid mock dur name" )

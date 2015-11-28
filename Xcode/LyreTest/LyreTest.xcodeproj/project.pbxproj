@@ -174,7 +174,6 @@
 		29CAD43D1BE661EB00C0CA90 /* Cpul */ = {
 			isa = PBXGroup;
 			children = (
-				29CAD3FB1BE6613400C0CA90 /* main.cpp */,
 				29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */,
 				29CAD3FD1BE6613400C0CA90 /* cpulFailure.h */,
 				29CAD3F51BE6613400C0CA90 /* cpulRun.cpp */,
@@ -186,6 +185,7 @@
 				29CAD3FE1BE6613400C0CA90 /* cpulTestRegistry.h */,
 				29CAD3FA1BE6613400C0CA90 /* cpulTestResult.cpp */,
 				29CAD3F31BE6613400C0CA90 /* cpulTestResult.h */,
+				29CAD3FB1BE6613400C0CA90 /* main.cpp */,
 			);
 			name = Cpul;
 			sourceTree = "<group>";
@@ -193,13 +193,9 @@
 		29CAD43E1BE661F500C0CA90 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				29E4D21E1C06C5260038E6FC /* TestITupletDef.cpp */,
-				29E4D21F1C06C5260038E6FC /* TestITupletDefFactory.cpp */,
-				290989D31C0398FD0040138E /* TestIDurDot.cpp */,
-				290989D11C0395A30040138E /* TestDurationFactory.cpp */,
-				29F3B5181C022AD300746DA5 /* TestDurBaseFactory.cpp */,
 				29CAD4051BE661B400C0CA90 /* TestAlter.cpp */,
 				298227461BF99B2400277C67 /* TestCopyTo.cpp */,
+				290989D11C0395A30040138E /* TestDurationFactory.cpp */,
 				296D72881BF8EB960049B0EA /* TestDurBase128th.cpp */,
 				296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */,
 				296D72891BF8EB960049B0EA /* TestDurBase256th.cpp */,
@@ -207,6 +203,7 @@
 				296D72871BF8EB960049B0EA /* TestDurBase64th.cpp */,
 				296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */,
 				296D728A1BF8EB960049B0EA /* TestDurBaseBreve.cpp */,
+				29F3B5181C022AD300746DA5 /* TestDurBaseFactory.cpp */,
 				296D728B1BF8EB960049B0EA /* TestDurBaseHalf.cpp */,
 				296D728C1BF8EB960049B0EA /* TestDurBaseLonga.cpp */,
 				296D728D1BF8EB960049B0EA /* TestDurBaseQuarter.cpp */,
@@ -215,11 +212,14 @@
 				29CAD4131BE661B400C0CA90 /* TestIAlter.cpp */,
 				29CAD4141BE661B400C0CA90 /* TestIDurBase.cpp */,
 				29CAD4151BE661B400C0CA90 /* TestIDurBaseFactory.cpp */,
+				290989D31C0398FD0040138E /* TestIDurDot.cpp */,
 				29CAD4161BE661B400C0CA90 /* TestIEnum.cpp */,
 				29CAD4171BE661B400C0CA90 /* TestIPitch.cpp */,
 				29CAD4181BE661B400C0CA90 /* TestIPitchFactory.cpp */,
 				29CAD4191BE661B400C0CA90 /* TestIPitchName.cpp */,
 				29CAD41A1BE661B400C0CA90 /* TestIStep.cpp */,
+				29E4D21E1C06C5260038E6FC /* TestITupletDef.cpp */,
+				29E4D21F1C06C5260038E6FC /* TestITupletDefFactory.cpp */,
 				298227481BF99B4500277C67 /* TestMakeUnique.cpp */,
 				29CAD41B1BE661B400C0CA90 /* TestMod.cpp */,
 				29CAD41C1BE661B400C0CA90 /* TestPitch.cpp */,
@@ -242,10 +242,12 @@
 		29CAD4401BE6649C00C0CA90 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				29935EA81BE6C18C0003552B /* MockDurBase.cpp */,
-				29935EA91BE6C18C0003552B /* MockDurBase.h */,
 				29CAD4411BE6673C00C0CA90 /* MockAlter.cpp */,
 				29CAD4421BE6673C00C0CA90 /* MockAlter.h */,
+				29935EA81BE6C18C0003552B /* MockDurBase.cpp */,
+				29935EA91BE6C18C0003552B /* MockDurBase.h */,
+				29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */,
+				29935EAC1BE6C3700003552B /* MockDurBaseFactory.h */,
 				29CAD4431BE6673C00C0CA90 /* MockEnum.cpp */,
 				29CAD4441BE6673C00C0CA90 /* MockEnum.h */,
 				29CAD4531BE66B0800C0CA90 /* MockEnumCats.cpp */,
@@ -258,8 +260,6 @@
 				29CAD44A1BE6673C00C0CA90 /* MockPitchName.h */,
 				29CAD44B1BE6673C00C0CA90 /* MockStep.cpp */,
 				29CAD44C1BE6673C00C0CA90 /* MockStep.h */,
-				29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */,
-				29935EAC1BE6C3700003552B /* MockDurBaseFactory.h */,
 			);
 			name = Mock;
 			sourceTree = "<group>";

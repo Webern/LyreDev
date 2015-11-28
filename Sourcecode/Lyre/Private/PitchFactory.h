@@ -17,7 +17,7 @@ namespace Lyre
             /* return a deep copy of "this" */
             virtual IPitchFactoryUP clone() const;
             
-            /* void copyTo( std::unique_ptr<T>& output ) const; */
+            /* // void copyTo( std::unique_ptr<T>& output ) const; */
             
             virtual IPitchUP createPitch() const;
             virtual void setPitch( const Integer pitchValue );

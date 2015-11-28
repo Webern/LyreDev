@@ -38,23 +38,23 @@ TEST( clone, IStep )
     CHECK_EQUAL( 100, p1->getValue() );
     CHECK_EQUAL( 200, p2->getValue() );
 }
-TEST( covariantClone, IStep )
-{
-    std::shared_ptr<MockStep> p1 = std::make_shared<MockStep>();
-    p1->setValue( 100 );
-    std::unique_ptr<MockStep> p2;
-    p1->copyTo( p2 );
-    CHECK( p1.get() != p2.get() )
-    CHECK_EQUAL( 100, p1->getValue() );
-    CHECK_EQUAL( 100, p2->getValue() );
-    CHECK( p1->extendedFunction() )
-    CHECK( p2->extendedFunction() )
-    p2->setValue( 200 );
-    CHECK_EQUAL( 100, p1->getValue() );
-    CHECK_EQUAL( 200, p2->getValue() );
-    CHECK( p1->extendedFunction() )
-    CHECK( p2->extendedFunction() )
-}
+//TEST( covariantClone, IStep )
+//{
+//    std::shared_ptr<MockStep> p1 = std::make_shared<MockStep>();
+//    p1->setValue( 100 );
+//    std::unique_ptr<MockStep> p2;
+//    p1->copyTo( p2 );
+//    CHECK( p1.get() != p2.get() )
+//    CHECK_EQUAL( 100, p1->getValue() );
+//    CHECK_EQUAL( 100, p2->getValue() );
+//    CHECK( p1->extendedFunction() )
+//    CHECK( p2->extendedFunction() )
+//    p2->setValue( 200 );
+//    CHECK_EQUAL( 100, p1->getValue() );
+//    CHECK_EQUAL( 200, p2->getValue() );
+//    CHECK( p1->extendedFunction() )
+//    CHECK( p2->extendedFunction() )
+//}
 TEST( getMin, IStep )
 {
     IStepUP p = unique_ptr<MockStep>( new MockStep() );

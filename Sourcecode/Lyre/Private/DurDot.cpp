@@ -26,15 +26,15 @@ namespace Lyre
         DurDot::~DurDot() {}
         
         IDurDotUP DurDot::clone() const
-        {
-            return IDurDotUP{ new DurDot{ "Quarter" } };
+        {   
+            return IDurDotUP{ new DurDot{ getDurBaseName(), getDotCount() } };
         }
         
-        void DurDot::copyTo( IDurDotUP& output ) const
-        {
-            auto tempP = static_cast<const IDurDot*>( this );
-            Private::copyTo<IDurDot>( tempP, output );
-        }
+//        void DurDot::copyTo( IDurDotUP& output ) const
+//        {
+//            auto tempP = static_cast<const IDurDot*>( this );
+//            Private::copyTo<IDurDot>( tempP, output );
+//        }
         
         Rational DurDot::getValue() const
         {

@@ -14,14 +14,13 @@ TEST( compiles, IPitch )
 {
     IPitchUP p{ new MockPitch{} };
     auto c = p->clone();
-    MockPitchUP x;
-    p->copyTo( x );
+//    MockPitchUP x;
     CHECK( p != c )
-    CHECK( p != x )
-    CHECK( x != c )
+//    CHECK( p != x )
+//    CHECK( x != c )
     CHECK( (p) )
     CHECK( (c) )
-    CHECK( (x) )
+//    CHECK( (x) )
     CHECK_EQUAL( 0, p->getValue() )
     CHECK( p->parse( "" ) )
     stringstream ss;
@@ -31,8 +30,8 @@ TEST( compiles, IPitch )
     ss.str( "" );
     ss << (*p);
     CHECK_EQUAL( "0", ss.str() )
-    CHECK( ! p->isLessThan( *x ) )
-    CHECK( p->isEqualTo( *x ) )
+//    CHECK( ! p->isLessThan( *x ) )
+//    CHECK( p->isEqualTo( *x ) )
     CHECK( ! p->isGreaterThan( *c ) )
     CHECK_EQUAL( 0, p->getStepValue() )
     p->setStepValue( 0 );

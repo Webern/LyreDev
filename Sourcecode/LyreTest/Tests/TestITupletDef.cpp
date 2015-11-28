@@ -68,23 +68,23 @@ TEST( clone, ITupletDef )
     CHECK( orig->toString() == cloned->toString() )
 }
 
-TEST( copyTo, ITupletDef )
-{
-    ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    
-    ITupletDefUP orig = tupletFactory->createTupletDef(
-        8, 9, "128th" );
-    
-    ITupletDefUP copied;
-    orig->copyTo( copied );
-    
-    CHECK( orig.get() != nullptr )
-    CHECK( copied.get() != nullptr )
-    CHECK( orig.get() != copied.get() )
-    CHECK( orig->getMultiplier() == copied->getMultiplier() )
-    CHECK( orig->getTotalLength() == copied->getTotalLength() )
-    CHECK( orig->toString() == copied->toString() )
-}
+//TEST( copyTo, ITupletDef )
+//{
+//    ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+//    
+//    ITupletDefUP orig = tupletFactory->createTupletDef(
+//        8, 9, "128th" );
+//    
+//    ITupletDefUP copied;
+//    orig->copyTo( copied );
+//    
+//    CHECK( orig.get() != nullptr )
+//    CHECK( copied.get() != nullptr )
+//    CHECK( orig.get() != copied.get() )
+//    CHECK( orig->getMultiplier() == copied->getMultiplier() )
+//    CHECK( orig->getTotalLength() == copied->getTotalLength() )
+//    CHECK( orig->toString() == copied->toString() )
+//}
 
 TEST( getMultiplier1, ITupletDef )
 {
@@ -111,7 +111,7 @@ TEST( getMultiplier3, ITupletDef )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     ITupletDefUP t = tupletFactory->createTupletDef(
         7, 6, "32nd" );
-    Rational expected{ 9, 8 };
+    Rational expected{ 6, 7 };
     Rational actual = t->getMultiplier();
     CHECK_EQUAL( expected, actual )
 }

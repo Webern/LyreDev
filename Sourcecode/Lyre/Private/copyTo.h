@@ -7,8 +7,9 @@ namespace Lyre
 {
     namespace Private
     {
+        /*
         template <typename T>
-        void copyTo( const T* const input, std::unique_ptr<T>& output )
+        // void copyTo( const T* const input, std::unique_ptr<T>& output )
         {
             if ( input == nullptr )
             {
@@ -20,5 +21,6 @@ namespace Lyre
             auto castedP = static_cast<T*>( rawP );
             output = std::unique_ptr<T>{ castedP };
         }
+         */
     }
 }
