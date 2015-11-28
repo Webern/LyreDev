@@ -1,5 +1,5 @@
-#include "LyreTest/cpul/cpulTestResult.h"
-#include "LyreTest/cpul/cpulFailure.h"
+#include "Cpul/cpulTestResult.h"
+#include "Cpul/cpulFailure.h"
 #include <iostream>
 
 TestResult::TestResult()
