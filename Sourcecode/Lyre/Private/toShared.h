@@ -11,7 +11,7 @@ namespace Lyre
         {
             auto rawP = uniquePtr.get();
             uniquePtr.release();
-            uniquePtr == nullptr;
+            uniquePtr = nullptr;
             return std::shared_ptr<T>{ rawP };
         }
     }
