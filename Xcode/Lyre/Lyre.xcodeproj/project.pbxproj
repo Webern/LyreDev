@@ -28,6 +28,7 @@
 		29109E461BE55A1B001FF3E6 /* Step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29109E211BE55A1B001FF3E6 /* Step.cpp */; };
 		29187A5E1C06B63300F89779 /* ITupletDefFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29187A5C1C06B63300F89779 /* ITupletDefFactory.cpp */; };
 		291F98111BF03F89008026BF /* INote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291F980F1BF03F89008026BF /* INote.cpp */; };
+		293F25DF1C09ADD4006096F2 /* Duration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25DD1C09ADD4006096F2 /* Duration.cpp */; };
 		296D72631BF8E9EE0049B0EA /* DurBase16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */; };
 		296D72641BF8E9EE0049B0EA /* DurBase32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724F1BF8E9EE0049B0EA /* DurBase32nd.cpp */; };
 		296D72651BF8E9EE0049B0EA /* DurBase64th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72511BF8E9EE0049B0EA /* DurBase64th.cpp */; };
@@ -91,6 +92,9 @@
 		29187A5D1C06B63300F89779 /* ITupletDefFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITupletDefFactory.h; path = ../../Sourcecode/Lyre/ITupletDefFactory.h; sourceTree = "<group>"; };
 		291F980F1BF03F89008026BF /* INote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = INote.cpp; path = ../../Sourcecode/Lyre/INote.cpp; sourceTree = "<group>"; };
 		291F98101BF03F89008026BF /* INote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INote.h; path = ../../Sourcecode/Lyre/INote.h; sourceTree = "<group>"; };
+		293F25DD1C09ADD4006096F2 /* Duration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Duration.cpp; path = ../../Sourcecode/Lyre/Private/Duration.cpp; sourceTree = "<group>"; };
+		293F25DE1C09ADD4006096F2 /* Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Duration.h; path = ../../Sourcecode/Lyre/Private/Duration.h; sourceTree = "<group>"; };
+		293F25E21C09B171006096F2 /* toShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = toShared.h; path = ../../Sourcecode/Lyre/Private/toShared.h; sourceTree = "<group>"; };
 		296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurBase16th.cpp; path = ../../Sourcecode/Lyre/Private/DurBase16th.cpp; sourceTree = "<group>"; };
 		296D724E1BF8E9EE0049B0EA /* DurBase16th.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurBase16th.h; path = ../../Sourcecode/Lyre/Private/DurBase16th.h; sourceTree = "<group>"; };
 		296D724F1BF8E9EE0049B0EA /* DurBase32nd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurBase32nd.cpp; path = ../../Sourcecode/Lyre/Private/DurBase32nd.cpp; sourceTree = "<group>"; };
@@ -114,7 +118,6 @@
 		296D72611BF8E9EE0049B0EA /* DurBaseWhole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurBaseWhole.cpp; path = ../../Sourcecode/Lyre/Private/DurBaseWhole.cpp; sourceTree = "<group>"; };
 		296D72621BF8E9EE0049B0EA /* DurBaseWhole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurBaseWhole.h; path = ../../Sourcecode/Lyre/Private/DurBaseWhole.h; sourceTree = "<group>"; };
 		298227441BF9997500277C67 /* makeUnique.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = makeUnique.h; path = ../../Sourcecode/Lyre/Private/makeUnique.h; sourceTree = "<group>"; };
-		298227451BF9998200277C67 /* copyTo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = copyTo.h; path = ../../Sourcecode/Lyre/Private/copyTo.h; sourceTree = "<group>"; };
 		29929FCA1C0766BD001CDDC8 /* TupletDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TupletDef.cpp; path = ../../Sourcecode/Lyre/Private/TupletDef.cpp; sourceTree = "<group>"; };
 		29929FCB1C0766BD001CDDC8 /* TupletDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TupletDef.h; path = ../../Sourcecode/Lyre/Private/TupletDef.h; sourceTree = "<group>"; };
 		29C3858C1C03611D00250931 /* ITupletDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ITupletDef.cpp; path = ../../Sourcecode/Lyre/ITupletDef.cpp; sourceTree = "<group>"; };
@@ -193,9 +196,11 @@
 		29109DFD1BE55A00001FF3E6 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				293F25E21C09B171006096F2 /* toShared.h */,
+				293F25DD1C09ADD4006096F2 /* Duration.cpp */,
+				293F25DE1C09ADD4006096F2 /* Duration.h */,
 				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
 				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
-				298227451BF9998200277C67 /* copyTo.h */,
 				296D72531BF8E9EE0049B0EA /* DurBase128th.cpp */,
 				296D72541BF8E9EE0049B0EA /* DurBase128th.h */,
 				296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */,
@@ -303,6 +308,7 @@
 				296D72691BF8E9EE0049B0EA /* DurBase8th.cpp in Sources */,
 				29109DF31BE559F2001FF3E6 /* IPitchFactory.cpp in Sources */,
 				296D72651BF8E9EE0049B0EA /* DurBase64th.cpp in Sources */,
+				293F25DF1C09ADD4006096F2 /* Duration.cpp in Sources */,
 				296D726C1BF8E9EE0049B0EA /* DurBaseQuarter.cpp in Sources */,
 				29109DE91BE559F2001FF3E6 /* IAlter.cpp in Sources */,
 				29E4D2241C06C7400038E6FC /* TupletDefFatory.cpp in Sources */,

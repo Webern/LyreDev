@@ -1,5 +1,4 @@
 #include "Lyre/IDurDot.h"
-#include "Lyre/Private/copyTo.h"
 #include <sstream>
 
 namespace Lyre

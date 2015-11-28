@@ -7,8 +7,6 @@ using namespace Lyre;
 using namespace Lyre::Mock;
 using namespace std;
 
-
-
 TEST( Compiles, IAlter )
 {
     MockAlter m;

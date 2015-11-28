@@ -58,23 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
-            timestampString = "470005473.05821"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "DurDot::DurDot( const String&amp; durName, const Integer dotCount )"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
-            timestampString = "470005474.607612"
+            timestampString = "470397959.306423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -90,11 +74,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
-            timestampString = "470300234.962999"
+            timestampString = "470397959.306423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "DurDot::DurDot( const String&amp; durName, const Integer dotCount )"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
+            timestampString = "470397959.306423"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "DurDot::setDotCount( const Integer dots )"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
-            timestampString = "470300234.962999"
+            timestampString = "470397959.306423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "DurDot::getValue()"
             landmarkType = "5">
          </BreakpointContent>

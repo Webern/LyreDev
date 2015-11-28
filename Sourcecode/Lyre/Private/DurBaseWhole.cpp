@@ -1,4 +1,5 @@
 #include "Lyre/Private/DurBaseWhole.h"
+#include "Lyre/Private/makeUnique.h"
 
 namespace Lyre
 {

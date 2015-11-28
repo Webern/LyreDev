@@ -1,6 +1,5 @@
 #include "Lyre/Private/DurBase16th.h"
 #include "Lyre/Private/makeUnique.h"
-#include "Lyre/Private/copyTo.h"
 #include "Lyre/IDurBase.h"
 
 namespace Lyre

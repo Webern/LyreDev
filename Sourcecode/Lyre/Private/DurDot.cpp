@@ -1,4 +1,5 @@
 #include "Lyre/Private/DurDot.h"
+#include "Lyre/Private/throw.h"
 #include <sstream>
 
 namespace Lyre
