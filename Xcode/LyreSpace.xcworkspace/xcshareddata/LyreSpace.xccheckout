@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>FDDF5281-D240-44D3-915E-F44A18D749C7</string>
+	<string>D02C0726-5A44-474C-A755-1DD1C986FA30</string>
 	<key>IDESourceControlProjectName</key>
 	<string>LyreSpace</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6E5A987D-9527-4351-BEEC-D3E3CCB24A28</key>
+		<key>CA98B22A-4370-4721-A063-553F1DBC330B</key>
 		<string>https://github.com/Webern/Lyre.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Xcode/LyreSpace.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6E5A987D-9527-4351-BEEC-D3E3CCB24A28</key>
+		<key>CA98B22A-4370-4721-A063-553F1DBC330B</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6E5A987D-9527-4351-BEEC-D3E3CCB24A28</string>
+	<string>CA98B22A-4370-4721-A063-553F1DBC330B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6E5A987D-9527-4351-BEEC-D3E3CCB24A28</string>
+			<string>CA98B22A-4370-4721-A063-553F1DBC330B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Lyre</string>
 		</dict>
