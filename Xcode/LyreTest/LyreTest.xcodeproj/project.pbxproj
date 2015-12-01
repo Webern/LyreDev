@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		290989D21C0395A30040138E /* TestDurationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290989D11C0395A30040138E /* TestDurationFactory.cpp */; };
 		290989D41C0398FD0040138E /* TestIDurDot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290989D31C0398FD0040138E /* TestIDurDot.cpp */; };
+		2926C87C1C0D785500C5D4C0 /* TestIDuration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2926C87B1C0D785500C5D4C0 /* TestIDuration.cpp */; };
 		293F25E11C09B12D006096F2 /* TestToShared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25E01C09B12D006096F2 /* TestToShared.cpp */; };
 		296D728F1BF8EB960049B0EA /* TestDurBase8th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */; };
 		296D72901BF8EB960049B0EA /* TestDurBase16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		290989D11C0395A30040138E /* TestDurationFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurationFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurationFactory.cpp; sourceTree = "<group>"; };
 		290989D31C0398FD0040138E /* TestIDurDot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDurDot.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDurDot.cpp; sourceTree = "<group>"; };
+		2926C87B1C0D785500C5D4C0 /* TestIDuration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDuration.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDuration.cpp; sourceTree = "<group>"; };
 		293F25E01C09B12D006096F2 /* TestToShared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestToShared.cpp; path = ../../Sourcecode/LyreTest/Tests/TestToShared.cpp; sourceTree = "<group>"; };
 		296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase8th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase8th.cpp; sourceTree = "<group>"; };
 		296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase16th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase16th.cpp; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		29CAD43E1BE661F500C0CA90 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				2926C87B1C0D785500C5D4C0 /* TestIDuration.cpp */,
 				293F25E01C09B12D006096F2 /* TestToShared.cpp */,
 				29CAD4051BE661B400C0CA90 /* TestAlter.cpp */,
 				298227461BF99B2400277C67 /* TestCopyTo.cpp */,
@@ -352,6 +355,7 @@
 				29CAD42F1BE661B400C0CA90 /* TestIDurBase.cpp in Sources */,
 				29935EAD1BE6C3700003552B /* MockDurBaseFactory.cpp in Sources */,
 				29CAD4511BE6673C00C0CA90 /* MockPitchName.cpp in Sources */,
+				2926C87C1C0D785500C5D4C0 /* TestIDuration.cpp in Sources */,
 				296D72921BF8EB960049B0EA /* TestDurBase64th.cpp in Sources */,
 				29CAD4501BE6673C00C0CA90 /* MockPitchFactory.cpp in Sources */,
 				296D72951BF8EB960049B0EA /* TestDurBaseBreve.cpp in Sources */,

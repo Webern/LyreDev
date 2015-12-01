@@ -1,4 +1,4 @@
-#include "Cpul/cpulTestHarness.h"
+#include "LyreTest/Cpul/cpulTestHarness.h"
 #include <iostream>
 
 

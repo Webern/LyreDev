@@ -238,3 +238,19 @@ TEST( toString, ITupletDef )
     String actual = t->toString();
     CHECK_EQUAL( expected, actual )
 }
+
+TEST( getIsValid1, ITupletDef )
+{
+    ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+    ITupletDefUP t = tupletFactory->createTupletDef(
+        1, 1, "32nd" );
+    CHECK( ! ( t->getIsValid() ) )
+}
+
+TEST( getIsValid2, ITupletDef )
+{
+    ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+    ITupletDefUP t = tupletFactory->createTupletDef(
+        3, 2, "32nd" );
+    CHECK( t->getIsValid() )
+}

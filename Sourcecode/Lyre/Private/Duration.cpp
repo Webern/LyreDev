@@ -1,4 +1,4 @@
-#include "Lyre/Private/TupletDef.h"
+#include "Lyre/Private/Duration.h"
 #include "Lyre/Private/DurDot.h"
 #include "Lyre/IDurDotFactory.h"
 #include "Lyre/IDurDot.h"
@@ -9,149 +9,98 @@ namespace Lyre
 {
     namespace Private
     {
-        TupletDef::TupletDef(
-            const Integer count,
-            const Lyre::IDurDot& countType,
-            const Integer inTheSpaceOf,
-            const Lyre::IDurDot& inTheSpaceOfType )
-        :myCount( 1 )
-        ,myCountType( nullptr )
-        ,myInTheSpaceOf( 1 )
-        ,myInTheSpaceOfType( nullptr )
+        IDurationUP Duration::clone() const
         {
-            constructor(
-                count, countType.getDurBaseName(), countType.getDotCount(),
-                inTheSpaceOf, inTheSpaceOfType.getDurBaseName(), inTheSpaceOfType.getDotCount() );
-        }
-        
-        TupletDef::TupletDef(
-                  const Integer count,
-                  const Integer inTheSpaceOf,
-                  const IDurDot& durationType )
-        :myCount( 1 )
-        ,myCountType( nullptr )
-        ,myInTheSpaceOf( 1 )
-        ,myInTheSpaceOfType( nullptr )
-        {
-            constructor(
-                count, durationType.getDurBaseName(), durationType.getDotCount(),
-                inTheSpaceOf, durationType.getDurBaseName(), durationType.getDotCount() );
-        }
-        
-        TupletDef::TupletDef(
-                  const Integer count,
-                  const Integer inTheSpaceOf,
-                  const String& durBaseName )
-        :myCount( 1 )
-        ,myCountType( nullptr )
-        ,myInTheSpaceOf( 1 )
-        ,myInTheSpaceOfType( nullptr )
-        {
-            constructor(
-                count, durBaseName, 0,
-                inTheSpaceOf, durBaseName, 0 );
-        }
-        
-        void TupletDef::constructor(
-            const Integer count,
-            const String& countTypeName,
-            const Integer countTypeDots,
-            const Integer itso,
-            const String& itsoType,
-            const Integer itsoDots )
-        {
-            throwIfNonPositive( count );
-            throwIfNonPositive( itso );
-            myCount = count;
-            myInTheSpaceOf = itso;
-            auto factory = createDurDotFactory( DurDotFactoryType::Standard );
-            myCountType = factory->createDurDot( countTypeName, countTypeDots );
-            myInTheSpaceOfType = factory->createDurDot( itsoType, itsoDots );
-            nullCheckThrow();
-        }
-        
-        void TupletDef::throwIfNull( const IDurDotUP& up ) const
-        {
-            if ( up == nullptr )
+            Duration* d = new Duration{};
+            d->myDurDot = this->myDurDot->clone();
+            for ( auto t : myTuplets )
             {
-                THROW( "null pointer encountered" )
+                d->myTuplets.push_back( t->clone() );
             }
+            return IDurationUP{ d };
         }
         
-        void TupletDef::throwIfNonPositive( const Integer value ) const
+        Rational Duration::getDurBaseValue() const
         {
-            if ( value < 1 )
+            return myDurDot->getDurBaseValue();
+        }
+        
+        String Duration::getDurBaseName() const
+        {
+            return myDurDot->getDurBaseName();
+        }
+        
+        Integer Duration::getDotCount() const
+        {
+            return myDurDot->getDotCount();
+        }
+        
+        Rational Duration::getDottedValue() const
+        {
+            return myDurDot->getValue();
+        }
+        
+        String Duration::getDottedName() const
+        {
+            return myDurDot->toString();
+        }
+        
+        
+        bool Duration::getIsTuplet() const
+        {
+            auto one = Rational{ 1, 1};
+            for ( auto t : myTuplets )
             {
-                THROW( "value must be positive" )
+                auto reducedTupletValue = t->getMultiplier();
+                reducedTupletValue.reduce();
+                
+                if ( reducedTupletValue != one )
+                {
+                    return true;
+                }
             }
+            return false;
         }
         
-        void TupletDef::nullCheckThrow() const
+        int Duration::getTupletNestingCount() const
         {
-            throwIfNull( myCountType );
-            throwIfNull( myInTheSpaceOfType );
+            auto one = Rational{ 1, 1};
+            for ( auto t : myTuplets )
+            {
+                auto reducedTupletValue = t->getMultiplier();
+                reducedTupletValue.reduce();
+                
+                if ( reducedTupletValue != one )
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         
-        ITupletDefUP TupletDef::clone() const
+        ITupletDefSPCsIter Duration::getTupletsBegin() const
         {
-            nullCheckThrow();
-            return ITupletDefUP{ new TupletDef( myCount, *myCountType, myInTheSpaceOf, *myInTheSpaceOfType ) };
-        }
- 
-        Rational TupletDef::getMultiplier() const
-        {
-            auto count = getInTheSpaceOfType()->getValue() * Rational{ getInTheSpaceOf(), 1 };
-            auto inTheSpaceOf = getCountType()->getValue() * Rational{ getCount(), 1 };
-            return count / inTheSpaceOf;
-        }
-
-        Rational TupletDef::getTotalLength() const
-        {
-            Rational itsoValue = getInTheSpaceOfType()->getValue();
-            Rational itsoCount{ getInTheSpaceOf(), 1 };
-            return itsoValue * itsoCount;
+            return myTuplets.cbegin();
         }
         
-        Integer TupletDef::getCount() const
+        ITupletDefSPCsIter Duration::getTupletsEnd() const
         {
-            return myCount;
+            return myTuplets.cend();
         }
         
-        IDurDotUPC TupletDef::getCountType() const
+        
+        Rational Duration::getValue() const
         {
-            nullCheckThrow();
-            IDurDotUP output = myCountType->clone();
-            //myCountType->copyTo( output );
-            return std::move( output );
+            return Rational{ 1, 1 };
         }
         
-        Integer TupletDef::getInTheSpaceOf() const
+        
+        std::ostream& Duration::toStream( std::ostream& os ) const
         {
-            return myInTheSpaceOf;
+            return os << "not implemented";
         }
         
-        IDurDotUPC TupletDef::getInTheSpaceOfType() const
-        {
-            nullCheckThrow();
-            IDurDotUP output = myInTheSpaceOfType->clone();
-//            myInTheSpaceOfType->copyTo( output );
-            return std::move( output );
-        }
-        
-        std::ostream& TupletDef::toStream( std::ostream& os ) const
-        {
-            os << myCount;
-            os << "[";
-            os << (*myCountType);
-            os << "]:";
-            os << myInTheSpaceOf;
-            os << "[";
-            os << (*myInTheSpaceOfType);
-            os << "]";
-            return os;
-        }
-        
-        String TupletDef::toString() const
+        String Duration::toString() const
         {
             std::stringstream ss;
             toStream( ss );

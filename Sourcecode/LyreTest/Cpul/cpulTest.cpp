@@ -1,6 +1,6 @@
-#include "Cpul/cpulTest.h"
-#include "Cpul/cpulTestRegistry.h"
-#include "Cpul/cpulTestResult.h"
+#include "LyreTest/Cpul/cpulTest.h"
+#include "LyreTest/Cpul/cpulTestRegistry.h"
+#include "LyreTest/Cpul/cpulTestResult.h"
 
 Test::Test (const std::string& testName,
             std::string fileName,

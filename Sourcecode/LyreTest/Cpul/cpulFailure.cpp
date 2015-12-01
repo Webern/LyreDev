@@ -1,4 +1,4 @@
-#include "Cpul/cpulFailure.h"
+#include "LyreTest/Cpul/cpulFailure.h"
 
 Failure::Failure(
     std::string theCondition,

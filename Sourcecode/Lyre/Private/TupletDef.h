@@ -30,22 +30,25 @@ namespace Lyre
             
             virtual ~TupletDef() = default;
             
-            virtual ITupletDefUP clone() const ;
+            virtual ITupletDefUP clone() const;
             
             virtual // void copyTo( ITupletDefUP& output ) const;
             
-            virtual Rational getMultiplier() const ;
-            virtual Rational getTotalLength() const ;
+            virtual Rational getMultiplier() const;
+            virtual Rational getTotalLength() const;
             
-            virtual Integer getCount() const ;
-            virtual IDurDotUPC getCountType() const ;
+            virtual Integer getCount() const;
+            virtual IDurDotUPC getCountType() const;
             
-            virtual Integer getInTheSpaceOf() const ;
-            virtual IDurDotUPC getInTheSpaceOfType() const ;
+            virtual Integer getInTheSpaceOf() const;
+            virtual IDurDotUPC getInTheSpaceOfType() const;
             
-            virtual std::ostream& toStream( std::ostream& os ) const ;
+            virtual std::ostream& toStream( std::ostream& os ) const;
             
-            virtual String toString() const ;
+            virtual String toString() const;
+            
+            virtual bool getIsValid() const;
+            
         private:
             Integer myCount;
             IDurDotUP myCountType;

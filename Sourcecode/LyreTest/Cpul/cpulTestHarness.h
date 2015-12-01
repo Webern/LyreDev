@@ -1,9 +1,9 @@
 #ifndef TESTHARNESS_H
 #define TESTHARNESS_H
 
-#include "Cpul/cpulTest.h"
-#include "Cpul/cpulTestResult.h"
-#include "Cpul/cpulFailure.h"
-#include "Cpul/cpulTestRegistry.h"
+#include "LyreTest/Cpul/cpulTest.h"
+#include "LyreTest/Cpul/cpulTestResult.h"
+#include "LyreTest/Cpul/cpulFailure.h"
+#include "LyreTest/Cpul/cpulTestRegistry.h"
 
 #endif

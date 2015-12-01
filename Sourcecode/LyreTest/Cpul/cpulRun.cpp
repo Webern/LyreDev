@@ -1,4 +1,4 @@
-#include "Cpul/cpulRun.h"
+#include "LyreTest/Cpul/cpulRun.h"
 
 void cpulRun( bool runTests, bool holdConsole )
 {

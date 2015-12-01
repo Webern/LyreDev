@@ -1,6 +1,6 @@
-#include "Cpul/cpulTest.h"
-#include "Cpul/cpulTestResult.h"
-#include "Cpul/cpulTestRegistry.h"
+#include "LyreTest/Cpul/cpulTest.h"
+#include "LyreTest/Cpul/cpulTestResult.h"
+#include "LyreTest/Cpul/cpulTestRegistry.h"
 #include <iostream>
 
 void TestRegistry::addTest (Test *test) 

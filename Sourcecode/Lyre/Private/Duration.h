@@ -1,68 +1,42 @@
 //PRIVATE
 #pragma once
 #include "Lyre/TypeDefs.h"
+#include "Lyre/IDuration.h"
 #include "Lyre/ITupletDef.h"
-#include "Lyre/Private/DurDot.h"
 #include <memory>
 
 namespace Lyre
 {
+    class IDurDot;
+    using IDurDotSP = std::shared_ptr<IDurDot>;
+    using IDurDotUP = std::unique_ptr<IDurDot>;
+    
     namespace Private
     {
-        class TupletDef : public ITupletDef
+        class Duration : public IDuration
         {
         public:
-            TupletDef(
-                const Integer count,
-                const Lyre::IDurDot& countType,
-                const Integer inTheSpaceOf,
-                const Lyre::IDurDot& inTheSpaceOfType );
+            virtual ~Duration() = default;
+            IDurationUP clone() const;
+            Rational getDurBaseValue() const;
+            String getDurBaseName() const;
+            Integer getDotCount() const;
+            Rational getDottedValue() const;
+            String getDottedName() const;
             
-            TupletDef(
-                const Integer count,
-                const Integer inTheSpaceOf,
-                const IDurDot& durationType );
+            bool getIsTuplet() const;
+            int getTupletNestingCount() const;
+            ITupletDefSPCsIter getTupletsBegin() const;
+            ITupletDefSPCsIter getTupletsEnd() const;
             
-            TupletDef(
-                const Integer count,
-                const Integer inTheSpaceOf,
-                const String& durBaseName );
-            
-            virtual ~TupletDef() = default;
-            
-            virtual ITupletDefUP clone() const ;
-            
-            virtual // void copyTo( ITupletDefUP& output ) const;
-            
-            virtual Rational getMultiplier() const ;
-            virtual Rational getTotalLength() const ;
-            
-            virtual Integer getCount() const ;
-            virtual IDurDotUPC getCountType() const ;
-            
-            virtual Integer getInTheSpaceOf() const ;
-            virtual IDurDotUPC getInTheSpaceOfType() const ;
-            
-            virtual std::ostream& toStream( std::ostream& os ) const ;
-            
-            virtual String toString() const ;
-        private:
-            Integer myCount;
-            IDurDotUP myCountType;
-            Integer myInTheSpaceOf;
-            IDurDotUP myInTheSpaceOfType;
+            Rational getValue() const;
+
+            virtual std::ostream& toStream( std::ostream& os ) const;
+            virtual String toString() const;
             
         private:
-            void throwIfNonPositive( const Integer value ) const;
-            void throwIfNull( const IDurDotUP& up ) const;
-            void nullCheckThrow() const;
-            void constructor(
-                const Integer count,
-                const String& countTypeName,
-                const Integer countTypeDots,
-                const Integer itso,
-                const String& itsoType,
-                const Integer itsoDots );
+            IDurDotUP myDurDot;
+            ITupletDefSPCs myTuplets;
         };
     }
 }

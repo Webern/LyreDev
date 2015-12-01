@@ -157,5 +157,14 @@ namespace Lyre
             toStream( ss );
             return ss.str();
         }
+        
+        bool TupletDef::getIsValid() const
+        {
+            auto value = getMultiplier();
+            bool notEqualToOne = value.getNumerator() != value.getDenominator();
+            bool isNumeratorPositive = value.getNumerator() > 0;
+            bool isDenominatorPositive = value.getDenominator() > 0;
+            return notEqualToOne && isNumeratorPositive && isDenominatorPositive;
+        }
     }
 }
