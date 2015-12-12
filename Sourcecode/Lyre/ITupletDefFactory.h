@@ -3,6 +3,7 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/ITupletDef.h"
 #include <memory>
+#include <vector>
 
 namespace Lyre
 {

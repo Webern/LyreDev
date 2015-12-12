@@ -1,6 +1,7 @@
 //PUBLIC
 
 #include "LyreTest/cpul/cpulTestHarness.h"
+#include "Lyre/IDurationFactory.h"
 #include "Lyre/IDuration.h"
 
 using namespace Lyre;
