@@ -4,7 +4,7 @@
 namespace Lyre
 {
     using namespace Lyre::Private;
-    IPitchFactoryUP IPitchFactory::createPitchFactory( const PitchFactoryType t)
+    IPitchFactoryUP createPitchFactory( const PitchFactoryType t)
     {
         IPitchFactoryUP output;
         switch ( t )

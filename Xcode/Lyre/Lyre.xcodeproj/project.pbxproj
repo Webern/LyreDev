@@ -169,39 +169,9 @@
 		29109DFC1BE559FB001FF3E6 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				29E0B2151C14165B002790B5 /* IDurationFactory.cpp */,
-				29E0B2161C14165B002790B5 /* IDurationFactory.h */,
-				2926C8781C0D717200C5D4C0 /* IDuration.cpp */,
-				2926C8791C0D717200C5D4C0 /* IDuration.h */,
-				29109DD61BE559F2001FF3E6 /* IAlter.cpp */,
-				29109DD71BE559F2001FF3E6 /* IAlter.h */,
-				29109DD81BE559F2001FF3E6 /* IDurBase.cpp */,
-				29109DD91BE559F2001FF3E6 /* IDurBase.h */,
-				29109DDA1BE559F2001FF3E6 /* IDurBaseFactory.cpp */,
-				29109DDB1BE559F2001FF3E6 /* IDurBaseFactory.h */,
-				29C3858F1C03637800250931 /* IDurDot.cpp */,
-				29C385901C03637800250931 /* IDurDot.h */,
-				290989CB1C0390B20040138E /* IDurDotFactory.cpp */,
-				290989CC1C0390B20040138E /* IDurDotFactory.h */,
-				29109DDC1BE559F2001FF3E6 /* IEnum.cpp */,
-				29109DDD1BE559F2001FF3E6 /* IEnum.h */,
-				291F980F1BF03F89008026BF /* INote.cpp */,
-				291F98101BF03F89008026BF /* INote.h */,
-				29109DDE1BE559F2001FF3E6 /* IPitch.cpp */,
-				29109DDF1BE559F2001FF3E6 /* IPitch.h */,
-				29109DE01BE559F2001FF3E6 /* IPitchFactory.cpp */,
-				29109DE11BE559F2001FF3E6 /* IPitchFactory.h */,
-				29109DE21BE559F2001FF3E6 /* IPitchName.cpp */,
-				29109DE31BE559F2001FF3E6 /* IPitchName.h */,
-				29109DE41BE559F2001FF3E6 /* IStep.cpp */,
-				29109DE51BE559F2001FF3E6 /* IStep.h */,
-				29C3858C1C03611D00250931 /* ITupletDef.cpp */,
-				29C3858D1C03611D00250931 /* ITupletDef.h */,
-				29187A5C1C06B63300F89779 /* ITupletDefFactory.cpp */,
-				29187A5D1C06B63300F89779 /* ITupletDefFactory.h */,
-				29109DE61BE559F2001FF3E6 /* Rational.cpp */,
-				29109DE71BE559F2001FF3E6 /* Rational.h */,
-				29109DE81BE559F2001FF3E6 /* TypeDefs.h */,
+				298BA37A1C36F6230024F9F1 /* General Objects */,
+				298BA3791C36F5C50024F9F1 /* Music Objects */,
+				298BA3781C36F5B80024F9F1 /* Factories */,
 			);
 			name = Public;
 			sourceTree = "<group>";
@@ -209,12 +179,95 @@
 		29109DFD1BE55A00001FF3E6 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				298BA37E1C36F7B60024F9F1 /* Factories */,
+				298BA37B1C36F79E0024F9F1 /* General Functions */,
+				298BA37C1C36F7A60024F9F1 /* General Objects */,
+				298BA37D1C36F7AC0024F9F1 /* Music Objects */,
+			);
+			name = Private;
+			sourceTree = "<group>";
+		};
+		298BA3781C36F5B80024F9F1 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				29E0B2151C14165B002790B5 /* IDurationFactory.cpp */,
+				29E0B2161C14165B002790B5 /* IDurationFactory.h */,
+				29109DDA1BE559F2001FF3E6 /* IDurBaseFactory.cpp */,
+				29109DDB1BE559F2001FF3E6 /* IDurBaseFactory.h */,
+				290989CB1C0390B20040138E /* IDurDotFactory.cpp */,
+				290989CC1C0390B20040138E /* IDurDotFactory.h */,
+				29109DE01BE559F2001FF3E6 /* IPitchFactory.cpp */,
+				29109DE11BE559F2001FF3E6 /* IPitchFactory.h */,
+				29187A5C1C06B63300F89779 /* ITupletDefFactory.cpp */,
+				29187A5D1C06B63300F89779 /* ITupletDefFactory.h */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		298BA3791C36F5C50024F9F1 /* Music Objects */ = {
+			isa = PBXGroup;
+			children = (
+				29109DD61BE559F2001FF3E6 /* IAlter.cpp */,
+				29109DD71BE559F2001FF3E6 /* IAlter.h */,
+				2926C8781C0D717200C5D4C0 /* IDuration.cpp */,
+				2926C8791C0D717200C5D4C0 /* IDuration.h */,
+				29109DD81BE559F2001FF3E6 /* IDurBase.cpp */,
+				29109DD91BE559F2001FF3E6 /* IDurBase.h */,
+				29C3858F1C03637800250931 /* IDurDot.cpp */,
+				29C385901C03637800250931 /* IDurDot.h */,
+				291F980F1BF03F89008026BF /* INote.cpp */,
+				291F98101BF03F89008026BF /* INote.h */,
+				29109DDE1BE559F2001FF3E6 /* IPitch.cpp */,
+				29109DDF1BE559F2001FF3E6 /* IPitch.h */,
+				29109DE21BE559F2001FF3E6 /* IPitchName.cpp */,
+				29109DE31BE559F2001FF3E6 /* IPitchName.h */,
+				29109DE41BE559F2001FF3E6 /* IStep.cpp */,
+				29109DE51BE559F2001FF3E6 /* IStep.h */,
+				29C3858C1C03611D00250931 /* ITupletDef.cpp */,
+				29C3858D1C03611D00250931 /* ITupletDef.h */,
+			);
+			name = "Music Objects";
+			sourceTree = "<group>";
+		};
+		298BA37A1C36F6230024F9F1 /* General Objects */ = {
+			isa = PBXGroup;
+			children = (
+				29109DDC1BE559F2001FF3E6 /* IEnum.cpp */,
+				29109DDD1BE559F2001FF3E6 /* IEnum.h */,
+				29109DE61BE559F2001FF3E6 /* Rational.cpp */,
+				29109DE71BE559F2001FF3E6 /* Rational.h */,
+				29109DE81BE559F2001FF3E6 /* TypeDefs.h */,
+			);
+			name = "General Objects";
+			sourceTree = "<group>";
+		};
+		298BA37B1C36F79E0024F9F1 /* General Functions */ = {
+			isa = PBXGroup;
+			children = (
+				298227441BF9997500277C67 /* makeUnique.h */,
+				29F3B5151C02238A00746DA5 /* throw.h */,
+				293F25E21C09B171006096F2 /* toShared.h */,
+			);
+			name = "General Functions";
+			sourceTree = "<group>";
+		};
+		298BA37C1C36F7A60024F9F1 /* General Objects */ = {
+			isa = PBXGroup;
+			children = (
+				29109E181BE55A1B001FF3E6 /* Enum.cpp */,
+				29109E191BE55A1B001FF3E6 /* Enum.h */,
+				29109E1A1BE55A1B001FF3E6 /* Mod.h */,
+			);
+			name = "General Objects";
+			sourceTree = "<group>";
+		};
+		298BA37D1C36F7AC0024F9F1 /* Music Objects */ = {
+			isa = PBXGroup;
+			children = (
 				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
 				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
 				293F25DD1C09ADD4006096F2 /* Duration.cpp */,
 				293F25DE1C09ADD4006096F2 /* Duration.h */,
-				2926C8751C0D704400C5D4C0 /* DurationFactory.cpp */,
-				2926C8761C0D704400C5D4C0 /* DurationFactory.h */,
 				296D72531BF8E9EE0049B0EA /* DurBase128th.cpp */,
 				296D72541BF8E9EE0049B0EA /* DurBase128th.h */,
 				296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */,
@@ -241,28 +294,31 @@
 				296D72621BF8E9EE0049B0EA /* DurBaseWhole.h */,
 				290989D51C03AA1A0040138E /* DurDot.cpp */,
 				290989D61C03AA1A0040138E /* DurDot.h */,
-				290989CE1C0391CC0040138E /* DurDotFactory.cpp */,
-				290989CF1C0391CC0040138E /* DurDotFactory.h */,
-				29109E181BE55A1B001FF3E6 /* Enum.cpp */,
-				29109E191BE55A1B001FF3E6 /* Enum.h */,
-				298227441BF9997500277C67 /* makeUnique.h */,
-				29109E1A1BE55A1B001FF3E6 /* Mod.h */,
 				29109E1B1BE55A1B001FF3E6 /* Pitch.cpp */,
 				29109E1C1BE55A1B001FF3E6 /* Pitch.h */,
-				29109E1D1BE55A1B001FF3E6 /* PitchFactory.cpp */,
-				29109E1E1BE55A1B001FF3E6 /* PitchFactory.h */,
 				29109E1F1BE55A1B001FF3E6 /* PitchName.cpp */,
 				29109E201BE55A1B001FF3E6 /* PitchName.h */,
 				29109E211BE55A1B001FF3E6 /* Step.cpp */,
 				29109E221BE55A1B001FF3E6 /* Step.h */,
-				29F3B5151C02238A00746DA5 /* throw.h */,
-				293F25E21C09B171006096F2 /* toShared.h */,
 				29929FCA1C0766BD001CDDC8 /* TupletDef.cpp */,
 				29929FCB1C0766BD001CDDC8 /* TupletDef.h */,
+			);
+			name = "Music Objects";
+			sourceTree = "<group>";
+		};
+		298BA37E1C36F7B60024F9F1 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				2926C8751C0D704400C5D4C0 /* DurationFactory.cpp */,
+				2926C8761C0D704400C5D4C0 /* DurationFactory.h */,
+				290989CE1C0391CC0040138E /* DurDotFactory.cpp */,
+				290989CF1C0391CC0040138E /* DurDotFactory.h */,
+				29109E1D1BE55A1B001FF3E6 /* PitchFactory.cpp */,
+				29109E1E1BE55A1B001FF3E6 /* PitchFactory.h */,
 				29E4D2221C06C7400038E6FC /* TupletDefFatory.cpp */,
 				29E4D2231C06C7400038E6FC /* TupletDefFatory.h */,
 			);
-			name = Private;
+			name = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

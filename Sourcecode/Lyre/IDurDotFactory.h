@@ -11,7 +11,6 @@ namespace Lyre
         Standard = 0
     };
     
-    // Forward Declarations
     class IDurDot;
     using IDurDotSP = std::shared_ptr<IDurDot>;
     using IDurDotUP = std::unique_ptr<IDurDot>;
@@ -34,5 +33,7 @@ namespace Lyre
         
         virtual IDurDotUP createDurDot(
             const String& durName ) const = 0;
+        
+        virtual IDurDotUP createDurDot() const = 0;
     };
 }

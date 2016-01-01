@@ -21,5 +21,10 @@ namespace Lyre
         {
             return IDurDotUP{ new DurDot{ durName } };
         }
+        
+        IDurDotUP DurDotFactory::createDurDot() const
+        {
+            return IDurDotUP{ new DurDot{} };
+        }
     }
 }

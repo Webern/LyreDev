@@ -10,7 +10,6 @@ namespace Lyre
         Standard = 0
     };
     
-    // Forward Declarations
     class IDurBase;
     using IDurBaseSP = std::shared_ptr<IDurBase>;
     using IDurBaseUP = std::unique_ptr<IDurBase>;
@@ -19,13 +18,13 @@ namespace Lyre
     using IDurBaseFactorySP = std::shared_ptr<IDurBaseFactory>;
     using IDurBaseFactoryUP = std::unique_ptr<IDurBaseFactory>;
     
+    IDurBaseFactoryUP createDurBaseFactory( const DurBaseFactoryType t );
+    
     class IDurBaseFactory
     {
     public:
         
         virtual ~IDurBaseFactory();
-        
-        static IDurBaseFactoryUP createDurBaseFactory( const DurBaseFactoryType t );
         
         virtual IDurBaseUP createDur( const String& durName ) const = 0;
     };

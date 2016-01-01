@@ -3,6 +3,7 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IDuration.h"
 #include "Lyre/ITupletDef.h"
+#include "Lyre/IDurDotFactory.h"
 #include <memory>
 
 namespace Lyre
@@ -16,7 +17,23 @@ namespace Lyre
         class Duration : public IDuration
         {
         public:
-            virtual ~Duration() = default;
+            virtual ~Duration();
+            
+            Duration();
+            
+            Duration( const String& durName );
+
+            
+            Duration(
+                const String& durName,
+                const Integer dotCount );
+
+            
+            Duration(
+                const ITupletDefSPCs& tuplets,
+                const String& durName,
+                const Integer dotCount );
+            
             IDurationUP clone() const;
             Rational getDurBaseValue() const;
             String getDurBaseName() const;
@@ -35,6 +52,7 @@ namespace Lyre
             virtual String toString() const;
             
         private:
+            IDurDotFactoryUP myDurDotFactory;
             IDurDotUP myDurDot;
             ITupletDefSPCs myTuplets;
         };

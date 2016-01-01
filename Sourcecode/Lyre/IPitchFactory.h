@@ -1,8 +1,8 @@
 //PUBLIC
 #pragma once
 #include "Lyre/TypeDefs.h"
-#include <memory>
 #include "Lyre/IPitch.h"
+#include <memory>
 
 namespace Lyre
 {
@@ -15,14 +15,12 @@ namespace Lyre
         StandardChromatic = 0
     };
     
+    IPitchFactoryUP createPitchFactory( const PitchFactoryType t );
+    
     class IPitchFactory
     {
     public:
-        static IPitchFactoryUP createPitchFactory( const PitchFactoryType t );
         virtual ~IPitchFactory() = default;
-        
-        /* return a deep copy of "this" */
-        virtual IPitchFactoryUP clone() const = 0;
         
         virtual IPitchUP createPitch() const = 0;
         virtual void setPitch( const Integer pitchValue ) = 0;

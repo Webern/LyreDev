@@ -6,8 +6,16 @@ namespace Lyre
 {
     namespace Private
     {
+        DurDot::DurDot()
+        : myDurBaseFactory( createDurBaseFactory( DurBaseFactoryType::Standard ) )
+        , myDurBase( nullptr )
+        , myDotCount( 0 )
+        {
+            setDurBase( "Quarter" );
+        }
+        
         DurDot::DurDot( const String& durName )
-        : myDurBaseFactory( IDurBaseFactory::createDurBaseFactory( DurBaseFactoryType::Standard ) )
+        : myDurBaseFactory( createDurBaseFactory( DurBaseFactoryType::Standard ) )
         , myDurBase( nullptr )
         , myDotCount( 0 )
         {
@@ -16,7 +24,7 @@ namespace Lyre
         
         DurDot::DurDot( const String& durName,
                            const Integer dotCount )
-        : myDurBaseFactory( IDurBaseFactory::createDurBaseFactory( DurBaseFactoryType::Standard ) )
+        : myDurBaseFactory( createDurBaseFactory( DurBaseFactoryType::Standard ) )
         , myDurBase( nullptr )
         , myDotCount( 0 )
         {

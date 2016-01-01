@@ -24,6 +24,8 @@ namespace Lyre
             
             virtual IDurDotUP createDurDot(
                 const String& durName ) const;
+            
+            virtual IDurDotUP createDurDot() const;
         };
     }
 }

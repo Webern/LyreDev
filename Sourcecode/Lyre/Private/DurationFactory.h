@@ -12,7 +12,7 @@ namespace Lyre
         class DurationFactory : public IDurationFactory
         {
         public:
-            virtual ~DurationFactory() = default;
+            virtual ~DurationFactory();
             
             virtual IDurationUP createDuration(
                 const String& durName ) const;

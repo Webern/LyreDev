@@ -18,6 +18,8 @@ namespace Lyre
         class DurDot : public IDurDot
         {
         public:
+            DurDot();
+            
             DurDot( const String& durName );
             
             DurDot( const String& durName,

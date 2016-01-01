@@ -2,16 +2,16 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/ITupletDef.h"
-#include <memory>
 #include <vector>
+#include <memory>
 
 namespace Lyre
 {
     class ITupletDef;
     using ITupletDefSP = std::shared_ptr<ITupletDef>;
     using ITupletDefUP = std::unique_ptr<ITupletDef>;
-    using ITupletDefSPC = std::shared_ptr<const ITupletDef>;
-    using ITupletDefUPC = std::unique_ptr<const ITupletDef>;
+    using ITupletDefSPC = const std::shared_ptr<const ITupletDef>;
+    using ITupletDefUPC = const std::unique_ptr<const ITupletDef>;
     
     class IDurDot;
     using IDurDotSP = std::shared_ptr<IDurDot>;

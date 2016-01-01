@@ -7,7 +7,7 @@ namespace Lyre
 {
     IDurBaseFactory::~IDurBaseFactory() {}
     
-    IDurBaseFactoryUP IDurBaseFactory::createDurBaseFactory( const DurBaseFactoryType t )
+    IDurBaseFactoryUP createDurBaseFactory( const DurBaseFactoryType t )
     {
         IDurBaseFactoryUP output;
         switch ( t )

@@ -29,6 +29,5 @@ namespace Lyre
                 const Integer inTheSpaceOf,
                 const String& durBaseName );
         };
-
     }
 }

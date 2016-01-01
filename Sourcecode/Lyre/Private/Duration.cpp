@@ -3,12 +3,44 @@
 #include "Lyre/IDurDotFactory.h"
 #include "Lyre/IDurDot.h"
 #include "Lyre/Private/throw.h"
+#include "Lyre/ITupletDefFactory.h"
 #include <sstream>
 
 namespace Lyre
 {
     namespace Private
     {
+        Duration::~Duration() {};
+        
+        Duration::Duration()
+        :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
+        ,myDurDot( myDurDotFactory->createDurDot() )
+        ,myTuplets()
+        {}
+                           
+        Duration::Duration( const String& durName )
+        :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
+        ,myDurDot( myDurDotFactory->createDurDot( durName ) )
+        ,myTuplets()
+        {}
+        
+        Duration::Duration(
+            const String& durName,
+            const Integer dotCount )
+        :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
+        ,myDurDot( myDurDotFactory->createDurDot( durName, dotCount ) )
+        ,myTuplets()
+        {}
+        
+        Duration::Duration(
+            const ITupletDefSPCs& tuplets,
+            const String& durName,
+            const Integer dotCount )
+        :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
+        ,myDurDot( myDurDotFactory->createDurDot( durName, dotCount ) )
+        ,myTuplets( tuplets )
+        {}
+        
         IDurationUP Duration::clone() const
         {
             Duration* d = new Duration{};
@@ -44,7 +76,6 @@ namespace Lyre
         {
             return myDurDot->toString();
         }
-        
         
         bool Duration::getIsTuplet() const
         {
@@ -88,12 +119,10 @@ namespace Lyre
             return myTuplets.cend();
         }
         
-        
         Rational Duration::getValue() const
         {
             return Rational{ 1, 1 };
         }
-        
         
         std::ostream& Duration::toStream( std::ostream& os ) const
         {
