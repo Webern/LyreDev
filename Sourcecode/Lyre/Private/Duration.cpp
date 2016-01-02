@@ -67,12 +67,12 @@ namespace Lyre
             return myDurDot->getDotCount();
         }
         
-        Rational Duration::getDottedValue() const
+        Rational Duration::getDottedBaseValue() const
         {
             return myDurDot->getValue();
         }
         
-        String Duration::getDottedName() const
+        String Duration::getDottedBaseName() const
         {
             return myDurDot->toString();
         }
@@ -101,6 +101,7 @@ namespace Lyre
         int Duration::getTupletNestingCount() const
         {
             auto one = Rational{ 1, 1};
+            int nestingCount = 0;
             for ( auto t : myTuplets )
             {
                 auto reducedTupletValue = t->getMultiplier();
@@ -108,10 +109,10 @@ namespace Lyre
                 
                 if ( reducedTupletValue != one )
                 {
-                    return true;
+                    ++nestingCount;
                 }
             }
-            return false;
+            return nestingCount;
         }
         
         ITupletDefSPCsIter Duration::getTupletsBegin() const

@@ -28,8 +28,6 @@ namespace Lyre
         
         virtual ITupletDefUP clone() const = 0;
         
-        virtual // void copyTo( ITupletDefUP& output ) const = 0;
-        
         virtual Rational getMultiplier() const = 0;
         virtual Rational getTotalLength() const = 0;
         

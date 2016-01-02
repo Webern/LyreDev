@@ -19,8 +19,8 @@ namespace Lyre
         virtual Rational getDurBaseValue() const = 0;
         virtual String getDurBaseName() const = 0;
         virtual Integer getDotCount() const = 0;
-        virtual Rational getDottedValue() const = 0;
-        virtual String getDottedName() const = 0;
+        virtual Rational getDottedBaseValue() const = 0;
+        virtual String getDottedBaseName() const = 0;
         
         virtual bool getIsTuplet() const = 0;
         virtual bool getIsNestedTuplet() const = 0;

@@ -38,8 +38,8 @@ namespace Lyre
             Rational getDurBaseValue() const;
             String getDurBaseName() const;
             Integer getDotCount() const;
-            Rational getDottedValue() const;
-            String getDottedName() const;
+            Rational getDottedBaseValue() const;
+            String getDottedBaseName() const;
             
             bool getIsTuplet() const;
             bool getIsNestedTuplet() const;
