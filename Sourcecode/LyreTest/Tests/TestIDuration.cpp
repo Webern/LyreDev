@@ -359,6 +359,83 @@ TEST( getTupletEnd, IDuration )
     CHECK_EQUAL( 3, countIterations )
 }
 
+TEST( getValue01, IDuration )
+{
+    std::string name = "Eighth";
+    int dots = 0;
+    auto f = createDurationFactory( DurationFactoryType::Standard );
+    auto d = f->createDuration( name, dots );
+    
+    auto expected = Rational{ 1, 2};
+    auto actual = d->getValue();
+    
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( getValue02, IDuration )
+{
+    std::string name = "Half";
+    int dots = 1;
+    auto f = createDurationFactory( DurationFactoryType::Standard );
+    auto d = f->createDuration( /*tuplets,*/ name, dots );
+    
+    auto expected = Rational{ 3, 1};
+    auto actual = d->getValue();
+    
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( getValue03, IDuration )
+{
+    auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+    ITupletDefSPCs tuplets;
+    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+
+    std::string name = "Quarter";
+    int dots = 0;
+    auto f = createDurationFactory( DurationFactoryType::Standard );
+    auto d = f->createDuration( tuplets, name, dots );
+    
+    auto expected = Rational{ 2, 3 };
+    auto actual = d->getValue();
+    
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( getValue04, IDuration )
+{
+    auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+    ITupletDefSPCs tuplets;
+    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    
+    std::string name = "Quarter";
+    int dots = 1;
+    auto f = createDurationFactory( DurationFactoryType::Standard );
+    auto d = f->createDuration( tuplets, name, dots );
+    
+    auto expected = Rational{ 1, 1 };
+    auto actual = d->getValue();
+    
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( getValue05, IDuration )
+{
+    auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+    ITupletDefSPCs tuplets;
+    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
+    std::string name = "Eighth";
+    int dots = 0;
+    auto f = createDurationFactory( DurationFactoryType::Standard );
+    auto d = f->createDuration( tuplets, name, dots );
+    
+    auto expected = Rational{ 4, 15 };
+    auto actual = d->getValue();
+    
+    CHECK_EQUAL( expected, actual )
+}
+
 TEST( moreTests, IDuration )
 {
     

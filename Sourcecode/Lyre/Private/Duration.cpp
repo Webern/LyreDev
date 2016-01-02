@@ -127,7 +127,28 @@ namespace Lyre
         
         Rational Duration::getValue() const
         {
-            return Rational{ 1, 1 };
+            if ( ! getIsTuplet() )
+            {
+                return myDurDot->getValue();
+            }
+            
+            auto f = createTupletDefFactory( TupletDefFactoryType::Standard );
+            auto one = Rational{ 1, 1 };
+            auto value = myDurDot->getValue();
+            
+            for ( auto t : myTuplets )
+            {
+                auto reducedTupletValue = t->getMultiplier();
+                reducedTupletValue.reduce();
+                
+                if ( reducedTupletValue != one )
+                {
+                    value *= t->getMultiplier();
+                }
+                
+            }
+            
+            return value;
         }
         
         std::ostream& Duration::toStream( std::ostream& os ) const
