@@ -39,6 +39,12 @@ namespace Lyre
         
         virtual ITupletDefUP createTupletDef(
             const Integer noteCount,
+            const String& noteTypeDurBaseName,
+            const Integer inTheSpaceOfCount,
+            const String& inTheSpaceOfTypeDurBaseName ) = 0;
+        
+        virtual ITupletDefUP createTupletDef(
+            const Integer noteCount,
             const IDurDot& noteType,
             const Integer inTheSpaceOfCount,
             const IDurDot& inTheSpaceOfType ) = 0;

@@ -14,6 +14,12 @@ namespace Lyre
             virtual ~TupletDefFactory() = default;
             
             virtual ITupletDefUP createTupletDef(
+                const Integer noteCount,
+                const String& noteTypeDurBaseName,
+                const Integer inTheSpaceOfCount,
+                const String& inTheSpaceOfTypeDurBaseName );
+            
+            virtual ITupletDefUP createTupletDef(
                 const Integer countCount,
                 const IDurDot& countType,
                 const Integer inTheSpaceOf,

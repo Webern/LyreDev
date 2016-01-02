@@ -12,6 +12,13 @@ namespace Lyre
         class TupletDef : public ITupletDef
         {
         public:
+            
+            TupletDef(
+                const Integer noteCount,
+                const String& noteTypeDurBaseName,
+                const Integer inTheSpaceOfCount,
+                const String& inTheSpaceOfTypeDurBaseName );
+            
             TupletDef(
                 const Integer count,
                 const Lyre::IDurDot& countType,
@@ -31,8 +38,6 @@ namespace Lyre
             virtual ~TupletDef() = default;
             
             virtual ITupletDefUP clone() const;
-            
-            virtual // void copyTo( ITupletDefUP& output ) const;
             
             virtual Rational getMultiplier() const;
             virtual Rational getTotalLength() const;

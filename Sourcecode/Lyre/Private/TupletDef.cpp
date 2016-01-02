@@ -10,6 +10,25 @@ namespace Lyre
     namespace Private
     {
         TupletDef::TupletDef(
+            const Integer noteCount,
+            const String& noteTypeDurBaseName,
+            const Integer inTheSpaceOf,
+            const String& inTheSpaceOfTypeDurBaseName )
+        :myCount( 1 )
+        ,myCountType( nullptr )
+        ,myInTheSpaceOf( 1 )
+        ,myInTheSpaceOfType( nullptr )
+        {
+            constructor(
+                noteCount,
+                noteTypeDurBaseName,
+                0,
+                inTheSpaceOf,
+                inTheSpaceOfTypeDurBaseName,
+                0 );
+        }
+        
+        TupletDef::TupletDef(
             const Integer count,
             const Lyre::IDurDot& countType,
             const Integer inTheSpaceOf,

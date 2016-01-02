@@ -23,6 +23,7 @@ namespace Lyre
         virtual String getDottedName() const = 0;
         
         virtual bool getIsTuplet() const = 0;
+        virtual bool getIsNestedTuplet() const = 0;
         virtual int getTupletNestingCount() const = 0;
         virtual ITupletDefSPCsIter getTupletsBegin() const = 0;
         virtual ITupletDefSPCsIter getTupletsEnd() const = 0;

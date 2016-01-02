@@ -8,13 +8,14 @@ namespace Lyre
 {
     namespace Private
     {
-        class TempFakeTupletDef : public ITupletDef
+        ITupletDefUP TupletDefFactory::createTupletDef(
+            const Integer count,
+            const String& noteTypeDurBaseName,
+            const Integer inTheSpaceOf,
+            const String& inTheSpaceOfTypeDurBaseName )
         {
-        public:
-            
-        };
-
-//////////////////////////////////////////////////////////////////////
+            return ITupletDefUP{ new Private::TupletDef{ count, noteTypeDurBaseName, inTheSpaceOf, inTheSpaceOfTypeDurBaseName } };
+        }
         
         ITupletDefUP TupletDefFactory::createTupletDef(
             const Integer count,

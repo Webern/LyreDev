@@ -42,6 +42,7 @@ namespace Lyre
             String getDottedName() const;
             
             bool getIsTuplet() const;
+            bool getIsNestedTuplet() const;
             int getTupletNestingCount() const;
             ITupletDefSPCsIter getTupletsBegin() const;
             ITupletDefSPCsIter getTupletsEnd() const;

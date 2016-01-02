@@ -93,6 +93,11 @@ namespace Lyre
             return false;
         }
         
+        bool Duration::getIsNestedTuplet() const
+        {
+            return getTupletNestingCount() > 1;
+        }
+        
         int Duration::getTupletNestingCount() const
         {
             auto one = Rational{ 1, 1};
