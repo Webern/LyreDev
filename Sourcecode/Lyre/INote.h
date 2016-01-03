@@ -8,7 +8,12 @@
 
 namespace Lyre
 {
-    class INoteGroupsIter;
+    class INote;
+    using INoteUP = std::unique_ptr<INote>;
+    using INoteSP = std::shared_ptr<INote>;
+    using INoteUPC = std::unique_ptr<const INote>;
+    using INoteSPC = std::shared_ptr<const INote>;
+    
     
     class INote
     {
@@ -29,7 +34,7 @@ namespace Lyre
         
         virtual bool getIsGroupMember() const = 0;
         virtual int getGroupMembershipCount() const = 0;
-        virtual const INoteGroupsIter& getGroupsIterator() const = 0;
+        //virtual const NoteGroupsIter& getGroupsIterator() const = 0;
     };
     
     std::ostream& operator<<( std::ostream& os, const INote& note );
