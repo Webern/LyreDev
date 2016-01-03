@@ -436,8 +436,79 @@ TEST( getValue05, IDuration )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( moreTests, IDuration )
+TEST( getValue06, IDuration )
 {
+    auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+    ITupletDefSPCs tuplets;
+    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
+    std::string name = "Eighth";
+    int dots = 1;
+    auto f = createDurationFactory( DurationFactoryType::Standard );
+    auto d = f->createDuration( tuplets, name, dots );
     
-    CHECK_EQUAL( "", "write more tests" )
+    auto expected = Rational{ 2, 5 };
+    auto actual = d->getValue();
+    
+    CHECK_EQUAL( expected, actual )
+}
+
+namespace
+{
+    const static String EXPECTED_STRING = "Eighth.^( 3[Eighth]:2[Eighth] ( 5[Quarter]:4[Quarter] ) )";
+}
+
+TEST( toStream, IDuration )
+{
+    auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+    ITupletDefSPCs tuplets;
+    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
+    std::string name = "Eighth";
+    int dots = 1;
+    auto f = createDurationFactory( DurationFactoryType::Standard );
+    auto d = f->createDuration( tuplets, name, dots );
+    
+    std::stringstream ss;
+    d->toStream( ss );
+    auto expected = EXPECTED_STRING;
+    auto actual = ss.str();
+    
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( streamingOperator, IDuration )
+{
+    auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+    ITupletDefSPCs tuplets;
+    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
+    std::string name = "Eighth";
+    int dots = 1;
+    auto f = createDurationFactory( DurationFactoryType::Standard );
+    auto d = f->createDuration( tuplets, name, dots );
+    
+    std::stringstream ss;
+    ss << (*d);
+    auto expected = EXPECTED_STRING;
+    auto actual = ss.str();
+    
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( toString, IDuration )
+{
+    auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
+    ITupletDefSPCs tuplets;
+    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
+    std::string name = "Eighth";
+    int dots = 1;
+    auto f = createDurationFactory( DurationFactoryType::Standard );
+    auto d = f->createDuration( tuplets, name, dots );
+    
+    auto expected = EXPECTED_STRING;
+    auto actual = d->toString();
+    
+    CHECK_EQUAL( expected, actual )
 }

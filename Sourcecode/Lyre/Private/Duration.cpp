@@ -153,7 +153,37 @@ namespace Lyre
         
         std::ostream& Duration::toStream( std::ostream& os ) const
         {
-            return os << "not implemented";
+            os << (*myDurDot);
+            if ( ! getIsTuplet() )
+            {
+                return os;
+            }
+            int parenthesisCount = 0;
+            auto one = Rational{ 1, 1 };
+            for ( auto it = this->getTupletsBegin();
+                  it != this->getTupletsEnd(); ++it )
+            {
+                auto reducedTupletValue = (*it)->getMultiplier();
+                reducedTupletValue.reduce();
+                if( ! ( reducedTupletValue == one ) )
+                {
+                    if ( parenthesisCount == 0 )
+                    {
+                        os << "^";
+                    }
+                    else // ( parenthesisCount > 0 )
+                    {
+                        os << " ";
+                    }
+                    ++parenthesisCount;
+                    os << "( " << (*(*it));
+                }
+            }
+            for ( int i = 0; i < parenthesisCount; ++i )
+            {
+                os << " )";
+            }
+            return os;
         }
         
         String Duration::toString() const
