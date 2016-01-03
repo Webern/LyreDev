@@ -20,6 +20,8 @@ namespace Lyre
     public:
         virtual ~INote() {}
         
+        virtual INoteUP clone() const = 0;
+        
         virtual IPitchUP getPitch() const = 0;
         virtual void setPitch( const IPitchUP& pitch ) = 0;
         

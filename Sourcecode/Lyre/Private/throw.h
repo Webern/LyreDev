@@ -15,6 +15,7 @@
 
 #endif
 
+#ifndef THROW
 #define THROW(message)                                  \
 throw std::runtime_error (                              \
   std::string( "error in " )                            \
@@ -25,4 +26,15 @@ throw std::runtime_error (                              \
 + std::string( __FUNCTION__ )                           \
 + std::string(": ")                                     \
 + std::string( message ) );
+#endif
+
+#ifndef THROW_NULL
+#define THROW_NULL THROW("null pointer encountered")
+#endif
+
+#ifndef THROW_IF_NULL
+#define THROW_IF_NULL(pointerVariable)               \
+if ( #pointerVariable == nullptr ) { THROW_NULL }
+#endif
+
 
