@@ -26,7 +26,6 @@ namespace Lyre
         virtual void setPitch( const IPitchUP& pitch ) = 0;
         
         virtual IDuration getDuration() const = 0;
-        virtual void setDuration( const IDurationUP& duration ) = 0;
         
         virtual bool getIsRest() const = 0;
         virtual void setIsRest( const bool isRest ) = 0;
@@ -36,7 +35,9 @@ namespace Lyre
         
         virtual bool getIsGroupMember() const = 0;
         virtual int getGroupMembershipCount() const = 0;
-        //virtual const NoteGroupsIter& getGroupsIterator() const = 0;
+        
+        //TODO virtual const NoteGroupsIter& getGroupsIterator() const = 0;
+        
     };
     
     std::ostream& operator<<( std::ostream& os, const INote& note );

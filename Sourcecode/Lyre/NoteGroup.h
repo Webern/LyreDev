@@ -49,6 +49,7 @@ namespace Lyre
         private:
             Iter( const std::shared_ptr<Impl> implInstance );
             std::weak_ptr<Impl> impl;
+            bool myIsValid;
         };
         
         class IterConst
@@ -75,23 +76,26 @@ namespace Lyre
         private:
             IterConst( const std::shared_ptr<Impl> implInstance );
             std::weak_ptr<Impl> impl;
+            bool myIsValid;
         };
-        
-        using NoteGroupIter = NoteGroup::Iter;
         
         virtual int getSize() const;
         
-        virtual NoteGroupIter getIter();
-        virtual const NoteGroupIter getIter( bool makeConst );
-        virtual const NoteGroupIter getIter() const;
+        virtual NoteGroup::Iter getIter();
+        virtual const NoteGroup::IterConst getIter( bool makeConst ) const;
+        virtual const NoteGroup::IterConst getIter() const;
         
         virtual void addNote( const INoteUP& note );
-        virtual void removeNote( const INoteUP& note );
-        virtual void removeNote( const NoteGroupIter& noteIter );
+        virtual void removeNote( const NoteGroup::Iter& noteIter );
+        virtual void removeNote( const NoteGroup::IterConst& noteIter );
         
         virtual void insertNote(
             const INoteUP& note,
-            const NoteGroupIter& insertAfterThisNote );
+            const NoteGroup::Iter& insertAfterThisNote );
+        
+        virtual void insertNote(
+            const INoteUP& note,
+            const NoteGroup::IterConst& insertAfterThisNote );
         
     private:
         std::shared_ptr<Impl> impl;

@@ -5,7 +5,7 @@
 
 namespace
 {
-    using Notes = std::vector<const Lyre::INoteSP>;
+    using Notes = std::vector<Lyre::INoteSP>;
     using NotesIter = Notes::iterator;
     using NotesIterConst = Notes::const_iterator;
 }
@@ -192,34 +192,32 @@ namespace Lyre
             myNotes.push_back( shared );
         }
         
-        void removeNote( const NoteGroupIter& noteIter )
+        void removeNote( const NoteGroup::Iter& noteIter )
         {
             if ( ! noteIter.getIsValid() )
             {
                 THROW( "invalid note iter" );
             }
-            for ( auto it = myNotes.cbegin();
-                  it != myNotes.cend();
+            for ( auto it = myNotes.begin();
+                  it != myNotes.end();
                   ++it )
             {
-#if 1==0
+
                 if ( it->get() == noteIter.getCurrentNote().get() )
                 {
                     myNotes.erase( it );
                     return;
                 }
-#endif
             }
             THROW( "note not found in the note group" )
         }
         
         void insertNote(
-            const INoteUP& note,
-            const NoteGroupIter& insertAfterThisNote )
+            const NoteGroup::Iter& insertAfterThisNote,
+            const INoteUP& note )
         {
             note.get();
             insertAfterThisNote.getCurrentNote();
-#if 1==0
             THROW_IF_NULL( note )
             INoteUP cloned = note->clone();
             const INoteSP shared = Private::toShared( cloned );
@@ -227,9 +225,9 @@ namespace Lyre
             {
                 THROW( "invalid note iter" );
             }
-            for ( auto it = myNotes.cbegin();
-                 it != myNotes.cend();
-                 ++it )
+            for ( auto it = myNotes.begin();
+                  it != myNotes.end();
+                  ++it )
             {
                 if ( it->get() == insertAfterThisNote.getCurrentNote().get() )
                 {
@@ -238,9 +236,21 @@ namespace Lyre
                 }
             }
             THROW( "invalid note iter" )
-#endif
         }
         
+        static std::shared_ptr<Impl> getPtr( std::weak_ptr<NoteGroup::Impl>& weakPtr )
+        {
+            if ( weakPtr.expired() )
+            {
+                THROW( "invalid object state" )
+            }
+            auto temp = weakPtr.lock();
+            if ( !temp )
+            {
+                THROW( "invalid object state" )
+            }
+            return temp;
+        }
         
     private:
         Notes myNotes;
@@ -249,15 +259,246 @@ namespace Lyre
     };
 
 //////////////////////////////////////////////////////////////////////////////
-// NoteGroupIter /////////////////////////////////////////////////////////////
+// NoteGroup::Iter /////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
+    template<typename T>
+    std::shared_ptr<T> getPtr( const std::weak_ptr<T>& weakPtr )
+    {
+        if ( weakPtr.expired() )
+        {
+            THROW( "invalid object state" )
+        }
+        auto temp = weakPtr.lock();
+        if ( !temp )
+        {
+            THROW( "invalid object state" )
+        }
+        return std::move( temp );
+    }
+    
+    template<typename T>
+    const std::shared_ptr<T>& checkPtr( const std::shared_ptr<T>& ptr )
+    {
+        if ( !ptr )
+        {
+            THROW( "invalid object state" )
+        }
+        return ptr;
+    }
+    
+    template<typename T>
+    std::shared_ptr<T>& checkPtr( std::shared_ptr<T>& ptr )
+    {
+        if ( !ptr )
+        {
+            THROW( "invalid object state" )
+        }
+        return ptr;
+    }
+    
+    NoteGroup::Iter::Iter()
+    :impl()
+    ,myIsValid( false )
+    {}
+    
+    NoteGroup::Iter::Iter( const std::shared_ptr<Impl> implInstance )
+    :impl( implInstance )
+    ,myIsValid( false )
+    {
+        auto temp = impl.lock();
+        if ( !impl.expired() && temp )
+        {
+            myIsValid = true;
+        }
+    }
+    
+    NoteGroup::Iter::~Iter()
+    {
+        impl.reset();
+    }
+    
+    bool NoteGroup::Iter::getIsValid() const
+    {
+        return getPtr( impl )->getIsValid();
+    }
+    
+    bool NoteGroup::Iter::getIsFirst() const
+    {
+        return getPtr( impl )->getIsFirst();
+    }
+    
+    bool NoteGroup::Iter::getIsLast() const
+    {
+        return getPtr( impl )->getIsLast();
+    }
+    
+    bool NoteGroup::Iter::getIsEnd() const
+    {
+        return getPtr( impl )->getIsEnd();
+    }
+    
+    const INoteSPC NoteGroup::Iter::getCurrentNote() const
+    {
+        return getPtr( impl )->getCurrentNote();
+    }
+    
+    const INoteSPC NoteGroup::Iter::getNextNote() const
+    {
+        return getPtr( impl )->getNextNote();
+    }
+    
+    const INoteSPC NoteGroup::Iter::getPreviousNote() const
+    {
+        return getPtr( impl )->getPreviousNote();
+    }
+    
+    const INoteSP NoteGroup::Iter::getCurrentNote()
+    {
+        return getPtr( impl )->getCurrentNote();
+    }
+    
+    const INoteSP NoteGroup::Iter::getNextNote()
+    {
+        return getPtr( impl )->getNextNote();
+    }
+    
+    const INoteSP NoteGroup::Iter::getPreviousNote()
+    {
+        return getPtr( impl )->getPreviousNote();
+    }
+    
+    void NoteGroup::Iter::next()
+    {
+        getPtr( impl )->next();
+    }
+    
+    void NoteGroup::Iter::previous()
+    {
+        getPtr( impl )->previous();
+    }
+    
 //////////////////////////////////////////////////////////////////////////////
-// NoteGroupIterConst ////////////////////////////////////////////////////////
+// NoteGroup::IterConst ////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
+    NoteGroup::IterConst::IterConst()
+    :impl()
+    ,myIsValid( false )
+    {}
+    
+    NoteGroup::IterConst::IterConst( const std::shared_ptr<Impl> implInstance )
+    :impl( implInstance )
+    ,myIsValid( false )
+    {
+        auto temp = impl.lock();
+        if ( !impl.expired() && temp )
+        {
+            myIsValid = true;
+        }
+    }
+    
+    NoteGroup::IterConst::~IterConst()
+    {
+        impl.reset();
+    }
+    
+    bool NoteGroup::IterConst::getIsValid() const
+    {
+        return getPtr( impl )->getIsValid();
+    }
+    
+    bool NoteGroup::IterConst::getIsFirst() const
+    {
+        return getPtr( impl )->getIsFirst();
+    }
+    
+    bool NoteGroup::IterConst::getIsLast() const
+    {
+        return getPtr( impl )->getIsLast();
+    }
+    
+    bool NoteGroup::IterConst::getIsEnd() const
+    {
+        return getPtr( impl )->getIsEnd();
+    }
+    
+    const INoteSPC NoteGroup::IterConst::getCurrentNote() const
+    {
+        return getPtr( impl )->getCurrentNote();
+    }
+    
+    const INoteSPC NoteGroup::IterConst::getNextNote() const
+    {
+        return getPtr( impl )->getNextNote();
+    }
+    
+    const INoteSPC NoteGroup::IterConst::getPreviousNote() const
+    {
+        return getPtr( impl )->getPreviousNote();
+    }
+    
+    void NoteGroup::IterConst::next()
+    {
+        getPtr( impl )->next();
+    }
+    
+    void NoteGroup::IterConst::previous()
+    {
+        getPtr( impl )->previous();
+    }
+    
 //////////////////////////////////////////////////////////////////////////////
 // NoteGroup /////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
+    int NoteGroup::getSize() const
+    {
+    	return checkPtr( impl )->getSize();
+    }
+        
+    NoteGroup::Iter NoteGroup::getIter()
+    {
+        checkPtr( impl );
+        return Iter( impl );
+    }
 
+    const NoteGroup::IterConst NoteGroup::getIter( bool makeConst )
+    {
+
+    }
+    
+    const NoteGroup::Iter NoteGroup::getIter() const
+    {
+
+    }
+    
+        
+    void NoteGroup::addNote( const INoteUP& note )
+    {
+
+    }
+    
+    void NoteGroup::removeNote( const NoteGroup::Iter& noteIter )
+    {
+
+    }
+    
+    void NoteGroup::removeNote( const NoteGroup::IterConst& noteIter )
+    {
+
+    }
+        
+    void NoteGroup::insertNote(
+        const INoteUP& note,
+        const NoteGroup::Iter& insertAfterThisNote )
+    {
+
+    }
+        
+    void NoteGroup::insertNote(
+        const NoteGroup::IterConst& insertAfterThisNote,
+        const INoteUP& note )
+    {
+
+    }
 }
