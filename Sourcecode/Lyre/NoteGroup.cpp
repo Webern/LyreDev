@@ -192,7 +192,7 @@ namespace Lyre
             myNotes.push_back( shared );
         }
         
-        void removeNote( const NoteGroup::Iter& noteIter )
+        void removeNote( const NoteGroup::IterConst& noteIter )
         {
             if ( ! noteIter.getIsValid() )
             {
@@ -203,6 +203,26 @@ namespace Lyre
                   ++it )
             {
 
+                if ( it->get() == noteIter.getCurrentNote().get() )
+                {
+                    myNotes.erase( it );
+                    return;
+                }
+            }
+            THROW( "note not found in the note group" )
+        }
+        
+        void removeNote( const NoteGroup::Iter& noteIter )
+        {
+            if ( ! noteIter.getIsValid() )
+            {
+                THROW( "invalid note iter" );
+            }
+            for ( auto it = myNotes.begin();
+                 it != myNotes.end();
+                 ++it )
+            {
+                
                 if ( it->get() == noteIter.getCurrentNote().get() )
                 {
                     myNotes.erase( it );
@@ -228,6 +248,31 @@ namespace Lyre
             for ( auto it = myNotes.begin();
                   it != myNotes.end();
                   ++it )
+            {
+                if ( it->get() == insertAfterThisNote.getCurrentNote().get() )
+                {
+                    myNotes.insert( it, shared );
+                    return;
+                }
+            }
+            THROW( "invalid note iter" )
+        }
+        void insertNote(
+            const NoteGroup::IterConst& insertAfterThisNote,
+            const INoteUP& note )
+        {
+            note.get();
+            insertAfterThisNote.getCurrentNote();
+            THROW_IF_NULL( note )
+            INoteUP cloned = note->clone();
+            const INoteSP shared = Private::toShared( cloned );
+            if ( ! insertAfterThisNote.getIsValid() )
+            {
+                THROW( "invalid note iter" );
+            }
+            for ( auto it = myNotes.begin();
+                 it != myNotes.end();
+                 ++it )
             {
                 if ( it->get() == insertAfterThisNote.getCurrentNote().get() )
                 {
@@ -459,46 +504,50 @@ namespace Lyre
     NoteGroup::Iter NoteGroup::getIter()
     {
         checkPtr( impl );
-        return Iter( impl );
+        return Iter(); // TODO: oops
     }
 
     const NoteGroup::IterConst NoteGroup::getIter( bool makeConst )
     {
-
+        (makeConst = false);
+        checkPtr( impl );
+        return IterConst(); // TODO: oops
     }
     
-    const NoteGroup::Iter NoteGroup::getIter() const
+    const NoteGroup::IterConst NoteGroup::getIter() const
     {
-
+        checkPtr( impl );
+        return IterConst(); // TODO: oops
     }
     
         
     void NoteGroup::addNote( const INoteUP& note )
     {
-
+        THROW_IF_NULL( note );
+        impl->addNote( note );
     }
     
     void NoteGroup::removeNote( const NoteGroup::Iter& noteIter )
     {
-
+        impl->removeNote( noteIter );
     }
     
     void NoteGroup::removeNote( const NoteGroup::IterConst& noteIter )
     {
-
+        impl->removeNote( noteIter );
     }
         
     void NoteGroup::insertNote(
         const INoteUP& note,
         const NoteGroup::Iter& insertAfterThisNote )
     {
-
+        impl->insertNote( insertAfterThisNote, note );
     }
         
     void NoteGroup::insertNote(
-        const NoteGroup::IterConst& insertAfterThisNote,
-        const INoteUP& note )
+        const INoteUP& note,
+        const NoteGroup::IterConst& insertAfterThisNote )
     {
-
+        impl->insertNote( insertAfterThisNote, note );
     }
 }

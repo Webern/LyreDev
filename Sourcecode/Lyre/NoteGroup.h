@@ -82,7 +82,7 @@ namespace Lyre
         virtual int getSize() const;
         
         virtual NoteGroup::Iter getIter();
-        virtual const NoteGroup::IterConst getIter( bool makeConst ) const;
+        virtual const NoteGroup::IterConst getIter( bool makeConst );
         virtual const NoteGroup::IterConst getIter() const;
         
         virtual void addNote( const INoteUP& note );
