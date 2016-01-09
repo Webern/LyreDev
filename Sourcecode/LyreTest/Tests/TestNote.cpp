@@ -63,9 +63,39 @@ TEST( getDuration, INote )
     CHECK_EQUAL( duration->getValue() , copiedDuration->getValue() )
 }
 
-TEST( TODO, INote )
+TEST( isRest, INote )
 {
-    CHECK_EQUAL( "", "TODO More Tests" )
+    auto pitchFactory = createPitchFactory( PitchFactoryType::StandardChromatic );
+    auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
+    auto noteFactory = createNoteFactory( NoteFactoryType::Standard );
+    
+    auto pitch = pitchFactory->createPitch();
+    
+    pitch->setAlterValue( 0 );
+    pitch->setStepValue( 3 );
+    pitch->setOctaveValue( 6 );
+    
+    auto duration = durationFactory->createDuration( "Half", 0 );
+    auto note = noteFactory->createNote( pitch, duration );
+    
+    CHECK_EQUAL( 0, note->getPitch()->getAlterValue() )
+    CHECK_EQUAL( 3, note->getPitch()->getStepValue() )
+    CHECK_EQUAL( 6, note->getPitch()->getOctaveValue() )
+    CHECK( ! note->getIsRest() )
+    
+    note->setIsRest( true );
+    
+    CHECK_EQUAL( 0, note->getPitch()->getAlterValue() )
+    CHECK_EQUAL( 3, note->getPitch()->getStepValue() )
+    CHECK_EQUAL( 6, note->getPitch()->getOctaveValue() )
+    CHECK( note->getIsRest() )
+    
+    note->setIsRest( false );
+    
+    CHECK_EQUAL( 0, note->getPitch()->getAlterValue() )
+    CHECK_EQUAL( 3, note->getPitch()->getStepValue() )
+    CHECK_EQUAL( 6, note->getPitch()->getOctaveValue() )
+    CHECK( ! note->getIsRest() )
 }
 
 TEST( toString, INote )
@@ -83,12 +113,15 @@ TEST( toString, INote )
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     ITupletDefSPCs tuplets;
     
+    tuplets.push_back( tupletFactory->createTupletDef( 5, 4, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 3, 2, "Eighth" ) );
     
     auto duration = durationFactory->createDuration( tuplets, "Eighth", 1 );
     auto note = noteFactory->createNote( pitch, duration );
     
-    String expected = "{ Db5 : Eighth.^( 3[Eighth]:2[Eighth] ) }";
+    String expected =
+    "{ Db5 : Eighth.^( 5[Eighth]:4[Eighth] ( 3[Eighth]:2[Eighth] ) ) }";
+    
     String actual = note->toString();
     
     CHECK_EQUAL( expected, actual )
