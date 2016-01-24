@@ -110,6 +110,7 @@
 		2926C8791C0D717200C5D4C0 /* IDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDuration.h; path = ../../Sourcecode/Lyre/IDuration.h; sourceTree = "<group>"; };
 		2928FAFC1C54956A00644429 /* INoteGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INoteGroup.h; path = ../../Sourcecode/Lyre/INoteGroup.h; sourceTree = "<group>"; };
 		2928FAFF1C549F2000644429 /* ForwardDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForwardDec.h; path = ../../Sourcecode/Lyre/ForwardDec.h; sourceTree = "<group>"; };
+		2928FB021C5541D800644429 /* INoteIter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INoteIter.h; path = ../../Sourcecode/Lyre/INoteIter.h; sourceTree = "<group>"; };
 		293F25DD1C09ADD4006096F2 /* Duration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Duration.cpp; path = ../../Sourcecode/Lyre/Private/Duration.cpp; sourceTree = "<group>"; };
 		293F25DE1C09ADD4006096F2 /* Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Duration.h; path = ../../Sourcecode/Lyre/Private/Duration.h; sourceTree = "<group>"; };
 		293F25E21C09B171006096F2 /* toShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = toShared.h; path = ../../Sourcecode/Lyre/Private/toShared.h; sourceTree = "<group>"; };
@@ -220,6 +221,7 @@
 		298BA3791C36F5C50024F9F1 /* Music Objects */ = {
 			isa = PBXGroup;
 			children = (
+				2928FB021C5541D800644429 /* INoteIter.h */,
 				2928FAFC1C54956A00644429 /* INoteGroup.h */,
 				29109DD61BE559F2001FF3E6 /* IAlter.cpp */,
 				29109DD71BE559F2001FF3E6 /* IAlter.h */,
