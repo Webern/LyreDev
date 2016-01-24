@@ -3,15 +3,13 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IDurBase.h"
 #include "Lyre/Rational.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
-        class DurBaseBreve;
-        using DurBaseBreveSP = std::shared_ptr<DurBaseBreve>;
-        using DurBaseBreveUP = std::unique_ptr<DurBaseBreve>;
+        FORWARD_DECLARE(DurBaseBreve)
         
         class DurBaseBreve : public IDurBase
         {

@@ -3,14 +3,13 @@
 #include "Lyre/INote.h"
 #include "Lyre/IPitch.h"
 #include "Lyre/IDuration.h"
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
-        class Note;
-        using NoteSP = std::shared_ptr<Note>;
-        using NoteUP = std::unique_ptr<Note>;
+        FORWARD_DECLARE(Note)
         
         class Note : public INote
         {

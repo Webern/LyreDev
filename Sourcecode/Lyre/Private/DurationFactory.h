@@ -3,12 +3,14 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/ITupletDef.h"
 #include "Lyre/IDurationFactory.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
+        FORWARD_DECLARE(DurationFactory)
+        
         class DurationFactory : public IDurationFactory
         {
         public:
@@ -22,7 +24,7 @@ namespace Lyre
                 const Integer dotCount ) const;
             
             virtual IDurationUP createDuration(
-                const ITupletDefSPCs& tuplets,
+                const VecITupletDefSPC& tuplets,
                 const String& durName,
                 const Integer dotCount ) const;
         };

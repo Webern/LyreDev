@@ -1,7 +1,7 @@
 //PUBLIC
 #pragma once
 #include "Lyre/TypeDefs.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
@@ -10,13 +10,8 @@ namespace Lyre
         Standard = 0
     };
     
-    class IDurBase;
-    using IDurBaseSP = std::shared_ptr<IDurBase>;
-    using IDurBaseUP = std::unique_ptr<IDurBase>;
-    
-    class IDurBaseFactory;
-    using IDurBaseFactorySP = std::shared_ptr<IDurBaseFactory>;
-    using IDurBaseFactoryUP = std::unique_ptr<IDurBaseFactory>;
+    FORWARD_DECLARE(IDurBase)
+    FORWARD_DECLARE(IDurBaseFactory)
     
     IDurBaseFactoryUP createDurBaseFactory( const DurBaseFactoryType t );
     

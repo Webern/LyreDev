@@ -2,13 +2,11 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/Rational.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class IDurBase;
-    using IDurBaseSP = std::shared_ptr<IDurBase>;
-    using IDurBaseUP = std::unique_ptr<IDurBase>;
+    FORWARD_DECLARE(IDurBase)
     
     class IDurBase
     {

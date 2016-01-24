@@ -33,7 +33,7 @@ namespace Lyre
         {}
         
         Duration::Duration(
-            const ITupletDefSPCs& tuplets,
+            const VecITupletDefSPC& tuplets,
             const String& durName,
             const Integer dotCount )
         :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
@@ -115,12 +115,12 @@ namespace Lyre
             return nestingCount;
         }
         
-        ITupletDefSPCsIter Duration::getTupletsBegin() const
+        VecITupletDefSPCIterC Duration::getTupletsBegin() const
         {
             return myTuplets.cbegin();
         }
         
-        ITupletDefSPCsIter Duration::getTupletsEnd() const
+        VecITupletDefSPCIterC Duration::getTupletsEnd() const
         {
             return myTuplets.cend();
         }

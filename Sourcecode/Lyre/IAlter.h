@@ -1,13 +1,12 @@
 //PUBLIC
 #pragma once
 #include "Lyre/TypeDefs.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class IAlter;
-    using IAlterSP = std::shared_ptr<IAlter>;
-    using IAlterUP = std::unique_ptr<IAlter>;
+    FORWARD_DECLARE(IAlter)
+    
     class IAlter
     {
     public:

@@ -5,15 +5,13 @@
 #include "Lyre/Rational.h"
 #include "Lyre/IDurBase.h"
 #include "Lyre/IDurBaseFactory.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
-        class DurDot;
-        using DurDotSP = std::shared_ptr<DurDot>;
-        using DurDotUP = std::unique_ptr<DurDot>;
+        FORWARD_DECLARE(DurDot)
         
         class DurDot : public IDurDot
         {

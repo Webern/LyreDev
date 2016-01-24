@@ -111,7 +111,7 @@ TEST( toString, INote )
     pitch->setOctaveValue( 5 );
     
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     
     tuplets.push_back( tupletFactory->createTupletDef( 5, 4, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 3, 2, "Eighth" ) );
@@ -140,7 +140,7 @@ TEST( toStream, INote )
     pitch->setOctaveValue( 3 );
     
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     
     tuplets.push_back( tupletFactory->createTupletDef( 5, 4, "16th" ) );
     
@@ -169,7 +169,7 @@ TEST( streamingOperator, INote )
     pitch->setOctaveValue( 3 );
     
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     
     tuplets.push_back( tupletFactory->createTupletDef( 1, 1, "16th" ) );
     

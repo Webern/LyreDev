@@ -2,12 +2,14 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/ITupletDefFactory.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
+        FORWARD_DECLARE(TupletDefFactory)
+        
         class TupletDefFactory : public ITupletDefFactory
         {
         public:

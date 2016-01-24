@@ -3,17 +3,11 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IPitch.h"
 #include "Lyre/IDuration.h"
-#include <vector>
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class INote;
-    using INoteUP = std::unique_ptr<INote>;
-    using INoteSP = std::shared_ptr<INote>;
-    using INoteUPC = std::unique_ptr<const INote>;
-    using INoteSPC = std::shared_ptr<const INote>;
-    
+    FORWARD_DECLARE(INote)
     
     class INote
     {

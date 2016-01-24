@@ -4,13 +4,11 @@
 #include "Lyre/IDuration.h"
 #include "Lyre/ITupletDef.h"
 #include "Lyre/IDurDotFactory.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class IDurDot;
-    using IDurDotSP = std::shared_ptr<IDurDot>;
-    using IDurDotUP = std::unique_ptr<IDurDot>;
+    FORWARD_DECLARE(IDurDot)
     
     namespace Private
     {
@@ -30,7 +28,7 @@ namespace Lyre
 
             
             Duration(
-                const ITupletDefSPCs& tuplets,
+                const VecITupletDefSPC& tuplets,
                 const String& durName,
                 const Integer dotCount );
             
@@ -44,8 +42,8 @@ namespace Lyre
             bool getIsTuplet() const;
             bool getIsNestedTuplet() const;
             int getTupletNestingCount() const;
-            ITupletDefSPCsIter getTupletsBegin() const;
-            ITupletDefSPCsIter getTupletsEnd() const;
+            VecITupletDefSPCIterC getTupletsBegin() const;
+            VecITupletDefSPCIterC getTupletsEnd() const;
             
             Rational getValue() const;
 
@@ -55,7 +53,7 @@ namespace Lyre
         private:
             IDurDotFactoryUP myDurDotFactory;
             IDurDotUP myDurDot;
-            ITupletDefSPCs myTuplets;
+            VecITupletDefSPC myTuplets;
         };
     }
 }

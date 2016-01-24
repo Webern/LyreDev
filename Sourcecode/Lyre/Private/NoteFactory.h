@@ -1,14 +1,13 @@
 //PRIVATE
 #pragma once
 #include "Lyre/INoteFactory.h"
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
-        class NoteFactory;
-        using NoteFactorySP = std::shared_ptr<NoteFactory>;
-        using NoteFactoryUP = std::unique_ptr<NoteFactory>;
+        FORWARD_DECLARE(NoteFactory)
         
         class NoteFactory : public INoteFactory
         {

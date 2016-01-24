@@ -2,17 +2,12 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/Rational.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class IDurDot;
-    using IDurDotSP = std::shared_ptr<IDurDot>;
-    using IDurDotUP = std::unique_ptr<IDurDot>;
-    
-    class IDurBase;
-    using IDurBaseSP = std::shared_ptr<IDurBase>;
-    using IDurBaseUP = std::unique_ptr<IDurBase>;
+    FORWARD_DECLARE(IDurDot)
+    FORWARD_DECLARE(IDurBase)
     
     static const Integer DURATION_MAX_DOTS = 20;
     

@@ -1,14 +1,13 @@
 //PRIVATE
 #pragma once
 #include "Lyre/IPitchName.h"
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
-        class PitchName;
-        using PitchNameSP = std::shared_ptr<PitchName>;
-        using PitchNameUP = std::unique_ptr<PitchName>;
+        FORWARD_DECLARE(PitchName)
         
         class PitchName : public IPitchName
         {

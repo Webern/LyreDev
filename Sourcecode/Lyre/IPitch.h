@@ -1,13 +1,11 @@
 //PUBLIC
 #pragma once
 #include "Lyre/TypeDefs.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class IPitch;
-    using IPitchSP = std::shared_ptr<IPitch>;
-    using IPitchUP = std::unique_ptr<IPitch>;
+    FORWARD_DECLARE(IPitch)
     
     class IPitch
     {

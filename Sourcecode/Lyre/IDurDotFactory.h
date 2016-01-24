@@ -2,7 +2,7 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IDurDot.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
@@ -11,13 +11,8 @@ namespace Lyre
         Standard = 0
     };
     
-    class IDurDot;
-    using IDurDotSP = std::shared_ptr<IDurDot>;
-    using IDurDotUP = std::unique_ptr<IDurDot>;
-    
-    class IDurDotFactory;
-    using IDurDotFactorySP = std::shared_ptr<IDurDotFactory>;
-    using IDurDotFactoryUP = std::unique_ptr<IDurDotFactory>;
+    FORWARD_DECLARE(IDurDot)
+    FORWARD_DECLARE(IDurDotFactory)
     
     IDurDotFactoryUP createDurDotFactory( const DurDotFactoryType t );
 

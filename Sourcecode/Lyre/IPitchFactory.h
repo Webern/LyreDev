@@ -2,13 +2,11 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IPitch.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class IPitchFactory;
-    using IPitchFactorySP = std::shared_ptr<IPitchFactory>;
-    using IPitchFactoryUP = std::unique_ptr<IPitchFactory>;
+    FORWARD_DECLARE(IPitchFactory)
     
     enum class PitchFactoryType
     {

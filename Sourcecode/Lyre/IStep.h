@@ -1,13 +1,12 @@
 //PUBLIC
 #pragma once
 #include "Lyre/TypeDefs.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class IStep;
-    using IStepSP = std::shared_ptr<IStep>;
-    using IStepUP = std::unique_ptr<IStep>;
+    FORWARD_DECLARE(IStep)
+    
     class IStep
     {
     public:

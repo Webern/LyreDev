@@ -3,15 +3,13 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IDurBase.h"
 #include "Lyre/Rational.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
-        class DurBase8th;
-        using DurBase8thSP = std::shared_ptr<DurBase8th>;
-        using DurBase8thUP = std::unique_ptr<DurBase8th>;
+        FORWARD_DECLARE(DurBase8th)
         
         class DurBase8th : public IDurBase
         {

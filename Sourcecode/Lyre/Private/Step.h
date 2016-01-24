@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IStep.h"
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
@@ -18,9 +19,7 @@ namespace Lyre
             B = 7
         };
         
-        class Step;
-        using StepSP = std::shared_ptr<Step>;
-        using StepUP = std::unique_ptr<Step>;
+        FORWARD_DECLARE(Step)
         
         class Step : public IStep
         {

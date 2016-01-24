@@ -3,12 +3,14 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/ITupletDef.h"
 #include "Lyre/Private/DurDot.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
+        FORWARD_DECLARE(TupletDef)
+        
         class TupletDef : public ITupletDef
         {
         public:

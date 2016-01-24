@@ -4,15 +4,11 @@
 #include "Lyre/INote.h"
 #include "Lyre/IDuration.h"
 #include "Lyre/IPitch.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class INoteFactory;
-    using INoteFactoryUP = std::unique_ptr<INoteFactory>;
-    using INoteFactorySP = std::shared_ptr<INoteFactory>;
-    using INoteFactoryUPC = std::unique_ptr<const INoteFactory>;
-    using INoteFactorySPC = std::shared_ptr<const INoteFactory>;
+    FORWARD_DECLARE(INoteFactory)
     
     enum class NoteFactoryType
     {

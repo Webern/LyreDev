@@ -2,16 +2,13 @@
 #pragma once
 #include "Lyre/TypeDefs.h"
 #include "Lyre/IDurDotFactory.h"
-#include <memory>
-#include <map>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
-        class DurDotFactory;
-        using DurDotFactorySP = std::shared_ptr<DurDotFactory>;
-        using DurDotFactoryUP = std::unique_ptr<DurDotFactory>;
+        FORWARD_DECLARE(DurDotFactory)
         
         class DurDotFactory : public IDurDotFactory
         {

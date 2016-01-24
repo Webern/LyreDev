@@ -26,7 +26,7 @@ namespace Lyre
         }
         
         IDurationUP DurationFactory::createDuration(
-            const ITupletDefSPCs& tuplets,
+            const VecITupletDefSPC& tuplets,
             const String& durName,
             const Integer dotCount ) const
         {

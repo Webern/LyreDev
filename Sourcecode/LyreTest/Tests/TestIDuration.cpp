@@ -39,7 +39,7 @@ TEST( CtorStringDots, IDuration )
 TEST( CtorTuplet, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     
     std::string name = "Eighth";
@@ -58,7 +58,7 @@ TEST( CtorTuplet, IDuration )
 TEST( getDurBaseValue, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 5, "16th", 4, "16th" ) );
     
     std::string name = "Eighth";
@@ -75,7 +75,7 @@ TEST( getDurBaseValue, IDuration )
 TEST( getDurBaseName, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 7, "16th", 4, "16th" ) );
     
     std::string name = "32nd";
@@ -92,7 +92,7 @@ TEST( getDurBaseName, IDuration )
 TEST( getDotCount, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 7, "16th", 4, "16th" ) );
     
     std::string name = "32nd";
@@ -109,7 +109,7 @@ TEST( getDotCount, IDuration )
 TEST( getDottedBaseValue, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     
     std::string name = "32nd";
@@ -126,7 +126,7 @@ TEST( getDottedBaseValue, IDuration )
 TEST( getDottedBaseName, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     
     std::string name = "Half";
@@ -143,7 +143,7 @@ TEST( getDottedBaseName, IDuration )
 TEST( getIsTuplet_false, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     
     std::string name = "Half";
@@ -160,7 +160,7 @@ TEST( getIsTuplet_false, IDuration )
 TEST( getIsTuplet_true, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     
     std::string name = "Half";
@@ -177,7 +177,7 @@ TEST( getIsTuplet_true, IDuration )
 TEST( getIsNestedTuplet_false_01, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    //ITupletDefSPCs tuplets;
+    //VecITupletDefSPC tuplets;
     //tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     
     std::string name = "Half";
@@ -194,7 +194,7 @@ TEST( getIsNestedTuplet_false_01, IDuration )
 TEST( getIsNestedTuplet_false_02, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     
     std::string name = "Half";
@@ -211,7 +211,7 @@ TEST( getIsNestedTuplet_false_02, IDuration )
 TEST( getIsNestedTuplet_false_03, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Eighth", 1, "Eighth" ) );
     
@@ -229,7 +229,7 @@ TEST( getIsNestedTuplet_false_03, IDuration )
 TEST( getIsNestedTuplet_false_04, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     
@@ -247,7 +247,7 @@ TEST( getIsNestedTuplet_false_04, IDuration )
 TEST( getIsNestedTuplet_true_01, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Whole", 4, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     
@@ -265,7 +265,7 @@ TEST( getIsNestedTuplet_true_01, IDuration )
 TEST( getTupletNestingCount_A, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Eighth", 1, "Eighth" ) );
     
@@ -283,7 +283,7 @@ TEST( getTupletNestingCount_A, IDuration )
 TEST( getTupletNestingCount_B, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Eighth", 1, "Eighth" ) );
     
@@ -301,7 +301,7 @@ TEST( getTupletNestingCount_B, IDuration )
 TEST( getTupletNestingCount_C, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Eighth", 4, "Eighth" ) );
     
@@ -319,7 +319,7 @@ TEST( getTupletNestingCount_C, IDuration )
 TEST( getTupletBegin, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Eighth", 4, "Eighth" ) );
     
@@ -337,7 +337,7 @@ TEST( getTupletBegin, IDuration )
 TEST( getTupletEnd, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 2, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 2, "Eighth", 4, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 3, "16th", 4, "16th" ) );
@@ -388,7 +388,7 @@ TEST( getValue02, IDuration )
 TEST( getValue03, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
 
     std::string name = "Quarter";
@@ -405,7 +405,7 @@ TEST( getValue03, IDuration )
 TEST( getValue04, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     
     std::string name = "Quarter";
@@ -422,7 +422,7 @@ TEST( getValue04, IDuration )
 TEST( getValue05, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
     std::string name = "Eighth";
@@ -439,7 +439,7 @@ TEST( getValue05, IDuration )
 TEST( getValue06, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
     std::string name = "Eighth";
@@ -461,7 +461,7 @@ namespace
 TEST( toStream, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
     std::string name = "Eighth";
@@ -480,7 +480,7 @@ TEST( toStream, IDuration )
 TEST( streamingOperator, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
     std::string name = "Eighth";
@@ -499,7 +499,7 @@ TEST( streamingOperator, IDuration )
 TEST( toString, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
-    ITupletDefSPCs tuplets;
+    VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
     std::string name = "Eighth";

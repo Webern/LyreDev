@@ -1,14 +1,13 @@
 //PRIVATE
 #pragma once
 #include "Lyre/IEnum.h"
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
     namespace Private
     {
-        class Enum;
-        using EnumSP = std::shared_ptr<Enum>;
-        using EnumUP = std::unique_ptr<Enum>;
+        FORWARD_DECLARE(Enum)
         
         class Enum : public IEnum
         {

@@ -3,13 +3,11 @@
 #include "Lyre/TypeDefs.h"
 #include "Lyre/Rational.h"
 #include "Lyre/ITupletDef.h"
-#include <memory>
+#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {
-    class IDuration;
-    using IDurationSP = std::shared_ptr<IDuration>;
-    using IDurationUP = std::unique_ptr<IDuration>;
+    FORWARD_DECLARE(IDuration)
     
     class IDuration
     {
@@ -25,8 +23,8 @@ namespace Lyre
         virtual bool getIsTuplet() const = 0;
         virtual bool getIsNestedTuplet() const = 0;
         virtual int getTupletNestingCount() const = 0;
-        virtual ITupletDefSPCsIter getTupletsBegin() const = 0;
-        virtual ITupletDefSPCsIter getTupletsEnd() const = 0;
+        virtual VecITupletDefSPCIterC getTupletsBegin() const = 0;
+        virtual VecITupletDefSPCIterC getTupletsEnd() const = 0;
         
         virtual Rational getValue() const = 0;
         
