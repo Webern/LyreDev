@@ -28,8 +28,5 @@ namespace Lyre
         virtual bool previous() = 0;
         virtual void jump( const int index ) = 0;
         
-    protected:
-        INoteIter( INoteGroup* noteGroupP );
-        
     };
 }
