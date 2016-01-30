@@ -14,6 +14,7 @@ namespace Lyre
         friend class INoteGroup;
         
     public:
+        virtual ~INoteIter() {}
         virtual const INoteSP getPrevious() const = 0;
         virtual const INoteSP getCurrent() const = 0;
         virtual const INoteSP getNext() const = 0;

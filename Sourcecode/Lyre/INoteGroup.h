@@ -2,7 +2,6 @@
 #pragma once
 #include "Lyre/ForwardDec.h"
 #include "Lyre/Rational.h"
-#include "Lyre/INoteIter.h"
 
 namespace Lyre
 {
@@ -16,7 +15,7 @@ namespace Lyre
         friend class INoteIter;
         
     public:
-        
+        virtual ~INoteGroup() {}
         virtual INoteGroupUP clone() const = 0;
         virtual bool getIsEmpty() const = 0;
         virtual int getCount() const = 0;
