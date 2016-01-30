@@ -5,7 +5,7 @@
 #include "Lyre/IDurationFactory.h"
 #include "Lyre/IPitchFactory.h"
 #include "Lyre/INoteFactory.h"
-#include "Lyre/Private/toShared.h"
+#include "Lyre/toShared.h"
 
 using namespace Lyre;
 using namespace std;
@@ -22,7 +22,7 @@ TEST( Compiles, INoteGroup )
          pitchFactory->createPitch(),
          durFactory->createDuration( "Quarter" ) );
     
-    auto ns = Private::toShared( n );
+    auto ns = toShared( n );
     
     ng.add( ns );
     
@@ -32,7 +32,7 @@ TEST( Compiles, INoteGroup )
         pitchFactory->createPitch(),
         durFactory->createDuration( "Eighth" ) );
     
-    ns = Private::toShared( n );
+    ns = toShared( n );
     
     ng.add( ns );
     

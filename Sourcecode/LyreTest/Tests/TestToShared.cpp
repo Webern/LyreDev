@@ -1,10 +1,9 @@
-//PRIVATE
+//PUBLIC
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "Lyre/Private/toShared.h"
+#include "Lyre/toShared.h"
 #include <memory>
 
 using namespace Lyre;
-using namespace Lyre::Private;
 using namespace std;
 
 namespace

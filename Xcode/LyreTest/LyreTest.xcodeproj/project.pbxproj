@@ -13,7 +13,6 @@
 		2926C87C1C0D785500C5D4C0 /* TestIDuration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2926C87B1C0D785500C5D4C0 /* TestIDuration.cpp */; };
 		2928FAFE1C54979000644429 /* TestForwardDec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FAFD1C54979000644429 /* TestForwardDec.cpp */; };
 		2928FB011C5531EE00644429 /* TestINoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB001C5531EE00644429 /* TestINoteGroup.cpp */; };
-		2928FB041C55426E00644429 /* MockNoteGroup.h in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB031C55426E00644429 /* MockNoteGroup.h */; };
 		2928FB061C55437300644429 /* MockNoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB051C55437300644429 /* MockNoteGroup.cpp */; };
 		293F25E11C09B12D006096F2 /* TestToShared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25E01C09B12D006096F2 /* TestToShared.cpp */; };
 		296D728F1BF8EB960049B0EA /* TestDurBase8th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */; };
@@ -373,7 +372,6 @@
 				29935EAD1BE6C3700003552B /* MockDurBaseFactory.cpp in Sources */,
 				29CAD4511BE6673C00C0CA90 /* MockPitchName.cpp in Sources */,
 				2926C87C1C0D785500C5D4C0 /* TestIDuration.cpp in Sources */,
-				2928FB041C55426E00644429 /* MockNoteGroup.h in Sources */,
 				296D72921BF8EB960049B0EA /* TestDurBase64th.cpp in Sources */,
 				29CAD4501BE6673C00C0CA90 /* MockPitchFactory.cpp in Sources */,
 				296D72951BF8EB960049B0EA /* TestDurBaseBreve.cpp in Sources */,
