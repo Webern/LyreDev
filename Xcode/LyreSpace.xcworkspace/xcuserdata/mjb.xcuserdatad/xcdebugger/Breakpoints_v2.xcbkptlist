@@ -512,11 +512,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/NoteGroup.cpp"
-            timestampString = "475904795.987353"
+            timestampString = "475912251.606628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "374"
-            endingLineNumber = "374">
+            startingLineNumber = "381"
+            endingLineNumber = "381">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -526,11 +526,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/NoteGroup.cpp"
-            timestampString = "475904795.987353"
+            timestampString = "475912251.606628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "565"
-            endingLineNumber = "565">
+            startingLineNumber = "572"
+            endingLineNumber = "572">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -540,27 +540,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/NoteGroup.cpp"
-            timestampString = "475904795.987353"
+            timestampString = "475912251.606628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "576"
-            endingLineNumber = "576">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/LyreTest/Tests/TestNoteGroup.cpp"
-            timestampString = "475904873.028629"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "TEST( Compiles, INoteGroup )"
-            landmarkType = "7">
+            startingLineNumber = "583"
+            endingLineNumber = "583">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

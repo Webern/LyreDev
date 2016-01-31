@@ -9,6 +9,8 @@ namespace Lyre
     FORWARD_DECLARE(INote)
     FORWARD_DECLARE(NoteGroup)
     
+    INoteGroupUP createNoteGroup();
+    
     class NoteGroup : public INoteGroup
     {
     public:

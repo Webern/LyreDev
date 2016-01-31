@@ -23,6 +23,7 @@ namespace Lyre
         virtual void last() = 0;
         virtual bool next() = 0;
         virtual bool previous() = 0;
+        virtual void jump( int index ) = 0;
         virtual void add( const INoteSP& note ) = 0;
         virtual void remove( const INoteSP& note ) = 0;
     };

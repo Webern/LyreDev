@@ -16,6 +16,13 @@ namespace Lyre
 #define MY_INDEX ( myImplP->myCurrentIndex )
 #define MY_NOTES ( myImplP->myNotes )
     
+    INoteGroupUP createNoteGroup()
+    {
+        auto p = INoteGroupUP{ new NoteGroup{} };
+        THROW_IF_NULL( p )
+        return std::move( p );
+    }
+    
 	NoteGroup::~NoteGroup()
     {
         delete myImplP;
@@ -61,7 +68,7 @@ namespace Lyre
 
     INoteGroupUP NoteGroup::clone() const
     {
-        auto p = INoteGroupUP{ new NoteGroup{} };
+        auto p = INoteGroupUP{ new NoteGroup{ *this } };
         THROW_IF_NULL( p )
         return std::move( p );
     }
