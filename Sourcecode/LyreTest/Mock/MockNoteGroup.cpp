@@ -1,6 +1,7 @@
 #include "LyreTest/Mock/MockNoteGroup.h"
 #include "Lyre/Private/throw.h"
 
+#if 1==0
 namespace Lyre
 {
     INoteGroupUP MockNoteGroup::clone() const
@@ -71,3 +72,4 @@ namespace Lyre
         return static_cast<int>( myNotes.size() );
     }
 }
+#endif

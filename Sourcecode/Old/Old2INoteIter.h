@@ -12,6 +12,7 @@ namespace Lyre
     class INoteIter
     {
         friend class INoteGroup;
+        friend INoteGroup;
         
     public:
         virtual ~INoteIter() {}

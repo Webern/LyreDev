@@ -12,7 +12,6 @@ namespace Lyre
     
     class NoteIter : public INoteIter
     {
-        friend NoteGroup;
     public:
         NoteIter( const NoteIter& other );
         NoteIter( NoteIter&& other );

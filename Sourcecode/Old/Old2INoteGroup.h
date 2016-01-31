@@ -13,7 +13,7 @@ namespace Lyre
     class INoteGroup
     {
         friend class INoteIter;
-        
+        friend INoteIter;
     public:
         virtual ~INoteGroup() {}
         virtual INoteGroupUP clone() const = 0;

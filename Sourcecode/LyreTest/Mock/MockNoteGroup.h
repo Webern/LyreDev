@@ -1,8 +1,9 @@
 //PRIVATE
-#include "Lyre/Private/Note.h"
-#include "Lyre/INoteGroup.h"
-#include "Lyre/INoteIter.h"
+//#include "Lyre/Private/Note.h"
+//#include "Lyre/INoteGroup.h"
+//#include "Lyre/INoteIter.h"
 
+#if 1==0
 namespace Lyre
 {
     FORWARD_DECLARE(MockNoteGroup)
@@ -25,3 +26,4 @@ namespace Lyre
         int size() const;
     };
 }
+#endif
