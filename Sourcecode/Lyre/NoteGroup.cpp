@@ -185,6 +185,10 @@ namespace Lyre
             if ( it->get() == note.get() )
             {
                 MY_NOTES.erase( it );
+                if ( MY_INDEX > getCount()-1 )
+                {
+                    MY_INDEX = getCount()-1;
+                }
                 return;
             }
         }
