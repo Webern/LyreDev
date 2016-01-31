@@ -12,7 +12,7 @@
 		292348311C3E36D6002494EC /* TestNote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292348301C3E36D6002494EC /* TestNote.cpp */; };
 		2926C87C1C0D785500C5D4C0 /* TestIDuration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2926C87B1C0D785500C5D4C0 /* TestIDuration.cpp */; };
 		2928FAFE1C54979000644429 /* TestForwardDec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FAFD1C54979000644429 /* TestForwardDec.cpp */; };
-		2928FB011C5531EE00644429 /* TestINoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB001C5531EE00644429 /* TestINoteGroup.cpp */; };
+		2928FB011C5531EE00644429 /* TestNoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB001C5531EE00644429 /* TestNoteGroup.cpp */; };
 		2928FB061C55437300644429 /* MockNoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB051C55437300644429 /* MockNoteGroup.cpp */; };
 		293F25E11C09B12D006096F2 /* TestToShared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25E01C09B12D006096F2 /* TestToShared.cpp */; };
 		296D728F1BF8EB960049B0EA /* TestDurBase8th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */; };
@@ -83,7 +83,7 @@
 		292348301C3E36D6002494EC /* TestNote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestNote.cpp; path = ../../Sourcecode/LyreTest/Tests/TestNote.cpp; sourceTree = "<group>"; };
 		2926C87B1C0D785500C5D4C0 /* TestIDuration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDuration.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDuration.cpp; sourceTree = "<group>"; };
 		2928FAFD1C54979000644429 /* TestForwardDec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestForwardDec.cpp; path = ../../Sourcecode/LyreTest/Tests/TestForwardDec.cpp; sourceTree = "<group>"; };
-		2928FB001C5531EE00644429 /* TestINoteGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestINoteGroup.cpp; path = ../../Sourcecode/LyreTest/Tests/TestINoteGroup.cpp; sourceTree = "<group>"; };
+		2928FB001C5531EE00644429 /* TestNoteGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestNoteGroup.cpp; path = ../../Sourcecode/LyreTest/Tests/TestNoteGroup.cpp; sourceTree = "<group>"; };
 		2928FB031C55426E00644429 /* MockNoteGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockNoteGroup.h; path = ../../Sourcecode/LyreTest/Mock/MockNoteGroup.h; sourceTree = "<group>"; };
 		2928FB051C55437300644429 /* MockNoteGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockNoteGroup.cpp; path = ../../Sourcecode/LyreTest/Mock/MockNoteGroup.cpp; sourceTree = "<group>"; };
 		293F25E01C09B12D006096F2 /* TestToShared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestToShared.cpp; path = ../../Sourcecode/LyreTest/Tests/TestToShared.cpp; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				2928FAFD1C54979000644429 /* TestForwardDec.cpp */,
-				2928FB001C5531EE00644429 /* TestINoteGroup.cpp */,
+				2928FB001C5531EE00644429 /* TestNoteGroup.cpp */,
 				292348301C3E36D6002494EC /* TestNote.cpp */,
 				2926C87B1C0D785500C5D4C0 /* TestIDuration.cpp */,
 				293F25E01C09B12D006096F2 /* TestToShared.cpp */,
@@ -359,7 +359,7 @@
 				29CAD42E1BE661B400C0CA90 /* TestIAlter.cpp in Sources */,
 				29CAD4381BE661B400C0CA90 /* TestPitchName.cpp in Sources */,
 				296D72901BF8EB960049B0EA /* TestDurBase16th.cpp in Sources */,
-				2928FB011C5531EE00644429 /* TestINoteGroup.cpp in Sources */,
+				2928FB011C5531EE00644429 /* TestNoteGroup.cpp in Sources */,
 				29CAD42D1BE661B400C0CA90 /* TestEnum.cpp in Sources */,
 				29CAD4311BE661B400C0CA90 /* TestIEnum.cpp in Sources */,
 				29CAD43A1BE661B400C0CA90 /* TestStep.cpp in Sources */,

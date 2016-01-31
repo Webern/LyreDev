@@ -1,13 +1,12 @@
 //PUBLIC
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "LyreTest/Mock/MockNoteGroup.h"
-//#include "Lyre/INoteGroup.h"
+#include "Lyre/NoteGroup.h"
 #include "Lyre/IDurationFactory.h"
 #include "Lyre/IPitchFactory.h"
 #include "Lyre/INoteFactory.h"
 #include "Lyre/toShared.h"
 
-#if 1==0
 
 using namespace Lyre;
 using namespace std;
@@ -18,7 +17,7 @@ TEST( Compiles, INoteGroup )
     auto pitchFactory = createPitchFactory( PitchFactoryType::StandardChromatic );
     auto noteFactory = createNoteFactory( NoteFactoryType::Standard );
     
-    MockNoteGroup ng;
+    NoteGroup ng;
     
     auto n = noteFactory->createNote(
          pitchFactory->createPitch(),
@@ -40,6 +39,9 @@ TEST( Compiles, INoteGroup )
     
     CHECK_EQUAL( 2, ng.getCount() )
     
+    ng.first();
+    do
+    {
+        std::cout << (*ng.getCurrentNote()) << std::endl;
+    } while ( ng.next() );
 }
-
-#endif
