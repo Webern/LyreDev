@@ -148,14 +148,14 @@ TEST( getDurationValue_QES, NoteGroup )
     CHECK_EQUAL( expected, actual )
 }
 
-TEST( getCurrentNote_exception, NoteGroup )
+TEST( getCurrent_exception, NoteGroup )
 {
     Factories f;
     INoteGroupUP ngrp = createNoteGroup();
     bool isExceptionThrown = false;
     try
     {
-        auto n = ngrp->getCurrentNote();
+        auto n = ngrp->getCurrent();
     }
     catch (...)
     {
@@ -164,18 +164,18 @@ TEST( getCurrentNote_exception, NoteGroup )
     CHECK( isExceptionThrown )
 }
 
-TEST( getCurrentNote, NoteGroup )
+TEST( getCurrent, NoteGroup )
 {
     Factories f;
     INoteGroupUP ngrp = createNoteGroup();
     INoteSP expectedNote = f.e2Sixteenth();
     ngrp->add( expectedNote );
-    INoteSPC actualNote = ngrp->getCurrentNote();
+    INoteSPC actualNote = ngrp->getCurrent();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 
-TEST( getNextNote_exception, NoteGroup )
+TEST( getNext_exception, NoteGroup )
 {
     Factories f;
     INoteGroupUP ngrp = createNoteGroup();
@@ -183,7 +183,7 @@ TEST( getNextNote_exception, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        auto n = ngrp->getNextNote();
+        auto n = ngrp->getNext();
     }
     catch (...)
     {
@@ -192,19 +192,19 @@ TEST( getNextNote_exception, NoteGroup )
     CHECK( isExceptionThrown )
 }
 
-TEST( getNextNote, NoteGroup )
+TEST( getNext, NoteGroup )
 {
     Factories f;
     INoteGroupUP ngrp = createNoteGroup();
     ngrp->add( f.d4Eighth() );
     INoteSP expectedNote = f.e2Sixteenth();
     ngrp->add( expectedNote );
-    INoteSPC actualNote = ngrp->getNextNote();
+    INoteSPC actualNote = ngrp->getNext();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 
-TEST( getPreviousNote_exception, NoteGroup )
+TEST( getPrevious_exception, NoteGroup )
 {
     Factories f;
     INoteGroupUP ngrp = createNoteGroup();
@@ -212,7 +212,7 @@ TEST( getPreviousNote_exception, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        auto n = ngrp->getPreviousNote();
+        auto n = ngrp->getPrevious();
     }
     catch (...)
     {
@@ -221,7 +221,7 @@ TEST( getPreviousNote_exception, NoteGroup )
     CHECK( isExceptionThrown )
 }
 
-TEST( getPreviousNote, NoteGroup )
+TEST( getPrevious, NoteGroup )
 {
     Factories f;
     INoteGroupUP ngrp = createNoteGroup();
@@ -229,7 +229,7 @@ TEST( getPreviousNote, NoteGroup )
     ngrp->add( expectedNote );
     ngrp->add( f.d4Eighth() );
     ngrp->next();
-    INoteSPC actualNote = ngrp->getPreviousNote();
+    INoteSPC actualNote = ngrp->getPrevious();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -243,7 +243,7 @@ TEST( first, NoteGroup )
     ngrp->add( f.d4Eighth() );
     ngrp->next();
     ngrp->first();
-    INoteSPC actualNote = ngrp->getCurrentNote();
+    INoteSPC actualNote = ngrp->getCurrent();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -257,7 +257,7 @@ TEST( last, NoteGroup )
     INoteSP expectedNote = f.e2Sixteenth();
     ngrp->add( expectedNote );
     ngrp->last();
-    INoteSPC actualNote = ngrp->getCurrentNote();
+    INoteSPC actualNote = ngrp->getCurrent();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -271,7 +271,7 @@ TEST( next, NoteGroup )
     INoteSP expectedNote = f.e2Sixteenth();
     ngrp->add( expectedNote );
     INoteSPC actualNote = nullptr;
-    do { actualNote = ngrp->getCurrentNote(); } while ( ngrp->next() );
+    do { actualNote = ngrp->getCurrent(); } while ( ngrp->next() );
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -285,7 +285,7 @@ TEST( previous, NoteGroup )
     ngrp->add( f.c4Quarter() );
     INoteSPC actualNote = nullptr;
     ngrp->last();
-    do { actualNote = ngrp->getCurrentNote(); } while ( ngrp->previous() );
+    do { actualNote = ngrp->getCurrent(); } while ( ngrp->previous() );
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -304,7 +304,7 @@ TEST( jump, NoteGroup )
     ngrp->add( f.c4Quarter() );
     ngrp->last();
     ngrp->jump( 3 );
-    INoteSPC actualNote = ngrp->getCurrentNote();
+    INoteSPC actualNote = ngrp->getCurrent();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -395,7 +395,7 @@ TEST( remove, NoteGroup )
     ngrp->first();
     for (int i=0; i<ngrp->getCount(); ++i)
     {
-        auto current = ngrp->getCurrentNote();
+        auto current = ngrp->getCurrent();
         CHECK( current.get() != noteToRemoveSP.get() )
         ngrp->next();
     }

@@ -94,7 +94,7 @@ namespace Lyre
         return total;
     }
     
-    const INoteSPC NoteGroup::getCurrentNote() const
+    const INoteSPC NoteGroup::getCurrent() const
     {
         if ( getIsEmpty() )
         {
@@ -103,7 +103,7 @@ namespace Lyre
         return MY_NOTES[ static_cast<VecINoteSPC::size_type>( MY_INDEX ) ];
     }
     
-    const INoteSPC NoteGroup::getNextNote() const
+    const INoteSPC NoteGroup::getNext() const
     {
         if ( getIsEmpty() || MY_INDEX >= getCount()-1 )
         {
@@ -112,7 +112,7 @@ namespace Lyre
         return MY_NOTES[ static_cast<VecINoteSPC::size_type>( MY_INDEX+1 ) ];
     }
     
-    const INoteSPC NoteGroup::getPreviousNote() const
+    const INoteSPC NoteGroup::getPrevious() const
     {
         if ( getIsEmpty() || MY_INDEX <= 0 )
         {
