@@ -27,6 +27,10 @@ namespace Lyre
          for example, C4 = 60, C#4 = 61, etc. */
         virtual Integer getValue() const = 0;
         
+        /* set the value as an Integer,
+         for example, C4 = 60, C#4 = 61, etc. */
+        virtual void setValue( const Integer value ) = 0;
+        
         /* parse a string, set value from string, return true if
          successful, return false if string was un-parseable */
         virtual bool parse( const String& str ) = 0;

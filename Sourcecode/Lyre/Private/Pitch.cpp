@@ -119,6 +119,167 @@ namespace Lyre
             return answer;
         }
         
+        void Pitch::setValue( const Integer pitchValue )
+        {
+            if ( pitchValue != getValue() )
+            {
+                //TODO Test Correctness of Algorithm
+                //TODO Better Algorithm
+                Integer increment = 1;
+                if ( pitchValue < getValue() )
+                {
+                    increment = -1;
+                }
+                for ( Integer i = getValue(); i != pitchValue; i += increment )
+                {
+                    if ( increment == 1 )
+                    {
+                        incrementAlter();
+                    }
+                    else if ( increment == -1 )
+                    {
+                        decrementAlter();
+                    }
+                }
+                while ( getAlterValue() >= 12 )
+                {
+                    incrementOctave();
+                    setAlterValue( getAlterValue() - 12 );
+                }
+                while ( getAlterValue() > 1 )
+                {
+                    auto curStep = getStepValue();
+                    if ( curStep != 2 && curStep != 6 )
+                    {
+                        decrementAlter();
+                    }
+                    decrementAlter();
+                    if ( curStep == 6 )
+                    {
+                        incrementOctave();
+                    }
+                    if ( curStep == 6 )
+                    {
+                        curStep = 0;
+                    }
+                    else
+                    {
+                        ++curStep;
+                    }
+                    setStepValue( curStep );
+                }
+                while ( getAlterValue() <= -12 )
+                {
+                    decrementOctave();
+                    setAlterValue( getAlterValue() + 12 );
+                }
+                while ( getAlterValue() < -1 )
+                {
+                    auto curStep = getStepValue();
+                    if ( curStep != 0 && curStep != 3 )
+                    {
+                        incrementAlter();
+                    }
+                    incrementAlter();
+                    if ( curStep == 0 )
+                    {
+                        decrementOctave();
+                    }
+                    if ( curStep == 0 )
+                    {
+                        curStep = 6;
+                    }
+                    else
+                    {
+                        --curStep;
+                    }
+                    setStepValue( curStep );
+                }
+            }
+            int step = getStepValue();
+            int alter = getAlterValue();
+            switch ( step )
+            {
+                case 0:
+                {
+                    if ( alter == -1 ) // change Cb to B
+                    {
+                        decrementOctave();
+                        setStepValue( 6 );
+                        setAlterValue( 0 );
+                    }
+                }
+                    break;
+                case 1:
+                {
+                    if ( alter == -1 ) // change Db to C#
+                    {
+                        setStepValue( 0 );
+                        setAlterValue( 1 );
+                    }
+                    if ( alter == 1 ) // change D# to Eb
+                    {
+                        setStepValue( 2 );
+                        setAlterValue( -1 );
+                    }
+                }
+                    break;
+                case 2:
+                {
+                    if ( alter == 1 ) // change E# to F
+                    {
+                        setStepValue( 3 );
+                        setAlterValue( 0 );
+                    }
+                }
+                    break;
+                case 3:
+                {
+                    if ( alter == -1 ) // change Fb to E
+                    {
+                        setStepValue( 2 );
+                        setAlterValue( 0 );
+                    }
+                }
+                    break;
+                case 4:
+                {
+                    if ( alter == -1 ) // change Gb to F#
+                    {
+                        setStepValue( 3 );
+                        setAlterValue( 1 );
+                    }
+                    if ( alter == 1 ) // change G# to Ab
+                    {
+                        setStepValue( 5 );
+                        setAlterValue( -1 );
+                    }
+                }
+                    break;
+                case 5:
+                {
+                    if ( alter == 1 ) // change A# to Bb
+                    {
+                        setStepValue( 6 );
+                        setAlterValue( -1 );
+                    }
+                }
+                    break;
+                case 6:
+                {
+                    if ( alter == 1 ) // change B# to C
+                    {
+                        incrementOctave();
+                        setStepValue( 0 );
+                        setAlterValue( 0 );
+                    }
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+        
         bool Pitch::parse( const String& str )
         {
             auto octpos = str.find_first_of( "-0123456789" );

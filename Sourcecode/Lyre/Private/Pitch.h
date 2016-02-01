@@ -14,8 +14,14 @@ namespace Lyre
         public:
             virtual ~Pitch();
             Pitch();
-            explicit Pitch( const Integer step, const Integer alter, const Integer octave );
+            
+            explicit Pitch(
+                const Integer step,
+                const Integer alter,
+                const Integer octave );
+            
             explicit Pitch( const String& str );
+            
             Pitch( const Pitch& other );
             Pitch( Pitch&& other ) noexcept;
             Pitch& operator=( const Pitch& other );
@@ -32,6 +38,10 @@ namespace Lyre
             /* return the Pitch Class value, e.g. C = 0,
              C# = 1, Db = 1, D = 2, D# = 3, Eb = 3 ...*/
             virtual Integer getValue() const;
+            
+            /* set the value as an Integer,
+             for example, C4 = 60, C#4 = 61, etc. */
+            virtual void setValue( const Integer pitchValue );
             
             /* parse a string, set value from string, return true if
              successful, return false if string was un-parseable */
