@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/IPitch.h"
 #include "Lyre/ForwardDec.h"
+#include "Lyre/Private/PitchName.h"
 
 namespace Lyre
 {
@@ -21,11 +22,6 @@ namespace Lyre
                 const Integer octave );
             
             explicit Pitch( const String& str );
-            
-            Pitch( const Pitch& other );
-            Pitch( Pitch&& other ) noexcept;
-            Pitch& operator=( const Pitch& other );
-            Pitch& operator=( Pitch&& other ) noexcept;
             
             /* return a deep copy of "this" */
             virtual IPitchUP clone() const;
@@ -98,10 +94,12 @@ namespace Lyre
             virtual void decrementOctave();
             
         private:
-            class PitchImpl;
-            using PitchImplUP = std::unique_ptr<PitchImpl>;
-            PitchImplUP myImpl;
-            static void swap( Pitch& left, Pitch& right ) noexcept;
+            Private::PitchName myPitchName;
+            Integer myOctave;
+            void seekPitch( const Integer pitchValue );
+            void collapseOctaves();
+            void collapseSteps();
+            void respellToEnharmonicDefault();
         };
     }
 }
