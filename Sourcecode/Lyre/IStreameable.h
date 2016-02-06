@@ -13,7 +13,12 @@ namespace Lyre
     public:
         virtual ~IStreamable() {}
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
-        virtual String toString() const { std::stringstream ss; toStream( ss ); return ss.str(); }
+        virtual inline String toString() const
+        {
+            std::stringstream ss;
+            toStream( ss );
+            return ss.str();
+        }
     };
 
     PUBLIC inline std::ostream& operator<<(
