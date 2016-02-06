@@ -27,6 +27,9 @@
 		29109E441BE55A1B001FF3E6 /* PitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29109E1F1BE55A1B001FF3E6 /* PitchName.cpp */; };
 		29109E461BE55A1B001FF3E6 /* Step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29109E211BE55A1B001FF3E6 /* Step.cpp */; };
 		29187A5E1C06B63300F89779 /* ITupletDefFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29187A5C1C06B63300F89779 /* ITupletDefFactory.cpp */; };
+		291E42121C66631D004C3432 /* ITimeSignatureFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291E420F1C66631D004C3432 /* ITimeSignatureFactory.cpp */; };
+		291E42171C666344004C3432 /* TimeSignature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291E42131C666344004C3432 /* TimeSignature.cpp */; };
+		291E42181C666344004C3432 /* TimeSignatureFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291E42151C666344004C3432 /* TimeSignatureFactory.cpp */; };
 		291F98111BF03F89008026BF /* INote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291F980F1BF03F89008026BF /* INote.cpp */; };
 		292348291C3E2D4A002494EC /* INoteFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292348271C3E2D4A002494EC /* INoteFactory.cpp */; };
 		2923482C1C3E2F01002494EC /* NoteFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2923482A1C3E2F01002494EC /* NoteFactory.cpp */; };
@@ -100,6 +103,13 @@
 		291E420A1C665C5A004C3432 /* Lyre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lyre.h; path = ../../Sourcecode/Lyre/Lyre.h; sourceTree = "<group>"; };
 		291E420B1C665C5A004C3432 /* LyreApiExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LyreApiExport.h; path = ../../Sourcecode/Lyre/LyreApiExport.h; sourceTree = "<group>"; };
 		291E420C1C665EA1004C3432 /* IStreameable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IStreameable.h; path = ../../Sourcecode/Lyre/IStreameable.h; sourceTree = "<group>"; };
+		291E420E1C66631D004C3432 /* ITimeSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITimeSignature.h; path = ../../Sourcecode/Lyre/ITimeSignature.h; sourceTree = "<group>"; };
+		291E420F1C66631D004C3432 /* ITimeSignatureFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ITimeSignatureFactory.cpp; path = ../../Sourcecode/Lyre/ITimeSignatureFactory.cpp; sourceTree = "<group>"; };
+		291E42101C66631D004C3432 /* ITimeSignatureFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITimeSignatureFactory.h; path = ../../Sourcecode/Lyre/ITimeSignatureFactory.h; sourceTree = "<group>"; };
+		291E42131C666344004C3432 /* TimeSignature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TimeSignature.cpp; path = ../../Sourcecode/Lyre/Private/TimeSignature.cpp; sourceTree = "<group>"; };
+		291E42141C666344004C3432 /* TimeSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeSignature.h; path = ../../Sourcecode/Lyre/Private/TimeSignature.h; sourceTree = "<group>"; };
+		291E42151C666344004C3432 /* TimeSignatureFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TimeSignatureFactory.cpp; path = ../../Sourcecode/Lyre/Private/TimeSignatureFactory.cpp; sourceTree = "<group>"; };
+		291E42161C666344004C3432 /* TimeSignatureFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeSignatureFactory.h; path = ../../Sourcecode/Lyre/Private/TimeSignatureFactory.h; sourceTree = "<group>"; };
 		291F980F1BF03F89008026BF /* INote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = INote.cpp; path = ../../Sourcecode/Lyre/INote.cpp; sourceTree = "<group>"; };
 		291F98101BF03F89008026BF /* INote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INote.h; path = ../../Sourcecode/Lyre/INote.h; sourceTree = "<group>"; };
 		292348271C3E2D4A002494EC /* INoteFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = INoteFactory.cpp; path = ../../Sourcecode/Lyre/INoteFactory.cpp; sourceTree = "<group>"; };
@@ -185,12 +195,6 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
-				291E420C1C665EA1004C3432 /* IStreameable.h */,
-				291E420A1C665C5A004C3432 /* Lyre.h */,
-				291E420B1C665C5A004C3432 /* LyreApiExport.h */,
-				29DA8BD21C5DB385007BCE4E /* INoteGroup.h */,
-				29DA8BD31C5DB385007BCE4E /* NoteGroup.cpp */,
-				29DA8BD41C5DB385007BCE4E /* NoteGroup.h */,
 				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
 				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
 				293F25DD1C09ADD4006096F2 /* Duration.cpp */,
@@ -248,6 +252,7 @@
 				291F98101BF03F89008026BF /* INote.h */,
 				292348271C3E2D4A002494EC /* INoteFactory.cpp */,
 				292348281C3E2D4A002494EC /* INoteFactory.h */,
+				29DA8BD21C5DB385007BCE4E /* INoteGroup.h */,
 				29109DDE1BE559F2001FF3E6 /* IPitch.cpp */,
 				29109DDF1BE559F2001FF3E6 /* IPitch.h */,
 				29109DE01BE559F2001FF3E6 /* IPitchFactory.cpp */,
@@ -256,16 +261,24 @@
 				29109DE31BE559F2001FF3E6 /* IPitchName.h */,
 				29109DE41BE559F2001FF3E6 /* IStep.cpp */,
 				29109DE51BE559F2001FF3E6 /* IStep.h */,
+				291E420C1C665EA1004C3432 /* IStreameable.h */,
+				291E420E1C66631D004C3432 /* ITimeSignature.h */,
+				291E420F1C66631D004C3432 /* ITimeSignatureFactory.cpp */,
+				291E42101C66631D004C3432 /* ITimeSignatureFactory.h */,
 				29C3858C1C03611D00250931 /* ITupletDef.cpp */,
 				29C3858D1C03611D00250931 /* ITupletDef.h */,
 				29187A5C1C06B63300F89779 /* ITupletDefFactory.cpp */,
 				29187A5D1C06B63300F89779 /* ITupletDefFactory.h */,
+				291E420A1C665C5A004C3432 /* Lyre.h */,
+				291E420B1C665C5A004C3432 /* LyreApiExport.h */,
 				298227441BF9997500277C67 /* makeUnique.h */,
 				29109E1A1BE55A1B001FF3E6 /* Mod.h */,
 				2923482D1C3E31A5002494EC /* Note.cpp */,
 				2923482E1C3E31A5002494EC /* Note.h */,
 				2923482A1C3E2F01002494EC /* NoteFactory.cpp */,
 				2923482B1C3E2F01002494EC /* NoteFactory.h */,
+				29DA8BD31C5DB385007BCE4E /* NoteGroup.cpp */,
+				29DA8BD41C5DB385007BCE4E /* NoteGroup.h */,
 				29109E1B1BE55A1B001FF3E6 /* Pitch.cpp */,
 				29109E1C1BE55A1B001FF3E6 /* Pitch.h */,
 				29109E1D1BE55A1B001FF3E6 /* PitchFactory.cpp */,
@@ -277,6 +290,10 @@
 				29109E211BE55A1B001FF3E6 /* Step.cpp */,
 				29109E221BE55A1B001FF3E6 /* Step.h */,
 				29F3B5151C02238A00746DA5 /* throw.h */,
+				291E42131C666344004C3432 /* TimeSignature.cpp */,
+				291E42141C666344004C3432 /* TimeSignature.h */,
+				291E42151C666344004C3432 /* TimeSignatureFactory.cpp */,
+				291E42161C666344004C3432 /* TimeSignatureFactory.h */,
 				29AAC7351C5D122D00B1EBA1 /* toShared.h */,
 				29929FCA1C0766BD001CDDC8 /* TupletDef.cpp */,
 				29929FCB1C0766BD001CDDC8 /* TupletDef.h */,
@@ -348,17 +365,20 @@
 				29109DF31BE559F2001FF3E6 /* IPitchFactory.cpp in Sources */,
 				296D72651BF8E9EE0049B0EA /* DurBase64th.cpp in Sources */,
 				293F25DF1C09ADD4006096F2 /* Duration.cpp in Sources */,
+				291E42171C666344004C3432 /* TimeSignature.cpp in Sources */,
 				296D726C1BF8E9EE0049B0EA /* DurBaseQuarter.cpp in Sources */,
 				29109DE91BE559F2001FF3E6 /* IAlter.cpp in Sources */,
 				29E4D2241C06C7400038E6FC /* TupletDefFatory.cpp in Sources */,
 				29109E421BE55A1B001FF3E6 /* PitchFactory.cpp in Sources */,
 				296D72641BF8E9EE0049B0EA /* DurBase32nd.cpp in Sources */,
 				29109DED1BE559F2001FF3E6 /* IDurBaseFactory.cpp in Sources */,
+				291E42181C666344004C3432 /* TimeSignatureFactory.cpp in Sources */,
 				296D72661BF8E9EE0049B0EA /* DurBase128th.cpp in Sources */,
 				29109E231BE55A1B001FF3E6 /* Alter.cpp in Sources */,
 				292348291C3E2D4A002494EC /* INoteFactory.cpp in Sources */,
 				296D726B1BF8E9EE0049B0EA /* DurBaseLonga.cpp in Sources */,
 				2926C8771C0D704400C5D4C0 /* DurationFactory.cpp in Sources */,
+				291E42121C66631D004C3432 /* ITimeSignatureFactory.cpp in Sources */,
 				29109DEB1BE559F2001FF3E6 /* IDurBase.cpp in Sources */,
 				296D72681BF8E9EE0049B0EA /* DurBaseBreve.cpp in Sources */,
 				2923482F1C3E31A5002494EC /* Note.cpp in Sources */,
