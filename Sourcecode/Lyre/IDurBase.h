@@ -8,7 +8,7 @@ namespace Lyre
 {
     FORWARD_DECLARE(IDurBase)
     
-    class IDurBase
+    class PUBLIC IDurBase
     {
     public:
         virtual ~IDurBase();
@@ -24,12 +24,12 @@ namespace Lyre
         virtual bool isIdenticalTo( const IDurBase& other ) const;
     };
     
-    std::ostream& operator<<( std::ostream& os, const IDurBase& object );
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IDurBase& object );
     
-    bool operator==( const IDurBase& l, const IDurBase& r );
-    bool operator!=( const IDurBase& l, const IDurBase& r );
-    bool operator>=( const IDurBase& l, const IDurBase& r );
-    bool operator<=( const IDurBase& l, const IDurBase& r );
-    bool operator>( const IDurBase& l, const IDurBase& r );
-    bool operator<( const IDurBase& l, const IDurBase& r );
+	PUBLIC bool operator==( const IDurBase& l, const IDurBase& r );
+	PUBLIC bool operator!=( const IDurBase& l, const IDurBase& r );
+	PUBLIC bool operator>=( const IDurBase& l, const IDurBase& r );
+	PUBLIC bool operator<=( const IDurBase& l, const IDurBase& r );
+	PUBLIC bool operator>( const IDurBase& l, const IDurBase& r );
+	PUBLIC bool operator<( const IDurBase& l, const IDurBase& r );
 }

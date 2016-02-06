@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{81C15F27-BE53-4839-98C0-955500B4883A}</ProjectGuid>
+    <RootNamespace>LyreTest</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(PlatformConfigFolder)' == '' ">
+    <PlatformConfigFolder>$(Platform)_$(Configuration)</PlatformConfigFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(UniqueIntFolder)' == '' ">
+    <UniqueFolder>$(ProjectName)_$(PlatformConfigFolder)</UniqueFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
+    <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
+    <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
+    <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
+    <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <DelayLoadDLLs>Lyre.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <AdditionalDependencies>Lyre.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\Outputs\$(PlatformConfigFolder)\%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <DelayLoadDLLs>Lyre.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <AdditionalDependencies>Lyre.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\Outputs\$(PlatformConfigFolder)\%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <DelayLoadDLLs>Lyre.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <AdditionalDependencies>Lyre.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\Outputs\$(PlatformConfigFolder)\%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <DelayLoadDLLs>Lyre.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <AdditionalDependencies>Lyre.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>.\Outputs\$(PlatformConfigFolder)\%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulFailure.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulRun.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulTest.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulTestRegistry.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulTestResult.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\main.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockDurBase.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockDurBaseFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockEnum.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockEnumCats.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockNoteGroup.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitch.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchName.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockStep.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestCopyTo.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurationFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase128th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase16th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase256th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase32nd.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase64th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase8th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseBreve.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseHalf.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseLonga.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseQuarter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseWhole.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestEnum.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestForwardDec.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDuration.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDurBase.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDurBaseFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDurDot.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIEnum.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIPitch.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIPitchFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIPitchName.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIStep.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestITupletDef.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestITupletDefFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMakeUnique.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMod.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestNote.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestNoteGroup.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitch.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitchFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitchName.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestRational.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestStep.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestThrow.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestToShared.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulFailure.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulRun.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTest.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTestHarness.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTestRegistry.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTestResult.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockAlter.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockDurBase.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockDurBaseFactory.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockEnum.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockEnumCats.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockNoteGroup.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitch.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitchFactory.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitchName.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockStep.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

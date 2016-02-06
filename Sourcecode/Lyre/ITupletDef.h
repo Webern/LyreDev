@@ -9,7 +9,7 @@ namespace Lyre
     FORWARD_DECLARE(ITupletDef)
     FORWARD_DECLARE(IDurDot)
     
-    class ITupletDef
+    class PUBLIC ITupletDef
     {
     public:
         virtual ~ITupletDef() = default;
@@ -33,5 +33,5 @@ namespace Lyre
         
     };
     
-    std::ostream& operator<<( std::ostream& os, const ITupletDef& val );
+    PUBLIC std::ostream& operator<<( std::ostream& os, const ITupletDef& val );
 }

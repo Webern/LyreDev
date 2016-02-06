@@ -13,7 +13,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(DurDot)
         
-        class DurDot : public IDurDot
+        class EXPORT_FOR_TESTS DurDot : public IDurDot
         {
         public:
             DurDot();

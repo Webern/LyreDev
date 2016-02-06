@@ -12,7 +12,7 @@ namespace Lyre
     
     namespace Private
     {
-        class Duration : public IDuration
+        class EXPORT_FOR_TESTS Duration : public IDuration
         {
         public:
             virtual ~Duration();

@@ -252,7 +252,7 @@ namespace Lyre
     {
         return ( right < left ) || ( left == right );
     }
-    std::ostream& operator<<( std::ostream& os, const Rational& right )
+    PUBLIC std::ostream& operator<<( std::ostream& os, const Rational& right )
     {
         return os << "( " << right.getNumerator() << " / " << right.getDenominator() << " )";
     }

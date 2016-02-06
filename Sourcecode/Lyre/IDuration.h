@@ -9,7 +9,7 @@ namespace Lyre
 {
     FORWARD_DECLARE(IDuration)
     
-    class IDuration
+    class PUBLIC IDuration
     {
     public:
         virtual ~IDuration() = default;
@@ -32,5 +32,5 @@ namespace Lyre
         virtual String toString() const = 0;
     };
     
-    std::ostream& operator<<( std::ostream& os, const IDuration& object );
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IDuration& object );
 }

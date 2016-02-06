@@ -7,16 +7,16 @@
 
 namespace Lyre
 {
-    enum class DurationFactoryType
+    enum class PUBLIC DurationFactoryType
     {
         Standard = 0
     };
     
     FORWARD_DECLARE(IDurationFactory)
     
-    IDurationFactoryUP createDurationFactory( const DurationFactoryType t );
+    IDurationFactoryUP PUBLIC createDurationFactory( const DurationFactoryType t );
 
-    class IDurationFactory
+    class PUBLIC IDurationFactory
     {
     public:
         

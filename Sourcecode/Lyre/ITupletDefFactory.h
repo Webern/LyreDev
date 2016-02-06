@@ -10,14 +10,14 @@ namespace Lyre
     FORWARD_DECLARE(IDurDot)
     FORWARD_DECLARE(ITupletDefFactory)
     
-    enum class TupletDefFactoryType
+    enum class PUBLIC TupletDefFactoryType
     {
         Standard = 0
     };
     
-    ITupletDefFactoryUP createTupletDefFactory( const TupletDefFactoryType  t);
+    ITupletDefFactoryUP PUBLIC createTupletDefFactory( const TupletDefFactoryType  t);
     
-    class ITupletDefFactory
+    class PUBLIC ITupletDefFactory
     {
     public:
         virtual ~ITupletDefFactory() = default;

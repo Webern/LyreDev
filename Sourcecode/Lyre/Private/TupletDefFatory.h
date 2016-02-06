@@ -10,7 +10,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(TupletDefFactory)
         
-        class TupletDefFactory : public ITupletDefFactory
+        class EXPORT_FOR_TESTS TupletDefFactory : public ITupletDefFactory
         {
         public:
             virtual ~TupletDefFactory() = default;

@@ -11,7 +11,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(DurBaseQuarter)
         
-        class DurBaseQuarter : public IDurBase
+        class EXPORT_FOR_TESTS DurBaseQuarter : public IDurBase
         {
         public:
             virtual ~DurBaseQuarter();

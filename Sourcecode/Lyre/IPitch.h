@@ -7,7 +7,7 @@ namespace Lyre
 {
     FORWARD_DECLARE(IPitch)
     
-    class IPitch
+    class PUBLIC IPitch
     {
     public:
         virtual ~IPitch() = default;
@@ -80,5 +80,5 @@ namespace Lyre
     };
     
     /* this calls toStream... syntactic sugar */
-    std::ostream& operator<<( std::ostream& os, const IPitch& object );
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IPitch& object );
 }

@@ -10,7 +10,7 @@ namespace Lyre
         this->toStream( ss );
         return String{ ss.str() };
     }
-    std::ostream& operator<<( std::ostream& os, const IAlter& AlterName )
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IAlter& AlterName )
     {
         return AlterName.toStream( os );
     }

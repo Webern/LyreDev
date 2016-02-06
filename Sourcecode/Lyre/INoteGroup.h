@@ -8,7 +8,7 @@ namespace Lyre
     FORWARD_DECLARE(INoteGroup)
     FORWARD_DECLARE(INote)
     
-    class INoteGroup
+    class PUBLIC INoteGroup
     {
     public:
         virtual ~INoteGroup() {}

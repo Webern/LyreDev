@@ -10,7 +10,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(DurDotFactory)
         
-        class DurDotFactory : public IDurDotFactory
+        class EXPORT_FOR_TESTS DurDotFactory : public IDurDotFactory
         {
         public:
             virtual ~DurDotFactory();

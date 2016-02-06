@@ -9,9 +9,9 @@ namespace Lyre
     FORWARD_DECLARE(INote)
     FORWARD_DECLARE(NoteGroup)
     
-    INoteGroupUP createNoteGroup();
+    PUBLIC INoteGroupUP createNoteGroup();
     
-    class NoteGroup : public INoteGroup
+    class PUBLIC NoteGroup : public INoteGroup
     {
     public:
         virtual ~NoteGroup();

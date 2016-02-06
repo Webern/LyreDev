@@ -8,14 +8,14 @@ namespace Lyre
 {
     FORWARD_DECLARE(IPitchFactory)
     
-    enum class PitchFactoryType
+    enum class PUBLIC PitchFactoryType
     {
         StandardChromatic = 0
     };
     
-    IPitchFactoryUP createPitchFactory( const PitchFactoryType t );
+    IPitchFactoryUP PUBLIC createPitchFactory( const PitchFactoryType t );
     
-    class IPitchFactory
+    class PUBLIC IPitchFactory
     {
     public:
         virtual ~IPitchFactory() = default;

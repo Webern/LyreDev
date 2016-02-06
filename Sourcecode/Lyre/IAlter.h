@@ -7,7 +7,7 @@ namespace Lyre
 {
     FORWARD_DECLARE(IAlter)
     
-    class IAlter
+    class PUBLIC IAlter
     {
     public:
         virtual ~IAlter() = default;
@@ -53,5 +53,5 @@ namespace Lyre
     };
     
     /* this calls toStream... syntactic sugar */
-    std::ostream& operator<<( std::ostream& os, const IAlter& AlterName );
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IAlter& AlterName );
 }

@@ -9,7 +9,7 @@ namespace Lyre
     using IEnumSP = std::shared_ptr<IEnum>;
     using IEnumUP = std::unique_ptr<IEnum>;
     
-    class IEnum
+    class PUBLIC IEnum
     {
     public:
         virtual ~IEnum() = default;
@@ -50,5 +50,5 @@ namespace Lyre
     };
     
     /* this calls toStream... syntactic sugar */
-    std::ostream& operator<<( std::ostream& os, const IEnum& EnumName );
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IEnum& EnumName );
 }

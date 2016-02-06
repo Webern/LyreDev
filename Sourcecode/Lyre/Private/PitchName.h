@@ -9,7 +9,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(PitchName)
         
-        class PitchName : public IPitchName
+        class EXPORT_FOR_TESTS PitchName : public IPitchName
         {
         public:
             virtual ~PitchName();

@@ -11,7 +11,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(Note)
         
-        class Note : public INote
+        class EXPORT_FOR_TESTS Note : public INote
         {
         public:
             virtual ~Note();

@@ -5,7 +5,7 @@
 
 namespace Lyre
 {
-    enum class DurBaseFactoryType
+    enum class PUBLIC DurBaseFactoryType
     {
         Standard = 0
     };
@@ -13,9 +13,9 @@ namespace Lyre
     FORWARD_DECLARE(IDurBase)
     FORWARD_DECLARE(IDurBaseFactory)
     
-    IDurBaseFactoryUP createDurBaseFactory( const DurBaseFactoryType t );
+    IDurBaseFactoryUP PUBLIC createDurBaseFactory( const DurBaseFactoryType t );
     
-    class IDurBaseFactory
+    class PUBLIC IDurBaseFactory
     {
     public:
         

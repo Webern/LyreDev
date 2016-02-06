@@ -11,7 +11,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(DurationFactory)
         
-        class DurationFactory : public IDurationFactory
+        class EXPORT_FOR_TESTS DurationFactory : public IDurationFactory
         {
         public:
             virtual ~DurationFactory();

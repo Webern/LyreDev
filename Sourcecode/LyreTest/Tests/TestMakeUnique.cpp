@@ -1,7 +1,10 @@
 //PRIVATE
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "Lyre/Private/makeUnique.h"
+#include <memory>
 #include <sstream>
+
+#if 1==0
 
 using namespace Lyre;
 using namespace Lyre::Private;
@@ -38,3 +41,5 @@ TEST( Params, makeUnique )
     NothingUP nada = makeUnique<Nothing>(1,2,3,4,5,6);
     CHECK_EQUAL( 21, nada->getSum() )
 }
+
+#endif

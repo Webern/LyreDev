@@ -8,7 +8,7 @@ namespace Lyre
 {
     namespace Private
     {
-        enum class StepValue
+        enum class EXPORT_FOR_TESTS StepValue
         {
             C = 0,
             D = 1,
@@ -21,7 +21,7 @@ namespace Lyre
         
         FORWARD_DECLARE(Step)
         
-        class Step : public IStep
+        class EXPORT_FOR_TESTS Step : public IStep
         {
         public:
             virtual ~Step();
@@ -87,6 +87,6 @@ namespace Lyre
         };
         
         /* this calls toStream... syntactic sugar
-         std::ostream& operator<<( std::ostream& os, const IStep& StepName ); */
+         PUBLIC std::ostream& operator<<( std::ostream& os, const IStep& StepName ); */
     }
 }

@@ -9,7 +9,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(NoteFactory)
         
-        class NoteFactory : public INoteFactory
+        class EXPORT_FOR_TESTS NoteFactory : public INoteFactory
         {
         
         public:

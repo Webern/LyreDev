@@ -10,7 +10,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(Pitch)
         
-        class Pitch : public IPitch
+        class EXPORT_FOR_TESTS Pitch : public IPitch
         {
         public:
             virtual ~Pitch();

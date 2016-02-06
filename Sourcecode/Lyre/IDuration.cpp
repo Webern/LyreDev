@@ -3,7 +3,7 @@
 
 namespace Lyre
 {
-    std::ostream& operator<<( std::ostream& os, const IDuration& object )
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IDuration& object )
     {
         return object.toStream( os );
     }

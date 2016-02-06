@@ -9,7 +9,7 @@ namespace Lyre
 {
     FORWARD_DECLARE(INote)
     
-    class INote
+    class PUBLIC INote
     {
     public:
         virtual ~INote() {}
@@ -34,5 +34,5 @@ namespace Lyre
         
     };
     
-    std::ostream& operator<<( std::ostream& os, const INote& note );
+    PUBLIC std::ostream& operator<<( std::ostream& os, const INote& note );
 }

@@ -21,7 +21,7 @@ namespace Lyre
     {
         return getValue() == other.getValue();
     }
-    std::ostream& operator<<( std::ostream& os, const IPitch& object )
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IPitch& object )
     {
         return object.toStream( os );
     }

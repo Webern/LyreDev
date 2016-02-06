@@ -10,6 +10,6 @@ namespace Lyre
         auto rawP = uniquePtr.get();
         uniquePtr.release();
         uniquePtr = nullptr;
-        return std::shared_ptr<T>{ rawP };
-    }
+		return std::shared_ptr<T>( rawP );
+	}
 }

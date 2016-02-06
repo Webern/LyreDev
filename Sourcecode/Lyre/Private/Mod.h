@@ -1,5 +1,6 @@
 //PRIVATE
 #pragma once
+#include "Lyre/TypeDefs.h"
 
 /* The Mod class restrics values of an integral
  to be between zero and MODULUS-1 by using the
@@ -11,7 +12,7 @@ namespace Lyre
     namespace Private
     {
         template <typename TYPE, TYPE MODULUS>
-        class Mod
+        class EXPORT_FOR_TESTS Mod
         {
         public:
             Mod()

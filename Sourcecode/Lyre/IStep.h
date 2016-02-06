@@ -7,7 +7,7 @@ namespace Lyre
 {
     FORWARD_DECLARE(IStep)
     
-    class IStep
+    class PUBLIC IStep
     {
     public:
         virtual ~IStep() = default;
@@ -53,5 +53,5 @@ namespace Lyre
     };
     
     /* this calls toStream... syntactic sugar */
-    std::ostream& operator<<( std::ostream& os, const IStep& StepName );
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IStep& StepName );
 }

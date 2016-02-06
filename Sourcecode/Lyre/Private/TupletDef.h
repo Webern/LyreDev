@@ -11,7 +11,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(TupletDef)
         
-        class TupletDef : public ITupletDef
+        class EXPORT_FOR_TESTS TupletDef : public ITupletDef
         {
         public:
             

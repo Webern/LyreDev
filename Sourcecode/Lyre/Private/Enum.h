@@ -9,7 +9,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(Enum)
         
-        class Enum : public IEnum
+        class EXPORT_FOR_TESTS Enum : public IEnum
         {
         public:
             Enum( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset = 0 );

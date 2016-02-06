@@ -11,7 +11,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(DurBaseFactory)
         
-        class DurBaseFactory : public IDurBaseFactory
+        class EXPORT_FOR_TESTS DurBaseFactory : public IDurBaseFactory
         {
         public:
             DurBaseFactory();

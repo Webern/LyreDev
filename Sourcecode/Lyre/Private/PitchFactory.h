@@ -10,7 +10,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(PitchFactory)
         
-        class PitchFactory : public IPitchFactory
+        class EXPORT_FOR_TESTS PitchFactory : public IPitchFactory
         {
         public:
             /* return a deep copy of "this" */

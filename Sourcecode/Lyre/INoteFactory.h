@@ -10,14 +10,14 @@ namespace Lyre
 {
     FORWARD_DECLARE(INoteFactory)
     
-    enum class NoteFactoryType
+    enum class PUBLIC NoteFactoryType
     {
         Standard = 0
     };
     
-    INoteFactoryUP createNoteFactory( const NoteFactoryType t );
+    INoteFactoryUP PUBLIC createNoteFactory( const NoteFactoryType t );
     
-    class INoteFactory
+    class PUBLIC INoteFactory
     {
     public:
         virtual ~INoteFactory() {}

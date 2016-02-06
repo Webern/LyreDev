@@ -70,7 +70,7 @@ namespace Lyre
         return l.isLessThan( r );
     }
     
-    std::ostream& operator<<( std::ostream& os, const IDurBase& object )
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IDurBase& object )
     {
         return object.toStream( os );
     }

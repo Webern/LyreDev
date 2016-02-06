@@ -35,7 +35,7 @@ namespace Lyre
         return l.isLessThan( r );
     }
     
-    std::ostream& operator<<( std::ostream& os, const IDurDot& object )
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IDurDot& object )
     {
         return object.toStream( os );
     }

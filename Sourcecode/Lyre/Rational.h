@@ -17,7 +17,7 @@ namespace Lyre
     using RationalsIter = Rationals::iterator;
     using RationalsIterConst = Rationals::const_iterator;
     
-    class Rational
+    class PUBLIC Rational
     {
     public:
         /* Default constructor sets value to 0/1.
@@ -139,19 +139,19 @@ namespace Lyre
     
     /* Comparisons in the mathematical sense, i.e. 1/3 == 4/12,
      to see if to fractions are identical use left.getIsIdenticalTo( right ) */
-    bool operator==( const Rational& left, const Rational& right );
-    bool operator!=( const Rational& left, const Rational& right );
-    bool operator<( const Rational& left, const Rational& right );
-    bool operator>( const Rational& left, const Rational& right );
-    bool operator<=( const Rational& left, const Rational& right );
-    bool operator>=( const Rational& left, const Rational& right );
+	PUBLIC bool operator==( const Rational& left, const Rational& right );
+	PUBLIC bool operator!=( const Rational& left, const Rational& right );
+	PUBLIC bool operator<( const Rational& left, const Rational& right );
+	PUBLIC bool operator>( const Rational& left, const Rational& right );
+	PUBLIC bool operator<=( const Rational& left, const Rational& right );
+	PUBLIC bool operator>=( const Rational& left, const Rational& right );
     
     /* divide by zero (i.e. 0/x) returns 0/1 (i.e. instead of throwing) */
-    Rational operator/( const Rational& r, const Rational& l );
-    Rational operator*( const Rational& r, const Rational& l );
-    Rational operator+( const Rational& r, const Rational& l );
-    Rational operator-( const Rational& r, const Rational& l );
+	PUBLIC Rational operator/( const Rational& r, const Rational& l );
+	PUBLIC Rational operator*( const Rational& r, const Rational& l );
+	PUBLIC Rational operator+( const Rational& r, const Rational& l );
+	PUBLIC Rational operator-( const Rational& r, const Rational& l );
     
     /* stream a textual representation of the Rational number */
-    std::ostream& operator<<( std::ostream& os, const Rational& right );    
+    PUBLIC std::ostream& operator<<( std::ostream& os, const Rational& right );    
 }

@@ -1,3 +1,5 @@
+# mac os x
+
 Build/
 DerivedData/
 .com.apple.timemachine.supported
@@ -9,3 +11,23 @@ DerivedData/
 DerivedData
 build/
 profile
+
+# visual studio
+Intermediates/
+Outputs/
+*.obj
+*.tlog
+*.suo
+*.vs
+.vs
+*.exp
+*.ilk
+*.CppCleanLog
+Lyre.lib
+Lyre.dll
+LyreTest.exe
+*.pdb
+*.sdf
+*.filters
+*.user
+*.idb

@@ -11,7 +11,7 @@ namespace Lyre
     
     static const Integer DURATION_MAX_DOTS = 20;
     
-    class IDurDot
+    class PUBLIC IDurDot
     {
     public:
         virtual ~IDurDot();
@@ -36,12 +36,12 @@ namespace Lyre
         virtual bool isLessThan( const IDurDot& other ) const = 0;
     };
     
-    std::ostream& operator<<( std::ostream& os, const IDurDot& object );
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IDurDot& object );
     
-    bool operator==( const IDurDot& l, const IDurDot& r );
-    bool operator!=( const IDurDot& l, const IDurDot& r );
-    bool operator>=( const IDurDot& l, const IDurDot& r );
-    bool operator<=( const IDurDot& l, const IDurDot& r );
-    bool operator>( const IDurDot& l, const IDurDot& r );
-    bool operator<( const IDurDot& l, const IDurDot& r );
+	PUBLIC bool operator==( const IDurDot& l, const IDurDot& r );
+	PUBLIC bool operator!=( const IDurDot& l, const IDurDot& r );
+	PUBLIC bool operator>=( const IDurDot& l, const IDurDot& r );
+	PUBLIC bool operator<=( const IDurDot& l, const IDurDot& r );
+	PUBLIC bool operator>( const IDurDot& l, const IDurDot& r );
+	PUBLIC bool operator<( const IDurDot& l, const IDurDot& r );
 }

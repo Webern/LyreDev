@@ -9,7 +9,7 @@ namespace Lyre
         this->toStream( ss );
         return String{ ss.str() };
     }
-    std::ostream& operator<<( std::ostream& os, const IEnum& EnumName )
+    PUBLIC std::ostream& operator<<( std::ostream& os, const IEnum& EnumName )
     {
         return EnumName.toStream( os );
     }
