@@ -24,7 +24,7 @@ TEST( Compiles, throwDotH )
     // test checks the parts of the string that are
     // similar (after eliminating casing differences)
     
-    std::string expected = 
+    std::string expected =
         "error in TestThrow.cpp (line 14) runTest: some error message";
     std::string actual = message;
 	std::locale loc;

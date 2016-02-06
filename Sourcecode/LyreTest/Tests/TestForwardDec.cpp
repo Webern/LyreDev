@@ -1,6 +1,6 @@
 //PRIVATE
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "Lyre/ForwardDec.h"
+#include "Lyre/Lyre.h"
 #include <memory>
 
 using namespace std;

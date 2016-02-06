@@ -1,11 +1,10 @@
 //PRIVATE
 #pragma once
-#include "Lyre/TypeDefs.h"
+#include "Lyre/Lyre.h"
 #include "Lyre/IDurDot.h"
 #include "Lyre/Rational.h"
 #include "Lyre/IDurBase.h"
 #include "Lyre/IDurBaseFactory.h"
-#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {

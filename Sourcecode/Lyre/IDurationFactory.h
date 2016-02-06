@@ -1,9 +1,8 @@
 //PUBLIC
 #pragma once
-#include "Lyre/TypeDefs.h"
+#include "Lyre/Lyre.h"
 #include "Lyre/IDuration.h"
 #include "Lyre/ITupletDef.h"
-#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {

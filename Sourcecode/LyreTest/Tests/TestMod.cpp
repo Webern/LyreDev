@@ -1,7 +1,7 @@
 //PRIVATE
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "Lyre/Private/Mod.h"
-#include "Lyre/TypeDefs.h"
+#include "Lyre/Lyre.h"
 
 using namespace Lyre;
 using namespace Lyre::Private;

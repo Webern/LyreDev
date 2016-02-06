@@ -1,7 +1,6 @@
 //PRIVATE
 #pragma once
 #include "Lyre/IPitch.h"
-#include "Lyre/ForwardDec.h"
 #include "Lyre/Private/PitchName.h"
 
 namespace Lyre

@@ -1,9 +1,8 @@
 //PRIVATE
 #pragma once
-#include "Lyre/TypeDefs.h"
+#include "Lyre/Lyre.h"
 #include "Lyre/IDurBase.h"
 #include "Lyre/Rational.h"
-#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {

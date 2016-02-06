@@ -97,6 +97,9 @@
 		29109E221BE55A1B001FF3E6 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Step.h; path = ../../Sourcecode/Lyre/Private/Step.h; sourceTree = "<group>"; };
 		29187A5C1C06B63300F89779 /* ITupletDefFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ITupletDefFactory.cpp; path = ../../Sourcecode/Lyre/ITupletDefFactory.cpp; sourceTree = "<group>"; };
 		29187A5D1C06B63300F89779 /* ITupletDefFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITupletDefFactory.h; path = ../../Sourcecode/Lyre/ITupletDefFactory.h; sourceTree = "<group>"; };
+		291E420A1C665C5A004C3432 /* Lyre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lyre.h; path = ../../Sourcecode/Lyre/Lyre.h; sourceTree = "<group>"; };
+		291E420B1C665C5A004C3432 /* LyreApiExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LyreApiExport.h; path = ../../Sourcecode/Lyre/LyreApiExport.h; sourceTree = "<group>"; };
+		291E420C1C665EA1004C3432 /* IStreameable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IStreameable.h; path = ../../Sourcecode/Lyre/IStreameable.h; sourceTree = "<group>"; };
 		291F980F1BF03F89008026BF /* INote.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = INote.cpp; path = ../../Sourcecode/Lyre/INote.cpp; sourceTree = "<group>"; };
 		291F98101BF03F89008026BF /* INote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INote.h; path = ../../Sourcecode/Lyre/INote.h; sourceTree = "<group>"; };
 		292348271C3E2D4A002494EC /* INoteFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = INoteFactory.cpp; path = ../../Sourcecode/Lyre/INoteFactory.cpp; sourceTree = "<group>"; };
@@ -109,7 +112,7 @@
 		2926C8761C0D704400C5D4C0 /* DurationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurationFactory.h; path = ../../Sourcecode/Lyre/Private/DurationFactory.h; sourceTree = "<group>"; };
 		2926C8781C0D717200C5D4C0 /* IDuration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IDuration.cpp; path = ../../Sourcecode/Lyre/IDuration.cpp; sourceTree = "<group>"; };
 		2926C8791C0D717200C5D4C0 /* IDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDuration.h; path = ../../Sourcecode/Lyre/IDuration.h; sourceTree = "<group>"; };
-		2928FAFF1C549F2000644429 /* ForwardDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForwardDec.h; path = ../../Sourcecode/Lyre/ForwardDec.h; sourceTree = "<group>"; };
+		2928FAFF1C549F2000644429 /* ForwardDeclare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForwardDeclare.h; path = ../../Sourcecode/Lyre/ForwardDeclare.h; sourceTree = "<group>"; };
 		293F25DD1C09ADD4006096F2 /* Duration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Duration.cpp; path = ../../Sourcecode/Lyre/Private/Duration.cpp; sourceTree = "<group>"; };
 		293F25DE1C09ADD4006096F2 /* Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Duration.h; path = ../../Sourcecode/Lyre/Private/Duration.h; sourceTree = "<group>"; };
 		296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurBase16th.cpp; path = ../../Sourcecode/Lyre/Private/DurBase16th.cpp; sourceTree = "<group>"; };
@@ -182,6 +185,9 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				291E420C1C665EA1004C3432 /* IStreameable.h */,
+				291E420A1C665C5A004C3432 /* Lyre.h */,
+				291E420B1C665C5A004C3432 /* LyreApiExport.h */,
 				29DA8BD21C5DB385007BCE4E /* INoteGroup.h */,
 				29DA8BD31C5DB385007BCE4E /* NoteGroup.cpp */,
 				29DA8BD41C5DB385007BCE4E /* NoteGroup.h */,
@@ -221,7 +227,7 @@
 				290989CF1C0391CC0040138E /* DurDotFactory.h */,
 				29109E181BE55A1B001FF3E6 /* Enum.cpp */,
 				29109E191BE55A1B001FF3E6 /* Enum.h */,
-				2928FAFF1C549F2000644429 /* ForwardDec.h */,
+				2928FAFF1C549F2000644429 /* ForwardDeclare.h */,
 				29109DD61BE559F2001FF3E6 /* IAlter.cpp */,
 				29109DD71BE559F2001FF3E6 /* IAlter.h */,
 				2926C8781C0D717200C5D4C0 /* IDuration.cpp */,

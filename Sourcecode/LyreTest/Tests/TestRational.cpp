@@ -1,7 +1,7 @@
 //PUBLIC
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "Lyre/Rational.h"
-#include "Lyre/TypeDefs.h"
+#include "Lyre/Lyre.h"
 
 using namespace Lyre;
 

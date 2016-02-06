@@ -2,7 +2,6 @@
 #pragma once
 #include "Lyre/IPitchFactory.h"
 #include "Lyre/Private/Pitch.h"
-#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {

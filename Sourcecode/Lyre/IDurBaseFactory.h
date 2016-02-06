@@ -1,7 +1,6 @@
 //PUBLIC
 #pragma once
-#include "Lyre/TypeDefs.h"
-#include "Lyre/ForwardDec.h"
+#include "Lyre/Lyre.h"
 
 namespace Lyre
 {

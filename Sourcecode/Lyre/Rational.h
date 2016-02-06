@@ -1,7 +1,7 @@
 //PUBLIC
 #pragma once
 #include <iostream>
-#include "Lyre/TypeDefs.h"
+#include "Lyre/Lyre.h"
 #include <vector>
 
 /* I need rational numbers for music and I don't

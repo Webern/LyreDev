@@ -3,7 +3,6 @@
 #include "Lyre/INote.h"
 #include "Lyre/IPitch.h"
 #include "Lyre/IDuration.h"
-#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {

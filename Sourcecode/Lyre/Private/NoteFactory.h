@@ -1,7 +1,6 @@
 //PRIVATE
 #pragma once
 #include "Lyre/INoteFactory.h"
-#include "Lyre/ForwardDec.h"
 
 namespace Lyre
 {

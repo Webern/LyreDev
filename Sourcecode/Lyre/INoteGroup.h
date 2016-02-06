@@ -1,6 +1,5 @@
 //PUBLIC
 #pragma once
-#include "Lyre/ForwardDec.h"
 #include "Lyre/Rational.h"
 
 namespace Lyre

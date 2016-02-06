@@ -1,6 +1,6 @@
 //PRIVATE
 #pragma once
-#include "Lyre/TypeDefs.h"
+#include "Lyre/Lyre.h"
 
 /* The Mod class restrics values of an integral
  to be between zero and MODULUS-1 by using the
