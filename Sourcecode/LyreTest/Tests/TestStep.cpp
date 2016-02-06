@@ -104,19 +104,6 @@ TEST( clone, Step )
     CHECK_EQUAL( 4, p1->getValue() );
     CHECK_EQUAL( 2, p2->getValue() );
 }
-//TEST( copyTo, Step )
-//{
-//    std::shared_ptr<Step> p1 = std::make_shared<Step>();
-//    p1->setValue( -1 );
-//    std::unique_ptr<Step> p2;
-//    p1->copyTo( p2 );
-//    CHECK( p1.get() != p2.get() )
-//    CHECK_EQUAL( 0, p1->getValue() );
-//    CHECK_EQUAL( 0, p2->getValue() );
-//    p2->setValue( 200 );
-//    CHECK_EQUAL( 0, p1->getValue() );
-//    CHECK_EQUAL( 6, p2->getValue() );
-//}
 TEST( getMin, Step )
 {
     IStepUP p = unique_ptr<Step>( new Step() );

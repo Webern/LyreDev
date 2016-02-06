@@ -14,14 +14,9 @@ TEST( compiles, IPitchName )
 {
     IPitchNameUP p{ new MockPitchName{} };
     auto c = p->clone();
-//    MockPitchNameUP x;
-    //p->copyTo( x );
     CHECK( p != c )
-//    CHECK( p != x )
-//    CHECK( x != c )
     CHECK( (p) )
     CHECK( (c) )
-//    CHECK( (x) )
     CHECK_EQUAL( 0, p->getValue() )
     CHECK( p->parse( "" ) )
     stringstream ss;
@@ -30,8 +25,6 @@ TEST( compiles, IPitchName )
     CHECK_EQUAL( "", p->toString() )
     ss << (*p);
     CHECK_EQUAL( "", ss.str() )
-//    CHECK( ! p->isLessThan( *x ) )
-//    CHECK( p->isEqualTo( *x ) )
     CHECK( ! p->isGreaterThan( *c ) )
     CHECK_EQUAL( 0, p->getStepValue() )
     p->setStepValue( 0 );

@@ -15,12 +15,6 @@ namespace Lyre
             return Private::makeUnique<MockDurBase>( myRational, myName );
         }
         
-//        void MockDurBase::copyTo( IDurBaseUP& output ) const
-//        {
-//            auto temp = Private::makeUnique<MockDurBase>( myRational, myName );
-//            Private::copyTo<IDurBase>( temp.get(), output );
-//        }
-        
         MockDurBase::MockDurBase( const Rational value, const String name )
         :myRational( value )
         ,myName( name )

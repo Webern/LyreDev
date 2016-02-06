@@ -101,19 +101,6 @@ TEST( clone, Alter )
     CHECK_EQUAL( 4, p1->getValue() );
     CHECK_EQUAL( 2, p2->getValue() );
 }
-//TEST( copyTo, Alter )
-//{
-//    std::shared_ptr<Alter> p1 = std::make_shared<Alter>();
-//    p1->setValue( -1 );
-//    std::unique_ptr<Alter> p2;
-//    p1->copyTo( p2 );
-//    CHECK( p1.get() != p2.get() )
-//    CHECK_EQUAL( -1, p1->getValue() );
-//    CHECK_EQUAL( -1, p2->getValue() );
-//    p2->setValue( 200 );
-//    CHECK_EQUAL( -1, p1->getValue() );
-//    CHECK_EQUAL( 200, p2->getValue() );
-//}
 TEST( getMin, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );

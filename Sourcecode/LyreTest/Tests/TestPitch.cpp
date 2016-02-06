@@ -83,20 +83,6 @@ TEST( clone, Pitch )
     CHECK_EQUAL( 95, orig->getValue() )
     CHECK_EQUAL( 84, copy->getValue() )
 }
-//TEST( copyTo, Pitch )
-//{
-//    PitchUP orig{ new Pitch{ "B6" } };
-//    PitchUP copy;
-//    CHECK( ! ( copy ) )
-//    orig->copyTo( copy );
-//    CHECK( ( copy ) )
-//    CHECK( ! ( copy.get() == orig.get() ) )
-//    CHECK_EQUAL( 95, orig->getValue() )
-//    CHECK_EQUAL( 95, copy->getValue() )
-//    copy->setStepValue( 0 );
-//    CHECK_EQUAL( 95, orig->getValue() )
-//    CHECK_EQUAL( 84, copy->getValue() )
-//}
 
 TEST( getValue01, Pitch )
 {

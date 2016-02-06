@@ -14,8 +14,6 @@ namespace Lyre
         public:
             virtual ~MockPitchName() {}
             virtual IPitchNameUP clone() const { return MockPitchNameUP{ new MockPitchName{} }; }
-            /* template <typename T>
-             // void copyTo( std::unique_ptr<T>& output ) const */
             virtual Integer getValue() const { return 0; }
             virtual bool parse( const String& str ) { return true; }
             virtual std::ostream& toStream( std::ostream& os ) const { return os; }

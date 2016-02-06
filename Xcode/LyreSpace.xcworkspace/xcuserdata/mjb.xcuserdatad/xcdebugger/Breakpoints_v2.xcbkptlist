@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
-            timestampString = "473367224.511927"
+            timestampString = "476427792.631251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "DurDot::setDotCount( const Integer dots )"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/DurDot.cpp"
-            timestampString = "473367224.511927"
+            timestampString = "476427792.631251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "DurDot::getValue()"
             landmarkType = "5">
          </BreakpointContent>
@@ -323,22 +323,6 @@
             timestampString = "473407107.543969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "TupletDef::getCountType()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/Lyre/Private/TupletDef.cpp"
-            timestampString = "473407107.543969"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
             landmarkName = "TupletDef::constructor( const Integer count, const String&amp; countTypeName, const Integer countTypeDots, const Integer itso, const String&amp; itsoType, const Integer itsoDots )"
@@ -400,11 +384,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/TestITupletDef.cpp"
-            timestampString = "470375625.261037"
+            timestampString = "476428020.37481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "TEST( getMultiplier3, ITupletDef )"
             landmarkType = "7">
          </BreakpointContent>

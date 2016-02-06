@@ -27,8 +27,6 @@ namespace Lyre
             
             virtual IDurDotUP clone() const;
             
-            virtual // void copyTo( IDurDotUP& output ) const;
-            
             virtual Rational getValue() const;
             virtual Rational getDurBaseValue() const;
             

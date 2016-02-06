@@ -19,8 +19,6 @@ namespace Lyre
             virtual ~MockDurBase() {}
             MockDurBase( const Rational value, const String name );
             virtual IDurBaseUP clone() const;
-            virtual // void copyTo( IDurBaseUP& output ) const;
-            
             Rational getValue() const;
             std::ostream& toStream( std::ostream& os ) const;
         private:

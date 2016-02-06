@@ -39,12 +39,6 @@ namespace Lyre
             return IDurDotUP{ new DurDot{ getDurBaseName(), getDotCount() } };
         }
         
-//        void DurDot::copyTo( IDurDotUP& output ) const
-//        {
-//            auto tempP = static_cast<const IDurDot*>( this );
-//            Private::copyTo<IDurDot>( tempP, output );
-//        }
-        
         Rational DurDot::getValue() const
         {
             Rational temp = myDurBase->getValue();

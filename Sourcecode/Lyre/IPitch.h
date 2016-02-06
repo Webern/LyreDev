@@ -14,15 +14,7 @@ namespace Lyre
         
         /* return a deep copy of "this" */
         virtual IPitchUP clone() const = 0;
-        
-        /* deep copy to "output", note
-         the use of static_cast, be careful */
-       // template <typename T>
-        // void copyTo( std::unique_ptr<T>& output ) const
-//        {
-//            output = std::move( std::unique_ptr<T>{ new T{ *(static_cast<T*>( clone().get() )) } } );
-//        }
-        
+
         /* return the value as an Integer,
          for example, C4 = 60, C#4 = 61, etc. */
         virtual Integer getValue() const = 0;

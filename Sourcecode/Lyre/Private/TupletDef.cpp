@@ -140,7 +140,6 @@ namespace Lyre
         {
             nullCheckThrow();
             IDurDotUP output = myCountType->clone();
-            //myCountType->copyTo( output );
             return std::move( output );
         }
         
@@ -153,7 +152,6 @@ namespace Lyre
         {
             nullCheckThrow();
             IDurDotUP output = myInTheSpaceOfType->clone();
-//            myInTheSpaceOfType->copyTo( output );
             return std::move( output );
         }
         

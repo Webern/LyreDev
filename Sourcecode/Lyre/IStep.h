@@ -15,14 +15,6 @@ namespace Lyre
         /* return a deep copy of "this" */
         virtual IStepUP clone() const = 0;
         
-        /* deep copy to "output", note
-         the use of static_cast, be careful */
-//        template <typename T>
-        // void copyTo( std::unique_ptr<T>& output ) const
-//        {
-//            output = std::move( std::unique_ptr<T>{ new T{ *(static_cast<T*>( clone().get() )) } } );
-//        }
-        
         /* return the Step as an integer */
         virtual Integer getValue() const = 0;
         

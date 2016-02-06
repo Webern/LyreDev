@@ -34,23 +34,6 @@ TEST( clone, IAlter )
     CHECK_EQUAL( 100, p1->getValue() );
     CHECK_EQUAL( 200, p2->getValue() );
 }
-//TEST( covariantClone, IAlter )
-//{
-//    std::shared_ptr<MockAlter> p1 = std::make_shared<MockAlter>();
-//    p1->setValue( 100 );
-//    std::unique_ptr<MockAlter> p2;
-//    p1->copyTo( p2 );
-//    CHECK( p1.get() != p2.get() )
-//    CHECK_EQUAL( 100, p1->getValue() );
-//    CHECK_EQUAL( 100, p2->getValue() );
-//    CHECK( p1->extendedFunction() )
-//    CHECK( p2->extendedFunction() )
-//    p2->setValue( 200 );
-//    CHECK_EQUAL( 100, p1->getValue() );
-//    CHECK_EQUAL( 200, p2->getValue() );
-//    CHECK( p1->extendedFunction() )
-//    CHECK( p2->extendedFunction() )
-//}
 TEST( getMin, IAlter )
 {
     IAlterUP p = unique_ptr<MockAlter>( new MockAlter() );
