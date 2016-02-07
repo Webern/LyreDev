@@ -570,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/TestIEnumerable.cpp"
-            timestampString = "476568195.585781"
+            timestampString = "476579465.380464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "TEST( next, IEnumerable )"
             landmarkType = "7">
          </BreakpointContent>
@@ -608,6 +608,38 @@
             startingLineNumber = "313"
             endingLineNumber = "313"
             landmarkName = "TEST( next, IEnumerable )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/LyreTest/Tests/TestIEnumerable.cpp"
+            timestampString = "476579402.387788"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "TEST( next, IEnumerable )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/LyreTest/Tests/TestIEnumerable.cpp"
+            timestampString = "476579911.241325"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
+            landmarkName = "TEST( addThrowNull, IEnumerable )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

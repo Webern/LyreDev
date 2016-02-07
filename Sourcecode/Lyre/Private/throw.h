@@ -34,7 +34,7 @@ throw std::runtime_error (                              \
 
 #ifndef THROW_IF_NULL
 #define THROW_IF_NULL(pointerVariable)               \
-if ( #pointerVariable == nullptr ) { THROW_NULL }
+if ( pointerVariable == nullptr ) { THROW_NULL }
 #endif
 
 

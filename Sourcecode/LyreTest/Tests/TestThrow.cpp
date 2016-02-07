@@ -39,3 +39,23 @@ TEST( Compiles, throwDotH )
     CHECK_EQUAL( expected.substr( 0, 33 ), actual.substr( 0, 33 ) )
     CHECK_EQUAL( expected.substr( expected.size()-13 ), actual.substr( actual.size()-13 ) )
 }
+
+TEST( throwIfNull, throwDotH )
+{
+    bool isExceptionThrown = false;
+    try
+    {
+        int* nullInt = nullptr;
+        if ( nullInt )
+        {
+            // suppress compiler warning
+            ++nullInt;
+        }
+        THROW_IF_NULL( nullptr )
+    }
+    catch( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}

@@ -313,8 +313,9 @@ TEST( next, IEnumerable )
     int counter = 0;
     for ( FakeTestClassUPC item = fakes.getCurrent();
           ! fakes.getIsEnd();
-          fakes.next(), ++counter, item = fakes.getCurrent() )
+          fakes.next(), ++counter )
     {
+        item = fakes.getCurrent();
         CHECK_EQUAL( counter, item->getValue() )
     }
     CHECK( fakes.getIsEnd() )
@@ -343,11 +344,115 @@ TEST( previous, IEnumerable )
     CHECK( ! fakes.previous() )
 }
 
+TEST( jumpThrowEmpty, IEnumerable )
+{
+    IEnumerable<FakeTestClass> fakes;
+    fakes.last();
+    CHECK( fakes.getIsEnd() )
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.jump( 0 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
 
+TEST( jumpThrowNegative, IEnumerable )
+{
+    VecFakeTestClassUP vec;
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 3 } } );
+    IEnumerable<FakeTestClass> fakes{ vec };
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.jump( -1 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( jumpThrowTooBig, IEnumerable )
+{
+    VecFakeTestClassUP vec;
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 3 } } );
+    IEnumerable<FakeTestClass> fakes{ vec };
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.jump( 4 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
 
 TEST( jump, IEnumerable )
 {
-    
-    CHECK_EQUAL( "", "continue with tests of IEnumerable" )
+    VecFakeTestClassUP vec;
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 3 } } );
+    IEnumerable<FakeTestClass> fakes{ vec };
+    fakes.jump( 2 );
+    CHECK_EQUAL( 2, fakes.getCurrent()->getValue() )
+    fakes.jump( 0 );
+    CHECK_EQUAL( 0, fakes.getCurrent()->getValue() )
+    fakes.jump( 3 );
+    CHECK_EQUAL( 3, fakes.getCurrent()->getValue() )
+}
+
+TEST( add, IEnumerable )
+{
+    VecFakeTestClassUP vec;
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 3 } } );
+    IEnumerable<FakeTestClass> fakes{ vec };
+    fakes.add( FakeTestClassUP{ new FakeTestClass{ 4 } } );
+    fakes.jump( 4 );
+    CHECK_EQUAL( 4, fakes.getCurrent()->getValue() )
+}
+
+TEST( addThrowNull, IEnumerable )
+{
+    VecFakeTestClassUP vec;
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassUP{ new FakeTestClass{ 3 } } );
+    IEnumerable<FakeTestClass> fakes{ vec };
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.add( FakeTestClassUP{ nullptr } );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+
+TEST( more, IEnumerable )
+{
+    CHECK(false)
 }
 
