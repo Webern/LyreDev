@@ -16,8 +16,8 @@ namespace
 
 TEST( TODO, BeatPattern )
 {
-    IBeatPatternUP ts = factory->create( 4, 4 );
+    //IBeatPatternUP ts = factory->create( 4, 4 );
     String expected = "write more tests";
-    String actual = ts->toString();
+    String actual = "";//ts->toString();
     CHECK_EQUAL( expected, actual )
 }

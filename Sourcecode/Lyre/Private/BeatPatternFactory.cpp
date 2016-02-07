@@ -9,11 +9,9 @@ namespace Lyre
     {
         BeatPatternFactory::~BeatPatternFactory() {}
         
-        IBeatPatternUP BeatPatternFactory::create(
-            Integer top,
-            Integer bottom )
+        IBeatPatternUP BeatPatternFactory::create()
         {
-            return IBeatPatternUP{ new BeatPattern{ top, bottom } };
+            return IBeatPatternUP{ new Private::BeatPattern{} };
         }
     }
 }

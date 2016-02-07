@@ -21,6 +21,6 @@ namespace Lyre
     {
     public:
         virtual ~IBeatPatternFactory() {}
-        virtual IBeatPatternUP create( Integer top, Integer bottom ) = 0;
+        virtual IBeatPatternUP create() = 0;
     };
 }

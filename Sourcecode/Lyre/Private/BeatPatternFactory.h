@@ -14,7 +14,7 @@ namespace Lyre
         {
         public:
             virtual ~BeatPatternFactory();
-            virtual IBeatPatternUP create( Integer top, Integer bottom );
+            virtual IBeatPatternUP create();
         };
     }
 }

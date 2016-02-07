@@ -4,7 +4,7 @@
 
 /* The Mod class restrics values of an integral
  to be between zero and MODULUS-1 by using the
- % operator. It probably only works for integral
+ % operator. It only works for integral
  types (int, long, short, char, etc) */
 
 namespace Lyre
