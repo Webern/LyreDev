@@ -271,7 +271,12 @@ TEST( next, NoteGroup )
     INoteSP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );
     INoteSPC actualNote = nullptr;
-    do { actualNote = noteGroup->getCurrent(); } while ( noteGroup->next() );
+    
+    while ( noteGroup->next(), ! noteGroup->getIsEnd() )
+    {
+        actualNote = noteGroup->getCurrent();
+    }
+    
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -368,7 +373,7 @@ TEST( remove_exception, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        noteGroup->remove( notAddedSP );
+        noteGroup->remove( 99 );
     }
     catch (...)
     {
@@ -390,7 +395,7 @@ TEST( remove, NoteGroup )
     auto noteToRemoveSP = toShared( noteToRemoveUP );
     noteGroup->add( noteToRemoveSP );
     CHECK_EQUAL( 6, noteGroup->getCount() )
-    noteGroup->remove( noteToRemoveSP );
+    noteGroup->remove( 5 );
     CHECK_EQUAL( 5, noteGroup->getCount() )
     noteGroup->first();
     for (int i=0; i<noteGroup->getCount(); ++i)

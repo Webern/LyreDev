@@ -21,6 +21,7 @@ namespace Lyre
         NoteGroup& operator=( NoteGroup&& other );
         virtual INoteGroupUP clone() const;
         virtual bool getIsEmpty() const;
+        virtual bool getIsEnd() const;
         virtual int getCount() const;
         virtual Rational getDurationValue() const;
         virtual const INoteSPC getCurrent() const;
@@ -32,9 +33,10 @@ namespace Lyre
         virtual bool previous();
         virtual void jump( int index );
         virtual void add( const INoteSP& note );
-        virtual void remove( const INoteSP& note );
+        virtual void remove( int index );
     private:
         class Impl;
-        Impl* myImplP;
+        class Impl2;
+        Impl2* myImplP;
     };
 }

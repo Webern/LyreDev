@@ -125,6 +125,12 @@ namespace Lyre
                 return Copier<TYPE>::copy( myItems[ toSize(myCurrent)] );
             }
             
+            virtual int getCurrentIndex() const
+            {
+                throwIfBadCurrent();
+                return myCurrent;
+            }
+            
             virtual TYPE getNext() const
             {
                 throwIfBadCurrent();
@@ -223,7 +229,17 @@ namespace Lyre
             
             virtual void add( const TYPE& item )
             {
+                bool wasEmpty = false;
+                if ( getIsEmpty() )
+                {
+                    wasEmpty = true;
+                }
                 myItems.push_back( Copier<TYPE>::copy( item ) );
+                if( wasEmpty )
+                {
+                    myCurrent = 0;
+                    myIsEnd = false;
+                }
             }
             
             virtual void remove( const int index )

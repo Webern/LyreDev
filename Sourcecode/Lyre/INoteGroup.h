@@ -13,6 +13,7 @@ namespace Lyre
         virtual ~INoteGroup() {}
         virtual INoteGroupUP clone() const = 0;
         virtual bool getIsEmpty() const = 0;
+        virtual bool getIsEnd() const = 0;
         virtual int getCount() const = 0;
         virtual Rational getDurationValue() const = 0;
         virtual const INoteSPC getCurrent() const = 0;
@@ -24,6 +25,6 @@ namespace Lyre
         virtual bool previous() = 0;
         virtual void jump( int index ) = 0;
         virtual void add( const INoteSP& note ) = 0;
-        virtual void remove( const INoteSP& note ) = 0;
+        virtual void remove( int index ) = 0;
     };
 }
