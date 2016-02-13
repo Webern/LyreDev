@@ -36,7 +36,6 @@ namespace Lyre
         virtual void remove( int index );
     private:
         class Impl;
-        class Impl2;
-        Impl2* myImplP;
+        Impl* myImplP;
     };
 }

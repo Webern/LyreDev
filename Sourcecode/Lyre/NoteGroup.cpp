@@ -5,16 +5,8 @@
 
 namespace Lyre
 {
-
-	class NoteGroup::Impl
-	{
-	public:
-		Impl() : myCurrentIndex(0), myNotes() {}
-		int myCurrentIndex;
-		VecINoteSPC myNotes;    
-	};
     
-    class NoteGroup::Impl2
+    class NoteGroup::Impl
 	{
 	public:
         Private::Collection<INoteSP> myNotes;
@@ -39,14 +31,14 @@ namespace Lyre
     NoteGroup::NoteGroup()
     :myImplP()
     {
-        myImplP = new Impl2();
+        myImplP = new Impl();
         THROW_IF_NULL( myImplP )
     }
 
     NoteGroup::NoteGroup( const NoteGroup& other )
     :myImplP( nullptr )
     {
-        myImplP = new Impl2( *other.myImplP );
+        myImplP = new Impl( *other.myImplP );
         THROW_IF_NULL( myImplP )
     }
     
@@ -60,7 +52,7 @@ namespace Lyre
     NoteGroup& NoteGroup::operator=( const NoteGroup& other )
     {
         myImplP = 0;
-        myImplP = new Impl2( *other.myImplP );
+        myImplP = new Impl( *other.myImplP );
         THROW_IF_NULL( myImplP )
         return *this;
     }
