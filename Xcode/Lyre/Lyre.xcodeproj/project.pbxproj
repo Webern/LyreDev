@@ -128,7 +128,7 @@
 		2928FAFF1C549F2000644429 /* ForwardDeclare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForwardDeclare.h; path = ../../Sourcecode/Lyre/ForwardDeclare.h; sourceTree = "<group>"; };
 		293F25DD1C09ADD4006096F2 /* Duration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Duration.cpp; path = ../../Sourcecode/Lyre/Private/Duration.cpp; sourceTree = "<group>"; };
 		293F25DE1C09ADD4006096F2 /* Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Duration.h; path = ../../Sourcecode/Lyre/Private/Duration.h; sourceTree = "<group>"; };
-		296379841C67B46000760195 /* IEnumerable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IEnumerable.h; path = ../../Sourcecode/Lyre/Private/IEnumerable.h; sourceTree = "<group>"; };
+		296379841C67B46000760195 /* Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Collection.h; path = ../../Sourcecode/Lyre/Private/Collection.h; sourceTree = "<group>"; };
 		296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurBase16th.cpp; path = ../../Sourcecode/Lyre/Private/DurBase16th.cpp; sourceTree = "<group>"; };
 		296D724E1BF8E9EE0049B0EA /* DurBase16th.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurBase16th.h; path = ../../Sourcecode/Lyre/Private/DurBase16th.h; sourceTree = "<group>"; };
 		296D724F1BF8E9EE0049B0EA /* DurBase32nd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurBase32nd.cpp; path = ../../Sourcecode/Lyre/Private/DurBase32nd.cpp; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
-				296379841C67B46000760195 /* IEnumerable.h */,
+				296379841C67B46000760195 /* Collection.h */,
 				29FE9DC01C66C78C00BE0787 /* BeatPattern.cpp */,
 				29FE9DC11C66C78C00BE0787 /* BeatPattern.h */,
 				29FE9DC21C66C78C00BE0787 /* BeatPatternFactory.cpp */,

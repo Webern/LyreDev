@@ -7,32 +7,106 @@ namespace Lyre
 {
     namespace Private
     {
+        // I am a jedi
+        
         template <typename TYPE>
-        class EXPORT_FOR_TESTS IEnumerable
+        class Copier
+        {
+        public:
+            static TYPE copy( const TYPE& item )
+            {
+                return item;
+            }
+        };
+        
+        template <typename TYPE>
+        class Copier<std::unique_ptr<TYPE>>
+        {
+        public:
+            static std::unique_ptr<TYPE> copy( const std::unique_ptr<TYPE>& item )
+            {
+                THROW_IF_NULL( item )
+                return std::move( item->clone() );
+            }
+        };
+        
+        template <typename TYPE>
+        class Copier<std::shared_ptr<TYPE>>
+        {
+        public:
+            static std::shared_ptr<TYPE> copy( const std::shared_ptr<TYPE>& item )
+            {
+                THROW_IF_NULL( item )
+                return item;
+            }
+        };
+        
+        template <typename TYPE>
+        class EXPORT_FOR_TESTS Collection
         {
         private:
-            using T_UP = std::unique_ptr<TYPE>;
-            using T_UPC = std::unique_ptr<const TYPE>;
-            using T_VEC = std::vector<T_UP>;
+            using T_VEC = std::vector<TYPE>;
             T_VEC myItems;
             Integer myCurrent;
             bool myIsEnd;
             
         public:
-            virtual ~IEnumerable() {}
+            virtual ~Collection() {}
             
-            IEnumerable()
+            Collection()
             :myItems()
             ,myCurrent( 0 )
             ,myIsEnd( true )
             {}
             
-            IEnumerable( const T_VEC& items )
+            Collection( const T_VEC& items )
             :myItems()
             ,myCurrent( 0 )
             ,myIsEnd( true )
             {
                 loadItems( items );
+            }
+            
+            Collection( T_VEC&& items )
+            :myItems( std::move( items ) )
+            ,myCurrent( 0 )
+            ,myIsEnd( false )
+            {
+                if ( getCount() == 0 )
+                {
+                    myIsEnd = true;
+                }
+            }
+            
+            Collection( const Collection& other )
+            :myItems()
+            ,myCurrent( other.myCurrent )
+            ,myIsEnd( other.myIsEnd )
+            {
+                loadItems( other.myItems );
+            }
+            
+            Collection( Collection&& other ) noexcept
+            :myItems( std::move( other.myItems ) )
+            ,myCurrent( std::move( other.myCurrent ) )
+            ,myIsEnd( std::move( other.myIsEnd ) )
+            {
+                
+            }
+            
+            Collection& operator=( const Collection& other )
+            {
+                myCurrent = other.myCurrent;
+                myIsEnd = other.myIsEnd;
+                myItems.clear();
+                loadItems( other.myItems );
+            }
+            
+            Collection& operator=( Collection&& other )
+            {
+                myCurrent = std::move( other.myCurrent );
+                myIsEnd = std::move( other.myIsEnd );
+                myItems = std::move( other.myItems );
             }
             
             virtual Integer getCount() const
@@ -45,30 +119,30 @@ namespace Lyre
                 return getCount() == 0;
             }
             
-            virtual T_UP getCurrent() const
+            virtual TYPE getCurrent() const
             {
                 throwIfBadCurrent();
-                return myItems[ toSize(myCurrent)]->clone();
+                return Copier<TYPE>::copy( myItems[ toSize(myCurrent)] );
             }
             
-            virtual T_UP getNext() const
+            virtual TYPE getNext() const
             {
                 throwIfBadCurrent();
                 if ( myCurrent == getCount() - 1 )
                 {
                     THROW( "current item is last, cannot get next" )
                 }
-                return myItems[ toSize( myCurrent ) + 1 ]->clone();
+                return Copier<TYPE>::copy( myItems[ toSize( myCurrent ) + 1 ] );
             }
             
-            virtual T_UP getPrevious() const
+            virtual TYPE getPrevious() const
             {
                 throwIfBadCurrent();
                 if ( myCurrent == 0 )
                 {
                     THROW( "current item is first, cannot get previous" )
                 }
-                return myItems[ toSize( myCurrent ) - 1 ]->clone();
+                return Copier<TYPE>::copy( myItems[ toSize( myCurrent ) - 1 ] );
             }
             
             virtual bool getIsEnd() const
@@ -147,34 +221,29 @@ namespace Lyre
                 myCurrent = index;
             }
             
-            virtual void add( const T_UP& item )
+            virtual void add( const TYPE& item )
             {
-                THROW_IF_NULL( item )
-                myItems.push_back( item->clone() );
+                myItems.push_back( Copier<TYPE>::copy( item ) );
             }
             
-            virtual bool remove( const T_UP& item )
+            virtual void remove( const int index )
             {
-                if ( item == nullptr )
+                if ( index < 0 || index > getCount() - 1 )
                 {
-                    return false;
+                    THROW( "bad index" )
                 }
-                for ( auto i = myItems.cbegin(); i != myItems.cend(); ++i )
+                myItems.erase( myItems.begin() + index );
+                if( myCurrent > index )
                 {
-                    if ( i->get() == item.get() )
-                    {
-                        myItems.erase( i );
-                        if ( getIsEmpty() )
-                        {
-                            myCurrent = 0;
-                            myIsEnd = true;
-                            return true;
-                        }
-                        first();
-                        return true;
-                    }
+                    --myCurrent;
+                    throwIfBadCurrent();
                 }
-                return false;
+            }
+            
+            virtual void removeCurrent( )
+            {
+                throwIfBadCurrent();
+                remove( myCurrent );
             }
             
             virtual void clear()
@@ -194,8 +263,7 @@ namespace Lyre
                 clear();
                 for ( auto i = items.cbegin(); i != items.cend(); ++i )
                 {
-                    THROW_IF_NULL( (*i) )
-                    myItems.push_back( (*i)->clone() );
+                    myItems.push_back( Copier<TYPE>::copy( *i ) );
                 }
                 myIsEnd = false;
             }
