@@ -2,7 +2,6 @@
 #include "Lyre/Private/BeatPatternFactory.h"
 #include "Lyre/Private/throw.h"
 
-#if 1==0
 namespace Lyre
 {
     IBeatPatternFactoryUP
@@ -20,4 +19,4 @@ namespace Lyre
         THROW( "Unrecognized BeatPatternFactoryType" )
     }
 }
-#endif
+

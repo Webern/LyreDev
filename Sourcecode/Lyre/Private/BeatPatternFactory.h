@@ -4,7 +4,6 @@
 #include "Lyre/IBeatPatternFactory.h"
 #include "Lyre/IBeatPattern.h"
 
-#if 1 == 0
 namespace Lyre
 {
     namespace Private
@@ -15,8 +14,11 @@ namespace Lyre
         {
         public:
             virtual ~BeatPatternFactory();
-            virtual IBeatPatternUP create();
+            
+            virtual IBeatPatternUP create( Integer count,
+                                           const IDurationUP& dur ) const;
+            
+            virtual IBeatPatternUP create( const VecIDurationUP& durations ) const;
         };
     }
 }
-#endif

@@ -2,18 +2,22 @@
 #include "Lyre/IBeatPattern.h"
 #include "Lyre/Private/BeatPattern.h"
 
-#if 1==0
-
 namespace Lyre
 {
     namespace Private
     {
         BeatPatternFactory::~BeatPatternFactory() {}
         
-        IBeatPatternUP BeatPatternFactory::create()
+        IBeatPatternUP BeatPatternFactory::create( Integer count,
+                                                   const IDurationUP& dur ) const
         {
-            return IBeatPatternUP{ new Private::BeatPattern{} };
+            return IBeatPatternUP{ new Private::BeatPattern{ count, dur } };
+        }
+        
+        IBeatPatternUP BeatPatternFactory::create( const VecIDurationUP& durations ) const
+        {
+            return IBeatPatternUP{ new Private::BeatPattern{ durations } };
         }
     }
 }
-#endif
+

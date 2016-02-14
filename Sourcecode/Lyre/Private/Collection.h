@@ -100,6 +100,7 @@ namespace Lyre
                 myIsEnd = other.myIsEnd;
                 myItems.clear();
                 loadItems( other.myItems );
+                return *this;
             }
             
             Collection& operator=( Collection&& other )
@@ -107,6 +108,7 @@ namespace Lyre
                 myCurrent = std::move( other.myCurrent );
                 myIsEnd = std::move( other.myIsEnd );
                 myItems = std::move( other.myItems );
+                return *this;
             }
             
             virtual Integer getCount() const
@@ -136,16 +138,16 @@ namespace Lyre
                 return Copier<TYPE>::copy( *( myItems.cbegin() + index ) );
             }
             
-            virtual TYPE getCurrent() const
-            {
-                throwIfBadCurrent();
-                return Copier<TYPE>::copy( myItems[ toSize(myCurrent)] );
-            }
-            
             virtual int getCurrentIndex() const
             {
                 throwIfBadCurrent();
                 return myCurrent;
+            }
+            
+            virtual TYPE getCurrent() const
+            {
+                throwIfBadCurrent();
+                return Copier<TYPE>::copy( myItems[ toSize(myCurrent)] );
             }
             
             virtual TYPE getNext() const

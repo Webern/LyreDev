@@ -1,6 +1,6 @@
 #include "Lyre/Private/BeatPattern.h"
 #include "Lyre/Private/throw.h"
-#if 1==0
+
 namespace Lyre
 {
     namespace Private
@@ -38,110 +38,134 @@ namespace Lyre
         
         std::ostream& BeatPattern::toStream( std::ostream& os ) const
         {
-            os << "BeatPattern:< ";
+            os << "BeatPattern<";
             if ( getIsEmpty() )
             {
-                os << "empty >";
+                os << "empty>";
                 return os;
-            }
-            int currentIndex = 0;
-            bool wasEnd = getIsEnd();
-            if ( !wasEnd )
-            {
-                currentIndex = myDurations.getCurrentIndex();
             }
             for ( int i = 0; i < getCount(); ++i )
             {
-                myDurations.jump( i );
+                if ( i > 0 )
+                {
+                    os << ",";
+                }
+                os << *( myDurations.get( i ) );
                 
             }
+            os << ">";
             return os;
         }
-
+        
+        Rational BeatPattern::getTotalDuration() const
+        {
+            Rational total{ 0, 1 };
+            if ( getIsEmpty() )
+            {
+                return total;
+            }
+            for( int i = 0; i < getCount(); ++i )
+            {
+                total += myDurations.get( i )->getValue();
+            }
+            return total;
+        }
+        
         void BeatPattern::loadDurations( Integer count, const IDurationUP& dur )
         {
             if ( count < 1 )
             {
-                THROW( "invalid argument, must be > 1" );
+                THROW( "invalid argument, must be >= 1" );
             }
+            myDurations.clear();
             for ( int i = 0; i < count; ++i )
             {
-                myDurations.push_back( dur->clone() );
-            }
-        }
-        
-        void BeatPattern::loadDurations( const VecIDurationUP& durations )
-        {
-            if ( durations.size() == 0 )
-            {
-                THROW( "invalid argument, durations is empty" );
-            }
-            for ( auto i = durations.cbegin(); i != durations.cend(); ++i )
-            {
-                THROW_IF_NULL( (*i) )
-                myDurations.push_back( (*i)->clone() );
+                myDurations.add( dur );
             }
         }
         
         Integer BeatPattern::getCount() const
         {
-            return static_cast<Integer>( myDurations.size() );
+            return myDurations.getCount();
         }
         
         bool BeatPattern::getIsEmpty() const
         {
-            return getCount() == 0;
+            return myDurations.getIsEmpty();
+        }
+        
+        const IDurationUPC BeatPattern::get( int index ) const
+        {
+            return myDurations.get( index );
+        }
+        
+        int BeatPattern::getCurrentIndex() const
+        {
+            return myDurations.getCurrentIndex();
         }
         
         const IDurationUPC BeatPattern::getCurrent() const
         {
-            if ( myIsEnd )
-            {
-                THROW( "cannot return when getIsEnd is true" )
-            }
-            if ( myCurrent < 0 || myCurrent > getCount() - 1 )
-            {
-                THROW( "current pointer is invalid" )
-            }
-            return myDurations[static_cast<ULong>( myCurrent )]->clone();
+            return myDurations.getCurrent();
         }
+        
         const IDurationUPC BeatPattern::getPrevious() const
         {
-            if ( myIsEnd )
-            {
-                THROW( "cannot return when getIsEnd is true" )
-            }
-            if ( myCurrent < 0 || myCurrent > getCount()-1 )
-            {
-                THROW( "current pointer is invalid" )
-            }
-            if ( myCurrent == 0 )
-            {
-                THROW( "cannot get next, pointer is at first entry" )
-            }
-            return myDurations[static_cast<ULong>( myCurrent-1 )]->clone();
+            return myDurations.getPrevious();
         }
+        
         const IDurationUPC BeatPattern::getNext() const
         {
-            if ( myIsEnd )
-            {
-                THROW( "cannot return when getIsEnd is true" )
-            }
-            if ( myCurrent < 0 || myCurrent > getCount()-1 )
-            {
-                THROW( "current pointer is invalid" )
-            }
-            if ( myCurrent == getCount()-1 )
-            {
-                THROW( "cannot get next, pointer is at final entry" )
-            }
-            return myDurations[static_cast<ULong>( myCurrent+1 )]->clone();
+            return myDurations.getNext();
+        }
+        
+        void BeatPattern::first()
+        {
+            myDurations.first();
+        }
+        
+        void BeatPattern::last()
+        {
+            myDurations.last();
+        }
+        
+        bool BeatPattern::next()
+        {
+            return myDurations.next();
+        }
+        
+        bool BeatPattern::previous()
+        {
+            return myDurations.previous();
+        }
+        
+        void BeatPattern::jump( int index )
+        {
+            myDurations.jump( index );
         }
         
         bool BeatPattern::getIsEnd() const
         {
-            return myIsEnd;
+            return myDurations.getIsEnd();
+        }
+        
+        bool BeatPattern::checkDuration( const IDurationUP& dur ) const
+        {
+            THROW_IF_NULL( dur )
+            return ! dur->getIsTuplet();
+        }
+        
+        bool BeatPattern::checkDurations( const VecIDurationUP& durations ) const
+        {
+            for ( auto i = durations.cbegin(); i != durations.cend(); ++i )
+            {
+                if ( ! checkDuration( *i ) )
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
-#endif
+

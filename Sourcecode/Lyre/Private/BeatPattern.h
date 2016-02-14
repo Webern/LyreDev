@@ -4,7 +4,7 @@
 #include "Lyre/IBeatPattern.h"
 #include "Lyre/IDuration.h"
 #include "Lyre/Private/Collection.h"
-#if 1==0
+
 namespace Lyre
 {
     namespace Private
@@ -21,8 +21,12 @@ namespace Lyre
             virtual IBeatPatternUP clone() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             
-            Integer getCount() const;
+            virtual Rational getTotalDuration() const;
+            
+            virtual int getCount() const;
             virtual bool getIsEmpty() const;
+            virtual const IDurationUPC get( int index ) const;
+            virtual int getCurrentIndex() const;
             virtual const IDurationUPC getCurrent() const;
             virtual const IDurationUPC getNext() const;
             virtual const IDurationUPC getPrevious() const;
@@ -33,14 +37,13 @@ namespace Lyre
             virtual bool previous();
             virtual void jump( int index );
             
-            
         private:
         // data
             Collection<IDurationUP> myDurations;
         
         // functions
-            bool checkDuration( const IDurationUP& dur );
-            bool checkDurations( const VecIDurationUP& durations );
+            bool checkDuration( const IDurationUP& dur ) const;
+            bool checkDurations( const VecIDurationUP& durations ) const;
             void loadDurations( Integer count, const IDurationUP& dur );
         };
     }
@@ -48,5 +51,5 @@ namespace Lyre
     
     
 }
-#endif
+
 
