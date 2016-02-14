@@ -1,26 +1,30 @@
 //PUBLIC
 
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "Lyre/IDurDotFactory.h"
+#include "Lyre/IDurationFactory.h"
 
 using namespace Lyre;
 using namespace std;
 
-TEST( exists, IDurDotFactory )
+namespace
 {
-    IDurDotFactoryUP factory = createDurDotFactory( DurDotFactoryType::Standard );
-    CHECK( factory != nullptr )
-}
-TEST( doesSomething, IDurDotFactory )
-{
-    IDurDotFactoryUP factory = createDurDotFactory( DurDotFactoryType::Standard );
-    IDurDotUP dur = factory->createDurDot( "Quarter", 1 );
-    CHECK( dur != nullptr )
+    auto factory = createDurationFactory( DurationFactoryType::Standard );
 }
 
-TEST( doesSomething2, IDurDotFactory )
+TEST( durRationLut01, IDurDotFactory )
 {
-    IDurDotFactoryUP factory = createDurDotFactory( DurDotFactoryType::Standard );
-    IDurDotUP dur = factory->createDurDot( "Quarter" );
-    CHECK( dur != nullptr )
+    auto actual = factory->createDuration( Rational{ 1, 1 } );
+    auto expected = factory->createDuration( "Quarter" );
+    CHECK_EQUAL( expected->toString(), actual->toString() )
+}
+
+TEST( durRationLut02, IDurDotFactory )
+{
+    for ( int i = 0; i < 1000; ++i )
+    {
+        auto discard = createDurationFactory( DurationFactoryType::Standard );
+    }
+    auto actual = factory->createDuration( Rational{ 3, 2 } );
+    auto expected = factory->createDuration( "Quarter" );
+    CHECK_EQUAL( expected->toString(), actual->toString() )
 }

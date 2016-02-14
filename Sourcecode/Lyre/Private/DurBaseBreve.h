@@ -13,13 +13,14 @@ namespace Lyre
         class EXPORT_FOR_TESTS DurBaseBreve : public IDurBase
         {
         public:
+            DurBaseBreve();
             virtual ~DurBaseBreve();
             virtual IDurBaseUP clone() const;
             virtual Rational getValue() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
         private:
-            const static Rational ourRational;
-            const static String ourName;
+            Rational myRational;
+            String myName;
         };
     }
 }

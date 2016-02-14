@@ -18,32 +18,55 @@ namespace Lyre
 {
     namespace Private
     {
-        std::map<String, IDurBaseUP> DurBaseFactory::ourDurMap;
+        DurMap::DurMap()
+        :values()
+        {
+            values.clear();
+            values.insert( DurPair{ "256th", Private::makeUnique<DurBase256th>() } );
+            values.insert( DurPair{ "128th", Private::makeUnique<DurBase128th>() } );
+            values.insert( DurPair{ "64th", Private::makeUnique<DurBase64th>() } );
+            values.insert( DurPair{ "32nd", Private::makeUnique<DurBase32nd>() } );
+            values.insert( DurPair{ "16th", Private::makeUnique<DurBase16th>() } );
+            values.insert( DurPair{ "Eighth", Private::makeUnique<DurBase8th>() } );
+            values.insert( DurPair{ "Quarter", Private::makeUnique<DurBaseQuarter>() } );
+            values.insert( DurPair{ "Half", Private::makeUnique<DurBaseHalf>() } );
+            values.insert( DurPair{ "Whole", Private::makeUnique<DurBaseWhole>() } );
+            values.insert( DurPair{ "Breve", Private::makeUnique<DurBaseBreve>() } );
+            values.insert( DurPair{ "Longa", Private::makeUnique<DurBaseLonga>() } );
+        }
+        
+        
+        DurMap::DurMap( const DurMap& other )
+        :values()
+        {
+            for ( auto i = other.values.cbegin(); i != other.values.cend(); ++i )
+            {
+                values[i->first] = i->second->clone();
+            }
+        }
+        
+        DurMap& DurMap::operator=( const DurMap& other )
+        {
+            values.clear();
+            for ( auto i = other.values.cbegin(); i != other.values.cend(); ++i )
+            {
+                values[i->first] = i->second->clone();
+            }
+            return *this;
+        }
         
         DurBaseFactory::DurBaseFactory()
+        :myDurMap()
         {
-            if ( ourDurMap.size() == 0 )
-            {
-                ourDurMap.insert( DurPair{ "256th", Private::makeUnique<DurBase256th>() } );
-                ourDurMap.insert( DurPair{ "128th", Private::makeUnique<DurBase128th>() } );
-                ourDurMap.insert( DurPair{ "64th", Private::makeUnique<DurBase64th>() } );
-                ourDurMap.insert( DurPair{ "32nd", Private::makeUnique<DurBase32nd>() } );
-                ourDurMap.insert( DurPair{ "16th", Private::makeUnique<DurBase16th>() } );
-                ourDurMap.insert( DurPair{ "Eighth", Private::makeUnique<DurBase8th>() } );
-                ourDurMap.insert( DurPair{ "Quarter", Private::makeUnique<DurBaseQuarter>() } );
-                ourDurMap.insert( DurPair{ "Half", Private::makeUnique<DurBaseHalf>() } );
-                ourDurMap.insert( DurPair{ "Whole", Private::makeUnique<DurBaseWhole>() } );
-                ourDurMap.insert( DurPair{ "Breve", Private::makeUnique<DurBaseBreve>() } );
-                ourDurMap.insert( DurPair{ "Longa", Private::makeUnique<DurBaseLonga>() } );
-            }
+            
         }
         
         DurBaseFactory::~DurBaseFactory() {}
         
         IDurBaseUP DurBaseFactory::createDur( const String& durName ) const
         {
-            auto it = ourDurMap.find( durName );
-            if ( it == ourDurMap.cend() )
+            auto it = myDurMap.values.find( durName );
+            if ( it == myDurMap.values.cend() )
             {
                 std::stringstream ss;
                 ss << "'" << durName << "'" << " is not a valid DurBase name";

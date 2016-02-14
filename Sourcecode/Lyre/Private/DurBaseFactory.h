@@ -10,6 +10,17 @@ namespace Lyre
     {
         FORWARD_DECLARE(DurBaseFactory)
         
+        struct DurMap
+        {
+        public:
+            using DurPairMap = std::map<String, IDurBaseUP>;
+            using DurPair = std::pair<String, IDurBaseUP>;
+            DurPairMap values;
+            DurMap();
+            DurMap( const DurMap& other );
+            DurMap& operator=( const DurMap& other );
+        };
+        
         class EXPORT_FOR_TESTS DurBaseFactory : public IDurBaseFactory
         {
         public:
@@ -17,9 +28,7 @@ namespace Lyre
             virtual ~DurBaseFactory();
             virtual IDurBaseUP createDur( const String& durName ) const;
         private:
-            using DurMap = std::map<String, IDurBaseUP>;
-            using DurPair = std::pair<String, IDurBaseUP>;
-            static DurMap ourDurMap;
+            DurMap myDurMap;
         };
     }
 }

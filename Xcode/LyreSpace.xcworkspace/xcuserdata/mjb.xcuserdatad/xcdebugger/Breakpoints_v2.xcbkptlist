@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "DurDot::DurDot( const String&amp; durName, const Integer dotCount )"
+            landmarkName = "DurDot::DurDot( const String&amp; durName, const int dotCount )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "DurDot::DurDot( const String&amp; durName, const Integer dotCount )"
+            landmarkName = "DurDot::DurDot( const String&amp; durName, const int dotCount )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "DurDot::setDotCount( const Integer dots )"
+            landmarkName = "DurDot::setDotCount( const int dots )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -277,7 +277,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
             endingLineNumber = "82"
-            landmarkName = "TupletDef::constructor( const Integer count, const String&amp; countTypeName, const Integer countTypeDots, const Integer itso, const String&amp; itsoType, const Integer itsoDots )"
+            landmarkName = "TupletDef::constructor( const int count, const String&amp; countTypeName, const int countTypeDots, const int itso, const String&amp; itsoType, const int itsoDots )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -325,7 +325,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "TupletDef::constructor( const Integer count, const String&amp; countTypeName, const Integer countTypeDots, const Integer itso, const String&amp; itsoType, const Integer itsoDots )"
+            landmarkName = "TupletDef::constructor( const int count, const String&amp; countTypeName, const int countTypeDots, const int itso, const String&amp; itsoType, const int itsoDots )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -735,38 +735,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/Lyre/Private/DurBaseFactory.cpp"
-            timestampString = "477110532.938319"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "DurBaseFactory::DurBaseFactory()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/Lyre/Private/DurBaseFactory.cpp"
-            timestampString = "477110535.241403"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "DurBaseFactory::DurBaseFactory()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/TimeSignature.cpp"
             timestampString = "477122582.96052"
             startingColumnNumber = "9223372036854775807"
@@ -788,6 +756,54 @@
             startingLineNumber = "144"
             endingLineNumber = "144"
             landmarkName = "TimeSignature::guessBeatPattern()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/DurBaseFactory.cpp"
+            timestampString = "477160855.9508"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "DurBaseFactory::DurBaseFactory()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/DurBaseFactory.cpp"
+            timestampString = "477160855.9508"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "DurBaseFactory::createDur( const String&amp; durName )"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/DurBaseFactory.cpp"
+            timestampString = "477160855.9508"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "DurBaseFactory::createDur( const String&amp; durName )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

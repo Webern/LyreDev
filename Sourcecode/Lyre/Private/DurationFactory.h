@@ -3,6 +3,7 @@
 #include "Lyre/Lyre.h"
 #include "Lyre/ITupletDef.h"
 #include "Lyre/IDurationFactory.h"
+#include <map>
 
 namespace Lyre
 {
@@ -12,8 +13,14 @@ namespace Lyre
         
         class EXPORT_FOR_TESTS DurationFactory : public IDurationFactory
         {
+            
         public:
             virtual ~DurationFactory();
+            DurationFactory();
+            DurationFactory( const DurationFactory& other );
+            DurationFactory( DurationFactory&& other );
+            DurationFactory& operator=( const DurationFactory& other );
+            DurationFactory& operator=( DurationFactory&& other );
             
             virtual IDurationUP createDuration(
                 const String& durName ) const;
@@ -26,6 +33,16 @@ namespace Lyre
                 const VecITupletDefSPC& tuplets,
                 const String& durName,
                 const int dotCount ) const;
+            
+            virtual IDurationUP createDuration(
+                const Rational& rational,
+                bool doThrowOnBadInput = false ) const;
+        
+        private:
+            std::map<Rational,IDurationUP> myLut;
+            void createLut();
+            void copyLut( const std::map<Rational,IDurationUP>& other );
+            IDurationUP find( const Rational& r, bool doThrow ) const;
         };
     }
 }

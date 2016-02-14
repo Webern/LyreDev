@@ -5,9 +5,10 @@ namespace Lyre
 {
     namespace Private
     {
-        const Rational DurBase64th::ourRational = Rational { 1, 16 };
-        
-        const String DurBase64th::ourName = "64th";
+        DurBase64th::DurBase64th()
+        :myRational( 1, 16 )
+        ,myName( "64th" )
+        {}
         
         DurBase64th::~DurBase64th() {}
         
@@ -18,11 +19,11 @@ namespace Lyre
         
         Rational DurBase64th::getValue() const
         {
-            return ourRational;
+            return myRational;
         }
         std::ostream& DurBase64th::toStream( std::ostream& os ) const
         {
-            return os << ourName;
+            return os << myName;
         }
     }
 }

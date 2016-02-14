@@ -32,5 +32,11 @@ namespace Lyre
             const VecITupletDefSPC& tuplets,
             const String& durName,
             const int dotCount ) const = 0;
+        
+        virtual IDurationUP createDuration(
+            const Rational& rational,
+            bool doThrowOnBadInput = false ) const = 0;
+        
+        
     };
 }

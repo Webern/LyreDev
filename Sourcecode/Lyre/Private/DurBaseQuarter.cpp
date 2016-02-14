@@ -5,9 +5,10 @@ namespace Lyre
 {
     namespace Private
     {
-        const Rational DurBaseQuarter::ourRational = Rational { 1, 1 };
-        
-        const String DurBaseQuarter::ourName = "Quarter";
+        DurBaseQuarter::DurBaseQuarter()
+        :myRational( 1, 1 )
+        ,myName( "Quarter" )
+        {}
         
         DurBaseQuarter::~DurBaseQuarter() {}
         
@@ -18,11 +19,11 @@ namespace Lyre
         
         Rational DurBaseQuarter::getValue() const
         {
-            return ourRational;
+            return myRational;
         }
         std::ostream& DurBaseQuarter::toStream( std::ostream& os ) const
         {
-            return os << ourName;
+            return os << myName;
         }
     }
 }
