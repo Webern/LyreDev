@@ -41,10 +41,22 @@ namespace
 
 TEST( toStream, BeatPattern )
 {
-    IBeatPatternUP ts = factory->create( quarterDottedQuarter() );
+    IBeatPatternUP bp = factory->create( quarterDottedQuarter() );
     std::stringstream sstr;
-    ts->toStream( sstr );
+    bp->toStream( sstr );
     String expected = "BeatPattern <Quarter,Quarter.>";
     String actual = sstr.str();
     CHECK_EQUAL( expected, actual )
 }
+
+
+TEST( getTotalDuration, BeatPattern )
+{
+    IBeatPatternUP bp = factory->create( quarterDottedQuarter() );
+    Rational expected{ 5, 2 };
+    Rational actual = bp->getTotalDuration();
+    CHECK_EQUAL( expected, actual )
+}
+
+// TODO More Tests
+
