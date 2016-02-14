@@ -94,19 +94,13 @@ namespace Lyre
         {
             return total;
         }
-        int rememberCurrent = 0;
-        if ( ! getIsEnd() )
-        {
-            rememberCurrent = MY_NOTES.getCurrentIndex();
-        }
         for ( int i = 0; i < getCount(); ++i )
         {
             
             MY_NOTES.jump( i );
-            total += MY_NOTES.getCurrent()->getDuration()->getValue();
+            total += MY_NOTES.get( i )->getDuration()->getValue();
         }
         total.reduce();
-        MY_NOTES.jump( rememberCurrent );
         return total;
     }
     

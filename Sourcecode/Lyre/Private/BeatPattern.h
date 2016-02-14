@@ -3,7 +3,8 @@
 #include "Lyre/Lyre.h"
 #include "Lyre/IBeatPattern.h"
 #include "Lyre/IDuration.h"
-
+#include "Lyre/Private/Collection.h"
+#if 1==0
 namespace Lyre
 {
     namespace Private
@@ -26,26 +27,26 @@ namespace Lyre
             virtual const IDurationUPC getNext() const;
             virtual const IDurationUPC getPrevious() const;
             virtual bool getIsEnd() const;
-            //virtual void first();
-            //virtual void last();
-            //virtual bool next();
-            //virtual bool previous();
-            //virtual void jump( int index );
+            virtual void first();
+            virtual void last();
+            virtual bool next();
+            virtual bool previous();
+            virtual void jump( int index );
             
             
         private:
         // data
-            using ULong = VecIDurationUP::size_type;
-            VecIDurationUP myDurations;
-            Integer myCurrent;
-            bool myIsEnd;
+            Collection<IDurationUP> myDurations;
         
         // functions
+            bool checkDuration( const IDurationUP& dur );
+            bool checkDurations( const VecIDurationUP& durations );
             void loadDurations( Integer count, const IDurationUP& dur );
-            void loadDurations( const VecIDurationUP& durations );
         };
     }
     
     
     
 }
+#endif
+

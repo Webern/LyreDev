@@ -2,7 +2,7 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/IBeatPattern.h"
-
+#if 1==0
 namespace Lyre
 {
     enum class PUBLIC BeatPatternFactoryType
@@ -24,3 +24,4 @@ namespace Lyre
         virtual IBeatPatternUP create() = 0;
     };
 }
+#endif

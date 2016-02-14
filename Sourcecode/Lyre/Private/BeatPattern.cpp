@@ -1,6 +1,6 @@
 #include "Lyre/Private/BeatPattern.h"
 #include "Lyre/Private/throw.h"
-
+#if 1==0
 namespace Lyre
 {
     namespace Private
@@ -14,22 +14,47 @@ namespace Lyre
         BeatPattern::BeatPattern( Integer count, const IDurationUP& dur )
         :myDurations()
         {
+            if( ! checkDuration( dur ) )
+            {
+                THROW( "tuplets are not allowed" )
+            }
             loadDurations( count, dur );
         }
         
         BeatPattern::BeatPattern( const VecIDurationUP& durations )
         :myDurations()
         {
-            loadDurations( durations );
+            if( ! checkDurations( durations ) )
+            {
+                THROW( "tuplets are not allowed" )
+            }
+            myDurations = Collection<IDurationUP>{ durations };
         }
         
         IBeatPatternUP BeatPattern::clone() const
         {
-            return IBeatPatternUP{ new BeatPattern{} };
+            return IBeatPatternUP{ new BeatPattern{ *this } };
         }
         
         std::ostream& BeatPattern::toStream( std::ostream& os ) const
         {
+            os << "BeatPattern:< ";
+            if ( getIsEmpty() )
+            {
+                os << "empty >";
+                return os;
+            }
+            int currentIndex = 0;
+            bool wasEnd = getIsEnd();
+            if ( !wasEnd )
+            {
+                currentIndex = myDurations.getCurrentIndex();
+            }
+            for ( int i = 0; i < getCount(); ++i )
+            {
+                myDurations.jump( i );
+                
+            }
             return os;
         }
 
@@ -119,3 +144,4 @@ namespace Lyre
         }
     }
 }
+#endif

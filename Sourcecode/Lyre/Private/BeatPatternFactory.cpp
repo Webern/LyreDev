@@ -2,6 +2,7 @@
 #include "Lyre/IBeatPattern.h"
 #include "Lyre/Private/BeatPattern.h"
 
+#if 1==0
 
 namespace Lyre
 {
@@ -15,3 +16,4 @@ namespace Lyre
         }
     }
 }
+#endif

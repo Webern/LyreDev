@@ -18,7 +18,7 @@
 		2928FB011C5531EE00644429 /* TestNoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB001C5531EE00644429 /* TestNoteGroup.cpp */; };
 		2928FB061C55437300644429 /* MockNoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB051C55437300644429 /* MockNoteGroup.cpp */; };
 		293F25E11C09B12D006096F2 /* TestToShared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25E01C09B12D006096F2 /* TestToShared.cpp */; };
-		296379861C67B5A300760195 /* TestIEnumerable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296379851C67B5A300760195 /* TestIEnumerable.cpp */; };
+		296379861C67B5A300760195 /* TestCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296379851C67B5A300760195 /* TestCollection.cpp */; };
 		296D728F1BF8EB960049B0EA /* TestDurBase8th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */; };
 		296D72901BF8EB960049B0EA /* TestDurBase16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */; };
 		296D72911BF8EB960049B0EA /* TestDurBase32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72861BF8EB960049B0EA /* TestDurBase32nd.cpp */; };
@@ -96,7 +96,7 @@
 		2928FB031C55426E00644429 /* MockNoteGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockNoteGroup.h; path = ../../Sourcecode/LyreTest/Mock/MockNoteGroup.h; sourceTree = "<group>"; };
 		2928FB051C55437300644429 /* MockNoteGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockNoteGroup.cpp; path = ../../Sourcecode/LyreTest/Mock/MockNoteGroup.cpp; sourceTree = "<group>"; };
 		293F25E01C09B12D006096F2 /* TestToShared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestToShared.cpp; path = ../../Sourcecode/LyreTest/Tests/TestToShared.cpp; sourceTree = "<group>"; };
-		296379851C67B5A300760195 /* TestIEnumerable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIEnumerable.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIEnumerable.cpp; sourceTree = "<group>"; };
+		296379851C67B5A300760195 /* TestCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestCollection.cpp; path = ../../Sourcecode/LyreTest/Tests/TestCollection.cpp; sourceTree = "<group>"; };
 		296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase8th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase8th.cpp; sourceTree = "<group>"; };
 		296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase16th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase16th.cpp; sourceTree = "<group>"; };
 		296D72861BF8EB960049B0EA /* TestDurBase32nd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase32nd.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase32nd.cpp; sourceTree = "<group>"; };
@@ -221,6 +221,7 @@
 				29CAD4051BE661B400C0CA90 /* TestAlter.cpp */,
 				29FE9DC61C66C86C00BE0787 /* TestBeatPattern.cpp */,
 				29FE9DC71C66C86C00BE0787 /* TestBeatPatternFactory.cpp */,
+				296379851C67B5A300760195 /* TestCollection.cpp */,
 				298227461BF99B2400277C67 /* TestCopyTo.cpp */,
 				290989D11C0395A30040138E /* TestDurationFactory.cpp */,
 				296D72881BF8EB960049B0EA /* TestDurBase128th.cpp */,
@@ -243,7 +244,6 @@
 				29CAD4151BE661B400C0CA90 /* TestIDurBaseFactory.cpp */,
 				290989D31C0398FD0040138E /* TestIDurDot.cpp */,
 				29CAD4161BE661B400C0CA90 /* TestIEnum.cpp */,
-				296379851C67B5A300760195 /* TestIEnumerable.cpp */,
 				29CAD4171BE661B400C0CA90 /* TestIPitch.cpp */,
 				29CAD4181BE661B400C0CA90 /* TestIPitchFactory.cpp */,
 				29CAD4191BE661B400C0CA90 /* TestIPitchName.cpp */,
@@ -375,7 +375,7 @@
 				296D72961BF8EB960049B0EA /* TestDurBaseHalf.cpp in Sources */,
 				298227471BF99B2400277C67 /* TestCopyTo.cpp in Sources */,
 				29CAD44F1BE6673C00C0CA90 /* MockPitch.cpp in Sources */,
-				296379861C67B5A300760195 /* TestIEnumerable.cpp in Sources */,
+				296379861C67B5A300760195 /* TestCollection.cpp in Sources */,
 				296D72941BF8EB960049B0EA /* TestDurBase256th.cpp in Sources */,
 				29E4D2211C06C5260038E6FC /* TestITupletDefFactory.cpp in Sources */,
 				29CAD42E1BE661B400C0CA90 /* TestIAlter.cpp in Sources */,

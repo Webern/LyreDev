@@ -119,6 +119,23 @@ namespace Lyre
                 return getCount() == 0;
             }
             
+            virtual TYPE get( int index ) const
+            {
+                if ( getIsEmpty() )
+                {
+                    THROW( "the collection is empty" )
+                }
+                if ( index < 0 )
+                {
+                    THROW( "invalid index (less than zero)" )
+                }
+                if ( index > getCount() - 1 )
+                {
+                    THROW( "invalid index (too large)" )
+                }
+                return Copier<TYPE>::copy( *( myItems.cbegin() + index ) );
+            }
+            
             virtual TYPE getCurrent() const
             {
                 throwIfBadCurrent();

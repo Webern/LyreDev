@@ -606,6 +606,107 @@ TEST( SO_removeCurrent, Collection )
     CHECK( fakes.getIsEnd() )
 }
 
+TEST( SO_getExceptionEmpty, Collection )
+{
+    Collection<FakeTestClass> fakes;
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.get( 0 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( SO_getExceptionLow, Collection )
+{
+    FakeTestClassVector vec;
+    vec.push_back( FakeTestClass{ 0 } );
+    vec.push_back( FakeTestClass{ 1 } );
+    vec.push_back( FakeTestClass{ 2 } );
+    vec.push_back( FakeTestClass{ 3 } );
+    Collection<FakeTestClass> fakes{ vec };
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.get( -1 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( SO_getExceptionHigh, Collection )
+{
+    FakeTestClassVector vec;
+    vec.push_back( FakeTestClass{ 0 } );
+    vec.push_back( FakeTestClass{ 1 } );
+    vec.push_back( FakeTestClass{ 2 } );
+    vec.push_back( FakeTestClass{ 3 } );
+    Collection<FakeTestClass> fakes{ vec };
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.get( 4 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( SO_get, Collection )
+{
+    FakeTestClassVector vec;
+    vec.push_back( FakeTestClass{ 0 } );
+    vec.push_back( FakeTestClass{ 1 } );
+    vec.push_back( FakeTestClass{ 2 } );
+    vec.push_back( FakeTestClass{ 3 } );
+    Collection<FakeTestClass> fakes{ vec };
+    auto retreived = fakes.get( 2 );
+    int expected = 2;
+    int actual = retreived.getValue();
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( getCurrentIndex_ExceptionEmpty, Collection )
+{
+    Collection<FakeTestClass> fakes;
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.getCurrentIndex();
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( getCurrentIndex, Collection )
+{
+    FakeTestClassVector vec;
+    vec.push_back( FakeTestClass{ 0 } );
+    vec.push_back( FakeTestClass{ 1 } );
+    vec.push_back( FakeTestClass{ 2 } );
+    vec.push_back( FakeTestClass{ 3 } );
+    Collection<FakeTestClass> fakes{ vec };
+    CHECK_EQUAL( 0, fakes.getCurrentIndex() )
+    fakes.jump( 2 );
+    CHECK_EQUAL( 2, fakes.getCurrentIndex() )
+    fakes.jump( 1 );
+    CHECK_EQUAL( 1, fakes.getCurrentIndex() )
+    fakes.jump( 3 );
+    CHECK_EQUAL( 3, fakes.getCurrentIndex() )
+}
+
 /*******************************************************************************
 Test with unique pointers
 *******************************************************************************/
@@ -1200,6 +1301,107 @@ TEST( UP_removeCurrent, Collection )
     CHECK_EQUAL( 3, fakes.getCurrent()->getValue() )
     fakes.next();
     CHECK( fakes.getIsEnd() )
+}
+
+TEST( UP_getExceptionEmpty, Collection )
+{
+    Collection<FakeTestClassUP> fakes;
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.get( 0 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( UP_getExceptionLow, Collection )
+{
+    VecFakeTestClassUP vec;
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 3 } } );
+    Collection<FakeTestClassUP> fakes{ vec };
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.get( -1 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( UP_getExceptionHigh, Collection )
+{
+    VecFakeTestClassUP vec;
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 3 } } );
+    Collection<FakeTestClassUP> fakes{ vec };
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.get( 4 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( UP_get, Collection )
+{
+    VecFakeTestClassUP vec;
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 3 } } );
+    Collection<FakeTestClassUP> fakes{ vec };
+    auto retreived = fakes.get( 2 );
+    int expected = 2;
+    int actual = retreived->getValue();
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( UP_getCurrentIndex_ExceptionEmpty, Collection )
+{
+    Collection<FakeTestClass> fakes;
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.getCurrentIndex();
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( UP_getCurrentIndex, Collection )
+{
+    VecFakeTestClassUP vec;
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassUP { new FakeTestClass{ 3 } } );
+    Collection<FakeTestClassUP> fakes{ vec };
+    CHECK_EQUAL( 0, fakes.getCurrentIndex() )
+    fakes.jump( 2 );
+    CHECK_EQUAL( 2, fakes.getCurrentIndex() )
+    fakes.jump( 1 );
+    CHECK_EQUAL( 1, fakes.getCurrentIndex() )
+    fakes.jump( 3 );
+    CHECK_EQUAL( 3, fakes.getCurrentIndex() )
 }
 
 
@@ -1797,4 +1999,105 @@ TEST( SP_removeCurrent, Collection )
     CHECK_EQUAL( 3, fakes.getCurrent()->getValue() )
     fakes.next();
     CHECK( fakes.getIsEnd() )
+}
+
+TEST( SP_getExceptionEmpty, Collection )
+{
+    Collection<FakeTestClassSP> fakes;
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.get( 0 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( SP_getExceptionLow, Collection )
+{
+    VecFakeTestClassSP vec;
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 3 } } );
+    Collection<FakeTestClassSP> fakes{ vec };
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.get( -1 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( SP_getExceptionHigh, Collection )
+{
+    VecFakeTestClassSP vec;
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 3 } } );
+    Collection<FakeTestClassSP> fakes{ vec };
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.get( 4 );
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( SP_get, Collection )
+{
+    VecFakeTestClassSP vec;
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 3 } } );
+    Collection<FakeTestClassSP> fakes{ vec };
+    auto retreived = fakes.get( 2 );
+    int expected = 2;
+    int actual = retreived->getValue();
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( SP_getCurrentIndex_ExceptionEmpty, Collection )
+{
+    Collection<FakeTestClass> fakes;
+    bool isExceptionThrown = false;
+    try
+    {
+        fakes.getCurrentIndex();
+    }
+    catch ( std::runtime_error& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+
+TEST( SP_getCurrentIndex, Collection )
+{
+    VecFakeTestClassSP vec;
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 0 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 1 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 2 } } );
+    vec.push_back( FakeTestClassSP { new FakeTestClass{ 3 } } );
+    Collection<FakeTestClassSP> fakes{ vec };
+    CHECK_EQUAL( 0, fakes.getCurrentIndex() )
+    fakes.jump( 2 );
+    CHECK_EQUAL( 2, fakes.getCurrentIndex() )
+    fakes.jump( 1 );
+    CHECK_EQUAL( 1, fakes.getCurrentIndex() )
+    fakes.jump( 3 );
+    CHECK_EQUAL( 3, fakes.getCurrentIndex() )
 }

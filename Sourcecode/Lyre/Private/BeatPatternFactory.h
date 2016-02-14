@@ -4,6 +4,7 @@
 #include "Lyre/IBeatPatternFactory.h"
 #include "Lyre/IBeatPattern.h"
 
+#if 1 == 0
 namespace Lyre
 {
     namespace Private
@@ -18,3 +19,4 @@ namespace Lyre
         };
     }
 }
+#endif
