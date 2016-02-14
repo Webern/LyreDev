@@ -1,14 +1,16 @@
 //PRIVATE
 #include "LyreTest/cpul/cpulTestHarness.h"
+#include "Lyre/TypeDefs.h"
 #include "Lyre/Private/throw.h"
 #include <sstream>
 #include <locale>
 
 using namespace std;
+using namespace Lyre;
 
 TEST( Compiles, throwDotH )
 {
-    std::string message = "no exception was thrown";
+    String message = "no exception was thrown";
     try
     {
         THROW("some error message")
@@ -24,9 +26,9 @@ TEST( Compiles, throwDotH )
     // test checks the parts of the string that are
     // similar (after eliminating casing differences)
     
-    std::string expected =
+    String expected =
         "error in TestThrow.cpp (line 14) runTest: some error message";
-    std::string actual = message;
+    String actual = message;
 	std::locale loc;
     for ( auto it = expected.begin(); it != expected.end(); ++it )
     {

@@ -11,11 +11,11 @@ using namespace std;
 
 TEST( CtorString, IDuration )
 {
-    std::string name = "Eighth";
+    String name = "Eighth";
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( name );
-    std::string expected = name;
-    std::string actual = d->getDurBaseName();
+    String expected = name;
+    String actual = d->getDurBaseName();
     CHECK_EQUAL( expected, actual )
     CHECK_EQUAL( 0, d->getDotCount() )
     CHECK( ! d->getIsTuplet() )
@@ -23,13 +23,13 @@ TEST( CtorString, IDuration )
 
 TEST( CtorStringDots, IDuration )
 {
-    std::string name = "16th";
+    String name = "16th";
     int dots = 2;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( name, dots );
     
-    std::string expected = name;
-    std::string actual = d->getDurBaseName();
+    String expected = name;
+    String actual = d->getDurBaseName();
     
     CHECK_EQUAL( expected, actual )
     CHECK_EQUAL( dots, d->getDotCount() )
@@ -42,13 +42,13 @@ TEST( CtorTuplet, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     
-    std::string name = "Eighth";
+    String name = "Eighth";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
     
-    std::string expected = name;
-    std::string actual = d->getDurBaseName();
+    String expected = name;
+    String actual = d->getDurBaseName();
     
     CHECK_EQUAL( expected, actual )
     CHECK_EQUAL( dots, d->getDotCount() )
@@ -61,7 +61,7 @@ TEST( getDurBaseValue, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 5, "16th", 4, "16th" ) );
     
-    std::string name = "Eighth";
+    String name = "Eighth";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -78,7 +78,7 @@ TEST( getDurBaseName, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 7, "16th", 4, "16th" ) );
     
-    std::string name = "32nd";
+    String name = "32nd";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -95,7 +95,7 @@ TEST( getDotCount, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 7, "16th", 4, "16th" ) );
     
-    std::string name = "32nd";
+    String name = "32nd";
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -112,7 +112,7 @@ TEST( getDottedBaseValue, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     
-    std::string name = "32nd";
+    String name = "32nd";
     int dots = 2;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -129,7 +129,7 @@ TEST( getDottedBaseName, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -146,7 +146,7 @@ TEST( getIsTuplet_false, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -163,7 +163,7 @@ TEST( getIsTuplet_true, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -180,7 +180,7 @@ TEST( getIsNestedTuplet_false_01, IDuration )
     //VecITupletDefSPC tuplets;
     //tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( name, dots );
@@ -197,7 +197,7 @@ TEST( getIsNestedTuplet_false_02, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -215,7 +215,7 @@ TEST( getIsNestedTuplet_false_03, IDuration )
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Eighth", 1, "Eighth" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -233,7 +233,7 @@ TEST( getIsNestedTuplet_false_04, IDuration )
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -251,7 +251,7 @@ TEST( getIsNestedTuplet_true_01, IDuration )
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Whole", 4, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -269,7 +269,7 @@ TEST( getTupletNestingCount_A, IDuration )
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Eighth", 1, "Eighth" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -287,7 +287,7 @@ TEST( getTupletNestingCount_B, IDuration )
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 1, "Eighth", 1, "Eighth" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -305,7 +305,7 @@ TEST( getTupletNestingCount_C, IDuration )
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Eighth", 4, "Eighth" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -323,7 +323,7 @@ TEST( getTupletBegin, IDuration )
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Eighth", 4, "Eighth" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -342,7 +342,7 @@ TEST( getTupletEnd, IDuration )
     tuplets.push_back( tupletFactory->createTupletDef( 2, "Eighth", 4, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 3, "16th", 4, "16th" ) );
     
-    std::string name = "Half";
+    String name = "Half";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -361,7 +361,7 @@ TEST( getTupletEnd, IDuration )
 
 TEST( getValue01, IDuration )
 {
-    std::string name = "Eighth";
+    String name = "Eighth";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( name, dots );
@@ -374,7 +374,7 @@ TEST( getValue01, IDuration )
 
 TEST( getValue02, IDuration )
 {
-    std::string name = "Half";
+    String name = "Half";
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( /*tuplets,*/ name, dots );
@@ -391,7 +391,7 @@ TEST( getValue03, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
 
-    std::string name = "Quarter";
+    String name = "Quarter";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -408,7 +408,7 @@ TEST( getValue04, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     
-    std::string name = "Quarter";
+    String name = "Quarter";
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -425,7 +425,7 @@ TEST( getValue05, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    std::string name = "Eighth";
+    String name = "Eighth";
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -442,7 +442,7 @@ TEST( getValue06, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    std::string name = "Eighth";
+    String name = "Eighth";
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -464,7 +464,7 @@ TEST( toStream, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    std::string name = "Eighth";
+    String name = "Eighth";
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -483,7 +483,7 @@ TEST( streamingOperator, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    std::string name = "Eighth";
+    String name = "Eighth";
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -502,7 +502,7 @@ TEST( toString, IDuration )
     VecITupletDefSPC tuplets;
     tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
     tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    std::string name = "Eighth";
+    String name = "Eighth";
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );

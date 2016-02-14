@@ -193,8 +193,8 @@ TEST( gcd_list07, Rational )
 }
 TEST( gcd_list08, Rational )
 {
-    std::string expected = "initializer list for gcd function may contain no more than a single 0";
-    std::string actual = "no exception was thrown";
+    String expected = "initializer list for gcd function may contain no more than a single 0";
+    String actual = "no exception was thrown";
     try
     {
         Rational::gcd( { 9, -3, 33, -99, 0, 0 } );
@@ -263,8 +263,8 @@ TEST( lcm_list06, Rational )
 }
 TEST( lcm_list07, Rational )
 {
-    std::string expected = "zeros not allowed";
-    std::string actual = "no exception was thrown";
+    String expected = "zeros not allowed";
+    String actual = "no exception was thrown";
     try
     {
         Rational::lcm( { 9, -3, 33, -99, 0 } );
@@ -283,8 +283,8 @@ TEST( lcm_list07, Rational )
 }
 TEST( lcm_list08, Rational )
 {
-    std::string expected = "zeros not allowed";
-    std::string actual = "no exception was thrown";
+    String expected = "zeros not allowed";
+    String actual = "no exception was thrown";
     try
     {
         Rational::lcm( { 0 } );
@@ -341,8 +341,8 @@ TEST( lcm_vec06, Rational )
 TEST( lcm_vec07, Rational )
 {
     ints vec = { 9, -3, 33, -99, 0 };
-    std::string expected = "zeros not allowed";
-    std::string actual = "no exception was thrown";
+    String expected = "zeros not allowed";
+    String actual = "no exception was thrown";
     try
     {
         Rational::lcm( vec );
@@ -362,8 +362,8 @@ TEST( lcm_vec07, Rational )
 TEST( lcm_vec08, Rational )
 {
     ints vec = { 0 };
-    std::string expected = "zeros not allowed";
-    std::string actual = "no exception was thrown";
+    String expected = "zeros not allowed";
+    String actual = "no exception was thrown";
     try
     {
         Rational::lcm( vec );

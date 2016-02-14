@@ -1274,10 +1274,10 @@ TEST( VALUE_N10_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -10;
 	int fromval = -10;
-	std::string expected = "D-2";
+	String expected = "D-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1286,10 +1286,10 @@ TEST( VALUE_N10_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -10;
 	int fromval = -10;
-	std::string expected = "D-2";
+	String expected = "D-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1298,10 +1298,10 @@ TEST( VALUE_N9_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -9;
 	int fromval = -10;
-	std::string expected = "Eb-2";
+	String expected = "Eb-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1310,10 +1310,10 @@ TEST( VALUE_N9_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -9;
 	int fromval = -8;
-	std::string expected = "Eb-2";
+	String expected = "Eb-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1322,10 +1322,10 @@ TEST( VALUE_N8_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -8;
 	int fromval = -9;
-	std::string expected = "E-2";
+	String expected = "E-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1334,10 +1334,10 @@ TEST( VALUE_N8_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -8;
 	int fromval = -7;
-	std::string expected = "E-2";
+	String expected = "E-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1346,10 +1346,10 @@ TEST( VALUE_N7_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -7;
 	int fromval = -9;
-	std::string expected = "F-2";
+	String expected = "F-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1358,10 +1358,10 @@ TEST( VALUE_N7_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -7;
 	int fromval = -5;
-	std::string expected = "F-2";
+	String expected = "F-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1370,10 +1370,10 @@ TEST( VALUE_N6_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -6;
 	int fromval = -8;
-	std::string expected = "F#-2";
+	String expected = "F#-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1382,10 +1382,10 @@ TEST( VALUE_N6_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -6;
 	int fromval = -4;
-	std::string expected = "F#-2";
+	String expected = "F#-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1394,10 +1394,10 @@ TEST( VALUE_N5_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -5;
 	int fromval = -8;
-	std::string expected = "G-2";
+	String expected = "G-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1406,10 +1406,10 @@ TEST( VALUE_N5_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -5;
 	int fromval = -2;
-	std::string expected = "G-2";
+	String expected = "G-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1418,10 +1418,10 @@ TEST( VALUE_N4_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -4;
 	int fromval = -7;
-	std::string expected = "Ab-2";
+	String expected = "Ab-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1430,10 +1430,10 @@ TEST( VALUE_N4_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -4;
 	int fromval = -1;
-	std::string expected = "Ab-2";
+	String expected = "Ab-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1442,10 +1442,10 @@ TEST( VALUE_N3_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -3;
 	int fromval = -7;
-	std::string expected = "A-2";
+	String expected = "A-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1454,10 +1454,10 @@ TEST( VALUE_N3_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -3;
 	int fromval = 1;
-	std::string expected = "A-2";
+	String expected = "A-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1466,10 +1466,10 @@ TEST( VALUE_N2_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -2;
 	int fromval = -6;
-	std::string expected = "Bb-2";
+	String expected = "Bb-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1478,10 +1478,10 @@ TEST( VALUE_N2_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -2;
 	int fromval = 2;
-	std::string expected = "Bb-2";
+	String expected = "Bb-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1490,10 +1490,10 @@ TEST( VALUE_N1_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -1;
 	int fromval = -6;
-	std::string expected = "B-2";
+	String expected = "B-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1502,10 +1502,10 @@ TEST( VALUE_N1_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = -1;
 	int fromval = 4;
-	std::string expected = "B-2";
+	String expected = "B-2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1514,10 +1514,10 @@ TEST( VALUE_0_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 0;
 	int fromval = -5;
-	std::string expected = "C-1";
+	String expected = "C-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1526,10 +1526,10 @@ TEST( VALUE_0_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 0;
 	int fromval = 5;
-	std::string expected = "C-1";
+	String expected = "C-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1538,10 +1538,10 @@ TEST( VALUE_1_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 1;
 	int fromval = -5;
-	std::string expected = "C#-1";
+	String expected = "C#-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1550,10 +1550,10 @@ TEST( VALUE_1_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 1;
 	int fromval = 7;
-	std::string expected = "C#-1";
+	String expected = "C#-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1562,10 +1562,10 @@ TEST( VALUE_2_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 2;
 	int fromval = -4;
-	std::string expected = "D-1";
+	String expected = "D-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1574,10 +1574,10 @@ TEST( VALUE_2_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 2;
 	int fromval = 8;
-	std::string expected = "D-1";
+	String expected = "D-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1586,10 +1586,10 @@ TEST( VALUE_3_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 3;
 	int fromval = -4;
-	std::string expected = "Eb-1";
+	String expected = "Eb-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1598,10 +1598,10 @@ TEST( VALUE_3_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 3;
 	int fromval = 10;
-	std::string expected = "Eb-1";
+	String expected = "Eb-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1610,10 +1610,10 @@ TEST( VALUE_4_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 4;
 	int fromval = -3;
-	std::string expected = "E-1";
+	String expected = "E-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1622,10 +1622,10 @@ TEST( VALUE_4_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 4;
 	int fromval = 11;
-	std::string expected = "E-1";
+	String expected = "E-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1634,10 +1634,10 @@ TEST( VALUE_5_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 5;
 	int fromval = -3;
-	std::string expected = "F-1";
+	String expected = "F-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1646,10 +1646,10 @@ TEST( VALUE_5_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 5;
 	int fromval = 13;
-	std::string expected = "F-1";
+	String expected = "F-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1658,10 +1658,10 @@ TEST( VALUE_6_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 6;
 	int fromval = -2;
-	std::string expected = "F#-1";
+	String expected = "F#-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1670,10 +1670,10 @@ TEST( VALUE_6_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 6;
 	int fromval = 14;
-	std::string expected = "F#-1";
+	String expected = "F#-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1682,10 +1682,10 @@ TEST( VALUE_7_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 7;
 	int fromval = -2;
-	std::string expected = "G-1";
+	String expected = "G-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1694,10 +1694,10 @@ TEST( VALUE_7_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 7;
 	int fromval = 16;
-	std::string expected = "G-1";
+	String expected = "G-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1706,10 +1706,10 @@ TEST( VALUE_8_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 8;
 	int fromval = -1;
-	std::string expected = "Ab-1";
+	String expected = "Ab-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1718,10 +1718,10 @@ TEST( VALUE_8_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 8;
 	int fromval = 17;
-	std::string expected = "Ab-1";
+	String expected = "Ab-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1730,10 +1730,10 @@ TEST( VALUE_9_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 9;
 	int fromval = -1;
-	std::string expected = "A-1";
+	String expected = "A-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1742,10 +1742,10 @@ TEST( VALUE_9_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 9;
 	int fromval = 19;
-	std::string expected = "A-1";
+	String expected = "A-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1754,10 +1754,10 @@ TEST( VALUE_10_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 10;
 	int fromval = 0;
-	std::string expected = "Bb-1";
+	String expected = "Bb-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1766,10 +1766,10 @@ TEST( VALUE_10_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 10;
 	int fromval = 20;
-	std::string expected = "Bb-1";
+	String expected = "Bb-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1778,10 +1778,10 @@ TEST( VALUE_11_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 11;
 	int fromval = 0;
-	std::string expected = "B-1";
+	String expected = "B-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1790,10 +1790,10 @@ TEST( VALUE_11_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 11;
 	int fromval = 22;
-	std::string expected = "B-1";
+	String expected = "B-1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1802,10 +1802,10 @@ TEST( VALUE_12_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 12;
 	int fromval = 1;
-	std::string expected = "C0";
+	String expected = "C0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1814,10 +1814,10 @@ TEST( VALUE_12_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 12;
 	int fromval = 23;
-	std::string expected = "C0";
+	String expected = "C0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1826,10 +1826,10 @@ TEST( VALUE_13_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 13;
 	int fromval = 1;
-	std::string expected = "C#0";
+	String expected = "C#0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1838,10 +1838,10 @@ TEST( VALUE_13_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 13;
 	int fromval = 25;
-	std::string expected = "C#0";
+	String expected = "C#0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1850,10 +1850,10 @@ TEST( VALUE_14_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 14;
 	int fromval = 2;
-	std::string expected = "D0";
+	String expected = "D0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1862,10 +1862,10 @@ TEST( VALUE_14_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 14;
 	int fromval = 26;
-	std::string expected = "D0";
+	String expected = "D0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1874,10 +1874,10 @@ TEST( VALUE_15_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 15;
 	int fromval = 2;
-	std::string expected = "Eb0";
+	String expected = "Eb0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1886,10 +1886,10 @@ TEST( VALUE_15_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 15;
 	int fromval = 28;
-	std::string expected = "Eb0";
+	String expected = "Eb0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1898,10 +1898,10 @@ TEST( VALUE_16_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 16;
 	int fromval = 3;
-	std::string expected = "E0";
+	String expected = "E0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1910,10 +1910,10 @@ TEST( VALUE_16_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 16;
 	int fromval = 29;
-	std::string expected = "E0";
+	String expected = "E0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1922,10 +1922,10 @@ TEST( VALUE_17_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 17;
 	int fromval = 3;
-	std::string expected = "F0";
+	String expected = "F0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1934,10 +1934,10 @@ TEST( VALUE_17_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 17;
 	int fromval = 31;
-	std::string expected = "F0";
+	String expected = "F0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1946,10 +1946,10 @@ TEST( VALUE_18_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 18;
 	int fromval = 4;
-	std::string expected = "F#0";
+	String expected = "F#0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1958,10 +1958,10 @@ TEST( VALUE_18_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 18;
 	int fromval = 32;
-	std::string expected = "F#0";
+	String expected = "F#0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1970,10 +1970,10 @@ TEST( VALUE_19_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 19;
 	int fromval = 4;
-	std::string expected = "G0";
+	String expected = "G0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1982,10 +1982,10 @@ TEST( VALUE_19_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 19;
 	int fromval = 34;
-	std::string expected = "G0";
+	String expected = "G0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -1994,10 +1994,10 @@ TEST( VALUE_20_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 20;
 	int fromval = 5;
-	std::string expected = "Ab0";
+	String expected = "Ab0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2006,10 +2006,10 @@ TEST( VALUE_20_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 20;
 	int fromval = 35;
-	std::string expected = "Ab0";
+	String expected = "Ab0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2018,10 +2018,10 @@ TEST( VALUE_21_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 21;
 	int fromval = 5;
-	std::string expected = "A0";
+	String expected = "A0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2030,10 +2030,10 @@ TEST( VALUE_21_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 21;
 	int fromval = 37;
-	std::string expected = "A0";
+	String expected = "A0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2042,10 +2042,10 @@ TEST( VALUE_22_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 22;
 	int fromval = 6;
-	std::string expected = "Bb0";
+	String expected = "Bb0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2054,10 +2054,10 @@ TEST( VALUE_22_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 22;
 	int fromval = 38;
-	std::string expected = "Bb0";
+	String expected = "Bb0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2066,10 +2066,10 @@ TEST( VALUE_23_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 23;
 	int fromval = 6;
-	std::string expected = "B0";
+	String expected = "B0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2078,10 +2078,10 @@ TEST( VALUE_23_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 23;
 	int fromval = 40;
-	std::string expected = "B0";
+	String expected = "B0";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2090,10 +2090,10 @@ TEST( VALUE_24_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 24;
 	int fromval = 7;
-	std::string expected = "C1";
+	String expected = "C1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2102,10 +2102,10 @@ TEST( VALUE_24_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 24;
 	int fromval = 41;
-	std::string expected = "C1";
+	String expected = "C1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2114,10 +2114,10 @@ TEST( VALUE_25_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 25;
 	int fromval = 7;
-	std::string expected = "C#1";
+	String expected = "C#1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2126,10 +2126,10 @@ TEST( VALUE_25_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 25;
 	int fromval = 43;
-	std::string expected = "C#1";
+	String expected = "C#1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2138,10 +2138,10 @@ TEST( VALUE_26_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 26;
 	int fromval = 8;
-	std::string expected = "D1";
+	String expected = "D1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2150,10 +2150,10 @@ TEST( VALUE_26_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 26;
 	int fromval = 44;
-	std::string expected = "D1";
+	String expected = "D1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2162,10 +2162,10 @@ TEST( VALUE_27_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 27;
 	int fromval = 8;
-	std::string expected = "Eb1";
+	String expected = "Eb1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2174,10 +2174,10 @@ TEST( VALUE_27_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 27;
 	int fromval = 46;
-	std::string expected = "Eb1";
+	String expected = "Eb1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2186,10 +2186,10 @@ TEST( VALUE_28_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 28;
 	int fromval = 9;
-	std::string expected = "E1";
+	String expected = "E1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2198,10 +2198,10 @@ TEST( VALUE_28_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 28;
 	int fromval = 47;
-	std::string expected = "E1";
+	String expected = "E1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2210,10 +2210,10 @@ TEST( VALUE_29_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 29;
 	int fromval = 9;
-	std::string expected = "F1";
+	String expected = "F1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2222,10 +2222,10 @@ TEST( VALUE_29_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 29;
 	int fromval = 49;
-	std::string expected = "F1";
+	String expected = "F1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2234,10 +2234,10 @@ TEST( VALUE_30_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 30;
 	int fromval = 10;
-	std::string expected = "F#1";
+	String expected = "F#1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2246,10 +2246,10 @@ TEST( VALUE_30_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 30;
 	int fromval = 50;
-	std::string expected = "F#1";
+	String expected = "F#1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2258,10 +2258,10 @@ TEST( VALUE_31_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 31;
 	int fromval = 10;
-	std::string expected = "G1";
+	String expected = "G1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2270,10 +2270,10 @@ TEST( VALUE_31_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 31;
 	int fromval = 52;
-	std::string expected = "G1";
+	String expected = "G1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2282,10 +2282,10 @@ TEST( VALUE_32_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 32;
 	int fromval = 11;
-	std::string expected = "Ab1";
+	String expected = "Ab1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2294,10 +2294,10 @@ TEST( VALUE_32_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 32;
 	int fromval = 53;
-	std::string expected = "Ab1";
+	String expected = "Ab1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2306,10 +2306,10 @@ TEST( VALUE_33_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 33;
 	int fromval = 11;
-	std::string expected = "A1";
+	String expected = "A1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2318,10 +2318,10 @@ TEST( VALUE_33_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 33;
 	int fromval = 55;
-	std::string expected = "A1";
+	String expected = "A1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2330,10 +2330,10 @@ TEST( VALUE_34_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 34;
 	int fromval = 12;
-	std::string expected = "Bb1";
+	String expected = "Bb1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2342,10 +2342,10 @@ TEST( VALUE_34_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 34;
 	int fromval = 56;
-	std::string expected = "Bb1";
+	String expected = "Bb1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2354,10 +2354,10 @@ TEST( VALUE_35_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 35;
 	int fromval = 12;
-	std::string expected = "B1";
+	String expected = "B1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2366,10 +2366,10 @@ TEST( VALUE_35_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 35;
 	int fromval = 58;
-	std::string expected = "B1";
+	String expected = "B1";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2378,10 +2378,10 @@ TEST( VALUE_36_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 36;
 	int fromval = 13;
-	std::string expected = "C2";
+	String expected = "C2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2390,10 +2390,10 @@ TEST( VALUE_36_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 36;
 	int fromval = 59;
-	std::string expected = "C2";
+	String expected = "C2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2402,10 +2402,10 @@ TEST( VALUE_37_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 37;
 	int fromval = 13;
-	std::string expected = "C#2";
+	String expected = "C#2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2414,10 +2414,10 @@ TEST( VALUE_37_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 37;
 	int fromval = 61;
-	std::string expected = "C#2";
+	String expected = "C#2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2426,10 +2426,10 @@ TEST( VALUE_38_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 38;
 	int fromval = 14;
-	std::string expected = "D2";
+	String expected = "D2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2438,10 +2438,10 @@ TEST( VALUE_38_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 38;
 	int fromval = 62;
-	std::string expected = "D2";
+	String expected = "D2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2450,10 +2450,10 @@ TEST( VALUE_39_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 39;
 	int fromval = 14;
-	std::string expected = "Eb2";
+	String expected = "Eb2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2462,10 +2462,10 @@ TEST( VALUE_39_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 39;
 	int fromval = 64;
-	std::string expected = "Eb2";
+	String expected = "Eb2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2474,10 +2474,10 @@ TEST( VALUE_40_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 40;
 	int fromval = 15;
-	std::string expected = "E2";
+	String expected = "E2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2486,10 +2486,10 @@ TEST( VALUE_40_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 40;
 	int fromval = 65;
-	std::string expected = "E2";
+	String expected = "E2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2498,10 +2498,10 @@ TEST( VALUE_41_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 41;
 	int fromval = 15;
-	std::string expected = "F2";
+	String expected = "F2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2510,10 +2510,10 @@ TEST( VALUE_41_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 41;
 	int fromval = 67;
-	std::string expected = "F2";
+	String expected = "F2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2522,10 +2522,10 @@ TEST( VALUE_42_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 42;
 	int fromval = 16;
-	std::string expected = "F#2";
+	String expected = "F#2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2534,10 +2534,10 @@ TEST( VALUE_42_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 42;
 	int fromval = 68;
-	std::string expected = "F#2";
+	String expected = "F#2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2546,10 +2546,10 @@ TEST( VALUE_43_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 43;
 	int fromval = 16;
-	std::string expected = "G2";
+	String expected = "G2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2558,10 +2558,10 @@ TEST( VALUE_43_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 43;
 	int fromval = 70;
-	std::string expected = "G2";
+	String expected = "G2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2570,10 +2570,10 @@ TEST( VALUE_44_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 44;
 	int fromval = 17;
-	std::string expected = "Ab2";
+	String expected = "Ab2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2582,10 +2582,10 @@ TEST( VALUE_44_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 44;
 	int fromval = 71;
-	std::string expected = "Ab2";
+	String expected = "Ab2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2594,10 +2594,10 @@ TEST( VALUE_45_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 45;
 	int fromval = 17;
-	std::string expected = "A2";
+	String expected = "A2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2606,10 +2606,10 @@ TEST( VALUE_45_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 45;
 	int fromval = 73;
-	std::string expected = "A2";
+	String expected = "A2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2618,10 +2618,10 @@ TEST( VALUE_46_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 46;
 	int fromval = 18;
-	std::string expected = "Bb2";
+	String expected = "Bb2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2630,10 +2630,10 @@ TEST( VALUE_46_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 46;
 	int fromval = 74;
-	std::string expected = "Bb2";
+	String expected = "Bb2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2642,10 +2642,10 @@ TEST( VALUE_47_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 47;
 	int fromval = 18;
-	std::string expected = "B2";
+	String expected = "B2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2654,10 +2654,10 @@ TEST( VALUE_47_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 47;
 	int fromval = 76;
-	std::string expected = "B2";
+	String expected = "B2";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2666,10 +2666,10 @@ TEST( VALUE_48_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 48;
 	int fromval = 19;
-	std::string expected = "C3";
+	String expected = "C3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2678,10 +2678,10 @@ TEST( VALUE_48_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 48;
 	int fromval = 77;
-	std::string expected = "C3";
+	String expected = "C3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2690,10 +2690,10 @@ TEST( VALUE_49_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 49;
 	int fromval = 19;
-	std::string expected = "C#3";
+	String expected = "C#3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2702,10 +2702,10 @@ TEST( VALUE_49_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 49;
 	int fromval = 79;
-	std::string expected = "C#3";
+	String expected = "C#3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2714,10 +2714,10 @@ TEST( VALUE_50_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 50;
 	int fromval = 20;
-	std::string expected = "D3";
+	String expected = "D3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2726,10 +2726,10 @@ TEST( VALUE_50_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 50;
 	int fromval = 80;
-	std::string expected = "D3";
+	String expected = "D3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2738,10 +2738,10 @@ TEST( VALUE_51_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 51;
 	int fromval = 20;
-	std::string expected = "Eb3";
+	String expected = "Eb3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2750,10 +2750,10 @@ TEST( VALUE_51_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 51;
 	int fromval = 82;
-	std::string expected = "Eb3";
+	String expected = "Eb3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2762,10 +2762,10 @@ TEST( VALUE_52_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 52;
 	int fromval = 21;
-	std::string expected = "E3";
+	String expected = "E3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2774,10 +2774,10 @@ TEST( VALUE_52_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 52;
 	int fromval = 83;
-	std::string expected = "E3";
+	String expected = "E3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2786,10 +2786,10 @@ TEST( VALUE_53_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 53;
 	int fromval = 21;
-	std::string expected = "F3";
+	String expected = "F3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2798,10 +2798,10 @@ TEST( VALUE_53_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 53;
 	int fromval = 85;
-	std::string expected = "F3";
+	String expected = "F3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2810,10 +2810,10 @@ TEST( VALUE_54_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 54;
 	int fromval = 22;
-	std::string expected = "F#3";
+	String expected = "F#3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2822,10 +2822,10 @@ TEST( VALUE_54_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 54;
 	int fromval = 86;
-	std::string expected = "F#3";
+	String expected = "F#3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2834,10 +2834,10 @@ TEST( VALUE_55_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 55;
 	int fromval = 22;
-	std::string expected = "G3";
+	String expected = "G3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2846,10 +2846,10 @@ TEST( VALUE_55_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 55;
 	int fromval = 88;
-	std::string expected = "G3";
+	String expected = "G3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2858,10 +2858,10 @@ TEST( VALUE_56_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 56;
 	int fromval = 23;
-	std::string expected = "Ab3";
+	String expected = "Ab3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2870,10 +2870,10 @@ TEST( VALUE_56_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 56;
 	int fromval = 89;
-	std::string expected = "Ab3";
+	String expected = "Ab3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2882,10 +2882,10 @@ TEST( VALUE_57_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 57;
 	int fromval = 23;
-	std::string expected = "A3";
+	String expected = "A3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2894,10 +2894,10 @@ TEST( VALUE_57_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 57;
 	int fromval = 91;
-	std::string expected = "A3";
+	String expected = "A3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2906,10 +2906,10 @@ TEST( VALUE_58_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 58;
 	int fromval = 24;
-	std::string expected = "Bb3";
+	String expected = "Bb3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2918,10 +2918,10 @@ TEST( VALUE_58_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 58;
 	int fromval = 92;
-	std::string expected = "Bb3";
+	String expected = "Bb3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2930,10 +2930,10 @@ TEST( VALUE_59_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 59;
 	int fromval = 24;
-	std::string expected = "B3";
+	String expected = "B3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2942,10 +2942,10 @@ TEST( VALUE_59_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 59;
 	int fromval = 94;
-	std::string expected = "B3";
+	String expected = "B3";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2954,10 +2954,10 @@ TEST( VALUE_60_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 60;
 	int fromval = 25;
-	std::string expected = "C4";
+	String expected = "C4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2966,10 +2966,10 @@ TEST( VALUE_60_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 60;
 	int fromval = 95;
-	std::string expected = "C4";
+	String expected = "C4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2978,10 +2978,10 @@ TEST( VALUE_61_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 61;
 	int fromval = 25;
-	std::string expected = "C#4";
+	String expected = "C#4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -2990,10 +2990,10 @@ TEST( VALUE_61_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 61;
 	int fromval = 97;
-	std::string expected = "C#4";
+	String expected = "C#4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3002,10 +3002,10 @@ TEST( VALUE_62_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 62;
 	int fromval = 26;
-	std::string expected = "D4";
+	String expected = "D4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3014,10 +3014,10 @@ TEST( VALUE_62_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 62;
 	int fromval = 98;
-	std::string expected = "D4";
+	String expected = "D4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3026,10 +3026,10 @@ TEST( VALUE_63_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 63;
 	int fromval = 26;
-	std::string expected = "Eb4";
+	String expected = "Eb4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3038,10 +3038,10 @@ TEST( VALUE_63_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 63;
 	int fromval = 100;
-	std::string expected = "Eb4";
+	String expected = "Eb4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3050,10 +3050,10 @@ TEST( VALUE_64_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 64;
 	int fromval = 27;
-	std::string expected = "E4";
+	String expected = "E4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3062,10 +3062,10 @@ TEST( VALUE_64_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 64;
 	int fromval = 101;
-	std::string expected = "E4";
+	String expected = "E4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3074,10 +3074,10 @@ TEST( VALUE_65_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 65;
 	int fromval = 27;
-	std::string expected = "F4";
+	String expected = "F4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3086,10 +3086,10 @@ TEST( VALUE_65_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 65;
 	int fromval = 103;
-	std::string expected = "F4";
+	String expected = "F4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3098,10 +3098,10 @@ TEST( VALUE_66_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 66;
 	int fromval = 28;
-	std::string expected = "F#4";
+	String expected = "F#4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3110,10 +3110,10 @@ TEST( VALUE_66_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 66;
 	int fromval = 104;
-	std::string expected = "F#4";
+	String expected = "F#4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3122,10 +3122,10 @@ TEST( VALUE_67_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 67;
 	int fromval = 28;
-	std::string expected = "G4";
+	String expected = "G4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3134,10 +3134,10 @@ TEST( VALUE_67_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 67;
 	int fromval = 106;
-	std::string expected = "G4";
+	String expected = "G4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3146,10 +3146,10 @@ TEST( VALUE_68_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 68;
 	int fromval = 29;
-	std::string expected = "Ab4";
+	String expected = "Ab4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3158,10 +3158,10 @@ TEST( VALUE_68_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 68;
 	int fromval = 107;
-	std::string expected = "Ab4";
+	String expected = "Ab4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3170,10 +3170,10 @@ TEST( VALUE_69_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 69;
 	int fromval = 29;
-	std::string expected = "A4";
+	String expected = "A4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3182,10 +3182,10 @@ TEST( VALUE_69_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 69;
 	int fromval = 109;
-	std::string expected = "A4";
+	String expected = "A4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3194,10 +3194,10 @@ TEST( VALUE_70_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 70;
 	int fromval = 30;
-	std::string expected = "Bb4";
+	String expected = "Bb4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3206,10 +3206,10 @@ TEST( VALUE_70_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 70;
 	int fromval = 110;
-	std::string expected = "Bb4";
+	String expected = "Bb4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3218,10 +3218,10 @@ TEST( VALUE_71_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 71;
 	int fromval = 30;
-	std::string expected = "B4";
+	String expected = "B4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3230,10 +3230,10 @@ TEST( VALUE_71_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 71;
 	int fromval = 112;
-	std::string expected = "B4";
+	String expected = "B4";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3242,10 +3242,10 @@ TEST( VALUE_72_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 72;
 	int fromval = 31;
-	std::string expected = "C5";
+	String expected = "C5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3254,10 +3254,10 @@ TEST( VALUE_72_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 72;
 	int fromval = 113;
-	std::string expected = "C5";
+	String expected = "C5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3266,10 +3266,10 @@ TEST( VALUE_73_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 73;
 	int fromval = 31;
-	std::string expected = "C#5";
+	String expected = "C#5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3278,10 +3278,10 @@ TEST( VALUE_73_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 73;
 	int fromval = 115;
-	std::string expected = "C#5";
+	String expected = "C#5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3290,10 +3290,10 @@ TEST( VALUE_74_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 74;
 	int fromval = 32;
-	std::string expected = "D5";
+	String expected = "D5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3302,10 +3302,10 @@ TEST( VALUE_74_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 74;
 	int fromval = 116;
-	std::string expected = "D5";
+	String expected = "D5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3314,10 +3314,10 @@ TEST( VALUE_75_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 75;
 	int fromval = 32;
-	std::string expected = "Eb5";
+	String expected = "Eb5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3326,10 +3326,10 @@ TEST( VALUE_75_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 75;
 	int fromval = 118;
-	std::string expected = "Eb5";
+	String expected = "Eb5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3338,10 +3338,10 @@ TEST( VALUE_76_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 76;
 	int fromval = 33;
-	std::string expected = "E5";
+	String expected = "E5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3350,10 +3350,10 @@ TEST( VALUE_76_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 76;
 	int fromval = 119;
-	std::string expected = "E5";
+	String expected = "E5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3362,10 +3362,10 @@ TEST( VALUE_77_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 77;
 	int fromval = 33;
-	std::string expected = "F5";
+	String expected = "F5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3374,10 +3374,10 @@ TEST( VALUE_77_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 77;
 	int fromval = 121;
-	std::string expected = "F5";
+	String expected = "F5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3386,10 +3386,10 @@ TEST( VALUE_78_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 78;
 	int fromval = 34;
-	std::string expected = "F#5";
+	String expected = "F#5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3398,10 +3398,10 @@ TEST( VALUE_78_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 78;
 	int fromval = 122;
-	std::string expected = "F#5";
+	String expected = "F#5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3410,10 +3410,10 @@ TEST( VALUE_79_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 79;
 	int fromval = 34;
-	std::string expected = "G5";
+	String expected = "G5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3422,10 +3422,10 @@ TEST( VALUE_79_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 79;
 	int fromval = 124;
-	std::string expected = "G5";
+	String expected = "G5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3434,10 +3434,10 @@ TEST( VALUE_80_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 80;
 	int fromval = 35;
-	std::string expected = "Ab5";
+	String expected = "Ab5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3446,10 +3446,10 @@ TEST( VALUE_80_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 80;
 	int fromval = 125;
-	std::string expected = "Ab5";
+	String expected = "Ab5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3458,10 +3458,10 @@ TEST( VALUE_81_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 81;
 	int fromval = 35;
-	std::string expected = "A5";
+	String expected = "A5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3470,10 +3470,10 @@ TEST( VALUE_81_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 81;
 	int fromval = 127;
-	std::string expected = "A5";
+	String expected = "A5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3482,10 +3482,10 @@ TEST( VALUE_82_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 82;
 	int fromval = 36;
-	std::string expected = "Bb5";
+	String expected = "Bb5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3494,10 +3494,10 @@ TEST( VALUE_82_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 82;
 	int fromval = 128;
-	std::string expected = "Bb5";
+	String expected = "Bb5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3506,10 +3506,10 @@ TEST( VALUE_83_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 83;
 	int fromval = 36;
-	std::string expected = "B5";
+	String expected = "B5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3518,10 +3518,10 @@ TEST( VALUE_83_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 83;
 	int fromval = 130;
-	std::string expected = "B5";
+	String expected = "B5";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3530,10 +3530,10 @@ TEST( VALUE_84_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 84;
 	int fromval = 37;
-	std::string expected = "C6";
+	String expected = "C6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3542,10 +3542,10 @@ TEST( VALUE_84_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 84;
 	int fromval = 131;
-	std::string expected = "C6";
+	String expected = "C6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3554,10 +3554,10 @@ TEST( VALUE_85_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 85;
 	int fromval = 37;
-	std::string expected = "C#6";
+	String expected = "C#6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3566,10 +3566,10 @@ TEST( VALUE_85_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 85;
 	int fromval = 133;
-	std::string expected = "C#6";
+	String expected = "C#6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3578,10 +3578,10 @@ TEST( VALUE_86_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 86;
 	int fromval = 38;
-	std::string expected = "D6";
+	String expected = "D6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3590,10 +3590,10 @@ TEST( VALUE_86_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 86;
 	int fromval = 134;
-	std::string expected = "D6";
+	String expected = "D6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3602,10 +3602,10 @@ TEST( VALUE_87_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 87;
 	int fromval = 38;
-	std::string expected = "Eb6";
+	String expected = "Eb6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3614,10 +3614,10 @@ TEST( VALUE_87_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 87;
 	int fromval = 136;
-	std::string expected = "Eb6";
+	String expected = "Eb6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3626,10 +3626,10 @@ TEST( VALUE_88_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 88;
 	int fromval = 39;
-	std::string expected = "E6";
+	String expected = "E6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3638,10 +3638,10 @@ TEST( VALUE_88_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 88;
 	int fromval = 137;
-	std::string expected = "E6";
+	String expected = "E6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3650,10 +3650,10 @@ TEST( VALUE_89_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 89;
 	int fromval = 39;
-	std::string expected = "F6";
+	String expected = "F6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3662,10 +3662,10 @@ TEST( VALUE_89_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 89;
 	int fromval = 139;
-	std::string expected = "F6";
+	String expected = "F6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3674,10 +3674,10 @@ TEST( VALUE_90_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 90;
 	int fromval = 40;
-	std::string expected = "F#6";
+	String expected = "F#6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3686,10 +3686,10 @@ TEST( VALUE_90_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 90;
 	int fromval = 140;
-	std::string expected = "F#6";
+	String expected = "F#6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3698,10 +3698,10 @@ TEST( VALUE_91_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 91;
 	int fromval = 40;
-	std::string expected = "G6";
+	String expected = "G6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3710,10 +3710,10 @@ TEST( VALUE_91_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 91;
 	int fromval = 142;
-	std::string expected = "G6";
+	String expected = "G6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3722,10 +3722,10 @@ TEST( VALUE_92_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 92;
 	int fromval = 41;
-	std::string expected = "Ab6";
+	String expected = "Ab6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3734,10 +3734,10 @@ TEST( VALUE_92_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 92;
 	int fromval = 143;
-	std::string expected = "Ab6";
+	String expected = "Ab6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3746,10 +3746,10 @@ TEST( VALUE_93_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 93;
 	int fromval = 41;
-	std::string expected = "A6";
+	String expected = "A6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3758,10 +3758,10 @@ TEST( VALUE_93_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 93;
 	int fromval = 145;
-	std::string expected = "A6";
+	String expected = "A6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3770,10 +3770,10 @@ TEST( VALUE_94_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 94;
 	int fromval = 42;
-	std::string expected = "Bb6";
+	String expected = "Bb6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3782,10 +3782,10 @@ TEST( VALUE_94_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 94;
 	int fromval = 146;
-	std::string expected = "Bb6";
+	String expected = "Bb6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3794,10 +3794,10 @@ TEST( VALUE_95_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 95;
 	int fromval = 42;
-	std::string expected = "B6";
+	String expected = "B6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3806,10 +3806,10 @@ TEST( VALUE_95_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 95;
 	int fromval = 148;
-	std::string expected = "B6";
+	String expected = "B6";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3818,10 +3818,10 @@ TEST( VALUE_96_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 96;
 	int fromval = 43;
-	std::string expected = "C7";
+	String expected = "C7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3830,10 +3830,10 @@ TEST( VALUE_96_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 96;
 	int fromval = 149;
-	std::string expected = "C7";
+	String expected = "C7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3842,10 +3842,10 @@ TEST( VALUE_97_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 97;
 	int fromval = 43;
-	std::string expected = "C#7";
+	String expected = "C#7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3854,10 +3854,10 @@ TEST( VALUE_97_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 97;
 	int fromval = 151;
-	std::string expected = "C#7";
+	String expected = "C#7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3866,10 +3866,10 @@ TEST( VALUE_98_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 98;
 	int fromval = 44;
-	std::string expected = "D7";
+	String expected = "D7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3878,10 +3878,10 @@ TEST( VALUE_98_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 98;
 	int fromval = 152;
-	std::string expected = "D7";
+	String expected = "D7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3890,10 +3890,10 @@ TEST( VALUE_99_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 99;
 	int fromval = 44;
-	std::string expected = "Eb7";
+	String expected = "Eb7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3902,10 +3902,10 @@ TEST( VALUE_99_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 99;
 	int fromval = 154;
-	std::string expected = "Eb7";
+	String expected = "Eb7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3914,10 +3914,10 @@ TEST( VALUE_100_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 100;
 	int fromval = 45;
-	std::string expected = "E7";
+	String expected = "E7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3926,10 +3926,10 @@ TEST( VALUE_100_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 100;
 	int fromval = 155;
-	std::string expected = "E7";
+	String expected = "E7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3938,10 +3938,10 @@ TEST( VALUE_101_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 101;
 	int fromval = 45;
-	std::string expected = "F7";
+	String expected = "F7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3950,10 +3950,10 @@ TEST( VALUE_101_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 101;
 	int fromval = 157;
-	std::string expected = "F7";
+	String expected = "F7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3962,10 +3962,10 @@ TEST( VALUE_102_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 102;
 	int fromval = 46;
-	std::string expected = "F#7";
+	String expected = "F#7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3974,10 +3974,10 @@ TEST( VALUE_102_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 102;
 	int fromval = 158;
-	std::string expected = "F#7";
+	String expected = "F#7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3986,10 +3986,10 @@ TEST( VALUE_103_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 103;
 	int fromval = 46;
-	std::string expected = "G7";
+	String expected = "G7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -3998,10 +3998,10 @@ TEST( VALUE_103_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 103;
 	int fromval = 160;
-	std::string expected = "G7";
+	String expected = "G7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4010,10 +4010,10 @@ TEST( VALUE_104_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 104;
 	int fromval = 47;
-	std::string expected = "Ab7";
+	String expected = "Ab7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4022,10 +4022,10 @@ TEST( VALUE_104_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 104;
 	int fromval = 161;
-	std::string expected = "Ab7";
+	String expected = "Ab7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4034,10 +4034,10 @@ TEST( VALUE_105_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 105;
 	int fromval = 47;
-	std::string expected = "A7";
+	String expected = "A7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4046,10 +4046,10 @@ TEST( VALUE_105_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 105;
 	int fromval = 163;
-	std::string expected = "A7";
+	String expected = "A7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4058,10 +4058,10 @@ TEST( VALUE_106_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 106;
 	int fromval = 48;
-	std::string expected = "Bb7";
+	String expected = "Bb7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4070,10 +4070,10 @@ TEST( VALUE_106_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 106;
 	int fromval = 164;
-	std::string expected = "Bb7";
+	String expected = "Bb7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4082,10 +4082,10 @@ TEST( VALUE_107_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 107;
 	int fromval = 48;
-	std::string expected = "B7";
+	String expected = "B7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4094,10 +4094,10 @@ TEST( VALUE_107_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 107;
 	int fromval = 166;
-	std::string expected = "B7";
+	String expected = "B7";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4106,10 +4106,10 @@ TEST( VALUE_108_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 108;
 	int fromval = 49;
-	std::string expected = "C8";
+	String expected = "C8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4118,10 +4118,10 @@ TEST( VALUE_108_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 108;
 	int fromval = 167;
-	std::string expected = "C8";
+	String expected = "C8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4130,10 +4130,10 @@ TEST( VALUE_109_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 109;
 	int fromval = 49;
-	std::string expected = "C#8";
+	String expected = "C#8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4142,10 +4142,10 @@ TEST( VALUE_109_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 109;
 	int fromval = 169;
-	std::string expected = "C#8";
+	String expected = "C#8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4154,10 +4154,10 @@ TEST( VALUE_110_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 110;
 	int fromval = 50;
-	std::string expected = "D8";
+	String expected = "D8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4166,10 +4166,10 @@ TEST( VALUE_110_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 110;
 	int fromval = 170;
-	std::string expected = "D8";
+	String expected = "D8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4178,10 +4178,10 @@ TEST( VALUE_111_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 111;
 	int fromval = 50;
-	std::string expected = "Eb8";
+	String expected = "Eb8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4190,10 +4190,10 @@ TEST( VALUE_111_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 111;
 	int fromval = 172;
-	std::string expected = "Eb8";
+	String expected = "Eb8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4202,10 +4202,10 @@ TEST( VALUE_112_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 112;
 	int fromval = 51;
-	std::string expected = "E8";
+	String expected = "E8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4214,10 +4214,10 @@ TEST( VALUE_112_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 112;
 	int fromval = 173;
-	std::string expected = "E8";
+	String expected = "E8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4226,10 +4226,10 @@ TEST( VALUE_113_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 113;
 	int fromval = 51;
-	std::string expected = "F8";
+	String expected = "F8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4238,10 +4238,10 @@ TEST( VALUE_113_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 113;
 	int fromval = 175;
-	std::string expected = "F8";
+	String expected = "F8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4250,10 +4250,10 @@ TEST( VALUE_114_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 114;
 	int fromval = 52;
-	std::string expected = "F#8";
+	String expected = "F#8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4262,10 +4262,10 @@ TEST( VALUE_114_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 114;
 	int fromval = 176;
-	std::string expected = "F#8";
+	String expected = "F#8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4274,10 +4274,10 @@ TEST( VALUE_115_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 115;
 	int fromval = 52;
-	std::string expected = "G8";
+	String expected = "G8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4286,10 +4286,10 @@ TEST( VALUE_115_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 115;
 	int fromval = 178;
-	std::string expected = "G8";
+	String expected = "G8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4298,10 +4298,10 @@ TEST( VALUE_116_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 116;
 	int fromval = 53;
-	std::string expected = "Ab8";
+	String expected = "Ab8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4310,10 +4310,10 @@ TEST( VALUE_116_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 116;
 	int fromval = 179;
-	std::string expected = "Ab8";
+	String expected = "Ab8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4322,10 +4322,10 @@ TEST( VALUE_117_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 117;
 	int fromval = 53;
-	std::string expected = "A8";
+	String expected = "A8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4334,10 +4334,10 @@ TEST( VALUE_117_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 117;
 	int fromval = 181;
-	std::string expected = "A8";
+	String expected = "A8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4346,10 +4346,10 @@ TEST( VALUE_118_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 118;
 	int fromval = 54;
-	std::string expected = "Bb8";
+	String expected = "Bb8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4358,10 +4358,10 @@ TEST( VALUE_118_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 118;
 	int fromval = 182;
-	std::string expected = "Bb8";
+	String expected = "Bb8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4370,10 +4370,10 @@ TEST( VALUE_119_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 119;
 	int fromval = 54;
-	std::string expected = "B8";
+	String expected = "B8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4382,10 +4382,10 @@ TEST( VALUE_119_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 119;
 	int fromval = 184;
-	std::string expected = "B8";
+	String expected = "B8";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4394,10 +4394,10 @@ TEST( VALUE_120_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 120;
 	int fromval = 55;
-	std::string expected = "C9";
+	String expected = "C9";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4406,10 +4406,10 @@ TEST( VALUE_120_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 120;
 	int fromval = 185;
-	std::string expected = "C9";
+	String expected = "C9";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4418,10 +4418,10 @@ TEST( VALUE_121_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 121;
 	int fromval = 55;
-	std::string expected = "C#9";
+	String expected = "C#9";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4430,10 +4430,10 @@ TEST( VALUE_121_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 121;
 	int fromval = 187;
-	std::string expected = "C#9";
+	String expected = "C#9";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4442,10 +4442,10 @@ TEST( VALUE_122_fromAbove, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 122;
 	int fromval = 56;
-	std::string expected = "D9";
+	String expected = "D9";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
 
@@ -4454,9 +4454,9 @@ TEST( VALUE_122_fromBelow, Pitch )
 	IPitchUP pitch{ new Pitch{ "C4" } };
 	int value = 122;
 	int fromval = 188;
-	std::string expected = "D9";
+	String expected = "D9";
 	pitch->setValue( fromval );
 	pitch->setValue( value );
-	std::string actual = pitch->toString();
+	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }

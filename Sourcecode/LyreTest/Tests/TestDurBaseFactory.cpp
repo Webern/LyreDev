@@ -25,7 +25,7 @@ TEST( Works, DurBaseFactory )
 TEST( Throws, DurBaseFactory )
 {
     DurBaseFactory f;
-    std::string message;
+    String message;
     try
     {
         f.createDur( "Gobbledeegook" );
@@ -34,7 +34,7 @@ TEST( Throws, DurBaseFactory )
     {
         message = e.what();
     }
-    std::string expected = "'Gobbledeegook' is not a valid DurBase name";
-    std::string actual = message;
+    String expected = "'Gobbledeegook' is not a valid DurBase name";
+    String actual = message;
     CHECK( actual.find( expected ) != String::npos );
 }

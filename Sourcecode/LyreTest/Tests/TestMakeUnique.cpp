@@ -15,7 +15,7 @@ namespace
     class Cat
     {
     public:
-        std::string getName() const { return "Bishop"; }
+        String getName() const { return "Bishop"; }
     };
     using CatUP = std::unique_ptr<Cat>;
     
