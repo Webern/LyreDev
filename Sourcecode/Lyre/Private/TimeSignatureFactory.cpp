@@ -2,12 +2,20 @@
 #include "Lyre/ITimeSignature.h"
 #include "Lyre/Private/TimeSignature.h"
 
-#if 1==0
+
 namespace Lyre
 {
     namespace Private
     {
         TimeSignatureFactory::~TimeSignatureFactory() {}
+        
+        ITimeSignatureUP TimeSignatureFactory::create(
+            const IBeatPatternUP& beatPattern,
+            int top,
+            int bottom )
+        {
+            return ITimeSignatureUP{ new TimeSignature{ beatPattern->clone(), top, bottom } };
+        }
         
         ITimeSignatureUP TimeSignatureFactory::create(
             int top,
@@ -17,4 +25,4 @@ namespace Lyre
         }
     }
 }
-#endif
+

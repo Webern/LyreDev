@@ -27,7 +27,7 @@ TEST( Compiles, throwDotH )
     // similar (after eliminating casing differences)
     
     String expected =
-        "error in TestThrow.cpp (line 14) runTest: some error message";
+        "error in TestThrow.cpp (line 16) runTest: some error message";
     String actual = message;
 	std::locale loc;
     for ( auto it = expected.begin(); it != expected.end(); ++it )

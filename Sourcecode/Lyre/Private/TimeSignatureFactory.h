@@ -3,7 +3,7 @@
 #include "Lyre/Lyre.h"
 #include "Lyre/ITimeSignatureFactory.h"
 #include "Lyre/ITimeSignature.h"
-#if 1==0
+
 namespace Lyre
 {
     namespace Private
@@ -14,9 +14,13 @@ namespace Lyre
         {
         public:
             virtual ~TimeSignatureFactory();
+            
+            virtual ITimeSignatureUP create( const IBeatPatternUP& beatPattern,
+                                             int top, int bottom );
+            
             virtual ITimeSignatureUP create( int top, int bottom );
         };
     }
 }
-#endif
+
 

@@ -7,7 +7,7 @@
 
 using namespace Lyre;
 using namespace std;
-#if 1==0
+
 namespace
 {
 	static ITimeSignatureFactoryUP factory =
@@ -16,9 +16,9 @@ namespace
 
 TEST( TODO, TimeSignature )
 {
-    ITimeSignatureUP ts = factory->create( 4, 4 );
+    ITimeSignatureUP ts = factory->create( 7, 16 );
+    std::cout << *ts << std::endl;
     String expected = "write more tests";
     String actual = ts->toString();
     CHECK_EQUAL( expected, actual )
 }
-#endif

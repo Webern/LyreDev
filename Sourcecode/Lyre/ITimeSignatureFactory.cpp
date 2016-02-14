@@ -1,7 +1,7 @@
 #include "Lyre/ITimeSignatureFactory.h"
 #include "Lyre/Private/TimeSignatureFactory.h"
 #include "Lyre/Private/throw.h"
-#if 1==0
+
 namespace Lyre
 {
     ITimeSignatureFactoryUP
@@ -19,4 +19,3 @@ namespace Lyre
         THROW( "Unrecognized TimeSignatureFactoryType" )
     }
 }
-#endif

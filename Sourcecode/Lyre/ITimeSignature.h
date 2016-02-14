@@ -1,6 +1,7 @@
 //PUBLIC
 #pragma once
 #include "Lyre/Lyre.h"
+#include "Lyre/Rational.h"
 
 namespace Lyre
 {
@@ -20,6 +21,6 @@ namespace Lyre
         virtual IBeatPatternUP getBeatPattern() const = 0;
         virtual int getTop() const = 0;
         virtual int getBottom() const = 0;
-        
+        virtual Rational getTotalDuration() = 0;
     };
 }

@@ -11,6 +11,7 @@ namespace Lyre
     };
 
     FORWARD_DECLARE(ITimeSignatureFactory)
+    FORWARD_DECLARE(IBeatPattern)
     
     PUBLIC ITimeSignatureFactoryUP
         createTimeSignatureFactory(
@@ -22,5 +23,10 @@ namespace Lyre
     public:
         virtual ~ITimeSignatureFactory() {}
         virtual ITimeSignatureUP create( int top, int bottom ) = 0;
+        
+        virtual ITimeSignatureUP create(
+            const IBeatPatternUP& beatPattern,
+            int top,
+            int bottom ) = 0;
     };
 }
