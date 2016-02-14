@@ -80,7 +80,7 @@ namespace Lyre
     
     std::ostream& TimeSignature::toStream( std::ostream& os ) const
     {
-        os << "TimeSignature[" << myTop << "/" << myBottom << " (";
+        os << "TimeSignature[" << myTop << "/" << myBottom << "(";
         os << *myBeatPattern << ")]";
         return os;
     }

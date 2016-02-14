@@ -14,11 +14,20 @@ namespace
 	createTimeSignatureFactory();
 }
 
-TEST( TODO, TimeSignature )
+TEST( toStream, TimeSignature )
 {
     ITimeSignatureUP ts = factory->create( 7, 16 );
-    std::cout << *ts << std::endl;
-    String expected = "write more tests";
-    String actual = ts->toString();
+    std::stringstream ss;
+    ts->toStream( ss );
+    String expected = "TimeSignature[7/16(BeatPattern<Quarter,Eighth,16th>)]";
+    String actual = ss.str();
+    CHECK_EQUAL( expected, actual )
+}
+
+TEST( getTotalDuration, TimeSignature )
+{
+    ITimeSignatureUP ts = factory->create( 9, 8 );
+    Rational expected{ 9, 2 };
+    Rational actual = ts->getTotalDuration();
     CHECK_EQUAL( expected, actual )
 }
