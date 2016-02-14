@@ -44,7 +44,7 @@ TEST( toStream, BeatPattern )
     IBeatPatternUP bp = factory->create( quarterDottedQuarter() );
     std::stringstream sstr;
     bp->toStream( sstr );
-    String expected = "BeatPattern <Quarter,Quarter.>";
+    String expected = "BeatPattern<Quarter,Quarter.>";
     String actual = sstr.str();
     CHECK_EQUAL( expected, actual )
 }

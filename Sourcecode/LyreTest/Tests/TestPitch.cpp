@@ -883,32 +883,32 @@ TEST( getStepValue6, Pitch )
 TEST( setStepValue0, Pitch )
 {
     String str = "F1";
-    Integer setTo = 0;
-    Integer expected = 0;
+    int setTo = 0;
+    int expected = 0;
     IPitchUP n{ new Pitch{ str } };
     n->setStepValue( setTo );
-    Integer actual = n->getStepValue();
+    int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
 
 TEST( setStepValue1, Pitch )
 {
     String str = "G2";
-    Integer setTo = 7;
-    Integer expected = 6;
+    int setTo = 7;
+    int expected = 6;
     IPitchUP n{ new Pitch{ str } };
     n->setStepValue( setTo );
-    Integer actual = n->getStepValue();
+    int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setStepValue2, Pitch )
 {
     String str = "D3";
-    Integer setTo = -1;
-    Integer expected = 0;
+    int setTo = -1;
+    int expected = 0;
     IPitchUP n{ new Pitch{ str } };
     n->setStepValue( setTo );
-    Integer actual = n->getStepValue();
+    int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( incrementStep, Pitch )
@@ -978,129 +978,129 @@ TEST( decrementStep, Pitch )
 TEST( getAlterValue00, Pitch )
 {
     String str{ "C8" };
-    Integer expected = 0;
+    int expected = 0;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue01, Pitch )
 {
     String str{ "Fb4" };
-    Integer expected = -1;
+    int expected = -1;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue02, Pitch )
 {
     String str{ "G#5" };
-    Integer expected = 1;
+    int expected = 1;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue03, Pitch )
 {
     String str{ "Bd-101" };
-    Integer expected = -2;
+    int expected = -2;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue04, Pitch )
 {
     String str{ "Ax12" };
-    Integer expected = 2;
+    int expected = 2;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue05, Pitch )
 {
     String str{ "Ddb3" };
-    Integer expected = -3;
+    int expected = -3;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue06, Pitch )
 {
     String str{ "Cx#7" };
-    Integer expected = 3;
+    int expected = 3;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue07, Pitch )
 {
     String str{ "Edd3" };
-    Integer expected = -4;
+    int expected = -4;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue08, Pitch )
 {
     String str{ "Fxx1013" };
-    Integer expected = 4;
+    int expected = 4;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue09, Pitch )
 {
     String str{ "Cddb-321" };
-    Integer expected = -5;
+    int expected = -5;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue10, Pitch )
 {
     String str{ "Cxx#8" };
-    Integer expected = 5;
+    int expected = 5;
     IPitchUP n{ new Pitch{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setAlterValue01, Pitch )
 {
     String str{ "Cxx#4" };
-    Integer setTo = 3;
-    Integer expected = setTo;
+    int setTo = 3;
+    int expected = setTo;
     IPitchUP n{ new Pitch{ str } };
     n->setAlterValue( setTo );
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setAlterValue02, Pitch )
 {
     String str{ "Cx1" };
-    Integer setTo = 0;
-    Integer expected = setTo;
+    int setTo = 0;
+    int expected = setTo;
     IPitchUP n{ new Pitch{ str } };
     n->setAlterValue( setTo );
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setAlterValue03, Pitch )
 {
     String str{ "Gb2" };
-    Integer setTo = 100;
-    Integer expected = setTo;
+    int setTo = 100;
+    int expected = setTo;
     IPitchUP n{ new Pitch{ str } };
     n->setAlterValue( setTo );
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setAlterValue04, Pitch )
 {
     String str{ "Gb3" };
-    Integer setTo = -100;
-    Integer expected = setTo;
+    int setTo = -100;
+    int expected = setTo;
     IPitchUP n{ new Pitch{ str } };
     n->setAlterValue( setTo );
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( incrementAlter, Pitch )
@@ -1154,12 +1154,12 @@ TEST( incrementAlter, Pitch )
     CHECK_EQUAL( 6, n->getAlterValue() )
     CHECK_EQUAL( 2, n->getStepValue() )
     CHECK_EQUAL( 9, n->getOctaveValue() )
-    n->setAlterValue( std::numeric_limits<Integer>::max() );
-    CHECK_EQUAL( std::numeric_limits<Integer>::max(), n->getAlterValue() )
+    n->setAlterValue( std::numeric_limits<int>::max() );
+    CHECK_EQUAL( std::numeric_limits<int>::max(), n->getAlterValue() )
     CHECK_EQUAL( 2, n->getStepValue() )
     CHECK_EQUAL( 9, n->getOctaveValue() )
     n->incrementAlter();
-    CHECK_EQUAL( std::numeric_limits<Integer>::min(), n->getAlterValue() )
+    CHECK_EQUAL( std::numeric_limits<int>::min(), n->getAlterValue() )
     CHECK_EQUAL( 2, n->getStepValue() )
     CHECK_EQUAL( 9, n->getOctaveValue() )
 }
@@ -1212,12 +1212,12 @@ TEST( decrementAlter, Pitch )
     CHECK_EQUAL( -6, n->getAlterValue() )
     CHECK_EQUAL( 2, n->getStepValue() )
     CHECK_EQUAL( -2, n->getOctaveValue() )
-    n->setAlterValue( std::numeric_limits<Integer>::min() );
-    CHECK_EQUAL( std::numeric_limits<Integer>::min(), n->getAlterValue() )
+    n->setAlterValue( std::numeric_limits<int>::min() );
+    CHECK_EQUAL( std::numeric_limits<int>::min(), n->getAlterValue() )
     CHECK_EQUAL( 2, n->getStepValue() )
     CHECK_EQUAL( -2, n->getOctaveValue() )
     n->decrementAlter();
-    CHECK_EQUAL( std::numeric_limits<Integer>::max(), n->getAlterValue() )
+    CHECK_EQUAL( std::numeric_limits<int>::max(), n->getAlterValue() )
     CHECK_EQUAL( 2, n->getStepValue() )
     CHECK_EQUAL( -2, n->getOctaveValue() )
 }

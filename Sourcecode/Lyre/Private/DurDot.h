@@ -20,7 +20,7 @@ namespace Lyre
             DurDot( const String& durName );
             
             DurDot( const String& durName,
-                const Integer dotCount );
+                const int dotCount );
             
             virtual ~DurDot();
             
@@ -29,9 +29,9 @@ namespace Lyre
             virtual Rational getValue() const;
             virtual Rational getDurBaseValue() const;
             
-            virtual Integer getDotCount() const;
+            virtual int getDotCount() const;
             
-            virtual void setDotCount( const Integer dots );
+            virtual void setDotCount( const int dots );
             
             virtual std::ostream& toStream( std::ostream& os ) const;
             virtual std::ostream& durBaseToStream( std::ostream& os ) const;
@@ -46,7 +46,7 @@ namespace Lyre
         private:
             IDurBaseFactoryUP myDurBaseFactory;
             IDurBaseUP myDurBase;
-            Integer myDotCount;
+            int myDotCount;
             
         private:
             void setDurBase( const String& durName );

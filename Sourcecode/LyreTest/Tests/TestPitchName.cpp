@@ -861,31 +861,31 @@ TEST( getMaxStepValue, PitchName )
 TEST( setStepValue0, PitchName )
 {
     String str = "F";
-    Integer setTo = 0;
-    Integer expected = 0;
+    int setTo = 0;
+    int expected = 0;
     IPitchNameUP n{ new PitchName{ str } };
     n->setStepValue( setTo );
-    Integer actual = n->getStepValue();
+    int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setStepValue1, PitchName )
 {
     String str = "G";
-    Integer setTo = 7;
-    Integer expected = 6;
+    int setTo = 7;
+    int expected = 6;
     IPitchNameUP n{ new PitchName{ str } };
     n->setStepValue( setTo );
-    Integer actual = n->getStepValue();
+    int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setStepValue2, PitchName )
 {
     String str = "D";
-    Integer setTo = -1;
-    Integer expected = 0;
+    int setTo = -1;
+    int expected = 0;
     IPitchNameUP n{ new PitchName{ str } };
     n->setStepValue( setTo );
-    Integer actual = n->getStepValue();
+    int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( incrementStep, PitchName )
@@ -927,143 +927,143 @@ TEST( decrementStep, PitchName )
 TEST( getAlterValue00, PitchName )
 {
     String str{ "C" };
-    Integer expected = 0;
+    int expected = 0;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue01, PitchName )
 {
     String str{ "Fb" };
-    Integer expected = -1;
+    int expected = -1;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue02, PitchName )
 {
     String str{ "G#" };
-    Integer expected = 1;
+    int expected = 1;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue03, PitchName )
 {
     String str{ "Bd" };
-    Integer expected = -2;
+    int expected = -2;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue04, PitchName )
 {
     String str{ "Ax" };
-    Integer expected = 2;
+    int expected = 2;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue05, PitchName )
 {
     String str{ "Ddb" };
-    Integer expected = -3;
+    int expected = -3;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue06, PitchName )
 {
     String str{ "Cx#" };
-    Integer expected = 3;
+    int expected = 3;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue07, PitchName )
 {
     String str{ "Edd" };
-    Integer expected = -4;
+    int expected = -4;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue08, PitchName )
 {
     String str{ "Fxx" };
-    Integer expected = 4;
+    int expected = 4;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue09, PitchName )
 {
     String str{ "Cddb" };
-    Integer expected = -5;
+    int expected = -5;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getAlterValue10, PitchName )
 {
     String str{ "Cxx#" };
-    Integer expected = 5;
+    int expected = 5;
     IPitchNameUP n{ new PitchName{ str } };
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setAlterValue01, PitchName )
 {
     String str{ "Cxx#" };
-    Integer setTo = 3;
-    Integer expected = setTo;
+    int setTo = 3;
+    int expected = setTo;
     IPitchNameUP n{ new PitchName{ str } };
     n->setAlterValue( setTo );
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setAlterValue02, PitchName )
 {
     String str{ "Cx" };
-    Integer setTo = 0;
-    Integer expected = setTo;
+    int setTo = 0;
+    int expected = setTo;
     IPitchNameUP n{ new PitchName{ str } };
     n->setAlterValue( setTo );
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setAlterValue03, PitchName )
 {
     String str{ "Gb" };
-    Integer setTo = 100;
-    Integer expected = setTo;
+    int setTo = 100;
+    int expected = setTo;
     IPitchNameUP n{ new PitchName{ str } };
     n->setAlterValue( setTo );
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( setAlterValue04, PitchName )
 {
     String str{ "Gb" };
-    Integer setTo = -100;
-    Integer expected = setTo;
+    int setTo = -100;
+    int expected = setTo;
     IPitchNameUP n{ new PitchName{ str } };
     n->setAlterValue( setTo );
-    Integer actual = n->getAlterValue();
+    int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getMinAlterValue, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "D" } };
-    Integer expected = std::numeric_limits<Integer>::min();
-    Integer actual = n->getMinAlterValue();
+    int expected = std::numeric_limits<int>::min();
+    int actual = n->getMinAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( getMaxAlterValue, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "E" } };
-    Integer expected = std::numeric_limits<Integer>::max();
-    Integer actual = n->getMaxAlterValue();
+    int expected = std::numeric_limits<int>::max();
+    int actual = n->getMaxAlterValue();
     CHECK_EQUAL( expected, actual )
 }
 TEST( incrementAlter, PitchName )
@@ -1093,10 +1093,10 @@ TEST( incrementAlter, PitchName )
     CHECK_EQUAL( 5, n->getAlterValue() )
     n->incrementAlter();
     CHECK_EQUAL( 6, n->getAlterValue() )
-    n->setAlterValue( std::numeric_limits<Integer>::max() );
-    CHECK_EQUAL( std::numeric_limits<Integer>::max(), n->getAlterValue() )
+    n->setAlterValue( std::numeric_limits<int>::max() );
+    CHECK_EQUAL( std::numeric_limits<int>::max(), n->getAlterValue() )
     n->incrementAlter();
-    CHECK_EQUAL( std::numeric_limits<Integer>::min(), n->getAlterValue() )
+    CHECK_EQUAL( std::numeric_limits<int>::min(), n->getAlterValue() )
 }
 TEST( decrementAlter, PitchName )
 {
@@ -1125,10 +1125,10 @@ TEST( decrementAlter, PitchName )
     CHECK_EQUAL( -5, n->getAlterValue() )
     n->decrementAlter();
     CHECK_EQUAL( -6, n->getAlterValue() )
-    n->setAlterValue( std::numeric_limits<Integer>::min() );
-    CHECK_EQUAL( std::numeric_limits<Integer>::min(), n->getAlterValue() )
+    n->setAlterValue( std::numeric_limits<int>::min() );
+    CHECK_EQUAL( std::numeric_limits<int>::min(), n->getAlterValue() )
     n->decrementAlter();
-    CHECK_EQUAL( std::numeric_limits<Integer>::max(), n->getAlterValue() )
+    CHECK_EQUAL( std::numeric_limits<int>::max(), n->getAlterValue() )
 }
 TEST( isIdenticalTo_true01, PitchName )
 {
@@ -1146,7 +1146,7 @@ TEST( isIdenticalTo_true02, PitchName )
         {
             return std::unique_ptr<MockPitchName1>{ new MockPitchName1{} };
         }
-        virtual Integer getValue() const { return 1; }
+        virtual int getValue() const { return 1; }
         virtual bool parse( const String& str ) { return true; }
         virtual std::ostream& toStream( std::ostream& os ) const { return os << "C#"; }
         /* virtual String toString() const;
@@ -1154,16 +1154,16 @@ TEST( isIdenticalTo_true02, PitchName )
          virtual bool isGreaterThan( const PitchName& other ) const;
          virtual bool isEqualTo( const PitchName& other ) const; */
         virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
-        virtual Integer getStepValue() const { return 0; }
-        virtual void setStepValue( const Integer val ) {}
-        virtual Integer getMinStepValue() const { return 0; }
-        virtual Integer getMaxStepValue() const { return 0; }
+        virtual int getStepValue() const { return 0; }
+        virtual void setStepValue( const int val ) {}
+        virtual int getMinStepValue() const { return 0; }
+        virtual int getMaxStepValue() const { return 0; }
         virtual void incrementStep() {}
         virtual void decrementStep() {}
-        virtual Integer getAlterValue() const { return 1; }
-        virtual void setAlterValue( const Integer val ) {}
-        virtual Integer getMinAlterValue() const { return 0; }
-        virtual Integer getMaxAlterValue() const { return 0; }
+        virtual int getAlterValue() const { return 1; }
+        virtual void setAlterValue( const int val ) {}
+        virtual int getMinAlterValue() const { return 0; }
+        virtual int getMaxAlterValue() const { return 0; }
         virtual void incrementAlter() {}
         virtual void decrementAlter() {}
     };
@@ -1188,7 +1188,7 @@ TEST( isIdenticalTo_false02, PitchName )
         {
             return std::unique_ptr<MockPitchName2>{ new MockPitchName2{} };
         }
-        virtual Integer getValue() const { return 1; }
+        virtual int getValue() const { return 1; }
         virtual bool parse( const String& str ) { return true; }
         virtual std::ostream& toStream( std::ostream& os ) const { return os << "C_"; }
         /* virtual String toString() const;
@@ -1196,16 +1196,16 @@ TEST( isIdenticalTo_false02, PitchName )
          virtual bool isGreaterThan( const PitchName& other ) const;
          virtual bool isEqualTo( const PitchName& other ) const; */
         virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
-        virtual Integer getStepValue() const { return 0; }
-        virtual void setStepValue( const Integer val ) {}
-        virtual Integer getMinStepValue() const { return 0; }
-        virtual Integer getMaxStepValue() const { return 0; }
+        virtual int getStepValue() const { return 0; }
+        virtual void setStepValue( const int val ) {}
+        virtual int getMinStepValue() const { return 0; }
+        virtual int getMaxStepValue() const { return 0; }
         virtual void incrementStep() {}
         virtual void decrementStep() {}
-        virtual Integer getAlterValue() const { return 1; }
-        virtual void setAlterValue( const Integer val ) {}
-        virtual Integer getMinAlterValue() const { return 0; }
-        virtual Integer getMaxAlterValue() const { return 0; }
+        virtual int getAlterValue() const { return 1; }
+        virtual void setAlterValue( const int val ) {}
+        virtual int getMinAlterValue() const { return 0; }
+        virtual int getMaxAlterValue() const { return 0; }
         virtual void incrementAlter() {}
         virtual void decrementAlter() {}
     };

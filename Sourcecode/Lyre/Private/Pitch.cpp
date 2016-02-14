@@ -6,7 +6,7 @@ namespace Lyre
 {
     namespace Private
     {     
-        const Integer ourMiddleCValue = 60;
+        const int ourMiddleCValue = 60;
         const Pitch ourMiddleCPitch{ 0, 0, 4 };
         
         Pitch::~Pitch(){}
@@ -16,7 +16,7 @@ namespace Lyre
         ,myOctave( 0 )
         {}
         
-        Pitch::Pitch( const Integer step, const Integer alter, const Integer octave )
+        Pitch::Pitch( const int step, const int alter, const int octave )
         :myPitchName( step, alter )
         ,myOctave( octave )
         {}
@@ -34,18 +34,18 @@ namespace Lyre
             return std::move( value );
         }
         
-        Integer Pitch::getValue() const
+        int Pitch::getValue() const
         {
-            Integer octave = myOctave;
-            Integer alter = myPitchName.getAlterValue();
+            int octave = myOctave;
+            int alter = myPitchName.getAlterValue();
             bool alterNegative = ( alter < 0 );
             if ( alterNegative )
             {
                 alter *= -1;
             }
-            Integer octaveOffset = 0;
+            int octaveOffset = 0;
             PitchName tempPitchName{ myPitchName.getStepValue(), 0 };
-            for ( Integer i = 0; i < alter; ++i )
+            for ( int i = 0; i < alter; ++i )
             {
                 if ( alterNegative )
                 {
@@ -72,13 +72,13 @@ namespace Lyre
             {
                 octave += octaveOffset;
             }
-            Integer answer = myPitchName.getValue();
+            int answer = myPitchName.getValue();
             answer += ( 12 * octave );
             answer += ( ourMiddleCValue ) - ( 12 * 4 );
             return answer;
         }
         
-        void Pitch::setValue( const Integer pitchValue )
+        void Pitch::setValue( const int pitchValue )
         {
             if ( pitchValue != getValue() )
             {
@@ -128,7 +128,7 @@ namespace Lyre
                 return false;
             }
             std::stringstream ss{ octstr };
-            Integer octave = 0;
+            int octave = 0;
             ss >> octave;
             if ( negative )
             {
@@ -178,12 +178,12 @@ namespace Lyre
             }
             return false;
         }
-        Integer Pitch::getStepValue() const
+        int Pitch::getStepValue() const
         {
             return myPitchName.getStepValue();
         }
         
-        void Pitch::setStepValue( const Integer val )
+        void Pitch::setStepValue( const int val )
         {
             myPitchName.setStepValue( val );
         }
@@ -198,12 +198,12 @@ namespace Lyre
             myPitchName.decrementStep();
         }
         
-        Integer Pitch::getAlterValue() const
+        int Pitch::getAlterValue() const
         {
             return myPitchName.getAlterValue();
         }
         
-        void Pitch::setAlterValue( const Integer val )
+        void Pitch::setAlterValue( const int val )
         {
             myPitchName.setAlterValue( val );
         }
@@ -218,12 +218,12 @@ namespace Lyre
             myPitchName.decrementAlter();
         }
         
-        Integer Pitch::getOctaveValue() const
+        int Pitch::getOctaveValue() const
         {
             return myOctave;
         }
         
-        void Pitch::setOctaveValue( const Integer val )
+        void Pitch::setOctaveValue( const int val )
         {
             myOctave = val;
         }
@@ -238,16 +238,16 @@ namespace Lyre
             myOctave -= 1;
         }
 
-        void Pitch::seekPitch( const Integer pitchValue )
+        void Pitch::seekPitch( const int pitchValue )
         {
             if ( pitchValue != getValue() )
             {
-                Integer increment = 1;
+                int increment = 1;
                 if ( pitchValue < getValue() )
                 {
                     increment = -1;
                 }
-                for ( Integer i = getValue(); i != pitchValue; i += increment )
+                for ( int i = getValue(); i != pitchValue; i += increment )
                 {
                     if ( increment == 1 )
                     {

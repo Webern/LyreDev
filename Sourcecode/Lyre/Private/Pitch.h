@@ -16,9 +16,9 @@ namespace Lyre
             Pitch();
             
             explicit Pitch(
-                const Integer step,
-                const Integer alter,
-                const Integer octave );
+                const int step,
+                const int alter,
+                const int octave );
             
             explicit Pitch( const String& str );
             
@@ -27,11 +27,11 @@ namespace Lyre
             
             /* return the Pitch Class value, e.g. C = 0,
              C# = 1, Db = 1, D = 2, D# = 3, Eb = 3 ...*/
-            virtual Integer getValue() const;
+            virtual int getValue() const;
             
-            /* set the value as an Integer,
+            /* set the value as an int,
              for example, C4 = 60, C#4 = 61, etc. */
-            virtual void setValue( const Integer pitchValue );
+            virtual void setValue( const int pitchValue );
             
             /* parse a string, set value from string, return true if
              successful, return false if string was un-parseable */
@@ -58,10 +58,10 @@ namespace Lyre
             /* Step Functions */
             
             /* return the Step as an integer */
-            virtual Integer getStepValue() const;
+            virtual int getStepValue() const;
             
             /* set the value from an int */
-            virtual void setStepValue( const Integer val );
+            virtual void setStepValue( const int val );
             
             /* increments/decrements the Step value,
              should wrap around to min/max */
@@ -71,10 +71,10 @@ namespace Lyre
             /* Alter Functions */
             
             /* return the Alter as an integer */
-            virtual Integer getAlterValue() const;
+            virtual int getAlterValue() const;
             
             /* set the value from an int */
-            virtual void setAlterValue( const Integer val );
+            virtual void setAlterValue( const int val );
             
             /* increments/decrements, should wraps around to min/max */
             virtual void incrementAlter();
@@ -82,15 +82,15 @@ namespace Lyre
             
             /* Octave Functions */
             
-            virtual Integer getOctaveValue() const;
-            virtual void setOctaveValue( const Integer val );
+            virtual int getOctaveValue() const;
+            virtual void setOctaveValue( const int val );
             virtual void incrementOctave();
             virtual void decrementOctave();
             
         private:
             Private::PitchName myPitchName;
-            Integer myOctave;
-            void seekPitch( const Integer pitchValue );
+            int myOctave;
+            void seekPitch( const int pitchValue );
             void collapseOctaves();
             void collapseSteps();
             void respellToEnharmonicDefault();

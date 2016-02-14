@@ -16,7 +16,7 @@ namespace Lyre
         public:
             virtual ~BeatPattern();
             BeatPattern();
-            BeatPattern( Integer count, const IDurationUP& dur );
+            BeatPattern( int count, const IDurationUP& dur );
             BeatPattern( const VecIDurationUP& durations );
             virtual IBeatPatternUP clone() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
@@ -44,7 +44,7 @@ namespace Lyre
         // functions
             bool checkDuration( const IDurationUP& dur ) const;
             bool checkDurations( const VecIDurationUP& durations ) const;
-            void loadDurations( Integer count, const IDurationUP& dur );
+            void loadDurations( int count, const IDurationUP& dur );
         };
     }
     

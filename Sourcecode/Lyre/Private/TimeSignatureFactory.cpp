@@ -2,7 +2,7 @@
 #include "Lyre/ITimeSignature.h"
 #include "Lyre/Private/TimeSignature.h"
 
-
+#if 1==0
 namespace Lyre
 {
     namespace Private
@@ -10,10 +10,11 @@ namespace Lyre
         TimeSignatureFactory::~TimeSignatureFactory() {}
         
         ITimeSignatureUP TimeSignatureFactory::create(
-            Integer top,
-            Integer bottom )
+            int top,
+            int bottom )
         {
             return ITimeSignatureUP{ new TimeSignature{ top, bottom } };
         }
     }
 }
+#endif

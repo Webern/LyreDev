@@ -11,13 +11,13 @@ namespace Lyre
         class Step::StepImpl : public Enum
         {
         public:
-            StepImpl( const Integer value ) : Enum( value, StepImplStringsSP, 0 ) {}
+            StepImpl( const int value ) : Enum( value, StepImplStringsSP, 0 ) {}
             StepImpl() : Enum( 0, StepImplStringsSP, 0 ) {}
         };
         Step::~Step() {}
         Step::Step() : myImpl( new StepImpl{} ) {}
         
-        Step::Step( const Integer value ) : myImpl( new StepImpl{ value } ) {}
+        Step::Step( const int value ) : myImpl( new StepImpl{ value } ) {}
         Step::Step( const StepValue value ) : myImpl( new StepImpl{} )
         {
             setValue( value );
@@ -50,7 +50,7 @@ namespace Lyre
             return value;
         }
         
-        Integer Step::getValue() const
+        int Step::getValue() const
         {
             return myImpl->getValue();
         }
@@ -87,7 +87,7 @@ namespace Lyre
             return value;
         }
         
-        void Step::setValue( const Integer value )
+        void Step::setValue( const int value )
         {
             myImpl->setValue( value );
         }
@@ -122,12 +122,12 @@ namespace Lyre
             }
         }
         
-        Integer Step::getMin() const
+        int Step::getMin() const
         {
             return myImpl->getMin();
         }
         
-        Integer Step::getMax() const
+        int Step::getMax() const
         {
             return myImpl->getMax();
         }
@@ -169,7 +169,7 @@ namespace Lyre
         {
             myImpl->decrement();
         }
-        Integer Step::getPitchClassValue() const
+        int Step::getPitchClassValue() const
         {
             return myImpl->getValue() <= 2 ? (myImpl->getValue() * 2) : (myImpl->getValue() * 2 - 1);
         }

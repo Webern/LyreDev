@@ -15,7 +15,7 @@ namespace Lyre
         virtual IDurationUP clone() const = 0;
         virtual Rational getDurBaseValue() const = 0;
         virtual String getDurBaseName() const = 0;
-        virtual Integer getDotCount() const = 0;
+        virtual int getDotCount() const = 0;
         virtual Rational getDottedBaseValue() const = 0;
         virtual String getDottedBaseName() const = 0;
         

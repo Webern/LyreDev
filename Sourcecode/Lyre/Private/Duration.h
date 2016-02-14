@@ -23,18 +23,18 @@ namespace Lyre
             
             Duration(
                 const String& durName,
-                const Integer dotCount );
+                const int dotCount );
 
             
             Duration(
                 const VecITupletDefSPC& tuplets,
                 const String& durName,
-                const Integer dotCount );
+                const int dotCount );
             
             IDurationUP clone() const;
             Rational getDurBaseValue() const;
             String getDurBaseName() const;
-            Integer getDotCount() const;
+            int getDotCount() const;
             Rational getDottedBaseValue() const;
             String getDottedBaseName() const;
             

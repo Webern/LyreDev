@@ -11,7 +11,7 @@ namespace Lyre
         :myDurations()
         {}
         
-        BeatPattern::BeatPattern( Integer count, const IDurationUP& dur )
+        BeatPattern::BeatPattern( int count, const IDurationUP& dur )
         :myDurations()
         {
             if( ! checkDuration( dur ) )
@@ -71,7 +71,7 @@ namespace Lyre
             return total;
         }
         
-        void BeatPattern::loadDurations( Integer count, const IDurationUP& dur )
+        void BeatPattern::loadDurations( int count, const IDurationUP& dur )
         {
             if ( count < 1 )
             {
@@ -84,7 +84,7 @@ namespace Lyre
             }
         }
         
-        Integer BeatPattern::getCount() const
+        int BeatPattern::getCount() const
         {
             return myDurations.getCount();
         }

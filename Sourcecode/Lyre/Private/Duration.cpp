@@ -26,7 +26,7 @@ namespace Lyre
         
         Duration::Duration(
             const String& durName,
-            const Integer dotCount )
+            const int dotCount )
         :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
         ,myDurDot( myDurDotFactory->createDurDot( durName, dotCount ) )
         ,myTuplets()
@@ -35,7 +35,7 @@ namespace Lyre
         Duration::Duration(
             const VecITupletDefSPC& tuplets,
             const String& durName,
-            const Integer dotCount )
+            const int dotCount )
         :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
         ,myDurDot( myDurDotFactory->createDurDot( durName, dotCount ) )
         ,myTuplets( tuplets )
@@ -62,7 +62,7 @@ namespace Lyre
             return myDurDot->getDurBaseName();
         }
         
-        Integer Duration::getDotCount() const
+        int Duration::getDotCount() const
         {
             return myDurDot->getDotCount();
         }

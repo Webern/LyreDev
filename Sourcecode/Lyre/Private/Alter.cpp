@@ -11,9 +11,9 @@ namespace Lyre
         {
         public:
             AlterImpl() : myValue{ 0 } {}
-            AlterImpl( const Integer value ) : myValue{ value } {}
-            Integer getValue() const { return myValue; }
-            void setValue( const Integer value ) { myValue = value; }
+            AlterImpl( const int value ) : myValue{ value } {}
+            int getValue() const { return myValue; }
+            void setValue( const int value ) { myValue = value; }
             char doubleFlatSymbol() const { return 'd'; }
             char flatSymbol() const { return 'b'; }
             char sharpSymbol() const { return '#'; }
@@ -45,12 +45,12 @@ namespace Lyre
                 return 0;
             }
         private:
-            Integer myValue;
+            int myValue;
         };
         Alter::~Alter() {}
         Alter::Alter() : myImpl( new AlterImpl{} ) {}
         
-        Alter::Alter( const Integer value ) : myImpl( new AlterImpl{ value } ) {}
+        Alter::Alter( const int value ) : myImpl( new AlterImpl{ value } ) {}
         
         Alter::Alter( const String& value ) : myImpl( new AlterImpl{} )
         {
@@ -79,31 +79,31 @@ namespace Lyre
             return value;
         }
         
-        Integer Alter::getValue() const
+        int Alter::getValue() const
         {
             return myImpl->getValue();
         }
         
-        void Alter::setValue( const Integer value )
+        void Alter::setValue( const int value )
         {
             myImpl->setValue( value );
         }
         
-        Integer Alter::getMin() const
+        int Alter::getMin() const
         {
-            return std::numeric_limits<Integer>::min();
+            return std::numeric_limits<int>::min();
         }
         
-        Integer Alter::getMax() const
+        int Alter::getMax() const
         {
-            return std::numeric_limits<Integer>::max();
+            return std::numeric_limits<int>::max();
         }
         
         bool Alter::parse( const String& str )
         {
             auto c = str.cbegin();
             auto end = str.cend();
-            Integer value = 0;
+            int value = 0;
             if ( c == end )
             {
                 myImpl->setValue( 0 );
@@ -181,12 +181,12 @@ namespace Lyre
             String sgl = singleSs.str();
             if ( myImpl->getValue() != 0 )
             {
-                Integer val = myImpl->getValue();
+                int val = myImpl->getValue();
                 if ( myImpl->isFlat() )
                 {
                     val *= -1;
                 }
-                for ( Integer i = 2; i <= val; i += 2 )
+                for ( int i = 2; i <= val; i += 2 )
                 {
                     os << dbl;
                 }
@@ -220,9 +220,9 @@ namespace Lyre
         
         void Alter::increment()
         {
-            if ( myImpl->getValue() == std::numeric_limits<Integer>::max() )
+            if ( myImpl->getValue() == std::numeric_limits<int>::max() )
             {
-                myImpl->setValue( std::numeric_limits<Integer>::min() );
+                myImpl->setValue( std::numeric_limits<int>::min() );
             }
             else
             {
@@ -232,9 +232,9 @@ namespace Lyre
         
         void Alter::decrement()
         {
-            if ( myImpl->getValue() == std::numeric_limits<Integer>::min() )
+            if ( myImpl->getValue() == std::numeric_limits<int>::min() )
             {
-                myImpl->setValue( std::numeric_limits<Integer>::max() );
+                myImpl->setValue( std::numeric_limits<int>::max() );
             }
             else
             {

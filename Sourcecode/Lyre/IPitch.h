@@ -14,13 +14,13 @@ namespace Lyre
         /* return a deep copy of "this" */
         virtual IPitchUP clone() const = 0;
 
-        /* return the value as an Integer,
+        /* return the value as an int,
          for example, C4 = 60, C#4 = 61, etc. */
-        virtual Integer getValue() const = 0;
+        virtual int getValue() const = 0;
         
-        /* set the value as an Integer,
+        /* set the value as an int,
          for example, C4 = 60, C#4 = 61, etc. */
-        virtual void setValue( const Integer value ) = 0;
+        virtual void setValue( const int value ) = 0;
         
         /* parse a string, set value from string, return true if
          successful, return false if string was un-parseable */
@@ -47,10 +47,10 @@ namespace Lyre
         /* Step Functions */
         
         /* return the Step as an integer */
-        virtual Integer getStepValue() const = 0;
+        virtual int getStepValue() const = 0;
         
         /* set the value from an int */
-        virtual void setStepValue( const Integer val ) = 0;
+        virtual void setStepValue( const int val ) = 0;
         
         /* increments/decrements the Step value,
          should wrap around to min/max */
@@ -60,10 +60,10 @@ namespace Lyre
         /* Alter Functions */
         
         /* return the Alter as an integer */
-        virtual Integer getAlterValue() const = 0;
+        virtual int getAlterValue() const = 0;
         
         /* set the value from an int */
-        virtual void setAlterValue( const Integer val ) = 0;
+        virtual void setAlterValue( const int val ) = 0;
         
         /* increments/decrements, should wraps around to min/max */
         virtual void incrementAlter() = 0;
@@ -71,8 +71,8 @@ namespace Lyre
         
         /* Octave Functions */
         
-        virtual Integer getOctaveValue() const = 0;
-        virtual void setOctaveValue( const Integer val ) = 0;
+        virtual int getOctaveValue() const = 0;
+        virtual void setOctaveValue( const int val ) = 0;
         virtual void incrementOctave() = 0;
         virtual void decrementOctave() = 0;
         

@@ -8,7 +8,7 @@ namespace Lyre
     FORWARD_DECLARE(IDurDot)
     FORWARD_DECLARE(IDurBase)
     
-    static const Integer DURATION_MAX_DOTS = 20;
+    static const int DURATION_MAX_DOTS = 20;
     
     class PUBLIC IDurDot
     {
@@ -20,9 +20,9 @@ namespace Lyre
         virtual Rational getValue() const = 0;
         virtual Rational getDurBaseValue() const = 0;
         
-        virtual Integer getDotCount() const = 0;
+        virtual int getDotCount() const = 0;
         
-        virtual void setDotCount( const Integer dots ) = 0;
+        virtual void setDotCount( const int dots ) = 0;
         
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         virtual std::ostream& durBaseToStream( std::ostream& os ) const = 0;

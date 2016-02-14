@@ -18,7 +18,7 @@ namespace Lyre
             {
                 return MockPitchUP{ new MockPitch{ myPitch } };
             }
-            virtual void setPitch( const Integer pitchValue )
+            virtual void setPitch( const int pitchValue )
             {
                 myPitch.setStepValue( pitchValue );
             }
@@ -32,7 +32,7 @@ namespace Lyre
             
             virtual void next() { add( 1 ); }
             virtual void previous() { add( -1 ); }
-            virtual void add( const Integer value ) { setPitch( createPitch()->getValue() + value ); }
+            virtual void add( const int value ) { setPitch( createPitch()->getValue() + value ); }
         private:
             MockPitch myPitch;
         };

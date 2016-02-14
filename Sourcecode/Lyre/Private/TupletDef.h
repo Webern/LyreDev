@@ -15,25 +15,25 @@ namespace Lyre
         public:
             
             TupletDef(
-                const Integer noteCount,
+                const int noteCount,
                 const String& noteTypeDurBaseName,
-                const Integer inTheSpaceOfCount,
+                const int inTheSpaceOfCount,
                 const String& inTheSpaceOfTypeDurBaseName );
             
             TupletDef(
-                const Integer count,
+                const int count,
                 const Lyre::IDurDot& countType,
-                const Integer inTheSpaceOf,
+                const int inTheSpaceOf,
                 const Lyre::IDurDot& inTheSpaceOfType );
             
             TupletDef(
-                const Integer count,
-                const Integer inTheSpaceOf,
+                const int count,
+                const int inTheSpaceOf,
                 const IDurDot& durationType );
             
             TupletDef(
-                const Integer count,
-                const Integer inTheSpaceOf,
+                const int count,
+                const int inTheSpaceOf,
                 const String& durBaseName );
             
             virtual ~TupletDef() = default;
@@ -43,10 +43,10 @@ namespace Lyre
             virtual Rational getMultiplier() const;
             virtual Rational getTotalLength() const;
             
-            virtual Integer getCount() const;
+            virtual int getCount() const;
             virtual IDurDotUPC getCountType() const;
             
-            virtual Integer getInTheSpaceOf() const;
+            virtual int getInTheSpaceOf() const;
             virtual IDurDotUPC getInTheSpaceOfType() const;
             
             virtual std::ostream& toStream( std::ostream& os ) const;
@@ -56,22 +56,22 @@ namespace Lyre
             virtual bool getIsValid() const;
             
         private:
-            Integer myCount;
+            int myCount;
             IDurDotUP myCountType;
-            Integer myInTheSpaceOf;
+            int myInTheSpaceOf;
             IDurDotUP myInTheSpaceOfType;
             
         private:
-            void throwIfNonPositive( const Integer value ) const;
+            void throwIfNonPositive( const int value ) const;
             void throwIfNull( const IDurDotUP& up ) const;
             void nullCheckThrow() const;
             void constructor(
-                const Integer count,
+                const int count,
                 const String& countTypeName,
-                const Integer countTypeDots,
-                const Integer itso,
+                const int countTypeDots,
+                const int itso,
                 const String& itsoType,
-                const Integer itsoDots );
+                const int itsoDots );
         };
     }
 }

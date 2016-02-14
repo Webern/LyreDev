@@ -17,7 +17,7 @@ namespace Lyre
             ,myAlter{ 0 }
             {}
             
-            PitchNameImpl( const Integer step, const Integer alter )
+            PitchNameImpl( const int step, const int alter )
             :myStep{ step }
             ,myAlter{ alter }
             {}
@@ -32,7 +32,7 @@ namespace Lyre
         :myImpl{ new PitchNameImpl{} }
         {}
         
-        PitchName::PitchName( const Integer step, const Integer alter )
+        PitchName::PitchName( const int step, const int alter )
         :myImpl( new PitchNameImpl{ step, alter } )
         {}
         
@@ -70,9 +70,9 @@ namespace Lyre
             return value;
         }
         
-        Integer PitchName::getValue() const
+        int PitchName::getValue() const
         {
-            Mod<Integer, 12> m{ ( myImpl->myStep.getPitchClassValue() ) + ( myImpl->myAlter.getValue() ) };
+            Mod<int, 12> m{ ( myImpl->myStep.getPitchClassValue() ) + ( myImpl->myAlter.getValue() ) };
             return m.getValue();
         }
         
@@ -109,7 +109,7 @@ namespace Lyre
             return os << myImpl->myAlter;
         }
         
-        Integer PitchName::getStepValue() const
+        int PitchName::getStepValue() const
         {
             return myImpl->myStep.getValue();
         }
@@ -142,17 +142,17 @@ namespace Lyre
             return false;
         }
         
-        void PitchName::setStepValue( const Integer val )
+        void PitchName::setStepValue( const int val )
         {
             myImpl->myStep.setValue( val );
         }
         
-        Integer PitchName::getMinStepValue() const
+        int PitchName::getMinStepValue() const
         {
             return myImpl->myStep.getMin();
         }
         
-        Integer PitchName::getMaxStepValue() const
+        int PitchName::getMaxStepValue() const
         {
             return myImpl->myStep.getMax();
         }
@@ -167,22 +167,22 @@ namespace Lyre
             myImpl->myStep.decrement();
         }
         
-        Integer PitchName::getAlterValue() const
+        int PitchName::getAlterValue() const
         {
             return myImpl->myAlter.getValue();
         }
         
-        void PitchName::setAlterValue( const Integer val )
+        void PitchName::setAlterValue( const int val )
         {
             myImpl->myAlter.setValue( val );
         }
         
-        Integer PitchName::getMinAlterValue() const
+        int PitchName::getMinAlterValue() const
         {
             return myImpl->myAlter.getMin();
         }
         
-        Integer PitchName::getMaxAlterValue() const
+        int PitchName::getMaxAlterValue() const
         {
             return myImpl->myAlter.getMax();
         }

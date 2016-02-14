@@ -16,7 +16,7 @@ namespace Lyre
         
         /* return the Pitch Class value, e.g. C = 0,
          C# = 1, Db = 1, D = 2, D# = 3, Eb = 3 ...*/
-        virtual Integer getValue() const = 0;
+        virtual int getValue() const = 0;
         
         /* parse a string, set value from string, return true if
          successful, return false if string was un-parseable */
@@ -38,14 +38,14 @@ namespace Lyre
         /* Step Functions */
         
         /* return the Step as an integer */
-        virtual Integer getStepValue() const = 0;
+        virtual int getStepValue() const = 0;
         
         /* set the value from an int */
-        virtual void setStepValue( const Integer val ) = 0;
+        virtual void setStepValue( const int val ) = 0;
         
         /* get the min/max allowable Step values */
-        virtual Integer getMinStepValue() const = 0;
-        virtual Integer getMaxStepValue() const = 0;
+        virtual int getMinStepValue() const = 0;
+        virtual int getMaxStepValue() const = 0;
         
         /* increments/decrements the Step value,
          should wrap around to min/max */
@@ -55,14 +55,14 @@ namespace Lyre
         /* Alter Functions */
         
         /* return the Alter as an integer */
-        virtual Integer getAlterValue() const = 0;
+        virtual int getAlterValue() const = 0;
         
         /* set the value from an int */
-        virtual void setAlterValue( const Integer val ) = 0;
+        virtual void setAlterValue( const int val ) = 0;
         
         /* get the min/max allowable Alter values */
-        virtual Integer getMinAlterValue() const = 0;
-        virtual Integer getMaxAlterValue() const = 0;
+        virtual int getMinAlterValue() const = 0;
+        virtual int getMaxAlterValue() const = 0;
         
         /* returns true if the two objects are identical in value,
          e.g. Ab is not identical to G# even though isEqualTo

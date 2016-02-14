@@ -25,7 +25,7 @@ namespace Lyre
         public:
             virtual ~Step();
             Step();
-            explicit Step( const Integer value );
+            explicit Step( const int value );
             explicit Step( const StepValue value );
             explicit Step( const String& value );
             Step( const Step& other );
@@ -37,16 +37,16 @@ namespace Lyre
             virtual IStepUP clone() const;
             
             /* return the Step as an integer */
-            virtual Integer getValue() const;
+            virtual int getValue() const;
             virtual StepValue getStepValue() const;
             
             /* set the value from an int */
-            virtual void setValue( const Integer value );
+            virtual void setValue( const int value );
             virtual void setValue( const StepValue value );
             
             /* get the min/max allowable Step values */
-            virtual Integer getMin() const;
-            virtual Integer getMax() const;
+            virtual int getMin() const;
+            virtual int getMax() const;
             
             /* parse a string, set value from string, return true if
              successful, return false if string was un-parseable */
@@ -76,7 +76,7 @@ namespace Lyre
             
             /* return pitch class equivalent
              for the step: C = 0, D = 2, E = 4, F = 5... */
-            Integer getPitchClassValue() const;
+            int getPitchClassValue() const;
             
         private:
             class StepImpl;

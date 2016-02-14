@@ -5,9 +5,10 @@
 namespace Lyre
 {
     FORWARD_DECLARE(ITimeSignature)
+    FORWARD_DECLARE(IBeatPattern)
     
-    static const Integer DEFAULT_TOP = 4;
-    static const Integer DEFAULT_BOTTOM = 4;
+    static const int DEFAULT_TOP = 4;
+    static const int DEFAULT_BOTTOM = 4;
     
     class PUBLIC ITimeSignature : public IStreamable
     {
@@ -15,5 +16,10 @@ namespace Lyre
         virtual ~ITimeSignature() {};
         virtual ITimeSignatureUP clone() const = 0;
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
+        
+        virtual IBeatPatternUP getBeatPattern() const = 0;
+        virtual int getTop() const = 0;
+        virtual int getBottom() const = 0;
+        
     };
 }

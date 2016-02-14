@@ -16,7 +16,7 @@ namespace Lyre
             
             virtual IDurDotUP createDurDot(
                 const String& durName,
-                const Integer dotCount ) const;
+                const int dotCount ) const;
             
             virtual IDurDotUP createDurDot(
                 const String& durName ) const;

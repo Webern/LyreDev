@@ -20,7 +20,7 @@ namespace Lyre
         
         IDurationUP DurationFactory::createDuration(
             const String& durName,
-            const Integer dotCount ) const
+            const int dotCount ) const
         {
             return IDurationUP{ new Duration { durName, dotCount } };
         }
@@ -28,7 +28,7 @@ namespace Lyre
         IDurationUP DurationFactory::createDuration(
             const VecITupletDefSPC& tuplets,
             const String& durName,
-            const Integer dotCount ) const
+            const int dotCount ) const
         {
             return IDurationUP{ new Duration { tuplets, durName, dotCount } };
         }

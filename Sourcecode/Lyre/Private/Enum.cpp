@@ -4,7 +4,7 @@ namespace Lyre
 {
     namespace Private
     {
-        Enum::Enum( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset )
+        Enum::Enum( const int value, const std::shared_ptr<Strings> strs, const int offset )
         :myStrings( strs )
         ,myOffset( offset )
         ,myValue( 0 )
@@ -23,12 +23,12 @@ namespace Lyre
             return value;
         }
         
-        Integer Enum::getValue() const
+        int Enum::getValue() const
         {
             return myValue + myOffset;
         }
         
-        void Enum::setValue( const Integer val )
+        void Enum::setValue( const int val )
         {
             if ( val > getMax() )
             {
@@ -44,23 +44,23 @@ namespace Lyre
             }
         }
         
-        Integer Enum::getMin() const
+        int Enum::getMin() const
         {
             return myOffset;
         }
         
-        Integer Enum::getMax() const
+        int Enum::getMax() const
         {
             if ( myStrings )
             {
-                return ( ( (Integer)myStrings->size() ) - 1 ) + myOffset;
+                return ( ( (int)myStrings->size() ) - 1 ) + myOffset;
             }
             return 0;
         }
         
         bool Enum::parse( const String& str )
         {
-            Integer i = 0;
+            int i = 0;
             for ( auto s : *myStrings )
             {
                 if ( str == s )

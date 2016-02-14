@@ -47,7 +47,7 @@ namespace Lyre
         private:
             using T_VEC = std::vector<TYPE>;
             T_VEC myItems;
-            Integer myCurrent;
+            int myCurrent;
             bool myIsEnd;
             
         public:
@@ -111,9 +111,9 @@ namespace Lyre
                 return *this;
             }
             
-            virtual Integer getCount() const
+            virtual int getCount() const
             {
-                return static_cast<Integer>( myItems.size() );
+                return static_cast<int>( myItems.size() );
             }
             
             virtual bool getIsEmpty() const
@@ -302,7 +302,7 @@ namespace Lyre
                 }
                 myIsEnd = false;
             }
-            std::size_t toSize( const Integer value ) const
+            std::size_t toSize( const int value ) const
             {
                 return static_cast<std::size_t>( value );
             }

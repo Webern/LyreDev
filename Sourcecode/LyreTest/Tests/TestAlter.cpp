@@ -31,13 +31,13 @@ TEST( Constructor01a, Alter )
 }
 TEST( Constructor01b, Alter )
 {
-    Alter s{ std::numeric_limits<Integer>::min() };
-    CHECK_EQUAL( std::numeric_limits<Integer>::min(), s.getValue() )
+    Alter s{ std::numeric_limits<int>::min() };
+    CHECK_EQUAL( std::numeric_limits<int>::min(), s.getValue() )
 }
 TEST( Constructor01c, Alter )
 {
-    Alter s{ std::numeric_limits<Integer>::max() };
-    CHECK_EQUAL( std::numeric_limits<Integer>::max(), s.getValue() )
+    Alter s{ std::numeric_limits<int>::max() };
+    CHECK_EQUAL( std::numeric_limits<int>::max(), s.getValue() )
 }
 TEST( Constructor03a, Alter )
 {
@@ -104,12 +104,12 @@ TEST( clone, Alter )
 TEST( getMin, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
-    CHECK_EQUAL( std::numeric_limits<Integer>::min(), p->getMin() )
+    CHECK_EQUAL( std::numeric_limits<int>::min(), p->getMin() )
 }
 TEST( getMax, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
-    CHECK_EQUAL( std::numeric_limits<Integer>::max(), p->getMax() )
+    CHECK_EQUAL( std::numeric_limits<int>::max(), p->getMax() )
 }
 TEST( parseSuccess01, Alter )
 {
@@ -214,10 +214,10 @@ TEST( parseSuccess15, Alter )
     String dbl{ "d" };
     String sgl{ "b" };
     IAlterUP p = unique_ptr<Alter>( new Alter() );
-    for( Integer i = 100; i > 0; --i )
+    for( int i = 100; i > 0; --i )
     {
         stringstream ss;
-        for ( Integer j = 2; j <= i; j += 2 )
+        for ( int j = 2; j <= i; j += 2 )
         {
             ss << dbl;
         }
@@ -234,10 +234,10 @@ TEST( parseSuccess16, Alter )
     String dbl{ "x" };
     String sgl{ "#" };
     IAlterUP p = unique_ptr<Alter>( new Alter() );
-    for( Integer i = 0; i > 100; ++i )
+    for( int i = 0; i > 100; ++i )
     {
         stringstream ss;
-        for ( Integer j = 2; j <= i; j += 2 )
+        for ( int j = 2; j <= i; j += 2 )
         {
             ss << dbl;
         }
@@ -824,10 +824,10 @@ TEST( increment01, Alter )
 TEST( increment02, Alter )
 {
     IAlterUP a = unique_ptr<Alter>( new Alter() );
-    a->setValue( std::numeric_limits<Integer>::max() );
-    CHECK_EQUAL( std::numeric_limits<Integer>::max(), a->getValue() )
+    a->setValue( std::numeric_limits<int>::max() );
+    CHECK_EQUAL( std::numeric_limits<int>::max(), a->getValue() )
     a->increment();
-    CHECK_EQUAL( std::numeric_limits<Integer>::min(), a->getValue() )
+    CHECK_EQUAL( std::numeric_limits<int>::min(), a->getValue() )
 }
 TEST( decrement01, Alter )
 {
@@ -839,23 +839,23 @@ TEST( decrement01, Alter )
 TEST( decrement02, Alter )
 {
     IAlterUP a = unique_ptr<Alter>( new Alter() );
-    a->setValue( std::numeric_limits<Integer>::min() );
-    CHECK_EQUAL( std::numeric_limits<Integer>::min(), a->getValue() )
+    a->setValue( std::numeric_limits<int>::min() );
+    CHECK_EQUAL( std::numeric_limits<int>::min(), a->getValue() )
     a->decrement();
-    CHECK_EQUAL( std::numeric_limits<Integer>::max(), a->getValue() )
+    CHECK_EQUAL( std::numeric_limits<int>::max(), a->getValue() )
 }
 TEST( checkManyFlatStrings, Alter )
 {
     auto a = unique_ptr<Alter>( new Alter() );
-    Integer startValue = 0;
-    Integer endValue = 100;
+    int startValue = 0;
+    int endValue = 100;
     IAlterUP p = unique_ptr<Alter>( new Alter() );
     String dbl{ "d" };
     String sgl{ "b" };
-    for( Integer i = startValue; i <= endValue; ++i )
+    for( int i = startValue; i <= endValue; ++i )
     {
         stringstream ss;
-        for ( Integer j = 2; j <= i; j += 2 )
+        for ( int j = 2; j <= i; j += 2 )
         {
             if ( i != 0 )
             {
@@ -874,15 +874,15 @@ TEST( checkManyFlatStrings, Alter )
 TEST( checkManySharpStrings, Alter )
 {
     auto a = unique_ptr<Alter>( new Alter() );
-    Integer startValue = 0;
-    Integer endValue = 100;
+    int startValue = 0;
+    int endValue = 100;
     IAlterUP p = unique_ptr<Alter>( new Alter() );
     String dbl{ "x" };
     String sgl{ "#" };
-    for( Integer i = startValue; i <= endValue; ++i )
+    for( int i = startValue; i <= endValue; ++i )
     {
         stringstream ss;
-        for ( Integer j = 2; j <= i; j += 2 )
+        for ( int j = 2; j <= i; j += 2 )
         {
             if ( i != 0 )
             {

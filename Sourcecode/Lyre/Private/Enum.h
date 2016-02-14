@@ -11,20 +11,20 @@ namespace Lyre
         class EXPORT_FOR_TESTS Enum : public IEnum
         {
         public:
-            Enum( const Integer value, const std::shared_ptr<Strings> strs, const Integer offset = 0 );
+            Enum( const int value, const std::shared_ptr<Strings> strs, const int offset = 0 );
             
             /* return a deep copy of "this" */
             virtual IEnumUP clone() const;
             
             /* return the Enum as an integer */
-            virtual Integer getValue() const;
+            virtual int getValue() const;
             
             /* set the value from an int */
-            virtual void setValue( const Integer val );
+            virtual void setValue( const int val );
             
             /* get the min/max allowable Enum values */
-            virtual Integer getMin() const;
-            virtual Integer getMax() const;
+            virtual int getMin() const;
+            virtual int getMax() const;
             
             /* parse a string, set value from string, return true if
              successful, return false if string was un-parseable */
@@ -49,8 +49,8 @@ namespace Lyre
             
         private:
             std::shared_ptr<Strings> myStrings;
-            Integer myOffset;
-            Integer myValue;
+            int myOffset;
+            int myValue;
         };
     }
 }

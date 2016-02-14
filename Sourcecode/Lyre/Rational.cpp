@@ -5,7 +5,7 @@
 
 namespace Lyre
 {
-    Rational::Rational( const Integer numerator, const Integer denominator )
+    Rational::Rational( const int numerator, const int denominator )
     :myNumerator( numerator )
     ,myDenominator( 1 )
     {
@@ -22,11 +22,11 @@ namespace Lyre
         return ((Float)myNumerator)/((Float)myDenominator);
     }
     
-    void Rational::setNumerator( const Integer value )
+    void Rational::setNumerator( const int value )
     {
         myNumerator = value;
     }
-    void Rational::setDenominator( const Integer value )
+    void Rational::setDenominator( const int value )
     {
         if ( value != 0 )
         {
@@ -34,15 +34,15 @@ namespace Lyre
         }
     }
     
-    Integer Rational::getDenominator() const
+    int Rational::getDenominator() const
     {
         return myDenominator;
     }
-    Integer Rational::getNumerator() const
+    int Rational::getNumerator() const
     {
         return myNumerator;
     }
-    Integer Rational::gcd( Integer a, Integer b )
+    int Rational::gcd( int a, int b )
     {
         a = std::abs( a );
         b = std::abs( b );
@@ -55,7 +55,7 @@ namespace Lyre
             a %= b;
         }
     }
-    Integer Rational::gcd( std::initializer_list<Integer> integers )
+    int Rational::gcd( std::initializer_list<int> integers )
     {
         int gcd = 1;
         if ( integers.size() == 0 )
@@ -91,7 +91,7 @@ namespace Lyre
         }
         return gcd;
     }
-    Integer Rational::lcm( Integer a, Integer b )
+    int Rational::lcm( int a, int b )
     {
         // http://stackoverflow.com/a/4229930/2779792
         auto temp = gcd(a, b);
@@ -103,9 +103,9 @@ namespace Lyre
         }
         return answer;
     }
-    Integer Rational::lcm( const Integers& integers )
+    int Rational::lcm( const ints& integers )
     {
-        Integer answer = 0;
+        int answer = 0;
         if ( integers.size() == 0 )
         {
             return 0;
@@ -140,9 +140,9 @@ namespace Lyre
         }
         return answer;
     }
-    Integer Rational::lcm( std::initializer_list<Integer> integers )
+    int Rational::lcm( std::initializer_list<int> integers )
     {
-        Integers ints( integers.size() );
+        ints ints( integers.size() );
         std::copy( integers.begin(), integers.end(), ints.begin() );
         return Rational::lcm( ints );
     }
@@ -173,7 +173,7 @@ namespace Lyre
         }
         if ( rationals.size() > 1 )
         {
-            Integers denominators;
+            ints denominators;
             for ( auto r = rationals.begin(); r != rationals.end(); ++r )
             {
                 denominators.push_back( r->getDenominator() );
@@ -189,7 +189,7 @@ namespace Lyre
     }
     bool Rational::reduce()
     {
-        Integer gcf = Rational::gcd( this->getNumerator(), this->getDenominator() );
+        int gcf = Rational::gcd( this->getNumerator(), this->getDenominator() );
         if ( gcf == 0 )
         {
             THROW( "divide by zero error" )
@@ -260,7 +260,7 @@ namespace Lyre
     {
         if ( getNumerator() != 0 )
         {
-            Integer tempNumerator = getNumerator();
+            int tempNumerator = getNumerator();
             setNumerator( getDenominator() );
             setDenominator( tempNumerator );
         }
@@ -303,13 +303,13 @@ namespace Lyre
      number (i.e.  1 1/2 instead of 3/2), get
      the whole number part (i.e. 1) and the
      fractional part (i.e. 1/2) */
-    Integer Rational::getMixedWholePart() const
+    int Rational::getMixedWholePart() const
     {
         return getNumerator()/getDenominator();
     }
     Rational Rational::getMixedFractionalPart() const
     {
-        Integer whole = getMixedWholePart();
+        int whole = getMixedWholePart();
         Rational temp{ getNumerator(), getDenominator() };
         temp.setNumerator( getNumerator() - ( whole * getDenominator() ) );
         return temp;

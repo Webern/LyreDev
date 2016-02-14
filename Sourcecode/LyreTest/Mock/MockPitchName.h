@@ -14,7 +14,7 @@ namespace Lyre
         public:
             virtual ~MockPitchName() {}
             virtual IPitchNameUP clone() const { return MockPitchNameUP{ new MockPitchName{} }; }
-            virtual Integer getValue() const { return 0; }
+            virtual int getValue() const { return 0; }
             virtual bool parse( const String& str ) { return true; }
             virtual std::ostream& toStream( std::ostream& os ) const { return os; }
             /* virtual String toString() const;
@@ -22,16 +22,16 @@ namespace Lyre
              virtual bool isGreaterThan( const PitchName& other ) const;
              virtual bool isEqualTo( const PitchName& other ) const; */
             virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
-            virtual Integer getStepValue() const { return 0; }
-            virtual void setStepValue( const Integer val ) {}
-            virtual Integer getMinStepValue() const { return 0; }
-            virtual Integer getMaxStepValue() const { return 0; }
+            virtual int getStepValue() const { return 0; }
+            virtual void setStepValue( const int val ) {}
+            virtual int getMinStepValue() const { return 0; }
+            virtual int getMaxStepValue() const { return 0; }
             virtual void incrementStep() {}
             virtual void decrementStep() {}
-            virtual Integer getAlterValue() const { return 0; }
-            virtual void setAlterValue( const Integer val ) {}
-            virtual Integer getMinAlterValue() const { return 0; }
-            virtual Integer getMaxAlterValue() const { return 0; }
+            virtual int getAlterValue() const { return 0; }
+            virtual void setAlterValue( const int val ) {}
+            virtual int getMinAlterValue() const { return 0; }
+            virtual int getMaxAlterValue() const { return 0; }
             virtual void incrementAlter() {}
             virtual void decrementAlter() {}
         };

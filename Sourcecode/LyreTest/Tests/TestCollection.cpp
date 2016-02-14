@@ -16,15 +16,15 @@ namespace
     public:
         virtual ~FakeTestClass() {}
         FakeTestClass() : myValue( 0 ) {}
-        FakeTestClass( Integer value ) : myValue( value ) {}
+        FakeTestClass( int value ) : myValue( value ) {}
         FakeTestClassUP clone() const
         {
             return FakeTestClassUP{ new FakeTestClass{ this->getValue() } };
         }
-        Integer getValue() const { return myValue; }
-        void setValue( Integer value ) { myValue = value; }
+        int getValue() const { return myValue; }
+        void setValue( int value ) { myValue = value; }
     private:
-        Integer myValue;
+        int myValue;
     };
     
     using FakeTestClassVector = std::vector<FakeTestClass>;

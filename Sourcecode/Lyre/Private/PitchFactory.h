@@ -16,12 +16,12 @@ namespace Lyre
             virtual IPitchFactoryUP clone() const;
             
             virtual IPitchUP createPitch() const;
-            virtual void setPitch( const Integer pitchValue );
+            virtual void setPitch( const int pitchValue );
             virtual void setPitch( const IPitchUP& pitch );
             
             virtual void next();
             virtual void previous();
-            virtual void add( const Integer value );
+            virtual void add( const int value );
         private:
             Private::Pitch myCurrent;
         };

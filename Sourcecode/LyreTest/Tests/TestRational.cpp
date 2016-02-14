@@ -79,116 +79,116 @@ TEST( setDenominator03, Rational )
 }
 TEST( gcd01, Rational )
 {
-    Integer a = 21;
-    Integer b = 7;
-    Integer expected = 7;
-    Integer actual = Rational::gcd( a, b );
+    int a = 21;
+    int b = 7;
+    int expected = 7;
+    int actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd02, Rational )
 {
-    Integer a = 9;
-    Integer b = -3;
-    Integer expected = 3;
-    Integer actual = Rational::gcd( a, b );
+    int a = 9;
+    int b = -3;
+    int expected = 3;
+    int actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd03, Rational )
 {
-    Integer a = 0;
-    Integer b = 0;
-    Integer expected = 0;
-    Integer actual = Rational::gcd( a, b );
+    int a = 0;
+    int b = 0;
+    int expected = 0;
+    int actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd04, Rational )
 {
-    Integer a = 0;
-    Integer b = 13;
-    Integer expected = 13;
-    Integer actual = Rational::gcd( a, b );
+    int a = 0;
+    int b = 13;
+    int expected = 13;
+    int actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd05, Rational )
 {
-    Integer a = 31;
-    Integer b = 0;
-    Integer expected = 31;
-    Integer actual = Rational::gcd( a, b );
+    int a = 31;
+    int b = 0;
+    int expected = 31;
+    int actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd06, Rational )
 {
-    Integer a = -31;
-    Integer b = 0;
-    Integer expected = 31;
-    Integer actual = Rational::gcd( a, b );
+    int a = -31;
+    int b = 0;
+    int expected = 31;
+    int actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd07, Rational )
 {
-    Integer a = 0;
-    Integer b = -99;
-    Integer expected = 99;
-    Integer actual = Rational::gcd( a, b );
+    int a = 0;
+    int b = -99;
+    int expected = 99;
+    int actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd08, Rational )
 {
-    Integer a = 96096;
-    Integer b = 7148449;
-    Integer expected = 77;
-    Integer actual = Rational::gcd( a, b );
+    int a = 96096;
+    int b = 7148449;
+    int expected = 77;
+    int actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd09, Rational )
 {
-    Integer a = 0;
-    Integer b = 0;
-    Integer expected = 0;
-    Integer actual = Rational::gcd( a, b );
+    int a = 0;
+    int b = 0;
+    int expected = 0;
+    int actual = Rational::gcd( a, b );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd_list01, Rational )
 {
-    Integer expected = 77;
-    Integer actual = Rational::gcd( { 96096, 7148449 } );
+    int expected = 77;
+    int actual = Rational::gcd( { 96096, 7148449 } );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd_list02, Rational )
 {
-    Integer expected = 1;
-    Integer actual = Rational::gcd( { } );
+    int expected = 1;
+    int actual = Rational::gcd( { } );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd_list03, Rational )
 {
-    Integer expected = 55;
-    Integer actual = Rational::gcd( { 55 } );
+    int expected = 55;
+    int actual = Rational::gcd( { 55 } );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd_list04, Rational )
 {
-    Integer expected = 1;
-    Integer actual = Rational::gcd( { 0 } );
+    int expected = 1;
+    int actual = Rational::gcd( { 0 } );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd_list05, Rational )
 {
-    Integer expected = 1;
-    Integer actual = Rational::gcd( { -1 } );
+    int expected = 1;
+    int actual = Rational::gcd( { -1 } );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd_list06, Rational )
 {
-    Integer expected = 102945;
-    Integer actual = Rational::gcd( { -102945 } );
+    int expected = 102945;
+    int actual = Rational::gcd( { -102945 } );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd_list07, Rational )
 {
-    Integer expected = 3;
-    Integer actual = Rational::gcd( { 9, -3, 33, -99, 0 } );
+    int expected = 3;
+    int actual = Rational::gcd( { 9, -3, 33, -99, 0 } );
     CHECK_EQUAL( expected, actual );
 }
 TEST( gcd_list08, Rational )
@@ -233,32 +233,32 @@ TEST( lcm05, Rational )
 }
 TEST( lcm_list01, Rational )
 {
-    Integer actual = Rational::lcm( { -100, 10 } );
+    int actual = Rational::lcm( { -100, 10 } );
     CHECK_EQUAL( 100, actual )
 }
 TEST( lcm_list02, Rational )
 {
-    Integer actual = Rational::lcm( { -100, 10, 5 } );
+    int actual = Rational::lcm( { -100, 10, 5 } );
     CHECK_EQUAL( 100, actual )
 }
 TEST( lcm_list03, Rational )
 {
-    Integer actual = Rational::lcm( { -297, -231, -198, -66 } );
+    int actual = Rational::lcm( { -297, -231, -198, -66 } );
     CHECK_EQUAL( 4158, actual )
 }
 TEST( lcm_list04, Rational )
 {
-    Integer actual = Rational::lcm( { } );
+    int actual = Rational::lcm( { } );
     CHECK_EQUAL( 0, actual )
 }
 TEST( lcm_list05, Rational )
 {
-    Integer actual = Rational::lcm( { -2130 } );
+    int actual = Rational::lcm( { -2130 } );
     CHECK_EQUAL( 2130, actual )
 }
 TEST( lcm_list06, Rational )
 {
-    Integer actual = Rational::lcm( { 9 } );
+    int actual = Rational::lcm( { 9 } );
     CHECK_EQUAL( 9, actual )
 }
 TEST( lcm_list07, Rational )
@@ -304,43 +304,43 @@ TEST( lcm_list08, Rational )
 
 TEST( lcm_vec01, Rational )
 {
-    Integers vec = { -100, 10 };
-    Integer actual = Rational::lcm( vec );
+    ints vec = { -100, 10 };
+    int actual = Rational::lcm( vec );
     CHECK_EQUAL( 100, actual )
 }
 TEST( lcm_vec02, Rational )
 {
-    Integers vec = { -100, 10, 5 };
-    Integer actual = Rational::lcm( vec );
+    ints vec = { -100, 10, 5 };
+    int actual = Rational::lcm( vec );
     CHECK_EQUAL( 100, actual )
 }
 TEST( lcm_vec03, Rational )
 {
-    Integers vec = { -297, -231, -198, -66 };
-    Integer actual = Rational::lcm( vec );
+    ints vec = { -297, -231, -198, -66 };
+    int actual = Rational::lcm( vec );
     CHECK_EQUAL( 4158, actual )
 }
 TEST( lcm_vec04, Rational )
 {
-    Integers vec;
-    Integer actual = Rational::lcm( vec );
+    ints vec;
+    int actual = Rational::lcm( vec );
     CHECK_EQUAL( 0, actual )
 }
 TEST( lcm_vec05, Rational )
 {
-    Integers vec = { -2130 };
-    Integer actual = Rational::lcm( vec );
+    ints vec = { -2130 };
+    int actual = Rational::lcm( vec );
     CHECK_EQUAL( 2130, actual )
 }
 TEST( lcm_vec06, Rational )
 {
-    Integers vec = { 9 };
-    Integer actual = Rational::lcm( vec );
+    ints vec = { 9 };
+    int actual = Rational::lcm( vec );
     CHECK_EQUAL( 9, actual )
 }
 TEST( lcm_vec07, Rational )
 {
-    Integers vec = { 9, -3, 33, -99, 0 };
+    ints vec = { 9, -3, 33, -99, 0 };
     std::string expected = "zeros not allowed";
     std::string actual = "no exception was thrown";
     try
@@ -361,7 +361,7 @@ TEST( lcm_vec07, Rational )
 }
 TEST( lcm_vec08, Rational )
 {
-    Integers vec = { 0 };
+    ints vec = { 0 };
     std::string expected = "zeros not allowed";
     std::string actual = "no exception was thrown";
     try
@@ -386,9 +386,9 @@ TEST( lcd01, Rational )
     Rational a{ 2, 4 };
     Rational b{ 1, 2 };
     Rational::lcd( a, b );
-    Integer expectedDenominator = 2;
-    Integer expectedNumeratorA = 1;
-    Integer expectedNumeratorB = 1;
+    int expectedDenominator = 2;
+    int expectedNumeratorA = 1;
+    int expectedNumeratorB = 1;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -400,9 +400,9 @@ TEST( lcd02, Rational )
     Rational b{ 6, 48 };
     Rational::lcd( a, b );
     //std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 8;
-    Integer expectedNumeratorA = 2;
-    Integer expectedNumeratorB = 1;
+    int expectedDenominator = 8;
+    int expectedNumeratorA = 2;
+    int expectedNumeratorB = 1;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -414,9 +414,9 @@ TEST( lcd03, Rational )
     Rational b{ 1, 20 };
     Rational::lcd( a, b );
     //std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 20;
-    Integer expectedNumeratorA = 15;
-    Integer expectedNumeratorB = 1;
+    int expectedDenominator = 20;
+    int expectedNumeratorA = 15;
+    int expectedNumeratorB = 1;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -428,9 +428,9 @@ TEST( lcd04, Rational )
     Rational b{ 654, 12769 };
     Rational::lcd( a, b );
     //std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 25538;
-    Integer expectedNumeratorA = 113;
-    Integer expectedNumeratorB = 1308;
+    int expectedDenominator = 25538;
+    int expectedNumeratorA = 113;
+    int expectedNumeratorB = 1308;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -442,9 +442,9 @@ TEST( lcd05, Rational )
     Rational b{ 11, -15 };
     Rational::lcd( a, b );
     //std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 15;
-    Integer expectedNumeratorA = 0;
-    Integer expectedNumeratorB = -11;
+    int expectedDenominator = 15;
+    int expectedNumeratorA = 0;
+    int expectedNumeratorB = -11;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -456,9 +456,9 @@ TEST( lcd06, Rational )
     Rational b{ -11, -15 };
     Rational::lcd( a, b );
     // std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 15;
-    Integer expectedNumeratorA = -3;
-    Integer expectedNumeratorB = 11;
+    int expectedDenominator = 15;
+    int expectedNumeratorA = -3;
+    int expectedNumeratorB = 11;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -470,9 +470,9 @@ TEST( lcd07, Rational )
     Rational b{ 6, 48 };
     Rational::lcd( a, b, false );
     //std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 48;
-    Integer expectedNumeratorA = 12;
-    Integer expectedNumeratorB = 6;
+    int expectedDenominator = 48;
+    int expectedNumeratorA = 12;
+    int expectedNumeratorB = 6;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -484,9 +484,9 @@ TEST( lcd08, Rational )
     Rational b{ 1, 20 };
     Rational::lcd( a, b, false );
     //std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 80;
-    Integer expectedNumeratorA = 60;
-    Integer expectedNumeratorB = 4;
+    int expectedDenominator = 80;
+    int expectedNumeratorA = 60;
+    int expectedNumeratorB = 4;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -498,9 +498,9 @@ TEST( lcd09, Rational )
     Rational b{ 654, 12769 };
     Rational::lcd( a, b, false );
     //std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 178766;
-    Integer expectedNumeratorA = 791;
-    Integer expectedNumeratorB = 9156;
+    int expectedDenominator = 178766;
+    int expectedNumeratorA = 791;
+    int expectedNumeratorB = 9156;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -512,9 +512,9 @@ TEST( lcd10, Rational )
     Rational b{ 11, -15 };
     Rational::lcd( a, b, false );
     //std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 30;
-    Integer expectedNumeratorA = 0;
-    Integer expectedNumeratorB = -22;
+    int expectedDenominator = 30;
+    int expectedNumeratorA = 0;
+    int expectedNumeratorB = -22;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -526,9 +526,9 @@ TEST( lcd11, Rational )
     Rational b{ -11, -15 };
     Rational::lcd( a, b, false );
     // std::cout << a << " " << b << std::endl;
-    Integer expectedDenominator = 15;
-    Integer expectedNumeratorA = -3;
-    Integer expectedNumeratorB = 11;
+    int expectedDenominator = 15;
+    int expectedNumeratorA = -3;
+    int expectedNumeratorB = 11;
     CHECK_EQUAL( expectedNumeratorA, a.getNumerator() )
     CHECK_EQUAL( expectedDenominator, a.getDenominator() )
     CHECK_EQUAL( expectedNumeratorB, b.getNumerator() )
@@ -560,7 +560,7 @@ TEST( lcdList03, Rational )
     Rational::lcd( rats );
     CHECK_EQUAL( 3, rats.size() )
     auto r = rats.cbegin();
-    Integer denom = 90;
+    int denom = 90;
     CHECK_EQUAL( 135, r->getNumerator() )
     CHECK_EQUAL( denom, r->getDenominator() )
     ++r;
@@ -581,7 +581,7 @@ TEST( lcdList04, Rational )
     Rational::lcd( rats );
     CHECK_EQUAL( 3, rats.size() )
     auto r = rats.cbegin();
-    Integer denom = 90;
+    int denom = 90;
     CHECK_EQUAL( -85, r->getNumerator() )
     CHECK_EQUAL( denom, r->getDenominator() )
     ++r;
@@ -612,7 +612,7 @@ TEST( lcdList02noReduce, Rational )
     Rational::lcd( rats, false );
     CHECK_EQUAL( 3, rats.size() )
     auto r = rats.cbegin();
-    Integer denom = 180;
+    int denom = 180;
     CHECK_EQUAL( 270, r->getNumerator() )
     CHECK_EQUAL( denom, r->getDenominator() )
     ++r;
@@ -633,7 +633,7 @@ TEST( lcdList03noReduce, Rational )
     Rational::lcd( rats, false );
     CHECK_EQUAL( 3, rats.size() )
     auto r = rats.cbegin();
-    Integer denom = 90;
+    int denom = 90;
     CHECK_EQUAL( -85, r->getNumerator() )
     CHECK_EQUAL( denom, r->getDenominator() )
     ++r;
@@ -737,12 +737,12 @@ TEST( reciprocal06, Rational )
 }
 TEST( divideisEqualTo01, Rational )
 {
-    Integer aNumer = -9;
-    Integer aDenom = -7;
-    Integer bNumer = 10;
-    Integer bDenom = 11;
-    Integer resultNumer = 99;
-    Integer resultDenom = 70;
+    int aNumer = -9;
+    int aDenom = -7;
+    int bNumer = 10;
+    int bDenom = 11;
+    int resultNumer = 99;
+    int resultDenom = 70;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a /= b;
@@ -755,12 +755,12 @@ TEST( divideisEqualTo01, Rational )
 }
 TEST( divideisEqualTo02, Rational )
 {
-    Integer aNumer = 234;
-    Integer aDenom = 123;
-    Integer bNumer = 345;
-    Integer bDenom = 756;
-    Integer resultNumer = 19656;
-    Integer resultDenom = 4715;
+    int aNumer = 234;
+    int aDenom = 123;
+    int bNumer = 345;
+    int bDenom = 756;
+    int resultNumer = 19656;
+    int resultDenom = 4715;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a /= b;
@@ -773,12 +773,12 @@ TEST( divideisEqualTo02, Rational )
 }
 TEST( divideisEqualTo03, Rational )
 {
-    Integer aNumer = -4576;
-    Integer aDenom = 3478;
-    Integer bNumer = -3478;
-    Integer bDenom = 4578;
-    Integer resultNumer = 5237232;
-    Integer resultDenom = 3024121;
+    int aNumer = -4576;
+    int aDenom = 3478;
+    int bNumer = -3478;
+    int bDenom = 4578;
+    int resultNumer = 5237232;
+    int resultDenom = 3024121;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a /= b;
@@ -791,12 +791,12 @@ TEST( divideisEqualTo03, Rational )
 }
 TEST( divideisEqualTo04, Rational )
 {
-    Integer aNumer = 9405;
-    Integer aDenom = -9470;
-    Integer bNumer = 3789;
-    Integer bDenom = -9483;
-    Integer resultNumer = 1981947;
-    Integer resultDenom = 797374;
+    int aNumer = 9405;
+    int aDenom = -9470;
+    int bNumer = 3789;
+    int bDenom = -9483;
+    int resultNumer = 1981947;
+    int resultDenom = 797374;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a /= b;
@@ -809,12 +809,12 @@ TEST( divideisEqualTo04, Rational )
 }
 TEST( divideisEqualTo05, Rational )
 {
-    Integer aNumer = 5;
-    Integer aDenom = 6;
-    Integer bNumer = -37;
-    Integer bDenom = -72;
-    Integer resultNumer = 60;
-    Integer resultDenom = 37;
+    int aNumer = 5;
+    int aDenom = 6;
+    int bNumer = -37;
+    int bDenom = -72;
+    int resultNumer = 60;
+    int resultDenom = 37;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a /= b;
@@ -827,12 +827,12 @@ TEST( divideisEqualTo05, Rational )
 }
 TEST( divideisEqualTo06, Rational )
 {
-    Integer aNumer = 51;
-    Integer aDenom = 26;
-    Integer bNumer = -3;
-    Integer bDenom = 7;
-    Integer resultNumer = -119;
-    Integer resultDenom = 26;
+    int aNumer = 51;
+    int aDenom = 26;
+    int bNumer = -3;
+    int bDenom = 7;
+    int resultNumer = -119;
+    int resultDenom = 26;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a /= b;
@@ -845,12 +845,12 @@ TEST( divideisEqualTo06, Rational )
 }
 TEST( divideisEqualTo07, Rational )
 {
-    Integer aNumer = 82;
-    Integer aDenom = 91;
-    Integer bNumer = 10;
-    Integer bDenom = -11;
-    Integer resultNumer = -451;
-    Integer resultDenom = 455;
+    int aNumer = 82;
+    int aDenom = 91;
+    int bNumer = 10;
+    int bDenom = -11;
+    int resultNumer = -451;
+    int resultDenom = 455;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a /= b;
@@ -863,12 +863,12 @@ TEST( divideisEqualTo07, Rational )
 }
 TEST( divideisEqualTo08, Rational )
 {
-    Integer aNumer = 0;
-    Integer aDenom = 26;
-    Integer bNumer = 3;
-    Integer bDenom = -7;
-    Integer resultNumer = 0;
-    Integer resultDenom = 1;
+    int aNumer = 0;
+    int aDenom = 26;
+    int bNumer = 3;
+    int bDenom = -7;
+    int resultNumer = 0;
+    int resultDenom = 1;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a /= b;
@@ -881,12 +881,12 @@ TEST( divideisEqualTo08, Rational )
 }
 TEST( divideisEqualTo09, Rational )
 {
-    Integer aNumer = 15;
-    Integer aDenom = 26;
-    Integer bNumer = 0;
-    Integer bDenom = -7;
-    Integer resultNumer = 15;
-    Integer resultDenom = 26;
+    int aNumer = 15;
+    int aDenom = 26;
+    int bNumer = 0;
+    int bDenom = -7;
+    int resultNumer = 15;
+    int resultDenom = 26;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a /= b;
@@ -899,12 +899,12 @@ TEST( divideisEqualTo09, Rational )
 }
 TEST( timesisEqualTo01, Rational )
 {
-    Integer aNumer = -9;
-    Integer aDenom = -7;
-    Integer bNumer = 10;
-    Integer bDenom = 11;
-    Integer resultNumer = 90;
-    Integer resultDenom = 77;
+    int aNumer = -9;
+    int aDenom = -7;
+    int bNumer = 10;
+    int bDenom = 11;
+    int resultNumer = 90;
+    int resultDenom = 77;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a *= b;
@@ -917,12 +917,12 @@ TEST( timesisEqualTo01, Rational )
 }
 TEST( timesisEqualTo02, Rational )
 {
-    Integer aNumer = 234;
-    Integer aDenom = 123;
-    Integer bNumer = 345;
-    Integer bDenom = 756;
-    Integer resultNumer = 1495;
-    Integer resultDenom = 1722;
+    int aNumer = 234;
+    int aDenom = 123;
+    int bNumer = 345;
+    int bDenom = 756;
+    int resultNumer = 1495;
+    int resultDenom = 1722;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a *= b;
@@ -935,12 +935,12 @@ TEST( timesisEqualTo02, Rational )
 }
 TEST( timesisEqualTo03, Rational )
 {
-    Integer aNumer = -4576;
-    Integer aDenom = 3478;
-    Integer bNumer = -3478;
-    Integer bDenom = 4578;
-    Integer resultNumer = 2288;
-    Integer resultDenom = 2289;
+    int aNumer = -4576;
+    int aDenom = 3478;
+    int bNumer = -3478;
+    int bDenom = 4578;
+    int resultNumer = 2288;
+    int resultDenom = 2289;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a *= b;
@@ -953,12 +953,12 @@ TEST( timesisEqualTo03, Rational )
 }
 TEST( timesisEqualTo04, Rational )
 {
-    Integer aNumer = 9405;
-    Integer aDenom = -9470;
-    Integer bNumer = 3789;
-    Integer bDenom = -9483;
-    Integer resultNumer = 2375703;
-    Integer resultDenom = 5986934;
+    int aNumer = 9405;
+    int aDenom = -9470;
+    int bNumer = 3789;
+    int bDenom = -9483;
+    int resultNumer = 2375703;
+    int resultDenom = 5986934;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a *= b;
@@ -971,12 +971,12 @@ TEST( timesisEqualTo04, Rational )
 }
 TEST( timesisEqualTo05, Rational )
 {
-    Integer aNumer = 5;
-    Integer aDenom = 6;
-    Integer bNumer = -37;
-    Integer bDenom = -72;
-    Integer resultNumer = 185;
-    Integer resultDenom = 432;
+    int aNumer = 5;
+    int aDenom = 6;
+    int bNumer = -37;
+    int bDenom = -72;
+    int resultNumer = 185;
+    int resultDenom = 432;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a *= b;
@@ -989,12 +989,12 @@ TEST( timesisEqualTo05, Rational )
 }
 TEST( timesisEqualTo06, Rational )
 {
-    Integer aNumer = 51;
-    Integer aDenom = 26;
-    Integer bNumer = -3;
-    Integer bDenom = 7;
-    Integer resultNumer = -153;
-    Integer resultDenom = 182;
+    int aNumer = 51;
+    int aDenom = 26;
+    int bNumer = -3;
+    int bDenom = 7;
+    int resultNumer = -153;
+    int resultDenom = 182;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a *= b;
@@ -1007,12 +1007,12 @@ TEST( timesisEqualTo06, Rational )
 }
 TEST( timesisEqualTo07, Rational )
 {
-    Integer aNumer = 82;
-    Integer aDenom = 91;
-    Integer bNumer = 10;
-    Integer bDenom = -11;
-    Integer resultNumer = -820;
-    Integer resultDenom = 1001;
+    int aNumer = 82;
+    int aDenom = 91;
+    int bNumer = 10;
+    int bDenom = -11;
+    int resultNumer = -820;
+    int resultDenom = 1001;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a *= b;
@@ -1025,12 +1025,12 @@ TEST( timesisEqualTo07, Rational )
 }
 TEST( timesisEqualTo08, Rational )
 {
-    Integer aNumer = 0;
-    Integer aDenom = 26;
-    Integer bNumer = 3;
-    Integer bDenom = -7;
-    Integer resultNumer = 0;
-    Integer resultDenom = 1;
+    int aNumer = 0;
+    int aDenom = 26;
+    int bNumer = 3;
+    int bDenom = -7;
+    int resultNumer = 0;
+    int resultDenom = 1;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a *= b;
@@ -1043,12 +1043,12 @@ TEST( timesisEqualTo08, Rational )
 }
 TEST( timesisEqualTo09, Rational )
 {
-    Integer aNumer = 15;
-    Integer aDenom = 26;
-    Integer bNumer = 0;
-    Integer bDenom = -7;
-    Integer resultNumer = 0;
-    Integer resultDenom = 1;
+    int aNumer = 15;
+    int aDenom = 26;
+    int bNumer = 0;
+    int bDenom = -7;
+    int resultNumer = 0;
+    int resultDenom = 1;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a *= b;
@@ -1062,12 +1062,12 @@ TEST( timesisEqualTo09, Rational )
 
 TEST( plusisEqualTo01, Rational )
 {
-    Integer aNumer = -9;
-    Integer aDenom = -7;
-    Integer bNumer = 10;
-    Integer bDenom = 11;
-    Integer resultNumer = 169;
-    Integer resultDenom = 77;
+    int aNumer = -9;
+    int aDenom = -7;
+    int bNumer = 10;
+    int bDenom = 11;
+    int resultNumer = 169;
+    int resultDenom = 77;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a += b;
@@ -1080,12 +1080,12 @@ TEST( plusisEqualTo01, Rational )
 }
 TEST( plusisEqualTo02, Rational )
 {
-    Integer aNumer = 234;
-    Integer aDenom = 123;
-    Integer bNumer = 345;
-    Integer bDenom = 756;
-    Integer resultNumer = 24371;
-    Integer resultDenom = 10332;
+    int aNumer = 234;
+    int aDenom = 123;
+    int bNumer = 345;
+    int bDenom = 756;
+    int resultNumer = 24371;
+    int resultDenom = 10332;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a += b;
@@ -1098,12 +1098,12 @@ TEST( plusisEqualTo02, Rational )
 }
 TEST( plusisEqualTo03, Rational )
 {
-    Integer aNumer = -4576;
-    Integer aDenom = 3478;
-    Integer bNumer = -3478;
-    Integer bDenom = 4578;
-    Integer resultNumer = -8261353;
-    Integer resultDenom = 3980571;
+    int aNumer = -4576;
+    int aDenom = 3478;
+    int bNumer = -3478;
+    int bDenom = 4578;
+    int resultNumer = -8261353;
+    int resultDenom = 3980571;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a += b;
@@ -1116,12 +1116,12 @@ TEST( plusisEqualTo03, Rational )
 }
 TEST( plusisEqualTo04, Rational )
 {
-    Integer aNumer = 9405;
-    Integer aDenom = -9470;
-    Integer bNumer = 3789;
-    Integer bDenom = -9483;
-    Integer resultNumer = -8337963;
-    Integer resultDenom = 5986934;
+    int aNumer = 9405;
+    int aDenom = -9470;
+    int bNumer = 3789;
+    int bDenom = -9483;
+    int resultNumer = -8337963;
+    int resultDenom = 5986934;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a += b;
@@ -1134,12 +1134,12 @@ TEST( plusisEqualTo04, Rational )
 }
 TEST( plusisEqualTo05, Rational )
 {
-    Integer aNumer = 5;
-    Integer aDenom = 6;
-    Integer bNumer = -37;
-    Integer bDenom = -72;
-    Integer resultNumer = 97;
-    Integer resultDenom = 72;
+    int aNumer = 5;
+    int aDenom = 6;
+    int bNumer = -37;
+    int bDenom = -72;
+    int resultNumer = 97;
+    int resultDenom = 72;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a += b;
@@ -1152,12 +1152,12 @@ TEST( plusisEqualTo05, Rational )
 }
 TEST( plusisEqualTo06, Rational )
 {
-    Integer aNumer = 51;
-    Integer aDenom = 26;
-    Integer bNumer = -3;
-    Integer bDenom = 7;
-    Integer resultNumer = 279;
-    Integer resultDenom = 182;
+    int aNumer = 51;
+    int aDenom = 26;
+    int bNumer = -3;
+    int bDenom = 7;
+    int resultNumer = 279;
+    int resultDenom = 182;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a += b;
@@ -1170,12 +1170,12 @@ TEST( plusisEqualTo06, Rational )
 }
 TEST( plusisEqualTo07, Rational )
 {
-    Integer aNumer = 82;
-    Integer aDenom = 91;
-    Integer bNumer = 10;
-    Integer bDenom = -11;
-    Integer resultNumer = -8;
-    Integer resultDenom = 1001;
+    int aNumer = 82;
+    int aDenom = 91;
+    int bNumer = 10;
+    int bDenom = -11;
+    int resultNumer = -8;
+    int resultDenom = 1001;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a += b;
@@ -1188,12 +1188,12 @@ TEST( plusisEqualTo07, Rational )
 }
 TEST( plusisEqualTo08, Rational )
 {
-    Integer aNumer = 0;
-    Integer aDenom = 26;
-    Integer bNumer = 3;
-    Integer bDenom = -7;
-    Integer resultNumer = -3;
-    Integer resultDenom = 7;
+    int aNumer = 0;
+    int aDenom = 26;
+    int bNumer = 3;
+    int bDenom = -7;
+    int resultNumer = -3;
+    int resultDenom = 7;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a += b;
@@ -1206,12 +1206,12 @@ TEST( plusisEqualTo08, Rational )
 }
 TEST( plusisEqualTo09, Rational )
 {
-    Integer aNumer = 15;
-    Integer aDenom = 26;
-    Integer bNumer = 0;
-    Integer bDenom = -7;
-    Integer resultNumer = 15;
-    Integer resultDenom = 26;
+    int aNumer = 15;
+    int aDenom = 26;
+    int bNumer = 0;
+    int bDenom = -7;
+    int resultNumer = 15;
+    int resultDenom = 26;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a += b;
@@ -1225,12 +1225,12 @@ TEST( plusisEqualTo09, Rational )
 
 TEST( minusisEqualTo01, Rational )
 {
-    Integer aNumer = -9;
-    Integer aDenom = -7;
-    Integer bNumer = 10;
-    Integer bDenom = 11;
-    Integer resultNumer = 29;
-    Integer resultDenom = 77;
+    int aNumer = -9;
+    int aDenom = -7;
+    int bNumer = 10;
+    int bDenom = 11;
+    int resultNumer = 29;
+    int resultDenom = 77;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a -= b;
@@ -1243,12 +1243,12 @@ TEST( minusisEqualTo01, Rational )
 }
 TEST( minusisEqualTo02, Rational )
 {
-    Integer aNumer = 234;
-    Integer aDenom = 123;
-    Integer bNumer = 345;
-    Integer bDenom = 756;
-    Integer resultNumer = 14941;
-    Integer resultDenom = 10332;
+    int aNumer = 234;
+    int aDenom = 123;
+    int bNumer = 345;
+    int bDenom = 756;
+    int resultNumer = 14941;
+    int resultDenom = 10332;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a -= b;
@@ -1261,12 +1261,12 @@ TEST( minusisEqualTo02, Rational )
 }
 TEST( minusisEqualTo03, Rational )
 {
-    Integer aNumer = -4576;
-    Integer aDenom = 3478;
-    Integer bNumer = -3478;
-    Integer bDenom = 4578;
-    Integer resultNumer = -2213111;
-    Integer resultDenom = 3980571;
+    int aNumer = -4576;
+    int aDenom = 3478;
+    int bNumer = -3478;
+    int bDenom = 4578;
+    int resultNumer = -2213111;
+    int resultDenom = 3980571;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a -= b;
@@ -1279,12 +1279,12 @@ TEST( minusisEqualTo03, Rational )
 }
 TEST( minusisEqualTo04, Rational )
 {
-    Integer aNumer = 9405;
-    Integer aDenom = -9470;
-    Integer bNumer = 3789;
-    Integer bDenom = -9483;
-    Integer resultNumer = -3553719;
-    Integer resultDenom = 5986934;
+    int aNumer = 9405;
+    int aDenom = -9470;
+    int bNumer = 3789;
+    int bDenom = -9483;
+    int resultNumer = -3553719;
+    int resultDenom = 5986934;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a -= b;
@@ -1297,12 +1297,12 @@ TEST( minusisEqualTo04, Rational )
 }
 TEST( minusisEqualTo05, Rational )
 {
-    Integer aNumer = 5;
-    Integer aDenom = 6;
-    Integer bNumer = -37;
-    Integer bDenom = -72;
-    Integer resultNumer = 23;
-    Integer resultDenom = 72;
+    int aNumer = 5;
+    int aDenom = 6;
+    int bNumer = -37;
+    int bDenom = -72;
+    int resultNumer = 23;
+    int resultDenom = 72;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a -= b;
@@ -1315,12 +1315,12 @@ TEST( minusisEqualTo05, Rational )
 }
 TEST( minusisEqualTo06, Rational )
 {
-    Integer aNumer = 51;
-    Integer aDenom = 26;
-    Integer bNumer = -3;
-    Integer bDenom = 7;
-    Integer resultNumer = 435;
-    Integer resultDenom = 182;
+    int aNumer = 51;
+    int aDenom = 26;
+    int bNumer = -3;
+    int bDenom = 7;
+    int resultNumer = 435;
+    int resultDenom = 182;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a -= b;
@@ -1333,12 +1333,12 @@ TEST( minusisEqualTo06, Rational )
 }
 TEST( minusisEqualTo07, Rational )
 {
-    Integer aNumer = 82;
-    Integer aDenom = 91;
-    Integer bNumer = 10;
-    Integer bDenom = -11;
-    Integer resultNumer = 1812;
-    Integer resultDenom = 1001;
+    int aNumer = 82;
+    int aDenom = 91;
+    int bNumer = 10;
+    int bDenom = -11;
+    int resultNumer = 1812;
+    int resultDenom = 1001;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a -= b;
@@ -1351,12 +1351,12 @@ TEST( minusisEqualTo07, Rational )
 }
 TEST( minusisEqualTo08, Rational )
 {
-    Integer aNumer = 0;
-    Integer aDenom = 26;
-    Integer bNumer = 3;
-    Integer bDenom = -7;
-    Integer resultNumer = 3;
-    Integer resultDenom = 7;
+    int aNumer = 0;
+    int aDenom = 26;
+    int bNumer = 3;
+    int bDenom = -7;
+    int resultNumer = 3;
+    int resultDenom = 7;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a -= b;
@@ -1369,12 +1369,12 @@ TEST( minusisEqualTo08, Rational )
 }
 TEST( minusisEqualTo09, Rational )
 {
-    Integer aNumer = 15;
-    Integer aDenom = 26;
-    Integer bNumer = 0;
-    Integer bDenom = -7;
-    Integer resultNumer = 15;
-    Integer resultDenom = 26;
+    int aNumer = 15;
+    int aDenom = 26;
+    int bNumer = 0;
+    int bDenom = -7;
+    int resultNumer = 15;
+    int resultDenom = 26;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a -= b;
@@ -1394,12 +1394,12 @@ TEST( minusisEqualTo09, Rational )
 
 TEST( divide01, Rational )
 {
-    Integer aNumer = -9;
-    Integer aDenom = -7;
-    Integer bNumer = 10;
-    Integer bDenom = 11;
-    Integer resultNumer = 99;
-    Integer resultDenom = 70;
+    int aNumer = -9;
+    int aDenom = -7;
+    int bNumer = 10;
+    int bDenom = 11;
+    int resultNumer = 99;
+    int resultDenom = 70;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a / b;
@@ -1412,12 +1412,12 @@ TEST( divide01, Rational )
 }
 TEST( divide02, Rational )
 {
-    Integer aNumer = 234;
-    Integer aDenom = 123;
-    Integer bNumer = 345;
-    Integer bDenom = 756;
-    Integer resultNumer = 19656;
-    Integer resultDenom = 4715;
+    int aNumer = 234;
+    int aDenom = 123;
+    int bNumer = 345;
+    int bDenom = 756;
+    int resultNumer = 19656;
+    int resultDenom = 4715;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a / b;
@@ -1430,12 +1430,12 @@ TEST( divide02, Rational )
 }
 TEST( divide03, Rational )
 {
-    Integer aNumer = -4576;
-    Integer aDenom = 3478;
-    Integer bNumer = -3478;
-    Integer bDenom = 4578;
-    Integer resultNumer = 5237232;
-    Integer resultDenom = 3024121;
+    int aNumer = -4576;
+    int aDenom = 3478;
+    int bNumer = -3478;
+    int bDenom = 4578;
+    int resultNumer = 5237232;
+    int resultDenom = 3024121;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a / b;
@@ -1448,12 +1448,12 @@ TEST( divide03, Rational )
 }
 TEST( divide04, Rational )
 {
-    Integer aNumer = 9405;
-    Integer aDenom = -9470;
-    Integer bNumer = 3789;
-    Integer bDenom = -9483;
-    Integer resultNumer = 1981947;
-    Integer resultDenom = 797374;
+    int aNumer = 9405;
+    int aDenom = -9470;
+    int bNumer = 3789;
+    int bDenom = -9483;
+    int resultNumer = 1981947;
+    int resultDenom = 797374;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a / b;
@@ -1466,12 +1466,12 @@ TEST( divide04, Rational )
 }
 TEST( divide05, Rational )
 {
-    Integer aNumer = 5;
-    Integer aDenom = 6;
-    Integer bNumer = -37;
-    Integer bDenom = -72;
-    Integer resultNumer = 60;
-    Integer resultDenom = 37;
+    int aNumer = 5;
+    int aDenom = 6;
+    int bNumer = -37;
+    int bDenom = -72;
+    int resultNumer = 60;
+    int resultDenom = 37;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a / b;
@@ -1484,12 +1484,12 @@ TEST( divide05, Rational )
 }
 TEST( divide06, Rational )
 {
-    Integer aNumer = 51;
-    Integer aDenom = 26;
-    Integer bNumer = -3;
-    Integer bDenom = 7;
-    Integer resultNumer = -119;
-    Integer resultDenom = 26;
+    int aNumer = 51;
+    int aDenom = 26;
+    int bNumer = -3;
+    int bDenom = 7;
+    int resultNumer = -119;
+    int resultDenom = 26;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a / b;
@@ -1502,12 +1502,12 @@ TEST( divide06, Rational )
 }
 TEST( divide07, Rational )
 {
-    Integer aNumer = 82;
-    Integer aDenom = 91;
-    Integer bNumer = 10;
-    Integer bDenom = -11;
-    Integer resultNumer = -451;
-    Integer resultDenom = 455;
+    int aNumer = 82;
+    int aDenom = 91;
+    int bNumer = 10;
+    int bDenom = -11;
+    int resultNumer = -451;
+    int resultDenom = 455;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a / b;
@@ -1520,12 +1520,12 @@ TEST( divide07, Rational )
 }
 TEST( divide08, Rational )
 {
-    Integer aNumer = 0;
-    Integer aDenom = 26;
-    Integer bNumer = 3;
-    Integer bDenom = -7;
-    Integer resultNumer = 0;
-    Integer resultDenom = 1;
+    int aNumer = 0;
+    int aDenom = 26;
+    int bNumer = 3;
+    int bDenom = -7;
+    int resultNumer = 0;
+    int resultDenom = 1;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a / b;
@@ -1538,12 +1538,12 @@ TEST( divide08, Rational )
 }
 TEST( divide09, Rational )
 {
-    Integer aNumer = 15;
-    Integer aDenom = 26;
-    Integer bNumer = 0;
-    Integer bDenom = -7;
-    Integer resultNumer = 0;
-    Integer resultDenom = 1;
+    int aNumer = 15;
+    int aDenom = 26;
+    int bNumer = 0;
+    int bDenom = -7;
+    int resultNumer = 0;
+    int resultDenom = 1;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a / b;
@@ -1556,12 +1556,12 @@ TEST( divide09, Rational )
 }
 TEST( times01, Rational )
 {
-    Integer aNumer = -9;
-    Integer aDenom = -7;
-    Integer bNumer = 10;
-    Integer bDenom = 11;
-    Integer resultNumer = 90;
-    Integer resultDenom = 77;
+    int aNumer = -9;
+    int aDenom = -7;
+    int bNumer = 10;
+    int bDenom = 11;
+    int resultNumer = 90;
+    int resultDenom = 77;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a * b;
@@ -1574,12 +1574,12 @@ TEST( times01, Rational )
 }
 TEST( times02, Rational )
 {
-    Integer aNumer = 234;
-    Integer aDenom = 123;
-    Integer bNumer = 345;
-    Integer bDenom = 756;
-    Integer resultNumer = 1495;
-    Integer resultDenom = 1722;
+    int aNumer = 234;
+    int aDenom = 123;
+    int bNumer = 345;
+    int bDenom = 756;
+    int resultNumer = 1495;
+    int resultDenom = 1722;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a * b;
@@ -1592,12 +1592,12 @@ TEST( times02, Rational )
 }
 TEST( times03, Rational )
 {
-    Integer aNumer = -4576;
-    Integer aDenom = 3478;
-    Integer bNumer = -3478;
-    Integer bDenom = 4578;
-    Integer resultNumer = 2288;
-    Integer resultDenom = 2289;
+    int aNumer = -4576;
+    int aDenom = 3478;
+    int bNumer = -3478;
+    int bDenom = 4578;
+    int resultNumer = 2288;
+    int resultDenom = 2289;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a * b;
@@ -1610,12 +1610,12 @@ TEST( times03, Rational )
 }
 TEST( times04, Rational )
 {
-    Integer aNumer = 9405;
-    Integer aDenom = -9470;
-    Integer bNumer = 3789;
-    Integer bDenom = -9483;
-    Integer resultNumer = 2375703;
-    Integer resultDenom = 5986934;
+    int aNumer = 9405;
+    int aDenom = -9470;
+    int bNumer = 3789;
+    int bDenom = -9483;
+    int resultNumer = 2375703;
+    int resultDenom = 5986934;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a * b;
@@ -1628,12 +1628,12 @@ TEST( times04, Rational )
 }
 TEST( times05, Rational )
 {
-    Integer aNumer = 5;
-    Integer aDenom = 6;
-    Integer bNumer = -37;
-    Integer bDenom = -72;
-    Integer resultNumer = 185;
-    Integer resultDenom = 432;
+    int aNumer = 5;
+    int aDenom = 6;
+    int bNumer = -37;
+    int bDenom = -72;
+    int resultNumer = 185;
+    int resultDenom = 432;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a * b;
@@ -1646,12 +1646,12 @@ TEST( times05, Rational )
 }
 TEST( times06, Rational )
 {
-    Integer aNumer = 51;
-    Integer aDenom = 26;
-    Integer bNumer = -3;
-    Integer bDenom = 7;
-    Integer resultNumer = -153;
-    Integer resultDenom = 182;
+    int aNumer = 51;
+    int aDenom = 26;
+    int bNumer = -3;
+    int bDenom = 7;
+    int resultNumer = -153;
+    int resultDenom = 182;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a * b;
@@ -1664,12 +1664,12 @@ TEST( times06, Rational )
 }
 TEST( times07, Rational )
 {
-    Integer aNumer = 82;
-    Integer aDenom = 91;
-    Integer bNumer = 10;
-    Integer bDenom = -11;
-    Integer resultNumer = -820;
-    Integer resultDenom = 1001;
+    int aNumer = 82;
+    int aDenom = 91;
+    int bNumer = 10;
+    int bDenom = -11;
+    int resultNumer = -820;
+    int resultDenom = 1001;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a * b;
@@ -1682,12 +1682,12 @@ TEST( times07, Rational )
 }
 TEST( times08, Rational )
 {
-    Integer aNumer = 0;
-    Integer aDenom = 26;
-    Integer bNumer = 3;
-    Integer bDenom = -7;
-    Integer resultNumer = 0;
-    Integer resultDenom = 1;
+    int aNumer = 0;
+    int aDenom = 26;
+    int bNumer = 3;
+    int bDenom = -7;
+    int resultNumer = 0;
+    int resultDenom = 1;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a * b;
@@ -1700,12 +1700,12 @@ TEST( times08, Rational )
 }
 TEST( times09, Rational )
 {
-    Integer aNumer = 15;
-    Integer aDenom = 26;
-    Integer bNumer = 0;
-    Integer bDenom = -7;
-    Integer resultNumer = 0;
-    Integer resultDenom = 1;
+    int aNumer = 15;
+    int aDenom = 26;
+    int bNumer = 0;
+    int bDenom = -7;
+    int resultNumer = 0;
+    int resultDenom = 1;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a * b;
@@ -1719,12 +1719,12 @@ TEST( times09, Rational )
 
 TEST( plus01, Rational )
 {
-    Integer aNumer = -9;
-    Integer aDenom = -7;
-    Integer bNumer = 10;
-    Integer bDenom = 11;
-    Integer resultNumer = 169;
-    Integer resultDenom = 77;
+    int aNumer = -9;
+    int aDenom = -7;
+    int bNumer = 10;
+    int bDenom = 11;
+    int resultNumer = 169;
+    int resultDenom = 77;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a + b;
@@ -1737,12 +1737,12 @@ TEST( plus01, Rational )
 }
 TEST( plus02, Rational )
 {
-    Integer aNumer = 234;
-    Integer aDenom = 123;
-    Integer bNumer = 345;
-    Integer bDenom = 756;
-    Integer resultNumer = 24371;
-    Integer resultDenom = 10332;
+    int aNumer = 234;
+    int aDenom = 123;
+    int bNumer = 345;
+    int bDenom = 756;
+    int resultNumer = 24371;
+    int resultDenom = 10332;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a + b;
@@ -1755,12 +1755,12 @@ TEST( plus02, Rational )
 }
 TEST( plus03, Rational )
 {
-    Integer aNumer = -4576;
-    Integer aDenom = 3478;
-    Integer bNumer = -3478;
-    Integer bDenom = 4578;
-    Integer resultNumer = -8261353;
-    Integer resultDenom = 3980571;
+    int aNumer = -4576;
+    int aDenom = 3478;
+    int bNumer = -3478;
+    int bDenom = 4578;
+    int resultNumer = -8261353;
+    int resultDenom = 3980571;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a + b;
@@ -1773,12 +1773,12 @@ TEST( plus03, Rational )
 }
 TEST( plus04, Rational )
 {
-    Integer aNumer = 9405;
-    Integer aDenom = -9470;
-    Integer bNumer = 3789;
-    Integer bDenom = -9483;
-    Integer resultNumer = -8337963;
-    Integer resultDenom = 5986934;
+    int aNumer = 9405;
+    int aDenom = -9470;
+    int bNumer = 3789;
+    int bDenom = -9483;
+    int resultNumer = -8337963;
+    int resultDenom = 5986934;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a + b;
@@ -1791,12 +1791,12 @@ TEST( plus04, Rational )
 }
 TEST( plus05, Rational )
 {
-    Integer aNumer = 5;
-    Integer aDenom = 6;
-    Integer bNumer = -37;
-    Integer bDenom = -72;
-    Integer resultNumer = 97;
-    Integer resultDenom = 72;
+    int aNumer = 5;
+    int aDenom = 6;
+    int bNumer = -37;
+    int bDenom = -72;
+    int resultNumer = 97;
+    int resultDenom = 72;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a + b;
@@ -1809,12 +1809,12 @@ TEST( plus05, Rational )
 }
 TEST( plus06, Rational )
 {
-    Integer aNumer = 51;
-    Integer aDenom = 26;
-    Integer bNumer = -3;
-    Integer bDenom = 7;
-    Integer resultNumer = 279;
-    Integer resultDenom = 182;
+    int aNumer = 51;
+    int aDenom = 26;
+    int bNumer = -3;
+    int bDenom = 7;
+    int resultNumer = 279;
+    int resultDenom = 182;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a + b;
@@ -1827,12 +1827,12 @@ TEST( plus06, Rational )
 }
 TEST( plus07, Rational )
 {
-    Integer aNumer = 82;
-    Integer aDenom = 91;
-    Integer bNumer = 10;
-    Integer bDenom = -11;
-    Integer resultNumer = -8;
-    Integer resultDenom = 1001;
+    int aNumer = 82;
+    int aDenom = 91;
+    int bNumer = 10;
+    int bDenom = -11;
+    int resultNumer = -8;
+    int resultDenom = 1001;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a + b;
@@ -1845,12 +1845,12 @@ TEST( plus07, Rational )
 }
 TEST( plus08, Rational )
 {
-    Integer aNumer = 0;
-    Integer aDenom = 26;
-    Integer bNumer = 3;
-    Integer bDenom = -7;
-    Integer resultNumer = -3;
-    Integer resultDenom = 7;
+    int aNumer = 0;
+    int aDenom = 26;
+    int bNumer = 3;
+    int bDenom = -7;
+    int resultNumer = -3;
+    int resultDenom = 7;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a + b;
@@ -1863,12 +1863,12 @@ TEST( plus08, Rational )
 }
 TEST( plus09, Rational )
 {
-    Integer aNumer = 15;
-    Integer aDenom = 26;
-    Integer bNumer = 0;
-    Integer bDenom = -7;
-    Integer resultNumer = 15;
-    Integer resultDenom = 26;
+    int aNumer = 15;
+    int aDenom = 26;
+    int bNumer = 0;
+    int bDenom = -7;
+    int resultNumer = 15;
+    int resultDenom = 26;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a + b;
@@ -1882,12 +1882,12 @@ TEST( plus09, Rational )
 
 TEST( minus01, Rational )
 {
-    Integer aNumer = -9;
-    Integer aDenom = -7;
-    Integer bNumer = 10;
-    Integer bDenom = 11;
-    Integer resultNumer = 29;
-    Integer resultDenom = 77;
+    int aNumer = -9;
+    int aDenom = -7;
+    int bNumer = 10;
+    int bDenom = 11;
+    int resultNumer = 29;
+    int resultDenom = 77;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a - b;
@@ -1900,12 +1900,12 @@ TEST( minus01, Rational )
 }
 TEST( minus02, Rational )
 {
-    Integer aNumer = 234;
-    Integer aDenom = 123;
-    Integer bNumer = 345;
-    Integer bDenom = 756;
-    Integer resultNumer = 14941;
-    Integer resultDenom = 10332;
+    int aNumer = 234;
+    int aDenom = 123;
+    int bNumer = 345;
+    int bDenom = 756;
+    int resultNumer = 14941;
+    int resultDenom = 10332;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a - b;
@@ -1918,12 +1918,12 @@ TEST( minus02, Rational )
 }
 TEST( minus03, Rational )
 {
-    Integer aNumer = -4576;
-    Integer aDenom = 3478;
-    Integer bNumer = -3478;
-    Integer bDenom = 4578;
-    Integer resultNumer = -2213111;
-    Integer resultDenom = 3980571;
+    int aNumer = -4576;
+    int aDenom = 3478;
+    int bNumer = -3478;
+    int bDenom = 4578;
+    int resultNumer = -2213111;
+    int resultDenom = 3980571;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a - b;
@@ -1936,12 +1936,12 @@ TEST( minus03, Rational )
 }
 TEST( minus04, Rational )
 {
-    Integer aNumer = 9405;
-    Integer aDenom = -9470;
-    Integer bNumer = 3789;
-    Integer bDenom = -9483;
-    Integer resultNumer = -3553719;
-    Integer resultDenom = 5986934;
+    int aNumer = 9405;
+    int aDenom = -9470;
+    int bNumer = 3789;
+    int bDenom = -9483;
+    int resultNumer = -3553719;
+    int resultDenom = 5986934;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a - b;
@@ -1954,12 +1954,12 @@ TEST( minus04, Rational )
 }
 TEST( minus05, Rational )
 {
-    Integer aNumer = 5;
-    Integer aDenom = 6;
-    Integer bNumer = -37;
-    Integer bDenom = -72;
-    Integer resultNumer = 23;
-    Integer resultDenom = 72;
+    int aNumer = 5;
+    int aDenom = 6;
+    int bNumer = -37;
+    int bDenom = -72;
+    int resultNumer = 23;
+    int resultDenom = 72;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a - b;
@@ -1972,12 +1972,12 @@ TEST( minus05, Rational )
 }
 TEST( minus06, Rational )
 {
-    Integer aNumer = 51;
-    Integer aDenom = 26;
-    Integer bNumer = -3;
-    Integer bDenom = 7;
-    Integer resultNumer = 435;
-    Integer resultDenom = 182;
+    int aNumer = 51;
+    int aDenom = 26;
+    int bNumer = -3;
+    int bDenom = 7;
+    int resultNumer = 435;
+    int resultDenom = 182;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a - b;
@@ -1990,12 +1990,12 @@ TEST( minus06, Rational )
 }
 TEST( minus07, Rational )
 {
-    Integer aNumer = 82;
-    Integer aDenom = 91;
-    Integer bNumer = 10;
-    Integer bDenom = -11;
-    Integer resultNumer = 1812;
-    Integer resultDenom = 1001;
+    int aNumer = 82;
+    int aDenom = 91;
+    int bNumer = 10;
+    int bDenom = -11;
+    int resultNumer = 1812;
+    int resultDenom = 1001;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a - b;
@@ -2008,12 +2008,12 @@ TEST( minus07, Rational )
 }
 TEST( minus08, Rational )
 {
-    Integer aNumer = 0;
-    Integer aDenom = 26;
-    Integer bNumer = 3;
-    Integer bDenom = -7;
-    Integer resultNumer = 3;
-    Integer resultDenom = 7;
+    int aNumer = 0;
+    int aDenom = 26;
+    int bNumer = 3;
+    int bDenom = -7;
+    int resultNumer = 3;
+    int resultDenom = 7;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a - b;
@@ -2026,12 +2026,12 @@ TEST( minus08, Rational )
 }
 TEST( minus09, Rational )
 {
-    Integer aNumer = 15;
-    Integer aDenom = 26;
-    Integer bNumer = 0;
-    Integer bDenom = -7;
-    Integer resultNumer = 15;
-    Integer resultDenom = 26;
+    int aNumer = 15;
+    int aDenom = 26;
+    int bNumer = 0;
+    int bDenom = -7;
+    int resultNumer = 15;
+    int resultDenom = 26;
     Rational a{ aNumer, aDenom };
     Rational b{ bNumer, bDenom };
     auto c = a - b;

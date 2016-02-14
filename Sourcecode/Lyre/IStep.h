@@ -15,14 +15,14 @@ namespace Lyre
         virtual IStepUP clone() const = 0;
         
         /* return the Step as an integer */
-        virtual Integer getValue() const = 0;
+        virtual int getValue() const = 0;
         
         /* set the value from an int */
-        virtual void setValue( const Integer val ) = 0;
+        virtual void setValue( const int val ) = 0;
         
         /* get the min/max allowable Step values */
-        virtual Integer getMin() const = 0;
-        virtual Integer getMax() const = 0;
+        virtual int getMin() const = 0;
+        virtual int getMax() const = 0;
         
         /* parse a string, set value from string, return true if
          successful, return false if string was un-parseable */

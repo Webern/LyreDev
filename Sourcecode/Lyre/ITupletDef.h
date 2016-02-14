@@ -18,10 +18,10 @@ namespace Lyre
         virtual Rational getMultiplier() const = 0;
         virtual Rational getTotalLength() const = 0;
         
-        virtual Integer getCount() const = 0;
+        virtual int getCount() const = 0;
         virtual IDurDotUPC getCountType() const = 0;
         
-        virtual Integer getInTheSpaceOf() const = 0;
+        virtual int getInTheSpaceOf() const = 0;
         virtual IDurDotUPC getInTheSpaceOfType() const = 0;
         
         virtual bool getIsValid() const = 0;

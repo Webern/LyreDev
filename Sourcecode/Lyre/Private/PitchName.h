@@ -13,7 +13,7 @@ namespace Lyre
         public:
             virtual ~PitchName();
             PitchName();
-            explicit PitchName( const Integer step, const Integer alter );
+            explicit PitchName( const int step, const int alter );
             explicit PitchName( const String& str );
             PitchName( const PitchName& other );
             PitchName( PitchName&& other ) noexcept;
@@ -25,7 +25,7 @@ namespace Lyre
             
             /* return the Pitch Class value, e.g. C = 0,
              C# = 1, Db = 1, D = 2, D# = 3, Eb = 3 ...*/
-            virtual Integer getValue() const;
+            virtual int getValue() const;
             
             /* parse a string, set value from string, return true if
              successful, return false if string was un-parseable */
@@ -52,14 +52,14 @@ namespace Lyre
             /* Step Functions */
             
             /* return the Step as an integer */
-            virtual Integer getStepValue() const;
+            virtual int getStepValue() const;
             
             /* set the value from an int */
-            virtual void setStepValue( const Integer val );
+            virtual void setStepValue( const int val );
             
             /* get the min/max allowable Step values */
-            virtual Integer getMinStepValue() const;
-            virtual Integer getMaxStepValue() const;
+            virtual int getMinStepValue() const;
+            virtual int getMaxStepValue() const;
             
             /* increments/decrements the Step value,
              should wrap around to min/max */
@@ -69,14 +69,14 @@ namespace Lyre
             /* Alter Functions */
             
             /* return the Alter as an integer */
-            virtual Integer getAlterValue() const;
+            virtual int getAlterValue() const;
             
             /* set the value from an int */
-            virtual void setAlterValue( const Integer val );
+            virtual void setAlterValue( const int val );
             
             /* get the min/max allowable Alter values */
-            virtual Integer getMinAlterValue() const;
-            virtual Integer getMaxAlterValue() const;
+            virtual int getMinAlterValue() const;
+            virtual int getMaxAlterValue() const;
             
             /* increments/decrements, should wraps around to min/max */
             virtual void incrementAlter();

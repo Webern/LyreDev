@@ -25,20 +25,20 @@ namespace Lyre
          to set the denominator to 0, the denominator
          will be set to 1 instead. */
         Rational();
-        Rational( const Integer numerator, const Integer denominator );
+        Rational( const int numerator, const int denominator );
         
         /* return the decimal approximation of the rational
          number as a calculator would. i.e. 1/3 -> 0.33333... */
         Float getFloat() const;
         
-        Integer getNumerator() const;
-        void setNumerator( const Integer value );
+        int getNumerator() const;
+        void setNumerator( const int value );
         
         /* Denominator cannot be zero,
          attempting to set the denominator
          to zero is a no-op. */
-        Integer getDenominator() const;
-        void setDenominator( const Integer value );
+        int getDenominator() const;
+        void setDenominator( const int value );
         
         /* change the fraction to the smallest
          possible denominator.  if both numerator
@@ -67,7 +67,7 @@ namespace Lyre
          number (i.e.  1 1/2 instead of 3/2), get
          the whole number part (i.e. 1) and the
          fractional part (i.e. 1/2) */
-        Integer getMixedWholePart() const;
+        int getMixedWholePart() const;
         Rational getMixedFractionalPart() const;
         
         /* returns true of both numerators are equal
@@ -89,7 +89,7 @@ namespace Lyre
          gcd returns zero. if a OR b is zero, the
          absolute value of the non-zero term is
          returned */
-        static Integer gcd( Integer a, Integer b );
+        static int gcd( int a, int b );
         
         /* return the greatest common divisor for
          all of the integers in the list.  you should
@@ -101,20 +101,20 @@ namespace Lyre
          single non-zero term, the absolute value of the
          single term is returned.  if the list has a
          single term which is a zero, 1 is returned */
-        static Integer gcd( std::initializer_list<Integer> integers );
+        static int gcd( std::initializer_list<int> integers );
         
         /* return the least common multiple
          for a and b. if either a or b is
          zero, returns zero. */
-        static Integer lcm( Integer a, Integer b );
+        static int lcm( int a, int b );
         
         /* don't give this any zeros, if you do
          it will throw a std::runtime_error. If
          you give it an empty list, returns zero.
          if you give it 1 term, it will return the
          absolute value of the term you gave it. */
-        static Integer lcm( std::initializer_list<Integer> integers );
-        static Integer lcm( const Integers& integers );
+        static int lcm( std::initializer_list<int> integers );
+        static int lcm( const ints& integers );
         
         /* convert a and b so that they have
          the same (least common) denominator.
@@ -133,8 +133,8 @@ namespace Lyre
         static void lcd( Rationals& rationals, const bool firstReduce = true );
         
     private:
-        Integer myNumerator;
-        Integer myDenominator;
+        int myNumerator;
+        int myDenominator;
     };
     
     /* Comparisons in the mathematical sense, i.e. 1/3 == 4/12,

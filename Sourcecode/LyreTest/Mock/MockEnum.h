@@ -15,17 +15,17 @@ namespace Lyre
                 IEnumUP value{ new MockEnum{ *this } };
                 return value;
             }
-            Integer getValue() const { return myValue; }
-            void setValue( const Integer val ) { myValue = val; }
-            Integer getMin() const { return 0; }
-            Integer getMax() const { return 1; }
+            int getValue() const { return myValue; }
+            void setValue( const int val ) { myValue = val; }
+            int getMin() const { return 0; }
+            int getMax() const { return 1; }
             bool parse( const String& str ) { return true; }
             std::ostream& toStream( std::ostream& os ) const { return os << myValue; }
             bool extendedFunction() const { return true; }
             void increment() { myValue++; }
             void decrement() { myValue--; }
         private:
-            Integer myValue;
+            int myValue;
         };
     }
 }

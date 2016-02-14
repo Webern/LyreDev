@@ -8,7 +8,7 @@ using namespace Lyre::Private;
 
 TEST( Constructor01, Mod)
 {
-    Mod<Integer, 10> m;
+    Mod<int, 10> m;
 	CHECK_EQUAL( 0 , m.getValue() );
 }
 TEST( Constructor02, Mod)
@@ -73,25 +73,25 @@ TEST( add01, Mod)
 }
 TEST( add02, Mod)
 {
-    Mod<Integer, 12> m{ 3 };
+    Mod<int, 12> m{ 3 };
     m.add( -4 );
 	CHECK_EQUAL( 11 , m.getValue() );
 }
 TEST( add03, Mod)
 {
-    Mod<Integer, 12> m{ 12 };
+    Mod<int, 12> m{ 12 };
     m.add( 13 );
 	CHECK_EQUAL( 1 , m.getValue() );
 }
 TEST( subtract01, Mod)
 {
-    Mod<Integer, 12> m{ 12 };
+    Mod<int, 12> m{ 12 };
     m.subtract( 5 );
 	CHECK_EQUAL( 7 , m.getValue() );
 }
 TEST( subtract02, Mod)
 {
-    Mod<Integer, 100> m{ 12 };
+    Mod<int, 100> m{ 12 };
     m.subtract( -10 );
 	CHECK_EQUAL( 22 , m.getValue() );
 }

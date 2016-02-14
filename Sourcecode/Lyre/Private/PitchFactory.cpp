@@ -14,7 +14,7 @@ namespace Lyre
         {
             return IPitchUP( new Pitch( myCurrent ) );
         }
-        void PitchFactory::setPitch( const Integer pitchValue )
+        void PitchFactory::setPitch( const int pitchValue )
         {
             myCurrent.setValue( pitchValue );
         }
@@ -36,7 +36,7 @@ namespace Lyre
         {
             setPitch( myCurrent.getValue() - 1 );
         }
-        void PitchFactory::add( const Integer value )
+        void PitchFactory::add( const int value )
         {
             setPitch( myCurrent.getValue() + value );
         }

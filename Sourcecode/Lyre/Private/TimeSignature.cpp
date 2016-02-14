@@ -1,10 +1,10 @@
 #include "Lyre/Private/TimeSignature.h"
-
+#if 1==0
 namespace Lyre
 {
     TimeSignature::~TimeSignature() {}
     
-    TimeSignature::TimeSignature( Integer top, Integer bottom )
+    TimeSignature::TimeSignature( int top, int bottom )
     :myTop( top )
     ,myBottom( bottom )
     {}
@@ -24,3 +24,4 @@ namespace Lyre
         return os;
     }
 }
+#endif

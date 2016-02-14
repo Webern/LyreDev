@@ -6,8 +6,7 @@
 
 namespace Lyre
 {
-    using Integer = int;
-    using Integers = std::vector<Integer>;
+    using ints = std::vector<int>;
     using Float = long double;
     using Floats = std::vector<Float>;
     using String = std::string;

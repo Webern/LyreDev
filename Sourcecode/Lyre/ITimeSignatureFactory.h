@@ -21,6 +21,6 @@ namespace Lyre
     {
     public:
         virtual ~ITimeSignatureFactory() {}
-        virtual ITimeSignatureUP create( Integer top, Integer bottom ) = 0;
+        virtual ITimeSignatureUP create( int top, int bottom ) = 0;
     };
 }

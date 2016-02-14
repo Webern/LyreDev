@@ -150,7 +150,7 @@ TEST( getValue_withMaxDots, IDurDot )
 
 TEST( getValue_withTooManyDots, IDurDot )
 {
-    Integer tooManyDots = DURATION_MAX_DOTS + 1;
+    int tooManyDots = DURATION_MAX_DOTS + 1;
     String expected = "too many dots";
     String actual = "no exception was thrown";
     try

@@ -8,7 +8,7 @@ namespace Lyre
     {
         BeatPatternFactory::~BeatPatternFactory() {}
         
-        IBeatPatternUP BeatPatternFactory::create( Integer count,
+        IBeatPatternUP BeatPatternFactory::create( int count,
                                                    const IDurationUP& dur ) const
         {
             return IBeatPatternUP{ new Private::BeatPattern{ count, dur } };

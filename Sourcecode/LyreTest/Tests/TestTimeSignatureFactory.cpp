@@ -5,7 +5,7 @@
 
 using namespace Lyre;
 using namespace std;
-
+#if 1==0
 namespace
 {
 	static ITimeSignatureFactoryUP factory =
@@ -20,3 +20,4 @@ TEST( TODO, TimeSignatureFactory )
     String actual = ts->toString();
     CHECK_EQUAL( expected, actual )
 }
+#endif

@@ -14,7 +14,7 @@ namespace Lyre
         public:
             virtual ~Alter();
             Alter();
-            explicit Alter( const Integer value );
+            explicit Alter( const int value );
             explicit Alter( const String& value );
             Alter( const Alter& other );
             Alter( Alter&& other ) noexcept;
@@ -25,14 +25,14 @@ namespace Lyre
             virtual IAlterUP clone() const;
             
             /* return the Alter as an integer */
-            virtual Integer getValue() const;
+            virtual int getValue() const;
             
             /* set the value from an int */
-            virtual void setValue( const Integer value );
+            virtual void setValue( const int value );
             
             /* get the min/max allowable Alter values */
-            virtual Integer getMin() const;
-            virtual Integer getMax() const;
+            virtual int getMin() const;
+            virtual int getMax() const;
             
             /* parse a string, set value from string, return true if
              successful, return false if string was un-parseable */

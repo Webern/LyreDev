@@ -26,11 +26,11 @@ namespace Lyre
         
         virtual IDurationUP createDuration(
             const String& durName,
-            const Integer dotCount ) const = 0;
+            const int dotCount ) const = 0;
         
         virtual IDurationUP createDuration(
             const VecITupletDefSPC& tuplets,
             const String& durName,
-            const Integer dotCount ) const = 0;
+            const int dotCount ) const = 0;
     };
 }

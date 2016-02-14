@@ -8,8 +8,8 @@ namespace Lyre
     FORWARD_DECLARE(IBeatPattern)
     FORWARD_DECLARE(IDuration)
     
-    static const Integer DEFAULT_TOP = 4;
-    static const Integer DEFAULT_BOTTOM = 4;
+    static const int DEFAULT_TOP = 4;
+    static const int DEFAULT_BOTTOM = 4;
     
     class PUBLIC IBeatPattern : public IStreamable
     {

@@ -344,11 +344,11 @@ TEST( isIdenticalTo_true02, Step )
             IStepUP value{ new MockStepA{ *this } };
             return value;
         }
-        Integer getValue() const { return 5; }
-        void setValue( const Integer val ) {}
+        int getValue() const { return 5; }
+        void setValue( const int val ) {}
         virtual bool isIdenticalTo( const IStep& other ) const { return true; }
-        Integer getMin() const { return 0; }
-        Integer getMax() const { return 6; }
+        int getMin() const { return 0; }
+        int getMax() const { return 6; }
         bool parse( const String& str ) { return true; }
         std::ostream& toStream( std::ostream& os ) const { return os << "A"; }
         bool extendedFunction() const { return true; }
@@ -376,11 +376,11 @@ TEST( isIdenticalTo_false02, Step )
             IStepUP value{ new MockStepX{ *this } };
             return value;
         }
-        Integer getValue() const { return 5; }
-        void setValue( const Integer val ) {}
+        int getValue() const { return 5; }
+        void setValue( const int val ) {}
         virtual bool isIdenticalTo( const IStep& other ) const { return true; }
-        Integer getMin() const { return 0; }
-        Integer getMax() const { return 6; }
+        int getMin() const { return 0; }
+        int getMax() const { return 6; }
         bool parse( const String& str ) { return true; }
         std::ostream& toStream( std::ostream& os ) const { return os << "X"; }
         bool extendedFunction() const { return true; }

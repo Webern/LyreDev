@@ -14,8 +14,8 @@ namespace Lyre
             MockPitch() : myValue(0) {}
             virtual ~MockPitch() {}
             virtual IPitchUP clone() const { return MockPitchUP{ new MockPitch{} }; }
-            virtual Integer getValue() const { return myValue; }
-            virtual void setValue( const Integer pitchValue ) {}
+            virtual int getValue() const { return myValue; }
+            virtual void setValue( const int pitchValue ) {}
             virtual bool parse( const String& str ) { return true; }
             virtual std::ostream& toStream( std::ostream& os ) const { return os << myValue; }
             /* virtual String toString() const;
@@ -23,20 +23,20 @@ namespace Lyre
              virtual bool isGreaterThan( const Pitch& other ) const;
              virtual bool isEqualTo( const Pitch& other ) const; */
             virtual bool isIdenticalTo( const IPitch& other ) const { return true; }
-            virtual Integer getStepValue() const { return 0; }
-            virtual void setStepValue( const Integer val ) { myValue = val; }
+            virtual int getStepValue() const { return 0; }
+            virtual void setStepValue( const int val ) { myValue = val; }
             virtual void incrementStep() {}
             virtual void decrementStep() {}
-            virtual Integer getAlterValue() const { return 0; }
-            virtual void setAlterValue( const Integer val ) {}
+            virtual int getAlterValue() const { return 0; }
+            virtual void setAlterValue( const int val ) {}
             virtual void incrementAlter() {}
             virtual void decrementAlter() {}
-            virtual Integer getOctaveValue() const { return 0; }
-            virtual void setOctaveValue( const Integer val ) {}
+            virtual int getOctaveValue() const { return 0; }
+            virtual void setOctaveValue( const int val ) {}
             virtual void incrementOctave() {}
             virtual void decrementOctave() {}
         private:
-            Integer myValue;
+            int myValue;
         };
     }
 }

@@ -11,7 +11,7 @@ namespace Lyre
         
         IDurDotUP DurDotFactory::createDurDot(
             const String& durName,
-            const Integer dotCount ) const
+            const int dotCount ) const
         {
             return IDurDotUP{ new DurDot{ durName, dotCount } };
         }

@@ -10,9 +10,9 @@ namespace Lyre
     namespace Private
     {
         TupletDef::TupletDef(
-            const Integer noteCount,
+            const int noteCount,
             const String& noteTypeDurBaseName,
-            const Integer inTheSpaceOf,
+            const int inTheSpaceOf,
             const String& inTheSpaceOfTypeDurBaseName )
         :myCount( 1 )
         ,myCountType( nullptr )
@@ -29,9 +29,9 @@ namespace Lyre
         }
         
         TupletDef::TupletDef(
-            const Integer count,
+            const int count,
             const Lyre::IDurDot& countType,
-            const Integer inTheSpaceOf,
+            const int inTheSpaceOf,
             const Lyre::IDurDot& inTheSpaceOfType )
         :myCount( 1 )
         ,myCountType( nullptr )
@@ -44,8 +44,8 @@ namespace Lyre
         }
         
         TupletDef::TupletDef(
-                  const Integer count,
-                  const Integer inTheSpaceOf,
+                  const int count,
+                  const int inTheSpaceOf,
                   const IDurDot& durationType )
         :myCount( 1 )
         ,myCountType( nullptr )
@@ -58,8 +58,8 @@ namespace Lyre
         }
         
         TupletDef::TupletDef(
-                  const Integer count,
-                  const Integer inTheSpaceOf,
+                  const int count,
+                  const int inTheSpaceOf,
                   const String& durBaseName )
         :myCount( 1 )
         ,myCountType( nullptr )
@@ -72,12 +72,12 @@ namespace Lyre
         }
         
         void TupletDef::constructor(
-            const Integer count,
+            const int count,
             const String& countTypeName,
-            const Integer countTypeDots,
-            const Integer itso,
+            const int countTypeDots,
+            const int itso,
             const String& itsoType,
-            const Integer itsoDots )
+            const int itsoDots )
         {
             throwIfNonPositive( count );
             throwIfNonPositive( itso );
@@ -97,7 +97,7 @@ namespace Lyre
             }
         }
         
-        void TupletDef::throwIfNonPositive( const Integer value ) const
+        void TupletDef::throwIfNonPositive( const int value ) const
         {
             if ( value < 1 )
             {
@@ -131,7 +131,7 @@ namespace Lyre
             return itsoValue * itsoCount;
         }
         
-        Integer TupletDef::getCount() const
+        int TupletDef::getCount() const
         {
             return myCount;
         }
@@ -143,7 +143,7 @@ namespace Lyre
             return std::move( output );
         }
         
-        Integer TupletDef::getInTheSpaceOf() const
+        int TupletDef::getInTheSpaceOf() const
         {
             return myInTheSpaceOf;
         }

@@ -23,7 +23,7 @@ namespace Lyre
         }
         
         DurDot::DurDot( const String& durName,
-                           const Integer dotCount )
+                           const int dotCount )
         : myDurBaseFactory( createDurBaseFactory( DurBaseFactoryType::Standard ) )
         , myDurBase( nullptr )
         , myDotCount( 0 )
@@ -43,7 +43,7 @@ namespace Lyre
         {
             Rational temp = myDurBase->getValue();
             Rational additional = myDurBase->getValue();
-            for ( Integer i = 0; i < getDotCount(); ++i )
+            for ( int i = 0; i < getDotCount(); ++i )
             {
                 additional *= Rational{ 1, 2 };
                 temp += additional;
@@ -56,12 +56,12 @@ namespace Lyre
             return myDurBase->getValue();
         }
         
-        Integer DurDot::getDotCount() const
+        int DurDot::getDotCount() const
         {
             return myDotCount;
         }
         
-        void DurDot::setDotCount( const Integer dots )
+        void DurDot::setDotCount( const int dots )
         {
             if ( dots < 0 )
             {
@@ -80,7 +80,7 @@ namespace Lyre
         std::ostream& DurDot::toStream( std::ostream& os ) const
         {
             os << ( *myDurBase );
-            for ( Integer i = 0; i < getDotCount(); ++i )
+            for ( int i = 0; i < getDotCount(); ++i )
             {
                 os << ".";
             }
