@@ -114,6 +114,7 @@
 		29935EA91BE6C18C0003552B /* MockDurBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDurBase.h; path = ../../Sourcecode/LyreTest/Mock/MockDurBase.h; sourceTree = "<group>"; };
 		29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockDurBaseFactory.cpp; path = ../../Sourcecode/LyreTest/Mock/MockDurBaseFactory.cpp; sourceTree = "<group>"; };
 		29935EAC1BE6C3700003552B /* MockDurBaseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDurBaseFactory.h; path = ../../Sourcecode/LyreTest/Mock/MockDurBaseFactory.h; sourceTree = "<group>"; };
+		29AEEA291C714D4400681388 /* TestTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestTimer.h; path = ../../Sourcecode/LyreTest/Tests/TestTimer.h; sourceTree = "<group>"; };
 		29CAD3E71BE6610F00C0CA90 /* LyreTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAD3F31BE6613400C0CA90 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestResult.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestResult.h; sourceTree = "<group>"; };
 		29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulFailure.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulFailure.cpp; sourceTree = "<group>"; };
@@ -218,6 +219,7 @@
 		29CAD43E1BE661F500C0CA90 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				29AEEA291C714D4400681388 /* TestTimer.h */,
 				29CAD4051BE661B400C0CA90 /* TestAlter.cpp */,
 				29FE9DC61C66C86C00BE0787 /* TestBeatPattern.cpp */,
 				29FE9DC71C66C86C00BE0787 /* TestBeatPatternFactory.cpp */,

@@ -17,10 +17,6 @@ namespace Lyre
         public:
             virtual ~DurationFactory();
             DurationFactory();
-            DurationFactory( const DurationFactory& other );
-            DurationFactory( DurationFactory&& other );
-            DurationFactory& operator=( const DurationFactory& other );
-            DurationFactory& operator=( DurationFactory&& other );
             
             virtual IDurationUP createDuration(
                 const String& durName ) const;
@@ -39,9 +35,6 @@ namespace Lyre
                 bool doThrowOnBadInput = false ) const;
         
         private:
-            std::map<Rational,IDurationUP> myLut;
-            void createLut();
-            void copyLut( const std::map<Rational,IDurationUP>& other );
             IDurationUP find( const Rational& r, bool doThrow ) const;
         };
     }

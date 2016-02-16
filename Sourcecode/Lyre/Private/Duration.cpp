@@ -1,28 +1,33 @@
 #include "Lyre/Private/Duration.h"
 #include "Lyre/Private/DurDot.h"
-#include "Lyre/IDurDotFactory.h"
-#include "Lyre/IDurDot.h"
+#include "Lyre/Private/TupletDef.h"
 #include "Lyre/Private/throw.h"
-#include "Lyre/ITupletDefFactory.h"
+#include "Lyre/toShared.h"
 #include <sstream>
 
 namespace Lyre
 {
     namespace Private
     {
+        std::map<Rational, IDurationUP> Duration::ourDurLut;
+        
         Duration::~Duration() {};
         
         Duration::Duration()
         :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
         ,myDurDot( myDurDotFactory->createDurDot() )
         ,myTuplets()
-        {}
+        {
+            
+        }
                            
         Duration::Duration( const String& durName )
         :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
         ,myDurDot( myDurDotFactory->createDurDot( durName ) )
         ,myTuplets()
-        {}
+        {
+
+        }
         
         Duration::Duration(
             const String& durName,
@@ -30,7 +35,9 @@ namespace Lyre
         :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
         ,myDurDot( myDurDotFactory->createDurDot( durName, dotCount ) )
         ,myTuplets()
-        {}
+        {
+
+        }
         
         Duration::Duration(
             const VecITupletDefSPC& tuplets,
@@ -39,7 +46,52 @@ namespace Lyre
         :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
         ,myDurDot( myDurDotFactory->createDurDot( durName, dotCount ) )
         ,myTuplets( tuplets )
-        {}
+        {
+
+        }
+        
+        IDurationUP Duration::findDuration(
+            Rational rational,
+            bool doThrowOnBadInput )
+        {
+            if ( ourDurLut.size() == 0 )
+            {
+                initializeLut();
+            }
+            IDurationUP value;
+            for ( auto i = ourDurLut.cbegin();
+                  i != ourDurLut.cend(); ++i )
+            {
+                if ( i->first <= rational )
+                {
+                    value = i->second->clone();
+                }
+                else
+                {
+                    break;
+                }
+            }
+            if ( value == nullptr )
+            {
+                if ( doThrowOnBadInput )
+                {
+                    THROW( "duration lookup failed" )
+                }
+                else
+                {
+                    return IDurationUP{ new Duration{ "Quarter" } };
+                }
+            }
+            if ( value->getValue() == rational )
+            {
+                return std::move( value );
+            }
+            if ( doThrowOnBadInput )
+            {
+                THROW( "duration lookup failed" )
+            }
+            return value;
+        }
         
         IDurationUP Duration::clone() const
         {
@@ -132,7 +184,6 @@ namespace Lyre
                 return myDurDot->getValue();
             }
             
-            auto f = createTupletDefFactory( TupletDefFactoryType::Standard );
             auto one = Rational{ 1, 1 };
             auto value = myDurDot->getValue();
             
@@ -191,6 +242,100 @@ namespace Lyre
             std::stringstream ss;
             toStream( ss );
             return ss.str();
+        }
+        
+        void Duration::initializeLut()
+        {
+            addAllTuplets();
+            addAllDurDots();
+        }
+        
+        void Duration::addTuplet(
+            const char* durName,
+            int dots,
+            int tupNum,
+            int inTheSpaceOf )
+        {
+            IDurDotUP durDot;
+            IDurDotUP tupDurDot;
+            ITupletDefUP tupDef;
+            VecITupletDefSPC tups;
+            IDurationUP currDur;
+            
+            durDot = IDurDotUP{ new DurDot{ durName, dots } };
+            tupDurDot = IDurDotUP{ new DurDot{ durName, 0 } };
+            tupDef = ITupletDefUP{ new TupletDef{ tupNum, inTheSpaceOf, *tupDurDot } };
+            tups.clear();
+            tups.push_back( tupDef->clone() );
+            currDur = IDurationUP{ new Duration( tups, durName, dots ) };
+            ourDurLut[currDur->getValue()] = std::move( currDur );
+        }
+        
+        void Duration::addTupletGroup(
+         const char* durName,
+         int tupNum,
+         int inTheSpaceOf )
+        {
+            addTuplet( durName, 3, tupNum, inTheSpaceOf );
+            addTuplet( durName, 2, tupNum, inTheSpaceOf );
+            addTuplet( durName, 1, tupNum, inTheSpaceOf );
+            addTuplet( durName, 0, tupNum, inTheSpaceOf );
+        }
+        
+        void Duration::addTupletGroups( const char* durName )
+        {
+            addTupletGroup( durName, 9, 8 );
+            addTupletGroup( durName, 7, 4 );
+            addTupletGroup( durName, 5, 4 );
+            addTupletGroup( durName, 3, 2 );
+        }
+        
+        void Duration::addAllTuplets()
+        {
+            addTupletGroups( "256th" );
+            addTupletGroups( "128th" );
+            addTupletGroups( "64th" );
+            addTupletGroups( "32nd" );
+            addTupletGroups( "16th" );
+            addTupletGroups( "Eighth" );
+            addTupletGroups( "Quarter" );
+            addTupletGroups( "Half" );
+            addTupletGroups( "Whole" );
+            addTupletGroups( "Breve" );
+            addTupletGroups( "Longa" );
+        }
+        
+        void Duration::addDurDots( const char* durName )
+        {
+            IDurationUP currDur;
+            currDur = IDurationUP{ new Duration( durName, 3 ) };
+            ourDurLut[currDur->getValue()] = std::move( currDur );
+            
+            currDur = IDurationUP{ new Duration( durName, 2 ) };
+            ourDurLut[currDur->getValue()] = std::move( currDur );
+            
+            
+            currDur = IDurationUP{ new Duration( durName, 1 ) };
+            ourDurLut[currDur->getValue()] = std::move( currDur );
+            
+            
+            currDur = IDurationUP{ new Duration( durName, 0 ) };
+            ourDurLut[currDur->getValue()] = std::move( currDur );
+        }
+        
+        void Duration::addAllDurDots()
+        {
+            addDurDots( "256th" );
+            addDurDots( "128th" );
+            addDurDots( "64th" );
+            addDurDots( "32nd" );
+            addDurDots( "16th" );
+            addDurDots( "Eighth" );
+            addDurDots( "Quarter" );
+            addDurDots( "Half" );
+            addDurDots( "Whole" );
+            addDurDots( "Breve" );
+            addDurDots( "Longa" );
         }
     }
 }

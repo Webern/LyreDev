@@ -2,9 +2,11 @@
 
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "Lyre/IDurationFactory.h"
+#include "LyreTest/Tests/TestTimer.h"
 
 using namespace Lyre;
 using namespace std;
+using namespace LyreTest;
 
 namespace
 {
@@ -20,11 +22,7 @@ TEST( durRationLut01, IDurDotFactory )
 
 TEST( durRationLut02, IDurDotFactory )
 {
-    for ( int i = 0; i < 1000; ++i )
-    {
-        auto discard = createDurationFactory( DurationFactoryType::Standard );
-    }
     auto actual = factory->createDuration( Rational{ 3, 2 } );
-    auto expected = factory->createDuration( "Quarter" );
+    auto expected = factory->createDuration( "Quarter", 1 );
     CHECK_EQUAL( expected->toString(), actual->toString() )
 }
