@@ -4,7 +4,7 @@
 #include "Lyre/Private/DurBase64th.h"
 #include "Lyre/Private/DurBase32nd.h"
 #include "Lyre/Private/DurBase16th.h"
-#include "Lyre/Private/DurBase8th.h"
+#include "Lyre/Private/DurBaseEighth.h"
 #include "Lyre/Private/DurBaseQuarter.h"
 #include "Lyre/Private/DurBaseHalf.h"
 #include "Lyre/Private/DurBaseWhole.h"
@@ -27,7 +27,7 @@ namespace Lyre
             values.insert( DurPair{ "64th", Private::makeUnique<DurBase64th>() } );
             values.insert( DurPair{ "32nd", Private::makeUnique<DurBase32nd>() } );
             values.insert( DurPair{ "16th", Private::makeUnique<DurBase16th>() } );
-            values.insert( DurPair{ "Eighth", Private::makeUnique<DurBase8th>() } );
+            values.insert( DurPair{ "Eighth", Private::makeUnique<DurBaseEighth>() } );
             values.insert( DurPair{ "Quarter", Private::makeUnique<DurBaseQuarter>() } );
             values.insert( DurPair{ "Half", Private::makeUnique<DurBaseHalf>() } );
             values.insert( DurPair{ "Whole", Private::makeUnique<DurBaseWhole>() } );

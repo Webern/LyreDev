@@ -18,6 +18,88 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulFailure.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulRun.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulTest.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulTestRegistry.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulTestResult.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\main.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockDurBase.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockDurBaseFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockEnum.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockEnumCats.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockNoteGroup.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitch.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchName.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockStep.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestBeatPattern.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestBeatPatternFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestCollection.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestCopyTo.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurationFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase128th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase16th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase256th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase32nd.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase64th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase8th.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseBreve.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseHalf.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseLonga.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseQuarter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseWhole.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestEnum.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestForwardDec.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDuration.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDurBase.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDurBaseFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDurDot.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIEnum.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIPitch.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIPitchFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIPitchName.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIStep.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestITupletDef.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestITupletDefFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMakeUnique.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMod.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestNote.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestNoteGroup.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitch.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitchFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitchName.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestRational.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestStep.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestThrow.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestTimeSignature.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestTimeSignatureFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestToShared.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulFailure.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulRun.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTest.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTestHarness.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTestRegistry.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTestResult.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockAlter.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockDurBase.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockDurBaseFactory.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockEnum.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockEnumCats.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockNoteGroup.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitch.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitchFactory.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitchName.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockStep.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Tests\TestTimer.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{81C15F27-BE53-4839-98C0-955500B4883A}</ProjectGuid>
     <RootNamespace>LyreTest</RootNamespace>
@@ -27,26 +109,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -158,82 +240,6 @@
       <AdditionalLibraryDirectories>.\Outputs\$(PlatformConfigFolder)\%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulFailure.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulRun.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulTest.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulTestRegistry.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\cpulTestResult.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Cpul\main.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockAlter.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockDurBase.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockDurBaseFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockEnum.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockEnumCats.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockNoteGroup.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitch.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchName.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockStep.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestAlter.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestCopyTo.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurationFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase128th.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase16th.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase256th.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase32nd.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase64th.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBase8th.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseBreve.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseHalf.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseLonga.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseQuarter.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestDurBaseWhole.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestEnum.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestForwardDec.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIAlter.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDuration.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDurBase.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDurBaseFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIDurDot.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIEnum.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIPitch.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIPitchFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIPitchName.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestIStep.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestITupletDef.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestITupletDefFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMakeUnique.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMod.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestNote.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestNoteGroup.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitch.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitchFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitchName.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestRational.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestStep.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestThrow.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestToShared.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulFailure.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulRun.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTest.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTestHarness.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTestRegistry.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Cpul\cpulTestResult.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockAlter.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockDurBase.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockDurBaseFactory.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockEnum.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockEnumCats.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockNoteGroup.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitch.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitchFactory.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitchName.h" />
-    <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockStep.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -57,6 +57,7 @@ TEST( throwIfNull, throwDotH )
     }
     catch( std::runtime_error& e )
     {
+        ( e );
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )

@@ -2,7 +2,7 @@
 
 #include "LyreTest/cpul/cpulTestHarness.h"
 
-#include "Lyre/Private/DurBase8th.h"
+#include "Lyre/Private/DurBaseEighth.h"
 
 using namespace Lyre;
 using namespace Lyre::Private;
@@ -13,27 +13,27 @@ namespace
     String name{ "Eighth" };
 }
 
-TEST( getValue, DurBase8th )
+TEST( getValue, DurBaseEighth )
 {
-    DurBase8th d;
+    DurBaseEighth d;
     CHECK_EQUAL( value, d.getValue() )
 }
-TEST( toStream, DurBase8th )
+TEST( toStream, DurBaseEighth )
 {
-    DurBase8th d;
+    DurBaseEighth d;
     std::stringstream ss;
     d.toStream( ss );
     CHECK_EQUAL( name, ss.str() )
 }
-TEST( streamingOperator, DurBase8th )
+TEST( streamingOperator, DurBaseEighth )
 {
-    DurBase8th d;
+    DurBaseEighth d;
     std::stringstream ss;
     ss << d;
     CHECK_EQUAL( name, ss.str() )
 }
-TEST( toString, DurBase8th )
+TEST( toString, DurBaseEighth )
 {
-    DurBase8th d;
+    DurBaseEighth d;
     CHECK_EQUAL( name, d.toString() )
 }

@@ -10,7 +10,7 @@ namespace Lyre
     {
         FORWARD_DECLARE(DurBaseFactory)
         
-        struct DurMap
+        struct EXPORT_FOR_TESTS DurMap
         {
         public:
             using DurPairMap = std::map<String, IDurBaseUP>;

@@ -1,6 +1,7 @@
 //PUBLIC
 #pragma once
 #include "Lyre/Lyre.h"
+#include "Lyre/IDurBase.h"
 
 namespace Lyre
 {

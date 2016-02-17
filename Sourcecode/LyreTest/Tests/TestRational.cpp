@@ -248,7 +248,8 @@ TEST( lcm_list03, Rational )
 }
 TEST( lcm_list04, Rational )
 {
-    int actual = Rational::lcm( { } );
+    std::initializer_list<int> integers;
+    int actual = Rational::lcm( integers );
     CHECK_EQUAL( 0, actual )
 }
 TEST( lcm_list05, Rational )

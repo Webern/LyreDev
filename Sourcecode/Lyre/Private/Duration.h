@@ -18,14 +18,13 @@ namespace Lyre
             virtual ~Duration();
             
             Duration();
-            
+
             Duration( const String& durName );
 
             Duration(
                 const String& durName,
                 const int dotCount );
 
-            
             Duration(
                 const VecITupletDefSPC& tuplets,
                 const String& durName,
