@@ -38,7 +38,6 @@ namespace
     }
 }
 
-
 TEST( toStream, BeatPattern )
 {
     IBeatPatternUP bp = factory->create( quarterDottedQuarter() );
@@ -48,7 +47,7 @@ TEST( toStream, BeatPattern )
     String actual = sstr.str();
     CHECK_EQUAL( expected, actual )
 }
-
+T_END
 
 TEST( getTotalDuration, BeatPattern )
 {
@@ -57,6 +56,7 @@ TEST( getTotalDuration, BeatPattern )
     Rational actual = bp->getTotalDuration();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 // TODO More Tests
 

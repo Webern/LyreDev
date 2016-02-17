@@ -30,16 +30,20 @@ namespace
     };
     using NothingUP = std::unique_ptr<Nothing>;
 }
+T_END
 
 TEST( NoParams, makeUnique )
 {
     CatUP cat = makeUnique<Cat>();
     CHECK_EQUAL( "Bishop", cat->getName() )
 }
+T_END
+
 TEST( Params, makeUnique )
 {
     NothingUP nada = makeUnique<Nothing>(1,2,3,4,5,6);
     CHECK_EQUAL( 21, nada->getSum() )
 }
+T_END
 
 #endif

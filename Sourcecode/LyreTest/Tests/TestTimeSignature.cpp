@@ -23,6 +23,7 @@ TEST( toStream, TimeSignature )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTotalDuration, TimeSignature )
 {
@@ -31,3 +32,4 @@ TEST( getTotalDuration, TimeSignature )
     Rational actual = ts->getTotalDuration();
     CHECK_EQUAL( expected, actual )
 }
+T_END

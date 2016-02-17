@@ -20,6 +20,7 @@ TEST( CtorString, IDuration )
     CHECK_EQUAL( 0, d->getDotCount() )
     CHECK( ! d->getIsTuplet() )
 }
+T_END
 
 TEST( CtorStringDots, IDuration )
 {
@@ -35,6 +36,7 @@ TEST( CtorStringDots, IDuration )
     CHECK_EQUAL( dots, d->getDotCount() )
     CHECK( ! d->getIsTuplet() )
 }
+T_END
 
 TEST( CtorTuplet, IDuration )
 {
@@ -54,6 +56,7 @@ TEST( CtorTuplet, IDuration )
     CHECK_EQUAL( dots, d->getDotCount() )
     CHECK( d->getIsTuplet() )
 }
+T_END
 
 TEST( getDurBaseValue, IDuration )
 {
@@ -71,6 +74,7 @@ TEST( getDurBaseValue, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getDurBaseName, IDuration )
 {
@@ -88,6 +92,7 @@ TEST( getDurBaseName, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getDotCount, IDuration )
 {
@@ -105,6 +110,7 @@ TEST( getDotCount, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getDottedBaseValue, IDuration )
 {
@@ -122,6 +128,7 @@ TEST( getDottedBaseValue, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getDottedBaseName, IDuration )
 {
@@ -139,6 +146,7 @@ TEST( getDottedBaseName, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getIsTuplet_false, IDuration )
 {
@@ -156,6 +164,7 @@ TEST( getIsTuplet_false, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getIsTuplet_true, IDuration )
 {
@@ -173,6 +182,7 @@ TEST( getIsTuplet_true, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getIsNestedTuplet_false_01, IDuration )
 {
@@ -190,6 +200,7 @@ TEST( getIsNestedTuplet_false_01, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getIsNestedTuplet_false_02, IDuration )
 {
@@ -207,6 +218,7 @@ TEST( getIsNestedTuplet_false_02, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getIsNestedTuplet_false_03, IDuration )
 {
@@ -225,6 +237,7 @@ TEST( getIsNestedTuplet_false_03, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getIsNestedTuplet_false_04, IDuration )
 {
@@ -243,6 +256,7 @@ TEST( getIsNestedTuplet_false_04, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getIsNestedTuplet_true_01, IDuration )
 {
@@ -261,6 +275,7 @@ TEST( getIsNestedTuplet_true_01, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTupletNestingCount_A, IDuration )
 {
@@ -279,6 +294,7 @@ TEST( getTupletNestingCount_A, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTupletNestingCount_B, IDuration )
 {
@@ -297,6 +313,7 @@ TEST( getTupletNestingCount_B, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTupletNestingCount_C, IDuration )
 {
@@ -315,6 +332,7 @@ TEST( getTupletNestingCount_C, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTupletBegin, IDuration )
 {
@@ -333,6 +351,7 @@ TEST( getTupletBegin, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTupletEnd, IDuration )
 {
@@ -358,6 +377,7 @@ TEST( getTupletEnd, IDuration )
     
     CHECK_EQUAL( 3, countIterations )
 }
+T_END
 
 TEST( getValue01, IDuration )
 {
@@ -371,6 +391,7 @@ TEST( getValue01, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue02, IDuration )
 {
@@ -384,6 +405,7 @@ TEST( getValue02, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue03, IDuration )
 {
@@ -401,6 +423,7 @@ TEST( getValue03, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue04, IDuration )
 {
@@ -418,6 +441,7 @@ TEST( getValue04, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue05, IDuration )
 {
@@ -435,6 +459,7 @@ TEST( getValue05, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue06, IDuration )
 {
@@ -452,6 +477,7 @@ TEST( getValue06, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 namespace
 {
@@ -476,6 +502,7 @@ TEST( toStream, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( streamingOperator, IDuration )
 {
@@ -495,6 +522,7 @@ TEST( streamingOperator, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( toString, IDuration )
 {
@@ -512,3 +540,4 @@ TEST( toString, IDuration )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END

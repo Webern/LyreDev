@@ -40,3 +40,4 @@ TEST( compiles, IPitchName )
     p->decrementAlter();
     p->isIdenticalTo( *p );
 }
+T_END

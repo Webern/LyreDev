@@ -14,16 +14,22 @@ TEST( Compiles, IEnum )
     MockEnum m;
     CHECK( true )
 }
+T_END
+
 TEST( SharedPtr, IEnum )
 {
     IEnumSP p = std::make_shared<MockEnum>();
     CHECK( true )
 }
+T_END
+
 TEST( UniquePtr, IEnum )
 {
     IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     CHECK( true )
 }
+T_END
+
 TEST( clone, IEnum )
 {
     IEnumSP p1 = std::make_shared<MockEnum>();
@@ -36,21 +42,29 @@ TEST( clone, IEnum )
     CHECK_EQUAL( 100, p1->getValue() );
     CHECK_EQUAL( 200, p2->getValue() );
 }
+T_END
+
 TEST( getMin, IEnum )
 {
     IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     CHECK_EQUAL( 0, p->getMin() )
 }
+T_END
+
 TEST( getMax, IEnum )
 {
     IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     CHECK_EQUAL( 1, p->getMax() )
 }
+T_END
+
 TEST( parse, IEnum )
 {
     IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
     CHECK( p->parse( "" ) )
 }
+T_END
+
 TEST( toStream, IEnum )
 {
     IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
@@ -61,6 +75,8 @@ TEST( toStream, IEnum )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString, IEnum )
 {
     IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
@@ -69,6 +85,8 @@ TEST( toString, IEnum )
     String actual{ p->toString() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator, IEnum )
 {
     IEnumUP p = unique_ptr<MockEnum>( new MockEnum() );
@@ -79,6 +97,8 @@ TEST( streamingOperator, IEnum )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( comparisons_a_isLessThan_b, IEnum )
 {
     IEnumUP a = unique_ptr<MockEnum>( new MockEnum() );
@@ -92,6 +112,8 @@ TEST( comparisons_a_isLessThan_b, IEnum )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isGreaterThan_b, IEnum )
 {
     IEnumUP a = unique_ptr<IEnum>( new MockEnum() );
@@ -105,6 +127,8 @@ TEST( comparisons_a_isGreaterThan_b, IEnum )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isEqualTo_b, IEnum )
 {
     IEnumUP a = unique_ptr<IEnum>( new MockEnum() );
@@ -118,6 +142,8 @@ TEST( comparisons_a_isEqualTo_b, IEnum )
     CHECK(   a->isEqualTo     ( *b ) )
     CHECK(   b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( increment, IEnum )
 {
     IEnumUP a = unique_ptr<IEnum>( new MockEnum() );
@@ -125,6 +151,8 @@ TEST( increment, IEnum )
     a->increment();
     CHECK_EQUAL( 101, a->getValue() )
 }
+T_END
+
 TEST( decrement, IEnum )
 {
     IEnumUP a = unique_ptr<IEnum>( new MockEnum() );
@@ -132,3 +160,4 @@ TEST( decrement, IEnum )
     a->decrement();
     CHECK_EQUAL( 99, a->getValue() )
 }
+T_END

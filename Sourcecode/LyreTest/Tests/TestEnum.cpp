@@ -13,16 +13,22 @@ TEST( Compiles, Enum )
     MockEnumCats m;
     CHECK( true )
 }
+T_END
+
 TEST( SharedPtr, Enum )
 {
     IEnumSP p = std::make_shared<MockEnumCats>();
     CHECK( true )
 }
+T_END
+
 TEST( UniquePtr, Enum )
 {
     IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     CHECK( true )
 }
+T_END
+
 TEST( clone, Enum )
 {
     IEnumSP p1 = std::make_shared<MockEnumCats>();
@@ -35,16 +41,22 @@ TEST( clone, Enum )
     CHECK_EQUAL( 3, p1->getValue() );
     CHECK_EQUAL( 2, p2->getValue() );
 }
+T_END
+
 TEST( getMin, Enum )
 {
     IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     CHECK_EQUAL( 1, p->getMin() )
 }
+T_END
+
 TEST( getMax, Enum )
 {
     IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
     CHECK_EQUAL( 3, p->getMax() )
 }
+T_END
+
 TEST( parse, Enum )
 {
     IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
@@ -55,6 +67,8 @@ TEST( parse, Enum )
     CHECK( p->parse( "Bones" ) )
     CHECK_EQUAL( "Bones", p->toString() )
 }
+T_END
+
 TEST( toStream, Enum )
 {
     IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
@@ -65,6 +79,8 @@ TEST( toStream, Enum )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString, Enum )
 {
     IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
@@ -73,6 +89,8 @@ TEST( toString, Enum )
     String actual{ p->toString() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator, Enum )
 {
     IEnumUP p = unique_ptr<MockEnumCats>( new MockEnumCats() );
@@ -83,6 +101,8 @@ TEST( streamingOperator, Enum )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( comparisons_a_isLessThan_b, Enum )
 {
     IEnumUP a = unique_ptr<MockEnumCats>( new MockEnumCats() );
@@ -96,6 +116,8 @@ TEST( comparisons_a_isLessThan_b, Enum )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isGreaterThan_b, Enum )
 {
     IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
@@ -109,6 +131,8 @@ TEST( comparisons_a_isGreaterThan_b, Enum )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isEqualTo_b, Enum )
 {
     IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
@@ -122,6 +146,8 @@ TEST( comparisons_a_isEqualTo_b, Enum )
     CHECK(   a->isEqualTo     ( *b ) )
     CHECK(   b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( increment01, Enum )
 {
     IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
@@ -129,6 +155,8 @@ TEST( increment01, Enum )
     a->increment();
     CHECK_EQUAL( 2, a->getValue() )
 }
+T_END
+
 TEST( increment02, Enum )
 {
     IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
@@ -144,6 +172,8 @@ TEST( increment02, Enum )
     a->increment();
     CHECK_EQUAL( 1, a->getValue() )
 }
+T_END
+
 TEST( decrement01, Enum )
 {
     IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
@@ -151,6 +181,8 @@ TEST( decrement01, Enum )
     a->decrement();
     CHECK_EQUAL( 1, a->getValue() )
 }
+T_END
+
 TEST( decrement02, Enum )
 {
     IEnumUP a = unique_ptr<Enum>( new MockEnumCats() );
@@ -164,3 +196,4 @@ TEST( decrement02, Enum )
     a->decrement();
     CHECK_EQUAL( 3, a->getValue() )
 }
+T_END

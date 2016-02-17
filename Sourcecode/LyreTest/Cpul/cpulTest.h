@@ -133,4 +133,8 @@ private:
     }\
 }
 
+// needed to for VS_TEST
+#define T_END } };  \
+      \
+
 #endif

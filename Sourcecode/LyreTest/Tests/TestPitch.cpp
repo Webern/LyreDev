@@ -15,6 +15,8 @@ TEST( defaultConstructor, Pitch )
     CHECK_EQUAL( 0, n->getOctaveValue() )
     CHECK_EQUAL( 12, n->getValue() )
 }
+T_END
+
 TEST( constructor01, Pitch )
 {
     PitchUP n{ new Pitch{ 1, 2, 4 } };
@@ -23,6 +25,8 @@ TEST( constructor01, Pitch )
     CHECK_EQUAL( 4, n->getOctaveValue() )
     CHECK_EQUAL( 64, n->getValue() )
 }
+T_END
+
 TEST( constructor02, Pitch )
 {
     PitchUP n{ new Pitch{ "Ab3" } };
@@ -31,6 +35,8 @@ TEST( constructor02, Pitch )
     CHECK_EQUAL( 3, n->getOctaveValue() )
     CHECK_EQUAL( 56, n->getValue() )
 }
+T_END
+
 TEST( copyConstructor, Pitch )
 {
     Pitch orig{ "B6" };
@@ -41,6 +47,8 @@ TEST( copyConstructor, Pitch )
     CHECK_EQUAL( 95, orig.getValue() )
     CHECK_EQUAL( 84, copy.getValue() )
 }
+T_END
+
 TEST( moveConstructor, Pitch )
 {
     Pitch orig{ "B6" };
@@ -49,6 +57,8 @@ TEST( moveConstructor, Pitch )
     copy.setStepValue( 0 );
     CHECK_EQUAL( 84, copy.getValue() )
 }
+T_END
+
 TEST( assignment, Pitch )
 {
     Pitch orig{ "B6" };
@@ -60,6 +70,8 @@ TEST( assignment, Pitch )
     CHECK_EQUAL( 95, orig.getValue() )
     CHECK_EQUAL( 84, copy.getValue() )
 }
+T_END
+
 TEST( moveAssignment, Pitch )
 {
     Pitch orig{ "B6" };
@@ -69,6 +81,8 @@ TEST( moveAssignment, Pitch )
     copy.setStepValue( 0 );
     CHECK_EQUAL( 84, copy.getValue() )
 }
+T_END
+
 TEST( clone, Pitch )
 {
     PitchUP orig{ new Pitch{ "B6" } };
@@ -83,6 +97,7 @@ TEST( clone, Pitch )
     CHECK_EQUAL( 95, orig->getValue() )
     CHECK_EQUAL( 84, copy->getValue() )
 }
+T_END
 
 TEST( getValue01, Pitch )
 {
@@ -90,6 +105,7 @@ TEST( getValue01, Pitch )
     n->parse( "Gddd-2" );
     CHECK_EQUAL( -11, n->getValue() )
 }
+T_END
 
 TEST( getValue02, Pitch )
 {
@@ -97,36 +113,47 @@ TEST( getValue02, Pitch )
     n->parse( "Gddb-1" );;
     CHECK_EQUAL( 2, n->getValue() )
 }
+T_END
+
 TEST( getValue03, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gdd0" );;
     CHECK_EQUAL( 15, n->getValue() )
 }
+T_END
+
 TEST( getValue04, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gdb1" );;
     CHECK_EQUAL( 28, n->getValue() )
 }
+T_END
+
 TEST( getValue05, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gd2" );;
     CHECK_EQUAL( 41, n->getValue() )
 }
+T_END
+
 TEST( getValue06, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gb3" );;
     CHECK_EQUAL( 54, n->getValue() )
 }
+T_END
+
 TEST( getValue07, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "G4" );;
     CHECK_EQUAL( 67, n->getValue() )
 }
+T_END
 
 TEST( getValue08, Pitch )
 {
@@ -134,258 +161,343 @@ TEST( getValue08, Pitch )
     n->parse( "G#5" );;
     CHECK_EQUAL( 80, n->getValue() )
 }
+T_END
+
 TEST( getValue09, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gx6" );;
     CHECK_EQUAL( 93, n->getValue() )
 }
+T_END
+
 TEST( getValue10, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gx#7" );;
     CHECK_EQUAL( 106, n->getValue() )
 }
+T_END
+
 TEST( getValue11, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gxx8" );;
     CHECK_EQUAL( 119, n->getValue() )
 }
+T_END
+
 TEST( getValue12, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gxx#9" );;
     CHECK_EQUAL( 132, n->getValue() )
 }
+T_END
+
 TEST( getValue13, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gxxx10" );;
     CHECK_EQUAL( 145, n->getValue() )
 }
+T_END
+
 TEST( getValue14, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Dddd-31" );;
     CHECK_EQUAL( -364, n->getValue() )
 }
+T_END
+
 TEST( getValue15, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Dddb-3" );;
     CHECK_EQUAL( -27, n->getValue() )
 }
+T_END
+
 TEST( getValue16, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Ddd-2" );;
     CHECK_EQUAL( -14, n->getValue() )
 }
+T_END
+
 TEST( getValue17, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Ddb-1" );;
     CHECK_EQUAL( -1, n->getValue() )
 }
+T_END
+
 TEST( getValue18, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Dd0" );;
     CHECK_EQUAL( 12, n->getValue() )
 }
+T_END
+
 TEST( getValue19, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Db1" );;
     CHECK_EQUAL( 25, n->getValue() )
 }
+T_END
+
 TEST( getValue20, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "D2" );;
     CHECK_EQUAL( 38, n->getValue() )
 }
+T_END
+
 TEST( getValue21, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "D#3" );;
     CHECK_EQUAL( 51, n->getValue() )
 }
+T_END
+
 TEST( getValue22, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Dx4" );;
     CHECK_EQUAL( 64, n->getValue() )
 }
+T_END
+
 TEST( getValue23, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Dx#5" );;
     CHECK_EQUAL( 77, n->getValue() )
 }
+T_END
+
 TEST( getValue24, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Dxx6" );;
     CHECK_EQUAL( 90, n->getValue() )
 }
+T_END
+
 TEST( getValue25, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Dxx#7" );;
     CHECK_EQUAL( 103, n->getValue() )
 }
+T_END
+
 TEST( getValue26, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Dxxx8" );;
     CHECK_EQUAL( 116, n->getValue() )
 }
+T_END
+
 TEST( getValue27, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "B#9" );;
     CHECK_EQUAL( 132, n->getValue() )
 }
+T_END
+
 TEST( getValue28, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "C10" );;
     CHECK_EQUAL( 132, n->getValue() )
 }
+T_END
+
 TEST( getValue29, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Db4" );;
     CHECK_EQUAL( 61, n->getValue() )
 }
+T_END
+
 TEST( getValue30, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "C#4" );;
     CHECK_EQUAL( 61, n->getValue() )
 }
+T_END
+
 TEST( getValue31, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "D4" );;
     CHECK_EQUAL( 62, n->getValue() )
 }
+T_END
+
 TEST( getValue32, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Cx4" );;
     CHECK_EQUAL( 62, n->getValue() )
 }
+T_END
+
 TEST( getValue33, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Eb4" );;
     CHECK_EQUAL( 63, n->getValue() )
 }
+T_END
+
 TEST( getValue34, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "D#4" );;
     CHECK_EQUAL( 63, n->getValue() )
 }
+T_END
+
 TEST( getValue37, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "E4" );;
     CHECK_EQUAL( 64, n->getValue() )
 }
+T_END
+
 TEST( getValue38, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Fb4" );;
     CHECK_EQUAL( 64, n->getValue() )
 }
+T_END
+
 TEST( getValue39, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "F4" );;
     CHECK_EQUAL( 65, n->getValue() )
 }
+T_END
+
 TEST( getValue40, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "E#4" );;
     CHECK_EQUAL( 65, n->getValue() )
 }
+T_END
+
 TEST( getValue41, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gb4" );;
     CHECK_EQUAL( 66, n->getValue() )
 }
+T_END
+
 TEST( getValue42, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "F#4" );;
     CHECK_EQUAL( 66, n->getValue() )
 }
+T_END
+
 TEST( getValue43, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "G4" );;
     CHECK_EQUAL( 67, n->getValue() )
 }
+T_END
+
 TEST( getValue44, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Ad4" );;
     CHECK_EQUAL( 67, n->getValue() )
 }
+T_END
+
 TEST( getValue45, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Ab4" );;
     CHECK_EQUAL( 68, n->getValue() )
 }
+T_END
+
 TEST( getValue46, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "G#4" );;
     CHECK_EQUAL( 68, n->getValue() )
 }
+T_END
+
 TEST( getValue47, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "A4" );;
     CHECK_EQUAL( 69, n->getValue() )
 }
+T_END
+
 TEST( getValue48, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Gx4" );;
     CHECK_EQUAL( 69, n->getValue() )
 }
+T_END
+
 TEST( getValue49, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Bb4" );;
     CHECK_EQUAL( 70, n->getValue() )
 }
+T_END
+
 TEST( getValue50, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "A#4" );;
     CHECK_EQUAL( 70, n->getValue() )
 }
+T_END
+
 TEST( getValue51, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "B4" );;
     CHECK_EQUAL( 71, n->getValue() )
 }
+T_END
+
 TEST( getValue52, Pitch )
 {
     PitchUP n{ new Pitch{} };
     n->parse( "Cb4" );;
     CHECK_EQUAL( 59, n->getValue() )
 }
+T_END
 
 TEST( parse_fail01, Pitch )
 {
@@ -394,6 +506,8 @@ TEST( parse_fail01, Pitch )
     CHECK( ! n->parse( "Cbd3" ) )
     CHECK_EQUAL( 65, n->getValue() )
 }
+T_END
+
 TEST( parse_fail02, Pitch )
 {
     PitchUP n{ new Pitch{ "F#2" } };
@@ -401,6 +515,8 @@ TEST( parse_fail02, Pitch )
     CHECK( ! n->parse( "B-" ) )
     CHECK_EQUAL( 42, n->getValue() )
 }
+T_END
+
 TEST( parse_fail03, Pitch )
 {
     PitchUP n{ new Pitch{ "G6" } };
@@ -408,6 +524,8 @@ TEST( parse_fail03, Pitch )
     CHECK( ! n->parse( "#6" ) )
     CHECK_EQUAL( 91, n->getValue() )
 }
+T_END
+
 TEST( parse_fail04, Pitch )
 {
     PitchUP n{ new Pitch{ "Ab3" } };
@@ -415,6 +533,8 @@ TEST( parse_fail04, Pitch )
     CHECK( ! n->parse( "Ab" ) )
     CHECK_EQUAL( 56, n->getValue() )
 }
+T_END
+
 TEST( parse_fail05, Pitch )
 {
     PitchUP n{ new Pitch{ "Ab3" } };
@@ -422,6 +542,8 @@ TEST( parse_fail05, Pitch )
     CHECK( ! n->parse( "F-0" ) )
     CHECK_EQUAL( 56, n->getValue() )
 }
+T_END
+
 TEST( parse_fail06, Pitch )
 {
     PitchUP n{ new Pitch{ "Ab3" } };
@@ -429,6 +551,8 @@ TEST( parse_fail06, Pitch )
     CHECK( ! n->parse( "G01" ) )
     CHECK_EQUAL( 56, n->getValue() )
 }
+T_END
+
 TEST( parse_fail07, Pitch )
 {
     PitchUP n{ new Pitch{ "Ab3" } };
@@ -436,6 +560,8 @@ TEST( parse_fail07, Pitch )
     CHECK( ! n->parse( "G0-1" ) )
     CHECK_EQUAL( 56, n->getValue() )
 }
+T_END
+
 TEST( parse_success01, Pitch )
 {
     PitchUP n{ new Pitch{ "F1" } };
@@ -443,6 +569,8 @@ TEST( parse_success01, Pitch )
     CHECK( n->parse( "B#3" ) )
     CHECK_EQUAL( 60, n->getValue() )
 }
+T_END
+
 TEST( parse_success02, Pitch )
 {
     PitchUP n{ new Pitch{ "F#-1" } };
@@ -450,6 +578,8 @@ TEST( parse_success02, Pitch )
     CHECK( n->parse( "Bb2" ) )
     CHECK_EQUAL( 46, n->getValue() )
 }
+T_END
+
 TEST( parse_success03, Pitch )
 {
     PitchUP n{ new Pitch{ "G" } };
@@ -457,6 +587,8 @@ TEST( parse_success03, Pitch )
     CHECK( n->parse( "C#-1000" ) )
     CHECK_EQUAL( -11987, n->getValue() )
 }
+T_END
+
 TEST( parse_success04, Pitch )
 {
     PitchUP n{ new Pitch{ "Ab-1" } };
@@ -464,6 +596,7 @@ TEST( parse_success04, Pitch )
     CHECK( n->parse( "Cdb1537" ) )
     CHECK_EQUAL( 18453, n->getValue() )
 }
+T_END
 
 TEST( toStream00, Pitch )
 {
@@ -475,6 +608,8 @@ TEST( toStream00, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream01, Pitch )
 {
     String str = "Cxxx-1";
@@ -485,6 +620,8 @@ TEST( toStream01, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream02, Pitch )
 {
     String str = "G#5";
@@ -495,6 +632,8 @@ TEST( toStream02, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream03, Pitch )
 {
     String str = "Bb-2";
@@ -505,6 +644,8 @@ TEST( toStream03, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream04, Pitch )
 {
     String str = "Ed6";
@@ -515,6 +656,8 @@ TEST( toStream04, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream05, Pitch )
 {
     String str = "Fb0";
@@ -525,6 +668,8 @@ TEST( toStream05, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream06, Pitch )
 {
     String str = "Gb7";
@@ -535,6 +680,8 @@ TEST( toStream06, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream07, Pitch )
 {
     String str = "B8";
@@ -545,6 +692,8 @@ TEST( toStream07, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream08, Pitch )
 {
     String str = "A10";
@@ -555,6 +704,8 @@ TEST( toStream08, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream09, Pitch )
 {
     String str = "Axxxxxxx9487";
@@ -565,6 +716,8 @@ TEST( toStream09, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream10, Pitch )
 {
     String str = "Edddddddddddddb-7581";
@@ -575,6 +728,8 @@ TEST( toStream10, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator00, Pitch )
 {
     String str = "Bb4";
@@ -585,6 +740,8 @@ TEST( streamingOperator00, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator01, Pitch )
 {
     String str = "Cxxx5";
@@ -595,6 +752,8 @@ TEST( streamingOperator01, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator02, Pitch )
 {
     String str = "G#6";
@@ -605,6 +764,8 @@ TEST( streamingOperator02, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator03, Pitch )
 {
     String str = "Bb1024";
@@ -615,6 +776,8 @@ TEST( streamingOperator03, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator04, Pitch )
 {
     String str = "Ed-123";
@@ -625,6 +788,8 @@ TEST( streamingOperator04, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator05, Pitch )
 {
     String str = "Fb6";
@@ -635,6 +800,8 @@ TEST( streamingOperator05, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator06, Pitch )
 {
     String str = "Gb3";
@@ -645,6 +812,8 @@ TEST( streamingOperator06, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator07, Pitch )
 {
     String str = "B76";
@@ -655,6 +824,8 @@ TEST( streamingOperator07, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator08, Pitch )
 {
     String str = "A8";
@@ -665,6 +836,8 @@ TEST( streamingOperator08, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator09, Pitch )
 {
     String str = "Axxxxxxx-1073";
@@ -675,6 +848,8 @@ TEST( streamingOperator09, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator10, Pitch )
 {
     String str = "Edddddddddddddb336";
@@ -685,6 +860,8 @@ TEST( streamingOperator10, Pitch )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString00, Pitch )
 {
     String str = "Bb4";
@@ -693,6 +870,8 @@ TEST( toString00, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString01, Pitch )
 {
     String str = "Cxxx5";
@@ -701,6 +880,8 @@ TEST( toString01, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString02, Pitch )
 {
     String str = "G#3";
@@ -709,6 +890,8 @@ TEST( toString02, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString03, Pitch )
 {
     String str = "Bb6";
@@ -717,6 +900,8 @@ TEST( toString03, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString04, Pitch )
 {
     String str = "Ed1";
@@ -725,6 +910,8 @@ TEST( toString04, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString05, Pitch )
 {
     String str = "Fb9";
@@ -733,6 +920,8 @@ TEST( toString05, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString06, Pitch )
 {
     String str = "Gb0";
@@ -741,6 +930,8 @@ TEST( toString06, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString07, Pitch )
 {
     String str = "B-1";
@@ -749,6 +940,8 @@ TEST( toString07, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString08, Pitch )
 {
     String str = "A-2";
@@ -757,6 +950,8 @@ TEST( toString08, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString09, Pitch )
 {
     String str = "Axxxxxxx-4568";
@@ -765,6 +960,8 @@ TEST( toString09, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString10, Pitch )
 {
     String str = "Edddddddddddddb2459";
@@ -773,6 +970,7 @@ TEST( toString10, Pitch )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( compare_a_isLessThan_b_01, Pitch )
 {
@@ -784,6 +982,7 @@ TEST( compare_a_isLessThan_b_01, Pitch )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
+T_END
 
 TEST( compare_a_isLessThan_b_02, Pitch )
 {
@@ -795,6 +994,8 @@ TEST( compare_a_isLessThan_b_02, Pitch )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
+T_END
+
 TEST( compare_a_isEqualTo_b_01, Pitch )
 {
     String a_str = "F#6";
@@ -805,6 +1006,8 @@ TEST( compare_a_isEqualTo_b_01, Pitch )
     CHECK(   ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
+T_END
+
 TEST( compare_a_isEqualTo_b_02, Pitch )
 {
     String a_str = "Cd-3";
@@ -815,6 +1018,7 @@ TEST( compare_a_isEqualTo_b_02, Pitch )
     CHECK(   ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
+T_END
 
 TEST( compare_a_isGreaterThan_b_01, Pitch )
 {
@@ -826,6 +1030,8 @@ TEST( compare_a_isGreaterThan_b_01, Pitch )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK(   ( a->isGreaterThan( *b ) ) )
 }
+T_END
+
 TEST( compare_a_isGreaterThan_b_02, Pitch )
 {
     String a_str = "F4";
@@ -836,7 +1042,7 @@ TEST( compare_a_isGreaterThan_b_02, Pitch )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK(   ( a->isGreaterThan( *b ) ) )
 }
-
+T_END
 
 TEST( getStepValue0, Pitch )
 {
@@ -844,42 +1050,56 @@ TEST( getStepValue0, Pitch )
     IPitchUP n{ new Pitch{ str } };
     CHECK_EQUAL( 0, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue1, Pitch )
 {
     String str = "Db1";
     IPitchUP n{ new Pitch{ str } };
     CHECK_EQUAL( 1, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue2, Pitch )
 {
     String str = "E#3";
     IPitchUP n{ new Pitch{ str } };
     CHECK_EQUAL( 2, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue3, Pitch )
 {
     String str = "F4";
     IPitchUP n{ new Pitch{ str } };
     CHECK_EQUAL( 3, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue4, Pitch )
 {
     String str = "Gb5";
     IPitchUP n{ new Pitch{ str } };
     CHECK_EQUAL( 4, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue5, Pitch )
 {
     String str = "A#-1";
     IPitchUP n{ new Pitch{ str } };
     CHECK_EQUAL( 5, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue6, Pitch )
 {
     String str = "B-2";
     IPitchUP n{ new Pitch{ str } };
     CHECK_EQUAL( 6, n->getStepValue() )
 }
+T_END
+
 TEST( setStepValue0, Pitch )
 {
     String str = "F1";
@@ -890,6 +1110,7 @@ TEST( setStepValue0, Pitch )
     int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( setStepValue1, Pitch )
 {
@@ -901,6 +1122,8 @@ TEST( setStepValue1, Pitch )
     int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setStepValue2, Pitch )
 {
     String str = "D3";
@@ -911,6 +1134,8 @@ TEST( setStepValue2, Pitch )
     int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( incrementStep, Pitch )
 {
     IPitchUP n{ new Pitch{ "C4" } };
@@ -943,6 +1168,8 @@ TEST( incrementStep, Pitch )
     CHECK_EQUAL( 0, n->getAlterValue() )
     CHECK_EQUAL( 4, n->getOctaveValue() )
 }
+T_END
+
 TEST( decrementStep, Pitch )
 {
     IPitchUP n{ new Pitch{ "C-1" } };
@@ -975,6 +1202,8 @@ TEST( decrementStep, Pitch )
     CHECK_EQUAL( 0, n->getAlterValue() )
     CHECK_EQUAL( -1, n->getOctaveValue() )
 }
+T_END
+
 TEST( getAlterValue00, Pitch )
 {
     String str{ "C8" };
@@ -983,6 +1212,8 @@ TEST( getAlterValue00, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue01, Pitch )
 {
     String str{ "Fb4" };
@@ -991,6 +1222,8 @@ TEST( getAlterValue01, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue02, Pitch )
 {
     String str{ "G#5" };
@@ -999,6 +1232,8 @@ TEST( getAlterValue02, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue03, Pitch )
 {
     String str{ "Bd-101" };
@@ -1007,6 +1242,8 @@ TEST( getAlterValue03, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue04, Pitch )
 {
     String str{ "Ax12" };
@@ -1015,6 +1252,8 @@ TEST( getAlterValue04, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue05, Pitch )
 {
     String str{ "Ddb3" };
@@ -1023,6 +1262,8 @@ TEST( getAlterValue05, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue06, Pitch )
 {
     String str{ "Cx#7" };
@@ -1031,6 +1272,8 @@ TEST( getAlterValue06, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue07, Pitch )
 {
     String str{ "Edd3" };
@@ -1039,6 +1282,8 @@ TEST( getAlterValue07, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue08, Pitch )
 {
     String str{ "Fxx1013" };
@@ -1047,6 +1292,8 @@ TEST( getAlterValue08, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue09, Pitch )
 {
     String str{ "Cddb-321" };
@@ -1055,6 +1302,8 @@ TEST( getAlterValue09, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue10, Pitch )
 {
     String str{ "Cxx#8" };
@@ -1063,6 +1312,8 @@ TEST( getAlterValue10, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setAlterValue01, Pitch )
 {
     String str{ "Cxx#4" };
@@ -1073,6 +1324,8 @@ TEST( setAlterValue01, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setAlterValue02, Pitch )
 {
     String str{ "Cx1" };
@@ -1083,6 +1336,8 @@ TEST( setAlterValue02, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setAlterValue03, Pitch )
 {
     String str{ "Gb2" };
@@ -1093,6 +1348,8 @@ TEST( setAlterValue03, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setAlterValue04, Pitch )
 {
     String str{ "Gb3" };
@@ -1103,6 +1360,8 @@ TEST( setAlterValue04, Pitch )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( incrementAlter, Pitch )
 {
     IPitchUP n{ new Pitch{ "Eddd9" } };
@@ -1163,6 +1422,8 @@ TEST( incrementAlter, Pitch )
     CHECK_EQUAL( 2, n->getStepValue() )
     CHECK_EQUAL( 9, n->getOctaveValue() )
 }
+T_END
+
 TEST( decrementAlter, Pitch )
 {
     IPitchUP n{ new Pitch{ "Exxx-2" } };
@@ -1221,6 +1482,8 @@ TEST( decrementAlter, Pitch )
     CHECK_EQUAL( 2, n->getStepValue() )
     CHECK_EQUAL( -2, n->getOctaveValue() )
 }
+T_END
+
 TEST( getOctave, Pitch )
 {
     IPitchUP n{ new Pitch{ "Gx-2" } };
@@ -1228,6 +1491,8 @@ TEST( getOctave, Pitch )
     CHECK_EQUAL( 4, n->getStepValue() )
     CHECK_EQUAL( -2, n->getOctaveValue() )
 }
+T_END
+
 TEST( setOctave, Pitch )
 {
     IPitchUP n{ new Pitch{ "F#7" } };
@@ -1237,6 +1502,8 @@ TEST( setOctave, Pitch )
     n->setOctaveValue( -1 );
     CHECK_EQUAL( -1, n->getOctaveValue() )
 }
+T_END
+
 TEST( incrementOctave, Pitch )
 {
     IPitchUP n{ new Pitch{ "F#7" } };
@@ -1246,6 +1513,8 @@ TEST( incrementOctave, Pitch )
     n->incrementOctave();
     CHECK_EQUAL( 8, n->getOctaveValue() )
 }
+T_END
+
 TEST( decrementOctave, Pitch )
 {
     IPitchUP n{ new Pitch{ "F#7" } };
@@ -1255,12 +1524,16 @@ TEST( decrementOctave, Pitch )
     n->decrementOctave();
     CHECK_EQUAL( 6, n->getOctaveValue() )
 }
+T_END
+
 TEST( isIdenticalTo_true01, Pitch )
 {
     IPitchUP a{ new Pitch{ "C4" } };
     IPitchUP b{ new Pitch{ "C4" } };
     CHECK( a->isIdenticalTo( *b ) )
 }
+T_END
+
 TEST( isIdenticalTo_false01, Pitch )
 {
     IPitchUP a{ new Pitch{ "C4" } };
@@ -1268,6 +1541,7 @@ TEST( isIdenticalTo_false01, Pitch )
     CHECK( a->isEqualTo( *b ) );
     CHECK( ! a->isIdenticalTo( *b ) )
 }
+T_END
 
 TEST( VALUE_N10_fromAbove, Pitch )
 {
@@ -1280,6 +1554,7 @@ TEST( VALUE_N10_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N10_fromBelow, Pitch )
 {
@@ -1292,6 +1567,7 @@ TEST( VALUE_N10_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N9_fromAbove, Pitch )
 {
@@ -1304,6 +1580,7 @@ TEST( VALUE_N9_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N9_fromBelow, Pitch )
 {
@@ -1316,6 +1593,7 @@ TEST( VALUE_N9_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N8_fromAbove, Pitch )
 {
@@ -1328,6 +1606,7 @@ TEST( VALUE_N8_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N8_fromBelow, Pitch )
 {
@@ -1340,6 +1619,7 @@ TEST( VALUE_N8_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N7_fromAbove, Pitch )
 {
@@ -1352,6 +1632,7 @@ TEST( VALUE_N7_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N7_fromBelow, Pitch )
 {
@@ -1364,6 +1645,7 @@ TEST( VALUE_N7_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N6_fromAbove, Pitch )
 {
@@ -1376,6 +1658,7 @@ TEST( VALUE_N6_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N6_fromBelow, Pitch )
 {
@@ -1388,6 +1671,7 @@ TEST( VALUE_N6_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N5_fromAbove, Pitch )
 {
@@ -1400,6 +1684,7 @@ TEST( VALUE_N5_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N5_fromBelow, Pitch )
 {
@@ -1412,6 +1697,7 @@ TEST( VALUE_N5_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N4_fromAbove, Pitch )
 {
@@ -1424,6 +1710,7 @@ TEST( VALUE_N4_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N4_fromBelow, Pitch )
 {
@@ -1436,6 +1723,7 @@ TEST( VALUE_N4_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N3_fromAbove, Pitch )
 {
@@ -1448,6 +1736,7 @@ TEST( VALUE_N3_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N3_fromBelow, Pitch )
 {
@@ -1460,6 +1749,7 @@ TEST( VALUE_N3_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N2_fromAbove, Pitch )
 {
@@ -1472,6 +1762,7 @@ TEST( VALUE_N2_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N2_fromBelow, Pitch )
 {
@@ -1484,6 +1775,7 @@ TEST( VALUE_N2_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N1_fromAbove, Pitch )
 {
@@ -1496,6 +1788,7 @@ TEST( VALUE_N1_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_N1_fromBelow, Pitch )
 {
@@ -1508,6 +1801,7 @@ TEST( VALUE_N1_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_0_fromAbove, Pitch )
 {
@@ -1520,6 +1814,7 @@ TEST( VALUE_0_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_0_fromBelow, Pitch )
 {
@@ -1532,6 +1827,7 @@ TEST( VALUE_0_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_1_fromAbove, Pitch )
 {
@@ -1544,6 +1840,7 @@ TEST( VALUE_1_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_1_fromBelow, Pitch )
 {
@@ -1556,6 +1853,7 @@ TEST( VALUE_1_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_2_fromAbove, Pitch )
 {
@@ -1568,6 +1866,7 @@ TEST( VALUE_2_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_2_fromBelow, Pitch )
 {
@@ -1580,6 +1879,7 @@ TEST( VALUE_2_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_3_fromAbove, Pitch )
 {
@@ -1592,6 +1892,7 @@ TEST( VALUE_3_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_3_fromBelow, Pitch )
 {
@@ -1604,6 +1905,7 @@ TEST( VALUE_3_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_4_fromAbove, Pitch )
 {
@@ -1616,6 +1918,7 @@ TEST( VALUE_4_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_4_fromBelow, Pitch )
 {
@@ -1628,6 +1931,7 @@ TEST( VALUE_4_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_5_fromAbove, Pitch )
 {
@@ -1640,6 +1944,7 @@ TEST( VALUE_5_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_5_fromBelow, Pitch )
 {
@@ -1652,6 +1957,7 @@ TEST( VALUE_5_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_6_fromAbove, Pitch )
 {
@@ -1664,6 +1970,7 @@ TEST( VALUE_6_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_6_fromBelow, Pitch )
 {
@@ -1676,6 +1983,7 @@ TEST( VALUE_6_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_7_fromAbove, Pitch )
 {
@@ -1688,6 +1996,7 @@ TEST( VALUE_7_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_7_fromBelow, Pitch )
 {
@@ -1700,6 +2009,7 @@ TEST( VALUE_7_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_8_fromAbove, Pitch )
 {
@@ -1712,6 +2022,7 @@ TEST( VALUE_8_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_8_fromBelow, Pitch )
 {
@@ -1724,6 +2035,7 @@ TEST( VALUE_8_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_9_fromAbove, Pitch )
 {
@@ -1736,6 +2048,7 @@ TEST( VALUE_9_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_9_fromBelow, Pitch )
 {
@@ -1748,6 +2061,7 @@ TEST( VALUE_9_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_10_fromAbove, Pitch )
 {
@@ -1760,6 +2074,7 @@ TEST( VALUE_10_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_10_fromBelow, Pitch )
 {
@@ -1772,6 +2087,7 @@ TEST( VALUE_10_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_11_fromAbove, Pitch )
 {
@@ -1784,6 +2100,7 @@ TEST( VALUE_11_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_11_fromBelow, Pitch )
 {
@@ -1796,6 +2113,7 @@ TEST( VALUE_11_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_12_fromAbove, Pitch )
 {
@@ -1808,6 +2126,7 @@ TEST( VALUE_12_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_12_fromBelow, Pitch )
 {
@@ -1820,6 +2139,7 @@ TEST( VALUE_12_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_13_fromAbove, Pitch )
 {
@@ -1832,6 +2152,7 @@ TEST( VALUE_13_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_13_fromBelow, Pitch )
 {
@@ -1844,6 +2165,7 @@ TEST( VALUE_13_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_14_fromAbove, Pitch )
 {
@@ -1856,6 +2178,7 @@ TEST( VALUE_14_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_14_fromBelow, Pitch )
 {
@@ -1868,6 +2191,7 @@ TEST( VALUE_14_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_15_fromAbove, Pitch )
 {
@@ -1880,6 +2204,7 @@ TEST( VALUE_15_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_15_fromBelow, Pitch )
 {
@@ -1892,6 +2217,7 @@ TEST( VALUE_15_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_16_fromAbove, Pitch )
 {
@@ -1904,6 +2230,7 @@ TEST( VALUE_16_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_16_fromBelow, Pitch )
 {
@@ -1916,6 +2243,7 @@ TEST( VALUE_16_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_17_fromAbove, Pitch )
 {
@@ -1928,6 +2256,7 @@ TEST( VALUE_17_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_17_fromBelow, Pitch )
 {
@@ -1940,6 +2269,7 @@ TEST( VALUE_17_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_18_fromAbove, Pitch )
 {
@@ -1952,6 +2282,7 @@ TEST( VALUE_18_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_18_fromBelow, Pitch )
 {
@@ -1964,6 +2295,7 @@ TEST( VALUE_18_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_19_fromAbove, Pitch )
 {
@@ -1976,6 +2308,7 @@ TEST( VALUE_19_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_19_fromBelow, Pitch )
 {
@@ -1988,6 +2321,7 @@ TEST( VALUE_19_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_20_fromAbove, Pitch )
 {
@@ -2000,6 +2334,7 @@ TEST( VALUE_20_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_20_fromBelow, Pitch )
 {
@@ -2012,6 +2347,7 @@ TEST( VALUE_20_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_21_fromAbove, Pitch )
 {
@@ -2024,6 +2360,7 @@ TEST( VALUE_21_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_21_fromBelow, Pitch )
 {
@@ -2036,6 +2373,7 @@ TEST( VALUE_21_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_22_fromAbove, Pitch )
 {
@@ -2048,6 +2386,7 @@ TEST( VALUE_22_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_22_fromBelow, Pitch )
 {
@@ -2060,6 +2399,7 @@ TEST( VALUE_22_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_23_fromAbove, Pitch )
 {
@@ -2072,6 +2412,7 @@ TEST( VALUE_23_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_23_fromBelow, Pitch )
 {
@@ -2084,6 +2425,7 @@ TEST( VALUE_23_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_24_fromAbove, Pitch )
 {
@@ -2096,6 +2438,7 @@ TEST( VALUE_24_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_24_fromBelow, Pitch )
 {
@@ -2108,6 +2451,7 @@ TEST( VALUE_24_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_25_fromAbove, Pitch )
 {
@@ -2120,6 +2464,7 @@ TEST( VALUE_25_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_25_fromBelow, Pitch )
 {
@@ -2132,6 +2477,7 @@ TEST( VALUE_25_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_26_fromAbove, Pitch )
 {
@@ -2144,6 +2490,7 @@ TEST( VALUE_26_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_26_fromBelow, Pitch )
 {
@@ -2156,6 +2503,7 @@ TEST( VALUE_26_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_27_fromAbove, Pitch )
 {
@@ -2168,6 +2516,7 @@ TEST( VALUE_27_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_27_fromBelow, Pitch )
 {
@@ -2180,6 +2529,7 @@ TEST( VALUE_27_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_28_fromAbove, Pitch )
 {
@@ -2192,6 +2542,7 @@ TEST( VALUE_28_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_28_fromBelow, Pitch )
 {
@@ -2204,6 +2555,7 @@ TEST( VALUE_28_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_29_fromAbove, Pitch )
 {
@@ -2216,6 +2568,7 @@ TEST( VALUE_29_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_29_fromBelow, Pitch )
 {
@@ -2228,6 +2581,7 @@ TEST( VALUE_29_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_30_fromAbove, Pitch )
 {
@@ -2240,6 +2594,7 @@ TEST( VALUE_30_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_30_fromBelow, Pitch )
 {
@@ -2252,6 +2607,7 @@ TEST( VALUE_30_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_31_fromAbove, Pitch )
 {
@@ -2264,6 +2620,7 @@ TEST( VALUE_31_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_31_fromBelow, Pitch )
 {
@@ -2276,6 +2633,7 @@ TEST( VALUE_31_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_32_fromAbove, Pitch )
 {
@@ -2288,6 +2646,7 @@ TEST( VALUE_32_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_32_fromBelow, Pitch )
 {
@@ -2300,6 +2659,7 @@ TEST( VALUE_32_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_33_fromAbove, Pitch )
 {
@@ -2312,6 +2672,7 @@ TEST( VALUE_33_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_33_fromBelow, Pitch )
 {
@@ -2324,6 +2685,7 @@ TEST( VALUE_33_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_34_fromAbove, Pitch )
 {
@@ -2336,6 +2698,7 @@ TEST( VALUE_34_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_34_fromBelow, Pitch )
 {
@@ -2348,6 +2711,7 @@ TEST( VALUE_34_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_35_fromAbove, Pitch )
 {
@@ -2360,6 +2724,7 @@ TEST( VALUE_35_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_35_fromBelow, Pitch )
 {
@@ -2372,6 +2737,7 @@ TEST( VALUE_35_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_36_fromAbove, Pitch )
 {
@@ -2384,6 +2750,7 @@ TEST( VALUE_36_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_36_fromBelow, Pitch )
 {
@@ -2396,6 +2763,7 @@ TEST( VALUE_36_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_37_fromAbove, Pitch )
 {
@@ -2408,6 +2776,7 @@ TEST( VALUE_37_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_37_fromBelow, Pitch )
 {
@@ -2420,6 +2789,7 @@ TEST( VALUE_37_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_38_fromAbove, Pitch )
 {
@@ -2432,6 +2802,7 @@ TEST( VALUE_38_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_38_fromBelow, Pitch )
 {
@@ -2444,6 +2815,7 @@ TEST( VALUE_38_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_39_fromAbove, Pitch )
 {
@@ -2456,6 +2828,7 @@ TEST( VALUE_39_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_39_fromBelow, Pitch )
 {
@@ -2468,6 +2841,7 @@ TEST( VALUE_39_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_40_fromAbove, Pitch )
 {
@@ -2480,6 +2854,7 @@ TEST( VALUE_40_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_40_fromBelow, Pitch )
 {
@@ -2492,6 +2867,7 @@ TEST( VALUE_40_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_41_fromAbove, Pitch )
 {
@@ -2504,6 +2880,7 @@ TEST( VALUE_41_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_41_fromBelow, Pitch )
 {
@@ -2516,6 +2893,7 @@ TEST( VALUE_41_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_42_fromAbove, Pitch )
 {
@@ -2528,6 +2906,7 @@ TEST( VALUE_42_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_42_fromBelow, Pitch )
 {
@@ -2540,6 +2919,7 @@ TEST( VALUE_42_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_43_fromAbove, Pitch )
 {
@@ -2552,6 +2932,7 @@ TEST( VALUE_43_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_43_fromBelow, Pitch )
 {
@@ -2564,6 +2945,7 @@ TEST( VALUE_43_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_44_fromAbove, Pitch )
 {
@@ -2576,6 +2958,7 @@ TEST( VALUE_44_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_44_fromBelow, Pitch )
 {
@@ -2588,6 +2971,7 @@ TEST( VALUE_44_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_45_fromAbove, Pitch )
 {
@@ -2600,6 +2984,7 @@ TEST( VALUE_45_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_45_fromBelow, Pitch )
 {
@@ -2612,6 +2997,7 @@ TEST( VALUE_45_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_46_fromAbove, Pitch )
 {
@@ -2624,6 +3010,7 @@ TEST( VALUE_46_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_46_fromBelow, Pitch )
 {
@@ -2636,6 +3023,7 @@ TEST( VALUE_46_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_47_fromAbove, Pitch )
 {
@@ -2648,6 +3036,7 @@ TEST( VALUE_47_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_47_fromBelow, Pitch )
 {
@@ -2660,6 +3049,7 @@ TEST( VALUE_47_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_48_fromAbove, Pitch )
 {
@@ -2672,6 +3062,7 @@ TEST( VALUE_48_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_48_fromBelow, Pitch )
 {
@@ -2684,6 +3075,7 @@ TEST( VALUE_48_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_49_fromAbove, Pitch )
 {
@@ -2696,6 +3088,7 @@ TEST( VALUE_49_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_49_fromBelow, Pitch )
 {
@@ -2708,6 +3101,7 @@ TEST( VALUE_49_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_50_fromAbove, Pitch )
 {
@@ -2720,6 +3114,7 @@ TEST( VALUE_50_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_50_fromBelow, Pitch )
 {
@@ -2732,6 +3127,7 @@ TEST( VALUE_50_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_51_fromAbove, Pitch )
 {
@@ -2744,6 +3140,7 @@ TEST( VALUE_51_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_51_fromBelow, Pitch )
 {
@@ -2756,6 +3153,7 @@ TEST( VALUE_51_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_52_fromAbove, Pitch )
 {
@@ -2768,6 +3166,7 @@ TEST( VALUE_52_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_52_fromBelow, Pitch )
 {
@@ -2780,6 +3179,7 @@ TEST( VALUE_52_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_53_fromAbove, Pitch )
 {
@@ -2792,6 +3192,7 @@ TEST( VALUE_53_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_53_fromBelow, Pitch )
 {
@@ -2804,6 +3205,7 @@ TEST( VALUE_53_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_54_fromAbove, Pitch )
 {
@@ -2816,6 +3218,7 @@ TEST( VALUE_54_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_54_fromBelow, Pitch )
 {
@@ -2828,6 +3231,7 @@ TEST( VALUE_54_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_55_fromAbove, Pitch )
 {
@@ -2840,6 +3244,7 @@ TEST( VALUE_55_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_55_fromBelow, Pitch )
 {
@@ -2852,6 +3257,7 @@ TEST( VALUE_55_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_56_fromAbove, Pitch )
 {
@@ -2864,6 +3270,7 @@ TEST( VALUE_56_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_56_fromBelow, Pitch )
 {
@@ -2876,6 +3283,7 @@ TEST( VALUE_56_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_57_fromAbove, Pitch )
 {
@@ -2888,6 +3296,7 @@ TEST( VALUE_57_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_57_fromBelow, Pitch )
 {
@@ -2900,6 +3309,7 @@ TEST( VALUE_57_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_58_fromAbove, Pitch )
 {
@@ -2912,6 +3322,7 @@ TEST( VALUE_58_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_58_fromBelow, Pitch )
 {
@@ -2924,6 +3335,7 @@ TEST( VALUE_58_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_59_fromAbove, Pitch )
 {
@@ -2936,6 +3348,7 @@ TEST( VALUE_59_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_59_fromBelow, Pitch )
 {
@@ -2948,6 +3361,7 @@ TEST( VALUE_59_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_60_fromAbove, Pitch )
 {
@@ -2960,6 +3374,7 @@ TEST( VALUE_60_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_60_fromBelow, Pitch )
 {
@@ -2972,6 +3387,7 @@ TEST( VALUE_60_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_61_fromAbove, Pitch )
 {
@@ -2984,6 +3400,7 @@ TEST( VALUE_61_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_61_fromBelow, Pitch )
 {
@@ -2996,6 +3413,7 @@ TEST( VALUE_61_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_62_fromAbove, Pitch )
 {
@@ -3008,6 +3426,7 @@ TEST( VALUE_62_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_62_fromBelow, Pitch )
 {
@@ -3020,6 +3439,7 @@ TEST( VALUE_62_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_63_fromAbove, Pitch )
 {
@@ -3032,6 +3452,7 @@ TEST( VALUE_63_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_63_fromBelow, Pitch )
 {
@@ -3044,6 +3465,7 @@ TEST( VALUE_63_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_64_fromAbove, Pitch )
 {
@@ -3056,6 +3478,7 @@ TEST( VALUE_64_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_64_fromBelow, Pitch )
 {
@@ -3068,6 +3491,7 @@ TEST( VALUE_64_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_65_fromAbove, Pitch )
 {
@@ -3080,6 +3504,7 @@ TEST( VALUE_65_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_65_fromBelow, Pitch )
 {
@@ -3092,6 +3517,7 @@ TEST( VALUE_65_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_66_fromAbove, Pitch )
 {
@@ -3104,6 +3530,7 @@ TEST( VALUE_66_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_66_fromBelow, Pitch )
 {
@@ -3116,6 +3543,7 @@ TEST( VALUE_66_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_67_fromAbove, Pitch )
 {
@@ -3128,6 +3556,7 @@ TEST( VALUE_67_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_67_fromBelow, Pitch )
 {
@@ -3140,6 +3569,7 @@ TEST( VALUE_67_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_68_fromAbove, Pitch )
 {
@@ -3152,6 +3582,7 @@ TEST( VALUE_68_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_68_fromBelow, Pitch )
 {
@@ -3164,6 +3595,7 @@ TEST( VALUE_68_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_69_fromAbove, Pitch )
 {
@@ -3176,6 +3608,7 @@ TEST( VALUE_69_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_69_fromBelow, Pitch )
 {
@@ -3188,6 +3621,7 @@ TEST( VALUE_69_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_70_fromAbove, Pitch )
 {
@@ -3200,6 +3634,7 @@ TEST( VALUE_70_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_70_fromBelow, Pitch )
 {
@@ -3212,6 +3647,7 @@ TEST( VALUE_70_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_71_fromAbove, Pitch )
 {
@@ -3224,6 +3660,7 @@ TEST( VALUE_71_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_71_fromBelow, Pitch )
 {
@@ -3236,6 +3673,7 @@ TEST( VALUE_71_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_72_fromAbove, Pitch )
 {
@@ -3248,6 +3686,7 @@ TEST( VALUE_72_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_72_fromBelow, Pitch )
 {
@@ -3260,6 +3699,7 @@ TEST( VALUE_72_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_73_fromAbove, Pitch )
 {
@@ -3272,6 +3712,7 @@ TEST( VALUE_73_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_73_fromBelow, Pitch )
 {
@@ -3284,6 +3725,7 @@ TEST( VALUE_73_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_74_fromAbove, Pitch )
 {
@@ -3296,6 +3738,7 @@ TEST( VALUE_74_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_74_fromBelow, Pitch )
 {
@@ -3308,6 +3751,7 @@ TEST( VALUE_74_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_75_fromAbove, Pitch )
 {
@@ -3320,6 +3764,7 @@ TEST( VALUE_75_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_75_fromBelow, Pitch )
 {
@@ -3332,6 +3777,7 @@ TEST( VALUE_75_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_76_fromAbove, Pitch )
 {
@@ -3344,6 +3790,7 @@ TEST( VALUE_76_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_76_fromBelow, Pitch )
 {
@@ -3356,6 +3803,7 @@ TEST( VALUE_76_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_77_fromAbove, Pitch )
 {
@@ -3368,6 +3816,7 @@ TEST( VALUE_77_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_77_fromBelow, Pitch )
 {
@@ -3380,6 +3829,7 @@ TEST( VALUE_77_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_78_fromAbove, Pitch )
 {
@@ -3392,6 +3842,7 @@ TEST( VALUE_78_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_78_fromBelow, Pitch )
 {
@@ -3404,6 +3855,7 @@ TEST( VALUE_78_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_79_fromAbove, Pitch )
 {
@@ -3416,6 +3868,7 @@ TEST( VALUE_79_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_79_fromBelow, Pitch )
 {
@@ -3428,6 +3881,7 @@ TEST( VALUE_79_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_80_fromAbove, Pitch )
 {
@@ -3440,6 +3894,7 @@ TEST( VALUE_80_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_80_fromBelow, Pitch )
 {
@@ -3452,6 +3907,7 @@ TEST( VALUE_80_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_81_fromAbove, Pitch )
 {
@@ -3464,6 +3920,7 @@ TEST( VALUE_81_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_81_fromBelow, Pitch )
 {
@@ -3476,6 +3933,7 @@ TEST( VALUE_81_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_82_fromAbove, Pitch )
 {
@@ -3488,6 +3946,7 @@ TEST( VALUE_82_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_82_fromBelow, Pitch )
 {
@@ -3500,6 +3959,7 @@ TEST( VALUE_82_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_83_fromAbove, Pitch )
 {
@@ -3512,6 +3972,7 @@ TEST( VALUE_83_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_83_fromBelow, Pitch )
 {
@@ -3524,6 +3985,7 @@ TEST( VALUE_83_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_84_fromAbove, Pitch )
 {
@@ -3536,6 +3998,7 @@ TEST( VALUE_84_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_84_fromBelow, Pitch )
 {
@@ -3548,6 +4011,7 @@ TEST( VALUE_84_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_85_fromAbove, Pitch )
 {
@@ -3560,6 +4024,7 @@ TEST( VALUE_85_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_85_fromBelow, Pitch )
 {
@@ -3572,6 +4037,7 @@ TEST( VALUE_85_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_86_fromAbove, Pitch )
 {
@@ -3584,6 +4050,7 @@ TEST( VALUE_86_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_86_fromBelow, Pitch )
 {
@@ -3596,6 +4063,7 @@ TEST( VALUE_86_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_87_fromAbove, Pitch )
 {
@@ -3608,6 +4076,7 @@ TEST( VALUE_87_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_87_fromBelow, Pitch )
 {
@@ -3620,6 +4089,7 @@ TEST( VALUE_87_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_88_fromAbove, Pitch )
 {
@@ -3632,6 +4102,7 @@ TEST( VALUE_88_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_88_fromBelow, Pitch )
 {
@@ -3644,6 +4115,7 @@ TEST( VALUE_88_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_89_fromAbove, Pitch )
 {
@@ -3656,6 +4128,7 @@ TEST( VALUE_89_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_89_fromBelow, Pitch )
 {
@@ -3668,6 +4141,7 @@ TEST( VALUE_89_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_90_fromAbove, Pitch )
 {
@@ -3680,6 +4154,7 @@ TEST( VALUE_90_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_90_fromBelow, Pitch )
 {
@@ -3692,6 +4167,7 @@ TEST( VALUE_90_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_91_fromAbove, Pitch )
 {
@@ -3704,6 +4180,7 @@ TEST( VALUE_91_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_91_fromBelow, Pitch )
 {
@@ -3716,6 +4193,7 @@ TEST( VALUE_91_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_92_fromAbove, Pitch )
 {
@@ -3728,6 +4206,7 @@ TEST( VALUE_92_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_92_fromBelow, Pitch )
 {
@@ -3740,6 +4219,7 @@ TEST( VALUE_92_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_93_fromAbove, Pitch )
 {
@@ -3752,6 +4232,7 @@ TEST( VALUE_93_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_93_fromBelow, Pitch )
 {
@@ -3764,6 +4245,7 @@ TEST( VALUE_93_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_94_fromAbove, Pitch )
 {
@@ -3776,6 +4258,7 @@ TEST( VALUE_94_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_94_fromBelow, Pitch )
 {
@@ -3788,6 +4271,7 @@ TEST( VALUE_94_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_95_fromAbove, Pitch )
 {
@@ -3800,6 +4284,7 @@ TEST( VALUE_95_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_95_fromBelow, Pitch )
 {
@@ -3812,6 +4297,7 @@ TEST( VALUE_95_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_96_fromAbove, Pitch )
 {
@@ -3824,6 +4310,7 @@ TEST( VALUE_96_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_96_fromBelow, Pitch )
 {
@@ -3836,6 +4323,7 @@ TEST( VALUE_96_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_97_fromAbove, Pitch )
 {
@@ -3848,6 +4336,7 @@ TEST( VALUE_97_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_97_fromBelow, Pitch )
 {
@@ -3860,6 +4349,7 @@ TEST( VALUE_97_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_98_fromAbove, Pitch )
 {
@@ -3872,6 +4362,7 @@ TEST( VALUE_98_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_98_fromBelow, Pitch )
 {
@@ -3884,6 +4375,7 @@ TEST( VALUE_98_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_99_fromAbove, Pitch )
 {
@@ -3896,6 +4388,7 @@ TEST( VALUE_99_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_99_fromBelow, Pitch )
 {
@@ -3908,6 +4401,7 @@ TEST( VALUE_99_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_100_fromAbove, Pitch )
 {
@@ -3920,6 +4414,7 @@ TEST( VALUE_100_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_100_fromBelow, Pitch )
 {
@@ -3932,6 +4427,7 @@ TEST( VALUE_100_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_101_fromAbove, Pitch )
 {
@@ -3944,6 +4440,7 @@ TEST( VALUE_101_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_101_fromBelow, Pitch )
 {
@@ -3956,6 +4453,7 @@ TEST( VALUE_101_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_102_fromAbove, Pitch )
 {
@@ -3968,6 +4466,7 @@ TEST( VALUE_102_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_102_fromBelow, Pitch )
 {
@@ -3980,6 +4479,7 @@ TEST( VALUE_102_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_103_fromAbove, Pitch )
 {
@@ -3992,6 +4492,7 @@ TEST( VALUE_103_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_103_fromBelow, Pitch )
 {
@@ -4004,6 +4505,7 @@ TEST( VALUE_103_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_104_fromAbove, Pitch )
 {
@@ -4016,6 +4518,7 @@ TEST( VALUE_104_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_104_fromBelow, Pitch )
 {
@@ -4028,6 +4531,7 @@ TEST( VALUE_104_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_105_fromAbove, Pitch )
 {
@@ -4040,6 +4544,7 @@ TEST( VALUE_105_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_105_fromBelow, Pitch )
 {
@@ -4052,6 +4557,7 @@ TEST( VALUE_105_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_106_fromAbove, Pitch )
 {
@@ -4064,6 +4570,7 @@ TEST( VALUE_106_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_106_fromBelow, Pitch )
 {
@@ -4076,6 +4583,7 @@ TEST( VALUE_106_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_107_fromAbove, Pitch )
 {
@@ -4088,6 +4596,7 @@ TEST( VALUE_107_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_107_fromBelow, Pitch )
 {
@@ -4100,6 +4609,7 @@ TEST( VALUE_107_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_108_fromAbove, Pitch )
 {
@@ -4112,6 +4622,7 @@ TEST( VALUE_108_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_108_fromBelow, Pitch )
 {
@@ -4124,6 +4635,7 @@ TEST( VALUE_108_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_109_fromAbove, Pitch )
 {
@@ -4136,6 +4648,7 @@ TEST( VALUE_109_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_109_fromBelow, Pitch )
 {
@@ -4148,6 +4661,7 @@ TEST( VALUE_109_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_110_fromAbove, Pitch )
 {
@@ -4160,6 +4674,7 @@ TEST( VALUE_110_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_110_fromBelow, Pitch )
 {
@@ -4172,6 +4687,7 @@ TEST( VALUE_110_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_111_fromAbove, Pitch )
 {
@@ -4184,6 +4700,7 @@ TEST( VALUE_111_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_111_fromBelow, Pitch )
 {
@@ -4196,6 +4713,7 @@ TEST( VALUE_111_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_112_fromAbove, Pitch )
 {
@@ -4208,6 +4726,7 @@ TEST( VALUE_112_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_112_fromBelow, Pitch )
 {
@@ -4220,6 +4739,7 @@ TEST( VALUE_112_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_113_fromAbove, Pitch )
 {
@@ -4232,6 +4752,7 @@ TEST( VALUE_113_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_113_fromBelow, Pitch )
 {
@@ -4244,6 +4765,7 @@ TEST( VALUE_113_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_114_fromAbove, Pitch )
 {
@@ -4256,6 +4778,7 @@ TEST( VALUE_114_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_114_fromBelow, Pitch )
 {
@@ -4268,6 +4791,7 @@ TEST( VALUE_114_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_115_fromAbove, Pitch )
 {
@@ -4280,6 +4804,7 @@ TEST( VALUE_115_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_115_fromBelow, Pitch )
 {
@@ -4292,6 +4817,7 @@ TEST( VALUE_115_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_116_fromAbove, Pitch )
 {
@@ -4304,6 +4830,7 @@ TEST( VALUE_116_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_116_fromBelow, Pitch )
 {
@@ -4316,6 +4843,7 @@ TEST( VALUE_116_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_117_fromAbove, Pitch )
 {
@@ -4328,6 +4856,7 @@ TEST( VALUE_117_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_117_fromBelow, Pitch )
 {
@@ -4340,6 +4869,7 @@ TEST( VALUE_117_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_118_fromAbove, Pitch )
 {
@@ -4352,6 +4882,7 @@ TEST( VALUE_118_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_118_fromBelow, Pitch )
 {
@@ -4364,6 +4895,7 @@ TEST( VALUE_118_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_119_fromAbove, Pitch )
 {
@@ -4376,6 +4908,7 @@ TEST( VALUE_119_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_119_fromBelow, Pitch )
 {
@@ -4388,6 +4921,7 @@ TEST( VALUE_119_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_120_fromAbove, Pitch )
 {
@@ -4400,6 +4934,7 @@ TEST( VALUE_120_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_120_fromBelow, Pitch )
 {
@@ -4412,6 +4947,7 @@ TEST( VALUE_120_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_121_fromAbove, Pitch )
 {
@@ -4424,6 +4960,7 @@ TEST( VALUE_121_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_121_fromBelow, Pitch )
 {
@@ -4436,6 +4973,7 @@ TEST( VALUE_121_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_122_fromAbove, Pitch )
 {
@@ -4448,6 +4986,7 @@ TEST( VALUE_122_fromAbove, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( VALUE_122_fromBelow, Pitch )
 {
@@ -4460,3 +4999,4 @@ TEST( VALUE_122_fromBelow, Pitch )
 	String actual = pitch->toString();
 	CHECK_EQUAL( expected, actual )
 }
+T_END

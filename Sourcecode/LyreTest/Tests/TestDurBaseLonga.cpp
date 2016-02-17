@@ -18,6 +18,8 @@ TEST( getValue, DurBaseLonga )
     DurBaseLonga d;
     CHECK_EQUAL( value, d.getValue() )
 }
+T_END
+
 TEST( toStream, DurBaseLonga )
 {
     DurBaseLonga d;
@@ -25,6 +27,8 @@ TEST( toStream, DurBaseLonga )
     d.toStream( ss );
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( streamingOperator, DurBaseLonga )
 {
     DurBaseLonga d;
@@ -32,8 +36,12 @@ TEST( streamingOperator, DurBaseLonga )
     ss << d;
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( toString, DurBaseLonga )
 {
     DurBaseLonga d;
     CHECK_EQUAL( name, d.toString() )
 }
+T_END
+

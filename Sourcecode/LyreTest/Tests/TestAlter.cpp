@@ -14,41 +14,57 @@ TEST( Compiles, Alter )
     Alter o;
     CHECK( true )
 }
+T_END
+
 TEST( SharedPtr, Alter )
 {
     IAlterSP p = std::make_shared<Alter>();
     CHECK( true )
 }
+T_END
+
 TEST( UniquePtr, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
     CHECK( true )
 }
+T_END
+
 TEST( Constructor01a, Alter )
 {
     Alter s{ 5 };
     CHECK_EQUAL( 5, s.getValue() )
 }
+T_END
+
 TEST( Constructor01b, Alter )
 {
     Alter s{ std::numeric_limits<int>::min() };
     CHECK_EQUAL( std::numeric_limits<int>::min(), s.getValue() )
 }
+T_END
+
 TEST( Constructor01c, Alter )
 {
     Alter s{ std::numeric_limits<int>::max() };
     CHECK_EQUAL( std::numeric_limits<int>::max(), s.getValue() )
 }
+T_END
+
 TEST( Constructor03a, Alter )
 {
     Alter s{ String{ "x#" } };
     CHECK_EQUAL( 3, s.getValue() )
 }
+T_END
+
 TEST( Constructor03b, Alter )
 {
     Alter s{ String{ "#x" } };
     CHECK_EQUAL( 0, s.getValue() )
 }
+T_END
+
 TEST( CopyConstructor01, Alter )
 {
     Alter a{ 1 };
@@ -60,6 +76,8 @@ TEST( CopyConstructor01, Alter )
     CHECK_EQUAL( 2, a.getValue() )
     CHECK_EQUAL( 5, b.getValue() )
 }
+T_END
+
 TEST( MoveConstructor01, Alter )
 {
     Alter a{ 1 };
@@ -68,6 +86,8 @@ TEST( MoveConstructor01, Alter )
     b.setValue( 5 );
     CHECK_EQUAL( 5, b.getValue() )
 }
+T_END
+
 TEST( AssignmentOperator, Alter )
 {
     Alter a{ 1 };
@@ -80,6 +100,8 @@ TEST( AssignmentOperator, Alter )
     CHECK_EQUAL( 2, a.getValue() )
     CHECK_EQUAL( 5, b.getValue() )
 }
+T_END
+
 TEST( MoveAssignment, Alter )
 {
     Alter a{ 1 };
@@ -89,6 +111,8 @@ TEST( MoveAssignment, Alter )
     b.setValue( 5 );
     CHECK_EQUAL( 5, b.getValue() )
 }
+T_END
+
 TEST( clone, Alter )
 {
     IAlterSP p1 = std::make_shared<Alter>();
@@ -101,16 +125,22 @@ TEST( clone, Alter )
     CHECK_EQUAL( 4, p1->getValue() );
     CHECK_EQUAL( 2, p2->getValue() );
 }
+T_END
+
 TEST( getMin, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
     CHECK_EQUAL( std::numeric_limits<int>::min(), p->getMin() )
 }
+T_END
+
 TEST( getMax, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
     CHECK_EQUAL( std::numeric_limits<int>::max(), p->getMax() )
 }
+T_END
+
 TEST( parseSuccess01, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -118,6 +148,8 @@ TEST( parseSuccess01, Alter )
     CHECK( p->parse( "" ) )
     CHECK_EQUAL( 0, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess02, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -125,6 +157,8 @@ TEST( parseSuccess02, Alter )
     CHECK( p->parse( "ddd" ) )
     CHECK_EQUAL( -6, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess03, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -132,6 +166,8 @@ TEST( parseSuccess03, Alter )
     CHECK( p->parse( "ddb" ) )
     CHECK_EQUAL( -5, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess04, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -139,6 +175,8 @@ TEST( parseSuccess04, Alter )
     CHECK( p->parse( "dd" ) )
     CHECK_EQUAL( -4, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess05, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -146,6 +184,8 @@ TEST( parseSuccess05, Alter )
     CHECK( p->parse( "db" ) )
     CHECK_EQUAL( -3, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess06, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -153,6 +193,8 @@ TEST( parseSuccess06, Alter )
     CHECK( p->parse( "d" ) )
     CHECK_EQUAL( -2, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess07, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -160,6 +202,8 @@ TEST( parseSuccess07, Alter )
     CHECK( p->parse( "b" ) )
     CHECK_EQUAL( -1, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess08, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -167,6 +211,8 @@ TEST( parseSuccess08, Alter )
     CHECK( p->parse( "" ) )
     CHECK_EQUAL( 0, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess09, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -174,6 +220,8 @@ TEST( parseSuccess09, Alter )
     CHECK( p->parse( "#" ) )
     CHECK_EQUAL( 1, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess10, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -181,6 +229,8 @@ TEST( parseSuccess10, Alter )
     CHECK( p->parse( "x" ) )
     CHECK_EQUAL( 2, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess11, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -188,6 +238,8 @@ TEST( parseSuccess11, Alter )
     CHECK( p->parse( "x#" ) )
     CHECK_EQUAL( 3, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess12, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -195,6 +247,8 @@ TEST( parseSuccess12, Alter )
     CHECK( p->parse( "xx" ) )
     CHECK_EQUAL( 4, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess13, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -202,6 +256,8 @@ TEST( parseSuccess13, Alter )
     CHECK( p->parse( "xx#" ) )
     CHECK_EQUAL( 5, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess14, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -209,6 +265,8 @@ TEST( parseSuccess14, Alter )
     CHECK( p->parse( "xxx" ) )
     CHECK_EQUAL( 6, p->getValue() )
 }
+T_END
+
 TEST( parseSuccess15, Alter )
 {
     String dbl{ "d" };
@@ -229,6 +287,8 @@ TEST( parseSuccess15, Alter )
         CHECK_EQUAL( ( -1 * i ), p->getValue() )
     }
 }
+T_END
+
 TEST( parseSuccess16, Alter )
 {
     String dbl{ "x" };
@@ -249,114 +309,152 @@ TEST( parseSuccess16, Alter )
         CHECK_EQUAL( i, p->getValue() )
     }
 }
+T_END
+
 TEST( parseFail01, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( " " ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail02, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "bd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail03, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "#b" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail04, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "xb" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail05, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "#d" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail06, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "xd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail07, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "b#" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail08, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "d#" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail09, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "bx" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail10, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "dx" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail11, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "#x" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail12, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "##" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail13, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "xx##" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail14, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "xxx#x" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail15, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "bd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail16, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "bb" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail17, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "ddbb" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail18, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
     CHECK( ! ( p->parse( "dddbd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( parseFail19, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter( -999 ) );
@@ -375,6 +473,8 @@ TEST( parseFail19, Alter )
     CHECK( ! ( p->parse( "dddbd" ) ) )
     CHECK_EQUAL( -999, p->getValue() )
 }
+T_END
+
 TEST( toStream01, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -385,6 +485,8 @@ TEST( toStream01, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream02, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -395,6 +497,8 @@ TEST( toStream02, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream03, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -405,6 +509,8 @@ TEST( toStream03, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream04, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -415,6 +521,8 @@ TEST( toStream04, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream05, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -425,6 +533,8 @@ TEST( toStream05, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream06, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -435,6 +545,8 @@ TEST( toStream06, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream07, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -445,6 +557,8 @@ TEST( toStream07, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream08, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -455,6 +569,8 @@ TEST( toStream08, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream09, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -465,6 +581,8 @@ TEST( toStream09, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream10, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -475,6 +593,8 @@ TEST( toStream10, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream11, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -485,6 +605,8 @@ TEST( toStream11, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream12, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -495,6 +617,8 @@ TEST( toStream12, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream13, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -505,6 +629,8 @@ TEST( toStream13, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString01, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -515,6 +641,8 @@ TEST( toString01, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString02, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -525,6 +653,8 @@ TEST( toString02, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString03, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -535,6 +665,8 @@ TEST( toString03, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString04, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -545,6 +677,8 @@ TEST( toString04, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString05, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -555,6 +689,8 @@ TEST( toString05, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString06, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -565,6 +701,8 @@ TEST( toString06, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString07, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -575,6 +713,8 @@ TEST( toString07, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString08, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -585,6 +725,8 @@ TEST( toString08, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString09, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -595,6 +737,8 @@ TEST( toString09, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString10, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -605,6 +749,8 @@ TEST( toString10, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString11, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -615,6 +761,8 @@ TEST( toString11, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString12, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -625,6 +773,8 @@ TEST( toString12, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString13, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -635,6 +785,8 @@ TEST( toString13, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator01, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -645,6 +797,8 @@ TEST( streamingOperator01, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator02, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -655,6 +809,8 @@ TEST( streamingOperator02, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator03, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -665,6 +821,8 @@ TEST( streamingOperator03, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator04, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -675,6 +833,8 @@ TEST( streamingOperator04, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator05, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -685,6 +845,8 @@ TEST( streamingOperator05, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator06, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -695,6 +857,8 @@ TEST( streamingOperator06, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator07, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -705,6 +869,8 @@ TEST( streamingOperator07, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator08, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -715,6 +881,8 @@ TEST( streamingOperator08, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator09, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -725,6 +893,8 @@ TEST( streamingOperator09, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator10, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -735,6 +905,8 @@ TEST( streamingOperator10, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator11, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -745,6 +917,8 @@ TEST( streamingOperator11, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator12, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -755,6 +929,8 @@ TEST( streamingOperator12, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator13, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -765,6 +941,8 @@ TEST( streamingOperator13, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator, Alter )
 {
     IAlterUP p = unique_ptr<Alter>( new Alter() );
@@ -775,6 +953,8 @@ TEST( streamingOperator, Alter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( comparisons_a_isLessThan_b, Alter )
 {
     IAlterUP a = unique_ptr<Alter>( new Alter() );
@@ -788,6 +968,8 @@ TEST( comparisons_a_isLessThan_b, Alter )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isGreaterThan_b, Alter )
 {
     IAlterUP a = unique_ptr<Alter>( new Alter() );
@@ -801,6 +983,8 @@ TEST( comparisons_a_isGreaterThan_b, Alter )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isEqualTo_b, Alter )
 {
     IAlterUP a = unique_ptr<Alter>( new Alter() );
@@ -814,6 +998,8 @@ TEST( comparisons_a_isEqualTo_b, Alter )
     CHECK(   a->isEqualTo     ( *b ) )
     CHECK(   b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( increment01, Alter )
 {
     IAlterUP a = unique_ptr<Alter>( new Alter() );
@@ -821,6 +1007,8 @@ TEST( increment01, Alter )
     a->increment();
     CHECK_EQUAL( 2, a->getValue() )
 }
+T_END
+
 TEST( increment02, Alter )
 {
     IAlterUP a = unique_ptr<Alter>( new Alter() );
@@ -829,6 +1017,8 @@ TEST( increment02, Alter )
     a->increment();
     CHECK_EQUAL( std::numeric_limits<int>::min(), a->getValue() )
 }
+T_END
+
 TEST( decrement01, Alter )
 {
     IAlterUP a = unique_ptr<Alter>( new Alter() );
@@ -836,6 +1026,8 @@ TEST( decrement01, Alter )
     a->decrement();
     CHECK_EQUAL( 1, a->getValue() )
 }
+T_END
+
 TEST( decrement02, Alter )
 {
     IAlterUP a = unique_ptr<Alter>( new Alter() );
@@ -844,6 +1036,8 @@ TEST( decrement02, Alter )
     a->decrement();
     CHECK_EQUAL( std::numeric_limits<int>::max(), a->getValue() )
 }
+T_END
+
 TEST( checkManyFlatStrings, Alter )
 {
     auto a = unique_ptr<Alter>( new Alter() );
@@ -871,6 +1065,8 @@ TEST( checkManyFlatStrings, Alter )
         CHECK_EQUAL( ss.str(), p->toString() )
     }
 }
+T_END
+
 TEST( checkManySharpStrings, Alter )
 {
     auto a = unique_ptr<Alter>( new Alter() );
@@ -898,15 +1094,20 @@ TEST( checkManySharpStrings, Alter )
         CHECK_EQUAL( ss.str(), p->toString() )
     }
 }
+T_END
+
 TEST( isIdenticalTo_true01, Alter )
 {
     AlterUP a = unique_ptr<Alter>( new Alter( 5 ) );
     AlterUP b = unique_ptr<Alter>( new Alter( 5 ) );
     CHECK( a->isIdenticalTo( *b ) )
 }
+T_END
+
 TEST( isIdenticalTo_false02, Alter )
 {
     AlterUP a = unique_ptr<Alter>( new Alter( 5 ) );
     AlterUP b = unique_ptr<Alter>( new Alter( 4 ) );
     CHECK( ! a->isIdenticalTo( *b ) )
 }
+T_END

@@ -28,6 +28,7 @@ TEST( createMockDurBaseFactory, IDurBaseFactory )
     
     CHECK( factory != nullptr )
 }
+T_END
 
 TEST( createDur, IDurBaseFactory )
 {
@@ -49,6 +50,7 @@ TEST( createDur, IDurBaseFactory )
     CHECK_EQUAL( ( Rational{ 13, 1 } ), d->getValue() )
     CHECK_EQUAL( "Bones", d->toString() )
 }
+T_END
 
 TEST( createDur2, IDurBaseFactory )
 {
@@ -70,6 +72,7 @@ TEST( createDur2, IDurBaseFactory )
     CHECK_EQUAL( ( Rational{ -1, 2 } ), d->getValue() )
     CHECK_EQUAL( "Cheese", d->toString() )
 }
+T_END
 
 TEST( throw1, IDurBaseFactory )
 {
@@ -102,6 +105,7 @@ TEST( throw1, IDurBaseFactory )
     bool success = ( foundPosition != String::npos );
     CHECK( success )
 }
+T_END
 
 TEST( throw2, IDurBaseFactory )
 {
@@ -129,3 +133,4 @@ TEST( throw2, IDurBaseFactory )
     bool success = ( foundPosition != String::npos );
     CHECK( success )
 }
+T_END

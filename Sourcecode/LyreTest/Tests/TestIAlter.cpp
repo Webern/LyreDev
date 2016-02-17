@@ -12,16 +12,22 @@ TEST( Compiles, IAlter )
     MockAlter m;
     CHECK( true )
 }
+T_END
+
 TEST( SharedPtr, IAlter )
 {
     IAlterSP p = std::make_shared<MockAlter>();
     CHECK( true )
 }
+T_END
+
 TEST( UniquePtr, IAlter )
 {
     IAlterUP p = unique_ptr<MockAlter>( new MockAlter() );
     CHECK( true )
 }
+T_END
+
 TEST( clone, IAlter )
 {
     IAlterSP p1 = std::make_shared<MockAlter>();
@@ -34,21 +40,29 @@ TEST( clone, IAlter )
     CHECK_EQUAL( 100, p1->getValue() );
     CHECK_EQUAL( 200, p2->getValue() );
 }
+T_END
+
 TEST( getMin, IAlter )
 {
     IAlterUP p = unique_ptr<MockAlter>( new MockAlter() );
     CHECK_EQUAL( 0, p->getMin() )
 }
+T_END
+
 TEST( getMax, IAlter )
 {
     IAlterUP p = unique_ptr<MockAlter>( new MockAlter() );
     CHECK_EQUAL( 1, p->getMax() )
 }
+T_END
+
 TEST( parse, IAlter )
 {
     IAlterUP p = unique_ptr<MockAlter>( new MockAlter() );
     CHECK( p->parse( "" ) )
 }
+T_END
+
 TEST( toStream, IAlter )
 {
     IAlterUP p = unique_ptr<MockAlter>( new MockAlter() );
@@ -59,6 +73,8 @@ TEST( toStream, IAlter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString, IAlter )
 {
     IAlterUP p = unique_ptr<MockAlter>( new MockAlter() );
@@ -67,6 +83,8 @@ TEST( toString, IAlter )
     String actual{ p->toString() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator, IAlter )
 {
     IAlterUP p = unique_ptr<MockAlter>( new MockAlter() );
@@ -77,6 +95,8 @@ TEST( streamingOperator, IAlter )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( comparisons_a_isLessThan_b, IAlter )
 {
     IAlterUP a = unique_ptr<MockAlter>( new MockAlter() );
@@ -90,6 +110,8 @@ TEST( comparisons_a_isLessThan_b, IAlter )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isGreaterThan_b, IAlter )
 {
     IAlterUP a = unique_ptr<IAlter>( new MockAlter() );
@@ -103,6 +125,8 @@ TEST( comparisons_a_isGreaterThan_b, IAlter )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isEqualTo_b, IAlter )
 {
     IAlterUP a = unique_ptr<IAlter>( new MockAlter() );
@@ -116,6 +140,8 @@ TEST( comparisons_a_isEqualTo_b, IAlter )
     CHECK(   a->isEqualTo     ( *b ) )
     CHECK(   b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( increment, IAlter )
 {
     IAlterUP a = unique_ptr<IAlter>( new MockAlter() );
@@ -123,6 +149,8 @@ TEST( increment, IAlter )
     a->increment();
     CHECK_EQUAL( 101, a->getValue() )
 }
+T_END
+
 TEST( decrement, IAlter )
 {
     IAlterUP a = unique_ptr<IAlter>( new MockAlter() );
@@ -130,8 +158,11 @@ TEST( decrement, IAlter )
     a->decrement();
     CHECK_EQUAL( 99, a->getValue() )
 }
+T_END
+
 TEST( isIdenticalTo, IAlter )
 {
     IAlterUP a = unique_ptr<IAlter>( new MockAlter() );
     CHECK( a->isIdenticalTo( *a ) )
 }
+T_END

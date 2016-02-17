@@ -18,6 +18,8 @@ TEST( getValue, DurBaseEighth )
     DurBaseEighth d;
     CHECK_EQUAL( value, d.getValue() )
 }
+T_END
+
 TEST( toStream, DurBaseEighth )
 {
     DurBaseEighth d;
@@ -25,6 +27,8 @@ TEST( toStream, DurBaseEighth )
     d.toStream( ss );
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( streamingOperator, DurBaseEighth )
 {
     DurBaseEighth d;
@@ -32,8 +36,12 @@ TEST( streamingOperator, DurBaseEighth )
     ss << d;
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( toString, DurBaseEighth )
 {
     DurBaseEighth d;
     CHECK_EQUAL( name, d.toString() )
 }
+T_END
+

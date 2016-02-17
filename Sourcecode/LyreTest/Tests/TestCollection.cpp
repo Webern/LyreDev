@@ -39,6 +39,7 @@ TEST( SO_DefaultCtor, Collection )
     Collection<FakeTestClass> fakes;
     CHECK( fakes.getIsEmpty() )
 }
+T_END
 
 TEST( SO_OtherCtor, Collection )
 {
@@ -56,6 +57,7 @@ TEST( SO_OtherCtor, Collection )
     }
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SO_getCount, Collection )
 {
@@ -65,6 +67,7 @@ TEST( SO_getCount, Collection )
     Collection<FakeTestClass> fakes{ vec };
     CHECK_EQUAL( 2, fakes.getCount() )
 }
+T_END
 
 TEST( SO_getIsEmpty, Collection )
 {
@@ -74,6 +77,7 @@ TEST( SO_getIsEmpty, Collection )
     Collection<FakeTestClass> fakes{ vec };
     CHECK( ! fakes.getIsEmpty() )
 }
+T_END
 
 TEST( SO_getCurrent, Collection )
 {
@@ -86,6 +90,7 @@ TEST( SO_getCurrent, Collection )
     fakes.jump( 2 );
     CHECK_EQUAL( 2, fakes.getCurrent().getValue() )
 }
+T_END
 
 TEST( SO_getCurrentThrowEmpty, Collection )
 {
@@ -103,6 +108,7 @@ TEST( SO_getCurrentThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getCurrentThrowEnd, Collection )
 {
@@ -127,6 +133,7 @@ TEST( SO_getCurrentThrowEnd, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getNext, Collection )
 {
@@ -140,6 +147,7 @@ TEST( SO_getNext, Collection )
     CHECK_EQUAL( 3, fakes.getNext().getValue() )
     CHECK_EQUAL( 2, fakes.getCurrent().getValue() )
 }
+T_END
 
 TEST( SO_getNextThrowEmpty, Collection )
 {
@@ -157,6 +165,7 @@ TEST( SO_getNextThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getNextThrowLast, Collection )
 {
@@ -180,6 +189,7 @@ TEST( SO_getNextThrowLast, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getNextThrowEnd, Collection )
 {
@@ -205,6 +215,7 @@ TEST( SO_getNextThrowEnd, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getPrevious, Collection )
 {
@@ -218,6 +229,7 @@ TEST( SO_getPrevious, Collection )
     CHECK_EQUAL( 1, fakes.getPrevious().getValue() )
     CHECK_EQUAL( 2, fakes.getCurrent().getValue() )
 }
+T_END
 
 TEST( SO_getPreviousThrowEmpty, Collection )
 {
@@ -235,6 +247,7 @@ TEST( SO_getPreviousThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getPreviousThrowFirst, Collection )
 {
@@ -258,6 +271,7 @@ TEST( SO_getPreviousThrowFirst, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getPreviousThrowEnd, Collection )
 {
@@ -283,6 +297,7 @@ TEST( SO_getPreviousThrowEnd, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getIsEnd, Collection )
 {
@@ -296,6 +311,7 @@ TEST( SO_getIsEnd, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SO_last, Collection )
 {
@@ -308,6 +324,7 @@ TEST( SO_last, Collection )
     fakes.last();
     CHECK_EQUAL( 3, fakes.getCurrent().getValue() )
 }
+T_END
 
 TEST( SO_lastEmpty, Collection )
 {
@@ -315,6 +332,7 @@ TEST( SO_lastEmpty, Collection )
     fakes.last();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SO_next, Collection )
 {
@@ -335,6 +353,7 @@ TEST( SO_next, Collection )
     CHECK( fakes.getIsEnd() )
     CHECK( ! fakes.next() )
 }
+T_END
 
 TEST( SO_previous, Collection )
 {
@@ -357,6 +376,7 @@ TEST( SO_previous, Collection )
     
     CHECK( ! fakes.previous() )
 }
+T_END
 
 TEST( SO_jumpThrowEmpty, Collection )
 {
@@ -375,6 +395,7 @@ TEST( SO_jumpThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_jumpThrowNegative, Collection )
 {
@@ -396,6 +417,7 @@ TEST( SO_jumpThrowNegative, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_jumpThrowTooBig, Collection )
 {
@@ -417,6 +439,7 @@ TEST( SO_jumpThrowTooBig, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_jump, Collection )
 {
@@ -433,6 +456,7 @@ TEST( SO_jump, Collection )
     fakes.jump( 3 );
     CHECK_EQUAL( 3, fakes.getCurrent().getValue() )
 }
+T_END
 
 TEST( SO_add, Collection )
 {
@@ -446,6 +470,7 @@ TEST( SO_add, Collection )
     fakes.jump( 4 );
     CHECK_EQUAL( 4, fakes.getCurrent().getValue() )
 }
+T_END
 
 TEST( SO_remove_afterCurrent, Collection )
 {
@@ -468,6 +493,7 @@ TEST( SO_remove_afterCurrent, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SO_remove_current, Collection )
 {
@@ -490,6 +516,7 @@ TEST( SO_remove_current, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SO_remove_beforeCurrent, Collection )
 {
@@ -512,6 +539,7 @@ TEST( SO_remove_beforeCurrent, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SO_remove_first, Collection )
 {
@@ -533,6 +561,7 @@ TEST( SO_remove_first, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SO_remove_last, Collection )
 {
@@ -554,6 +583,7 @@ TEST( SO_remove_last, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SO_remove_throwLow, Collection )
 {
@@ -575,6 +605,7 @@ TEST( SO_remove_throwLow, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_remove_throwHigh, Collection )
 {
@@ -596,6 +627,7 @@ TEST( SO_remove_throwHigh, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_removeCurrent, Collection )
 {
@@ -618,6 +650,7 @@ TEST( SO_removeCurrent, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SO_getExceptionEmpty, Collection )
 {
@@ -634,6 +667,7 @@ TEST( SO_getExceptionEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getExceptionLow, Collection )
 {
@@ -655,6 +689,7 @@ TEST( SO_getExceptionLow, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_getExceptionHigh, Collection )
 {
@@ -676,6 +711,7 @@ TEST( SO_getExceptionHigh, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SO_get, Collection )
 {
@@ -690,6 +726,7 @@ TEST( SO_get, Collection )
     int actual = retreived.getValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getCurrentIndex_ExceptionEmpty, Collection )
 {
@@ -706,6 +743,7 @@ TEST( getCurrentIndex_ExceptionEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( getCurrentIndex, Collection )
 {
@@ -723,6 +761,7 @@ TEST( getCurrentIndex, Collection )
     fakes.jump( 3 );
     CHECK_EQUAL( 3, fakes.getCurrentIndex() )
 }
+T_END
 
 /*******************************************************************************
 Test with unique pointers
@@ -733,6 +772,7 @@ TEST( UP_DefaultCtor, Collection )
     Collection<FakeTestClassUP> fakes;
     CHECK( fakes.getIsEmpty() )
 }
+T_END
 
 TEST( UP_OtherCtor, Collection )
 {
@@ -750,6 +790,7 @@ TEST( UP_OtherCtor, Collection )
     }
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( UP_getCount, Collection )
 {
@@ -759,6 +800,7 @@ TEST( UP_getCount, Collection )
     Collection<FakeTestClassUP> fakes{ vec };
     CHECK_EQUAL( 2, fakes.getCount() )
 }
+T_END
 
 TEST( UP_getIsEmpty, Collection )
 {
@@ -768,6 +810,7 @@ TEST( UP_getIsEmpty, Collection )
     Collection<FakeTestClassUP> fakes{ vec };
     CHECK( ! fakes.getIsEmpty() )
 }
+T_END
 
 TEST( UP_getCurrent, Collection )
 {
@@ -780,6 +823,7 @@ TEST( UP_getCurrent, Collection )
     fakes.jump( 2 );
     CHECK_EQUAL( 2, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( UP_getCurrentThrowEmpty, Collection )
 {
@@ -797,6 +841,7 @@ TEST( UP_getCurrentThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getCurrentThrowEnd, Collection )
 {
@@ -821,6 +866,7 @@ TEST( UP_getCurrentThrowEnd, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getNext, Collection )
 {
@@ -834,6 +880,7 @@ TEST( UP_getNext, Collection )
     CHECK_EQUAL( 3, fakes.getNext()->getValue() )
     CHECK_EQUAL( 2, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( UP_getNextThrowEmpty, Collection )
 {
@@ -851,6 +898,7 @@ TEST( UP_getNextThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getNextThrowLast, Collection )
 {
@@ -874,6 +922,7 @@ TEST( UP_getNextThrowLast, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getNextThrowEnd, Collection )
 {
@@ -899,6 +948,7 @@ TEST( UP_getNextThrowEnd, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getPrevious, Collection )
 {
@@ -912,6 +962,7 @@ TEST( UP_getPrevious, Collection )
     CHECK_EQUAL( 1, fakes.getPrevious()->getValue() )
     CHECK_EQUAL( 2, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( UP_getPreviousThrowEmpty, Collection )
 {
@@ -929,6 +980,7 @@ TEST( UP_getPreviousThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getPreviousThrowFirst, Collection )
 {
@@ -952,6 +1004,7 @@ TEST( UP_getPreviousThrowFirst, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getPreviousThrowEnd, Collection )
 {
@@ -977,6 +1030,7 @@ TEST( UP_getPreviousThrowEnd, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getIsEnd, Collection )
 {
@@ -990,6 +1044,7 @@ TEST( UP_getIsEnd, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( UP_last, Collection )
 {
@@ -1002,6 +1057,7 @@ TEST( UP_last, Collection )
     fakes.last();
     CHECK_EQUAL( 3, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( UP_lastEmpty, Collection )
 {
@@ -1009,6 +1065,7 @@ TEST( UP_lastEmpty, Collection )
     fakes.last();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( UP_next, Collection )
 {
@@ -1029,6 +1086,7 @@ TEST( UP_next, Collection )
     CHECK( fakes.getIsEnd() )
     CHECK( ! fakes.next() )
 }
+T_END
 
 TEST( UP_previous, Collection )
 {
@@ -1051,6 +1109,7 @@ TEST( UP_previous, Collection )
     
     CHECK( ! fakes.previous() )
 }
+T_END
 
 TEST( UP_jumpThrowEmpty, Collection )
 {
@@ -1069,6 +1128,7 @@ TEST( UP_jumpThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_jumpThrowNegative, Collection )
 {
@@ -1090,6 +1150,7 @@ TEST( UP_jumpThrowNegative, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_jumpThrowTooBig, Collection )
 {
@@ -1111,6 +1172,7 @@ TEST( UP_jumpThrowTooBig, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_jump, Collection )
 {
@@ -1127,6 +1189,7 @@ TEST( UP_jump, Collection )
     fakes.jump( 3 );
     CHECK_EQUAL( 3, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( UP_add, Collection )
 {
@@ -1140,6 +1203,7 @@ TEST( UP_add, Collection )
     fakes.jump( 4 );
     CHECK_EQUAL( 4, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( UP_addThrowNull, Collection )
 {
@@ -1161,6 +1225,7 @@ TEST( UP_addThrowNull, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_remove_afterCurrent, Collection )
 {
@@ -1183,6 +1248,7 @@ TEST( UP_remove_afterCurrent, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( UP_remove_current, Collection )
 {
@@ -1205,6 +1271,7 @@ TEST( UP_remove_current, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( UP_remove_beforeCurrent, Collection )
 {
@@ -1227,6 +1294,7 @@ TEST( UP_remove_beforeCurrent, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( UP_remove_first, Collection )
 {
@@ -1248,6 +1316,7 @@ TEST( UP_remove_first, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( UP_remove_last, Collection )
 {
@@ -1269,6 +1338,7 @@ TEST( UP_remove_last, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( UP_remove_throwLow, Collection )
 {
@@ -1290,6 +1360,7 @@ TEST( UP_remove_throwLow, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_remove_throwHigh, Collection )
 {
@@ -1311,6 +1382,7 @@ TEST( UP_remove_throwHigh, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_removeCurrent, Collection )
 {
@@ -1333,6 +1405,7 @@ TEST( UP_removeCurrent, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( UP_getExceptionEmpty, Collection )
 {
@@ -1349,6 +1422,7 @@ TEST( UP_getExceptionEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getExceptionLow, Collection )
 {
@@ -1370,6 +1444,7 @@ TEST( UP_getExceptionLow, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getExceptionHigh, Collection )
 {
@@ -1391,6 +1466,7 @@ TEST( UP_getExceptionHigh, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_get, Collection )
 {
@@ -1405,6 +1481,7 @@ TEST( UP_get, Collection )
     int actual = retreived->getValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( UP_getCurrentIndex_ExceptionEmpty, Collection )
 {
@@ -1421,6 +1498,7 @@ TEST( UP_getCurrentIndex_ExceptionEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( UP_getCurrentIndex, Collection )
 {
@@ -1438,6 +1516,7 @@ TEST( UP_getCurrentIndex, Collection )
     fakes.jump( 3 );
     CHECK_EQUAL( 3, fakes.getCurrentIndex() )
 }
+T_END
 
 
 /*******************************************************************************
@@ -1449,6 +1528,7 @@ TEST( SP_DefaultCtor, Collection )
     Collection<FakeTestClassSP> fakes;
     CHECK( fakes.getIsEmpty() )
 }
+T_END
 
 TEST( SP_OtherCtor, Collection )
 {
@@ -1466,6 +1546,7 @@ TEST( SP_OtherCtor, Collection )
     }
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SP_getCount, Collection )
 {
@@ -1475,6 +1556,7 @@ TEST( SP_getCount, Collection )
     Collection<FakeTestClassSP> fakes{ vec };
     CHECK_EQUAL( 2, fakes.getCount() )
 }
+T_END
 
 TEST( SP_getIsEmpty, Collection )
 {
@@ -1484,6 +1566,7 @@ TEST( SP_getIsEmpty, Collection )
     Collection<FakeTestClassSP> fakes{ vec };
     CHECK( ! fakes.getIsEmpty() )
 }
+T_END
 
 TEST( SP_getCurrent, Collection )
 {
@@ -1496,6 +1579,7 @@ TEST( SP_getCurrent, Collection )
     fakes.jump( 2 );
     CHECK_EQUAL( 2, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( SP_getCurrentThrowEmpty, Collection )
 {
@@ -1513,6 +1597,7 @@ TEST( SP_getCurrentThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getCurrentThrowEnd, Collection )
 {
@@ -1537,6 +1622,7 @@ TEST( SP_getCurrentThrowEnd, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getNext, Collection )
 {
@@ -1550,6 +1636,7 @@ TEST( SP_getNext, Collection )
     CHECK_EQUAL( 3, fakes.getNext()->getValue() )
     CHECK_EQUAL( 2, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( SP_getNextThrowEmpty, Collection )
 {
@@ -1567,6 +1654,7 @@ TEST( SP_getNextThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getNextThrowLast, Collection )
 {
@@ -1590,6 +1678,7 @@ TEST( SP_getNextThrowLast, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getNextThrowEnd, Collection )
 {
@@ -1615,6 +1704,7 @@ TEST( SP_getNextThrowEnd, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getPrevious, Collection )
 {
@@ -1628,6 +1718,7 @@ TEST( SP_getPrevious, Collection )
     CHECK_EQUAL( 1, fakes.getPrevious()->getValue() )
     CHECK_EQUAL( 2, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( SP_getPreviousThrowEmpty, Collection )
 {
@@ -1645,6 +1736,7 @@ TEST( SP_getPreviousThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getPreviousThrowFirst, Collection )
 {
@@ -1668,6 +1760,7 @@ TEST( SP_getPreviousThrowFirst, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getPreviousThrowEnd, Collection )
 {
@@ -1693,6 +1786,7 @@ TEST( SP_getPreviousThrowEnd, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getIsEnd, Collection )
 {
@@ -1706,6 +1800,7 @@ TEST( SP_getIsEnd, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SP_last, Collection )
 {
@@ -1718,6 +1813,7 @@ TEST( SP_last, Collection )
     fakes.last();
     CHECK_EQUAL( 3, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( SP_lastEmpty, Collection )
 {
@@ -1725,6 +1821,7 @@ TEST( SP_lastEmpty, Collection )
     fakes.last();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SP_next, Collection )
 {
@@ -1745,6 +1842,7 @@ TEST( SP_next, Collection )
     CHECK( fakes.getIsEnd() )
     CHECK( ! fakes.next() )
 }
+T_END
 
 TEST( SP_previous, Collection )
 {
@@ -1767,6 +1865,7 @@ TEST( SP_previous, Collection )
     
     CHECK( ! fakes.previous() )
 }
+T_END
 
 TEST( SP_jumpThrowEmpty, Collection )
 {
@@ -1785,6 +1884,7 @@ TEST( SP_jumpThrowEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_jumpThrowNegative, Collection )
 {
@@ -1806,6 +1906,7 @@ TEST( SP_jumpThrowNegative, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_jumpThrowTooBig, Collection )
 {
@@ -1827,6 +1928,7 @@ TEST( SP_jumpThrowTooBig, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_jump, Collection )
 {
@@ -1843,6 +1945,7 @@ TEST( SP_jump, Collection )
     fakes.jump( 3 );
     CHECK_EQUAL( 3, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( SP_add, Collection )
 {
@@ -1856,6 +1959,7 @@ TEST( SP_add, Collection )
     fakes.jump( 4 );
     CHECK_EQUAL( 4, fakes.getCurrent()->getValue() )
 }
+T_END
 
 TEST( SP_addThrowNull, Collection )
 {
@@ -1877,6 +1981,7 @@ TEST( SP_addThrowNull, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_remove_afterCurrent, Collection )
 {
@@ -1899,6 +2004,7 @@ TEST( SP_remove_afterCurrent, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SP_remove_current, Collection )
 {
@@ -1921,6 +2027,7 @@ TEST( SP_remove_current, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SP_remove_beforeCurrent, Collection )
 {
@@ -1943,6 +2050,7 @@ TEST( SP_remove_beforeCurrent, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SP_remove_first, Collection )
 {
@@ -1964,6 +2072,7 @@ TEST( SP_remove_first, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SP_remove_last, Collection )
 {
@@ -1985,6 +2094,7 @@ TEST( SP_remove_last, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SP_remove_throwLow, Collection )
 {
@@ -2006,6 +2116,7 @@ TEST( SP_remove_throwLow, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_remove_throwHigh, Collection )
 {
@@ -2027,6 +2138,7 @@ TEST( SP_remove_throwHigh, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_removeCurrent, Collection )
 {
@@ -2049,6 +2161,7 @@ TEST( SP_removeCurrent, Collection )
     fakes.next();
     CHECK( fakes.getIsEnd() )
 }
+T_END
 
 TEST( SP_getExceptionEmpty, Collection )
 {
@@ -2065,6 +2178,7 @@ TEST( SP_getExceptionEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getExceptionLow, Collection )
 {
@@ -2086,6 +2200,7 @@ TEST( SP_getExceptionLow, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getExceptionHigh, Collection )
 {
@@ -2107,6 +2222,7 @@ TEST( SP_getExceptionHigh, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_get, Collection )
 {
@@ -2121,6 +2237,7 @@ TEST( SP_get, Collection )
     int actual = retreived->getValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( SP_getCurrentIndex_ExceptionEmpty, Collection )
 {
@@ -2137,6 +2254,7 @@ TEST( SP_getCurrentIndex_ExceptionEmpty, Collection )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( SP_getCurrentIndex, Collection )
 {
@@ -2154,3 +2272,5 @@ TEST( SP_getCurrentIndex, Collection )
     fakes.jump( 3 );
     CHECK_EQUAL( 3, fakes.getCurrentIndex() )
 }
+T_END
+

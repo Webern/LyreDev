@@ -25,6 +25,7 @@ TEST( ctor1, ITupletDef )
     CHECK_EQUAL( 4 , t->getInTheSpaceOf() )
     CHECK_EQUAL( "32nd" , t->getInTheSpaceOfType()->toString() )
 }
+T_END
 
 TEST( ctor2, ITupletDef )
 {
@@ -39,6 +40,7 @@ TEST( ctor2, ITupletDef )
     CHECK_EQUAL( 2 , t->getInTheSpaceOf() )
     CHECK_EQUAL( "Quarter" , t->getInTheSpaceOfType()->toString() )
 }
+T_END
 
 TEST( ctor3, ITupletDef )
 {
@@ -52,6 +54,7 @@ TEST( ctor3, ITupletDef )
     CHECK_EQUAL( 6 , t->getInTheSpaceOf() )
     CHECK_EQUAL( "Eighth" , t->getInTheSpaceOfType()->toString() )
 }
+T_END
 
 TEST( clone, ITupletDef )
 {
@@ -67,6 +70,7 @@ TEST( clone, ITupletDef )
     CHECK( orig->getTotalLength() == cloned->getTotalLength() )
     CHECK( orig->toString() == cloned->toString() )
 }
+T_END
 
 TEST( getMultiplier1, ITupletDef )
 {
@@ -77,6 +81,7 @@ TEST( getMultiplier1, ITupletDef )
     Rational actual = t->getMultiplier();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getMultiplier2, ITupletDef )
 {
@@ -87,6 +92,7 @@ TEST( getMultiplier2, ITupletDef )
     Rational actual = t->getMultiplier();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getMultiplier3, ITupletDef )
 {
@@ -97,6 +103,7 @@ TEST( getMultiplier3, ITupletDef )
     Rational actual = t->getMultiplier();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTotalLength1, ITupletDef )
 {
@@ -110,6 +117,7 @@ TEST( getTotalLength1, ITupletDef )
     auto actual = t->getTotalLength();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTotalLength2, ITupletDef )
 {
@@ -122,6 +130,7 @@ TEST( getTotalLength2, ITupletDef )
     auto actual = t->getTotalLength();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTotalLength3, ITupletDef )
 {
@@ -133,6 +142,7 @@ TEST( getTotalLength3, ITupletDef )
     auto actual = t->getTotalLength();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getTotalLength4, ITupletDef )
 {
@@ -150,6 +160,7 @@ TEST( getTotalLength4, ITupletDef )
     actual = t->getMultiplier();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getters, ITupletDef )
 {
@@ -167,6 +178,7 @@ TEST( getters, ITupletDef )
     CHECK_EQUAL( 17 , t->getInTheSpaceOf() )
     CHECK_EQUAL( *itspoType, *( t->getInTheSpaceOfType() ) )
 }
+T_END
 
 TEST( toStream, ITupletDef )
 {
@@ -185,6 +197,7 @@ TEST( toStream, ITupletDef )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( streamingOperator, ITupletDef )
 {
@@ -203,7 +216,7 @@ TEST( streamingOperator, ITupletDef )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
-
+T_END
 
 TEST( toString, ITupletDef )
 {
@@ -220,6 +233,7 @@ TEST( toString, ITupletDef )
     String actual = t->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getIsValid1, ITupletDef )
 {
@@ -228,6 +242,7 @@ TEST( getIsValid1, ITupletDef )
         1, 1, "32nd" );
     CHECK( ! ( t->getIsValid() ) )
 }
+T_END
 
 TEST( getIsValid2, ITupletDef )
 {
@@ -236,3 +251,4 @@ TEST( getIsValid2, ITupletDef )
         3, 2, "32nd" );
     CHECK( t->getIsValid() )
 }
+T_END

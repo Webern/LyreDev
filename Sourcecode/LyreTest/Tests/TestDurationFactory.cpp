@@ -19,6 +19,7 @@ TEST( durRationLut01, IDurDotFactory )
     auto expected = factory->createDuration( "Quarter" );
     CHECK_EQUAL( expected->toString(), actual->toString() )
 }
+T_END
 
 TEST( durRationLut02, IDurDotFactory )
 {
@@ -26,3 +27,4 @@ TEST( durRationLut02, IDurDotFactory )
     auto expected = factory->createDuration( "Quarter", 1 );
     CHECK_EQUAL( expected->toString(), actual->toString() )
 }
+T_END

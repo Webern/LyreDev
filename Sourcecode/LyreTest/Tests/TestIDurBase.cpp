@@ -15,6 +15,8 @@ TEST( createMockDur, IDurBase )
     IDurBaseUP d = createMockDurBase( val, name );
     CHECK( d != nullptr )
 }
+T_END
+
 TEST( getValue, IDurBase )
 {
     Rational val{ 4, 3 };
@@ -22,6 +24,8 @@ TEST( getValue, IDurBase )
     IDurBaseUP d = createMockDurBase( val, name );
     CHECK_EQUAL( val, d->getValue() )
 }
+T_END
+
 TEST( toStream, IDurBase )
 {
     Rational val{ 9, 7 };
@@ -31,6 +35,8 @@ TEST( toStream, IDurBase )
     d->toStream( ss );
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( streamingOperator, IDurBase )
 {
     Rational val{ 9, 7 };
@@ -40,6 +46,8 @@ TEST( streamingOperator, IDurBase )
     ss << (*d);
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( toString, IDurBase )
 {
     Rational val{ 12, 13 };
@@ -47,6 +55,8 @@ TEST( toString, IDurBase )
     IDurBaseUP d = createMockDurBase( val, name );
     CHECK_EQUAL( name, d->toString() )
 }
+T_END
+
 TEST( isEqualTo1, IDurBase )
 {
     IDurBaseFactoryUP factory = createDurBaseFactory( DurBaseFactoryType::Standard );
@@ -74,6 +84,8 @@ TEST( isEqualTo1, IDurBase )
     CHECK( ! ( *durA < *durB ) )
     CHECK( ! ( *durB < *durA ) )
 }
+T_END
+
 TEST( isEqualTo2, IDurBase )
 {
     IDurBaseFactoryUP factory = createDurBaseFactory( DurBaseFactoryType::Standard );
@@ -101,6 +113,8 @@ TEST( isEqualTo2, IDurBase )
     CHECK( ! ( *durA < *durB ) )
     CHECK( ! ( *durB < *durA ) )
 }
+T_END
+
 TEST( isGreaterThan, IDurBase )
 {
     IDurBaseFactoryUP factory = createDurBaseFactory( DurBaseFactoryType::Standard );
@@ -128,6 +142,8 @@ TEST( isGreaterThan, IDurBase )
     CHECK( ! ( *durA < *durB ) )
     CHECK(   ( *durB < *durA ) )
 }
+T_END
+
 TEST( isLessThan, IDurBase )
 {
     IDurBaseFactoryUP factory = createDurBaseFactory( DurBaseFactoryType::Standard );
@@ -155,3 +171,4 @@ TEST( isLessThan, IDurBase )
     CHECK(   ( *durA < *durB ) )
     CHECK( ! ( *durB < *durA ) )
 }
+T_END

@@ -11,6 +11,7 @@ TEST( createTupletDefFactory, ITupletDefFactory )
     ITupletDefFactoryUP factory = createTupletDefFactory( TupletDefFactoryType::Standard );
     CHECK( factory != nullptr )
 }
+T_END
 
 TEST( createTupletDef1, ITupletDefFactory )
 {
@@ -23,6 +24,7 @@ TEST( createTupletDef1, ITupletDefFactory )
     
     CHECK( t != nullptr )
 }
+T_END
 
 TEST( createTupletDef2, ITupletDefFactory )
 {
@@ -34,6 +36,7 @@ TEST( createTupletDef2, ITupletDefFactory )
     
     CHECK( t != nullptr )
 }
+T_END
 
 TEST( createTupletDef3, ITupletDefFactory )
 {
@@ -44,3 +47,4 @@ TEST( createTupletDef3, ITupletDefFactory )
     
     CHECK( t != nullptr )
 }
+T_END

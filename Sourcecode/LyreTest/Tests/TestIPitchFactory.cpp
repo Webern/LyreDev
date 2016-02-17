@@ -25,6 +25,8 @@ TEST( createPitch_and_next, IPitchFactory )
         f.next();
     }
 }
+T_END
+
 TEST( createPitch_and_previous, IPitchFactory )
 {
     MockPitchFactory f;
@@ -36,12 +38,14 @@ TEST( createPitch_and_previous, IPitchFactory )
         f.previous();
     }
 }
+T_END
 
 TEST( standardChromaticExists, IPitchFactory )
 {
     IPitchFactoryUP f = createPitchFactory( PitchFactoryType::StandardChromatic );
     CHECK( f != nullptr )
 }
+T_END
 
 TEST( setPitch, IPitchFactory )
 {
@@ -55,3 +59,4 @@ TEST( setPitch, IPitchFactory )
     CHECK_EQUAL( 5, f->createPitch()->getStepValue() )
     CHECK_EQUAL( 4, f->createPitch()->getOctaveValue() )
 }
+T_END

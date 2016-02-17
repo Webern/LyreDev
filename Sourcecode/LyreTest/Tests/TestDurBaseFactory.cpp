@@ -22,6 +22,8 @@ TEST( Works, DurBaseFactory )
     CHECK( f.createDur( "Longa" )->getValue() == Rational( 16, 1 ) )
     
 }
+T_END
+
 TEST( Throws, DurBaseFactory )
 {
     DurBaseFactory f;
@@ -38,3 +40,4 @@ TEST( Throws, DurBaseFactory )
     String actual = message;
     CHECK( actual.find( expected ) != String::npos );
 }
+T_END

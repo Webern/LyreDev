@@ -25,3 +25,4 @@ TEST( abc, xyz )
     //CHECK_EQUAL( 22, ( *copy2SP ) )
     
 }
+T_END

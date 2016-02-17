@@ -18,6 +18,7 @@ TEST( testSetupWorks, IDurDot )
     CHECK( factory != nullptr )
     CHECK( dur != nullptr )
 }
+T_END
 
 TEST( constructorA_1, IDurDot )
 {
@@ -25,6 +26,7 @@ TEST( constructorA_1, IDurDot )
     CHECK_EQUAL( 1, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 1 ), dur->getDurBaseValue() )
 }
+T_END
 
 TEST( constructorA_2, IDurDot )
 {
@@ -32,6 +34,7 @@ TEST( constructorA_2, IDurDot )
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 2 ), dur->getDurBaseValue() )
 }
+T_END
 
 TEST( constructorA_3_InvalidDotInput, IDurDot )
 {
@@ -39,6 +42,7 @@ TEST( constructorA_3_InvalidDotInput, IDurDot )
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 2 ), dur->getDurBaseValue() )
 }
+T_END
 
 TEST( constructorA_4_InvalidDurName, IDurDot )
 {
@@ -54,6 +58,7 @@ TEST( constructorA_4_InvalidDurName, IDurDot )
     }
     CHECK( actual.find( expected ) != String::npos )
 }
+T_END
 
 TEST( constructorB_1, IDurDot )
 {
@@ -61,6 +66,7 @@ TEST( constructorB_1, IDurDot )
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 1 ), dur->getDurBaseValue() )
 }
+T_END
 
 TEST( constructorB_2, IDurDot )
 {
@@ -68,6 +74,7 @@ TEST( constructorB_2, IDurDot )
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 2 ), dur->getDurBaseValue() )
 }
+T_END
 
 TEST( constructorB_3_InvalidDurName, IDurDot )
 {
@@ -83,6 +90,7 @@ TEST( constructorB_3_InvalidDurName, IDurDot )
     }
     CHECK( actual.find( expected ) != String::npos )
 }
+T_END
 
 TEST( setDotsInvalid, IDurDot )
 {
@@ -91,6 +99,7 @@ TEST( setDotsInvalid, IDurDot )
     dur->setDotCount( -1 );
     CHECK_EQUAL( 0, dur->getDotCount() )
 }
+T_END
 
 TEST( setDotsValid, IDurDot )
 {
@@ -99,6 +108,7 @@ TEST( setDotsValid, IDurDot )
     dur->setDotCount( 2 );
     CHECK_EQUAL( 2, dur->getDotCount() )
 }
+T_END
 
 TEST( getValue_noDots, IDurDot )
 {
@@ -107,6 +117,7 @@ TEST( getValue_noDots, IDurDot )
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue_with1Dot, IDurDot )
 {
@@ -115,6 +126,7 @@ TEST( getValue_with1Dot, IDurDot )
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue_with2Dots, IDurDot )
 {
@@ -123,6 +135,7 @@ TEST( getValue_with2Dots, IDurDot )
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue_with3Dots, IDurDot )
 {
@@ -131,6 +144,7 @@ TEST( getValue_with3Dots, IDurDot )
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue_with4Dots, IDurDot )
 {
@@ -139,6 +153,7 @@ TEST( getValue_with4Dots, IDurDot )
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getValue_withMaxDots, IDurDot )
 {
@@ -147,6 +162,7 @@ TEST( getValue_withMaxDots, IDurDot )
     Float actual = dur->getValue().getFloat();
     CHECK_DOUBLES_EQUAL( expected, actual, 0.0001 )
 }
+T_END
 
 TEST( getValue_withTooManyDots, IDurDot )
 {
@@ -164,6 +180,7 @@ TEST( getValue_withTooManyDots, IDurDot )
     }
     CHECK( actual.find( expected ) != String::npos )
 }
+T_END
 
 TEST( clone, IDurDot )
 {
@@ -177,6 +194,7 @@ TEST( clone, IDurDot )
     CHECK_EQUAL( 2, orig->getDotCount() )
     CHECK_EQUAL( 3, cloned->getDotCount() )
 }
+T_END
 
 TEST( toStream, IDurDot )
 {
@@ -187,6 +205,7 @@ TEST( toStream, IDurDot )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( toString, IDurDot )
 {
@@ -195,6 +214,7 @@ TEST( toString, IDurDot )
     String actual = dur->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( streamingOperator, IDurDot )
 {
@@ -205,6 +225,7 @@ TEST( streamingOperator, IDurDot )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getDurBaseName, IDurDot )
 {
@@ -213,6 +234,7 @@ TEST( getDurBaseName, IDurDot )
     String actual = dur->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( isEqualTo1, IDurDot )
 {
@@ -238,6 +260,7 @@ TEST( isEqualTo1, IDurDot )
     CHECK( ! ( *durA < *durB ) )
     CHECK( ! ( *durB < *durA ) )
 }
+T_END
 
 TEST( isEqualTo2, IDurDot )
 {
@@ -263,6 +286,7 @@ TEST( isEqualTo2, IDurDot )
     CHECK( ! ( *durA < *durB ) )
     CHECK( ! ( *durB < *durA ) )
 }
+T_END
 
 TEST( isGreaterThan, IDurDot )
 {
@@ -288,6 +312,7 @@ TEST( isGreaterThan, IDurDot )
     CHECK( ! ( *durA < *durB ) )
     CHECK(   ( *durB < *durA ) )
 }
+T_END
 
 TEST( isLessThan, IDurDot )
 {
@@ -313,3 +338,4 @@ TEST( isLessThan, IDurDot )
     CHECK(   ( *durA < *durB ) )
     CHECK( ! ( *durB < *durA ) )
 }
+T_END

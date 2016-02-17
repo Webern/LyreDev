@@ -18,6 +18,8 @@ TEST( getValue, DurBaseQuarter )
     DurBaseQuarter d;
     CHECK_EQUAL( value, d.getValue() )
 }
+T_END
+
 TEST( toStream, DurBaseQuarter )
 {
     DurBaseQuarter d;
@@ -25,6 +27,8 @@ TEST( toStream, DurBaseQuarter )
     d.toStream( ss );
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( streamingOperator, DurBaseQuarter )
 {
     DurBaseQuarter d;
@@ -32,8 +36,11 @@ TEST( streamingOperator, DurBaseQuarter )
     ss << d;
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( toString, DurBaseQuarter )
 {
     DurBaseQuarter d;
     CHECK_EQUAL( name, d.toString() )
 }
+T_END

@@ -15,6 +15,8 @@ TEST( defaultConstructor, PitchName )
     CHECK_EQUAL( 0, n->getAlterValue() )
     CHECK_EQUAL( 0, n->getValue() )
 }
+T_END
+
 TEST( constructor01, PitchName )
 {
     PitchNameUP n{ new PitchName{ 1, 2 } };
@@ -22,6 +24,8 @@ TEST( constructor01, PitchName )
     CHECK_EQUAL( 2, n->getAlterValue() )
     CHECK_EQUAL( 4, n->getValue() )
 }
+T_END
+
 TEST( constructor02, PitchName )
 {
     PitchNameUP n{ new PitchName{ "Ab" } };
@@ -29,6 +33,8 @@ TEST( constructor02, PitchName )
     CHECK_EQUAL( -1, n->getAlterValue() )
     CHECK_EQUAL( 8, n->getValue() )
 }
+T_END
+
 TEST( copyConstructor, PitchName )
 {
     PitchName orig{ "B" };
@@ -39,6 +45,8 @@ TEST( copyConstructor, PitchName )
     CHECK_EQUAL( 11, orig.getValue() )
     CHECK_EQUAL( 0, copy.getValue() )
 }
+T_END
+
 TEST( moveConstructor, PitchName )
 {
     PitchName orig{ "B" };
@@ -47,6 +55,8 @@ TEST( moveConstructor, PitchName )
     copy.setStepValue( 0 );
     CHECK_EQUAL( 0, copy.getValue() )
 }
+T_END
+
 TEST( assignment, PitchName )
 {
     PitchName orig{ "B" };
@@ -58,6 +68,8 @@ TEST( assignment, PitchName )
     CHECK_EQUAL( 11, orig.getValue() )
     CHECK_EQUAL( 0, copy.getValue() )
 }
+T_END
+
 TEST( moveAssignment, PitchName )
 {
     PitchName orig{ "B" };
@@ -67,6 +79,8 @@ TEST( moveAssignment, PitchName )
     copy.setStepValue( 0 );
     CHECK_EQUAL( 0, copy.getValue() )
 }
+T_END
+
 TEST( clone, PitchName )
 {
     PitchNameUP orig{ new PitchName{ "B" } };
@@ -81,306 +95,408 @@ TEST( clone, PitchName )
     CHECK_EQUAL( 11, orig->getValue() )
     CHECK_EQUAL( 0, copy->getValue() )
 }
+T_END
+
 TEST( getValue01, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gddd" );
     CHECK_EQUAL( 1, n->getValue() )
 }
+T_END
+
 TEST( getValue02, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gddb" );;
     CHECK_EQUAL( 2, n->getValue() )
 }
+T_END
+
 TEST( getValue03, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gdd" );;
     CHECK_EQUAL( 3, n->getValue() )
 }
+T_END
+
 TEST( getValue04, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gdb" );;
     CHECK_EQUAL( 4, n->getValue() )
 }
+T_END
+
 TEST( getValue05, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gd" );;
     CHECK_EQUAL( 5, n->getValue() )
 }
+T_END
+
 TEST( getValue06, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gb" );;
     CHECK_EQUAL( 6, n->getValue() )
 }
+T_END
+
 TEST( getValue07, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "G" );;
     CHECK_EQUAL( 7, n->getValue() )
 }
+T_END
+
 TEST( getValue08, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "G#" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
+T_END
+
 TEST( getValue09, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gx" );;
     CHECK_EQUAL( 9, n->getValue() )
 }
+T_END
+
 TEST( getValue10, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gx#" );;
     CHECK_EQUAL( 10, n->getValue() )
 }
+T_END
+
 TEST( getValue11, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gxx" );;
     CHECK_EQUAL( 11, n->getValue() )
 }
+T_END
+
 TEST( getValue12, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gxx#" );;
     CHECK_EQUAL( 0, n->getValue() )
 }
+T_END
+
 TEST( getValue13, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gxxx" );;
     CHECK_EQUAL( 1, n->getValue() )
 }
+T_END
+
 TEST( getValue14, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Dddd" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
+T_END
+
 TEST( getValue15, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Dddb" );;
     CHECK_EQUAL( 9, n->getValue() )
 }
+T_END
+
 TEST( getValue16, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Ddd" );;
     CHECK_EQUAL( 10, n->getValue() )
 }
+T_END
+
 TEST( getValue17, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Ddb" );;
     CHECK_EQUAL( 11, n->getValue() )
 }
+T_END
+
 TEST( getValue18, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Dd" );;
     CHECK_EQUAL( 0, n->getValue() )
 }
+T_END
+
 TEST( getValue19, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Db" );;
     CHECK_EQUAL( 1, n->getValue() )
 }
+T_END
+
 TEST( getValue20, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "D" );;
     CHECK_EQUAL( 2, n->getValue() )
 }
+T_END
+
 TEST( getValue21, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "D#" );;
     CHECK_EQUAL( 3, n->getValue() )
 }
+T_END
+
 TEST( getValue22, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Dx" );;
     CHECK_EQUAL( 4, n->getValue() )
 }
+T_END
+
 TEST( getValue23, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Dx#" );;
     CHECK_EQUAL( 5, n->getValue() )
 }
+T_END
+
 TEST( getValue24, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Dxx" );;
     CHECK_EQUAL( 6, n->getValue() )
 }
+T_END
+
 TEST( getValue25, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Dxx#" );;
     CHECK_EQUAL( 7, n->getValue() )
 }
+T_END
+
 TEST( getValue26, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Dxxx" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
+T_END
+
 TEST( getValue27, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "B#" );;
     CHECK_EQUAL( 0, n->getValue() )
 }
+T_END
+
 TEST( getValue28, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "C" );;
     CHECK_EQUAL( 0, n->getValue() )
 }
+T_END
+
 TEST( getValue29, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Db" );;
     CHECK_EQUAL( 1, n->getValue() )
 }
+T_END
+
 TEST( getValue30, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "C#" );;
     CHECK_EQUAL( 1, n->getValue() )
 }
+T_END
+
 TEST( getValue31, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "D" );;
     CHECK_EQUAL( 2, n->getValue() )
 }
+T_END
+
 TEST( getValue32, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Cx" );;
     CHECK_EQUAL( 2, n->getValue() )
 }
+T_END
+
 TEST( getValue33, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Eb" );;
     CHECK_EQUAL( 3, n->getValue() )
 }
+T_END
+
 TEST( getValue34, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "D#" );;
     CHECK_EQUAL( 3, n->getValue() )
 }
+T_END
+
 TEST( getValue37, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "E" );;
     CHECK_EQUAL( 4, n->getValue() )
 }
+T_END
+
 TEST( getValue38, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Fb" );;
     CHECK_EQUAL( 4, n->getValue() )
 }
+T_END
+
 TEST( getValue39, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "F" );;
     CHECK_EQUAL( 5, n->getValue() )
 }
+T_END
+
 TEST( getValue40, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "E#" );;
     CHECK_EQUAL( 5, n->getValue() )
 }
+T_END
+
 TEST( getValue41, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gb" );;
     CHECK_EQUAL( 6, n->getValue() )
 }
+T_END
+
 TEST( getValue42, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "F#" );;
     CHECK_EQUAL( 6, n->getValue() )
 }
+T_END
+
 TEST( getValue43, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "G" );;
     CHECK_EQUAL( 7, n->getValue() )
 }
+T_END
+
 TEST( getValue44, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Ad" );;
     CHECK_EQUAL( 7, n->getValue() )
 }
+T_END
+
 TEST( getValue45, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Ab" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
+T_END
+
 TEST( getValue46, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "G#" );;
     CHECK_EQUAL( 8, n->getValue() )
 }
+T_END
+
 TEST( getValue47, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "A" );;
     CHECK_EQUAL( 9, n->getValue() )
 }
+T_END
+
 TEST( getValue48, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Gx" );;
     CHECK_EQUAL( 9, n->getValue() )
 }
+T_END
+
 TEST( getValue49, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Bb" );;
     CHECK_EQUAL( 10, n->getValue() )
 }
+T_END
+
 TEST( getValue50, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "A#" );;
     CHECK_EQUAL( 10, n->getValue() )
 }
+T_END
+
 TEST( getValue51, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "B" );;
     CHECK_EQUAL( 11, n->getValue() )
 }
+T_END
+
 TEST( getValue52, PitchName )
 {
     PitchNameUP n{ new PitchName{} };
     n->parse( "Cb" );;
     CHECK_EQUAL( 11, n->getValue() )
 }
+T_END
+
 TEST( parse_fail01, PitchName )
 {
     PitchNameUP n{ new PitchName{ "F" } };
@@ -388,6 +504,8 @@ TEST( parse_fail01, PitchName )
     CHECK( ! n->parse( "Cbd" ) )
     CHECK_EQUAL( 5, n->getValue() )
 }
+T_END
+
 TEST( parse_fail02, PitchName )
 {
     PitchNameUP n{ new PitchName{ "F#" } };
@@ -395,6 +513,8 @@ TEST( parse_fail02, PitchName )
     CHECK( ! n->parse( "H" ) )
     CHECK_EQUAL( 6, n->getValue() )
 }
+T_END
+
 TEST( parse_fail03, PitchName )
 {
     PitchNameUP n{ new PitchName{ "G" } };
@@ -402,6 +522,8 @@ TEST( parse_fail03, PitchName )
     CHECK( ! n->parse( "#" ) )
     CHECK_EQUAL( 7, n->getValue() )
 }
+T_END
+
 TEST( parse_fail04, PitchName )
 {
     PitchNameUP n{ new PitchName{ "Ab" } };
@@ -409,6 +531,8 @@ TEST( parse_fail04, PitchName )
     CHECK( ! n->parse( "a" ) )
     CHECK_EQUAL( 8, n->getValue() )
 }
+T_END
+
 TEST( parse_success01, PitchName )
 {
     PitchNameUP n{ new PitchName{ "F" } };
@@ -416,6 +540,8 @@ TEST( parse_success01, PitchName )
     CHECK( n->parse( "B#" ) )
     CHECK_EQUAL( 0, n->getValue() )
 }
+T_END
+
 TEST( parse_success02, PitchName )
 {
     PitchNameUP n{ new PitchName{ "F#" } };
@@ -423,6 +549,8 @@ TEST( parse_success02, PitchName )
     CHECK( n->parse( "Bb" ) )
     CHECK_EQUAL( 10, n->getValue() )
 }
+T_END
+
 TEST( parse_success03, PitchName )
 {
     PitchNameUP n{ new PitchName{ "G" } };
@@ -430,6 +558,8 @@ TEST( parse_success03, PitchName )
     CHECK( n->parse( "C#" ) )
     CHECK_EQUAL( 1, n->getValue() )
 }
+T_END
+
 TEST( parse_success04, PitchName )
 {
     PitchNameUP n{ new PitchName{ "Ab" } };
@@ -437,6 +567,8 @@ TEST( parse_success04, PitchName )
     CHECK( n->parse( "Cdb" ) )
     CHECK_EQUAL( 9, n->getValue() )
 }
+T_END
+
 TEST( toStream00, PitchName )
 {
     String str = "Bb";
@@ -447,6 +579,8 @@ TEST( toStream00, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream01, PitchName )
 {
     String str = "Cxxx";
@@ -457,6 +591,8 @@ TEST( toStream01, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream02, PitchName )
 {
     String str = "G#";
@@ -467,6 +603,8 @@ TEST( toStream02, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream03, PitchName )
 {
     String str = "Bb";
@@ -477,6 +615,8 @@ TEST( toStream03, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream04, PitchName )
 {
     String str = "Ed";
@@ -487,6 +627,8 @@ TEST( toStream04, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream05, PitchName )
 {
     String str = "Fb";
@@ -497,6 +639,8 @@ TEST( toStream05, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream06, PitchName )
 {
     String str = "Gb";
@@ -507,6 +651,8 @@ TEST( toStream06, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream07, PitchName )
 {
     String str = "B";
@@ -517,6 +663,8 @@ TEST( toStream07, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream08, PitchName )
 {
     String str = "A";
@@ -527,6 +675,8 @@ TEST( toStream08, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream09, PitchName )
 {
     String str = "Axxxxxxx";
@@ -537,6 +687,8 @@ TEST( toStream09, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toStream10, PitchName )
 {
     String str = "Edddddddddddddb";
@@ -547,6 +699,8 @@ TEST( toStream10, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator00, PitchName )
 {
     String str = "Bb";
@@ -557,6 +711,8 @@ TEST( streamingOperator00, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator01, PitchName )
 {
     String str = "Cxxx";
@@ -567,6 +723,8 @@ TEST( streamingOperator01, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator02, PitchName )
 {
     String str = "G#";
@@ -577,6 +735,8 @@ TEST( streamingOperator02, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator03, PitchName )
 {
     String str = "Bb";
@@ -587,6 +747,8 @@ TEST( streamingOperator03, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator04, PitchName )
 {
     String str = "Ed";
@@ -597,6 +759,8 @@ TEST( streamingOperator04, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator05, PitchName )
 {
     String str = "Fb";
@@ -607,6 +771,8 @@ TEST( streamingOperator05, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator06, PitchName )
 {
     String str = "Gb";
@@ -617,6 +783,8 @@ TEST( streamingOperator06, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator07, PitchName )
 {
     String str = "B";
@@ -627,6 +795,8 @@ TEST( streamingOperator07, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator08, PitchName )
 {
     String str = "A";
@@ -637,6 +807,8 @@ TEST( streamingOperator08, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator09, PitchName )
 {
     String str = "Axxxxxxx";
@@ -647,6 +819,8 @@ TEST( streamingOperator09, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator10, PitchName )
 {
     String str = "Edddddddddddddb";
@@ -657,6 +831,8 @@ TEST( streamingOperator10, PitchName )
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString00, PitchName )
 {
     String str = "Bb";
@@ -665,6 +841,8 @@ TEST( toString00, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString01, PitchName )
 {
     String str = "Cxxx";
@@ -673,6 +851,8 @@ TEST( toString01, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString02, PitchName )
 {
     String str = "G#";
@@ -681,6 +861,8 @@ TEST( toString02, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString03, PitchName )
 {
     String str = "Bb";
@@ -689,6 +871,8 @@ TEST( toString03, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString04, PitchName )
 {
     String str = "Ed";
@@ -697,6 +881,8 @@ TEST( toString04, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString05, PitchName )
 {
     String str = "Fb";
@@ -705,6 +891,8 @@ TEST( toString05, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString06, PitchName )
 {
     String str = "Gb";
@@ -713,6 +901,8 @@ TEST( toString06, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString07, PitchName )
 {
     String str = "B";
@@ -721,6 +911,8 @@ TEST( toString07, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString08, PitchName )
 {
     String str = "A";
@@ -729,6 +921,8 @@ TEST( toString08, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString09, PitchName )
 {
     String str = "Axxxxxxx";
@@ -737,6 +931,8 @@ TEST( toString09, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString10, PitchName )
 {
     String str = "Edddddddddddddb";
@@ -745,6 +941,7 @@ TEST( toString10, PitchName )
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( compare_a_isLessThan_b_01, PitchName )
 {
@@ -756,6 +953,8 @@ TEST( compare_a_isLessThan_b_01, PitchName )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
+T_END
+
 TEST( compare_a_isLessThan_b_02, PitchName )
 {
     String a_str = "Axx";
@@ -766,6 +965,8 @@ TEST( compare_a_isLessThan_b_02, PitchName )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
+T_END
+
 TEST( compare_a_isEqualTo_b_01, PitchName )
 {
     String a_str = "F#";
@@ -776,6 +977,8 @@ TEST( compare_a_isEqualTo_b_01, PitchName )
     CHECK(   ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
+T_END
+
 TEST( compare_a_isEqualTo_b_02, PitchName )
 {
     String a_str = "Cd";
@@ -786,6 +989,8 @@ TEST( compare_a_isEqualTo_b_02, PitchName )
     CHECK(   ( a->isEqualTo( *b ) ) )
     CHECK( ! ( a->isGreaterThan( *b ) ) )
 }
+T_END
+
 TEST( compare_a_isGreaterThan_b_01, PitchName )
 {
     String a_str = "Cb";
@@ -796,6 +1001,8 @@ TEST( compare_a_isGreaterThan_b_01, PitchName )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK(   ( a->isGreaterThan( *b ) ) )
 }
+T_END
+
 TEST( compare_a_isGreaterThan_b_02, PitchName )
 {
     String a_str = "F";
@@ -806,58 +1013,78 @@ TEST( compare_a_isGreaterThan_b_02, PitchName )
     CHECK( ! ( a->isEqualTo( *b ) ) )
     CHECK(   ( a->isGreaterThan( *b ) ) )
 }
+T_END
+
 TEST( getStepValue0, PitchName )
 {
     String str = "C";
     IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 0, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue1, PitchName )
 {
     String str = "Db";
     IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 1, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue2, PitchName )
 {
     String str = "E#";
     IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 2, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue3, PitchName )
 {
     String str = "F";
     IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 3, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue4, PitchName )
 {
     String str = "Gb";
     IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 4, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue5, PitchName )
 {
     String str = "A#";
     IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 5, n->getStepValue() )
 }
+T_END
+
 TEST( getStepValue6, PitchName )
 {
     String str = "B";
     IPitchNameUP n{ new PitchName{ str } };
     CHECK_EQUAL( 6, n->getStepValue() )
 }
+T_END
+
 TEST( getMinStepValue, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "F" } };
     CHECK_EQUAL( 0, n->getMinStepValue() )
 }
+T_END
+
 TEST( getMaxStepValue, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "F" } };
     CHECK_EQUAL( 6, n->getMaxStepValue() )
 }
+T_END
+
 TEST( setStepValue0, PitchName )
 {
     String str = "F";
@@ -868,6 +1095,8 @@ TEST( setStepValue0, PitchName )
     int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setStepValue1, PitchName )
 {
     String str = "G";
@@ -878,6 +1107,8 @@ TEST( setStepValue1, PitchName )
     int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setStepValue2, PitchName )
 {
     String str = "D";
@@ -888,6 +1119,8 @@ TEST( setStepValue2, PitchName )
     int actual = n->getStepValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( incrementStep, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "C" } };
@@ -906,6 +1139,8 @@ TEST( incrementStep, PitchName )
     n->incrementStep();
     CHECK_EQUAL( 0, n->getStepValue() )
 }
+T_END
+
 TEST( decrementStep, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "C" } };
@@ -924,6 +1159,8 @@ TEST( decrementStep, PitchName )
     n->decrementStep();
     CHECK_EQUAL( 0, n->getStepValue() )
 }
+T_END
+
 TEST( getAlterValue00, PitchName )
 {
     String str{ "C" };
@@ -932,6 +1169,8 @@ TEST( getAlterValue00, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue01, PitchName )
 {
     String str{ "Fb" };
@@ -940,6 +1179,8 @@ TEST( getAlterValue01, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue02, PitchName )
 {
     String str{ "G#" };
@@ -948,6 +1189,8 @@ TEST( getAlterValue02, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue03, PitchName )
 {
     String str{ "Bd" };
@@ -956,6 +1199,8 @@ TEST( getAlterValue03, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue04, PitchName )
 {
     String str{ "Ax" };
@@ -964,6 +1209,8 @@ TEST( getAlterValue04, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue05, PitchName )
 {
     String str{ "Ddb" };
@@ -972,6 +1219,8 @@ TEST( getAlterValue05, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue06, PitchName )
 {
     String str{ "Cx#" };
@@ -980,6 +1229,8 @@ TEST( getAlterValue06, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue07, PitchName )
 {
     String str{ "Edd" };
@@ -988,6 +1239,8 @@ TEST( getAlterValue07, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue08, PitchName )
 {
     String str{ "Fxx" };
@@ -996,6 +1249,8 @@ TEST( getAlterValue08, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue09, PitchName )
 {
     String str{ "Cddb" };
@@ -1004,6 +1259,8 @@ TEST( getAlterValue09, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getAlterValue10, PitchName )
 {
     String str{ "Cxx#" };
@@ -1012,6 +1269,8 @@ TEST( getAlterValue10, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setAlterValue01, PitchName )
 {
     String str{ "Cxx#" };
@@ -1022,6 +1281,8 @@ TEST( setAlterValue01, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setAlterValue02, PitchName )
 {
     String str{ "Cx" };
@@ -1032,6 +1293,8 @@ TEST( setAlterValue02, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setAlterValue03, PitchName )
 {
     String str{ "Gb" };
@@ -1042,6 +1305,8 @@ TEST( setAlterValue03, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( setAlterValue04, PitchName )
 {
     String str{ "Gb" };
@@ -1052,6 +1317,8 @@ TEST( setAlterValue04, PitchName )
     int actual = n->getAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getMinAlterValue, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "D" } };
@@ -1059,6 +1326,8 @@ TEST( getMinAlterValue, PitchName )
     int actual = n->getMinAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( getMaxAlterValue, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "E" } };
@@ -1066,6 +1335,8 @@ TEST( getMaxAlterValue, PitchName )
     int actual = n->getMaxAlterValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( incrementAlter, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "Eddd" } };
@@ -1098,6 +1369,8 @@ TEST( incrementAlter, PitchName )
     n->incrementAlter();
     CHECK_EQUAL( std::numeric_limits<int>::min(), n->getAlterValue() )
 }
+T_END
+
 TEST( decrementAlter, PitchName )
 {
     IPitchNameUP n{ new PitchName{ "Exxx" } };
@@ -1130,87 +1403,96 @@ TEST( decrementAlter, PitchName )
     n->decrementAlter();
     CHECK_EQUAL( std::numeric_limits<int>::max(), n->getAlterValue() )
 }
+T_END
+
 TEST( isIdenticalTo_true01, PitchName )
 {
     PitchNameUP a = unique_ptr<PitchName>( new PitchName( "C#" ) );
     PitchNameUP b = unique_ptr<PitchName>( new PitchName( "C#" ) );
     CHECK( a->isIdenticalTo( *b ) )
 }
+T_END
+
+class MockPitchName1 : public IPitchName
+{
+public:
+    virtual ~MockPitchName1() {}
+    virtual IPitchNameUP clone() const
+    {
+        return std::unique_ptr<MockPitchName1>{ new MockPitchName1{} };
+    }
+    virtual int getValue() const { return 1; }
+    virtual bool parse( const String& str ) { return true; }
+    virtual std::ostream& toStream( std::ostream& os ) const { return os << "C#"; }
+    /* virtual String toString() const;
+    virtual bool isLessThan( const PitchName& other ) const;
+    virtual bool isGreaterThan( const PitchName& other ) const;
+    virtual bool isEqualTo( const PitchName& other ) const; */
+    virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
+    virtual int getStepValue() const { return 0; }
+    virtual void setStepValue( const int val ) {}
+    virtual int getMinStepValue() const { return 0; }
+    virtual int getMaxStepValue() const { return 0; }
+    virtual void incrementStep() {}
+    virtual void decrementStep() {}
+    virtual int getAlterValue() const { return 1; }
+    virtual void setAlterValue( const int val ) {}
+    virtual int getMinAlterValue() const { return 0; }
+    virtual int getMaxAlterValue() const { return 0; }
+    virtual void incrementAlter() {}
+    virtual void decrementAlter() {}
+};
+
 TEST( isIdenticalTo_true02, PitchName )
 {
-    class MockPitchName1 : public IPitchName
-    {
-    public:
-        virtual ~MockPitchName1() {}
-        virtual IPitchNameUP clone() const
-        {
-            return std::unique_ptr<MockPitchName1>{ new MockPitchName1{} };
-        }
-        virtual int getValue() const { return 1; }
-        virtual bool parse( const String& str ) { return true; }
-        virtual std::ostream& toStream( std::ostream& os ) const { return os << "C#"; }
-        /* virtual String toString() const;
-         virtual bool isLessThan( const PitchName& other ) const;
-         virtual bool isGreaterThan( const PitchName& other ) const;
-         virtual bool isEqualTo( const PitchName& other ) const; */
-        virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
-        virtual int getStepValue() const { return 0; }
-        virtual void setStepValue( const int val ) {}
-        virtual int getMinStepValue() const { return 0; }
-        virtual int getMaxStepValue() const { return 0; }
-        virtual void incrementStep() {}
-        virtual void decrementStep() {}
-        virtual int getAlterValue() const { return 1; }
-        virtual void setAlterValue( const int val ) {}
-        virtual int getMinAlterValue() const { return 0; }
-        virtual int getMaxAlterValue() const { return 0; }
-        virtual void incrementAlter() {}
-        virtual void decrementAlter() {}
-    };
-    
     PitchNameUP a = unique_ptr<PitchName>( new PitchName( "C#" ) );
     std::unique_ptr<MockPitchName1> b{ new MockPitchName1{} };
     CHECK( a->isIdenticalTo( *b ) )
 }
+T_END
+
 TEST( isIdenticalTo_false01, PitchName )
 {
     PitchNameUP a = unique_ptr<PitchName>( new PitchName( "A" ) );
     PitchNameUP b = unique_ptr<PitchName>( new PitchName( "B" ) );
     CHECK( ! a->isIdenticalTo( *b ) )
 }
+T_END
+
+class MockPitchName2 : public IPitchName
+{
+public:
+    virtual ~MockPitchName2() {}
+    virtual IPitchNameUP clone() const
+    {
+        return std::unique_ptr<MockPitchName2>{ new MockPitchName2{} };
+    }
+    virtual int getValue() const { return 1; }
+    virtual bool parse( const String& str ) { return true; }
+    virtual std::ostream& toStream( std::ostream& os ) const { return os << "C_"; }
+    /* virtual String toString() const;
+    virtual bool isLessThan( const PitchName& other ) const;
+    virtual bool isGreaterThan( const PitchName& other ) const;
+    virtual bool isEqualTo( const PitchName& other ) const; */
+    virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
+    virtual int getStepValue() const { return 0; }
+    virtual void setStepValue( const int val ) {}
+    virtual int getMinStepValue() const { return 0; }
+    virtual int getMaxStepValue() const { return 0; }
+    virtual void incrementStep() {}
+    virtual void decrementStep() {}
+    virtual int getAlterValue() const { return 1; }
+    virtual void setAlterValue( const int val ) {}
+    virtual int getMinAlterValue() const { return 0; }
+    virtual int getMaxAlterValue() const { return 0; }
+    virtual void incrementAlter() {}
+    virtual void decrementAlter() {}
+};
+
 TEST( isIdenticalTo_false02, PitchName )
 {
-    class MockPitchName2 : public IPitchName
-    {
-    public:
-        virtual ~MockPitchName2() {}
-        virtual IPitchNameUP clone() const
-        {
-            return std::unique_ptr<MockPitchName2>{ new MockPitchName2{} };
-        }
-        virtual int getValue() const { return 1; }
-        virtual bool parse( const String& str ) { return true; }
-        virtual std::ostream& toStream( std::ostream& os ) const { return os << "C_"; }
-        /* virtual String toString() const;
-         virtual bool isLessThan( const PitchName& other ) const;
-         virtual bool isGreaterThan( const PitchName& other ) const;
-         virtual bool isEqualTo( const PitchName& other ) const; */
-        virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
-        virtual int getStepValue() const { return 0; }
-        virtual void setStepValue( const int val ) {}
-        virtual int getMinStepValue() const { return 0; }
-        virtual int getMaxStepValue() const { return 0; }
-        virtual void incrementStep() {}
-        virtual void decrementStep() {}
-        virtual int getAlterValue() const { return 1; }
-        virtual void setAlterValue( const int val ) {}
-        virtual int getMinAlterValue() const { return 0; }
-        virtual int getMaxAlterValue() const { return 0; }
-        virtual void incrementAlter() {}
-        virtual void decrementAlter() {}
-    };
-    
     PitchNameUP a = unique_ptr<PitchName>( new PitchName( "C#" ) );
     std::unique_ptr<MockPitchName2> b{ new MockPitchName2{} };
     CHECK( ! a->isIdenticalTo( *b ) )
 }
+T_END

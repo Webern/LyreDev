@@ -18,6 +18,8 @@ TEST( getValue, DurBaseHalf )
     DurBaseHalf d;
     CHECK_EQUAL( value, d.getValue() )
 }
+T_END
+
 TEST( toStream, DurBaseHalf )
 {
     DurBaseHalf d;
@@ -25,6 +27,8 @@ TEST( toStream, DurBaseHalf )
     d.toStream( ss );
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( streamingOperator, DurBaseHalf )
 {
     DurBaseHalf d;
@@ -32,8 +36,12 @@ TEST( streamingOperator, DurBaseHalf )
     ss << d;
     CHECK_EQUAL( name, ss.str() )
 }
+T_END
+
 TEST( toString, DurBaseHalf )
 {
     DurBaseHalf d;
     CHECK_EQUAL( name, d.toString() )
 }
+T_END
+

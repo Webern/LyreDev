@@ -47,3 +47,4 @@ TEST( compiles, IPitch )
     p->decrementOctave();
     p->isIdenticalTo( *p );
 }
+T_END

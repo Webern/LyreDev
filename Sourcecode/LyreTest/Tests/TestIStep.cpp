@@ -16,16 +16,22 @@ TEST( Compiles, IStep )
     MockStep m;
     CHECK( true )
 }
+T_END
+
 TEST( SharedPtr, IStep )
 {
     IStepSP p = std::make_shared<MockStep>();
     CHECK( true )
 }
+T_END
+
 TEST( UniquePtr, IStep )
 {
     IStepUP p = unique_ptr<MockStep>( new MockStep() );
     CHECK( true )
 }
+T_END
+
 TEST( clone, IStep )
 {
     IStepSP p1 = std::make_shared<MockStep>();
@@ -38,21 +44,29 @@ TEST( clone, IStep )
     CHECK_EQUAL( 100, p1->getValue() );
     CHECK_EQUAL( 200, p2->getValue() );
 }
+T_END
+
 TEST( getMin, IStep )
 {
     IStepUP p = unique_ptr<MockStep>( new MockStep() );
     CHECK_EQUAL( 0, p->getMin() )
 }
+T_END
+
 TEST( getMax, IStep )
 {
     IStepUP p = unique_ptr<MockStep>( new MockStep() );
     CHECK_EQUAL( 1, p->getMax() )
 }
+T_END
+
 TEST( parse, IStep )
 {
     IStepUP p = unique_ptr<MockStep>( new MockStep() );
     CHECK( p->parse( "" ) )
 }
+T_END
+
 TEST( toStream, IStep )
 {
     IStepUP p = unique_ptr<MockStep>( new MockStep() );
@@ -63,6 +77,8 @@ TEST( toStream, IStep )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( toString, IStep )
 {
     IStepUP p = unique_ptr<MockStep>( new MockStep() );
@@ -71,6 +87,8 @@ TEST( toString, IStep )
     String actual{ p->toString() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( streamingOperator, IStep )
 {
     IStepUP p = unique_ptr<MockStep>( new MockStep() );
@@ -81,6 +99,8 @@ TEST( streamingOperator, IStep )
     String actual{ ss.str() };
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 TEST( comparisons_a_isLessThan_b, IStep )
 {
     IStepUP a = unique_ptr<MockStep>( new MockStep() );
@@ -94,6 +114,8 @@ TEST( comparisons_a_isLessThan_b, IStep )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isGreaterThan_b, IStep )
 {
     IStepUP a = unique_ptr<IStep>( new MockStep() );
@@ -107,6 +129,8 @@ TEST( comparisons_a_isGreaterThan_b, IStep )
     CHECK( ! a->isEqualTo     ( *b ) )
     CHECK( ! b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( comparisons_a_isEqualTo_b, IStep )
 {
     IStepUP a = unique_ptr<IStep>( new MockStep() );
@@ -120,6 +144,8 @@ TEST( comparisons_a_isEqualTo_b, IStep )
     CHECK(   a->isEqualTo     ( *b ) )
     CHECK(   b->isEqualTo     ( *a ) )
 }
+T_END
+
 TEST( increment, IStep )
 {
     IStepUP a = unique_ptr<IStep>( new MockStep() );
@@ -127,6 +153,8 @@ TEST( increment, IStep )
     a->increment();
     CHECK_EQUAL( 101, a->getValue() )
 }
+T_END
+
 TEST( decrement, IStep )
 {
     IStepUP a = unique_ptr<IStep>( new MockStep() );
@@ -134,8 +162,11 @@ TEST( decrement, IStep )
     a->decrement();
     CHECK_EQUAL( 99, a->getValue() )
 }
+T_END
+
 TEST( isIdenticalTo, IStep )
 {
     IStepUP x = unique_ptr<IStep>( new MockStep() );
     CHECK( x->isIdenticalTo( *x ) )
 }
+T_END

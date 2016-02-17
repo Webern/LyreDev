@@ -49,13 +49,14 @@ TEST( Constructor, NoteGroup )
     NoteGroup noteGroup;
     CHECK( true );
 }
+T_END
 
 TEST( createNoteGroup, NoteGroup )
 {
     INoteGroupUP noteGroup = createNoteGroup();
     CHECK( noteGroup != nullptr );
 }
-
+T_END
 
 TEST( clone, NoteGroup )
 {
@@ -68,12 +69,14 @@ TEST( clone, NoteGroup )
     CHECK_EQUAL( 2, cloned->getCount() )
     CHECK( noteGroup.get() != cloned.get() )
 }
+T_END
 
 TEST( getIsEmpty_true, NoteGroup )
 {
     INoteGroupUP noteGroup = createNoteGroup();
     CHECK( noteGroup->getIsEmpty() )
 }
+T_END
 
 TEST( getIsEmpty_false, NoteGroup )
 {
@@ -82,12 +85,14 @@ TEST( getIsEmpty_false, NoteGroup )
     noteGroup->add( f.d4Eighth() );
     CHECK( ! noteGroup->getIsEmpty() )
 }
+T_END
 
 TEST( getCount_0, NoteGroup )
 {
     INoteGroupUP noteGroup = createNoteGroup();
     CHECK_EQUAL( 0, noteGroup->getCount() )
 }
+T_END
 
 TEST( getCount_1, NoteGroup )
 {
@@ -96,6 +101,7 @@ TEST( getCount_1, NoteGroup )
     noteGroup->add( f.d4Eighth() );
     CHECK_EQUAL( 1, noteGroup->getCount() )
 }
+T_END
 
 TEST( getCount_2, NoteGroup )
 {
@@ -105,6 +111,7 @@ TEST( getCount_2, NoteGroup )
     noteGroup->add( f.e2Sixteenth() );
     CHECK_EQUAL( 2, noteGroup->getCount() )
 }
+T_END
 
 TEST( getDurationValue_0, NoteGroup )
 {
@@ -114,6 +121,7 @@ TEST( getDurationValue_0, NoteGroup )
     Rational actual = noteGroup->getDurationValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getDurationValue_Q, NoteGroup )
 {
@@ -124,6 +132,7 @@ TEST( getDurationValue_Q, NoteGroup )
     Rational actual = noteGroup->getDurationValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getDurationValue_QE, NoteGroup )
 {
@@ -135,6 +144,7 @@ TEST( getDurationValue_QE, NoteGroup )
     Rational actual = noteGroup->getDurationValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getDurationValue_QES, NoteGroup )
 {
@@ -147,6 +157,7 @@ TEST( getDurationValue_QES, NoteGroup )
     Rational actual = noteGroup->getDurationValue();
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( getCurrent_exception, NoteGroup )
 {
@@ -163,6 +174,7 @@ TEST( getCurrent_exception, NoteGroup )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( getCurrent, NoteGroup )
 {
@@ -174,6 +186,7 @@ TEST( getCurrent, NoteGroup )
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
+T_END
 
 TEST( getNext_exception, NoteGroup )
 {
@@ -191,6 +204,7 @@ TEST( getNext_exception, NoteGroup )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( getNext, NoteGroup )
 {
@@ -203,6 +217,7 @@ TEST( getNext, NoteGroup )
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
+T_END
 
 TEST( getPrevious_exception, NoteGroup )
 {
@@ -220,6 +235,7 @@ TEST( getPrevious_exception, NoteGroup )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( getPrevious, NoteGroup )
 {
@@ -233,6 +249,7 @@ TEST( getPrevious, NoteGroup )
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
+T_END
 
 TEST( first, NoteGroup )
 {
@@ -247,6 +264,7 @@ TEST( first, NoteGroup )
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
+T_END
 
 TEST( last, NoteGroup )
 {
@@ -261,6 +279,7 @@ TEST( last, NoteGroup )
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
+T_END
 
 TEST( next, NoteGroup )
 {
@@ -280,6 +299,7 @@ TEST( next, NoteGroup )
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
+T_END
 
 TEST( previous, NoteGroup )
 {
@@ -294,6 +314,7 @@ TEST( previous, NoteGroup )
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
+T_END
 
 TEST( jump, NoteGroup )
 {
@@ -313,6 +334,7 @@ TEST( jump, NoteGroup )
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
+T_END
 
 TEST( jump_exception, NoteGroup )
 {
@@ -336,6 +358,7 @@ TEST( jump_exception, NoteGroup )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( jump_exception_negative, NoteGroup )
 {
@@ -358,6 +381,7 @@ TEST( jump_exception_negative, NoteGroup )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( remove_exception, NoteGroup )
 {
@@ -381,6 +405,7 @@ TEST( remove_exception, NoteGroup )
     }
     CHECK( isExceptionThrown )
 }
+T_END
 
 TEST( remove, NoteGroup )
 {
@@ -405,3 +430,4 @@ TEST( remove, NoteGroup )
         noteGroup->next();
     }
 }
+T_END

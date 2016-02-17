@@ -41,6 +41,7 @@ TEST( Compiles, throwDotH )
     CHECK_EQUAL( expected.substr( 0, 33 ), actual.substr( 0, 33 ) )
     CHECK_EQUAL( expected.substr( expected.size()-13 ), actual.substr( actual.size()-13 ) )
 }
+T_END
 
 TEST( throwIfNull, throwDotH )
 {
@@ -62,3 +63,4 @@ TEST( throwIfNull, throwDotH )
     }
     CHECK( isExceptionThrown )
 }
+T_END

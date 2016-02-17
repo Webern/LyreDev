@@ -11,6 +11,7 @@ namespace
 	static IBeatPatternFactoryUP factory =
 	createBeatPatternFactory();
 }
+T_END
 
 TEST( TODO, BeatPatternFactory )
 {
@@ -20,4 +21,6 @@ TEST( TODO, BeatPatternFactory )
     String actual = "";//ts->toString();
     CHECK_EQUAL( expected, actual )
 }
+T_END
+
 #endif

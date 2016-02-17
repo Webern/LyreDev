@@ -42,6 +42,8 @@ TEST( clone_getPitch_setPitch, INote )
     CHECK_EQUAL( 4, orig->getPitch()->getStepValue() )
     CHECK_EQUAL( 3, cloned->getPitch()->getStepValue() )
 }
+T_END
+
 TEST( getDuration, INote )
 {
     auto pitchFactory = createPitchFactory( PitchFactoryType::StandardChromatic );
@@ -62,6 +64,7 @@ TEST( getDuration, INote )
     CHECK( duration.get() != nullptr )
     CHECK_EQUAL( duration->getValue() , copiedDuration->getValue() )
 }
+T_END
 
 TEST( isRest, INote )
 {
@@ -97,6 +100,7 @@ TEST( isRest, INote )
     CHECK_EQUAL( 6, note->getPitch()->getOctaveValue() )
     CHECK( ! note->getIsRest() )
 }
+T_END
 
 TEST( toString, INote )
 {
@@ -126,6 +130,7 @@ TEST( toString, INote )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( toStream, INote )
 {
@@ -155,6 +160,7 @@ TEST( toStream, INote )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END
 
 TEST( streamingOperator, INote )
 {
@@ -184,3 +190,4 @@ TEST( streamingOperator, INote )
     
     CHECK_EQUAL( expected, actual )
 }
+T_END

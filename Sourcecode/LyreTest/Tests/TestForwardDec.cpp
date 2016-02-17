@@ -5,14 +5,15 @@
 
 using namespace std;
 
+FORWARD_DECLARE( TestFake )
+class TestFake
+{
+
+};
 
 TEST( forwardTest, FORWARD_DECLARE )
 {
-    FORWARD_DECLARE( TestFake )
-    class TestFake
-    {
-        
-    };
+    
     TestFakeUP up{ new TestFake{} };
     TestFakeSP sp = std::make_shared<TestFake>();
     TestFakeUPC upc{ new TestFake{} };
@@ -27,3 +28,4 @@ TEST( forwardTest, FORWARD_DECLARE )
     VecTestFakeUPC vecUPC;
     vecUPC.push_back( std::move( upc ) );
 }
+T_END
