@@ -31,3 +31,5 @@ LyreTest.exe
 *.filters
 *.user
 *.idb
+*.opendb
+*.sdf
