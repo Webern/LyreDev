@@ -16,7 +16,7 @@ public ref class Test##className##functionName \
 public: \
 \
     [TestMethod] \
-    void className##_##functionName##_##Test() \
+    void className##_##functionName####() \
 
 
 #define COMBINE1(X,Y) X##Y  // helper macro

@@ -29,7 +29,41 @@ TEST( toStream, TimeSignature )
 }
 T_END
 
-TEST( getTotalDuration, TimeSignature )
+TEST( getBeatPattern, TimeSignature )
+{
+    auto beatPatternFactory = createBeatPatternFactory();
+    auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
+    IBeatPatternUP beatPattern = beatPatternFactory->create( 2, durationFactory->createDuration( "Quarter", 1 ) );
+    ITimeSignatureUP ts = factory->create( std::move( beatPattern ), 3, 4 );
+    String expected = "TimeSignature[3/4(BeatPattern<Quarter.,Quarter.>)]";
+    String actual = ts->toString();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( getTop, TimeSignature )
+{
+    auto beatPatternFactory = createBeatPatternFactory();
+    auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
+    ITimeSignatureUP ts = factory->create( 3, 4 );
+    int expected = 3;
+    int actual = ts->getTop();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( getBottom, TimeSignature )
+{
+    auto beatPatternFactory = createBeatPatternFactory();
+    auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
+    ITimeSignatureUP ts = factory->create( 37, 8 );
+    int expected = 8;
+    int actual = ts->getBottom();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( getTotalDuration01, TimeSignature )
 {
     ITimeSignatureUP ts = factory->create( 9, 8 );
     Rational expected{ 9, 2 };
@@ -38,14 +72,13 @@ TEST( getTotalDuration, TimeSignature )
 }
 T_END
 
-TEST( getBeatPattern, TimeSignature )
+TEST( getTotalDuration02, TimeSignature )
 {
     auto beatPatternFactory = createBeatPatternFactory();
     auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
-    IBeatPatternUP beatPattern = beatPatternFactory->create( 2, durationFactory->createDuration( "Quarter", 1 ) );
-    ITimeSignatureUP ts = factory->create( std::move( beatPattern ), 6, 4 );
-    String expected = "";
-    String actual = ".";// = ts->getBeatPattern()->toString();
+    ITimeSignatureUP ts = factory->create( 13, 8 );
+    Rational expected{ 13, 2 };
+    Rational actual = ts->getTotalDuration();
     CHECK_EQUAL( expected, actual )
 }
 T_END
