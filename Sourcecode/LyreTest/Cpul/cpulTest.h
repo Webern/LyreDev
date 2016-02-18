@@ -133,8 +133,11 @@ private:
     }\
 }
 
-// needed to for VS_TEST
-#define T_END } };  \
+// needed to for VS_TEST option
+// each test block needs to end with this so that, when
+// USE_VS_TEST is defined, the Microsoft Test Framework
+// syntax can be created with alternate macros.
+#define T_END  \
       \
 
 #endif
