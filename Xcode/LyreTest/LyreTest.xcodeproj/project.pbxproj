@@ -19,7 +19,7 @@
 		2928FB061C55437300644429 /* MockNoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB051C55437300644429 /* MockNoteGroup.cpp */; };
 		293F25E11C09B12D006096F2 /* TestToShared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25E01C09B12D006096F2 /* TestToShared.cpp */; };
 		296379861C67B5A300760195 /* TestCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296379851C67B5A300760195 /* TestCollection.cpp */; };
-		296D728F1BF8EB960049B0EA /* TestDurBase8th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */; };
+		296D728F1BF8EB960049B0EA /* TestDurBaseEighth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72841BF8EB960049B0EA /* TestDurBaseEighth.cpp */; };
 		296D72901BF8EB960049B0EA /* TestDurBase16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */; };
 		296D72911BF8EB960049B0EA /* TestDurBase32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72861BF8EB960049B0EA /* TestDurBase32nd.cpp */; };
 		296D72921BF8EB960049B0EA /* TestDurBase64th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72871BF8EB960049B0EA /* TestDurBase64th.cpp */; };
@@ -97,7 +97,7 @@
 		2928FB051C55437300644429 /* MockNoteGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockNoteGroup.cpp; path = ../../Sourcecode/LyreTest/Mock/MockNoteGroup.cpp; sourceTree = "<group>"; };
 		293F25E01C09B12D006096F2 /* TestToShared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestToShared.cpp; path = ../../Sourcecode/LyreTest/Tests/TestToShared.cpp; sourceTree = "<group>"; };
 		296379851C67B5A300760195 /* TestCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestCollection.cpp; path = ../../Sourcecode/LyreTest/Tests/TestCollection.cpp; sourceTree = "<group>"; };
-		296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase8th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase8th.cpp; sourceTree = "<group>"; };
+		296D72841BF8EB960049B0EA /* TestDurBaseEighth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBaseEighth.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBaseEighth.cpp; sourceTree = "<group>"; };
 		296D72851BF8EB960049B0EA /* TestDurBase16th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase16th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase16th.cpp; sourceTree = "<group>"; };
 		296D72861BF8EB960049B0EA /* TestDurBase32nd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase32nd.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase32nd.cpp; sourceTree = "<group>"; };
 		296D72871BF8EB960049B0EA /* TestDurBase64th.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBase64th.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBase64th.cpp; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 				296D72891BF8EB960049B0EA /* TestDurBase256th.cpp */,
 				296D72861BF8EB960049B0EA /* TestDurBase32nd.cpp */,
 				296D72871BF8EB960049B0EA /* TestDurBase64th.cpp */,
-				296D72841BF8EB960049B0EA /* TestDurBase8th.cpp */,
+				296D72841BF8EB960049B0EA /* TestDurBaseEighth.cpp */,
 				296D728A1BF8EB960049B0EA /* TestDurBaseBreve.cpp */,
 				29F3B5181C022AD300746DA5 /* TestDurBaseFactory.cpp */,
 				296D728B1BF8EB960049B0EA /* TestDurBaseHalf.cpp */,
@@ -362,7 +362,7 @@
 				29CAD4351BE661B400C0CA90 /* TestIStep.cpp in Sources */,
 				291E421C1C6673CB004C3432 /* TestTimeSignatureFactory.cpp in Sources */,
 				298227491BF99B4500277C67 /* TestMakeUnique.cpp in Sources */,
-				296D728F1BF8EB960049B0EA /* TestDurBase8th.cpp in Sources */,
+				296D728F1BF8EB960049B0EA /* TestDurBaseEighth.cpp in Sources */,
 				29CAD4011BE6613400C0CA90 /* cpulTest.cpp in Sources */,
 				290D2A7D1C5DE85700F9BC13 /* TestPitchFactory.cpp in Sources */,
 				29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */,
