@@ -65,7 +65,33 @@ factory_cpp.close
 test_cpp.close
 
 ###### Add Files to Visual Studio #####
+
 vcxproj_contents = File.read(path_lyre_vcxproj)
 
+# h files
+replaceable = "<ClInclude Include=\"..\\Sourcecode\\Lyre\\IAlter.h\" />"
+replacement = replaceable.dup
+replacement << "\n    <ClInclude Include=\"..\\Sourcecode\\Lyre\\#{name_interface_h}\" />"
+replacement << "\n    <ClInclude Include=\"..\\Sourcecode\\Lyre\\#{name_ifactory_h}\" />"
+replacement << "\n    <ClInclude Include=\"..\\Sourcecode\\Lyre\\Private\\#{name_class_h}\" />"
+replacement << "\n    <ClInclude Include=\"..\\Sourcecode\\Lyre\\Private\\#{name_factory_h}\" />"
+
+# cpp files
+replaceable = "<ClCompile Include=\"..\\Sourcecode\\Lyre\\IAlter.cpp\" />"
+replacement = replaceable.dup
+replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\Lyre\\#{name_ifactory_cpp}\" />"
+replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\Lyre\\Private\\#{name_class_cpp}\" />"
+replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\Lyre\\Private\\#{name_factory_cpp}\" />"
+
+vcxproj_contents.sub!(replaceable, replacement)
+puts vcxproj_contents
+
+vcxproj_file = File.open(path_lyre_vcxproj, 'w')
+vcxproj_file << vcxproj_contents
+vcxproj_file.close
 
 __END__
+<ClCompile Include="..\Sourcecode\Lyre\IAlter.cpp" />
+
+
+replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\LyreTest\\Tests\\#{name_test_cpp}\" />"
