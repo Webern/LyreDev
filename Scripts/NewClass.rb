@@ -85,9 +85,17 @@ replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\Lyre\\Private\\#{name
 replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\Lyre\\Private\\#{name_factory_cpp}\" />"
 vcxproj_contents.sub!(replaceable, replacement)
 
-puts vcxproj_contents
-
 vcxproj_file = File.open(path_lyre_vcxproj, 'w')
+vcxproj_file << vcxproj_contents
+vcxproj_file.close
+
+vcxproj_contents = File.read(path_test_vcxproj)
+replaceable = "<ClCompile Include=\"..\\Sourcecode\\LyreTest\\Tests\\TestAlter.cpp\" />"
+replacement = replaceable.dup
+replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\LyreTest\\Tests\\#{name_test_cpp}\" />"
+vcxproj_contents.sub!(replaceable, replacement)
+
+vcxproj_file = File.open(path_test_vcxproj, 'w')
 vcxproj_file << vcxproj_contents
 vcxproj_file.close
 
