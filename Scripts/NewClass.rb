@@ -75,6 +75,7 @@ replacement << "\n    <ClInclude Include=\"..\\Sourcecode\\Lyre\\#{name_interfac
 replacement << "\n    <ClInclude Include=\"..\\Sourcecode\\Lyre\\#{name_ifactory_h}\" />"
 replacement << "\n    <ClInclude Include=\"..\\Sourcecode\\Lyre\\Private\\#{name_class_h}\" />"
 replacement << "\n    <ClInclude Include=\"..\\Sourcecode\\Lyre\\Private\\#{name_factory_h}\" />"
+vcxproj_contents.sub!(replaceable, replacement)
 
 # cpp files
 replaceable = "<ClCompile Include=\"..\\Sourcecode\\Lyre\\IAlter.cpp\" />"
@@ -82,8 +83,8 @@ replacement = replaceable.dup
 replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\Lyre\\#{name_ifactory_cpp}\" />"
 replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\Lyre\\Private\\#{name_class_cpp}\" />"
 replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\Lyre\\Private\\#{name_factory_cpp}\" />"
-
 vcxproj_contents.sub!(replaceable, replacement)
+
 puts vcxproj_contents
 
 vcxproj_file = File.open(path_lyre_vcxproj, 'w')
