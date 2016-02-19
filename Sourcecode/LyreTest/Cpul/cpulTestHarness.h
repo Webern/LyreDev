@@ -1,6 +1,5 @@
 #pragma once
 
-#define xUSE_VS_TEST
 #ifdef USE_VS_TEST
 
     #include "LyreTest/VsTest/VsTest.h"

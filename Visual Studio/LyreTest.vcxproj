@@ -36,6 +36,7 @@
     <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchName.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockStep.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestXXXX.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestBeatPattern.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestBeatPatternFactory.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestCollection.cpp" />
@@ -191,7 +192,8 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS;USE_VS_TEST</UndefinePreprocessorDefinitions>
+      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_VS_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -206,7 +208,8 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS;USE_VS_TEST</UndefinePreprocessorDefinitions>
+      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_VS_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -223,7 +226,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS;USE_VS_TEST</UndefinePreprocessorDefinitions>
+      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_VS_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -242,7 +246,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS;USE_VS_TEST</UndefinePreprocessorDefinitions>
+      <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_VS_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
