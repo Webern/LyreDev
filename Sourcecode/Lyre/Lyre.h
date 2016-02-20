@@ -7,5 +7,5 @@
 #include "Lyre/unusedParameter.h"
 
 #ifdef _MSC_VER
-    #define noexcept
+    #define noexcept______________
 #endif
