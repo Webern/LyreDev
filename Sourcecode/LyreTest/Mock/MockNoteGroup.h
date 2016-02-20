@@ -13,7 +13,7 @@ namespace Lyre
         virtual INoteGroupUP clone() const;
         virtual bool getIsEmpty() const;
         virtual int getCount() const;
-        virtual Rational getDurationValue() const;
+        virtual Rational getTotalDuration() const;
         virtual void add( const INoteSP& note );
         virtual void remove( const INoteSP& note );
         virtual INoteIterUP getIterator() const;

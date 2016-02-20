@@ -15,7 +15,7 @@ namespace Lyre
         virtual bool getIsEmpty() const = 0;
         virtual bool getIsEnd() const = 0;
         virtual int getCount() const = 0;
-        virtual Rational getDurationValue() const = 0;
+        virtual Rational getTotalDuration() const = 0;
         virtual const INoteSPC getCurrent() const = 0;
         virtual const INoteSPC getNext() const = 0;
         virtual const INoteSPC getPrevious() const = 0;

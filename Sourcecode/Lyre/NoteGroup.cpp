@@ -87,7 +87,7 @@ namespace Lyre
         return MY_NOTES.getCount();
     }
     
-    Rational NoteGroup::getDurationValue() const
+    Rational NoteGroup::getTotalDuration() const
     {
         Rational total{ 0, 1 };
         if( getIsEmpty() )

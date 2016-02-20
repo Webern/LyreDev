@@ -23,7 +23,7 @@ namespace Lyre
         virtual bool getIsEmpty() const;
         virtual bool getIsEnd() const;
         virtual int getCount() const;
-        virtual Rational getDurationValue() const;
+        virtual Rational getTotalDuration() const;
         virtual const INoteSPC getCurrent() const;
         virtual const INoteSPC getNext() const;
         virtual const INoteSPC getPrevious() const;
@@ -34,6 +34,7 @@ namespace Lyre
         virtual void jump( int index );
         virtual void add( const INoteSP& note );
         virtual void remove( int index );
+
     private:
         class Impl;
         Impl* myImplP;

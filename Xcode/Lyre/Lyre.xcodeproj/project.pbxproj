@@ -207,9 +207,6 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
-				29E05A7E1C7838E20012FD81 /* unusedParameter.h */,
-				29D7D9551C759DA60055E912 /* DurBaseEighth.cpp */,
-				29D7D9561C759DA60055E912 /* DurBaseEighth.h */,
 				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
 				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
 				29FE9DC01C66C78C00BE0787 /* BeatPattern.cpp */,
@@ -233,6 +230,8 @@
 				296D72521BF8E9EE0049B0EA /* DurBase64th.h */,
 				296D72571BF8E9EE0049B0EA /* DurBaseBreve.cpp */,
 				296D72581BF8E9EE0049B0EA /* DurBaseBreve.h */,
+				29D7D9551C759DA60055E912 /* DurBaseEighth.cpp */,
+				29D7D9561C759DA60055E912 /* DurBaseEighth.h */,
 				29109E0E1BE55A1B001FF3E6 /* DurBaseFactory.cpp */,
 				29109E0F1BE55A1B001FF3E6 /* DurBaseFactory.h */,
 				296D725B1BF8E9EE0049B0EA /* DurBaseHalf.cpp */,
@@ -321,6 +320,7 @@
 				29E4D2221C06C7400038E6FC /* TupletDefFatory.cpp */,
 				29E4D2231C06C7400038E6FC /* TupletDefFatory.h */,
 				29109DE81BE559F2001FF3E6 /* TypeDefs.h */,
+				29E05A7E1C7838E20012FD81 /* unusedParameter.h */,
 			);
 			name = Sourcecode;
 			sourceTree = "<group>";

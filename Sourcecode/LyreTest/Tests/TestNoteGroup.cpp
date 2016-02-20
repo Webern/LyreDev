@@ -113,40 +113,40 @@ TEST( getCount_2, NoteGroup )
 }
 T_END
 
-TEST( getDurationValue_0, NoteGroup )
+TEST( getTotalDuration_0, NoteGroup )
 {
     Factories f;
     INoteGroupUP noteGroup = createNoteGroup();
     Rational expected{ 0, 1 };
-    Rational actual = noteGroup->getDurationValue();
+    Rational actual = noteGroup->getTotalDuration();
     CHECK_EQUAL( expected, actual )
 }
 T_END
 
-TEST( getDurationValue_Q, NoteGroup )
+TEST( getTotalDuration_Q, NoteGroup )
 {
     Factories f;
     INoteGroupUP noteGroup = createNoteGroup();
     noteGroup->add( f.c4Quarter() );
     Rational expected{ 1, 1 };
-    Rational actual = noteGroup->getDurationValue();
+    Rational actual = noteGroup->getTotalDuration();
     CHECK_EQUAL( expected, actual )
 }
 T_END
 
-TEST( getDurationValue_QE, NoteGroup )
+TEST( getTotalDuration_QE, NoteGroup )
 {
     Factories f;
     INoteGroupUP noteGroup = createNoteGroup();
     noteGroup->add( f.c4Quarter() );
     noteGroup->add( f.d4Eighth() );
     Rational expected{ 3, 2 };
-    Rational actual = noteGroup->getDurationValue();
+    Rational actual = noteGroup->getTotalDuration();
     CHECK_EQUAL( expected, actual )
 }
 T_END
 
-TEST( getDurationValue_QES, NoteGroup )
+TEST( getTotalDuration_QES, NoteGroup )
 {
     Factories f;
     INoteGroupUP noteGroup = createNoteGroup();
@@ -154,7 +154,7 @@ TEST( getDurationValue_QES, NoteGroup )
     noteGroup->add( f.d4Eighth() );
     noteGroup->add( f.e2Sixteenth() );
     Rational expected{ 7, 4 };
-    Rational actual = noteGroup->getDurationValue();
+    Rational actual = noteGroup->getTotalDuration();
     CHECK_EQUAL( expected, actual )
 }
 T_END

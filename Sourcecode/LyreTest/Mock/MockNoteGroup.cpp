@@ -20,7 +20,7 @@ namespace Lyre
         return size();
     }
     
-    Rational MockNoteGroup::getDurationValue() const
+    Rational MockNoteGroup::getTotalDuration() const
     {
         Rational total{ 0, 1 };
         for( auto n : myNotes )
