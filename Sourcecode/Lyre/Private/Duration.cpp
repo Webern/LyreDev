@@ -1,20 +1,6 @@
 #include "Lyre/Private/Duration.h"
-#include "Lyre/Private/DurDot.h"
-#include "Lyre/Private/DurBase256th.h"
-#include "Lyre/Private/DurBase128th.h"
-#include "Lyre/Private/DurBase64th.h"
-#include "Lyre/Private/DurBase32nd.h"
-#include "Lyre/Private/DurBase16th.h"
-#include "Lyre/Private/DurBaseEighth.h"
-#include "Lyre/Private/DurBaseQuarter.h"
-#include "Lyre/Private/DurBase256th.h"
-#include "Lyre/Private/DurBase256th.h"
-#include "Lyre/Private/DurBase256th.h"
-#include "Lyre/Private/DurBase256th.h"
-#include "Lyre/Private/DurBase256th.h"
 #include "Lyre/Private/TupletDef.h"
 #include "Lyre/Private/throw.h"
-#include "Lyre/toShared.h"
 #include <sstream>
 
 namespace Lyre
@@ -143,7 +129,7 @@ namespace Lyre
         
         bool Duration::getIsTuplet() const
         {
-            auto one = Rational{ 1, 1};
+            auto one = Rational{ 1, 1 };
             for ( auto t : myTuplets )
             {
                 auto reducedTupletValue = t->getMultiplier();
