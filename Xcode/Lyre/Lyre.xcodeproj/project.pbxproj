@@ -162,6 +162,7 @@
 		29DA8BD21C5DB385007BCE4E /* INoteGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INoteGroup.h; path = ../../Sourcecode/Lyre/INoteGroup.h; sourceTree = "<group>"; };
 		29DA8BD31C5DB385007BCE4E /* NoteGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoteGroup.cpp; path = ../../Sourcecode/Lyre/NoteGroup.cpp; sourceTree = "<group>"; };
 		29DA8BD41C5DB385007BCE4E /* NoteGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteGroup.h; path = ../../Sourcecode/Lyre/NoteGroup.h; sourceTree = "<group>"; };
+		29E05A7E1C7838E20012FD81 /* unusedParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unusedParameter.h; path = ../../Sourcecode/Lyre/unusedParameter.h; sourceTree = "<group>"; };
 		29E0B2151C14165B002790B5 /* IDurationFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IDurationFactory.cpp; path = ../../Sourcecode/Lyre/IDurationFactory.cpp; sourceTree = "<group>"; };
 		29E0B2161C14165B002790B5 /* IDurationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDurationFactory.h; path = ../../Sourcecode/Lyre/IDurationFactory.h; sourceTree = "<group>"; };
 		29E4D2221C06C7400038E6FC /* TupletDefFatory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TupletDefFatory.cpp; path = ../../Sourcecode/Lyre/Private/TupletDefFatory.cpp; sourceTree = "<group>"; };
@@ -206,6 +207,7 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				29E05A7E1C7838E20012FD81 /* unusedParameter.h */,
 				29D7D9551C759DA60055E912 /* DurBaseEighth.cpp */,
 				29D7D9561C759DA60055E912 /* DurBaseEighth.h */,
 				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,

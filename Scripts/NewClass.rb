@@ -1,9 +1,8 @@
 require 'FIleUtils'
-require 'SecureRandom'
 
 class_name = ARGV[0]
 if class_name == nil
-	class_name = "Bishop"
+	class_name = "Bones"
 end
 
 path_src = "../Sourcecode"
@@ -55,10 +54,15 @@ todo.close
 
 ##### TODO Stub the files #####
 
-prototype = File.read("IXXXXFactory.h")
+prototype = File.read("IXXXX.h")
 prototype.sub!("XXXX", class_name)
 interface_h << prototype
 interface_h.close
+
+prototype = File.read("IXXXXFactory.h")
+prototype.sub!("XXXX", class_name)
+ifactory_h << prototype
+ifactory_h.close
 
 prototype = File.read("IXXXXFactory.cpp")
 prototype.sub!("XXXX", class_name)
@@ -75,8 +79,19 @@ prototype.sub!("XXXX", class_name)
 class_cpp << prototype
 class_cpp.close
 
+prototype = File.read("XXXXFactory.h")
+prototype.sub!("XXXX", class_name)
+factory_h << prototype
 factory_h.close
+
+prototype = File.read("XXXXFactory.cpp")
+prototype.sub!("XXXX", class_name)
+factory_cpp << prototype
 factory_cpp.close
+
+prototype = File.read("TestXXXX.cpp")
+prototype.sub!("XXXX", class_name)
+test_cpp << prototype
 test_cpp.close
 
 ###### Add Files to Visual Studio #####
