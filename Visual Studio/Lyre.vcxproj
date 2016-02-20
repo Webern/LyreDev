@@ -21,10 +21,6 @@
   <ItemGroup>
     <ClInclude Include="..\Sourcecode\Lyre\ForwardDeclare.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IAlter.h" />
-    <ClInclude Include="..\Sourcecode\Lyre\IXXXX.h" />
-    <ClInclude Include="..\Sourcecode\Lyre\IXXXXFactory.h" />
-    <ClInclude Include="..\Sourcecode\Lyre\Private\XXXX.h" />
-    <ClInclude Include="..\Sourcecode\Lyre\Private\XXXXFactory.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IBeatPattern.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IBeatPatternFactory.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IDuration.h" />
@@ -89,9 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sourcecode\Lyre\IAlter.cpp" />
-    <ClCompile Include="..\Sourcecode\Lyre\IXXXXFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\Lyre\Private\XXXX.cpp" />
-    <ClCompile Include="..\Sourcecode\Lyre\Private\XXXXFactory.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\IBeatPatternFactory.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\IDuration.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\IDurationFactory.cpp" />

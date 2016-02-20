@@ -33,3 +33,4 @@ LyreTest.exe
 *.idb
 *.opendb
 *.sdf
+/Visual Studio/Lyre.opensdf

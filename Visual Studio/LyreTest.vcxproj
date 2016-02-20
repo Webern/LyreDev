@@ -36,7 +36,6 @@
     <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchName.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockStep.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestAlter.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestXXXX.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestBeatPattern.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestBeatPatternFactory.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestCollection.cpp" />
