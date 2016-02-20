@@ -15,6 +15,6 @@ namespace Lyre
         virtual ~IXXXX() {};
         virtual IXXXXUP clone() const = 0;
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
-
+        
     };
 }

@@ -103,7 +103,7 @@ TEST( SO_getCurrentThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -128,7 +128,7 @@ TEST( SO_getCurrentThrowEnd, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -160,7 +160,7 @@ TEST( SO_getNextThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -184,7 +184,7 @@ TEST( SO_getNextThrowLast, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -210,7 +210,7 @@ TEST( SO_getNextThrowEnd, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -242,7 +242,7 @@ TEST( SO_getPreviousThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -266,7 +266,7 @@ TEST( SO_getPreviousThrowFirst, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -292,7 +292,7 @@ TEST( SO_getPreviousThrowEnd, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -390,7 +390,7 @@ TEST( SO_jumpThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -412,7 +412,7 @@ TEST( SO_jumpThrowNegative, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -434,7 +434,7 @@ TEST( SO_jumpThrowTooBig, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -600,7 +600,7 @@ TEST( SO_remove_throwLow, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -622,7 +622,7 @@ TEST( SO_remove_throwHigh, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -662,7 +662,7 @@ TEST( SO_getExceptionEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -684,7 +684,7 @@ TEST( SO_getExceptionLow, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -706,7 +706,7 @@ TEST( SO_getExceptionHigh, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -738,7 +738,7 @@ TEST( getCurrentIndex_ExceptionEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -836,7 +836,7 @@ TEST( UP_getCurrentThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -861,7 +861,7 @@ TEST( UP_getCurrentThrowEnd, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -893,7 +893,7 @@ TEST( UP_getNextThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -917,7 +917,7 @@ TEST( UP_getNextThrowLast, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -943,7 +943,7 @@ TEST( UP_getNextThrowEnd, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -975,7 +975,7 @@ TEST( UP_getPreviousThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -999,7 +999,7 @@ TEST( UP_getPreviousThrowFirst, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1025,7 +1025,7 @@ TEST( UP_getPreviousThrowEnd, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1123,7 +1123,7 @@ TEST( UP_jumpThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1145,7 +1145,7 @@ TEST( UP_jumpThrowNegative, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1167,7 +1167,7 @@ TEST( UP_jumpThrowTooBig, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1220,7 +1220,7 @@ TEST( UP_addThrowNull, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1355,7 +1355,7 @@ TEST( UP_remove_throwLow, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1377,7 +1377,7 @@ TEST( UP_remove_throwHigh, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1417,7 +1417,7 @@ TEST( UP_getExceptionEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1439,7 +1439,7 @@ TEST( UP_getExceptionLow, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1461,7 +1461,7 @@ TEST( UP_getExceptionHigh, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1493,7 +1493,7 @@ TEST( UP_getCurrentIndex_ExceptionEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1592,7 +1592,7 @@ TEST( SP_getCurrentThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1617,7 +1617,7 @@ TEST( SP_getCurrentThrowEnd, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1649,7 +1649,7 @@ TEST( SP_getNextThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1673,7 +1673,7 @@ TEST( SP_getNextThrowLast, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1699,7 +1699,7 @@ TEST( SP_getNextThrowEnd, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1731,7 +1731,7 @@ TEST( SP_getPreviousThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1755,7 +1755,7 @@ TEST( SP_getPreviousThrowFirst, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1781,7 +1781,7 @@ TEST( SP_getPreviousThrowEnd, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1879,7 +1879,7 @@ TEST( SP_jumpThrowEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1901,7 +1901,7 @@ TEST( SP_jumpThrowNegative, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1923,7 +1923,7 @@ TEST( SP_jumpThrowTooBig, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -1976,7 +1976,7 @@ TEST( SP_addThrowNull, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -2111,7 +2111,7 @@ TEST( SP_remove_throwLow, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -2133,7 +2133,7 @@ TEST( SP_remove_throwHigh, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -2173,7 +2173,7 @@ TEST( SP_getExceptionEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -2195,7 +2195,7 @@ TEST( SP_getExceptionLow, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -2217,7 +2217,7 @@ TEST( SP_getExceptionHigh, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -2249,7 +2249,7 @@ TEST( SP_getCurrentIndex_ExceptionEmpty, Collection )
     }
     catch ( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )

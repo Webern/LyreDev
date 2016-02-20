@@ -2,6 +2,7 @@
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "Lyre/TypeDefs.h"
 #include "Lyre/Private/throw.h"
+#include "Lyre/unusedParameter.h"
 #include <sstream>
 #include <locale>
 
@@ -27,7 +28,7 @@ TEST( Compiles, throwDotH )
     // similar (after eliminating casing differences)
     
     String expected =
-        "error in TestThrow.cpp (line 16) runTest: some error message";
+        "error in TestThrow.cpp (line 17) runTest: some error message";
     String actual = message;
 	std::locale loc;
     for ( auto it = expected.begin(); it != expected.end(); ++it )
@@ -58,7 +59,7 @@ TEST( throwIfNull, throwDotH )
     }
     catch( std::runtime_error& e )
     {
-        ( e );
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )

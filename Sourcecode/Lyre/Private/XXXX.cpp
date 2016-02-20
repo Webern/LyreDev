@@ -19,21 +19,23 @@ namespace Lyre
 
         XXXX::XXXX( const XXXX& other )
         {
-
+            UNUSED_PARAMETER( other )
         }
 
         XXXX::XXXX( XXXX&& other )
         {
-
+            UNUSED_PARAMETER( other )
         }
 
         XXXX& XXXX::operator=( const XXXX& other )
         {
+            UNUSED_PARAMETER( other )
             return *this;
         }
 
         XXXX& XXXX::operator=( XXXX&& other )
         {
+            UNUSED_PARAMETER( other )
             return *this;
         }
 
