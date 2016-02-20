@@ -55,11 +55,26 @@ todo.close
 
 ##### TODO Stub the files #####
 
+prototype = File.read("IXXXXFactory.h")
+prototype.sub!("XXXX", class_name)
+interface_h << prototype
 interface_h.close
-ifactory_h.close
+
+prototype = File.read("IXXXXFactory.cpp")
+prototype.sub!("XXXX", class_name)
+ifactory_cpp << prototype
 ifactory_cpp.close
+
+prototype = File.read("XXXX.h")
+prototype.sub!("XXXX", class_name)
+class_h << prototype
 class_h.close
+
+prototype = File.read("XXXX.cpp")
+prototype.sub!("XXXX", class_name)
+class_cpp << prototype
 class_cpp.close
+
 factory_h.close
 factory_cpp.close
 test_cpp.close
@@ -99,8 +114,8 @@ vcxproj_file = File.open(path_test_vcxproj, 'w')
 vcxproj_file << vcxproj_contents
 vcxproj_file.close
 
-__END__
-<ClCompile Include="..\Sourcecode\Lyre\IAlter.cpp" />
 
 
-replacement << "\n    <ClCompile Include=\"..\\Sourcecode\\LyreTest\\Tests\\#{name_test_cpp}\" />"
+
+
+
