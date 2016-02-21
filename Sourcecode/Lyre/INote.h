@@ -26,11 +26,6 @@ namespace Lyre
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         virtual String toString() const = 0;
         
-        //virtual bool getIsGroupMember() const = 0;
-        //virtual int getGroupMembershipCount() const = 0;
-        
-        //TODO virtual const NoteGroupsIter& getGroupsIterator() const = 0;
-        
     };
     
     PUBLIC std::ostream& operator<<( std::ostream& os, const INote& note );

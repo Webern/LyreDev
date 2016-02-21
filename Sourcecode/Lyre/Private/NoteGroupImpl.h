@@ -7,6 +7,8 @@ namespace Lyre
 {
     namespace Private
     {
+        FORWARD_DECLARE( NoteGroupImpl )
+        
         class NoteGroupImpl
         {
         public:
@@ -16,8 +18,6 @@ namespace Lyre
                 Parent,
                 Undecided
             };
-            using Child = std::shared_ptr<NoteGroupImpl>;
-            using Children = std::vector<Child>;
             
             ~NoteGroupImpl();
             NoteGroupImpl();
@@ -27,19 +27,21 @@ namespace Lyre
             NoteGroupImpl& operator=( const NoteGroupImpl& other );
             NoteGroupImpl& operator=( NoteGroupImpl&& other );
             
+            NoteGroupImplUP clone() const;
+            
             Type getType() const;
-            void setType( const Type t );
             int getCount() const;
             
             void setNote( const INoteUP& value );
-            void setChildren( const Children& children );
-            Child getChild( int index ) const;
-            void addChild( Child child );
+            INoteUP getNote() const;
+            
+            NoteGroupImplUP getChild( int index ) const;
+            void addChild( const NoteGroupImplUP& child );
             void removeChild( int index );
             
         private:
             INoteUP myNote;
-            Children myChildren;
+            VecNoteGroupImplUP myChildren;
             Type myType;
         };
     }

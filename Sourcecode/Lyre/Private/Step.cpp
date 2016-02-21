@@ -1,18 +1,32 @@
 #include "Lyre/Private/Step.h"
 #include "Lyre/Private/Enum.h"
+#include "Lyre/Private/StepStrings.h"
+#include "Lyre/Private/throw.h"
 #include <typeinfo>
 
 namespace Lyre
 {
     namespace Private
     {
-        std::shared_ptr<Strings> StepImplStringsSP = std::make_shared<Strings>( Strings{ "C","D","E","F","G","A","B" } );
-        
         class Step::StepImpl : public Enum
         {
         public:
-            StepImpl( const int value ) : Enum( value, StepImplStringsSP, 0 ) {}
-            StepImpl() : Enum( 0, StepImplStringsSP, 0 ) {}
+            StepImpl( const int value ) : Enum( value, StepStrings{}.getStrings(), 0 )
+            {
+                THROW_IF_NULL( StepStrings{}.getStrings() )
+                if ( StepStrings{}.getStrings()->size() == 0 )
+                {
+                    THROW( "initialization problem" )
+                }
+            }
+            StepImpl() : Enum( 0, StepStrings{}.getStrings(), 0 )
+            {
+                THROW_IF_NULL( StepStrings{}.getStrings() )
+                if ( StepStrings{}.getStrings()->size() == 0 )
+                {
+                    THROW( "initialization problem" )
+                }
+            }
         };
         Step::~Step() {}
         Step::Step() : myImpl( new StepImpl{} ) {}

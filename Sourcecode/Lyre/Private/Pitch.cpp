@@ -151,6 +151,7 @@ namespace Lyre
             os << myPitchName;
             return os << std::to_string( myOctave );
         }
+        
         bool Pitch::isIdenticalTo( const IPitch& other ) const
         {
             if ( getValue() != other.getValue() )

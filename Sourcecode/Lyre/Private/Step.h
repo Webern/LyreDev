@@ -17,7 +17,7 @@ namespace Lyre
             A = 5,
             B = 7
         };
-        
+            
         FORWARD_DECLARE(Step)
         
         class EXPORT_FOR_TESTS Step : public IStep
