@@ -70,10 +70,12 @@
     <ClInclude Include="..\Sourcecode\Lyre\Private\Mod.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\Note.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\NoteFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\NoteGroupImpl.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\Pitch.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\PitchFactory.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\PitchName.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\Step.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\StepStrings.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\throw.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\TimeSignature.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\TimeSignatureFactory.h" />
@@ -125,10 +127,12 @@
     <ClCompile Include="..\Sourcecode\Lyre\Private\Enum.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\Note.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\NoteFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\NoteGroupImpl.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\Pitch.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\PitchFactory.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\PitchName.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\Step.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\StepStrings.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\TimeSignature.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\TimeSignatureFactory.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\TupletDef.cpp" />

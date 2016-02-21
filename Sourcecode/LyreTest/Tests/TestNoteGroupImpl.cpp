@@ -86,7 +86,7 @@ TEST( setNote_throw, NoteGroupImpl )
 }
 T_END
 
-TEST( getChild_0, NoteGroupImpl )
+TEST( getChild, NoteGroupImpl )
 {
     NoteGroupImpl notes;
     std::unique_ptr<NoteGroupImpl> note1{ new NoteGroupImpl{} };

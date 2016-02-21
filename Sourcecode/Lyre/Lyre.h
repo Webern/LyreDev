@@ -6,6 +6,10 @@
 #include "Lyre/IStreameable.h"
 #include "Lyre/unusedParameter.h"
 
+// seriously, microsoft?
 #ifdef _MSC_VER
-    #define noexcept______________
+    #define noexcept
+	#if _MSC_VER >= 1900
+		#undef noexcept
+	#endif
 #endif

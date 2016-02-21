@@ -9,7 +9,7 @@ namespace Lyre
     {
         FORWARD_DECLARE( NoteGroupImpl )
         
-        class NoteGroupImpl
+        class EXPORT_FOR_TESTS NoteGroupImpl
         {
         public:
             enum class Type
