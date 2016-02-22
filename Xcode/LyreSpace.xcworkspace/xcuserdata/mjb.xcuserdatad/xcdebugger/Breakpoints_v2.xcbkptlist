@@ -889,66 +889,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/LyreTest/Tests/TestNoteGroupImpl.cpp"
-            timestampString = "477761717.652257"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "TEST( getChild, NoteGroupImpl )"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteGroupImplgetChild_0Test::runTest(TestResult&amp;)"
-                  moduleName = "LyreTest"
-                  urlString = "file:///Volumes/Lyre/Sourcecode/LyreTest/Tests/TestNoteGroupImpl.cpp"
-                  timestampString = "477761657.262271"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "6506">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteGroupImplgetChild_0Test::runTest(TestResult&amp;)"
-                  moduleName = "LyreTest"
-                  urlString = "file:///Volumes/Lyre/Sourcecode/LyreTest/Tests/TestNoteGroupImpl.cpp"
-                  timestampString = "477761657.262418"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "8366">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NoteGroupImplgetChild_0Test::runTest(TestResult&amp;)"
-                  moduleName = "LyreTest"
-                  urlString = "file:///Volumes/Lyre/Sourcecode/LyreTest/Tests/TestNoteGroupImpl.cpp"
-                  timestampString = "477761657.26253"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "12122">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Pitch.cpp"
             timestampString = "477758172.420686"
             startingColumnNumber = "9223372036854775807"
@@ -1047,6 +987,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
             endingLineNumber = "11">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/NoteGroupImpl.cpp"
+            timestampString = "477846935.477925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "NoteGroupImpl::NoteGroupImpl( const NoteGroupImpl&amp; other )"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -34,7 +34,7 @@ namespace Lyre
             {
                 for ( int i = 0; i < other.getCount(); ++i )
                 {
-                    auto child = getChild( i );
+                    auto child = other.getChild( i );
                     if ( child )
                     {
                         myChildren.push_back( child->clone() );

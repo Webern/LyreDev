@@ -28,10 +28,13 @@ namespace Lyre
                 }
             }
         };
+        
         Step::~Step() {}
+        
         Step::Step() : myImpl( new StepImpl{} ) {}
         
         Step::Step( const int value ) : myImpl( new StepImpl{ value } ) {}
+        
         Step::Step( const StepValue value ) : myImpl( new StepImpl{} )
         {
             setValue( value );
