@@ -174,12 +174,16 @@ namespace Lyre
     
     bool NoteGroup::previous()
     {
-        if ( CURR < 1 || CURR > getCount() - 1 )
+        if ( CURR < 0 || CURR > getCount() - 1 )
         {
             THROW( "index out of range" )
         }
+        if ( CURR == 0 )
+        {
+            return false;
+        }
         --CURR;
-        return ! ( CURR == 0 );
+        return true;
     }
     
     void NoteGroup::jump( int index )

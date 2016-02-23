@@ -182,7 +182,6 @@ TEST( getCurrent, NoteGroup )
     INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );
     INoteUP actualNote = noteGroup->getCurrent();
-    CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 T_END
@@ -213,7 +212,6 @@ TEST( getNext, NoteGroup )
     INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );
     INoteUP actualNote = noteGroup->getNext();
-    CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 T_END
@@ -245,7 +243,6 @@ TEST( getPrevious, NoteGroup )
     noteGroup->add( f.d4Eighth() );
     noteGroup->next();
     INoteUP actualNote = noteGroup->getPrevious();
-    CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 T_END
@@ -260,7 +257,6 @@ TEST( first, NoteGroup )
     noteGroup->next();
     noteGroup->first();
     INoteUP actualNote = noteGroup->getCurrent();
-    CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 T_END
@@ -275,7 +271,6 @@ TEST( last, NoteGroup )
     noteGroup->add( expectedNote );
     noteGroup->last();
     INoteUP actualNote = noteGroup->getCurrent();
-    CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 T_END
@@ -294,8 +289,6 @@ TEST( next, NoteGroup )
     {
         actualNote = noteGroup->getCurrent();
     }
-    
-    CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 T_END
@@ -310,7 +303,6 @@ TEST( previous, NoteGroup )
     INoteUP actualNote = nullptr;
     noteGroup->last();
     do { actualNote = noteGroup->getCurrent(); } while ( noteGroup->previous() );
-    CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 T_END
@@ -330,7 +322,6 @@ TEST( jump, NoteGroup )
     noteGroup->last();
     noteGroup->jump( 3 );
     INoteUP actualNote = noteGroup->getCurrent();
-    CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
 T_END
