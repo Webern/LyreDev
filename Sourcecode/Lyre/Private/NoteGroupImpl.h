@@ -34,6 +34,7 @@ namespace Lyre
             
             void setNote( const INoteUP& value );
             INoteUP getNote() const;
+            Rational getTotalDuration() const;
             
             NoteGroupImplUP getChild( int index ) const;
             void addChild( const NoteGroupImplUP& child );

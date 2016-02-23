@@ -494,11 +494,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/NoteGroup.cpp"
-            timestampString = "477107559.949793"
+            timestampString = "477901413.965375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "348"
-            endingLineNumber = "348">
+            startingLineNumber = "548"
+            endingLineNumber = "548">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -508,11 +508,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/NoteGroup.cpp"
-            timestampString = "477107559.949793"
+            timestampString = "477901413.965375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "539"
-            endingLineNumber = "539">
+            startingLineNumber = "739"
+            endingLineNumber = "739">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/NoteGroup.cpp"
-            timestampString = "477107559.949793"
+            timestampString = "477901413.965375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "550"
-            endingLineNumber = "550">
+            startingLineNumber = "750"
+            endingLineNumber = "750">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -541,7 +541,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
             endingLineNumber = "118"
-            landmarkName = "TEST( getDurationValue_Q, NoteGroup )"
+            landmarkName = "TEST( getTotalDuration_0, NoteGroup )"
             landmarkType = "7">
             <Locations>
                <Location
@@ -643,7 +643,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
             endingLineNumber = "120"
-            landmarkName = "TEST( getDurationValue_Q, NoteGroup )"
+            landmarkName = "TEST( getTotalDuration_0, NoteGroup )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -659,7 +659,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "256"
             endingLineNumber = "256"
-            landmarkName = "TEST( last, NoteGroup )"
+            landmarkName = "TEST( first, NoteGroup )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -675,7 +675,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "301"
             endingLineNumber = "301"
-            landmarkName = "TEST( jump, NoteGroup )"
+            landmarkName = "TEST( next, NoteGroup )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -690,9 +690,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "267"
-            endingLineNumber = "267"
-            landmarkName = "TEST( next, NoteGroup )"
-            landmarkType = "7">
+            endingLineNumber = "267">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -707,7 +705,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "275"
             endingLineNumber = "275"
-            landmarkName = "TEST( next, NoteGroup )"
+            landmarkName = "TEST( last, NoteGroup )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -723,7 +721,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "364"
             endingLineNumber = "364"
-            landmarkName = "TEST( remove_exception, NoteGroup )"
+            landmarkName = "TEST( jump_exception_negative, NoteGroup )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

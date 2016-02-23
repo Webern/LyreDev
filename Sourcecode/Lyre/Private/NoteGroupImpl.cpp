@@ -135,6 +135,28 @@ namespace Lyre
             THROW( "cannot retreive note" )
         }
         
+        Rational NoteGroupImpl::getTotalDuration() const
+        {
+            if( myType == Type::Undecided )
+            {
+                return Rational{ 0, 1 };
+            }
+            else if ( myType == Type::Leaf )
+            {
+                return myNote->getDuration()->getValue();
+            }
+            else
+            {
+                Rational total{ 0, 1 };
+                for ( int i = 0; i < getCount(); ++i )
+                {
+                    auto child = getChild( i );
+                    total += child->getTotalDuration();
+                }
+                return total;
+            }
+        }
+        
         NoteGroupImplUP NoteGroupImpl::getChild( int index ) const
         {
             if ( myType != Type::Parent )
