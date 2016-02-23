@@ -166,7 +166,7 @@ TEST( getCurrent_exception, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        auto n = noteGroup->getCurrent();
+        INoteUP n = noteGroup->getCurrent();
     }
     catch (...)
     {
@@ -180,9 +180,9 @@ TEST( getCurrent, NoteGroup )
 {
     Factories f;
     INoteGroupUP noteGroup = createNoteGroup();
-    INoteSP expectedNote = f.e2Sixteenth();
+    INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );
-    INoteSPC actualNote = noteGroup->getCurrent();
+    INoteUP actualNote = noteGroup->getCurrent();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -211,9 +211,9 @@ TEST( getNext, NoteGroup )
     Factories f;
     INoteGroupUP noteGroup = createNoteGroup();
     noteGroup->add( f.d4Eighth() );
-    INoteSP expectedNote = f.e2Sixteenth();
+    INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );
-    INoteSPC actualNote = noteGroup->getNext();
+    INoteUP actualNote = noteGroup->getNext();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -241,11 +241,11 @@ TEST( getPrevious, NoteGroup )
 {
     Factories f;
     INoteGroupUP noteGroup = createNoteGroup();
-    INoteSP expectedNote = f.e2Sixteenth();
+    INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );
     noteGroup->add( f.d4Eighth() );
     noteGroup->next();
-    INoteSPC actualNote = noteGroup->getPrevious();
+    INoteUP actualNote = noteGroup->getPrevious();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -255,12 +255,12 @@ TEST( first, NoteGroup )
 {
     Factories f;
     INoteGroupUP noteGroup = createNoteGroup();
-    INoteSP expectedNote = f.e2Sixteenth();
+    INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );
     noteGroup->add( f.d4Eighth() );
     noteGroup->next();
     noteGroup->first();
-    INoteSPC actualNote = noteGroup->getCurrent();
+    INoteUP actualNote = noteGroup->getCurrent();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -272,10 +272,10 @@ TEST( last, NoteGroup )
     INoteGroupUP noteGroup = createNoteGroup();
     noteGroup->add( f.d4Eighth() );
     noteGroup->add( f.c4Quarter() );
-    INoteSP expectedNote = f.e2Sixteenth();
+    INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );
     noteGroup->last();
-    INoteSPC actualNote = noteGroup->getCurrent();
+    INoteUP actualNote = noteGroup->getCurrent();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -287,9 +287,9 @@ TEST( next, NoteGroup )
     INoteGroupUP noteGroup = createNoteGroup();
     noteGroup->add( f.d4Eighth() );
     noteGroup->add( f.c4Quarter() );
-    INoteSP expectedNote = f.e2Sixteenth();
+    INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );
-    INoteSPC actualNote = nullptr;
+    INoteUP actualNote = nullptr;
     
     while ( noteGroup->next(), ! noteGroup->getIsEnd() )
     {
@@ -305,10 +305,10 @@ TEST( previous, NoteGroup )
 {
     Factories f;
     INoteGroupUP noteGroup = createNoteGroup();
-    INoteSP expectedNote = f.e2Sixteenth();
+    INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );noteGroup->add( f.d4Eighth() );
     noteGroup->add( f.c4Quarter() );
-    INoteSPC actualNote = nullptr;
+    INoteUP actualNote = nullptr;
     noteGroup->last();
     do { actualNote = noteGroup->getCurrent(); } while ( noteGroup->previous() );
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
@@ -323,14 +323,14 @@ TEST( jump, NoteGroup )
     noteGroup->add( f.c4Quarter() );
     noteGroup->add( f.c4Quarter() );
     noteGroup->add( f.c4Quarter() );
-    INoteSP expectedNote = f.e2Sixteenth();
+    INoteUP expectedNote = f.e2Sixteenth();
     noteGroup->add( expectedNote );noteGroup->add( f.d4Eighth() );
     noteGroup->add( f.c4Quarter() );
     noteGroup->add( f.c4Quarter() );
     noteGroup->add( f.c4Quarter() );
     noteGroup->last();
     noteGroup->jump( 3 );
-    INoteSPC actualNote = noteGroup->getCurrent();
+    INoteUP actualNote = noteGroup->getCurrent();
     CHECK_EQUAL( expectedNote.get(), actualNote.get() )
     CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
 }
@@ -416,9 +416,8 @@ TEST( remove, NoteGroup )
     noteGroup->add( f.c4Quarter() );
     noteGroup->add( f.c4Quarter() );
     noteGroup->add( f.c4Quarter() );
-    auto noteToRemoveUP = f.c4Quarter();
-    auto noteToRemoveSP = toShared( noteToRemoveUP );
-    noteGroup->add( noteToRemoveSP );
+    auto noteUP = f.c4Quarter();
+    noteGroup->add( noteUP );
     CHECK_EQUAL( 6, noteGroup->getCount() )
     noteGroup->remove( 5 );
     CHECK_EQUAL( 5, noteGroup->getCount() )
@@ -426,7 +425,7 @@ TEST( remove, NoteGroup )
     for (int i=0; i<noteGroup->getCount(); ++i)
     {
         auto current = noteGroup->getCurrent();
-        CHECK( current.get() != noteToRemoveSP.get() )
+        CHECK( current.get() != DELETE_THIS_VARIABLE.get() )
         noteGroup->next();
     }
 }

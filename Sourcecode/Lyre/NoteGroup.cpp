@@ -13,7 +13,7 @@ namespace Lyre
     class NoteGroup::Impl
 	{
 	public:
-        Private::Collection<INoteSP> myNotes;
+        Private::Collection<INoteUP> myNotes;
 	};
 
 #define MY_NOTES ( myImplP->myNotes )
@@ -107,7 +107,7 @@ namespace Lyre
         return total;
     }
     
-    const INoteSPC NoteGroup::getCurrent() const
+    const INoteUP NoteGroup::getCurrent() const
     {
         if ( getIsEmpty() )
         {
@@ -116,12 +116,12 @@ namespace Lyre
         return MY_NOTES.getCurrent();
     }
     
-    const INoteSPC NoteGroup::getNext() const
+    const INoteUP NoteGroup::getNext() const
     {
         return MY_NOTES.getNext();
     }
     
-    const INoteSPC NoteGroup::getPrevious() const
+    const INoteUP NoteGroup::getPrevious() const
     {
         return MY_NOTES.getPrevious();
     }
@@ -151,7 +151,7 @@ namespace Lyre
         MY_NOTES.jump( index );
     }
     
-    void NoteGroup::add( const INoteSP& note )
+    void NoteGroup::add( const INoteUP& note )
     {
         MY_NOTES.add( note );
     }
@@ -259,7 +259,7 @@ namespace Lyre
         return ROOT.getTotalDuration();
     }
     
-    const INoteSPC NoteGroup::getCurrent() const
+    const INoteUP NoteGroup::getCurrent() const
     {
         if ( getIsEmpty() )
         {
@@ -272,7 +272,7 @@ namespace Lyre
         return ROOT.getChild( CURR )->getNote();
     }
     
-    const INoteSPC NoteGroup::getNext() const
+    const INoteUP NoteGroup::getNext() const
     {
         if ( CURR < 0 || CURR > getCount() - 1 )
         {
@@ -281,7 +281,7 @@ namespace Lyre
         return ROOT.getChild( CURR + 1 )->getNote();
     }
     
-    const INoteSPC NoteGroup::getPrevious() const
+    const INoteUP NoteGroup::getPrevious() const
     {
         if ( CURR < 1 || CURR > getCount() - 1 )
         {
@@ -343,7 +343,7 @@ namespace Lyre
         CURR = index;
     }
     
-    void NoteGroup::add( const INoteSP& note )
+    void NoteGroup::add( const INoteUP& note )
     {
         THROW_IF_NULL( note )
         Private::NoteGroupImplUP newimpl{ new Private::NoteGroupImpl{} };
