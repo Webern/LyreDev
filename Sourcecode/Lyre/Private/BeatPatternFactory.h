@@ -15,8 +15,9 @@ namespace Lyre
         public:
             virtual ~BeatPatternFactory();
             
-            virtual IBeatPatternUP create( int count,
-                                           const IDurationUP& dur ) const;
+            virtual IBeatPatternUP create(
+				int count,
+				const IDurationUP& dur ) const;
             
             virtual IBeatPatternUP create( const VecIDurationUP& durations ) const;
         };

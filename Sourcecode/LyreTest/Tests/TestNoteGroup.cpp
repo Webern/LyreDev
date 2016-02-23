@@ -1,6 +1,5 @@
 //PUBLIC
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "LyreTest/Mock/MockNoteGroup.h"
 #include "Lyre/NoteGroup.h"
 #include "Lyre/IDurationFactory.h"
 #include "Lyre/IPitchFactory.h"
@@ -162,7 +161,7 @@ T_END
 TEST( getCurrent_exception, NoteGroup )
 {
     Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
+    INoteGroupUP noteGroup{ new NoteGroup{} };
     bool isExceptionThrown = false;
     try
     {
@@ -425,7 +424,7 @@ TEST( remove, NoteGroup )
     for (int i=0; i<noteGroup->getCount(); ++i)
     {
         auto current = noteGroup->getCurrent();
-        CHECK( current.get() != DELETE_THIS_VARIABLE.get() )
+        CHECK( current.get() != noteUP.get() )
         noteGroup->next();
     }
 }

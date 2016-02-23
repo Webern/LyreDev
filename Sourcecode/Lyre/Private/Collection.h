@@ -6,9 +6,7 @@
 namespace Lyre
 {
     namespace Private
-    {
-        // I am a jedi
-        
+    {        
         template <typename TYPE>
         class Copier
         {
@@ -147,7 +145,7 @@ namespace Lyre
             virtual TYPE getCurrent() const
             {
                 throwIfBadCurrent();
-                return Copier<TYPE>::copy( myItems[ toSize(myCurrent)] );
+                return Copier<TYPE>::copy( myItems[ toSize( myCurrent ) ] );
             }
             
             virtual TYPE getNext() const
