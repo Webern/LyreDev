@@ -27,6 +27,7 @@ namespace Lyre
         virtual INoteUP getCurrent() const;
         virtual INoteUP getNext() const;
         virtual INoteUP getPrevious() const;
+        virtual INoteUP getNote( int index ) const;
         virtual void first();
         virtual void last();
         virtual bool next();
@@ -34,6 +35,14 @@ namespace Lyre
         virtual void jump( int index );
         virtual void add( const INoteUP& note );
         virtual void remove( int index );
+        
+        int getSubGroupCount() const;
+        bool getIsCurrentSubGrouped() const;
+        bool getAreAllNotesSubGrouped() const;
+        int getCurrentSubGroupIndex() const;
+        INoteGroupUP getGroup( int subGroupIndex ) const;
+        void addGroup( const INoteGroupUP& group );
+        void removeGroup( int subGroupIndex );
 
     private:
         class Impl;

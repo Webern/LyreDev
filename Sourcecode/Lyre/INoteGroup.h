@@ -19,6 +19,7 @@ namespace Lyre
         virtual INoteUP getCurrent() const = 0;
         virtual INoteUP getNext() const = 0;
         virtual INoteUP getPrevious() const = 0;
+        virtual INoteUP getNote( int index ) const = 0;
         virtual void first() = 0;
         virtual void last() = 0;
         virtual bool next() = 0;
@@ -26,5 +27,13 @@ namespace Lyre
         virtual void jump( int index ) = 0;
         virtual void add( const INoteUP& note ) = 0;
         virtual void remove( int index ) = 0;
+        
+        virtual int getSubGroupCount() const = 0;
+        virtual bool getIsCurrentSubGrouped() const = 0;
+        virtual bool getAreAllNotesSubGrouped() const = 0;
+        virtual int getCurrentSubGroupIndex() const = 0;
+        virtual INoteGroupUP getGroup( int subGroupIndex ) const = 0;
+        virtual void addGroup( const INoteGroupUP& group ) = 0;
+        virtual void removeGroup( int subGroupIndex ) = 0;
     };
 }

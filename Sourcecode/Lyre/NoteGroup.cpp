@@ -138,6 +138,42 @@ namespace Lyre
         return ROOT.getChild( CURR - 1 )->getNote();
     }
     
+    
+    INoteUP NoteGroup::getNote( int index ) const
+    {
+        if ( index < 0 || index > getCount() - 1 || getIsEmpty() )
+        {
+            THROW( "index out of range" )
+        }
+        if ( ROOT.getType() == Private::NoteGroupImpl::Type::Leaf && index == 0 )
+        {
+            return ROOT.getNote();
+        }
+        for ( int i = 0; i <= index; )
+        {
+            auto child = ROOT.getChild( i );
+            if ( child->getType() == Private::NoteGroupImpl::Type::Leaf )
+            {
+                if( i == index )
+                {
+                    return child->getNote();
+                }
+                else
+                {
+                    ++i;
+                }
+            }
+            else
+            {
+                int childLastIndex = child->getCount() + i;
+                if ( childLastIndex > index )
+                {
+                    return child
+                }
+            }
+        }
+    }
+    
     void NoteGroup::first()
     {
         CURR = 0;
@@ -207,5 +243,41 @@ namespace Lyre
     void NoteGroup::remove( int index )
     {
         ROOT.removeChild( index );
+    }
+    
+    int NoteGroup::getSubGroupCount() const
+    {
+        return -2;
+    }
+    
+    bool NoteGroup::getIsCurrentSubGrouped() const
+    {
+        return true;
+    }
+    
+    bool NoteGroup::getAreAllNotesSubGrouped() const
+    {
+        return true;
+    }
+    
+    int NoteGroup::getCurrentSubGroupIndex() const
+    {
+        return -2;
+    }
+    
+    INoteGroupUP NoteGroup::getGroup( int subGroupIndex ) const
+    {
+        UNUSED_PARAMETER( subGroupIndex )
+        return INoteGroupUP{nullptr};
+    }
+    
+    void NoteGroup::addGroup( const INoteGroupUP& group )
+    {
+        UNUSED_PARAMETER( group )
+    }
+    
+    void NoteGroup::removeGroup( int subGroupIndex )
+    {
+        UNUSED_PARAMETER( subGroupIndex )
     }
 }

@@ -420,3 +420,49 @@ TEST( remove, NoteGroup )
     }
 }
 T_END
+
+namespace
+{
+    inline INoteUP makeNote( int pitch, String dur )
+    {
+        Factories f;
+        f.pitch->setPitch( pitch );
+        auto p = f.pitch->createPitch();
+        auto d = f.duration->createDuration( dur );
+        return f.note->createNote( p, d );
+    }
+    inline INoteGroupUP pattern1()
+    {
+        INoteGroupUP noteGroup = createNoteGroup();
+        noteGroup->add( makeNote( 50, "Quarter" ) );
+        noteGroup->add( makeNote( 51, "Eighth" ) );
+        noteGroup->add( makeNote( 52, "Sixteenth" ) );
+        noteGroup->add( makeNote( 53, "Sixteenth" ) );
+        return std::move( noteGroup );
+    }
+    inline INoteGroupUP pattern2()
+    {
+        INoteGroupUP noteGroup = createNoteGroup();
+        noteGroup->add( makeNote( 60, "Half" ) );
+        noteGroup->add( makeNote( 59, "Half" ) );
+        noteGroup->add( makeNote( 58, "Half" ) );
+        noteGroup->add( makeNote( 56, "Half" ) );
+        return std::move( noteGroup );
+    }
+    inline INoteGroupUP pattern3()
+    {
+        INoteGroupUP noteGroup = createNoteGroup();
+        noteGroup->add( makeNote( 70, "16th" ) );
+        noteGroup->add( makeNote( 71, "32nd" ) );
+        noteGroup->add( makeNote( 72, "32nd" ) );
+        noteGroup->add( makeNote( 73, "Eighth" ) );
+        return std::move( noteGroup );
+    }
+    inline INoteGroupUP nested1()
+    {
+        INoteGroupUP noteGroup = createNoteGroup();
+        INoteGroupUP pat1 = pattern1();
+        noteGroup->add( pat1->get)
+        return std::move( noteGroup );
+    }
+}
