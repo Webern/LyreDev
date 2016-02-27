@@ -13,36 +13,24 @@ namespace Lyre
     class PUBLIC NoteGroup : public INoteGroup
     {
     public:
-        virtual ~NoteGroup();
-        NoteGroup();
-        NoteGroup( const NoteGroup& other );
-        NoteGroup( NoteGroup&& other ) noexcept;
-        NoteGroup& operator=( const NoteGroup& other );
-        NoteGroup& operator=( NoteGroup&& other ) noexcept;
-        virtual INoteGroupUP clone() const;
-        virtual bool getIsEmpty() const;
-        virtual bool getIsEnd() const;
-        virtual int getCount() const;
-        virtual Rational getTotalDuration() const;
-        virtual INoteUP getCurrent() const;
-        virtual INoteUP getNext() const;
-        virtual INoteUP getPrevious() const;
-        virtual INoteUP getNote( int index ) const;
-        virtual void first();
-        virtual void last();
-        virtual bool next();
-        virtual bool previous();
-        virtual void jump( int index );
-        virtual void add( const INoteUP& note );
-        virtual void remove( int index );
+        virtual ~NoteGroup() {}
+        virtual INoteGroupUP clone() const ;
+        virtual std::ostream& toStream( std::ostream& os ) const ;
         
-        int getSubGroupCount() const;
-        bool getIsCurrentInSubGroup() const;
-        int getCurrentSubGroupIndex() const;
-        INoteGroupUP getGroup( int subGroupIndex ) const;
-        void addGroup( const INoteGroupUP& group );
-        void removeGroup( int subGroupIndex );
-
+        virtual bool getIsEmpty() const ;
+        virtual int getCount() const ;
+        virtual Rational getTotalDuration() const ;
+        virtual INoteUP getNote( int noteIndex ) const ;
+        virtual void add( const INoteUP& note ) ;
+        virtual void remove( int noteIndex ) ;
+        
+        virtual int getGroupCount() const ;
+        virtual bool getIsInGroup( int noteIndex ) const ;
+        virtual int getGroupIndex( int noteIndex ) const ;
+        virtual INoteGroupUP getGroup( int groupIndex ) const ;
+        virtual void addGroup( const INoteGroupUP& group ) ;
+        virtual void removeGroup( int subGroupIndex ) ;
+        
     private:
         class Impl;
         Impl* myImplP;

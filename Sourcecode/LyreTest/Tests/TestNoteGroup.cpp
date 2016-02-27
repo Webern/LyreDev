@@ -43,495 +43,272 @@ namespace
     };
 }
 
-TEST( Constructor, NoteGroup )
+TEST( ctor, NoteGroup )
 {
-    NoteGroup noteGroup;
-    CHECK( true );
-}
-T_END
-
-TEST( createNoteGroup, NoteGroup )
-{
-    INoteGroupUP noteGroup = createNoteGroup();
-    CHECK( noteGroup != nullptr );
+    CHECK_FAIL( "ctor" )
 }
 T_END
 
 TEST( clone, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.e2Sixteenth() );
-    INoteGroupUP cloned = noteGroup->clone();
-    CHECK_EQUAL( 2, noteGroup->getCount() )
-    CHECK_EQUAL( 2, cloned->getCount() )
-    CHECK( noteGroup.get() != cloned.get() )
+    CHECK_FAIL( "clone" )
+}
+T_END
+
+TEST( toStream, NoteGroup )
+{
+    CHECK_FAIL( "toStream" )
+}
+T_END
+
+TEST( toString, NoteGroup )
+{
+    CHECK_FAIL( "toString" )
+}
+T_END
+
+TEST( streamOperator, NoteGroup )
+{
+    CHECK_FAIL( "streamOperator" )
 }
 T_END
 
 TEST( getIsEmpty_true, NoteGroup )
 {
-    INoteGroupUP noteGroup = createNoteGroup();
-    CHECK( noteGroup->getIsEmpty() )
+    CHECK_FAIL( "getIsEmpty_true" )
 }
 T_END
 
 TEST( getIsEmpty_false, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.d4Eighth() );
-    CHECK( ! noteGroup->getIsEmpty() )
+    CHECK_FAIL( "getIsEmpty_false" )
 }
 T_END
 
 TEST( getCount_0, NoteGroup )
 {
-    INoteGroupUP noteGroup = createNoteGroup();
-    CHECK_EQUAL( 0, noteGroup->getCount() )
+    CHECK_FAIL( "getCount_0" )
 }
 T_END
 
 TEST( getCount_1, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.d4Eighth() );
-    CHECK_EQUAL( 1, noteGroup->getCount() )
+    CHECK_FAIL( "getCount_1" )
 }
 T_END
 
-TEST( getCount_2, NoteGroup )
+TEST( getCount_5_flat, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.e2Sixteenth() );
-    CHECK_EQUAL( 2, noteGroup->getCount() )
+    CHECK_FAIL( "getCount_5_flat" )
+}
+T_END
+
+TEST( getCount_5_nested, NoteGroup )
+{
+    CHECK_FAIL( "getCount_5_nested" )
 }
 T_END
 
 TEST( getTotalDuration_0, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    Rational expected{ 0, 1 };
-    Rational actual = noteGroup->getTotalDuration();
-    CHECK_EQUAL( expected, actual )
+    CHECK_FAIL( "getTotalDuration_0" )
 }
 T_END
 
-TEST( getTotalDuration_Q, NoteGroup )
+TEST( getTotalDuration_4Q, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.c4Quarter() );
-    Rational expected{ 1, 1 };
-    Rational actual = noteGroup->getTotalDuration();
-    CHECK_EQUAL( expected, actual )
+    CHECK_FAIL( "getTotalDuration_4Q" )
 }
 T_END
 
-TEST( getTotalDuration_QE, NoteGroup )
+TEST( getTotalDuration_3E, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.d4Eighth() );
-    Rational expected{ 3, 2 };
-    Rational actual = noteGroup->getTotalDuration();
-    CHECK_EQUAL( expected, actual )
+    CHECK_FAIL( "getTotalDuration_3E" )
 }
 T_END
 
-TEST( getTotalDuration_QES, NoteGroup )
+TEST( getNote_throwEmpty, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.e2Sixteenth() );
-    Rational expected{ 7, 4 };
-    Rational actual = noteGroup->getTotalDuration();
-    CHECK_EQUAL( expected, actual )
+    CHECK_FAIL( "getNote_throwEmpty" )
 }
 T_END
 
-TEST( getCurrent_exception, NoteGroup )
+TEST( getNote_throwOutOfRange, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup{ new NoteGroup{} };
-    bool isExceptionThrown = false;
-    try
-    {
-        INoteUP n = noteGroup->getCurrent();
-    }
-    catch (...)
-    {
-        isExceptionThrown = true;
-    }
-    CHECK( isExceptionThrown )
+    CHECK_FAIL( "getNote_throwOutOfRange" )
 }
 T_END
 
-TEST( getCurrent, NoteGroup )
+TEST( getNote_flat, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    INoteUP expectedNote = f.e2Sixteenth();
-    noteGroup->add( expectedNote );
-    INoteUP actualNote = noteGroup->getCurrent();
-    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+    CHECK_FAIL( "getNote_flat" )
 }
 T_END
 
-TEST( getNext_exception, NoteGroup )
+TEST( getNote_nested, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
-    bool isExceptionThrown = false;
-    try
-    {
-        auto n = noteGroup->getNext();
-    }
-    catch (...)
-    {
-        isExceptionThrown = true;
-    }
-    CHECK( isExceptionThrown )
+    CHECK_FAIL( "getNote_nested" )
 }
 T_END
 
-TEST( getNext, NoteGroup )
+TEST( add_throwNull, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.d4Eighth() );
-    INoteUP expectedNote = f.e2Sixteenth();
-    noteGroup->add( expectedNote );
-    INoteUP actualNote = noteGroup->getNext();
-    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+    CHECK_FAIL( "add_throwNull" )
 }
 T_END
 
-TEST( getPrevious_exception, NoteGroup )
+TEST( add, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
-    bool isExceptionThrown = false;
-    try
-    {
-        auto n = noteGroup->getPrevious();
-    }
-    catch (...)
-    {
-        isExceptionThrown = true;
-    }
-    CHECK( isExceptionThrown )
+    CHECK_FAIL( "add" )
 }
 T_END
 
-TEST( getPrevious, NoteGroup )
+TEST( remove_throwEmpty, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    INoteUP expectedNote = f.e2Sixteenth();
-    noteGroup->add( expectedNote );
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->next();
-    INoteUP actualNote = noteGroup->getPrevious();
-    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+    CHECK_FAIL( "remove_throwEmpty" )
 }
 T_END
 
-TEST( getNote_exception, NoteGroup )
+TEST( remove_throwOutOfRange, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
-    noteGroup->add( f.c4Quarter() );
-    bool isExceptionThrown = false;
-    try
-    {
-        auto n = noteGroup->getNote( 2 );
-    }
-    catch (...)
-    {
-        isExceptionThrown = true;
-    }
-    CHECK( isExceptionThrown )
+    CHECK_FAIL( "remove_throwOutOfRange" )
 }
 T_END
 
-TEST( getNote, NoteGroup )
+TEST( remove_flat, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    INoteUP expectedNote = f.e2Sixteenth();
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( expectedNote );
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->next();
-    INoteUP actualNote = noteGroup->getNote( 1 );
-    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+    CHECK_FAIL( "remove_flat" )
 }
 T_END
 
-TEST( first, NoteGroup )
+TEST( remove_nested, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    INoteUP expectedNote = f.e2Sixteenth();
-    noteGroup->add( expectedNote );
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->next();
-    noteGroup->first();
-    INoteUP actualNote = noteGroup->getCurrent();
-    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+    CHECK_FAIL( "remove_nested" )
 }
 T_END
 
-TEST( last, NoteGroup )
+TEST( getGroupCount_0, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.c4Quarter() );
-    INoteUP expectedNote = f.e2Sixteenth();
-    noteGroup->add( expectedNote );
-    noteGroup->last();
-    INoteUP actualNote = noteGroup->getCurrent();
-    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+    CHECK_FAIL( "getGroupCount_0" )
 }
 T_END
 
-TEST( next, NoteGroup )
+TEST( getGroupCount_2_flat, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.c4Quarter() );
-    INoteUP expectedNote = f.e2Sixteenth();
-    noteGroup->add( expectedNote );
-    INoteUP actualNote = nullptr;
-    
-    while ( noteGroup->next(), ! noteGroup->getIsEnd() )
-    {
-        actualNote = noteGroup->getCurrent();
-    }
-    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+    CHECK_FAIL( "getGroupCount_2_flat" )
 }
 T_END
 
-TEST( previous, NoteGroup )
+TEST( getGroupCount_3_nested, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    INoteUP expectedNote = f.e2Sixteenth();
-    noteGroup->add( expectedNote );noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.c4Quarter() );
-    INoteUP actualNote = nullptr;
-    noteGroup->last();
-    do { actualNote = noteGroup->getCurrent(); } while ( noteGroup->previous() );
-    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+    CHECK_FAIL( "getGroupCount_3_nested" )
 }
 T_END
 
-TEST( jump, NoteGroup )
+TEST( getIsInGroup_throwEmpty, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    INoteUP expectedNote = f.e2Sixteenth();
-    noteGroup->add( expectedNote );noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->last();
-    noteGroup->jump( 3 );
-    INoteUP actualNote = noteGroup->getCurrent();
-    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+    CHECK_FAIL( "getIsInGroup_throwEmpty" )
 }
 T_END
 
-TEST( jump_exception, NoteGroup )
+TEST( getIsInGroup_throwOutOfRange, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->last();
-    bool isExceptionThrown = false;
-    try
-    {
-        noteGroup->jump( 7 );
-    }
-    catch (...)
-    {
-        isExceptionThrown = true;
-    }
-    CHECK( isExceptionThrown )
+    CHECK_FAIL( "getIsInGroup_throwOutOfRange" )
 }
 T_END
 
-TEST( jump_exception_negative, NoteGroup )
+TEST( getIsInGroup_true, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->last();
-    bool isExceptionThrown = false;
-    try
-    {
-        noteGroup->jump( -1 );
-    }
-    catch (...)
-    {
-        isExceptionThrown = true;
-    }
-    CHECK( isExceptionThrown )
+    CHECK_FAIL( "getIsInGroup_true" )
 }
 T_END
 
-TEST( remove_exception, NoteGroup )
+TEST( getIsInGroup_false, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    auto notAddedUP = f.c4Quarter();
-    auto notAddedSP = toShared( notAddedUP );
-    bool isExceptionThrown = false;
-    try
-    {
-        noteGroup->remove( 99 );
-    }
-    catch (...)
-    {
-        isExceptionThrown = true;
-    }
-    CHECK( isExceptionThrown )
+    CHECK_FAIL( "getIsInGroup_false" )
 }
 T_END
 
-TEST( remove, NoteGroup )
+TEST( getGroupIndex_throwEmpty, NoteGroup )
 {
-    Factories f;
-    INoteGroupUP noteGroup = createNoteGroup();
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.c4Quarter() );
-    auto noteUP = f.c4Quarter();
-    noteGroup->add( noteUP );
-    CHECK_EQUAL( 6, noteGroup->getCount() )
-    noteGroup->remove( 5 );
-    CHECK_EQUAL( 5, noteGroup->getCount() )
-    noteGroup->first();
-    for (int i=0; i<noteGroup->getCount(); ++i)
-    {
-        auto current = noteGroup->getCurrent();
-        CHECK( current.get() != noteUP.get() )
-        noteGroup->next();
-    }
+    CHECK_FAIL( "getGroupIndex_throwEmpty" )
 }
 T_END
 
-namespace
+TEST( getGroupIndex_throwOutOfRange, NoteGroup )
 {
-    inline INoteUP makeNote( int pitch, String dur )
-    {
-        Factories f;
-        f.pitch->setPitch( pitch );
-        auto p = f.pitch->createPitch();
-        auto d = f.duration->createDuration( dur );
-        return f.note->createNote( p, d );
-    }
-    inline INoteGroupUP pattern1()
-    {
-        INoteGroupUP noteGroup = createNoteGroup();
-        noteGroup->add( makeNote( 50, "Quarter" ) );
-        noteGroup->add( makeNote( 51, "Eighth" ) );
-        noteGroup->add( makeNote( 52, "Sixteenth" ) );
-        noteGroup->add( makeNote( 53, "Sixteenth" ) );
-        return std::move( noteGroup );
-    }
-    inline INoteGroupUP pattern2()
-    {
-        INoteGroupUP noteGroup = createNoteGroup();
-        noteGroup->add( makeNote( 60, "Half" ) );
-        noteGroup->add( makeNote( 59, "Half" ) );
-        noteGroup->add( makeNote( 58, "Half" ) );
-        noteGroup->add( makeNote( 56, "Half" ) );
-        return std::move( noteGroup );
-    }
-    inline INoteGroupUP pattern3()
-    {
-        INoteGroupUP noteGroup = createNoteGroup();
-        noteGroup->add( makeNote( 70, "16th" ) );
-        noteGroup->add( makeNote( 71, "32nd" ) );
-        noteGroup->add( makeNote( 72, "32nd" ) );
-        noteGroup->add( makeNote( 73, "Eighth" ) );
-        return std::move( noteGroup );
-    }
-    inline INoteGroupUP nested1()
-    {
-        INoteGroupUP noteGroup = pattern1();
-        INoteGroupUP nest1 = pattern2();
-        noteGroup->addGroup( nest1 );
-        INoteGroupUP pat3 = pattern3();
-        for ( int i = 0; i < pat3->getCount(); ++i )
-        {
-            noteGroup->add( pat3->getCurrent() );
-            pat3->next();
-        }
-        return std::move( noteGroup );
-    }
-}
-
-TEST( getSubGroupCount_0, NoteGroup )
-{
-    CHECK_FAIL( "getSubGroupCount_0" )
+    CHECK_FAIL( "getGroupIndex_throwOutOfRange" )
 }
 T_END
 
-TEST( getSubGroupCount_1, NoteGroup )
+TEST( getGroupIndex_Neg1, NoteGroup )
 {
-    CHECK_FAIL( "getSubGroupCount_1" )
+    CHECK_FAIL( "getGroupIndex_Neg1" )
 }
 T_END
 
-TEST( getSubGroupCount_2_withExtraSubNested, NoteGroup )
+TEST( getGroupIndex_0, NoteGroup )
 {
-    CHECK_FAIL( "getSubGroupCount_2_withExtraSubNested" )
+    CHECK_FAIL( "getGroupIndex_0" )
 }
 T_END
 
-TEST( getIsCurrentInSubGroup, NoteGroup )
+TEST( getGroupIndex_2_nested, NoteGroup )
 {
-    CHECK_FAIL( "getSubGroupCount_2_withExtraSubNested" )
+    CHECK_FAIL( "getGroupIndex_2_nested" )
 }
 T_END
 
-TEST( getIsCurrentInSubGroup, NoteGroup )
+TEST( getGroup_throwNoGroups, NoteGroup )
 {
-    CHECK_FAIL( "getSubGroupCount_2_withExtraSubNested" )
+    CHECK_FAIL( "getGroup_throwNoGroups" )
+}
+T_END
+
+TEST( getGroup_throwOutOfRange, NoteGroup )
+{
+    CHECK_FAIL( "getGroup_throwOutOfRange" )
+}
+T_END
+
+TEST( getGroup_0, NoteGroup )
+{
+    CHECK_FAIL( "getGroup_0" )
+}
+T_END
+
+TEST( getGroup_2, NoteGroup )
+{
+    CHECK_FAIL( "getGroup_2" )
+}
+T_END
+
+TEST( addGroup_throwNull, NoteGroup )
+{
+    CHECK_FAIL( "addGroup_throwNull" )
+}
+T_END
+
+TEST( addGroup, NoteGroup )
+{
+    CHECK_FAIL( "addGroup" )
+}
+T_END
+
+TEST( removeGroup_throwOutOfRange, NoteGroup )
+{
+    CHECK_FAIL( "removeGroup_throwOutOfRange" )
+}
+T_END
+
+TEST( removeGroup_2, NoteGroup )
+{
+    CHECK_FAIL( "removeGroup_2" )
+}
+T_END
+
+TEST( removeGroup_0, NoteGroup )
+{
+    CHECK_FAIL( "removeGroup_0" )
 }
 T_END

@@ -1,5 +1,6 @@
 //PUBLIC
 #pragma once
+#include "Lyre/Lyre.h"
 #include "Lyre/Rational.h"
 
 namespace Lyre
@@ -7,17 +8,19 @@ namespace Lyre
     FORWARD_DECLARE(INoteGroup)
     FORWARD_DECLARE(INote)
     
-    class PUBLIC INoteGroup
+    class PUBLIC INoteGroup : public IStreamable
     {
     public:
         virtual ~INoteGroup() {}
         virtual INoteGroupUP clone() const = 0;
+        virtual std::ostream& toStream( std::ostream& os ) const = 0;
+        
         virtual bool getIsEmpty() const = 0;
         virtual int getCount() const = 0;
         virtual Rational getTotalDuration() const = 0;
-        virtual INoteUP getNote( int index ) const = 0;
+        virtual INoteUP getNote( int noteIndex ) const = 0;
         virtual void add( const INoteUP& note ) = 0;
-        virtual void remove( int index ) = 0;
+        virtual void remove( int noteIndex ) = 0;
         
         virtual int getGroupCount() const = 0;
         virtual bool getIsInGroup( int noteIndex ) const = 0;
