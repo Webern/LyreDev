@@ -13,7 +13,13 @@ namespace Lyre
     class PUBLIC NoteGroup : public INoteGroup
     {
     public:
-        virtual ~NoteGroup() {}
+        virtual ~NoteGroup();
+        NoteGroup();
+        NoteGroup( const NoteGroup& other );
+        NoteGroup( NoteGroup&& other ) noexcept;
+        NoteGroup& operator=( const NoteGroup& other );
+        NoteGroup& operator=( NoteGroup&& other ) noexcept;
+        
         virtual INoteGroupUP clone() const ;
         virtual std::ostream& toStream( std::ostream& os ) const ;
         

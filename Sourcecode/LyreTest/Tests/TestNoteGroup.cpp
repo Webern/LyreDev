@@ -45,13 +45,44 @@ namespace
 
 TEST( ctor, NoteGroup )
 {
-    CHECK_FAIL( "ctor" )
+    NoteGroup noteGroup;
+    CHECK_EQUAL( 0, noteGroup.getCount() )
+}
+T_END
+
+TEST( copyCtor, NoteGroup )
+{
+    CHECK_FAIL( "copyCtor" )
+}
+T_END
+
+TEST( moveCtor, NoteGroup )
+{
+    CHECK_FAIL( "moveCtor" )
+}
+T_END
+
+TEST( assignment, NoteGroup )
+{
+    CHECK_FAIL( "assignment" )
+}
+T_END
+
+TEST( moveAssignment, NoteGroup )
+{
+    CHECK_FAIL( "moveAssignment" )
 }
 T_END
 
 TEST( clone, NoteGroup )
 {
-    CHECK_FAIL( "clone" )
+    Factories f;
+    INoteGroupUP noteGroup{ new NoteGroup{} };
+    noteGroup->add( f.c4Quarter() );
+    CHECK_EQUAL( 1, noteGroup->getCount() )
+    INoteGroupUP cloned = noteGroup->clone();
+    CHECK_EQUAL( 1, cloned->getCount() )
+    CHECK( noteGroup.get() != cloned.get() )
 }
 T_END
 
