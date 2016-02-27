@@ -29,8 +29,7 @@ namespace Lyre
         virtual void remove( int index ) = 0;
         
         virtual int getSubGroupCount() const = 0;
-        virtual bool getIsCurrentSubGrouped() const = 0;
-        virtual bool getAreAllNotesSubGrouped() const = 0;
+        virtual bool getIsCurrentInSubGroup() const = 0;
         virtual int getCurrentSubGroupIndex() const = 0;
         virtual INoteGroupUP getGroup( int subGroupIndex ) const = 0;
         virtual void addGroup( const INoteGroupUP& group ) = 0;

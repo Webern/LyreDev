@@ -3,6 +3,14 @@
 #include "Lyre/INote.h"
 #include "Lyre/Private/NoteGroupImpl.h"
 
+#define OLD_WAY
+
+#ifdef NEW_WAY
+
+#endif
+
+#ifdef OLD_WAY
+
 namespace Lyre
 {
 
@@ -168,10 +176,11 @@ namespace Lyre
                 int childLastIndex = child->getCount() + i;
                 if ( childLastIndex > index )
                 {
-                    return child
+                    return INoteUP{};
                 }
             }
         }
+        return INoteUP{};
     }
     
     void NoteGroup::first()
@@ -250,12 +259,7 @@ namespace Lyre
         return -2;
     }
     
-    bool NoteGroup::getIsCurrentSubGrouped() const
-    {
-        return true;
-    }
-    
-    bool NoteGroup::getAreAllNotesSubGrouped() const
+    bool NoteGroup::getIsCurrentInSubGroup() const
     {
         return true;
     }
@@ -281,3 +285,5 @@ namespace Lyre
         UNUSED_PARAMETER( subGroupIndex )
     }
 }
+
+#endif

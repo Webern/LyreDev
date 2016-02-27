@@ -247,6 +247,39 @@ TEST( getPrevious, NoteGroup )
 }
 T_END
 
+TEST( getNote_exception, NoteGroup )
+{
+    Factories f;
+    INoteGroupUP noteGroup = createNoteGroup();
+    noteGroup->add( f.e2Sixteenth() );
+    noteGroup->add( f.c4Quarter() );
+    bool isExceptionThrown = false;
+    try
+    {
+        auto n = noteGroup->getNote( 2 );
+    }
+    catch (...)
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+TEST( getNote, NoteGroup )
+{
+    Factories f;
+    INoteGroupUP noteGroup = createNoteGroup();
+    INoteUP expectedNote = f.e2Sixteenth();
+    noteGroup->add( f.d4Eighth() );
+    noteGroup->add( expectedNote );
+    noteGroup->add( f.d4Eighth() );
+    noteGroup->next();
+    INoteUP actualNote = noteGroup->getNote( 1 );
+    CHECK_EQUAL( expectedNote->toString(), actualNote->toString())
+}
+T_END
+
 TEST( first, NoteGroup )
 {
     Factories f;
@@ -460,9 +493,21 @@ namespace
     }
     inline INoteGroupUP nested1()
     {
-        INoteGroupUP noteGroup = createNoteGroup();
-        INoteGroupUP pat1 = pattern1();
-        noteGroup->add( pat1->get)
+        INoteGroupUP noteGroup = pattern1();
+        INoteGroupUP nest1 = pattern2();
+        noteGroup->addGroup( nest1 );
+        INoteGroupUP pat3 = pattern3();
+        for ( int i = 0; i < pat3->getCount(); ++i )
+        {
+            noteGroup->add( pat3->getCurrent() );
+            pat3->next();
+        }
         return std::move( noteGroup );
     }
 }
+
+TEST( getSubGroupCount_0, NoteGroup )
+{
+    CHECK_FAIL( "getSubGroupCount_0" )
+}
+T_END
