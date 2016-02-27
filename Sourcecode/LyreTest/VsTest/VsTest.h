@@ -36,3 +36,6 @@ public: \
 
 #define CHECK_DOUBLES_EQUAL(expected,actual,epsilon) \
     CHECK( std::abs((##expected)-(##actual))<(##epsilon) )
+
+#define CHECK_FAIL( text ) \
+    CHECK( false )
