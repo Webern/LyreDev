@@ -70,7 +70,6 @@
     <ClInclude Include="..\Sourcecode\Lyre\Private\Mod.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\Note.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\NoteFactory.h" />
-    <ClInclude Include="..\Sourcecode\Lyre\Private\NoteGroupImpl.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\Pitch.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\PitchFactory.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\PitchName.h" />
@@ -127,7 +126,6 @@
     <ClCompile Include="..\Sourcecode\Lyre\Private\Enum.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\Note.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\NoteFactory.cpp" />
-    <ClCompile Include="..\Sourcecode\Lyre\Private\NoteGroupImpl.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\Pitch.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\PitchFactory.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\PitchName.cpp" />

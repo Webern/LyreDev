@@ -71,7 +71,6 @@
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMod.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestNote.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestNoteGroup.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestNoteGroupImpl.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitch.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitchFactory.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPitchName.cpp" />
