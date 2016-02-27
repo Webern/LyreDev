@@ -511,3 +511,27 @@ TEST( getSubGroupCount_0, NoteGroup )
     CHECK_FAIL( "getSubGroupCount_0" )
 }
 T_END
+
+TEST( getSubGroupCount_1, NoteGroup )
+{
+    CHECK_FAIL( "getSubGroupCount_1" )
+}
+T_END
+
+TEST( getSubGroupCount_2_withExtraSubNested, NoteGroup )
+{
+    CHECK_FAIL( "getSubGroupCount_2_withExtraSubNested" )
+}
+T_END
+
+TEST( getIsCurrentInSubGroup, NoteGroup )
+{
+    CHECK_FAIL( "getSubGroupCount_2_withExtraSubNested" )
+}
+T_END
+
+TEST( getIsCurrentInSubGroup, NoteGroup )
+{
+    CHECK_FAIL( "getSubGroupCount_2_withExtraSubNested" )
+}
+T_END
