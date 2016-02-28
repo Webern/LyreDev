@@ -295,6 +295,7 @@ TEST( getNote_throwEmpty, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -313,6 +314,7 @@ TEST( getNote_throwOutOfRange, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -355,6 +357,7 @@ TEST( add_throwNull, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -383,6 +386,7 @@ TEST( remove_throwEmpty, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -400,6 +404,7 @@ TEST( remove_throwOutOfRange, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -481,6 +486,7 @@ TEST( getIsInGroup_throwEmpty, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -499,6 +505,7 @@ TEST( getIsInGroup_throwOutOfRange, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -531,6 +538,7 @@ TEST( getGroupIndex_throwEmpty, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -549,6 +557,7 @@ TEST( getGroupIndex_throwOutOfRange, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -599,6 +608,7 @@ TEST( getGroup_throwNoGroups, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -617,6 +627,7 @@ TEST( getGroup_throwOutOfRange, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -666,6 +677,7 @@ TEST( addGroup_throwNull, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
@@ -697,6 +709,7 @@ TEST( removeGroup_throwOutOfRange, NoteGroup )
     }
     catch ( std::runtime_error& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown );
