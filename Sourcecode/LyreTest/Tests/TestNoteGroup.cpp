@@ -555,35 +555,47 @@ TEST( getGroupIndex_throwOutOfRange, NoteGroup )
 }
 T_END
 
-////////////////////////////////////////////////////////////////////////////////
-
 TEST( getGroupIndex_Neg1, NoteGroup )
 {
-    CHECK_FAIL( "getGroupIndex_Neg1" )
+    auto noteGroup = newNestedGroup1();
+    CHECK_EQUAL( -1, noteGroup->getGroupIndex( 0 ) )
 }
 T_END
 
 TEST( getGroupIndex_0, NoteGroup )
 {
-    CHECK_FAIL( "getGroupIndex_0" )
+    auto noteGroup = newNestedGroup1();
+    CHECK_EQUAL( 0, noteGroup->getGroupIndex( 3 ) )
 }
 T_END
 
 TEST( getGroupIndex_2_nested, NoteGroup )
 {
-    CHECK_FAIL( "getGroupIndex_2_nested" )
+    Factories f;
+    auto noteGroup = newNestedGroup1();
+    auto additionalNested = newNoteGroup();
+    additionalNested->add( f.c4Quarter() );
+    noteGroup->addGroup( additionalNested );
+    noteGroup->addGroup( additionalNested );
+    CHECK_EQUAL( 3, noteGroup->getGroupIndex( 7 ) )
 }
 T_END
 
 TEST( getGroup_throwNoGroups, NoteGroup )
 {
+    Factories f;
     auto noteGroup = newNoteGroup();
+    noteGroup->add( f.e2Sixteenth() );
+    noteGroup->add( f.f2Half() );
+    noteGroup->add( f.c4Quarter() );
+    noteGroup->add( f.d4Eighth() );
+    noteGroup->add( f.e2Sixteenth() );
     bool isExceptionThrown = false;
     try
     {
-        auto n = noteGroup->getNote( 0 );
+        auto x = noteGroup->getGroup( 0 );
         CHECK_FAIL( "exception was expected but not thrown" )
-        n->setIsRest( true );
+        if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
     }
     catch ( std::runtime_error& e )
     {
@@ -595,13 +607,13 @@ T_END
 
 TEST( getGroup_throwOutOfRange, NoteGroup )
 {
-    auto noteGroup = newNoteGroup();
+    auto noteGroup = newNestedGroup1();
     bool isExceptionThrown = false;
     try
     {
-        auto n = noteGroup->getNote( 0 );
+        auto x = noteGroup->getGroup( 2 );
         CHECK_FAIL( "exception was expected but not thrown" )
-        n->setIsRest( true );
+        if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
     }
     catch ( std::runtime_error& e )
     {
@@ -613,25 +625,44 @@ T_END
 
 TEST( getGroup_0, NoteGroup )
 {
-    CHECK_FAIL( "getGroup_0" )
+    auto noteGroup = newNestedGroup1();
+    auto subGroup = noteGroup->getGroup( 0 );
+    auto firstSubGroupNote = subGroup->getNote( 0 );
+    String expected = "D4, Eighth";
+    String actual = firstSubGroupNote->toString();
+    CHECK_EQUAL( expected, actual )
+    CHECK_EQUAL( 4, subGroup->getCount() )
 }
 T_END
 
 TEST( getGroup_2, NoteGroup )
 {
-    CHECK_FAIL( "getGroup_2" )
+    Factories f;
+    auto noteGroup = newNestedGroup1();
+    auto addedGroup1 = newNoteGroup();
+    addedGroup1->add( f.c4Quarter() );
+    noteGroup->addGroup( addedGroup1 );
+    auto addedGroup2 = newNoteGroup();
+    addedGroup2->add( f.e2Sixteenth() );
+    noteGroup->addGroup( addedGroup2 );
+    auto index2Group = noteGroup->getGroup( 2 );
+    auto firstNote = index2Group->getNote( 0 );
+    String expected = "E2, Sixteenth";
+    String actual = firstNote->toString();
+    CHECK_EQUAL( expected, actual )
+    CHECK_EQUAL( 1, index2Group->getCount() )
 }
 T_END
 
 TEST( addGroup_throwNull, NoteGroup )
 {
-    auto noteGroup = newNoteGroup();
+    INoteGroupUP noteGroup = newNestedGroup2();
+    INoteGroupUP nullgroup{ nullptr };
     bool isExceptionThrown = false;
     try
     {
-        auto n = noteGroup->getNote( 0 );
+        noteGroup->addGroup( nullgroup );
         CHECK_FAIL( "exception was expected but not thrown" )
-        n->setIsRest( true );
     }
     catch ( std::runtime_error& e )
     {
@@ -643,19 +674,26 @@ T_END
 
 TEST( addGroup, NoteGroup )
 {
-    CHECK_FAIL( "addGroup" )
+    Factories f;
+    auto noteGroup = newNestedGroup1();
+    auto addedGroup1 = newNoteGroup();
+    addedGroup1->add( f.c4Quarter() );
+    noteGroup->addGroup( addedGroup1 );
+    auto addedGroup2 = newNoteGroup();
+    addedGroup2->add( f.e2Sixteenth() );
+    noteGroup->addGroup( addedGroup2 );
+    CHECK_EQUAL( 3, noteGroup->getCount() )
 }
 T_END
 
 TEST( removeGroup_throwOutOfRange, NoteGroup )
 {
-    auto noteGroup = newNoteGroup();
+    auto noteGroup = newNestedGroup1();
     bool isExceptionThrown = false;
     try
     {
-        auto n = noteGroup->getNote( 0 );
+        noteGroup->remove( 1 );
         CHECK_FAIL( "exception was expected but not thrown" )
-        n->setIsRest( true );
     }
     catch ( std::runtime_error& e )
     {
@@ -667,12 +705,64 @@ T_END
 
 TEST( removeGroup_2, NoteGroup )
 {
-    CHECK_FAIL( "removeGroup_2" )
+    Factories f;
+    auto noteGroup = newNestedGroup1();
+    auto addedGroup1 = newNoteGroup();
+    addedGroup1->add( f.c4Quarter() );
+    noteGroup->addGroup( addedGroup1 );
+    auto addedGroup2 = newNoteGroup();
+    addedGroup2->add( f.e2Sixteenth() );
+    noteGroup->addGroup( addedGroup2 );
+    CHECK_EQUAL( 6, noteGroup->getCount() )
+    noteGroup->removeGroup( 1 );
+    auto returnedGroup = noteGroup->getGroup( 1 );
+    String expected = "C4, Quarter";
+    String actual = returnedGroup->getNote( 0 )->toString();
+    CHECK_EQUAL( expected, actual )
 }
 T_END
 
 TEST( removeGroup_0, NoteGroup )
 {
-    CHECK_FAIL( "removeGroup_0" )
+    Factories f;
+    auto noteGroup = newNestedGroup1();
+    auto addedGroup1 = newNoteGroup();
+    addedGroup1->add( f.c4Quarter() );
+    noteGroup->addGroup( addedGroup1 );
+    auto addedGroup2 = newNoteGroup();
+    addedGroup2->add( f.e2Sixteenth() );
+    noteGroup->addGroup( addedGroup2 );
+    CHECK_EQUAL( 8, noteGroup->getCount() )
+    noteGroup->removeGroup( 0 );
+    CHECK_EQUAL( 2, noteGroup->getCount() )
+    auto returnedGroup = noteGroup->getGroup( 0 );
+    String expected = "C4, Quarter";
+    String actual = returnedGroup->getNote( 0 )->toString();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( removingAllNotesRemovesGroup, NoteGroup )
+{
+    Factories f;
+    auto noteGroup = newNestedGroup1();
+    auto addedGroup1 = newNoteGroup();
+    addedGroup1->add( f.c4Quarter() );
+    noteGroup->addGroup( addedGroup1 );
+    auto addedGroup2 = newNoteGroup();
+    addedGroup2->add( f.e2Sixteenth() );
+    noteGroup->addGroup( addedGroup2 );
+    CHECK_EQUAL( 3, noteGroup->getGroupCount() )
+    noteGroup->remove( 0 );
+    noteGroup->remove( 0 );
+    noteGroup->remove( 0 );
+    noteGroup->remove( 0 );
+    noteGroup->remove( 0 );
+    noteGroup->remove( 0 );
+    CHECK_EQUAL( 2, noteGroup->getGroupCount() )
+    noteGroup->remove( 0 );
+    CHECK_EQUAL( 1, noteGroup->getGroupCount() )
+    noteGroup->remove( 0 );
+    CHECK_EQUAL( 0, noteGroup->getGroupCount() )
 }
 T_END

@@ -124,7 +124,7 @@ namespace Lyre
 	INoteGroupUP NoteGroup::getGroup( int groupIndex ) const
 	{
         UNUSED_PARAMETER( groupIndex )
-		return INoteGroupUP{};
+		return INoteGroupUP{ new NoteGroup{} };
 	}
 
 	void NoteGroup::addGroup( const INoteGroupUP& group )
