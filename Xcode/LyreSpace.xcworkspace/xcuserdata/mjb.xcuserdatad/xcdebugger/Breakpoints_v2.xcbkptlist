@@ -494,11 +494,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/NoteGroup.cpp"
-            timestampString = "478315791.697182"
+            timestampString = "478322645.885197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377">
+            startingLineNumber = "508"
+            endingLineNumber = "508">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -508,11 +508,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/NoteGroup.cpp"
-            timestampString = "478315791.697182"
+            timestampString = "478322645.885197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "568"
-            endingLineNumber = "568">
+            startingLineNumber = "699"
+            endingLineNumber = "699">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/NoteGroup.cpp"
-            timestampString = "478315791.697182"
+            timestampString = "478322645.885197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "579"
-            endingLineNumber = "579">
+            startingLineNumber = "710"
+            endingLineNumber = "710">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
