@@ -88,6 +88,24 @@ namespace Lyre
             return *this;
         }
         
+        std::ostream& toStreamImpl( std::ostream& os )
+        {
+            for ( auto i = noteGroups.cbegin();
+                 i != noteGroups.cend(); ++i )
+            {
+                if ( i->first == NgType::Note )
+                {
+                    i->second->getNote( 0 )->toStream( os );
+                    os << std::endl;
+                }
+                else
+                {
+                    i->second->toStream( os );
+                }
+            }
+            return os;
+        }
+        
         NgType ngType;
         INoteUP note;
         std::vector<MetaNoteGroup> noteGroups;
@@ -148,15 +166,8 @@ namespace Lyre
 
 	std::ostream& NoteGroup::toStream( std::ostream& os ) const
 	{
-        for ( int i = 0; i < getCount(); ++i )
-        {
-            if ( i > 0 )
-            {
-                os << std::endl;
-            }
-            os << ( *getNote( i ) );
-        }
-		return os;
+        
+		return myImplP->toStreamImpl( os );
 	}
 
 	bool NoteGroup::getIsEmpty() const
@@ -186,11 +197,19 @@ namespace Lyre
 	Rational NoteGroup::getTotalDuration() const
 	{
         Rational total{ 0, 1 };
-        for ( int i = 0; i < getCount(); ++i )
+        for ( auto i = myImplP->noteGroups.cbegin();
+              i != myImplP->noteGroups.cend(); ++i )
         {
-            total += getNote( i )->getDuration()->getValue();
+            if ( i->first == NgType::Note )
+            {
+                total += i->second->getNote( 0 )->getDuration()->getValue();
+            }
+            else
+            {
+                total += i->second->getTotalDuration();
+            }
         }
-		return total;
+        return total;
 	}
 
 	INoteUP NoteGroup::getNote( int noteIndex ) const
@@ -223,7 +242,7 @@ namespace Lyre
             }
             else
             {
-                int rangeEnd = noteIndex + currItemGetCount;
+                int rangeEnd = counter + currItemGetCount;
                 if ( noteIndex <= rangeEnd )
                 {
                     return i->second->getNote( noteIndex - counter );
@@ -252,7 +271,8 @@ namespace Lyre
 
 	void NoteGroup::remove( int noteIndex )
 	{
-        if ( noteIndex < 0 || noteIndex > getCount() - 1 )
+        int myCount = getCount();
+        if ( noteIndex < 0 || noteIndex > myCount - 1 )
         {
             THROW( "index out of range" )
         }
@@ -261,15 +281,12 @@ namespace Lyre
             THROW( "bad internal state" )
         }
         int counter = 0;
-        bool isInGroup = getIsInGroup( noteIndex );
         for ( auto i = myImplP->noteGroups.begin();
               i != myImplP->noteGroups.end(); ++i )
         {
-            int currItemGetCount = i->second->getCount();
-            
             if ( counter == noteIndex )
             {
-                if ( ! isInGroup || currItemGetCount == 1 )
+                if ( i->first == NgType::Note )
                 {
                     myImplP->noteGroups.erase( i );
                     return;
@@ -277,17 +294,21 @@ namespace Lyre
                 else
                 {
                     i->second->remove( 0 );
-                    return;
                 }
+            }
+            else if ( counter > noteIndex )
+            {
                 THROW( "bad internal state" )
             }
-            int rangeEnd = counter + currItemGetCount;
-            if ( noteIndex <= rangeEnd )
+            int currentItemGetCount = i->second->getCount();
+            int targetItemIndexInChild = noteIndex - counter;
+            int lastIndexInRange = counter + currentItemGetCount - 1;
+            if ( noteIndex <= lastIndexInRange ) // note is in current
             {
-                i->second->remove( noteIndex - counter );
+                i->second->remove( targetItemIndexInChild );
                 return;
             }
-            counter += currItemGetCount;
+            counter += currentItemGetCount;
         }
 	}
 
@@ -316,9 +337,13 @@ namespace Lyre
 
 	int NoteGroup::getGroupIndex( int noteIndex ) const
 	{
-        int rangeStart = 0;
+        if ( noteIndex < 0 || noteIndex > getCount() - 1 )
+        {
+            THROW( "index out of range" )
+        }
+        int counter = 0;
         int rangeStop = 0;
-        int groupIndex = 0;
+        int groupIndex = -1;
         for ( auto i = myImplP->noteGroups.begin();
               i != myImplP->noteGroups.end(); ++i )
         {
@@ -332,8 +357,8 @@ namespace Lyre
                 ++groupIndex;
                 span = i->second->getCount();
             }
-            rangeStop = rangeStart + span;
-            if ( noteIndex >= rangeStart && noteIndex <= rangeStop )
+            rangeStop = counter + span - 1;
+            if ( noteIndex >= counter && noteIndex <= rangeStop )
             {
                 if ( i->first == NgType::Group )
                 {
@@ -344,6 +369,7 @@ namespace Lyre
                     return -1;
                 }
             }
+            counter += span;
         }
 		return -1;
 	}

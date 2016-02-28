@@ -46,8 +46,8 @@ namespace
         
         INoteUP f2Half()
         {
-            pitch->setPitch( 40 );
-            auto d = duration->createDuration( "16th" );
+            pitch->setPitch( 41 );
+            auto d = duration->createDuration( "Half" );
             return note->createNote( pitch->createPitch(), d );
         }
     };
@@ -68,6 +68,17 @@ namespace
         noteGroup->addGroup( subGroup );
         noteGroup->add( f.e2Sixteenth() );  // 1 / 4 ~ #5
         return std::move( noteGroup );
+    }
+    inline String newNestedGroup1String()
+    {
+        std::stringstream ss;
+        ss << "{ E2 : 16th }" <<std::endl;
+        ss << "{ D4 : Eighth }" <<std::endl;
+        ss << "{ C4 : Quarter }" <<std::endl;
+        ss << "{ F2 : Half }" <<std::endl;
+        ss << "{ D4 : Eighth }" <<std::endl;
+        ss << "{ E2 : 16th }" <<std::endl;
+        return ss.str();
     }
     inline INoteGroupUP newNestedGroup2()
     {
@@ -166,7 +177,7 @@ TEST( toStream, NoteGroup )
     auto noteGroup = newNestedGroup1();
     std::stringstream ss;
     noteGroup->toStream( ss );
-    String expected = "somenotes";
+    String expected = newNestedGroup1String();
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
@@ -175,7 +186,7 @@ T_END
 TEST( toString, NoteGroup )
 {
     auto noteGroup = newNestedGroup1();
-    String expected = "somenotes";
+    String expected = newNestedGroup1String();
     String actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
 }
@@ -186,7 +197,7 @@ TEST( streamOperator, NoteGroup )
     auto noteGroup = newNestedGroup1();
     std::stringstream ss;
     ss << ( *noteGroup );
-    String expected = "somenotes";
+    String expected = newNestedGroup1String();
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
@@ -330,7 +341,7 @@ TEST( getNote_flat, NoteGroup )
     noteGroup->add( f.c4Quarter() );    // 2
     noteGroup->add( f.d4Eighth() );     // 3
     noteGroup->add( f.e2Sixteenth() );  // 4
-    String expected = "D2, Sixteenth";
+    String expected = "{ D4 : Eighth }";
     String actual = noteGroup->getNote( 3 )->toString();
     CHECK_EQUAL( expected, actual )
 }
@@ -339,7 +350,7 @@ T_END
 TEST( getNote_nested, NoteGroup )
 {
     auto noteGroup = newNestedGroup1();
-    String expected = "F2, Half";
+    String expected = "{ F2 : Half }";
     String actual = noteGroup->getNote( 3 )->toString();
     CHECK_EQUAL( expected, actual )
 }
@@ -414,20 +425,20 @@ T_END
 TEST( remove_flat, NoteGroup )
 {
     Factories f;
-    auto noteGroup = newNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
-    noteGroup->add( f.f2Half() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.e2Sixteenth() );
+    auto noteGroup = newNoteGroup(); // Before | After
+    noteGroup->add( f.e2Sixteenth() ); // 0    | 0
+    noteGroup->add( f.f2Half() );      // 1    | 1
+    noteGroup->add( f.c4Quarter() );   // 2*   |
+    noteGroup->add( f.d4Eighth() );    // 3    | 2*
+    noteGroup->add( f.e2Sixteenth() ); // 4    | 3
     
     CHECK_EQUAL( 5, noteGroup->getCount() )
     
     noteGroup->remove( 2 );
     
-    CHECK_EQUAL( 5, noteGroup->getCount() )
+    CHECK_EQUAL( 4, noteGroup->getCount() )
     
-    String expected = "D4, Eighth";
+    String expected = "{ D4 : Eighth }";
     String actual = noteGroup->getNote( 2 )->toString();
     CHECK_EQUAL( expected, actual )
 }
@@ -444,7 +455,7 @@ TEST( remove_nested, NoteGroup )
     
     CHECK_EQUAL( 5, noteGroup->getCount() )
     
-    String expected = "D4, Eighth";
+    String expected = "{ D4 : Eighth }";
     String actual = noteGroup->getNote( 3 )->toString();
     CHECK_EQUAL( expected, actual )
 }
@@ -467,9 +478,12 @@ TEST( getGroupCount_3, NoteGroup )
 {
     Factories f;
     auto noteGroup = newNestedGroup1();
-    auto thirdNested = newNoteGroup();
-    thirdNested->add( f.c4Quarter() );
-    noteGroup->addGroup( thirdNested );
+    auto second = newNoteGroup();
+    second->add( f.c4Quarter() );
+    noteGroup->addGroup( second );
+    auto third = newNoteGroup();
+    third->add( f.e2Sixteenth() );
+    noteGroup->addGroup( third );
     CHECK_EQUAL( 3, noteGroup->getGroupCount() )
 }
 T_END
@@ -574,7 +588,7 @@ T_END
 TEST( getGroupIndex_0, NoteGroup )
 {
     auto noteGroup = newNestedGroup1();
-    CHECK_EQUAL( 0, noteGroup->getGroupIndex( 3 ) )
+    CHECK_EQUAL( 0, noteGroup->getGroupIndex( 1 ) )
 }
 T_END
 
@@ -586,7 +600,8 @@ TEST( getGroupIndex_2_nested, NoteGroup )
     additionalNested->add( f.c4Quarter() );
     noteGroup->addGroup( additionalNested );
     noteGroup->addGroup( additionalNested );
-    CHECK_EQUAL( 3, noteGroup->getGroupIndex( 7 ) )
+    noteGroup->addGroup( additionalNested );
+    CHECK_EQUAL( 3, noteGroup->getGroupIndex( 8 ) )
 }
 T_END
 
