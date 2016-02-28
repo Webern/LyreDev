@@ -15,6 +15,8 @@ namespace Lyre
         Group = 1,
         Unk = 2
     };
+    
+    using MetaNoteGroup = std::pair<NgType, INoteGroupUP>;
 
     class NoteGroup::Impl
     {
@@ -32,18 +34,6 @@ namespace Lyre
         {
             THROW_IF_NULL( note )
         }
-        
-        Impl( const VecINoteGroupUP& vector )
-        :ngType( NgType::Group )
-        ,note( nullptr )
-        ,noteGroups()
-        {
-            for ( auto i = vector.cbegin(); i != vector.cend(); ++i )
-            {
-                THROW_IF_NULL( (*i) )
-                noteGroups.push_back( (*i)->clone() );
-            }
-        }
 
         Impl( const Impl& other )
         :ngType( other.ngType )
@@ -57,8 +47,9 @@ namespace Lyre
             for ( auto i = other.noteGroups.cbegin();
                   i != other.noteGroups.cend(); ++i )
             {
-                THROW_IF_NULL( (*i) )
-                noteGroups.push_back( (*i)->clone() );
+                THROW_IF_NULL( i->second )
+                MetaNoteGroup mng{ i->first, i->second->clone() };
+                noteGroups.push_back( std::move( mng ) );
             }
         }
         
@@ -82,8 +73,9 @@ namespace Lyre
             for ( auto i = other.noteGroups.cbegin();
                  i != other.noteGroups.cend(); ++i )
             {
-                THROW_IF_NULL( (*i) )
-                noteGroups.push_back( (*i)->clone() );
+                THROW_IF_NULL( i->second )
+                MetaNoteGroup mng{ i->first, i->second->clone() };
+                noteGroups.push_back( std::move( mng ) );
             }
             return *this;
         }
@@ -98,7 +90,7 @@ namespace Lyre
         
         NgType ngType;
         INoteUP note;
-        VecINoteGroupUP noteGroups;
+        std::vector<MetaNoteGroup> noteGroups;
     };
     
     NoteGroup::~NoteGroup()
@@ -112,6 +104,9 @@ namespace Lyre
     {
         myImplP = new Impl{};
         THROW_IF_NULL( myImplP );
+        myImplP->ngType = NgType::Group;
+        myImplP->note = nullptr;
+        myImplP->noteGroups.clear();
     }
     
     NoteGroup::NoteGroup( const NoteGroup& other )
@@ -183,7 +178,7 @@ namespace Lyre
         for ( auto i = myImplP->noteGroups.cbegin();
               i != myImplP->noteGroups.cend(); ++i )
         {
-            count += (*i)->getCount();
+            count += i->second->getCount();
         }
 		return count;
 	}
@@ -204,68 +199,209 @@ namespace Lyre
         {
             THROW( "index out of range" )
         }
+        if ( myImplP->ngType == NgType::Note )
+        {
+            if ( noteIndex != 0 )
+            {
+                THROW( "index out of range" )
+            }
+            THROW_IF_NULL( myImplP->note )
+            return myImplP->note->clone();
+        }
         int counter = 0;
-        for ( auto i = myImplP->noteGroups.cbegin();
-             i != myImplP->noteGroups.cend(); ++i )
+        for ( auto i = myImplP->noteGroups.begin();
+             i != myImplP->noteGroups.end(); ++i )
         {
             if ( counter == noteIndex )
             {
-                if ( (*i)->getCount() == 1 )
+                return i->second->getNote( 0 );
+            }
+            int currItemGetCount = i->second->getCount();
+            if( currItemGetCount == 1 )
+            {
+                ++counter;
+            }
+            else
+            {
+                int rangeEnd = noteIndex + currItemGetCount;
+                if ( noteIndex <= rangeEnd )
                 {
-                    return (*i)->getNote( 0 );
+                    return i->second->getNote( noteIndex - counter );
                 }
+                counter += currItemGetCount;
             }
         }
-        
-        UNUSED_PARAMETER( noteIndex )
-        auto n = createNoteFactory();
-        auto p = createPitchFactory();
-        auto d = createDurationFactory();
-        p->setPitch( 200 );
-		return n->createNote( p->createPitch(), d->createDuration( "256th" ) );
+        THROW( "should not reach here" )
+		return INoteUP{};
 	}
 
 	void NoteGroup::add( const INoteUP& note )
 	{
-        UNUSED_PARAMETER( note )
+        THROW_IF_NULL( note )
+        if ( myImplP->ngType == NgType::Note )
+        {
+            THROW( "cannot add to a leaf node" )
+        }
+        NoteGroup* newP = new NoteGroup{};
+        newP->myImplP->ngType = NgType::Note;
+        newP->myImplP->note = note->clone();
+        INoteGroupUP newItem{ newP };
+        MetaNoteGroup mng{ NgType::Note, std::move( newItem ) };
+        myImplP->noteGroups.push_back( std::move( mng ) );
 	}
 
 	void NoteGroup::remove( int noteIndex )
 	{
-        UNUSED_PARAMETER( noteIndex )
+        if ( noteIndex < 0 || noteIndex > getCount() - 1 )
+        {
+            THROW( "index out of range" )
+        }
+        if ( myImplP->ngType == NgType::Note )
+        {
+            THROW( "bad internal state" )
+        }
+        int counter = 0;
+        bool isInGroup = getIsInGroup( noteIndex );
+        for ( auto i = myImplP->noteGroups.begin();
+              i != myImplP->noteGroups.end(); ++i )
+        {
+            int currItemGetCount = i->second->getCount();
+            
+            if ( counter == noteIndex )
+            {
+                if ( ! isInGroup || currItemGetCount == 1 )
+                {
+                    myImplP->noteGroups.erase( i );
+                    return;
+                }
+                else
+                {
+                    i->second->remove( 0 );
+                    return;
+                }
+                THROW( "bad internal state" )
+            }
+            int rangeEnd = counter + currItemGetCount;
+            if ( noteIndex <= rangeEnd )
+            {
+                i->second->remove( noteIndex - counter );
+                return;
+            }
+            counter += currItemGetCount;
+        }
 	}
 
 	int NoteGroup::getGroupCount() const
 	{
-		return -2;
+        int groupCount = 0;
+        for ( auto i = myImplP->noteGroups.begin();
+              i != myImplP->noteGroups.end(); ++i )
+        {
+            if ( i->first == NgType::Group )
+            {
+                ++groupCount;
+            }
+        }
+		return groupCount;
 	}
 
 	bool NoteGroup::getIsInGroup( int noteIndex ) const
 	{
-        UNUSED_PARAMETER( noteIndex )
-		return false;
+        if ( noteIndex < 0 || noteIndex > getCount() - 1 )
+        {
+            THROW( "index out of range" )
+        }
+		return ! ( getGroupIndex( noteIndex ) == -1 );
 	}
 
 	int NoteGroup::getGroupIndex( int noteIndex ) const
 	{
-        UNUSED_PARAMETER( noteIndex )
-		return -2;
+        int rangeStart = 0;
+        int rangeStop = 0;
+        int groupIndex = 0;
+        for ( auto i = myImplP->noteGroups.begin();
+              i != myImplP->noteGroups.end(); ++i )
+        {
+            int span = 0;
+            if ( i->first == NgType::Note )
+            {
+                span = 1;
+            }
+            else
+            {
+                ++groupIndex;
+                span = i->second->getCount();
+            }
+            rangeStop = rangeStart + span;
+            if ( noteIndex >= rangeStart && noteIndex <= rangeStop )
+            {
+                if ( i->first == NgType::Group )
+                {
+                    return groupIndex;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+        }
+		return -1;
 	}
 
 	INoteGroupUP NoteGroup::getGroup( int groupIndex ) const
 	{
-        UNUSED_PARAMETER( groupIndex )
-		return INoteGroupUP{ new NoteGroup{} };
+        if ( groupIndex < 0 )
+        {
+            THROW( "index out of range" )
+        }
+        int groupCounter = 0;
+        for ( auto i = myImplP->noteGroups.begin();
+              i != myImplP->noteGroups.end(); ++i )
+        {
+            if ( i->first == NgType::Group )
+            {
+                ++groupCounter;
+                if ( groupCounter == groupIndex )
+                {
+                    return i->second->clone();
+                }
+            }
+        }
+        THROW( "index out of range" )
 	}
 
 	void NoteGroup::addGroup( const INoteGroupUP& group )
 	{
-        UNUSED_PARAMETER( group )
+        THROW_IF_NULL( group )
+        if ( myImplP->ngType == NgType::Note )
+        {
+            THROW( "bad internal state" )
+        }
+        MetaNoteGroup mng{ NgType::Group, group->clone() };
+        myImplP->noteGroups.push_back( std::move( mng ) );
 	}
 
-	void NoteGroup::removeGroup( int subGroupIndex )
+	void NoteGroup::removeGroup( int groupIndex )
 	{
-        UNUSED_PARAMETER( subGroupIndex )
+        if ( groupIndex < 0 )
+        {
+            THROW( "index out of range" )
+        }
+        int groupCounter = 0;
+        for ( auto i = myImplP->noteGroups.begin();
+              i != myImplP->noteGroups.end(); ++i )
+        {
+            if ( i->first == NgType::Group )
+            {
+                ++groupCounter;
+                if ( groupCounter == groupIndex )
+                {
+                    myImplP->noteGroups.erase( i );
+                    return;
+                }
+            }
+        }
+		THROW( "index out of range" )
 	}
 
 }

@@ -36,7 +36,7 @@ namespace Lyre
         virtual int getGroupIndex( int noteIndex ) const ;
         virtual INoteGroupUP getGroup( int groupIndex ) const ;
         virtual void addGroup( const INoteGroupUP& group ) ;
-        virtual void removeGroup( int subGroupIndex ) ;
+        virtual void removeGroup( int groupIndex ) ;
         
     private:
         class Impl;

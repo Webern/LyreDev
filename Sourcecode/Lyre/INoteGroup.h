@@ -27,6 +27,6 @@ namespace Lyre
         virtual int getGroupIndex( int noteIndex ) const = 0;
         virtual INoteGroupUP getGroup( int groupIndex ) const = 0;
         virtual void addGroup( const INoteGroupUP& group ) = 0;
-        virtual void removeGroup( int subGroupIndex ) = 0;
+        virtual void removeGroup( int groupIndex ) = 0;
     };
 }
