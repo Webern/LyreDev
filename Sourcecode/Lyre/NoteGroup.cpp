@@ -2,6 +2,11 @@
 #include "Lyre/Private/throw.h"
 #include "Lyre/INote.h"
 
+// TODO remove these
+#include "Lyre/INoteFactory.h"
+#include "Lyre/IPitchFactory.h"
+#include "Lyre/IDurationFactory.h"
+
 namespace Lyre
 {
     class NoteGroup::Impl
@@ -32,7 +37,7 @@ namespace Lyre
     NoteGroup::NoteGroup( NoteGroup&& other ) noexcept
     :myImplP( std::move( other.myImplP ) )
     {
-        
+        other.myImplP = 0;
     }
     
     NoteGroup& NoteGroup::operator=( const NoteGroup& other )
@@ -45,12 +50,18 @@ namespace Lyre
     NoteGroup& NoteGroup::operator=( NoteGroup&& other ) noexcept
     {
         myImplP = std::move( other.myImplP );
+        other.myImplP = 0;
         return *this;
     }
     
 	INoteGroupUP NoteGroup::clone() const
 	{
 		return INoteGroupUP{};
+	}
+    
+    NoteGroupUP NoteGroup::copy() const
+	{
+		return NoteGroupUP{};
 	}
 
 	std::ostream& NoteGroup::toStream( std::ostream& os ) const
@@ -76,7 +87,11 @@ namespace Lyre
 	INoteUP NoteGroup::getNote( int noteIndex ) const
 	{
         UNUSED_PARAMETER( noteIndex )
-		return INoteUP{};
+        auto n = createNoteFactory();
+        auto p = createPitchFactory();
+        auto d = createDurationFactory();
+        p->setPitch( 200 );
+		return n->createNote( p->createPitch(), d->createDuration( "256th" ) );
 	}
 
 	void NoteGroup::add( const INoteUP& note )

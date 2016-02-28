@@ -14,7 +14,8 @@ namespace Lyre
         Standard = 0
     };
     
-    INoteFactoryUP PUBLIC createNoteFactory( const NoteFactoryType t );
+        INoteFactoryUP PUBLIC createNoteFactory(
+            const NoteFactoryType t = NoteFactoryType::Standard );
     
     class PUBLIC INoteFactory
     {

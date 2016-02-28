@@ -13,7 +13,8 @@ namespace Lyre
     
     FORWARD_DECLARE(IDurationFactory)
     
-    IDurationFactoryUP PUBLIC createDurationFactory( const DurationFactoryType t );
+    IDurationFactoryUP PUBLIC createDurationFactory(
+        const DurationFactoryType t = DurationFactoryType::Standard );
 
     class PUBLIC IDurationFactory
     {

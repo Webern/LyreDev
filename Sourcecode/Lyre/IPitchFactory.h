@@ -12,7 +12,8 @@ namespace Lyre
         StandardChromatic = 0
     };
     
-    IPitchFactoryUP PUBLIC createPitchFactory( const PitchFactoryType t );
+    IPitchFactoryUP PUBLIC createPitchFactory(
+        const PitchFactoryType t = PitchFactoryType::StandardChromatic);
     
     class PUBLIC IPitchFactory
     {

@@ -20,7 +20,8 @@ namespace Lyre
         NoteGroup& operator=( const NoteGroup& other );
         NoteGroup& operator=( NoteGroup&& other ) noexcept;
         
-        virtual INoteGroupUP clone() const ;
+        virtual INoteGroupUP clone() const;
+        virtual NoteGroupUP copy() const;
         virtual std::ostream& toStream( std::ostream& os ) const ;
         
         virtual bool getIsEmpty() const ;
