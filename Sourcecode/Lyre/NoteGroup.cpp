@@ -294,6 +294,11 @@ namespace Lyre
                 else
                 {
                     i->second->remove( 0 );
+                    if ( i->second->getCount() == 0 )
+                    {
+                        myImplP->noteGroups.erase( i );
+                    }
+                    return;
                 }
             }
             else if ( counter > noteIndex )
@@ -380,7 +385,7 @@ namespace Lyre
         {
             THROW( "index out of range" )
         }
-        int groupCounter = 0;
+        int groupCounter = -1;
         for ( auto i = myImplP->noteGroups.begin();
               i != myImplP->noteGroups.end(); ++i )
         {
@@ -413,7 +418,7 @@ namespace Lyre
         {
             THROW( "index out of range" )
         }
-        int groupCounter = 0;
+        int groupCounter = -1;
         for ( auto i = myImplP->noteGroups.begin();
               i != myImplP->noteGroups.end(); ++i )
         {
@@ -429,6 +434,5 @@ namespace Lyre
         }
 		THROW( "index out of range" )
 	}
-
 }
 
