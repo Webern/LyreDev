@@ -19,11 +19,13 @@ namespace Lyre
             Layer& operator=( const Layer& other );
             Layer& operator=( Layer&& other );
             
-            virtual ILayerUP clone() const;
+            virtual INoteGroupUP clone() const;
+            virtual ILayerUP copyLayer() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             
         private:
-            
+            class Impl;
+            Impl* myImplP;
         };
     } 
 }

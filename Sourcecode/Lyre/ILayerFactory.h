@@ -22,7 +22,7 @@ namespace Lyre
     {
     public:
         virtual ~ILayerFactory() {}
-        virtual ILayerUP create() = 0;
+        virtual ILayerUP createLayer() = 0;
 
     };
 }

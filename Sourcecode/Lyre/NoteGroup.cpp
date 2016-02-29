@@ -159,7 +159,7 @@ namespace Lyre
 		return INoteGroupUP{ new NoteGroup{ *this } };
 	}
     
-    NoteGroupUP NoteGroup::copy() const
+    NoteGroupUP NoteGroup::copyNoteGroup() const
 	{
 		return NoteGroupUP{ new NoteGroup{ *this } };
 	}

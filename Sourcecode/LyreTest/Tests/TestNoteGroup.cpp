@@ -6,7 +6,6 @@
 #include "Lyre/INoteFactory.h"
 #include "Lyre/toShared.h"
 
-
 using namespace Lyre;
 using namespace std;
 
@@ -214,13 +213,13 @@ TEST( clone, NoteGroup )
 }
 T_END
 
-TEST( copy, NoteGroup )
+TEST( copyNoteGroup, NoteGroup )
 {
     Factories f;
     NoteGroupUP noteGroup{ new NoteGroup{} };
     noteGroup->add( f.c4Quarter() );
     CHECK_EQUAL( 1, noteGroup->getCount() )
-    NoteGroupUP copied = noteGroup->copy();
+    NoteGroupUP copied = noteGroup->copyNoteGroup();
     CHECK_EQUAL( 1, copied->getCount() )
     CHECK( noteGroup.get() != copied.get() )
 }
@@ -1115,9 +1114,5 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     expected = ssExpected.str();
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
-    
-    
-    
-    
 }
 T_END

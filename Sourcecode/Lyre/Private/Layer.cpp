@@ -8,40 +8,56 @@ namespace Lyre
 {
     namespace Private
     {
+        class Layer::Impl
+        {
+
+        };
+
         Layer::~Layer()
         {
+            delete myImplP;
+            myImplP = 0;
         }
 
         Layer::Layer()
+            :myImplP( 0 )
         {
-
+            myImplP = new Impl();
         }
 
         Layer::Layer( const Layer& other )
+            :myImplP( 0 )
         {
-            UNUSED_PARAMETER( other )
+            myImplP = new Impl( *other.myImplP );
         }
 
         Layer::Layer( Layer&& other )
+            :myImplP( std::move( other.myImplP ) )
         {
-            UNUSED_PARAMETER( other )
+            other.myImplP = 0;
         }
 
         Layer& Layer::operator=( const Layer& other )
         {
-            UNUSED_PARAMETER( other )
+            myImplP = new Impl( *other.myImplP );
             return *this;
         }
 
         Layer& Layer::operator=( Layer&& other )
         {
-            UNUSED_PARAMETER( other )
+            myImplP = std::move( other.myImplP );
+            other.myImplP = 0;
             return *this;
         }
 
-        ILayerUP Layer::clone() const
+        INoteGroupUP Layer::clone() const
         {
             return ILayerUP{ new Layer{ *this } };
+        }
+
+        ILayerUP Layer::copyLayer() const
+        {
+            return ILayerUP( new Layer( *this ) );
         }
 
         std::ostream& Layer::toStream( std::ostream& os ) const

@@ -9,7 +9,7 @@ namespace Lyre
     {
         LayerFactory::~LayerFactory() {}
         
-        ILayerUP LayerFactory::create()
+        ILayerUP LayerFactory::createLayer()
         {
             return ILayerUP{ new Layer{} };
         }

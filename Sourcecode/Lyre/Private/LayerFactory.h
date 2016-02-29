@@ -15,7 +15,7 @@ namespace Lyre
         public:
             virtual ~LayerFactory();
             
-            virtual ILayerUP create();
+            virtual ILayerUP createLayer();
         };
     }
 }
