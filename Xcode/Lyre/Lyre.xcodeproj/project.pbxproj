@@ -36,6 +36,9 @@
 		2923482F1C3E31A5002494EC /* Note.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2923482D1C3E31A5002494EC /* Note.cpp */; };
 		2926C8771C0D704400C5D4C0 /* DurationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2926C8751C0D704400C5D4C0 /* DurationFactory.cpp */; };
 		2926C87A1C0D717200C5D4C0 /* IDuration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2926C8781C0D717200C5D4C0 /* IDuration.cpp */; };
+		292E990B1C841114007FE1C7 /* ILayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E99091C841114007FE1C7 /* ILayerFactory.cpp */; };
+		292E99101C841125007FE1C7 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E990C1C841125007FE1C7 /* Layer.cpp */; };
+		292E99111C841125007FE1C7 /* LayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E990E1C841125007FE1C7 /* LayerFactory.cpp */; };
 		293F25DF1C09ADD4006096F2 /* Duration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25DD1C09ADD4006096F2 /* Duration.cpp */; };
 		296D72631BF8E9EE0049B0EA /* DurBase16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */; };
 		296D72641BF8E9EE0049B0EA /* DurBase32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724F1BF8E9EE0049B0EA /* DurBase32nd.cpp */; };
@@ -127,6 +130,13 @@
 		2926C8781C0D717200C5D4C0 /* IDuration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IDuration.cpp; path = ../../Sourcecode/Lyre/IDuration.cpp; sourceTree = "<group>"; };
 		2926C8791C0D717200C5D4C0 /* IDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDuration.h; path = ../../Sourcecode/Lyre/IDuration.h; sourceTree = "<group>"; };
 		2928FAFF1C549F2000644429 /* ForwardDeclare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForwardDeclare.h; path = ../../Sourcecode/Lyre/ForwardDeclare.h; sourceTree = "<group>"; };
+		292E99081C841114007FE1C7 /* ILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ILayer.h; path = ../../Sourcecode/Lyre/ILayer.h; sourceTree = "<group>"; };
+		292E99091C841114007FE1C7 /* ILayerFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILayerFactory.cpp; path = ../../Sourcecode/Lyre/ILayerFactory.cpp; sourceTree = "<group>"; };
+		292E990A1C841114007FE1C7 /* ILayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ILayerFactory.h; path = ../../Sourcecode/Lyre/ILayerFactory.h; sourceTree = "<group>"; };
+		292E990C1C841125007FE1C7 /* Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Layer.cpp; path = ../../Sourcecode/Lyre/Private/Layer.cpp; sourceTree = "<group>"; };
+		292E990D1C841125007FE1C7 /* Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Layer.h; path = ../../Sourcecode/Lyre/Private/Layer.h; sourceTree = "<group>"; };
+		292E990E1C841125007FE1C7 /* LayerFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LayerFactory.cpp; path = ../../Sourcecode/Lyre/Private/LayerFactory.cpp; sourceTree = "<group>"; };
+		292E990F1C841125007FE1C7 /* LayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayerFactory.h; path = ../../Sourcecode/Lyre/Private/LayerFactory.h; sourceTree = "<group>"; };
 		293F25DD1C09ADD4006096F2 /* Duration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Duration.cpp; path = ../../Sourcecode/Lyre/Private/Duration.cpp; sourceTree = "<group>"; };
 		293F25DE1C09ADD4006096F2 /* Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Duration.h; path = ../../Sourcecode/Lyre/Private/Duration.h; sourceTree = "<group>"; };
 		296379841C67B46000760195 /* Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Collection.h; path = ../../Sourcecode/Lyre/Private/Collection.h; sourceTree = "<group>"; };
@@ -271,6 +281,9 @@
 				290989CC1C0390B20040138E /* IDurDotFactory.h */,
 				29109DDC1BE559F2001FF3E6 /* IEnum.cpp */,
 				29109DDD1BE559F2001FF3E6 /* IEnum.h */,
+				292E99081C841114007FE1C7 /* ILayer.h */,
+				292E99091C841114007FE1C7 /* ILayerFactory.cpp */,
+				292E990A1C841114007FE1C7 /* ILayerFactory.h */,
 				291F980F1BF03F89008026BF /* INote.cpp */,
 				291F98101BF03F89008026BF /* INote.h */,
 				292348271C3E2D4A002494EC /* INoteFactory.cpp */,
@@ -292,6 +305,10 @@
 				29C3858D1C03611D00250931 /* ITupletDef.h */,
 				29187A5C1C06B63300F89779 /* ITupletDefFactory.cpp */,
 				29187A5D1C06B63300F89779 /* ITupletDefFactory.h */,
+				292E990C1C841125007FE1C7 /* Layer.cpp */,
+				292E990D1C841125007FE1C7 /* Layer.h */,
+				292E990E1C841125007FE1C7 /* LayerFactory.cpp */,
+				292E990F1C841125007FE1C7 /* LayerFactory.h */,
 				291E420A1C665C5A004C3432 /* Lyre.h */,
 				291E420B1C665C5A004C3432 /* LyreApiExport.h */,
 				298227441BF9997500277C67 /* makeUnique.h */,
@@ -384,6 +401,7 @@
 				29DA8BD51C5DB385007BCE4E /* NoteGroup.cpp in Sources */,
 				29109E461BE55A1B001FF3E6 /* Step.cpp in Sources */,
 				29187A5E1C06B63300F89779 /* ITupletDefFactory.cpp in Sources */,
+				292E990B1C841114007FE1C7 /* ILayerFactory.cpp in Sources */,
 				290989D01C0391CC0040138E /* DurDotFactory.cpp in Sources */,
 				29E0B2171C14165B002790B5 /* IDurationFactory.cpp in Sources */,
 				29109DEF1BE559F2001FF3E6 /* IEnum.cpp in Sources */,
@@ -394,6 +412,7 @@
 				291E42171C666344004C3432 /* TimeSignature.cpp in Sources */,
 				296D726C1BF8E9EE0049B0EA /* DurBaseQuarter.cpp in Sources */,
 				29109DE91BE559F2001FF3E6 /* IAlter.cpp in Sources */,
+				292E99101C841125007FE1C7 /* Layer.cpp in Sources */,
 				29E4D2241C06C7400038E6FC /* TupletDefFatory.cpp in Sources */,
 				29109E421BE55A1B001FF3E6 /* PitchFactory.cpp in Sources */,
 				296D72641BF8E9EE0049B0EA /* DurBase32nd.cpp in Sources */,
@@ -408,6 +427,7 @@
 				291E42121C66631D004C3432 /* ITimeSignatureFactory.cpp in Sources */,
 				29109DEB1BE559F2001FF3E6 /* IDurBase.cpp in Sources */,
 				29D7D9571C759DA60055E912 /* DurBaseEighth.cpp in Sources */,
+				292E99111C841125007FE1C7 /* LayerFactory.cpp in Sources */,
 				296D72681BF8E9EE0049B0EA /* DurBaseBreve.cpp in Sources */,
 				2923482F1C3E31A5002494EC /* Note.cpp in Sources */,
 				29109DF11BE559F2001FF3E6 /* IPitch.cpp in Sources */,
