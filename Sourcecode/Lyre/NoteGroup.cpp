@@ -251,7 +251,6 @@ namespace Lyre
             }
         }
         THROW( "should not reach here" )
-		return INoteUP{};
 	}
 
 	void NoteGroup::add( const INoteUP& note )

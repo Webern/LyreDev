@@ -19,7 +19,7 @@ namespace Lyre
             void setValue( const int val ) { myValue = val; }
             int getMin() const { return 0; }
             int getMax() const { return 1; }
-            bool parse( const String& str ) { return true; }
+            bool parse( const String& str ) { UNUSED_PARAMETER( str ) return true; }
             std::ostream& toStream( std::ostream& os ) const { return os << myValue; }
             bool extendedFunction() const { return true; }
             void increment() { myValue++; }

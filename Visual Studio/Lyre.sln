@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lyre", "Lyre.vcxproj", "{F765E151-6073-4B26-874F-6F839CEFF126}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LyreTest", "LyreTest.vcxproj", "{81C15F27-BE53-4839-98C0-955500B4883A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F765E151-6073-4B26-874F-6F839CEFF126} = {F765E151-6073-4B26-874F-6F839CEFF126}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6208867F-D1CA-44F3-BBFD-41F856A02856}"
 	ProjectSection(SolutionItems) = preProject
 		build.bat = build.bat
+		clean.bat = clean.bat
 	EndProjectSection
 EndProject
 Global

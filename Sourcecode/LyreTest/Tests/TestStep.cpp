@@ -407,11 +407,11 @@ public:
         return value;
     }
     int getValue() const { return 5; }
-    void setValue( const int val ) {}
-    virtual bool isIdenticalTo( const IStep& other ) const { return true; }
+    void setValue( const int val ) { UNUSED_PARAMETER( val ) }
+    virtual bool isIdenticalTo( const IStep& other ) const { UNUSED_PARAMETER( other ) return true; }
     int getMin() const { return 0; }
     int getMax() const { return 6; }
-    bool parse( const String& str ) { return true; }
+    bool parse( const String& str ) { UNUSED_PARAMETER( str ) return true; }
     std::ostream& toStream( std::ostream& os ) const { return os << "A"; }
     bool extendedFunction() const { return true; }
     void increment() {}
@@ -443,12 +443,12 @@ public:
         return value;
     }
     int getValue() const { return 5; }
-    void setValue( const int val ) {}
-    virtual bool isIdenticalTo( const IStep& other ) const { return true; }
+    void setValue( const int val ) { UNUSED_PARAMETER( val ) }
+    virtual bool isIdenticalTo( const IStep& other ) const { UNUSED_PARAMETER( other ) return true; }
     int getMin() const { return 0; }
     int getMax() const { return 6; }
-    bool parse( const String& str ) { return true; }
-    std::ostream& toStream( std::ostream& os ) const { return os << "X"; }
+    bool parse( const String& str ) { UNUSED_PARAMETER( str ) return true; }
+    std::ostream& toStream( std::ostream& os ) const { UNUSED_PARAMETER( os ) return os << "X"; }
     bool extendedFunction() const { return true; }
     void increment() {}
     void decrement() {}

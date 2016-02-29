@@ -26,10 +26,6 @@ namespace Lyre
                 return std::move( output );
             }
             THROW( "invalid mock dur name" )
-            
-            // unreachable code
-            IDurBaseUP nullIDurBaseUP;
-            return nullIDurBaseUP;
         }
     }
 }

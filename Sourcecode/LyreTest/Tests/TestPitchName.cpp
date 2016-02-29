@@ -1422,21 +1422,21 @@ public:
         return std::unique_ptr<MockPitchName1>{ new MockPitchName1{} };
     }
     virtual int getValue() const { return 1; }
-    virtual bool parse( const String& str ) { return true; }
+    virtual bool parse( const String& str ) { UNUSED_PARAMETER( str ) return true; }
     virtual std::ostream& toStream( std::ostream& os ) const { return os << "C#"; }
     /* virtual String toString() const;
     virtual bool isLessThan( const PitchName& other ) const;
     virtual bool isGreaterThan( const PitchName& other ) const;
     virtual bool isEqualTo( const PitchName& other ) const; */
-    virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
+    virtual bool isIdenticalTo( const IPitchName& other ) const { UNUSED_PARAMETER( other ) return true; }
     virtual int getStepValue() const { return 0; }
-    virtual void setStepValue( const int val ) {}
+    virtual void setStepValue( const int val ) { UNUSED_PARAMETER( val ) }
     virtual int getMinStepValue() const { return 0; }
     virtual int getMaxStepValue() const { return 0; }
     virtual void incrementStep() {}
     virtual void decrementStep() {}
     virtual int getAlterValue() const { return 1; }
-    virtual void setAlterValue( const int val ) {}
+    virtual void setAlterValue( const int val ) { UNUSED_PARAMETER( val ) }
     virtual int getMinAlterValue() const { return 0; }
     virtual int getMaxAlterValue() const { return 0; }
     virtual void incrementAlter() {}
@@ -1468,21 +1468,21 @@ public:
         return std::unique_ptr<MockPitchName2>{ new MockPitchName2{} };
     }
     virtual int getValue() const { return 1; }
-    virtual bool parse( const String& str ) { return true; }
+    virtual bool parse( const String& str ) { UNUSED_PARAMETER( str ) return true; }
     virtual std::ostream& toStream( std::ostream& os ) const { return os << "C_"; }
     /* virtual String toString() const;
     virtual bool isLessThan( const PitchName& other ) const;
     virtual bool isGreaterThan( const PitchName& other ) const;
     virtual bool isEqualTo( const PitchName& other ) const; */
-    virtual bool isIdenticalTo( const IPitchName& other ) const { return true; }
+    virtual bool isIdenticalTo( const IPitchName& other ) const { UNUSED_PARAMETER( other ) return true; }
     virtual int getStepValue() const { return 0; }
-    virtual void setStepValue( const int val ) {}
+    virtual void setStepValue( const int val ) { UNUSED_PARAMETER( val ) }
     virtual int getMinStepValue() const { return 0; }
     virtual int getMaxStepValue() const { return 0; }
     virtual void incrementStep() {}
     virtual void decrementStep() {}
     virtual int getAlterValue() const { return 1; }
-    virtual void setAlterValue( const int val ) {}
+    virtual void setAlterValue( const int val ) { UNUSED_PARAMETER( val ) }
     virtual int getMinAlterValue() const { return 0; }
     virtual int getMaxAlterValue() const { return 0; }
     virtual void incrementAlter() {}

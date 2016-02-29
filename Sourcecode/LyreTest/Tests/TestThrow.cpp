@@ -55,7 +55,8 @@ TEST( throwIfNull, throwDotH )
             // suppress compiler warning
             ++nullInt;
         }
-        THROW_IF_NULL( nullptr )
+		nullInt = nullptr;
+        THROW_IF_NULL( nullInt )
     }
     catch( std::runtime_error& e )
     {
