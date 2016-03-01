@@ -1,3 +1,5 @@
+#if 1==0
+
 //PRIVATE
 #pragma once
 #include "Lyre/Lyre.h"
@@ -19,3 +21,5 @@ namespace Lyre
         };
     }
 }
+
+#endif

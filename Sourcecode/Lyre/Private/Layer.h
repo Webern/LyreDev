@@ -1,3 +1,5 @@
+#if 1==0
+
 //PRIVATE
 #pragma once
 #include "Lyre/Lyre.h"
@@ -20,8 +22,12 @@ namespace Lyre
             Layer& operator=( Layer&& other );
             
             virtual INoteGroupUP clone() const;
+            virtual INoteGroupUP move();
             virtual ILayerUP copyLayer() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
+            
+            void setAllowExtraNotes( bool allowExtraNotes );
+            bool getAllowExtraNotes() const;
             
         private:
             class Impl;
@@ -29,3 +35,5 @@ namespace Lyre
         };
     } 
 }
+
+#endif

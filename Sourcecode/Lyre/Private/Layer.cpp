@@ -1,3 +1,5 @@
+#if 1==0
+
 #include "Lyre/Private/Layer.h"
 #include "Lyre/IBeatPatternFactory.h"
 #include "Lyre/IDurationFactory.h"
@@ -54,6 +56,15 @@ namespace Lyre
         {
             return ILayerUP{ new Layer{ *this } };
         }
+        
+        INoteGroupUP Layer::move()
+        {
+            
+            Layer *layerP = new Layer{};
+            layerP->myImplP = std::move( this->myImplP );
+            myImplP = 0;
+            return INoteGroupUP{ layerP };
+        }
 
         ILayerUP Layer::copyLayer() const
         {
@@ -66,3 +77,5 @@ namespace Lyre
         }
     }
 }
+
+#endif

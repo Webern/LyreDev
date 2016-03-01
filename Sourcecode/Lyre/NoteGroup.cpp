@@ -159,6 +159,15 @@ namespace Lyre
 		return INoteGroupUP{ new NoteGroup{ *this } };
 	}
     
+    INoteGroupUP NoteGroup::move()
+    {
+
+        NoteGroup *noteGroupP = new NoteGroup{};
+        noteGroupP->myImplP = std::move( this->myImplP );
+        myImplP = 0;
+        return INoteGroupUP{ noteGroupP };
+    }
+    
     NoteGroupUP NoteGroup::copyNoteGroup() const
 	{
 		return NoteGroupUP{ new NoteGroup{ *this } };

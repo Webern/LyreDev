@@ -13,6 +13,7 @@ namespace Lyre
     public:
         virtual ~INoteGroup() {}
         virtual INoteGroupUP clone() const = 0;
+        virtual INoteGroupUP move() = 0;
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         
         virtual bool getIsEmpty() const = 0;

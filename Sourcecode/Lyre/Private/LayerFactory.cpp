@@ -1,3 +1,5 @@
+#if 1==0
+
 #include "Lyre/Private/LayerFactory.h"
 #include "Lyre/ILayer.h"
 #include "Lyre/Private/Layer.h"
@@ -15,3 +17,5 @@ namespace Lyre
         }
     }
 }
+
+#endif

@@ -1,3 +1,5 @@
+#if 1==0
+
 #include "Lyre/ILayerFactory.h"
 #include "Lyre/Private/LayerFactory.h"
 #include "Lyre/Private/throw.h"
@@ -19,3 +21,5 @@ namespace Lyre
         THROW( "Unrecognized LayerFactoryType" )
     }
 }
+
+#endif

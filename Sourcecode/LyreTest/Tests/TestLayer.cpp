@@ -1,3 +1,5 @@
+#if 1==0
+
 //PUBLIC
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "Lyre/Ilayer.h"
@@ -69,10 +71,10 @@ namespace
         subSubGroup->add( f.c4Quarter() );  // 1 / 1 ~ #2
         subSubGroup->add( f.f2Half() );     // 2 / 1 ~ #3
         subGroup->add( f.d4Eighth() );      // 1 / 2 ~ #1
-        subGroup->addGroup( subSubGroup->clone() );
+        subGroup->addGroup( subSubGroup->move() );
         subGroup->add( f.d4Eighth() );      // 1 / 2 ~ #4
         layer->add( f.e2Sixteenth() );  // 1 / 4 ~ #0
-        layer->addGroup( subGroup->clone() );
+        layer->addGroup( subGroup->move() );
         layer->add( f.e2Sixteenth() );  // 1 / 4 ~ #5
         return std::move( layer );
     }
@@ -96,9 +98,9 @@ namespace
         subSubGroup->add( f.c4Quarter() );
         subSubGroup->add( f.f2Half() );
         subGroup->add( f.d4Eighth() );
-        subGroup->addGroup( subSubGroup->clone() );
+        subGroup->addGroup( subSubGroup->move() );
         layer->add( f.e2Sixteenth() );
-        layer->addGroup( subGroup->clone() );
+        layer->addGroup( subGroup->move() );
         layer->add( f.e2Sixteenth() );
         return std::move( layer );
     }
@@ -126,25 +128,25 @@ namespace
         sub2->add( f.makeNote( cVal( 1 ), dur ) );
         sub2->add( f.makeNote( cVal( 2 ), dur ) );
         sub2->add( f.makeNote( cVal( 3 ), dur ) );
-        mainLayer->addGroup( sub2->clone() );
+        mainLayer->addGroup( sub2->move() );
         
         sub3->add( f.makeNote( cVal( 5 ), dur ) );
         sub4->add( f.makeNote( cVal( 6 ), dur ) );
         sub5->add( f.makeNote( cVal( 7 ), dur ) );
         sub5->add( f.makeNote( cVal( 8 ), dur ) );
         sub5->add( f.makeNote( cVal( 9 ), dur ) );
-        sub4->addGroup( sub5->clone() );
+        sub4->addGroup( sub5->move() );
         sub4->add( f.makeNote( cVal( 10 ), dur ) );
-        sub3->addGroup( sub4->clone() );
+        sub3->addGroup( sub4->move() );
         sub3->add( f.makeNote( cVal( 11 ), dur ) );
         
         mainLayer->add( f.makeNote( cVal( 4 ), dur ) );
-        mainLayer->addGroup( sub3->clone() );
+        mainLayer->addGroup( sub3->move() );
         
         sub6->add( f.makeNote( cVal( 12 ), dur ) );
         sub6->add( f.makeNote( cVal( 13 ), dur ) );
         
-        mainLayer->addGroup( sub6->clone() );
+        mainLayer->addGroup( sub6->move() );
         mainLayer->add( f.makeNote( cVal( 14 ), dur ) );
         
         return std::move( mainLayer );
@@ -207,7 +209,7 @@ TEST( clone, Layer )
     ILayerUP layer = newLayer();
     layer->add( f.c4Quarter() );
     CHECK_EQUAL( 1, layer->getCount() )
-    INoteGroupUP cloned = layer->clone();
+    INoteGroupUP cloned = layer->move();
     CHECK_EQUAL( 1, cloned->getCount() )
     CHECK( layer.get() != cloned.get() )
 }
@@ -533,10 +535,10 @@ TEST( getGroupCount_3, Layer )
     auto layer = newNestedGroup1();
     auto second = newLayer();
     second->add( f.c4Quarter() );
-    layer->addGroup( second->clone() );
+    layer->addGroup( second->move() );
     auto third = newLayer();
     third->add( f.e2Sixteenth() );
-    layer->addGroup( third->clone() );
+    layer->addGroup( third->move() );
     CHECK_EQUAL( 3, layer->getGroupCount() )
 }
 T_END
@@ -651,9 +653,9 @@ TEST( getGroupIndex_2_nested, Layer )
     auto layer = newNestedGroup1();
     auto additionalNested = newLayer();
     additionalNested->add( f.c4Quarter() );
-    layer->addGroup( additionalNested->clone() );
-    layer->addGroup( additionalNested->clone() );
-    layer->addGroup( additionalNested->clone() );
+    layer->addGroup( additionalNested->move() );
+    layer->addGroup( additionalNested->move() );
+    layer->addGroup( additionalNested->move() );
     CHECK_EQUAL( 3, layer->getGroupIndex( 8 ) )
 }
 T_END
@@ -720,10 +722,10 @@ TEST( getGroup_2, Layer )
     auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1->clone() );
+    layer->addGroup( addedGroup1->move() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2->clone() );
+    layer->addGroup( addedGroup2->move() );
     auto index2Group = layer->getGroup( 2 );
     auto firstNote = index2Group->getNote( 0 );
     String expected = "{ E2 : 16th }";
@@ -758,10 +760,10 @@ TEST( addGroup, Layer )
     auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1->clone() );
+    layer->addGroup( addedGroup1->move() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2->clone() );
+    layer->addGroup( addedGroup2->move() );
     CHECK_EQUAL( 3, layer->getGroupCount() )
 }
 T_END
@@ -790,13 +792,13 @@ TEST( removeGroup_2, Layer )
     auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1->clone() );
+    layer->addGroup( addedGroup1->move() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2->clone() );
+    layer->addGroup( addedGroup2->move() );
     auto addedGroup3 = newLayer();
     addedGroup3->add( f.f2Half() );
-    layer->addGroup( addedGroup3->clone() );
+    layer->addGroup( addedGroup3->move() );
     CHECK_EQUAL( 9, layer->getCount() )
     CHECK_EQUAL( 4, layer->getGroupCount() )
     layer->removeGroup( 2 );
@@ -815,13 +817,13 @@ TEST( removeGroup_0, Layer )
     auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1->clone() );
+    layer->addGroup( addedGroup1->move() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2->clone() );
+    layer->addGroup( addedGroup2->move() );
     auto addedGroup3 = newLayer();
     addedGroup3->add( f.f2Half() );
-    layer->addGroup( addedGroup3->clone() );
+    layer->addGroup( addedGroup3->move() );
     CHECK_EQUAL( 9, layer->getCount() )
     CHECK_EQUAL( 4, layer->getGroupCount() )
     layer->removeGroup( 0 );
@@ -840,10 +842,10 @@ TEST( removingAllNotesRemovesGroup_front, Layer )
     auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1->clone() );
+    layer->addGroup( addedGroup1->move() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2->clone() );
+    layer->addGroup( addedGroup2->move() );
     CHECK_EQUAL( 3, layer->getGroupCount() )
     layer->remove( 0 );
     layer->remove( 0 );
@@ -1116,3 +1118,5 @@ TEST( removingAllNotesRemovesGroup_back, Layer )
     CHECK_EQUAL( expected, actual )
 }
 T_END
+
+#endif
