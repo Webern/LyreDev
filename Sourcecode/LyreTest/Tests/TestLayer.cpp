@@ -1,6 +1,6 @@
 //PUBLIC
 #include "LyreTest/cpul/cpulTestHarness.h"
-#include "Lyre/Ilayer->h"
+#include "Lyre/Ilayer.h"
 #include "Lyre/ILayerFactory.h"
 #include "Lyre/IDurationFactory.h"
 #include "Lyre/IPitchFactory.h"
@@ -63,7 +63,7 @@ namespace
     inline ILayerUP newNestedGroup1()
     {
         Factories f;
-        auto Layer = newLayer();
+        auto layer = newLayer();
         auto subGroup = newLayer();
         auto subSubGroup = newLayer();
         subSubGroup->add( f.c4Quarter() );  // 1 / 1 ~ #2
@@ -74,7 +74,7 @@ namespace
         layer->add( f.e2Sixteenth() );  // 1 / 4 ~ #0
         layer->addGroup( subGroup->clone() );
         layer->add( f.e2Sixteenth() );  // 1 / 4 ~ #5
-        return std::move( Layer );
+        return std::move( layer );
     }
     inline String newNestedGroup1String()
     {
@@ -90,7 +90,7 @@ namespace
     inline ILayerUP newNestedGroup2()
     {
         Factories f;
-        auto Layer = newLayer();
+        auto layer = newLayer();
         auto subGroup = newLayer();
         auto subSubGroup = newLayer();
         subSubGroup->add( f.c4Quarter() );
@@ -100,7 +100,7 @@ namespace
         layer->add( f.e2Sixteenth() );
         layer->addGroup( subGroup->clone() );
         layer->add( f.e2Sixteenth() );
-        return std::move( Layer );
+        return std::move( layer );
     }
     
     inline int cVal( const int octave )
@@ -122,11 +122,11 @@ namespace
         
         String dur = "Quarter";
         
-        mainlayer->add( f.makeNote( cVal( 0 ), dur ) );
+        mainLayer->add( f.makeNote( cVal( 0 ), dur ) );
         sub2->add( f.makeNote( cVal( 1 ), dur ) );
         sub2->add( f.makeNote( cVal( 2 ), dur ) );
         sub2->add( f.makeNote( cVal( 3 ), dur ) );
-        mainlayer->addGroup( sub2->clone() );
+        mainLayer->addGroup( sub2->clone() );
         
         sub3->add( f.makeNote( cVal( 5 ), dur ) );
         sub4->add( f.makeNote( cVal( 6 ), dur ) );
@@ -138,14 +138,14 @@ namespace
         sub3->addGroup( sub4->clone() );
         sub3->add( f.makeNote( cVal( 11 ), dur ) );
         
-        mainlayer->add( f.makeNote( cVal( 4 ), dur ) );
-        mainlayer->addGroup( sub3->clone() );
+        mainLayer->add( f.makeNote( cVal( 4 ), dur ) );
+        mainLayer->addGroup( sub3->clone() );
         
         sub6->add( f.makeNote( cVal( 12 ), dur ) );
         sub6->add( f.makeNote( cVal( 13 ), dur ) );
         
-        mainlayer->addGroup( sub6->clone() );
-        mainlayer->add( f.makeNote( cVal( 14 ), dur ) );
+        mainLayer->addGroup( sub6->clone() );
+        mainLayer->add( f.makeNote( cVal( 14 ), dur ) );
         
         return std::move( mainLayer );
     }
@@ -184,10 +184,9 @@ TEST( assignment, Layer )
     Factories f;
     ILayerUP layer = createLayerFactory()->createLayer();
     layer->add( f.e2Sixteenth() );
-    Layer copied;
-    copied = Layer;
+    ILayerUP copied = layer->copyLayer();
     CHECK_EQUAL( 1, layer->getCount() )
-    CHECK_EQUAL( 1, copied.getCount() )
+    CHECK_EQUAL( 1, copied->getCount() )
 }
 T_END
 
@@ -196,39 +195,39 @@ TEST( moveAssignment, Layer )
     Factories f;
     ILayerUP layer = createLayerFactory()->createLayer();
     layer->add( f.e2Sixteenth() );
-    Layer copied;
-    copied = std::move( Layer );
-    CHECK_EQUAL( 1, copied.getCount() )
+    ILayerUP copied;
+    copied = std::move( layer );
+    CHECK_EQUAL( 1, copied->getCount() )
 }
 T_END
 
 TEST( clone, Layer )
 {
     Factories f;
-    ILayerUP Layer{ new Layer{} };
+    ILayerUP layer = newLayer();
     layer->add( f.c4Quarter() );
     CHECK_EQUAL( 1, layer->getCount() )
-    ILayerUP cloned = layer->clone();
+    INoteGroupUP cloned = layer->clone();
     CHECK_EQUAL( 1, cloned->getCount() )
-    CHECK( layer->get() != cloned.get() )
+    CHECK( layer.get() != cloned.get() )
 }
 T_END
 
 TEST( copyLayer, Layer )
 {
     Factories f;
-    LayerUP Layer{ new Layer{} };
+    ILayerUP layer = newLayer();
     layer->add( f.c4Quarter() );
     CHECK_EQUAL( 1, layer->getCount() )
-    LayerUP copied = layer->copyLayer();
+    ILayerUP copied = layer->copyLayer();
     CHECK_EQUAL( 1, copied->getCount() )
-    CHECK( layer->get() != copied.get() )
+    CHECK( layer.get() != copied.get() )
 }
 T_END
 
 TEST( toStream, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     std::stringstream ss;
     layer->toStream( ss );
     String expected = newNestedGroup1String();
@@ -239,7 +238,7 @@ T_END
 
 TEST( toString, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     String expected = newNestedGroup1String();
     String actual = layer->toString();
     CHECK_EQUAL( expected, actual )
@@ -248,9 +247,9 @@ T_END
 
 TEST( streamOperator, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     std::stringstream ss;
-    ss << ( *Layer );
+    ss << ( *layer );
     String expected = newNestedGroup1String();
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
@@ -259,21 +258,21 @@ T_END
 
 TEST( getIsEmpty_true, Layer )
 {
-    auto Layer = newLayer();
+    auto layer = newLayer();
     CHECK( layer->getIsEmpty() )
 }
 T_END
 
 TEST( getIsEmpty_false, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     CHECK( ! layer->getIsEmpty() )
 }
 T_END
 
 TEST( getCount_0, Layer )
 {
-    auto Layer = newLayer();
+    auto layer = newLayer();
     int expected = 0;
     int actual = layer->getCount();
     CHECK_EQUAL( expected, actual )
@@ -283,7 +282,7 @@ T_END
 TEST( getCount_1, Layer )
 {
     Factories f;
-    auto Layer = newLayer();
+    auto layer = newLayer();
     layer->add( f.e2Sixteenth() );
     int expected = 1;
     int actual = layer->getCount();
@@ -294,7 +293,7 @@ T_END
 TEST( getCount_5_flat, Layer )
 {
     Factories f;
-    auto Layer = newLayer();
+    auto layer = newLayer();
     layer->add( f.e2Sixteenth() );
     layer->add( f.f2Half() );
     layer->add( f.c4Quarter() );
@@ -308,7 +307,7 @@ T_END
 
 TEST( getCount_5_nested, Layer )
 {
-    auto Layer = newNestedGroup2();
+    auto layer = newNestedGroup2();
     int expected = 5;
     int actual = layer->getCount();
     CHECK_EQUAL( expected, actual )
@@ -317,7 +316,7 @@ T_END
 
 TEST( getTotalDuration_0, Layer )
 {
-    auto Layer = newLayer();
+    auto layer = newLayer();
     Rational expected{ 0, 1 };
     Rational actual = layer->getTotalDuration();
     CHECK_EQUAL( expected, actual )
@@ -327,7 +326,7 @@ T_END
 TEST( getTotalDuration_4Q, Layer )
 {
     Factories f;
-    auto Layer = newLayer();
+    auto layer = newLayer();
     layer->add( f.e2Sixteenth() );
     layer->add( f.f2Half() );
     layer->add( f.c4Quarter() );
@@ -341,7 +340,7 @@ T_END
 
 TEST( getTotalDuration_3E, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     Rational expected{ 9, 2 };
     Rational actual = layer->getTotalDuration();
     CHECK_EQUAL( expected, actual )
@@ -350,7 +349,7 @@ T_END
 
 TEST( getNote_throwEmpty, Layer )
 {
-    auto Layer = newLayer();
+    auto layer = newLayer();
     bool isExceptionThrown = false;
     try
     {
@@ -369,7 +368,7 @@ T_END
 
 TEST( getNote_throwOutOfRange, Layer )
 {
-    auto Layer = newNestedGroup2();
+    auto layer = newNestedGroup2();
     bool isExceptionThrown = false;
     try
     {
@@ -389,7 +388,7 @@ T_END
 TEST( getNote_flat, Layer )
 {
     Factories f;
-    auto Layer = newLayer();
+    auto layer = newLayer();
     layer->add( f.e2Sixteenth() );  // 0
     layer->add( f.f2Half() );       // 1
     layer->add( f.c4Quarter() );    // 2
@@ -403,7 +402,7 @@ T_END
 
 TEST( getNote_nested, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     String expected = "{ F2 : Half }";
     String actual = layer->getNote( 3 )->toString();
     CHECK_EQUAL( expected, actual )
@@ -412,7 +411,7 @@ T_END
 
 TEST( add_throwNull, Layer )
 {
-    auto Layer = newLayer();
+    auto layer = newLayer();
     INoteUP nullnote{ nullptr };
     bool isExceptionThrown = false;
     try
@@ -432,7 +431,7 @@ T_END
 TEST( add, Layer )
 {
     Factories f;
-    auto Layer = newLayer();
+    auto layer = newLayer();
     layer->add( f.e2Sixteenth() );
     int expected = 1;
     int actual = layer->getCount();
@@ -442,7 +441,7 @@ T_END
 
 TEST( remove_throwEmpty, Layer )
 {
-    auto Layer = newLayer();
+    auto layer = newLayer();
     bool isExceptionThrown = false;
     try
     {
@@ -460,7 +459,7 @@ T_END
 
 TEST( remove_throwOutOfRange, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     bool isExceptionThrown = false;
     try
     {
@@ -479,7 +478,7 @@ T_END
 TEST( remove_flat, Layer )
 {
     Factories f;
-    auto Layer = newLayer(); // Before | After
+    auto layer = newLayer(); // Before | After
     layer->add( f.e2Sixteenth() ); // 0    | 0
     layer->add( f.f2Half() );      // 1    | 1
     layer->add( f.c4Quarter() );   // 2*   |
@@ -501,7 +500,7 @@ T_END
 TEST( remove_nested, Layer )
 {
     Factories f;
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     
     CHECK_EQUAL( 6, layer->getCount() )
     
@@ -518,7 +517,7 @@ T_END
 TEST( getGroupCount_0, Layer )
 {
     Factories f;
-    auto Layer = newLayer();
+    auto layer = newLayer();
     layer->add( f.e2Sixteenth() );
     layer->add( f.f2Half() );
     layer->add( f.c4Quarter() );
@@ -531,20 +530,20 @@ T_END
 TEST( getGroupCount_3, Layer )
 {
     Factories f;
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     auto second = newLayer();
     second->add( f.c4Quarter() );
-    layer->addGroup( second );
+    layer->addGroup( second->clone() );
     auto third = newLayer();
     third->add( f.e2Sixteenth() );
-    layer->addGroup( third );
+    layer->addGroup( third->clone() );
     CHECK_EQUAL( 3, layer->getGroupCount() )
 }
 T_END
 
 TEST( getIsInGroup_throwEmpty, Layer )
 {
-    auto Layer = newLayer();
+    auto layer = newLayer();
     bool isExceptionThrown = false;
     try
     {
@@ -563,7 +562,7 @@ T_END
 
 TEST( getIsInGroup_throwOutOfRange, Layer )
 {
-    auto Layer = newNestedGroup2();
+    auto layer = newNestedGroup2();
     bool isExceptionThrown = false;
     try
     {
@@ -582,21 +581,21 @@ T_END
 
 TEST( getIsInGroup_true, Layer )
 {
-    auto Layer = newNestedGroup2();
+    auto layer = newNestedGroup2();
     CHECK( layer->getIsInGroup( 3 ) )
 }
 T_END
 
 TEST( getIsInGroup_false, Layer )
 {
-    auto Layer = newNestedGroup2();
+    auto layer = newNestedGroup2();
     CHECK( ! layer->getIsInGroup( 0 ) )
 }
 T_END
 
 TEST( getGroupIndex_throwEmpty, Layer )
 {
-    auto Layer = newLayer();
+    auto layer = newLayer();
     bool isExceptionThrown = false;
     try
     {
@@ -615,7 +614,7 @@ T_END
 
 TEST( getGroupIndex_throwOutOfRange, Layer )
 {
-    auto Layer = newNestedGroup2();
+    auto layer = newNestedGroup2();
     bool isExceptionThrown = false;
     try
     {
@@ -634,14 +633,14 @@ T_END
 
 TEST( getGroupIndex_Neg1, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     CHECK_EQUAL( -1, layer->getGroupIndex( 0 ) )
 }
 T_END
 
 TEST( getGroupIndex_0, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     CHECK_EQUAL( 0, layer->getGroupIndex( 1 ) )
 }
 T_END
@@ -649,12 +648,12 @@ T_END
 TEST( getGroupIndex_2_nested, Layer )
 {
     Factories f;
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     auto additionalNested = newLayer();
     additionalNested->add( f.c4Quarter() );
-    layer->addGroup( additionalNested );
-    layer->addGroup( additionalNested );
-    layer->addGroup( additionalNested );
+    layer->addGroup( additionalNested->clone() );
+    layer->addGroup( additionalNested->clone() );
+    layer->addGroup( additionalNested->clone() );
     CHECK_EQUAL( 3, layer->getGroupIndex( 8 ) )
 }
 T_END
@@ -662,7 +661,7 @@ T_END
 TEST( getGroup_throwNoGroups, Layer )
 {
     Factories f;
-    auto Layer = newLayer();
+    auto layer = newLayer();
     layer->add( f.e2Sixteenth() );
     layer->add( f.f2Half() );
     layer->add( f.c4Quarter() );
@@ -686,7 +685,7 @@ T_END
 
 TEST( getGroup_throwOutOfRange, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     bool isExceptionThrown = false;
     try
     {
@@ -705,7 +704,7 @@ T_END
 
 TEST( getGroup_0, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     auto subGroup = layer->getGroup( 0 );
     auto firstSubGroupNote = subGroup->getNote( 0 );
     String expected = "{ D4 : Eighth }";
@@ -718,13 +717,13 @@ T_END
 TEST( getGroup_2, Layer )
 {
     Factories f;
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1 );
+    layer->addGroup( addedGroup1->clone() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2 );
+    layer->addGroup( addedGroup2->clone() );
     auto index2Group = layer->getGroup( 2 );
     auto firstNote = index2Group->getNote( 0 );
     String expected = "{ E2 : 16th }";
@@ -736,8 +735,8 @@ T_END
 
 TEST( addGroup_throwNull, Layer )
 {
-    ILayerUP Layer = newNestedGroup2();
-    ILayerUP nullgroup{ nullptr };
+    ILayerUP layer = newNestedGroup2();
+    INoteGroupUP nullgroup{ nullptr };
     bool isExceptionThrown = false;
     try
     {
@@ -756,20 +755,20 @@ T_END
 TEST( addGroup, Layer )
 {
     Factories f;
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1 );
+    layer->addGroup( addedGroup1->clone() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2 );
+    layer->addGroup( addedGroup2->clone() );
     CHECK_EQUAL( 3, layer->getGroupCount() )
 }
 T_END
 
 TEST( removeGroup_throwOutOfRange, Layer )
 {
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     bool isExceptionThrown = false;
     try
     {
@@ -788,16 +787,16 @@ T_END
 TEST( removeGroup_2, Layer )
 {
     Factories f;
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1 );
+    layer->addGroup( addedGroup1->clone() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2 );
+    layer->addGroup( addedGroup2->clone() );
     auto addedGroup3 = newLayer();
     addedGroup3->add( f.f2Half() );
-    layer->addGroup( addedGroup3 );
+    layer->addGroup( addedGroup3->clone() );
     CHECK_EQUAL( 9, layer->getCount() )
     CHECK_EQUAL( 4, layer->getGroupCount() )
     layer->removeGroup( 2 );
@@ -813,16 +812,16 @@ T_END
 TEST( removeGroup_0, Layer )
 {
     Factories f;
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1 );
+    layer->addGroup( addedGroup1->clone() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2 );
+    layer->addGroup( addedGroup2->clone() );
     auto addedGroup3 = newLayer();
     addedGroup3->add( f.f2Half() );
-    layer->addGroup( addedGroup3 );
+    layer->addGroup( addedGroup3->clone() );
     CHECK_EQUAL( 9, layer->getCount() )
     CHECK_EQUAL( 4, layer->getGroupCount() )
     layer->removeGroup( 0 );
@@ -838,13 +837,13 @@ T_END
 TEST( removingAllNotesRemovesGroup_front, Layer )
 {
     Factories f;
-    auto Layer = newNestedGroup1();
+    auto layer = newNestedGroup1();
     auto addedGroup1 = newLayer();
     addedGroup1->add( f.c4Quarter() );
-    layer->addGroup( addedGroup1 );
+    layer->addGroup( addedGroup1->clone() );
     auto addedGroup2 = newLayer();
     addedGroup2->add( f.e2Sixteenth() );
-    layer->addGroup( addedGroup2 );
+    layer->addGroup( addedGroup2->clone() );
     CHECK_EQUAL( 3, layer->getGroupCount() )
     layer->remove( 0 );
     layer->remove( 0 );
@@ -863,7 +862,7 @@ T_END
 TEST( removingAllNotesRemovesGroup_back, Layer )
 {
     Factories f;
-    auto Layer = newNestedGroup3();
+    auto layer = newNestedGroup3();
     std::stringstream ssExpected;
     String expected;
     String actual;

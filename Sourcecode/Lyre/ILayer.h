@@ -11,9 +11,7 @@ namespace Lyre
     {
     public:
         virtual ~ILayer() {};
-        virtual INoteGroupUP clone() const = 0;
         virtual ILayerUP copyLayer() const = 0;
-        virtual std::ostream& toStream( std::ostream& os ) const = 0;
         
     };
 }
