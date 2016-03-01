@@ -13,8 +13,8 @@ namespace Lyre
     ,myBottom( 4 )
     ,myBeatPattern( nullptr )
     {
-        setTop( DEFAULT_TOP );
-        setBottom( DEFAULT_BOTTOM );
+        setTop( DEFAULT_TIME_SIGNATURE_TOP );
+        setBottom( DEFAULT_TIME_SIGNATURE_BOTTOM );
         guessBeatPattern();
     }
     

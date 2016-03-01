@@ -74,6 +74,16 @@ namespace Lyre
             return IMeasureUP{ new Measure{ *this } };
         }
 
+        IMeasureUP Measure::move()
+        {
+            Measure* measureP = new Measure( myTimeSignature );
+            measureP->myCurrentLayer = std::move( myCurrentLayer );
+            measureP->myLayers = std::move( myLayers );
+            myCurrentLayer = 0;
+            myLayers = Layers();
+            return IMeasureUP( measureP );
+        }
+
         std::ostream& Measure::toStream( std::ostream& os ) const
         {
             return os << "Measure not implemented";
@@ -93,11 +103,21 @@ namespace Lyre
             return myCurrentLayer;
         }
 
+        ITimeSignatureUP Measure::getTimeSignature() const
+        {
+            return myTimeSignature->clone();
+        }
+
 #define LAYER getLayer()->second
         
         bool Measure::getIsEmpty() const
         {
             return LAYER->getIsEmpty();
+        }
+
+        bool Measure::getIsComplete() const
+        {
+            return getTotalDuration() == myMaxDur;
         }
         
         int Measure::getCount() const
