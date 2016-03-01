@@ -20,8 +20,8 @@ namespace Lyre
         virtual int getCount() const = 0;
         virtual Rational getTotalDuration() const = 0;
         virtual INoteUP getNote( int noteIndex ) const = 0;
-        virtual void add( const INoteUP& note ) = 0;
-        virtual void remove( int noteIndex ) = 0;
+        virtual void addNote( const INoteUP& note ) = 0;
+        virtual void removeNote( int noteIndex ) = 0;
         
         virtual int getGroupCount() const = 0;
         virtual bool getIsInGroup( int noteIndex ) const = 0;

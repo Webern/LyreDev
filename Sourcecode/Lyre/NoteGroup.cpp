@@ -262,7 +262,7 @@ namespace Lyre
         THROW( "should not reach here" )
 	}
 
-	void NoteGroup::add( const INoteUP& note )
+	void NoteGroup::addNote( const INoteUP& note )
 	{
         THROW_IF_NULL( note )
         if ( myImplP->ngType == NgType::Note )
@@ -277,7 +277,7 @@ namespace Lyre
         myImplP->noteGroups.push_back( std::move( mng ) );
 	}
 
-	void NoteGroup::remove( int noteIndex )
+	void NoteGroup::removeNote( int noteIndex )
 	{
         int myCount = getCount();
         if ( noteIndex < 0 || noteIndex > myCount - 1 )
@@ -301,7 +301,7 @@ namespace Lyre
                 }
                 else
                 {
-                    i->second->remove( 0 );
+                    i->second->removeNote( 0 );
                     if ( i->second->getCount() == 0 )
                     {
                         myImplP->noteGroups.erase( i );
@@ -318,7 +318,7 @@ namespace Lyre
             int lastIndexInRange = counter + currentItemGetCount - 1;
             if ( noteIndex <= lastIndexInRange ) // note is in current
             {
-                i->second->remove( targetItemIndexInChild );
+                i->second->removeNote( targetItemIndexInChild );
                 return;
             }
             counter += currentItemGetCount;

@@ -50,6 +50,9 @@
 		296D726B1BF8E9EE0049B0EA /* DurBaseLonga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D725D1BF8E9EE0049B0EA /* DurBaseLonga.cpp */; };
 		296D726C1BF8E9EE0049B0EA /* DurBaseQuarter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D725F1BF8E9EE0049B0EA /* DurBaseQuarter.cpp */; };
 		296D726D1BF8E9EE0049B0EA /* DurBaseWhole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72611BF8E9EE0049B0EA /* DurBaseWhole.cpp */; };
+		2971577A1C851DA20001A761 /* IMeasureFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297157781C851DA20001A761 /* IMeasureFactory.cpp */; };
+		2971577F1C851DC60001A761 /* Measure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2971577B1C851DC60001A761 /* Measure.cpp */; };
+		297157801C851DC60001A761 /* MeasureFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2971577D1C851DC60001A761 /* MeasureFactory.cpp */; };
 		29929FCC1C0766BD001CDDC8 /* TupletDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29929FCA1C0766BD001CDDC8 /* TupletDef.cpp */; };
 		299A620A1C7A0C73009C5B19 /* StepStrings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299A62081C7A0C73009C5B19 /* StepStrings.cpp */; };
 		29C3858E1C03611D00250931 /* ITupletDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C3858C1C03611D00250931 /* ITupletDef.cpp */; };
@@ -160,6 +163,13 @@
 		296D72601BF8E9EE0049B0EA /* DurBaseQuarter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurBaseQuarter.h; path = ../../Sourcecode/Lyre/Private/DurBaseQuarter.h; sourceTree = "<group>"; };
 		296D72611BF8E9EE0049B0EA /* DurBaseWhole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurBaseWhole.cpp; path = ../../Sourcecode/Lyre/Private/DurBaseWhole.cpp; sourceTree = "<group>"; };
 		296D72621BF8E9EE0049B0EA /* DurBaseWhole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurBaseWhole.h; path = ../../Sourcecode/Lyre/Private/DurBaseWhole.h; sourceTree = "<group>"; };
+		297157771C851DA20001A761 /* IMeasure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMeasure.h; path = ../../Sourcecode/Lyre/IMeasure.h; sourceTree = "<group>"; };
+		297157781C851DA20001A761 /* IMeasureFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IMeasureFactory.cpp; path = ../../Sourcecode/Lyre/IMeasureFactory.cpp; sourceTree = "<group>"; };
+		297157791C851DA20001A761 /* IMeasureFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMeasureFactory.h; path = ../../Sourcecode/Lyre/IMeasureFactory.h; sourceTree = "<group>"; };
+		2971577B1C851DC60001A761 /* Measure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Measure.cpp; path = ../../Sourcecode/Lyre/Private/Measure.cpp; sourceTree = "<group>"; };
+		2971577C1C851DC60001A761 /* Measure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Measure.h; path = ../../Sourcecode/Lyre/Private/Measure.h; sourceTree = "<group>"; };
+		2971577D1C851DC60001A761 /* MeasureFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeasureFactory.cpp; path = ../../Sourcecode/Lyre/Private/MeasureFactory.cpp; sourceTree = "<group>"; };
+		2971577E1C851DC60001A761 /* MeasureFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeasureFactory.h; path = ../../Sourcecode/Lyre/Private/MeasureFactory.h; sourceTree = "<group>"; };
 		298227441BF9997500277C67 /* makeUnique.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = makeUnique.h; path = ../../Sourcecode/Lyre/Private/makeUnique.h; sourceTree = "<group>"; };
 		29929FCA1C0766BD001CDDC8 /* TupletDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TupletDef.cpp; path = ../../Sourcecode/Lyre/Private/TupletDef.cpp; sourceTree = "<group>"; };
 		29929FCB1C0766BD001CDDC8 /* TupletDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TupletDef.h; path = ../../Sourcecode/Lyre/Private/TupletDef.h; sourceTree = "<group>"; };
@@ -220,6 +230,13 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				2971577B1C851DC60001A761 /* Measure.cpp */,
+				2971577C1C851DC60001A761 /* Measure.h */,
+				2971577D1C851DC60001A761 /* MeasureFactory.cpp */,
+				2971577E1C851DC60001A761 /* MeasureFactory.h */,
+				297157771C851DA20001A761 /* IMeasure.h */,
+				297157781C851DA20001A761 /* IMeasureFactory.cpp */,
+				297157791C851DA20001A761 /* IMeasureFactory.h */,
 				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
 				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
 				29FE9DC01C66C78C00BE0787 /* BeatPattern.cpp */,
@@ -424,6 +441,7 @@
 				292348291C3E2D4A002494EC /* INoteFactory.cpp in Sources */,
 				296D726B1BF8E9EE0049B0EA /* DurBaseLonga.cpp in Sources */,
 				2926C8771C0D704400C5D4C0 /* DurationFactory.cpp in Sources */,
+				2971577A1C851DA20001A761 /* IMeasureFactory.cpp in Sources */,
 				291E42121C66631D004C3432 /* ITimeSignatureFactory.cpp in Sources */,
 				29109DEB1BE559F2001FF3E6 /* IDurBase.cpp in Sources */,
 				29D7D9571C759DA60055E912 /* DurBaseEighth.cpp in Sources */,
@@ -434,6 +452,7 @@
 				29109E3D1BE55A1B001FF3E6 /* Enum.cpp in Sources */,
 				2923482C1C3E2F01002494EC /* NoteFactory.cpp in Sources */,
 				29109E441BE55A1B001FF3E6 /* PitchName.cpp in Sources */,
+				2971577F1C851DC60001A761 /* Measure.cpp in Sources */,
 				296D726A1BF8E9EE0049B0EA /* DurBaseHalf.cpp in Sources */,
 				29109DF51BE559F2001FF3E6 /* IPitchName.cpp in Sources */,
 				29C385911C03637800250931 /* IDurDot.cpp in Sources */,
@@ -447,6 +466,7 @@
 				29929FCC1C0766BD001CDDC8 /* TupletDef.cpp in Sources */,
 				29FE9DC41C66C78C00BE0787 /* BeatPattern.cpp in Sources */,
 				2926C87A1C0D717200C5D4C0 /* IDuration.cpp in Sources */,
+				297157801C851DC60001A761 /* MeasureFactory.cpp in Sources */,
 				296D72671BF8E9EE0049B0EA /* DurBase256th.cpp in Sources */,
 				296D72631BF8E9EE0049B0EA /* DurBase16th.cpp in Sources */,
 				29109E401BE55A1B001FF3E6 /* Pitch.cpp in Sources */,

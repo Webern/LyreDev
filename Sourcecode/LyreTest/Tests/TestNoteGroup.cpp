@@ -65,14 +65,14 @@ namespace
         auto noteGroup = newNoteGroup();
         auto subGroup = newNoteGroup();
         auto subSubGroup = newNoteGroup();
-        subSubGroup->add( f.c4Quarter() );  // 1 / 1 ~ #2
-        subSubGroup->add( f.f2Half() );     // 2 / 1 ~ #3
-        subGroup->add( f.d4Eighth() );      // 1 / 2 ~ #1
+        subSubGroup->addNote( f.c4Quarter() );  // 1 / 1 ~ #2
+        subSubGroup->addNote( f.f2Half() );     // 2 / 1 ~ #3
+        subGroup->addNote( f.d4Eighth() );      // 1 / 2 ~ #1
         subGroup->addGroup( subSubGroup );
-        subGroup->add( f.d4Eighth() );      // 1 / 2 ~ #4
-        noteGroup->add( f.e2Sixteenth() );  // 1 / 4 ~ #0
+        subGroup->addNote( f.d4Eighth() );      // 1 / 2 ~ #4
+        noteGroup->addNote( f.e2Sixteenth() );  // 1 / 4 ~ #0
         noteGroup->addGroup( subGroup );
-        noteGroup->add( f.e2Sixteenth() );  // 1 / 4 ~ #5
+        noteGroup->addNote( f.e2Sixteenth() );  // 1 / 4 ~ #5
         return std::move( noteGroup );
     }
     inline String newNestedGroup1String()
@@ -92,13 +92,13 @@ namespace
         auto noteGroup = newNoteGroup();
         auto subGroup = newNoteGroup();
         auto subSubGroup = newNoteGroup();
-        subSubGroup->add( f.c4Quarter() );
-        subSubGroup->add( f.f2Half() );
-        subGroup->add( f.d4Eighth() );
+        subSubGroup->addNote( f.c4Quarter() );
+        subSubGroup->addNote( f.f2Half() );
+        subGroup->addNote( f.d4Eighth() );
         subGroup->addGroup( subSubGroup );
-        noteGroup->add( f.e2Sixteenth() );
+        noteGroup->addNote( f.e2Sixteenth() );
         noteGroup->addGroup( subGroup );
-        noteGroup->add( f.e2Sixteenth() );
+        noteGroup->addNote( f.e2Sixteenth() );
         return std::move( noteGroup );
     }
     
@@ -121,30 +121,30 @@ namespace
         
         String dur = "Quarter";
         
-        mainNoteGroup->add( f.makeNote( cVal( 0 ), dur ) );
-        sub2->add( f.makeNote( cVal( 1 ), dur ) );
-        sub2->add( f.makeNote( cVal( 2 ), dur ) );
-        sub2->add( f.makeNote( cVal( 3 ), dur ) );
+        mainNoteGroup->addNote( f.makeNote( cVal( 0 ), dur ) );
+        sub2->addNote( f.makeNote( cVal( 1 ), dur ) );
+        sub2->addNote( f.makeNote( cVal( 2 ), dur ) );
+        sub2->addNote( f.makeNote( cVal( 3 ), dur ) );
         mainNoteGroup->addGroup( sub2 );
         
-        sub3->add( f.makeNote( cVal( 5 ), dur ) );
-        sub4->add( f.makeNote( cVal( 6 ), dur ) );
-        sub5->add( f.makeNote( cVal( 7 ), dur ) );
-        sub5->add( f.makeNote( cVal( 8 ), dur ) );
-        sub5->add( f.makeNote( cVal( 9 ), dur ) );
+        sub3->addNote( f.makeNote( cVal( 5 ), dur ) );
+        sub4->addNote( f.makeNote( cVal( 6 ), dur ) );
+        sub5->addNote( f.makeNote( cVal( 7 ), dur ) );
+        sub5->addNote( f.makeNote( cVal( 8 ), dur ) );
+        sub5->addNote( f.makeNote( cVal( 9 ), dur ) );
         sub4->addGroup( sub5 );
-        sub4->add( f.makeNote( cVal( 10 ), dur ) );
+        sub4->addNote( f.makeNote( cVal( 10 ), dur ) );
         sub3->addGroup( sub4 );
-        sub3->add( f.makeNote( cVal( 11 ), dur ) );
+        sub3->addNote( f.makeNote( cVal( 11 ), dur ) );
         
-        mainNoteGroup->add( f.makeNote( cVal( 4 ), dur ) );
+        mainNoteGroup->addNote( f.makeNote( cVal( 4 ), dur ) );
         mainNoteGroup->addGroup( sub3 );
         
-        sub6->add( f.makeNote( cVal( 12 ), dur ) );
-        sub6->add( f.makeNote( cVal( 13 ), dur ) );
+        sub6->addNote( f.makeNote( cVal( 12 ), dur ) );
+        sub6->addNote( f.makeNote( cVal( 13 ), dur ) );
         
         mainNoteGroup->addGroup( sub6 );
-        mainNoteGroup->add( f.makeNote( cVal( 14 ), dur ) );
+        mainNoteGroup->addNote( f.makeNote( cVal( 14 ), dur ) );
         
         return std::move( mainNoteGroup );
     }
@@ -161,7 +161,7 @@ TEST( copyCtor, NoteGroup )
 {
     Factories f;
     NoteGroup noteGroup;
-    noteGroup.add( f.e2Sixteenth() );
+    noteGroup.addNote( f.e2Sixteenth() );
     NoteGroup copied{ noteGroup };
     CHECK_EQUAL( 1, noteGroup.getCount() )
     CHECK_EQUAL( 1, copied.getCount() )
@@ -172,7 +172,7 @@ TEST( moveCtor, NoteGroup )
 {
     Factories f;
     NoteGroup noteGroup;
-    noteGroup.add( f.e2Sixteenth() );
+    noteGroup.addNote( f.e2Sixteenth() );
     NoteGroup copied{ std::move( noteGroup ) };
     CHECK_EQUAL( 1, copied.getCount() )
 }
@@ -182,7 +182,7 @@ TEST( assignment, NoteGroup )
 {
     Factories f;
     NoteGroup noteGroup;
-    noteGroup.add( f.e2Sixteenth() );
+    noteGroup.addNote( f.e2Sixteenth() );
     NoteGroup copied;
     copied = noteGroup;
     CHECK_EQUAL( 1, noteGroup.getCount() )
@@ -194,7 +194,7 @@ TEST( moveAssignment, NoteGroup )
 {
     Factories f;
     NoteGroup noteGroup;
-    noteGroup.add( f.e2Sixteenth() );
+    noteGroup.addNote( f.e2Sixteenth() );
     NoteGroup copied;
     copied = std::move( noteGroup );
     CHECK_EQUAL( 1, copied.getCount() )
@@ -205,7 +205,7 @@ TEST( clone, NoteGroup )
 {
     Factories f;
     INoteGroupUP noteGroup{ new NoteGroup{} };
-    noteGroup->add( f.c4Quarter() );
+    noteGroup->addNote( f.c4Quarter() );
     CHECK_EQUAL( 1, noteGroup->getCount() )
     INoteGroupUP cloned = noteGroup->clone();
     CHECK_EQUAL( 1, cloned->getCount() )
@@ -217,7 +217,7 @@ TEST( copyNoteGroup, NoteGroup )
 {
     Factories f;
     NoteGroupUP noteGroup{ new NoteGroup{} };
-    noteGroup->add( f.c4Quarter() );
+    noteGroup->addNote( f.c4Quarter() );
     CHECK_EQUAL( 1, noteGroup->getCount() )
     NoteGroupUP copied = noteGroup->copyNoteGroup();
     CHECK_EQUAL( 1, copied->getCount() )
@@ -283,7 +283,7 @@ TEST( getCount_1, NoteGroup )
 {
     Factories f;
     auto noteGroup = newNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
+    noteGroup->addNote( f.e2Sixteenth() );
     int expected = 1;
     int actual = noteGroup->getCount();
     CHECK_EQUAL( expected, actual )
@@ -294,11 +294,11 @@ TEST( getCount_5_flat, NoteGroup )
 {
     Factories f;
     auto noteGroup = newNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
-    noteGroup->add( f.f2Half() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.e2Sixteenth() );
+    noteGroup->addNote( f.e2Sixteenth() );
+    noteGroup->addNote( f.f2Half() );
+    noteGroup->addNote( f.c4Quarter() );
+    noteGroup->addNote( f.d4Eighth() );
+    noteGroup->addNote( f.e2Sixteenth() );
     int expected = 5;
     int actual = noteGroup->getCount();
     CHECK_EQUAL( expected, actual )
@@ -327,11 +327,11 @@ TEST( getTotalDuration_4Q, NoteGroup )
 {
     Factories f;
     auto noteGroup = newNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
-    noteGroup->add( f.f2Half() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.e2Sixteenth() );
+    noteGroup->addNote( f.e2Sixteenth() );
+    noteGroup->addNote( f.f2Half() );
+    noteGroup->addNote( f.c4Quarter() );
+    noteGroup->addNote( f.d4Eighth() );
+    noteGroup->addNote( f.e2Sixteenth() );
     Rational expected{ 4, 1 };
     Rational actual = noteGroup->getTotalDuration();
     CHECK_EQUAL( expected, actual )
@@ -389,11 +389,11 @@ TEST( getNote_flat, NoteGroup )
 {
     Factories f;
     auto noteGroup = newNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );  // 0
-    noteGroup->add( f.f2Half() );       // 1
-    noteGroup->add( f.c4Quarter() );    // 2
-    noteGroup->add( f.d4Eighth() );     // 3
-    noteGroup->add( f.e2Sixteenth() );  // 4
+    noteGroup->addNote( f.e2Sixteenth() );  // 0
+    noteGroup->addNote( f.f2Half() );       // 1
+    noteGroup->addNote( f.c4Quarter() );    // 2
+    noteGroup->addNote( f.d4Eighth() );     // 3
+    noteGroup->addNote( f.e2Sixteenth() );  // 4
     String expected = "{ D4 : Eighth }";
     String actual = noteGroup->getNote( 3 )->toString();
     CHECK_EQUAL( expected, actual )
@@ -416,7 +416,7 @@ TEST( add_throwNull, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        noteGroup->add( nullnote );
+        noteGroup->addNote( nullnote );
         CHECK_FAIL( "exception was expected but not thrown" )
     }
     catch ( std::runtime_error& e )
@@ -432,7 +432,7 @@ TEST( add, NoteGroup )
 {
     Factories f;
     auto noteGroup = newNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
+    noteGroup->addNote( f.e2Sixteenth() );
     int expected = 1;
     int actual = noteGroup->getCount();
     CHECK_EQUAL( expected, actual )
@@ -445,7 +445,7 @@ TEST( remove_throwEmpty, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        noteGroup->remove( 0 );
+        noteGroup->removeNote( 0 );
         CHECK_FAIL( "exception was expected but not thrown" )
     }
     catch ( std::runtime_error& e )
@@ -463,7 +463,7 @@ TEST( remove_throwOutOfRange, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        noteGroup->remove( 7 );
+        noteGroup->removeNote( 7 );
         CHECK_FAIL( "exception was expected but not thrown" )
     }
     catch ( std::runtime_error& e )
@@ -479,15 +479,15 @@ TEST( remove_flat, NoteGroup )
 {
     Factories f;
     auto noteGroup = newNoteGroup(); // Before | After
-    noteGroup->add( f.e2Sixteenth() ); // 0    | 0
-    noteGroup->add( f.f2Half() );      // 1    | 1
-    noteGroup->add( f.c4Quarter() );   // 2*   |
-    noteGroup->add( f.d4Eighth() );    // 3    | 2*
-    noteGroup->add( f.e2Sixteenth() ); // 4    | 3
+    noteGroup->addNote( f.e2Sixteenth() ); // 0    | 0
+    noteGroup->addNote( f.f2Half() );      // 1    | 1
+    noteGroup->addNote( f.c4Quarter() );   // 2*   |
+    noteGroup->addNote( f.d4Eighth() );    // 3    | 2*
+    noteGroup->addNote( f.e2Sixteenth() ); // 4    | 3
     
     CHECK_EQUAL( 5, noteGroup->getCount() )
     
-    noteGroup->remove( 2 );
+    noteGroup->removeNote( 2 );
     
     CHECK_EQUAL( 4, noteGroup->getCount() )
     
@@ -504,7 +504,7 @@ TEST( remove_nested, NoteGroup )
     
     CHECK_EQUAL( 6, noteGroup->getCount() )
     
-    noteGroup->remove( 3 );
+    noteGroup->removeNote( 3 );
     
     CHECK_EQUAL( 5, noteGroup->getCount() )
     
@@ -518,11 +518,11 @@ TEST( getGroupCount_0, NoteGroup )
 {
     Factories f;
     auto noteGroup = newNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
-    noteGroup->add( f.f2Half() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.e2Sixteenth() );
+    noteGroup->addNote( f.e2Sixteenth() );
+    noteGroup->addNote( f.f2Half() );
+    noteGroup->addNote( f.c4Quarter() );
+    noteGroup->addNote( f.d4Eighth() );
+    noteGroup->addNote( f.e2Sixteenth() );
     CHECK_EQUAL( 0, noteGroup->getGroupCount() )
 }
 T_END
@@ -532,10 +532,10 @@ TEST( getGroupCount_3, NoteGroup )
     Factories f;
     auto noteGroup = newNestedGroup1();
     auto second = newNoteGroup();
-    second->add( f.c4Quarter() );
+    second->addNote( f.c4Quarter() );
     noteGroup->addGroup( second );
     auto third = newNoteGroup();
-    third->add( f.e2Sixteenth() );
+    third->addNote( f.e2Sixteenth() );
     noteGroup->addGroup( third );
     CHECK_EQUAL( 3, noteGroup->getGroupCount() )
 }
@@ -650,7 +650,7 @@ TEST( getGroupIndex_2_nested, NoteGroup )
     Factories f;
     auto noteGroup = newNestedGroup1();
     auto additionalNested = newNoteGroup();
-    additionalNested->add( f.c4Quarter() );
+    additionalNested->addNote( f.c4Quarter() );
     noteGroup->addGroup( additionalNested );
     noteGroup->addGroup( additionalNested );
     noteGroup->addGroup( additionalNested );
@@ -662,11 +662,11 @@ TEST( getGroup_throwNoGroups, NoteGroup )
 {
     Factories f;
     auto noteGroup = newNoteGroup();
-    noteGroup->add( f.e2Sixteenth() );
-    noteGroup->add( f.f2Half() );
-    noteGroup->add( f.c4Quarter() );
-    noteGroup->add( f.d4Eighth() );
-    noteGroup->add( f.e2Sixteenth() );
+    noteGroup->addNote( f.e2Sixteenth() );
+    noteGroup->addNote( f.f2Half() );
+    noteGroup->addNote( f.c4Quarter() );
+    noteGroup->addNote( f.d4Eighth() );
+    noteGroup->addNote( f.e2Sixteenth() );
     bool isExceptionThrown = false;
     try
     {
@@ -719,10 +719,10 @@ TEST( getGroup_2, NoteGroup )
     Factories f;
     auto noteGroup = newNestedGroup1();
     auto addedGroup1 = newNoteGroup();
-    addedGroup1->add( f.c4Quarter() );
+    addedGroup1->addNote( f.c4Quarter() );
     noteGroup->addGroup( addedGroup1 );
     auto addedGroup2 = newNoteGroup();
-    addedGroup2->add( f.e2Sixteenth() );
+    addedGroup2->addNote( f.e2Sixteenth() );
     noteGroup->addGroup( addedGroup2 );
     auto index2Group = noteGroup->getGroup( 2 );
     auto firstNote = index2Group->getNote( 0 );
@@ -757,10 +757,10 @@ TEST( addGroup, NoteGroup )
     Factories f;
     auto noteGroup = newNestedGroup1();
     auto addedGroup1 = newNoteGroup();
-    addedGroup1->add( f.c4Quarter() );
+    addedGroup1->addNote( f.c4Quarter() );
     noteGroup->addGroup( addedGroup1 );
     auto addedGroup2 = newNoteGroup();
-    addedGroup2->add( f.e2Sixteenth() );
+    addedGroup2->addNote( f.e2Sixteenth() );
     noteGroup->addGroup( addedGroup2 );
     CHECK_EQUAL( 3, noteGroup->getGroupCount() )
 }
@@ -789,13 +789,13 @@ TEST( removeGroup_2, NoteGroup )
     Factories f;
     auto noteGroup = newNestedGroup1();
     auto addedGroup1 = newNoteGroup();
-    addedGroup1->add( f.c4Quarter() );
+    addedGroup1->addNote( f.c4Quarter() );
     noteGroup->addGroup( addedGroup1 );
     auto addedGroup2 = newNoteGroup();
-    addedGroup2->add( f.e2Sixteenth() );
+    addedGroup2->addNote( f.e2Sixteenth() );
     noteGroup->addGroup( addedGroup2 );
     auto addedGroup3 = newNoteGroup();
-    addedGroup3->add( f.f2Half() );
+    addedGroup3->addNote( f.f2Half() );
     noteGroup->addGroup( addedGroup3 );
     CHECK_EQUAL( 9, noteGroup->getCount() )
     CHECK_EQUAL( 4, noteGroup->getGroupCount() )
@@ -814,13 +814,13 @@ TEST( removeGroup_0, NoteGroup )
     Factories f;
     auto noteGroup = newNestedGroup1();
     auto addedGroup1 = newNoteGroup();
-    addedGroup1->add( f.c4Quarter() );
+    addedGroup1->addNote( f.c4Quarter() );
     noteGroup->addGroup( addedGroup1 );
     auto addedGroup2 = newNoteGroup();
-    addedGroup2->add( f.e2Sixteenth() );
+    addedGroup2->addNote( f.e2Sixteenth() );
     noteGroup->addGroup( addedGroup2 );
     auto addedGroup3 = newNoteGroup();
-    addedGroup3->add( f.f2Half() );
+    addedGroup3->addNote( f.f2Half() );
     noteGroup->addGroup( addedGroup3 );
     CHECK_EQUAL( 9, noteGroup->getCount() )
     CHECK_EQUAL( 4, noteGroup->getGroupCount() )
@@ -839,22 +839,22 @@ TEST( removingAllNotesRemovesGroup_front, NoteGroup )
     Factories f;
     auto noteGroup = newNestedGroup1();
     auto addedGroup1 = newNoteGroup();
-    addedGroup1->add( f.c4Quarter() );
+    addedGroup1->addNote( f.c4Quarter() );
     noteGroup->addGroup( addedGroup1 );
     auto addedGroup2 = newNoteGroup();
-    addedGroup2->add( f.e2Sixteenth() );
+    addedGroup2->addNote( f.e2Sixteenth() );
     noteGroup->addGroup( addedGroup2 );
     CHECK_EQUAL( 3, noteGroup->getGroupCount() )
-    noteGroup->remove( 0 );
-    noteGroup->remove( 0 );
-    noteGroup->remove( 0 );
-    noteGroup->remove( 0 );
-    noteGroup->remove( 0 ); 
-    noteGroup->remove( 0 );
+    noteGroup->removeNote( 0 );
+    noteGroup->removeNote( 0 );
+    noteGroup->removeNote( 0 );
+    noteGroup->removeNote( 0 );
+    noteGroup->removeNote( 0 ); 
+    noteGroup->removeNote( 0 );
     CHECK_EQUAL( 2, noteGroup->getGroupCount() )
-    noteGroup->remove( 0 );
+    noteGroup->removeNote( 0 );
     CHECK_EQUAL( 1, noteGroup->getGroupCount() )
-    noteGroup->remove( 0 );
+    noteGroup->removeNote( 0 );
     CHECK_EQUAL( 0, noteGroup->getGroupCount() )
 }
 T_END
@@ -890,7 +890,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     CHECK_EQUAL( expected, actual )
 
 
-    noteGroup->remove( 14 );
+    noteGroup->removeNote( 14 );
     CHECK_EQUAL( 3, noteGroup->getGroupCount() )
     CHECK_EQUAL( 14, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -912,7 +912,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 13 );
+    noteGroup->removeNote( 13 );
     CHECK_EQUAL( 3, noteGroup->getGroupCount() )
     CHECK_EQUAL( 13, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -933,7 +933,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 12 );
+    noteGroup->removeNote( 12 );
     CHECK_EQUAL( 2, noteGroup->getGroupCount() )
     CHECK_EQUAL( 12, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -953,7 +953,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 11 );
+    noteGroup->removeNote( 11 );
     CHECK_EQUAL( 2, noteGroup->getGroupCount() )
     CHECK_EQUAL( 11, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -972,7 +972,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 10 );
+    noteGroup->removeNote( 10 );
     CHECK_EQUAL( 2, noteGroup->getGroupCount() )
     CHECK_EQUAL( 10, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -990,7 +990,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 9 );
+    noteGroup->removeNote( 9 );
     CHECK_EQUAL( 2, noteGroup->getGroupCount() )
     CHECK_EQUAL( 9, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -1007,7 +1007,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 8 );
+    noteGroup->removeNote( 8 );
     CHECK_EQUAL( 2, noteGroup->getGroupCount() )
     CHECK_EQUAL( 8, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -1023,7 +1023,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 7 );
+    noteGroup->removeNote( 7 );
     CHECK_EQUAL( 2, noteGroup->getGroupCount() )
     CHECK_EQUAL( 7, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -1038,7 +1038,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 6 );
+    noteGroup->removeNote( 6 );
     CHECK_EQUAL( 2, noteGroup->getGroupCount() )
     CHECK_EQUAL( 6, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -1052,7 +1052,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 5 );
+    noteGroup->removeNote( 5 );
     CHECK_EQUAL( 1, noteGroup->getGroupCount() )
     CHECK_EQUAL( 5, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -1065,7 +1065,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 4 );
+    noteGroup->removeNote( 4 );
     CHECK_EQUAL( 1, noteGroup->getGroupCount() )
     CHECK_EQUAL( 4, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -1077,7 +1077,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 3 );
+    noteGroup->removeNote( 3 );
     CHECK_EQUAL( 1, noteGroup->getGroupCount() )
     CHECK_EQUAL( 3, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -1088,7 +1088,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 2 );
+    noteGroup->removeNote( 2 );
     CHECK_EQUAL( 1, noteGroup->getGroupCount() )
     CHECK_EQUAL( 2, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -1098,7 +1098,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 1 );
+    noteGroup->removeNote( 1 );
     CHECK_EQUAL( 0, noteGroup->getGroupCount() )
     CHECK_EQUAL( 1, noteGroup->getCount() )
     ssExpected.str( "" );
@@ -1107,7 +1107,7 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     actual = noteGroup->toString();
     CHECK_EQUAL( expected, actual )
     
-    noteGroup->remove( 0 );
+    noteGroup->removeNote( 0 );
     CHECK_EQUAL( 0, noteGroup->getGroupCount() )
     CHECK_EQUAL( 0, noteGroup->getCount() )
     ssExpected.str( "" );
