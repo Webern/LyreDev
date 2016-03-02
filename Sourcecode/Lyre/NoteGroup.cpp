@@ -161,7 +161,6 @@ namespace Lyre
     
     INoteGroupUP NoteGroup::move()
     {
-
         NoteGroup *noteGroupP = new NoteGroup{};
         noteGroupP->myImplP = std::move( this->myImplP );
         myImplP = 0;
