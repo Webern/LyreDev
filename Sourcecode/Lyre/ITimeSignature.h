@@ -8,8 +8,8 @@ namespace Lyre
     FORWARD_DECLARE(ITimeSignature)
     FORWARD_DECLARE(IBeatPattern)
     
-    static const int DEFAULT_TOP = 4;
-    static const int DEFAULT_BOTTOM = 4;
+    static const int DEFAULT_TIME_SIGNATURE_TOP = 4;
+    static const int DEFAULT_TIME_SIGNATURE_BOTTOM = 4;
     
     class PUBLIC ITimeSignature : public IStreamable
     {

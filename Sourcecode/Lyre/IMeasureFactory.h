@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/IMeasure.h"
+#include "Lyre/ITimeSignature.h"
 
 namespace Lyre
 {
@@ -23,6 +24,7 @@ namespace Lyre
     public:
         virtual ~IMeasureFactory() {}
         virtual IMeasureUP create() = 0;
-
+        virtual IMeasureUP create( int timeSignatureTop, int timeSignatureBottom ) = 0;
+        virtual IMeasureUP create( const ITimeSignatureUP& timeSignature ) = 0;
     };
 }

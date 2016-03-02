@@ -14,8 +14,9 @@ namespace Lyre
         {
         public:
             virtual ~MeasureFactory();
-            
             virtual IMeasureUP create();
+            virtual IMeasureUP create( int timeSignatureTop, int timeSignatureBottom );
+            virtual IMeasureUP create( const ITimeSignatureUP& timeSignature );
         };
     }
 }

@@ -2,9 +2,6 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/IMeasure.h"
-#include "Lyre/INote.h"
-#include "Lyre/INoteGroup.h"
-#include "Lyre/ITimeSignature.h"
 #include <map>
 
 namespace Lyre
@@ -29,12 +26,15 @@ namespace Lyre
             Measure& operator=( Measure&& other );
             
             virtual IMeasureUP clone() const;
+            virtual IMeasureUP move();
             virtual std::ostream& toStream( std::ostream& os ) const;
             
-            void setLayerContext( int layer );
-            int getLayerContext() const;
-            
+            virtual void setLayerContext( int layer );
+            virtual int getLayerContext() const;
+            virtual ITimeSignatureUP getTimeSignature() const;
+
             virtual bool getIsEmpty() const;
+            virtual bool getIsComplete() const;
             virtual int getCount() const;
             virtual Rational getTotalDuration() const;
             virtual INoteUP getNote( int noteIndex ) const;
@@ -49,12 +49,15 @@ namespace Lyre
             virtual void removeGroup( int groupIndex );
             
         private:
+
+            // data
             int myCurrentLayer;
             Layers myLayers;
             const int myMaxLayers;
             ITimeSignatureUP myTimeSignature;
             Rational myMaxDur;
             
+            // functions
             LayerIter getLayer();
             LayerIterConst getLayer() const;
             void copyLayers( const Layers& layers );
