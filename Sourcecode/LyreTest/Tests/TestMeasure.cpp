@@ -99,6 +99,68 @@ TEST( getTimeSignature_sevenEight, Measure )
 }
 T_END
 
+TEST( getSetLayerContext_default, Measure )
+{
+    Factories f;
+    IMeasureUP measure = f.threeFour();
+    CHECK_EQUAL( 0, measure->getLayerContext() )
+}
+T_END
+
+TEST( getSetLayerContext_0, Measure )
+{
+    Factories f;
+    IMeasureUP measure = f.threeFour();
+    measure->setLayerContext( 1 );
+    measure->setLayerContext( 0 );
+    CHECK_EQUAL( 0, measure->getLayerContext() )
+}
+T_END
+
+TEST( getSetLayerContext_1, Measure )
+{
+    Factories f;
+    IMeasureUP measure = f.threeFour();
+    measure->setLayerContext( 1 );
+    CHECK_EQUAL( 1, measure->getLayerContext() )
+}
+T_END
+
+TEST( getSetLayerContext_throwNegative, Measure )
+{
+    Factories f;
+    IMeasureUP measure = f.threeFour();
+    try
+    {
+        measure->setLayerContext( -1 );
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch ( std::runtime_error& e )
+    {
+        ;
+    }
+    CHECK_EQUAL( 0, measure->getLayerContext() )
+}
+T_END
+
+TEST( getSetLayerContext_throwPositive, Measure )
+{
+    Factories f;
+    IMeasureUP measure = f.threeFour();
+    int tooBig = MAX_NUMBER_OF_LAYERS;
+    try
+    {
+        measure->setLayerContext( tooBig );
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch ( std::runtime_error& e )
+    {
+        ;
+    }
+    CHECK_EQUAL( 0, measure->getLayerContext() )
+}
+T_END
+
 TEST( toStream, Measure )
 {
     IMeasureUP ts = factory->create();

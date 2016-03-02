@@ -150,7 +150,7 @@ namespace Lyre
     NoteGroup& NoteGroup::operator=( NoteGroup&& other ) noexcept
     {
         myImplP = std::move( other.myImplP );
-        other.myImplP = 0;
+        other.myImplP = new Impl();
         return *this;
     }
     

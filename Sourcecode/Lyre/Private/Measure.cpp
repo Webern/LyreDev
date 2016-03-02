@@ -25,10 +25,7 @@ namespace Lyre
             {
                 THROW( "max layers must be positive" )
             }
-            for ( int i = 0; i < myMaxLayers; ++i )
-            {
-                myLayers[i] = INoteGroupUP{ new NoteGroup{} };
-            }
+            initializeLayers();
         }
 
         Measure::Measure( const Measure& other )
@@ -222,6 +219,15 @@ namespace Lyre
                 {
                     myLayers[i->first] = i->second->clone();
                 }
+            }
+        }
+        
+        void Measure::initializeLayers()
+        {
+            myLayers.clear();
+            for ( int i = 0; i < myMaxLayers; ++i )
+            {
+                myLayers[i] = INoteGroupUP{ new NoteGroup{} };
             }
         }
     }

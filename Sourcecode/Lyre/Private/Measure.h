@@ -61,6 +61,7 @@ namespace Lyre
             LayerIter getLayer();
             LayerIterConst getLayer() const;
             void copyLayers( const Layers& layers );
+            void initializeLayers();
         };
     } 
 }
