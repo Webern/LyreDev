@@ -7,6 +7,7 @@
 #include "Lyre/INoteFactory.h"
 #include "Lyre/IPitchFactory.h"
 #include "Lyre/IDurationFactory.h"
+#include "Lyre/NoteGroup.h"
 
 #include <sstream>
 
@@ -55,7 +56,41 @@ namespace
             auto timeSig = timeSignatureFactory->create( 7, 8 );
             return measureFactory->create( timeSig );
         }
-
+        
+        inline INoteUP note( int pitchValue, String durValue )
+        {
+            pitchFactory->setPitch( pitchValue );
+            auto p = pitchFactory->createPitch();
+            auto d = durationFactory->createDuration( durValue );
+            return noteFactory->createNote( p, d );
+        }
+        
+        inline INoteGroupUP noteGroup1()
+        {
+            INoteGroupUP noteGroup{ new NoteGroup{} };
+            noteGroup->addNote( note( 1, "Quarter") );
+            noteGroup->addNote( note( 2, "Quarter") );
+            noteGroup->addNote( note( 3, "Quarter") );
+            return std::move( noteGroup );
+        }
+        
+        inline INoteGroupUP noteGroup2()
+        {
+            INoteGroupUP noteGroup{ new NoteGroup{} };
+            noteGroup->addNote( note( 11, "Eighth") );
+            noteGroup->addNote( note( 12, "Eighth") );
+            noteGroup->addNote( note( 13, "Eighth") );
+            return std::move( noteGroup );
+        }
+        
+        inline INoteGroupUP noteGroup3()
+        {
+            INoteGroupUP noteGroup{ new NoteGroup{} };
+            noteGroup->addNote( note( 21, "16th") );
+            noteGroup->addNote( note( 22, "16th") );
+            noteGroup->addNote( note( 23, "16th") );
+            return std::move( noteGroup );
+        }
     };
 }
 
