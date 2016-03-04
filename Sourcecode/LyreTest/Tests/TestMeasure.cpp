@@ -16,9 +16,6 @@ using namespace std;
 
 namespace
 {
-	static IMeasureFactoryUP factory =
-	createMeasureFactory();
-
     struct Factories
     {
         IMeasureFactoryUP measureFactory;
@@ -90,6 +87,31 @@ namespace
             noteGroup->addNote( note( 22, "16th") );
             noteGroup->addNote( note( 23, "16th") );
             return std::move( noteGroup );
+        }
+        
+        inline IMeasureUP measureA()
+        {
+            auto m = threeFour();
+            m->addGroup( noteGroup3() );
+            m->addGroup( noteGroup3() );
+            m->addGroup( noteGroup2() );
+            return m;
+        }
+        
+        inline IMeasureUP measureB()
+        {
+            auto m = sevenEight();
+            m->setLayerContext( 1 );
+            m->addGroup( noteGroup1() );
+            m->removeNote( 0 );
+            m->addGroup( noteGroup2() );
+            m->setLayerContext( 2 );
+            m->addGroup( noteGroup3() );
+            m->addGroup( noteGroup3() );
+            m->addGroup( noteGroup3() );
+            m->addGroup( noteGroup3() );
+            m->addNote( note( 55, "Eighth" ) );
+            return m;
         }
     };
 }
@@ -190,18 +212,150 @@ TEST( getSetLayerContext_throwPositive, Measure )
     }
     catch ( std::runtime_error& e )
     {
-        ;
+        String msg = e.what();
+        CHECK( msg.size() > 0 )
     }
     CHECK_EQUAL( 0, measure->getLayerContext() )
 }
 T_END
 
-TEST( toStream, Measure )
+TEST( toStreamA, Measure )
 {
-    IMeasureUP ts = factory->create();
+    Factories f;
+    IMeasureUP m = f.measureA();
     std::stringstream ss;
-    ts->toStream( ss );
-    String expected = "Measure not implemented";
+    m->toStream( ss );
+    String w2 = "  ";
+    String w6 = w2 + w2 +w2;
+    std::stringstream ex;
+    ex << "Measure" << std::endl;
+    ex << "{" << std::endl;
+    ex << w2 << "Layer 0" << std::endl;
+    ex << w2 << "{" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ B-1 : Eighth }" << std::endl;
+    ex << w6 << "{ C0 : Eighth }" << std::endl;
+    ex << w6 << "{ C#0 : Eighth }" << std::endl;
+    ex << w2 << "}" << std::endl;
+    ex << "}";
+    String expected = ex.str();
+    String actual = ss.str();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( toStreamB, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    std::stringstream ss;
+    m->toStream( ss );
+    String w2 = "  ";
+    String w6 = w2 + w2 +w2;
+    std::stringstream ex;
+    ex << "Measure" << std::endl;
+    ex << "{" << std::endl;
+    ex << w2 << "Layer 1" << std::endl;
+    ex << w2 << "{" << std::endl;
+    ex << w6 << "{ D-1 : Quarter }" << std::endl;
+    ex << w6 << "{ Eb-1 : Quarter }" << std::endl;
+    ex << w6 << "{ B-1 : Eighth }" << std::endl;
+    ex << w6 << "{ C0 : Eighth }" << std::endl;
+    ex << w6 << "{ C#0 : Eighth }" << std::endl;
+    ex << w2 << "}" << std::endl;
+    ex << w2 << "Layer 2" << std::endl;
+    ex << w2 << "{" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ G3 : Eighth }" << std::endl;
+    ex << w2 << "}" << std::endl;
+    ex << "}";
+    String expected = ex.str();
+    String actual = ss.str();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( toStringA, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureA();
+    String w2 = "  ";
+    String w6 = w2 + w2 +w2;
+    std::stringstream ex;
+    ex << "Measure" << std::endl;
+    ex << "{" << std::endl;
+    ex << w2 << "Layer 0" << std::endl;
+    ex << w2 << "{" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ B-1 : Eighth }" << std::endl;
+    ex << w6 << "{ C0 : Eighth }" << std::endl;
+    ex << w6 << "{ C#0 : Eighth }" << std::endl;
+    ex << w2 << "}" << std::endl;
+    ex << "}";
+    String expected = ex.str();
+    String actual = m->toString();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( streamingOperatorB, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    std::stringstream ss;
+    ss << (*m);
+    String w2 = "  ";
+    String w6 = w2 + w2 +w2;
+    std::stringstream ex;
+    ex << "Measure" << std::endl;
+    ex << "{" << std::endl;
+    ex << w2 << "Layer 1" << std::endl;
+    ex << w2 << "{" << std::endl;
+    ex << w6 << "{ D-1 : Quarter }" << std::endl;
+    ex << w6 << "{ Eb-1 : Quarter }" << std::endl;
+    ex << w6 << "{ B-1 : Eighth }" << std::endl;
+    ex << w6 << "{ C0 : Eighth }" << std::endl;
+    ex << w6 << "{ C#0 : Eighth }" << std::endl;
+    ex << w2 << "}" << std::endl;
+    ex << w2 << "Layer 2" << std::endl;
+    ex << w2 << "{" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ A0 : 16th }" << std::endl;
+    ex << w6 << "{ Bb0 : 16th }" << std::endl;
+    ex << w6 << "{ B0 : 16th }" << std::endl;
+    ex << w6 << "{ G3 : Eighth }" << std::endl;
+    ex << w2 << "}" << std::endl;
+    ex << "}";
+    String expected = ex.str();
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }

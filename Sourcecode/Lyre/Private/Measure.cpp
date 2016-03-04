@@ -9,6 +9,9 @@ namespace Lyre
 {
     namespace Private
     {
+
+#define LAYER getLayer()->second
+
         Measure::~Measure()
         {
             
@@ -83,7 +86,26 @@ namespace Lyre
 
         std::ostream& Measure::toStream( std::ostream& os ) const
         {
-            return os << "Measure not implemented";
+            String line;
+            os << "Measure" << std::endl;
+            os << "{" << std::endl;
+            for ( int i = 0; i < myMaxLayers; ++i )
+            {
+                auto iter = myLayers.find( i );
+                if ( iter != myLayers.cend() && !iter->second->getIsEmpty() )
+                {
+                    os << "  Layer " << i << std::endl;
+                    os << "  {" << std::endl;
+                    std::istringstream ss( iter->second->toString() );
+                    while( std::getline( ss, line ) )
+                    {
+                        os << "      " << line << std::endl;
+                    }
+                    os << "  }" << std::endl;
+                }
+            }
+            os << "}";
+            return os;
         }
         
         void Measure::setLayerContext( int layer )
@@ -104,8 +126,6 @@ namespace Lyre
         {
             return myTimeSignature->clone();
         }
-
-#define LAYER getLayer()->second
         
         bool Measure::getIsEmpty() const
         {

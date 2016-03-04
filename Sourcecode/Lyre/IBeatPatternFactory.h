@@ -23,7 +23,7 @@ namespace Lyre
         virtual ~IBeatPatternFactory() {}
         
         virtual IBeatPatternUP create( int count,
-                                       const IDurationUP& dur ) const = 0;
+            const IDurationUP& dur ) const = 0;
         
         virtual IBeatPatternUP create( const VecIDurationUP& durations ) const = 0;
     };
