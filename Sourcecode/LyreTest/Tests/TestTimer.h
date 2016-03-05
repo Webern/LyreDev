@@ -33,7 +33,16 @@ namespace LyreTest
 		void report( const std::string& message )
 		{
 			stop();
-			std::cout << message << " " << getMilliseconds() << " ms" << std::endl;
+			auto ms = getMilliseconds();
+			if ( ms < 1000 )
+			{
+				std::cout << message << " " << ms << " ms" << std::endl;
+			}
+			else
+			{
+				std::cout << message << " " << ( ms / 1000.0 ) << " sec" << std::endl;
+			}
+			
 		}
         
     private:

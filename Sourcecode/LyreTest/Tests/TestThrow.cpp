@@ -11,14 +11,14 @@ using namespace Lyre;
 
 TEST( Compiles, throwDotH )
 {
-    String message = "no exception was thrown";
+    String actualMessage = "no exception was thrown";
     try
     {
         THROW("some error message")
     }
     catch( std::exception& e )
     {
-        message = e.what();
+		actualMessage = e.what();
     }
     
     // some differences between the clang and visual
@@ -29,7 +29,7 @@ TEST( Compiles, throwDotH )
     
     String expected =
         "error in TestThrow.cpp (line 17) runTest: some error message";
-    String actual = message;
+    String actual = actualMessage;
 	std::locale loc;
     for ( auto it = expected.begin(); it != expected.end(); ++it )
     {

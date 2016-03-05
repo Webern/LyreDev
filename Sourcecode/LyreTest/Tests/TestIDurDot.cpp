@@ -160,7 +160,7 @@ TEST( getValue_withMaxDots, IDurDot )
     IDurDotUP dur = factory()->createDurDot( "Quarter", DURATION_MAX_DOTS );
     Float expected = 1.9999999999999;
     Float actual = dur->getValue().getFloat();
-    CHECK_DOUBLES_EQUAL( expected, actual, 0.0001 )
+    CHECK_DOUBLES_EQUAL( expected, actual, static_cast<Float>( 0.0001 ) )
 }
 T_END
 

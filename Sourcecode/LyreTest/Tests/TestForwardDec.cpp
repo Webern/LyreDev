@@ -27,5 +27,7 @@ TEST( forwardTest, FORWARD_DECLARE )
     vecSPC.push_back( spc );
     VecTestFakeUPC vecUPC;
     vecUPC.push_back( std::move( upc ) );
+
+	CHECK_EQUAL( 1, static_cast<int>( vecSP.size() ) )
 }
 T_END

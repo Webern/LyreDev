@@ -150,8 +150,6 @@ namespace
     }
 }
 
-#if 1==0
-
 TEST( ctor, NoteGroup )
 {
     NoteGroup noteGroup;
@@ -357,7 +355,6 @@ TEST( getNote_throwEmpty, NoteGroup )
     {
         auto n = noteGroup->getNote( 0 );
         CHECK_FAIL( "exception was expected but not thrown" )
-        n->setIsRest( true );
     }
     catch ( std::runtime_error& e )
     {
@@ -376,7 +373,6 @@ TEST( getNote_throwOutOfRange, NoteGroup )
     {
         auto n = noteGroup->getNote( 7 );
         CHECK_FAIL( "exception was expected but not thrown" )
-        n->setIsRest( true );
     }
     catch ( std::runtime_error& e )
     {
@@ -550,8 +546,8 @@ TEST( getIsInGroup_throwEmpty, NoteGroup )
     try
     {
         bool b = noteGroup->getIsInGroup( 0 );
+		if ( b ) { std::cout << "unreachable" << std::endl; }
         CHECK_FAIL( "exception was expected but not thrown" )
-        if ( b ) { std::cout << "unreachable" << std::endl; }
     }
     catch ( std::runtime_error& e )
     {
@@ -569,8 +565,8 @@ TEST( getIsInGroup_throwOutOfRange, NoteGroup )
     try
     {
         bool b = noteGroup->getIsInGroup( 7 );
+		if ( b ) { std::cout << "unreachable" << std::endl; }
         CHECK_FAIL( "exception was expected but not thrown" )
-        if ( b ) { std::cout << "unreachable" << std::endl; }
     }
     catch ( std::runtime_error& e )
     {
@@ -602,8 +598,8 @@ TEST( getGroupIndex_throwEmpty, NoteGroup )
     try
     {
         int x = noteGroup->getGroupIndex( 0 );
+		if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
         CHECK_FAIL( "exception was expected but not thrown" )
-        if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
     }
     catch ( std::runtime_error& e )
     {
@@ -621,8 +617,8 @@ TEST( getGroupIndex_throwOutOfRange, NoteGroup )
     try
     {
         int x = noteGroup->getGroupIndex( -1 );
+		if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
         CHECK_FAIL( "exception was expected but not thrown" )
-        if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
     }
     catch ( std::runtime_error& e )
     {
@@ -673,8 +669,8 @@ TEST( getGroup_throwNoGroups, NoteGroup )
     try
     {
         auto x = noteGroup->getGroup( 0 );
+		if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
         CHECK_FAIL( "exception was expected but not thrown" )
-        if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
     }
     catch ( std::runtime_error& e )
     {
@@ -692,8 +688,8 @@ TEST( getGroup_throwOutOfRange, NoteGroup )
     try
     {
         auto x = noteGroup->getGroup( 2 );
+		if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
         CHECK_FAIL( "exception was expected but not thrown" )
-        if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
     }
     catch ( std::runtime_error& e )
     {
@@ -1118,4 +1114,3 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     CHECK_EQUAL( expected, actual )
 }
 T_END
-#endif

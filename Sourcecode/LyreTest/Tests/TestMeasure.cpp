@@ -56,10 +56,10 @@ namespace
         
         inline INoteUP note( int pitchValue, String durValue )
         {
-            pitchFactory->setPitch( pitchValue );
-            auto p = pitchFactory->createPitch();
-            auto d = durationFactory->createDuration( durValue );
-            return noteFactory->createNote( p, d );
+			pitchFactory->setPitch( pitchValue );
+			auto p = pitchFactory->createPitch();
+			auto d = durationFactory->createDuration( durValue );
+			return noteFactory->createNote( p, d );
         }
         
         inline INoteGroupUP noteGroup1()
@@ -194,7 +194,7 @@ TEST( getSetLayerContext_throwNegative, Measure )
     }
     catch ( std::runtime_error& e )
     {
-        ;
+        UNUSED_PARAMETER( e )
     }
     CHECK_EQUAL( 0, measure->getLayerContext() )
 }
@@ -415,23 +415,19 @@ TEST( getIsComplete1, Measure )
 }
 T_END
 
-#include "TestTimer.h"
 
 TEST( getIsComplete2, Measure )
 {
-    LyreTest::TestTimer timer;
     Factories f;
     int size = 100;
     IMeasureUP m = f.measureFactory->create( size, 8 );
     m->setLayerContext( MAX_NUMBER_OF_LAYERS - 1 );
     for ( int i = 0; i < size; ++i )
     {
-        m->addNote( f.note( i, "Eighth" ) );
-        bool expected = ( i == size - 1 );
+		m->addNote( f.note( i, "Eighth" ) );
+		bool expected = ( i == size - 1 );
         bool actual = m->getIsComplete();
         CHECK_EQUAL( expected, actual )
     }
-    timer.stop();
-    std::cout << timer.getMilliseconds() << " ms - getIsComplete2" << std::endl;
 }
 T_END

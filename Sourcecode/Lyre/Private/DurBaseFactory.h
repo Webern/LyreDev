@@ -17,9 +17,6 @@ namespace Lyre
             using DurPair = std::pair<String, IDurBaseUP>;
             static DurPairMap values;
             static DurPairMap makeValues();
-            DurMap();
-            DurMap( const DurMap& other );
-            DurMap& operator=( const DurMap& other );
         };
         
         class EXPORT_FOR_TESTS DurBaseFactory : public IDurBaseFactory

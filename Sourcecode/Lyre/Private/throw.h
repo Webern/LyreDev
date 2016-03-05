@@ -16,7 +16,7 @@
 #endif
 
 #ifndef THROW
-#define THROW(message)                                  \
+#define THROW(throw_error_message)                      \
 throw std::runtime_error (                              \
   std::string( "error in " )                            \
 + std::string( __FILENAME__ )                           \
@@ -25,7 +25,7 @@ throw std::runtime_error (                              \
 + std::string(") ")                                     \
 + std::string( __FUNCTION__ )                           \
 + std::string(": ")                                     \
-+ std::string( message ) );
++ std::string( throw_error_message ) );
 #endif
 
 #ifndef THROW_NULL

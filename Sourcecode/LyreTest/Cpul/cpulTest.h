@@ -85,8 +85,8 @@ private:
 
 #define CHECK_DOUBLES_EQUAL(expected,actual,threshold)\
 {\
-    double _expected = (expected);\
-    double _actual = (actual);\
+    double _expected = static_cast<double>(expected);\
+    double _actual = static_cast<double>(actual);\
     if (fabs ((_expected)-(_actual)) > (threshold)) {\
         std::ostringstream message; \
         message << "expected '" << (_expected) << "' but was '" << (_actual) << "'"; \

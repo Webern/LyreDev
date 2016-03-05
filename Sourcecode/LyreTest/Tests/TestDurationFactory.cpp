@@ -2,11 +2,9 @@
 
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "Lyre/IDurationFactory.h"
-#include "LyreTest/Tests/TestTimer.h"
 
 using namespace Lyre;
 using namespace std;
-using namespace LyreTest;
 
 namespace
 {

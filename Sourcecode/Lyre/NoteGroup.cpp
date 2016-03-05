@@ -21,16 +21,34 @@ namespace Lyre
     class NoteGroup::Impl
     {
     public:
+
+
+		NgType ngType;
+		INoteUP note;
+		std::vector<MetaNoteGroup> noteGroups;
+		mutable Rational durCache;
+		mutable bool isDurCacheDirty;
+		mutable int countCache;
+		mutable bool isCountCacheDirty;
+
         Impl()
         :ngType( NgType::Unk )
         ,note( nullptr )
         ,noteGroups()
+		,durCache( 0, 0 )
+		,isDurCacheDirty( true )
+		,countCache( 0 )
+		,isCountCacheDirty( true )
         {}
         
         Impl( const INoteUP& inNote )
         :ngType( NgType::Note )
         ,note( inNote->clone() )
         ,noteGroups()
+		,durCache( inNote->getDuration()->getValue() )
+		,isDurCacheDirty( true )
+		,countCache( 0 )
+		,isCountCacheDirty( true )
         {
             THROW_IF_NULL( note )
         }
@@ -39,6 +57,10 @@ namespace Lyre
         :ngType( other.ngType )
         ,note( nullptr )
         ,noteGroups()
+		,durCache( other.durCache )
+		,isDurCacheDirty( other.isDurCacheDirty )
+		,countCache( other.countCache )
+		,isCountCacheDirty( other.isCountCacheDirty )
         {
             if ( other.note )
             {
@@ -57,6 +79,10 @@ namespace Lyre
         :ngType( std::move( other.ngType ) )
         ,note( std::move( other.note ) )
         ,noteGroups( std::move( other.noteGroups ) )
+		,durCache( std::move( other.durCache ) )
+		,isDurCacheDirty( std::move( other.isDurCacheDirty ) )
+		,countCache( std::move( other.countCache ) )
+		,isCountCacheDirty( std::move( other.isCountCacheDirty ) )
         {
             
         }
@@ -77,6 +103,10 @@ namespace Lyre
                 MetaNoteGroup mng{ i->first, i->second->clone() };
                 noteGroups.push_back( std::move( mng ) );
             }
+			durCache = other.durCache;
+			isDurCacheDirty = other.isDurCacheDirty;
+			countCache = other.countCache;
+			isCountCacheDirty =other.isCountCacheDirty;
             return *this;
         }
         
@@ -85,6 +115,10 @@ namespace Lyre
             ngType = std::move( other.ngType );
             note =  std::move( other.note );
             noteGroups = std::move( other.noteGroups );
+			durCache = std::move( other.durCache );
+			isDurCacheDirty = std::move( other.isDurCacheDirty );
+			countCache = std::move( other.countCache );
+			isCountCacheDirty = std::move( other.isCountCacheDirty );
             return *this;
         }
         
@@ -105,10 +139,6 @@ namespace Lyre
             }
             return os;
         }
-        
-        NgType ngType;
-        INoteUP note;
-        std::vector<MetaNoteGroup> noteGroups;
     };
     
     NoteGroup::~NoteGroup()
@@ -193,17 +223,27 @@ namespace Lyre
         {
             return 0;
         }
+		else if ( !myImplP->isCountCacheDirty )
+		{
+			return myImplP->countCache;
+		}
         int count = 0;
         for ( auto i = myImplP->noteGroups.cbegin();
               i != myImplP->noteGroups.cend(); ++i )
         {
             count += i->second->getCount();
         }
+		myImplP->countCache = count;
+		myImplP->isCountCacheDirty = false;
 		return count;
 	}
 
 	Rational NoteGroup::getTotalDuration() const
 	{
+		if ( !myImplP->isDurCacheDirty )
+		{
+			return myImplP->durCache;
+		}
         Rational total{ 0, 1 };
         for ( auto i = myImplP->noteGroups.cbegin();
               i != myImplP->noteGroups.cend(); ++i )
@@ -217,6 +257,8 @@ namespace Lyre
                 total += i->second->getTotalDuration();
             }
         }
+		myImplP->durCache = total;
+		myImplP->isDurCacheDirty = false;
         return total;
 	}
 
@@ -268,6 +310,8 @@ namespace Lyre
         {
             THROW( "cannot add to a leaf node" )
         }
+		myImplP->isDurCacheDirty = true;
+		myImplP->isCountCacheDirty = true;
         NoteGroup* newP = new NoteGroup{};
         newP->myImplP->ngType = NgType::Note;
         newP->myImplP->note = note->clone();
@@ -287,6 +331,8 @@ namespace Lyre
         {
             THROW( "bad internal state" )
         }
+		myImplP->isDurCacheDirty = true;
+		myImplP->isCountCacheDirty = true;
         int counter = 0;
         for ( auto i = myImplP->noteGroups.begin();
               i != myImplP->noteGroups.end(); ++i )
@@ -415,6 +461,8 @@ namespace Lyre
         {
             THROW( "bad internal state" )
         }
+		myImplP->isDurCacheDirty = true;
+		myImplP->isCountCacheDirty = true;
         MetaNoteGroup mng{ NgType::Group, group->clone() };
         myImplP->noteGroups.push_back( std::move( mng ) );
 	}
@@ -425,6 +473,8 @@ namespace Lyre
         {
             THROW( "index out of range" )
         }
+		myImplP->isDurCacheDirty = true;
+		myImplP->isCountCacheDirty = true;
         int groupCounter = -1;
         for ( auto i = myImplP->noteGroups.begin();
               i != myImplP->noteGroups.end(); ++i )

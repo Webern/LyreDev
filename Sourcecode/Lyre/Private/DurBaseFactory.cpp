@@ -36,24 +36,7 @@ namespace Lyre
         }
 		DurMap::DurPairMap DurMap::values = DurMap::makeValues();
 
-        DurMap::DurMap()
-        {
-
-        }
-        
-        
-        DurMap::DurMap( const DurMap& other )
-        {
-			UNUSED_PARAMETER( other )
-        }
-        
-        DurMap& DurMap::operator=( const DurMap& other )
-        {
-			UNUSED_PARAMETER( other )
-            return *this;
-        }
-        
-        DurBaseFactory::DurBaseFactory()
+		DurBaseFactory::DurBaseFactory()
         :myDurMap()
         {
             

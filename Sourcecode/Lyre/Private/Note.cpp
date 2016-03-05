@@ -17,19 +17,13 @@ namespace Lyre
         {
 			THROW_IF_NULL( pitch )
 			THROW_IF_NULL( duration )
-			//LyreTest::TestTimer pitchTimer;
-            myPitch = pitch->clone();
-			//pitchTimer.report( "Note::Note - myPitch = pitch->clone();" );
-			//LyreTest::TestTimer durTimer;
-            myDuration = duration->clone();
-			//durTimer.report( "Note::Note - myDuration = duration->clone();" );
+			myPitch = pitch->clone();
+			myDuration = duration->clone();
         }
         
         INoteUP Note::clone() const
         {
-			//LyreTest::TestTimer timer;
 			auto ret = INoteUP{ new Note{ myPitch, myDuration } };
-			//timer.report( "Note::clone" );
 			return std::move( ret );
         }
         
