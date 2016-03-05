@@ -30,6 +30,11 @@ namespace LyreTest
             auto ms = ns / 1000000.0;
             return ms;
         }
+		void report( const std::string& message )
+		{
+			stop();
+			std::cout << message << " " << getMilliseconds() << " ms" << std::endl;
+		}
         
     private:
         TimePoint myStart;

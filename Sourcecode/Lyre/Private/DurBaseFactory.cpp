@@ -18,40 +18,35 @@ namespace Lyre
 {
     namespace Private
     {
+		DurMap::DurPairMap DurMap::values = 
+		{
+			DurPair{ "256th", Private::makeUnique<DurBase256th>() },
+			DurPair{ "128th", Private::makeUnique<DurBase128th>() },
+			DurPair{ "64th", Private::makeUnique<DurBase64th>() },
+			DurPair{ "32nd", Private::makeUnique<DurBase32nd>() },
+			DurPair{ "16th", Private::makeUnique<DurBase16th>() },
+			DurPair{ "Eighth", Private::makeUnique<DurBaseEighth>() },
+			DurPair{ "Quarter", Private::makeUnique<DurBaseQuarter>() },
+			DurPair{ "Half", Private::makeUnique<DurBaseHalf>() },
+			DurPair{ "Whole", Private::makeUnique<DurBaseWhole>() },
+			DurPair{ "Breve", Private::makeUnique<DurBaseBreve>() },
+			DurPair{ "Longa", Private::makeUnique<DurBaseLonga>() }
+		};
+
         DurMap::DurMap()
-        :values()
         {
-            values.clear();
-            values.insert( DurPair{ "256th", Private::makeUnique<DurBase256th>() } );
-            values.insert( DurPair{ "128th", Private::makeUnique<DurBase128th>() } );
-            values.insert( DurPair{ "64th", Private::makeUnique<DurBase64th>() } );
-            values.insert( DurPair{ "32nd", Private::makeUnique<DurBase32nd>() } );
-            values.insert( DurPair{ "16th", Private::makeUnique<DurBase16th>() } );
-            values.insert( DurPair{ "Eighth", Private::makeUnique<DurBaseEighth>() } );
-            values.insert( DurPair{ "Quarter", Private::makeUnique<DurBaseQuarter>() } );
-            values.insert( DurPair{ "Half", Private::makeUnique<DurBaseHalf>() } );
-            values.insert( DurPair{ "Whole", Private::makeUnique<DurBaseWhole>() } );
-            values.insert( DurPair{ "Breve", Private::makeUnique<DurBaseBreve>() } );
-            values.insert( DurPair{ "Longa", Private::makeUnique<DurBaseLonga>() } );
+
         }
         
         
         DurMap::DurMap( const DurMap& other )
-        :values()
         {
-            for ( auto i = other.values.cbegin(); i != other.values.cend(); ++i )
-            {
-                values[i->first] = i->second->clone();
-            }
+			UNUSED_PARAMETER( other )
         }
         
         DurMap& DurMap::operator=( const DurMap& other )
         {
-            values.clear();
-            for ( auto i = other.values.cbegin(); i != other.values.cend(); ++i )
-            {
-                values[i->first] = i->second->clone();
-            }
+			UNUSED_PARAMETER( other )
             return *this;
         }
         

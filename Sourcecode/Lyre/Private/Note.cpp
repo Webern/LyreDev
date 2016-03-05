@@ -2,6 +2,7 @@
 #include "Lyre/Private/throw.h"
 #include <string>
 #include <sstream>
+#include "LyreTest/Tests/TestTimer.h"
 
 namespace Lyre
 {
@@ -14,15 +15,22 @@ namespace Lyre
         ,myDuration( nullptr )
         ,myIsRest( false )
         {
-            THROW_IF_NULL( pitch )
-            THROW_IF_NULL( duration )
+			THROW_IF_NULL( pitch )
+			THROW_IF_NULL( duration )
+			//LyreTest::TestTimer pitchTimer;
             myPitch = pitch->clone();
+			//pitchTimer.report( "Note::Note - myPitch = pitch->clone();" );
+			//LyreTest::TestTimer durTimer;
             myDuration = duration->clone();
+			//durTimer.report( "Note::Note - myDuration = duration->clone();" );
         }
         
         INoteUP Note::clone() const
         {
-            return INoteUP{ new Note{ myPitch, myDuration } };
+			//LyreTest::TestTimer timer;
+			auto ret = INoteUP{ new Note{ myPitch, myDuration } };
+			//timer.report( "Note::clone" );
+			return std::move( ret );
         }
         
         IPitchUP Note::getPitch() const

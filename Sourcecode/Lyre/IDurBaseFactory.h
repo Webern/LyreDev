@@ -13,7 +13,8 @@ namespace Lyre
     FORWARD_DECLARE(IDurBase)
     FORWARD_DECLARE(IDurBaseFactory)
     
-    IDurBaseFactoryUP PUBLIC createDurBaseFactory( const DurBaseFactoryType t );
+    IDurBaseFactoryUP PUBLIC createDurBaseFactory(
+		const DurBaseFactoryType t = DurBaseFactoryType::Standard );
     
     class PUBLIC IDurBaseFactory
     {

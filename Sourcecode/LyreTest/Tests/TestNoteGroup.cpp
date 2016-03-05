@@ -150,6 +150,8 @@ namespace
     }
 }
 
+#if 1==0
+
 TEST( ctor, NoteGroup )
 {
     NoteGroup noteGroup;
@@ -1116,3 +1118,4 @@ TEST( removingAllNotesRemovesGroup_back, NoteGroup )
     CHECK_EQUAL( expected, actual )
 }
 T_END
+#endif

@@ -15,7 +15,7 @@ namespace Lyre
         public:
             using DurPairMap = std::map<String, IDurBaseUP>;
             using DurPair = std::pair<String, IDurBaseUP>;
-            DurPairMap values;
+            static DurPairMap values;
             DurMap();
             DurMap( const DurMap& other );
             DurMap& operator=( const DurMap& other );

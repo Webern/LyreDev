@@ -1,31 +1,32 @@
 #include "Lyre/Private/DurDot.h"
 #include "Lyre/Private/throw.h"
+#include "Lyre/Private/DurBaseQuarter.h"
 #include <sstream>
 
 namespace Lyre
 {
     namespace Private
     {
+		IDurBaseFactoryUP DurDot::ourDurBaseFactory = createDurBaseFactory();
+
         DurDot::DurDot()
-        : myDurBaseFactory( createDurBaseFactory( DurBaseFactoryType::Standard ) )
-        , myDurBase( nullptr )
+        : myDurBase( new DurBaseQuarter{} )
         , myDotCount( 0 )
         {
-            setDurBase( "Quarter" );
+
         }
         
         DurDot::DurDot( const String& durName )
-        : myDurBaseFactory( createDurBaseFactory( DurBaseFactoryType::Standard ) )
-        , myDurBase( nullptr )
+        : myDurBase( nullptr )
         , myDotCount( 0 )
         {
-            setDurBase( durName );
+			setDurBase( durName );
         }
         
-        DurDot::DurDot( const String& durName,
-                           const int dotCount )
-        : myDurBaseFactory( createDurBaseFactory( DurBaseFactoryType::Standard ) )
-        , myDurBase( nullptr )
+        DurDot::DurDot(
+			const String& durName,
+			const int dotCount )
+        : myDurBase( nullptr )
         , myDotCount( 0 )
         {
             setDurBase( durName );
@@ -36,7 +37,11 @@ namespace Lyre
         
         IDurDotUP DurDot::clone() const
         {   
-            return IDurDotUP{ new DurDot{ getDurBaseName(), getDotCount() } };
+			DurDot* newP = new DurDot();
+			newP->myDotCount = this->myDotCount;
+			newP->myDurBase = this->myDurBase->clone();
+			auto ret = IDurDotUP{ newP };
+			return std::move( ret );
         }
         
         Rational DurDot::getValue() const
@@ -121,7 +126,7 @@ namespace Lyre
         
         void DurDot::setDurBase( const String& durName )
         {
-            auto temp = myDurBaseFactory->createDur( durName );
+            auto temp = ourDurBaseFactory->createDur( durName );
             if ( temp )
             {
                 myDurBase = std::move( temp );

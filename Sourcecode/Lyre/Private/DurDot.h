@@ -44,7 +44,7 @@ namespace Lyre
             virtual bool isLessThan( const IDurDot& other ) const;
         
         private:
-            IDurBaseFactoryUP myDurBaseFactory;
+            static IDurBaseFactoryUP ourDurBaseFactory;
             IDurBaseUP myDurBase;
             int myDotCount;
             
