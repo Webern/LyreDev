@@ -5,6 +5,7 @@ namespace LyreTest
 {
     using Clock = std::chrono::high_resolution_clock;
     using Ms = std::chrono::milliseconds;
+    using Ns = std::chrono::nanoseconds;
     using TimePoint = std::chrono::high_resolution_clock::time_point;
     
     class TestTimer
@@ -18,14 +19,16 @@ namespace LyreTest
         
         void start() { myStart = Clock::now(); myIsRunning = true; }
         void stop() { myStop = Clock::now(); myIsRunning = false; }
-        int getMilliseconds()
+        double getMilliseconds()
         {
             auto end = Clock::now();
             if( !myIsRunning )
             {
                 end = myStop;
             }
-            return static_cast<int>( std::chrono::duration_cast<Ms>( end - myStart ).count() );
+            auto ns = static_cast<double>( std::chrono::duration_cast<Ns>( end - myStart ).count() );
+            auto ms = ns / 1000000.0;
+            return ms;
         }
         
     private:
