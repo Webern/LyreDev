@@ -360,3 +360,73 @@ TEST( streamingOperatorB, Measure )
     CHECK_EQUAL( expected, actual )
 }
 T_END
+
+TEST( getIsEmpty1, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureA();
+    m->setLayerContext( 0 );
+    for ( int i = 0; i < 9; ++i )
+    {
+        m->removeNote( 0 );
+    }
+    CHECK( m->getIsEmpty() )
+}
+T_END
+
+TEST( getIsEmpty2, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    m->setLayerContext( 0 );
+    CHECK( m->getIsEmpty() )
+}
+T_END
+
+TEST( getIsEmpty3, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureFactory->create( 2, 8 );
+    m->setLayerContext( MAX_NUMBER_OF_LAYERS - 1 );
+    m->addNote( f.note( 33, "Eighth" ) );
+    CHECK( ! m->getIsEmpty() )
+    m->setLayerContext( 0 );
+    CHECK( m->getIsEmpty() );
+}
+T_END
+
+TEST( getIsEmpty4, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    m->setLayerContext( 1 );
+    CHECK( ! m->getIsEmpty() )
+}
+T_END
+
+TEST( getIsComplete1, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    m->setLayerContext( 1 );
+    CHECK( m->getIsComplete() )
+    m->removeNote( 0 );
+    CHECK( ! m->getIsComplete() )
+}
+T_END
+
+TEST( getIsComplete2, Measure )
+{
+    Factories f;
+    int size = 1000;
+    IMeasureUP m = f.measureFactory->create( size, 8 );
+    m->setLayerContext( MAX_NUMBER_OF_LAYERS - 1 );
+    for ( int i = 0; i < size; ++i )
+    {
+        m->addNote( f.note( i, "Eighth" ) );
+        bool expected = ( i == size - 1 );
+        bool actual = m->getIsComplete();
+        CHECK_EQUAL( expected, actual )
+    }
+}
+T_END

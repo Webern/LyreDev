@@ -2,8 +2,7 @@
 
 #ifdef USE_VS_TEST
 
-    #include "LyreTest/VsTest/VsTest.h"
-    
+    #include "LyreTest/VsTest/VsTest.h"    
 
 #else
 
