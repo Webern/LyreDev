@@ -23,6 +23,10 @@ namespace Lyre
         virtual IPitchUP createPitch() const = 0;
         virtual void setPitch( const int pitchValue ) = 0;
         virtual void setPitch( const IPitchUP& pitch ) = 0;
+        virtual IPitchUP createPitch( const int pitchValue ) const = 0;
+        virtual IPitchUP createPitch( const IPitchUP& pitch ) const = 0;
+        virtual IPitchUP createPitch( const String& pitchString ) const = 0;
+        virtual IPitchUP createPitch( int step, int alter, int octave ) const = 0;
         
         virtual void next() = 0;
         virtual void previous() = 0;

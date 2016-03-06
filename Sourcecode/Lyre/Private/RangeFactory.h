@@ -15,7 +15,18 @@ namespace Lyre
         public:
             virtual ~RangeFactory();
             
-            virtual IRangeUP create();
+            virtual IRangeUP create() const;
+            
+            virtual IRangeUP create( int low, int high ) const;
+            
+            virtual IRangeUP create(
+                const IPitchUP& low,
+                const IPitchUP& high ) const;
+            
+            virtual IRangeUP create(
+                const String& low,
+                const String& high ) const;
+            
         };
     }
 }

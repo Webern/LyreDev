@@ -8,34 +8,72 @@ namespace Lyre
 {
     namespace Private
     {
+        const IPitchFactoryUPC Range::ourPitchFactory = createPitchFactory();
+        
         Range::~Range()
         {
         }
 
         Range::Range()
+        :myLow( ourPitchFactory->createPitch( DEFAULT_RANGE_LOW) )
+        ,myHigh( ourPitchFactory->createPitch( DEFAULT_RANGE_HIGH) )
         {
-
+            check( DEFAULT_RANGE_LOW, DEFAULT_RANGE_HIGH );
+        }
+        
+        Range::Range( int low, int high )
+        :Range()
+        {
+            check( low, high );
+            myLow = ourPitchFactory->createPitch( low );
+            myHigh = ourPitchFactory->createPitch( high );
+        }
+        
+        Range::Range(
+            const IPitchUP& low,
+            const IPitchUP& high )
+        :Range()
+        {
+            THROW_IF_NULL( low )
+            THROW_IF_NULL( high )
+            check( low->getValue(), high->getValue() );
+            myLow = low->clone();
+            myHigh = high->clone();
+        }
+        
+        Range::Range(
+            const String& low,
+            const String& high )
+        :Range()
+        {
+            auto lowPitch = ourPitchFactory->createPitch( low );
+            auto highPitch = ourPitchFactory->createPitch( high );
+            check( lowPitch->getValue(), highPitch->getValue() );
+            myLow = std::move( lowPitch );
+            myHigh = std::move( highPitch );
         }
 
         Range::Range( const Range& other )
-        {
-            UNUSED_PARAMETER( other )
-        }
+        :myLow( other.myLow->clone() )
+        ,myHigh( other.myHigh->clone() )
+        {}
 
-        Range::Range( Range&& other )
-        {
-            UNUSED_PARAMETER( other )
-        }
+        Range::Range( Range&& other ) noexcept
+        :myLow( std::move( other.myLow ) )
+        ,myHigh( std::move( other.myHigh ) )
+        {}
 
         Range& Range::operator=( const Range& other )
         {
-            UNUSED_PARAMETER( other )
+            myLow = other.myLow->clone();
+            myHigh = other.myHigh->clone();
             return *this;
         }
 
-        Range& Range::operator=( Range&& other )
+        Range& Range::operator=( Range&& other ) noexcept
         {
-            UNUSED_PARAMETER( other )
+            myLow = std::move( other.myLow );
+            myHigh = std::move( other.myHigh );
             return *this;
         }
 
@@ -46,7 +84,7 @@ namespace Lyre
 
         std::ostream& Range::toStream( std::ostream& os ) const
         {
-            return os << "Range not implemented";
+            return os << "Range{ " << (*myLow) << " - " << (*myHigh) << " }";
         }
         
         IPitchUP Range::getLow() const
@@ -59,9 +97,12 @@ namespace Lyre
             return myHigh->clone();
         }
         
-        bool Range::check( const int low, const int high ) const
+        void Range::check( const int low, const int high ) const
         {
-            return low <= high;
+            if ( low > high )
+            {
+                THROW( "low note must be lower than or equal to high note" )
+            }
         }
     }
 }

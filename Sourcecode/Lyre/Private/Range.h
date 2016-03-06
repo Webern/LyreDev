@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/IRange.h"
+#include "Lyre/IPitchFactory.h"
 
 namespace Lyre
 {
@@ -17,17 +18,17 @@ namespace Lyre
             Range( int low, int high );
             
             Range(
-                const IPitch& low,
-                const IPitch& high );
+                const IPitchUP& low,
+                const IPitchUP& high );
             
             Range(
                 const String& low,
                 const String& high );
             
             Range( const Range& other );
-            Range( Range&& other );
+            Range( Range&& other ) noexcept;
             Range& operator=( const Range& other );
-            Range& operator=( Range&& other );
+            Range& operator=( Range&& other ) noexcept;
             
             virtual IRangeUP clone() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
@@ -38,7 +39,8 @@ namespace Lyre
         private:
             IPitchUP myLow;
             IPitchUP myHigh;
-            bool check( const int low, const int high ) const;
+            static const IPitchFactoryUPC ourPitchFactory;
+            void check( const int low, const int high ) const;
         };
     } 
 }

@@ -22,7 +22,19 @@ namespace Lyre
     {
     public:
         virtual ~IRangeFactory() {}
-        virtual IRangeUP create() = 0;
+        
+        virtual IRangeUP create() const = 0;
+        
+        virtual IRangeUP create( int low, int high ) const = 0;
+        
+        virtual IRangeUP create(
+            const IPitchUP& low,
+            const IPitchUP& high ) const = 0;
+        
+        virtual IRangeUP create(
+            const String& low,
+            const String& high ) const = 0;
+
 
     };
 }

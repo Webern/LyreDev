@@ -7,8 +7,8 @@ namespace Lyre
 {
     FORWARD_DECLARE(IRange)
     
-    static const int DEFAULT_RANGE_LOW = 21;   // A-1
-    static const int DEFAULT_RANGE_HIGH = 108; // C8
+    static const int DEFAULT_RANGE_LOW = 12;    // C0
+    static const int DEFAULT_RANGE_HIGH = 96;   // C7
     
     class PUBLIC IRange : public IStreamable
     {
