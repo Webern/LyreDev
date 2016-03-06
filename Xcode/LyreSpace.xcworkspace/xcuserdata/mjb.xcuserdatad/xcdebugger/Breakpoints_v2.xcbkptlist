@@ -912,9 +912,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "645"
-            endingLineNumber = "645"
-            landmarkName = "TEST( getGroupIndex_0, NoteGroup )"
-            landmarkType = "7">
+            endingLineNumber = "645">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -972,9 +970,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "586"
-            endingLineNumber = "586"
-            landmarkName = "TEST( getIsInGroup_true, NoteGroup )"
-            landmarkType = "7">
+            endingLineNumber = "586">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -1032,9 +1028,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "658"
-            endingLineNumber = "658"
-            landmarkName = "TEST( getGroupIndex_2_nested, NoteGroup )"
-            landmarkType = "7">
+            endingLineNumber = "658">
             <Locations>
                <Location
                   shouldBeEnabled = "No"

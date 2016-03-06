@@ -415,7 +415,6 @@ TEST( getIsComplete1, Measure )
 }
 T_END
 
-
 TEST( getIsComplete2, Measure )
 {
     Factories f;
@@ -429,5 +428,562 @@ TEST( getIsComplete2, Measure )
         bool actual = m->getIsComplete();
         CHECK_EQUAL( expected, actual )
     }
+}
+T_END
+
+TEST( getUnusedRemainingSimple, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureFactory->create( 4, 4 );
+    Rational expected{ 4, 1 };
+    CHECK_EQUAL( expected, m->getUnusedRemaining() );
+    
+    m->addNote( f.note( 1, "Quarter" ) );
+    
+    expected = Rational{ 3, 1 };
+    CHECK_EQUAL( expected, m->getUnusedRemaining() );
+}
+T_END
+
+TEST( getUnusedRemainingLoop, Measure )
+{
+    Factories f;
+    int size = 10;
+    IMeasureUP m = f.measureFactory->create( size, 4 );
+    m->setLayerContext( MAX_NUMBER_OF_LAYERS - 1 );
+    Rational max{ size, 1 };
+    for ( int i = 0; i < size; ++i )
+    {
+		m->addNote( f.note( i, "Quarter" ) );
+		Rational added{ ( i + 1 ), 1 };
+        Rational expected = max - added;
+        Rational actual = m->getUnusedRemaining();
+        CHECK_EQUAL( expected, actual )
+    }
+}
+T_END
+
+TEST( getTotalDuration1, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureFactory->create( 7, 4 );
+    m->setLayerContext( 1 );
+    Rational expected{ 0, 1 };
+    CHECK_EQUAL( expected, m->getTotalDuration() )
+}
+T_END
+
+TEST( getTotalDuration2, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureFactory->create( 7, 4 );
+    m->setLayerContext( 1 );
+    m->addNote( f.note( 50, "16th" ) );
+    m->addNote( f.note( 51, "Eighth" ) );
+    Rational expected{ 3, 4 };
+    CHECK_EQUAL( expected, m->getTotalDuration() )
+}
+T_END
+
+TEST( getTotalDuration3, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureFactory->create( 4, 4 );
+    m->setLayerContext( 1 );
+    m->addNote( f.note( 50, "16th" ) );
+    m->addNote( f.note( 51, "Eighth" ) );
+    m->addNote( f.note( 50, "16th" ) );
+    m->addNote( f.note( 51, "Eighth" ) );
+    m->addNote( f.note( 51, "Eighth" ) );
+    m->addNote( f.note( 51, "Half" ) );
+    Rational expected{ 4, 1 };
+    CHECK_EQUAL( expected, m->getTotalDuration() )
+    m->setLayerContext( 0 );
+    
+    expected = Rational{ 0, 1 };
+    CHECK_EQUAL( expected, m->getTotalDuration() )
+    
+}
+T_END
+
+TEST( getNote1, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    m->setLayerContext( 1 );
+    auto n = m->getNote( 0 );
+    String expected = "{ D-1 : Quarter }";
+    String actual = n->toString();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( getNote2, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    m->setLayerContext( 1 );
+    auto n = m->getNote( 1 );
+    String expected = "{ Eb-1 : Quarter }";
+    String actual = n->toString();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( getNote3Throw, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    m->setLayerContext( 1 );
+    bool isExceptionThrown = false;
+    try
+    {
+        auto n = m->getNote( 5 );
+        String expected = "unreachable code";
+        String actual = n->toString();
+        CHECK_EQUAL( expected, actual )
+        CHECK_FAIL( "exception was expected but not thrown" );
+    } catch ( ... )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+TEST( getNote4Throw, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    m->setLayerContext( 1 );
+    bool isExceptionThrown = false;
+    try
+    {
+        auto n = m->getNote( -1 );
+        String expected = "unreachable code";
+        String actual = n->toString();
+        CHECK_EQUAL( expected, actual )
+        CHECK_FAIL( "exception was expected but not thrown" );
+    } catch ( std::runtime_error& e )
+    {
+        UNUSED_PARAMETER( e )
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+TEST( getNote5, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureB();
+    m->setLayerContext( 2 );
+    auto n = m->getNote( 1 );
+    String expected = "{ Bb0 : 16th }";
+    String actual = n->toString();
+    CHECK_EQUAL( expected, actual )
+}
+T_END
+
+TEST( addNote, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureFactory->create( 2, 4 );
+    CHECK( m->getIsEmpty() )
+    m->addNote( f.note( 77, "Half" ) );
+    CHECK( m->getIsComplete() );
+}
+T_END
+
+TEST( addNoteThrowFull, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureFactory->create( 2, 4 );
+    m->setLayerContext( 1 );
+    m->addNote( f.note( 77, "Half" ) );
+    bool isExceptionThrown = false;
+    try
+    {
+        m->addNote( f.note( 31, "16th" ) );
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch ( std::runtime_error& e )
+    {
+        UNUSED_PARAMETER( e );
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+TEST( addNoteNull, Measure )
+{
+    Factories f;
+    IMeasureUP m = f.measureFactory->create( 2, 4 );
+    m->setLayerContext( 1 );
+    m->addNote( f.note( 77, "Half" ) );
+    bool isExceptionThrown = false;
+    try
+    {
+        m->addNote( INoteUP{} );
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch ( std::runtime_error& e )
+    {
+        UNUSED_PARAMETER( e );
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+TEST( removeNote, Measure )
+{
+    Factories f;
+    int quarters = 5;
+    IMeasureUP m = f.measureFactory->create( quarters, 4 );
+    m->setLayerContext( 1 );
+    m->addNote( f.note( 100, "Quarter" ) );
+    m->addNote( f.note( 101, "Quarter" ) );
+    m->addNote( f.note( 102, "Quarter" ) ); // remove this
+    m->addNote( f.note( 103, "Quarter" ) );
+    m->addNote( f.note( 104, "Quarter" ) );
+    CHECK_EQUAL( quarters, m->getCount() )
+    int index = 2;
+    m->removeNote( index );
+    CHECK_EQUAL( quarters-1, m->getCount() )
+    auto n = m->getNote( index );
+    CHECK_EQUAL( 103, n->getPitch()->getValue() )
+}
+T_END
+
+TEST( removeNoteAll, Measure )
+{
+    Factories f;
+    int quarters = 5;
+    IMeasureUP m = f.measureFactory->create( quarters, 4 );
+    m->setLayerContext( 1 );
+    m->addNote( f.note( 100, "Quarter" ) );
+    m->addNote( f.note( 101, "Quarter" ) );
+    m->addNote( f.note( 102, "Quarter" ) );
+    m->addNote( f.note( 103, "Quarter" ) );
+    m->addNote( f.note( 104, "Quarter" ) );
+    CHECK_EQUAL( quarters, m->getCount() )
+    m->removeNote( --quarters );
+    m->removeNote( --quarters );
+    m->removeNote( --quarters );
+    m->removeNote( --quarters );
+    m->removeNote( --quarters );
+    CHECK_EQUAL( 0, m->getCount() )
+}
+T_END
+
+TEST( getGroupCountA3, Measure )
+{
+    Factories f;
+    auto m = f.measureA();
+    CHECK_EQUAL( 3, m->getGroupCount() )
+}
+T_END
+
+TEST( getGroupCountA0, Measure )
+{
+    Factories f;
+    auto m = f.measureA();
+    m->setLayerContext( 1 );
+    CHECK_EQUAL( 0, m->getGroupCount() )
+}
+T_END
+
+TEST( getGroupA2_0, Measure )
+{
+    Factories f;
+    auto m = f.measureA();
+    INoteGroupUP group = m->getGroup( 2 );
+    auto n = group->getNote( 0 );
+    CHECK_EQUAL( 11, n->getPitch()->getValue() )
+}
+T_END
+
+TEST( getGroupA2_1, Measure )
+{
+    Factories f;
+    auto m = f.measureA();
+    INoteGroupUP group = m->getGroup( 2 );
+    auto n = group->getNote( 1 );
+    CHECK_EQUAL( 12, n->getPitch()->getValue() )
+}
+T_END
+
+TEST( getGroupA2_2, Measure )
+{
+    Factories f;
+    auto m = f.measureA();
+    INoteGroupUP group = m->getGroup( 2 );
+    auto n = group->getNote( 2 );
+    CHECK_EQUAL( 13, n->getPitch()->getValue() )
+}
+T_END
+
+TEST( getGroupA3Throw, Measure )
+{
+    Factories f;
+    auto m = f.measureA();
+    INoteGroupUP group = m->getGroup( 2 );
+    bool isExceptionThrown = false;
+    try
+    {
+        auto n = group->getNote( 3 );
+        CHECK_EQUAL( 13, n->getPitch()->getValue() )
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch( std::runtime_error& e )
+    {
+        UNUSED_PARAMETER( e )
+        isExceptionThrown = true;
+    }
+    
+}
+T_END
+
+TEST( getGroupIndex0, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 0, m->getGroupIndex( 0 ) )
+}
+T_END
+
+TEST( getGroupIndex1, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 0, m->getGroupIndex( 1 ) )
+}
+T_END
+
+TEST( getGroupIndex2, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 0, m->getGroupIndex( 2 ) )
+}
+T_END
+
+TEST( getGroupIndex3, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 1, m->getGroupIndex( 3 ) )
+}
+T_END
+
+TEST( getGroupIndex4, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 1, m->getGroupIndex( 4 ) )
+}
+T_END
+
+TEST( getGroupIndex5, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 1, m->getGroupIndex( 5 ) )
+}
+T_END
+
+TEST( getGroupIndex6, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 2, m->getGroupIndex( 6 ) )
+}
+T_END
+
+TEST( getGroupIndex7, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 2, m->getGroupIndex( 7 ) )
+}
+T_END
+
+TEST( getGroupIndex8, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 2, m->getGroupIndex( 8 ) )
+}
+T_END
+
+TEST( getGroupIndex9, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 3, m->getGroupIndex( 9 ) )
+}
+T_END
+
+TEST( getGroupIndex10, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 3, m->getGroupIndex( 10 ) )
+}
+T_END
+
+TEST( getGroupIndex11, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( 3, m->getGroupIndex( 11 ) )
+}
+T_END
+
+TEST( getGroupIndex12, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    CHECK_EQUAL( -1, m->getGroupIndex( 12 ) )
+}
+T_END
+
+TEST( getGroupIndex13Throw, Measure )
+{
+    Factories f;
+    auto m = f.measureB();
+    m->setLayerContext( 2 );
+    bool isExceptionThrown = false;
+    try
+    {
+        int index = m->getGroupIndex( 13 );
+        CHECK_EQUAL( -1, index )
+        CHECK_FAIL( "excpected exception but none was thrown" )
+    }
+    catch ( std::exception& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+TEST( addGroup, Measure )
+{
+    Factories f;
+    auto m = f.measureFactory->create( 3, 4 );
+    m->setLayerContext( 1 );
+    INoteGroupUP ng{ new NoteGroup{} };
+    ng->addNote( f.note( 50, "Quarter" ) );
+    ng->addNote( f.note( 51, "Quarter" ) );
+    ng->addNote( f.note( 52, "Quarter" ) );
+    CHECK_EQUAL( 0, m->getGroupCount() )
+    m->addGroup( ng );
+    CHECK_EQUAL( 1, m->getGroupCount() )
+}
+T_END
+
+TEST( addGroupThrowTooBig, Measure )
+{
+    Factories f;
+    auto m = f.measureFactory->create( 3, 4 );
+    m->setLayerContext( 1 );
+    INoteGroupUP ng{ new NoteGroup{} };
+    ng->addNote( f.note( 50, "Quarter" ) );
+    ng->addNote( f.note( 51, "Quarter" ) );
+    ng->addNote( f.note( 52, "Quarter" ) );
+    ng->addNote( f.note( 53, "Quarter" ) );
+    CHECK_EQUAL( 0, m->getGroupCount() )
+    bool isExceptionThrown = false;
+    try
+    {
+        m->addGroup( ng );
+        CHECK_EQUAL( 1, m->getGroupCount() )
+        CHECK_FAIL( "excpected exception but none was thrown" )
+    }
+    catch ( std::exception& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+TEST( addGroupThrowNull, Measure )
+{
+    Factories f;
+    auto m = f.measureFactory->create( 3, 4 );
+    m->setLayerContext( 1 );
+    INoteGroupUP ng{};
+    CHECK_EQUAL( 0, m->getGroupCount() )
+    bool isExceptionThrown = false;
+    try
+    {
+        m->addGroup( ng );
+        CHECK_EQUAL( 1, m->getGroupCount() )
+        CHECK_FAIL( "excpected exception but none was thrown" )
+    }
+    catch ( std::exception& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+TEST( removeGroup, Measure )
+{
+    Factories f;
+    auto m = f.measureFactory->create( 3, 4 );
+    m->setLayerContext( 1 );
+    INoteGroupUP ng{ new NoteGroup{} };
+    ng->addNote( f.note( 50, "Quarter" ) );
+    ng->addNote( f.note( 51, "Quarter" ) );
+    ng->addNote( f.note( 52, "Quarter" ) );
+    m->addGroup( ng );
+    CHECK_EQUAL( 1, m->getGroupCount() )
+    m->removeGroup( 0 );
+    CHECK_EQUAL( 0, m->getGroupCount() )
+}
+T_END
+
+TEST( removeThrow, Measure )
+{
+    Factories f;
+    auto m = f.measureFactory->create( 3, 4 );
+    m->setLayerContext( 1 );
+    INoteGroupUP ng{ new NoteGroup{} };
+    ng->addNote( f.note( 50, "Quarter" ) );
+    ng->addNote( f.note( 51, "Quarter" ) );
+    ng->addNote( f.note( 52, "Quarter" ) );
+    m->addGroup( ng );
+    CHECK_EQUAL( 1, m->getGroupCount() )
+    bool isExceptionThrown = false;
+    try
+    {
+        m->removeGroup( 1 );
+        CHECK_EQUAL( 0, m->getGroupCount() )
+        CHECK_FAIL( "excpected exception but none was thrown" )
+    }
+    catch ( std::exception& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
 }
 T_END

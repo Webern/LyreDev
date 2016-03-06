@@ -142,6 +142,12 @@ namespace Lyre
             return LAYER->getCount();
         }
         
+        Rational Measure::getUnusedRemaining() const
+        {
+            auto maxDuration = myTimeSignature->getTotalDuration();
+            return  maxDuration - getTotalDuration();
+        }
+        
         Rational Measure::getTotalDuration() const
         {
             return LAYER->getTotalDuration();
@@ -154,6 +160,7 @@ namespace Lyre
         
         void Measure::addNote( const INoteUP& note )
         {
+            THROW_IF_NULL( note );
             Rational curTot = LAYER->getTotalDuration();
             Rational noteDur = note->getDuration()->getValue();
             if ( ( curTot + noteDur ) <= myMaxDur )
@@ -193,6 +200,7 @@ namespace Lyre
         
         void Measure::addGroup( const INoteGroupUP& group )
         {
+            THROW_IF_NULL( group )
             Rational curTot = LAYER->getTotalDuration();
             Rational groupDur = group->getTotalDuration();
             if ( ( curTot + groupDur ) <= myMaxDur )
