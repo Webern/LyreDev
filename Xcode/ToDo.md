@@ -30,3 +30,17 @@ Possibly Abandoned
     implement TestLayer.cpp
     implement Layer.cpp
 }
+add to Xcode IRange.h
+add to Xcode IRangeFactory.h
+add to Xcode IRangeFactory.cpp
+add to Xcode Range.h
+add to Xcode Range.cpp
+add to Xcode RangeFactory.h
+add to Xcode RangeFactory.cpp
+implement Range.h
+implement Range.cpp
+implement IRange.h
+implement RangeFactory.h
+implement RangeFactory.cpp
+implement IRangeFactory.h
+implement IRangeFactory.cpp
