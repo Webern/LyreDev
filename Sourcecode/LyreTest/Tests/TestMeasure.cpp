@@ -877,6 +877,7 @@ TEST( getGroupIndex13Throw, Measure )
     }
     catch ( std::exception& e )
     {
+		UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -918,6 +919,7 @@ TEST( addGroupThrowTooBig, Measure )
     }
     catch ( std::exception& e )
     {
+		UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -940,6 +942,7 @@ TEST( addGroupThrowNull, Measure )
     }
     catch ( std::exception& e )
     {
+		UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -982,6 +985,7 @@ TEST( removeThrow, Measure )
     }
     catch ( std::exception& e )
     {
+		UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )

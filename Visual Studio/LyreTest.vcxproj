@@ -1,5 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!-- TestPlatform="vstest" -> builds as a vstest dll
+         TestPlatform="cpul" -> builds a cpp unit lite exe (default) -->
+    <TestPlatform Condition=" 'TestPlatform' == '' ">cpul</TestPlatform>
+    <!-- Build as exe if cpul -->
+    <BinaryType>Application</BinaryType>
+    <BinaryExt>exe</BinaryExt>
+    <TestDefine>__DONT_USE_VS_TEST__</TestDefine>
+    <!-- Build as dll if vstest -->
+    <BinaryType Condition="'$(TestPlatform)'=='vstest'">DynamicLibrary</BinaryType>
+    <BinaryExt Condition="'$(TestPlatform)'=='vstest'">dll</BinaryExt>
+    <TestDefine Condition="'$(TestPlatform)'=='vstest'">USE_VS_TEST</TestDefine>
+  </PropertyGroup>
+  <Target Name="messages">
+    <Message Text="Project = $(MSBuildProjectFile)" />
+    <Message Text="TestPlatform = $(TestPlatform)" />
+    <Message Text="BinaryType = $(BinaryType)" />
+    <Message Text="BinaryExt = $(BinaryExt)" />
+    <Message Text="TestDefine = $(TestDefine)" />
+  </Target>
+  
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -114,14 +135,14 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>$(BinaryType)</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>$(BinaryType)</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -129,14 +150,14 @@
     <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>$(BinaryType)</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>$(BinaryType)</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -170,22 +191,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
     <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
-    <TargetExt>.exe</TargetExt>
+    <TargetExt>.$(BinaryExt)</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
     <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
-    <TargetExt>.exe</TargetExt>
+    <TargetExt>.$(BinaryExt)</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
     <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
-    <TargetExt>.exe</TargetExt>
+    <TargetExt>.$(BinaryExt)</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
     <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
-    <TargetExt>.exe</TargetExt>
+    <TargetExt>.$(BinaryExt)</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -194,13 +215,12 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
-      <PreprocessorDefinitions>_USE_VS_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>$(TestDefine);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <DelayLoadDLLs>Lyre.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
       <AdditionalDependencies>Lyre.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>.\Outputs\$(PlatformConfigFolder)\%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -212,13 +232,12 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
-      <PreprocessorDefinitions>_USE_VS_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>$(TestDefine);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <DelayLoadDLLs>Lyre.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
       <AdditionalDependencies>Lyre.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>.\Outputs\$(PlatformConfigFolder)\%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -232,7 +251,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
-      <PreprocessorDefinitions>_USE_VS_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>$(TestDefine);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
@@ -240,7 +259,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <DelayLoadDLLs>Lyre.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
       <AdditionalDependencies>Lyre.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>.\Outputs\$(PlatformConfigFolder)\%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -254,7 +272,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <UndefinePreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS</UndefinePreprocessorDefinitions>
-      <PreprocessorDefinitions>_USE_VS_TEST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>$(TestDefine);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
@@ -262,7 +280,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <DelayLoadDLLs>Lyre.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
       <AdditionalDependencies>Lyre.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>.\Outputs\$(PlatformConfigFolder)\%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
