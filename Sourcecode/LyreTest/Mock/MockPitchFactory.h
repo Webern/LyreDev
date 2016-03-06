@@ -33,6 +33,11 @@ namespace Lyre
             virtual void next() { add( 1 ); }
             virtual void previous() { add( -1 ); }
             virtual void add( const int value ) { setPitch( createPitch()->getValue() + value ); }
+
+			virtual IPitchUP createPitch( const int pitchValue ) const { UNUSED_PARAMETER( pitchValue ) return createPitch(); }
+			virtual IPitchUP createPitch( const IPitchUP& pitch ) const { UNUSED_PARAMETER( pitch ) return createPitch(); }
+			virtual IPitchUP createPitch( const String& pitchString ) const { UNUSED_PARAMETER( pitchString ) return createPitch(); }
+			virtual IPitchUP createPitch( int step, int alter, int octave ) const { UNUSED_PARAMETER( step ) UNUSED_PARAMETER( alter ) UNUSED_PARAMETER( octave ) return createPitch(); }
         private:
             MockPitch myPitch;
         };

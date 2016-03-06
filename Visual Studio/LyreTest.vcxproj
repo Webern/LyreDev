@@ -2,12 +2,12 @@
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <!-- TestPlatform="vstest" -> builds as a vstest dll
-         TestPlatform="cpul" -> builds a cpp unit lite exe (default) -->
-    <TestPlatform Condition=" 'TestPlatform' == '' ">cpul</TestPlatform>
+         TestPlatform="cpul" -> builds a cpp unit lite exe -->
+    <TestPlatform Condition=" 'TestPlatform' == '' ">vstest</TestPlatform>
     <!-- Build as exe if cpul -->
-    <BinaryType>Application</BinaryType>
-    <BinaryExt>exe</BinaryExt>
-    <TestDefine>__DONT_USE_VS_TEST__</TestDefine>
+    <BinaryType Condition="'$(TestPlatform)'=='cpul'">Application</BinaryType>
+    <BinaryExt Condition="'$(TestPlatform)'=='cpul'">exe</BinaryExt>
+    <TestDefine Condition="'$(TestPlatform)'=='cpul'">__DONT_USE_VS_TEST__</TestDefine>
     <!-- Build as dll if vstest -->
     <BinaryType Condition="'$(TestPlatform)'=='vstest'">DynamicLibrary</BinaryType>
     <BinaryExt Condition="'$(TestPlatform)'=='vstest'">dll</BinaryExt>
