@@ -158,9 +158,6 @@
     <ClCompile Include="..\Sourcecode\Lyre\Private\TupletDefFatory.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Rational.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F765E151-6073-4B26-874F-6F839CEFF126}</ProjectGuid>
     <RootNamespace>Lyre</RootNamespace>

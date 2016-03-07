@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+
     <!-- TestPlatform="vstest" -> builds as a vstest dll
          TestPlatform="cpul" -> builds a cpp unit lite exe -->
     <TestPlatform Condition=" 'TestPlatform' == '' ">vstest</TestPlatform>
@@ -13,6 +14,7 @@
     <BinaryExt Condition="'$(TestPlatform)'=='vstest'">dll</BinaryExt>
     <TestDefine Condition="'$(TestPlatform)'=='vstest'">USE_VS_TEST</TestDefine>
   </PropertyGroup>
+
   <Target Name="messages">
     <Message Text="Project = $(MSBuildProjectFile)" />
     <Message Text="TestPlatform = $(TestPlatform)" />
