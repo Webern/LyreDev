@@ -11,7 +11,6 @@ namespace Lyre
     };
 
     FORWARD_DECLARE(IXXXXFactory)
-    FORWARD_DECLARE(IBeatPattern)
     
     PUBLIC IXXXXFactoryUP
         createXXXXFactory(
@@ -22,7 +21,7 @@ namespace Lyre
     {
     public:
         virtual ~IXXXXFactory() {}
-        virtual IXXXXUP create() = 0;
+        virtual IXXXXUP create() const = 0;
 
     };
 }

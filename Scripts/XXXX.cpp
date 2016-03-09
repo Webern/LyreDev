@@ -1,7 +1,4 @@
 #include "Lyre/Private/XXXX.h"
-#include "Lyre/IBeatPatternFactory.h"
-#include "Lyre/IDurationFactory.h"
-#include "Lyre/IDuration.h"
 #include "Lyre/Private/throw.h"
 
 namespace Lyre

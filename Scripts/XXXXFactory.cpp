@@ -9,7 +9,7 @@ namespace Lyre
     {
         XXXXFactory::~XXXXFactory() {}
         
-        IXXXXUP XXXXFactory::create()
+        IXXXXUP XXXXFactory::create() const
         {
             return IXXXXUP{ new XXXX{} };
         }

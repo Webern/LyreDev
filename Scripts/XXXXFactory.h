@@ -15,7 +15,7 @@ namespace Lyre
         public:
             virtual ~XXXXFactory();
             
-            virtual IXXXXUP create();
+            virtual IXXXXUP create() const;
         };
     }
 }
