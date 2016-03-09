@@ -25,6 +25,5 @@ namespace Lyre
         {
             return IMeasureUP( new Measure{ timeSignature->clone() } );
         }
-
     }
 }

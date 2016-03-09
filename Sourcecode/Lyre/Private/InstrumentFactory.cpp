@@ -11,7 +11,7 @@ namespace Lyre
         
         IInstrumentUP InstrumentFactory::create(
             const InstrumentName& name,
-            const IRangeUP& range )
+            const IRangeUP& range ) const
         {
             return IInstrumentUP{ new Instrument{ name, range } };
         }

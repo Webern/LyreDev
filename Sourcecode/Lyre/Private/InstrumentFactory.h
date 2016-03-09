@@ -17,7 +17,7 @@ namespace Lyre
             
             virtual IInstrumentUP create(
                 const InstrumentName& name,
-                const IRangeUP& range );
+                const IRangeUP& range ) const;
         };
     }
 }

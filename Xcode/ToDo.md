@@ -1,16 +1,14 @@
-
-
-add to Xcode IInstrument.h
-add to Xcode IInstrumentFactory.h
-add to Xcode IInstrumentFactory.cpp
-add to Xcode Instrument.h
-add to Xcode Instrument.cpp
-add to Xcode InstrumentFactory.h
-add to Xcode InstrumentFactory.cpp
-implement Instrument.h
-implement Instrument.cpp
-implement IInstrument.h
-implement InstrumentFactory.h
-implement InstrumentFactory.cpp
-implement IInstrumentFactory.h
-implement IInstrumentFactory.cpp
+add to Xcode IPart.h
+add to Xcode IPartFactory.h
+add to Xcode IPartFactory.cpp
+add to Xcode Part.h
+add to Xcode Part.cpp
+add to Xcode PartFactory.h
+add to Xcode PartFactory.cpp
+implement Part.h
+implement Part.cpp
+implement IPart.h
+implement PartFactory.h
+implement PartFactory.cpp
+implement IPartFactory.h
+implement IPartFactory.cpp

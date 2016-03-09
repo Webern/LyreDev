@@ -5,14 +5,14 @@
     <!-- TestPlatform="vstest" -> builds as a vstest dll
          TestPlatform="cpul" -> builds a cpp unit lite exe -->
     <TestPlatform Condition=" 'TestPlatform' == '' ">vstest</TestPlatform>
+    <!-- Build as dll if vstest -->
+    <BinaryType>DynamicLibrary</BinaryType>
+    <BinaryExt>dll</BinaryExt>
+    <TestDefine>USE_VS_TEST</TestDefine>
     <!-- Build as exe if cpul -->
     <BinaryType Condition="'$(TestPlatform)'=='cpul'">Application</BinaryType>
     <BinaryExt Condition="'$(TestPlatform)'=='cpul'">exe</BinaryExt>
     <TestDefine Condition="'$(TestPlatform)'=='cpul'">__DONT_USE_VS_TEST__</TestDefine>
-    <!-- Build as dll if vstest -->
-    <BinaryType Condition="'$(TestPlatform)'=='vstest'">DynamicLibrary</BinaryType>
-    <BinaryExt Condition="'$(TestPlatform)'=='vstest'">dll</BinaryExt>
-    <TestDefine Condition="'$(TestPlatform)'=='vstest'">USE_VS_TEST</TestDefine>
   </PropertyGroup>
 
   <Target Name="messages">
@@ -59,6 +59,7 @@
     <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchName.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockStep.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPart.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestInstrument.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestRange.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMeasure.cpp" />
