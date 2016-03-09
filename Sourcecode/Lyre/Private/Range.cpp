@@ -15,8 +15,8 @@ namespace Lyre
         }
 
         Range::Range()
-        :myLow( ourPitchFactory->createPitch( DEFAULT_RANGE_LOW) )
-        ,myHigh( ourPitchFactory->createPitch( DEFAULT_RANGE_HIGH) )
+        :myLow( ourPitchFactory->createPitch( DEFAULT_RANGE_LOW ) )
+        ,myHigh( ourPitchFactory->createPitch( DEFAULT_RANGE_HIGH ) )
         {
             check( DEFAULT_RANGE_LOW, DEFAULT_RANGE_HIGH );
         }

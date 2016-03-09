@@ -12,26 +12,35 @@ using namespace std;
 
 namespace
 {
-	static IPartFactoryUPC factory =
-	createPartFactory();
-
-    static IInstrumentFactoryUPC instrumentFactory =
-        createInstrumentFactory();
-
-    static IRangeFactoryUPC rangeFactory =
-        createRangeFactory();
-
-    static const InstrumentName name1 = { "Instrument 1", "Inst. 1" };
-    static const IRangeUPC range1 = rangeFactory->create( "C3", "C7" );
-    static const IInstrumentUPC instrument1 = instrumentFactory->create( name1, range1->clone() );
+    struct Factories
+    {
+    public:
+        IPartFactoryUPC partFactory;
+        IInstrumentFactoryUPC instrumentFactory;
+        IRangeFactoryUPC rangeFactory;
+        
+        InstrumentName name1;
+        IRangeUPC range1;
+        IInstrumentUPC instrument1;
+        
+        Factories()
+        :partFactory( createPartFactory() )
+        ,instrumentFactory( createInstrumentFactory() )
+        ,rangeFactory( createRangeFactory() )
+        ,name1( "Instrument 1", "Instr 1" )
+        ,range1( rangeFactory->create( "A2", "C7" ) )
+        ,instrument1( instrumentFactory->create( name1, range1->clone() ) )
+        {}
+    };
 }
 
 TEST( toStream, Part )
 {
-    IPartUP ts = factory->create( 1, 2, instrument1->clone() );
+    Factories f;
+    IPartUP part = f.partFactory->create( 1, 2, f.instrument1->clone() );
     std::stringstream ss;
-    ts->toStream( ss );
-    String expected = "Part not implemented";
+    part->toStream( ss );
+    String expected = "//////////   Instrument 1   //////////";
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
