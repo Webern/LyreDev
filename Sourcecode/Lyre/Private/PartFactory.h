@@ -17,7 +17,6 @@ namespace Lyre
             
             virtual IPartUP create(
                 int numStaves,
-                int layersPerStaff,
                 const IInstrumentUP& instrument ) const;
         };
     }

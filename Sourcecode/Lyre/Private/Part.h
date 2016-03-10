@@ -18,7 +18,6 @@ namespace Lyre
 
             Part(
                 int numStaves,
-                int layersPerStaff,
                 const IInstrumentUP& instrument );
 
             Part( const Part& other );
@@ -33,7 +32,8 @@ namespace Lyre
             int getStaffContext() const;
             void setLayerContext( int layerContext );
             int getLayerContext() const;
-
+            
+            IMeasureUP getMeasure( int index ) const;
             void addMeasure( const IMeasureUP&& measure );
             void replaceMeasure( const IMeasureUP&& measure, int index );
             void insertMeasureAfter( const IMeasureUP&& measure, int index );
@@ -42,9 +42,20 @@ namespace Lyre
             void clearMeasure( int index );
 
         private:
+            
+            using Staff = VecIMeasureUP;
+            using StaffIter = VecIMeasureUPCIter;
+            using StaffIterConst = VecIMeasureUPCIterC;
+            
+            using Staves = std::vector<Staff>;
+            using StavesIter = Staves::iterator;
+            using StavesIterConst = Staves::const_iterator;
+            
             int myNumStaves;
-            int myLayersPerStaff;
             IInstrumentUPC myInstrument;
+            int myStaffContext;
+            int myLayerContext;
+            Staves myStaves;
         };
     } 
 }

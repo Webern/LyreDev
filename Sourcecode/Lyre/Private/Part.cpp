@@ -15,10 +15,8 @@ namespace Lyre
 
         Part::Part(
                 int numStaves,
-                int layersPerStaff,
                 const IInstrumentUP& instrument )
             : myNumStaves( numStaves )
-            , myLayersPerStaff( layersPerStaff )
             , myInstrument( instrument->clone() )
         {
 

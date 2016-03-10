@@ -25,7 +25,6 @@ namespace Lyre
         virtual ~IPartFactory() {}
         virtual IPartUP create(
                 int numStaves,
-                int layersPerStaff,
                 const IInstrumentUP& instrument ) const = 0;
 
     };
