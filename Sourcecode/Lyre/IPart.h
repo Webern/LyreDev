@@ -5,7 +5,7 @@
 namespace Lyre
 {
     FORWARD_DECLARE(IPart)
-    
+
     class PUBLIC IPart : public IStreamable
     {
     public:

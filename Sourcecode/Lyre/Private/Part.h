@@ -9,23 +9,25 @@ namespace Lyre
 {
     namespace Private
     {
-        //FORWARD_DECLARE(Part)
+        FORWARD_DECLARE(Part)
 
         class Part : public IPart
         {
         public:
             virtual ~Part();
 
+            Part();
             Part(
                 int numStaves,
                 const IInstrumentUP& instrument );
 
             Part( const Part& other );
-            Part( Part&& other );
+            Part( Part&& other )  noexcept;
             Part& operator=( const Part& other );
-            Part& operator=( Part&& other );
+            Part& operator=( Part&& other )  noexcept;
 
             virtual IPartUP clone() const;
+            virtual IPartUP move() noexcept;
             virtual std::ostream& toStream( std::ostream& os ) const;
 
             void setStaffContext( int staffIndex );
@@ -43,19 +45,24 @@ namespace Lyre
 
         private:
             
-            using Staff = VecIMeasureUP;
-            using StaffIter = VecIMeasureUPCIter;
-            using StaffIterConst = VecIMeasureUPCIterC;
+            using Measures = VecIMeasureUP;
+            using MeasureIter = VecIMeasureUPIter;
+            using MeasureIterConst = VecIMeasureUPIterC;
             
-            using Staves = std::vector<Staff>;
-            using StavesIter = Staves::iterator;
-            using StavesIterConst = Staves::const_iterator;
+            using Staves = std::vector<Measures>;
+            using StaffIter = Staves::iterator;
+            using StaffIterConst = Staves::const_iterator;
             
             int myNumStaves;
             IInstrumentUPC myInstrument;
             int myStaffContext;
             int myLayerContext;
             Staves myStaves;
+
+            StaffIter getCurrentStaff();
+            StaffIterConst getCurrentStaffConst() const;
+            MeasureIter getMeasureIter( int index );
+            MeasureIterConst getMeasureIterConst( int index ) const;
         };
     } 
 }
