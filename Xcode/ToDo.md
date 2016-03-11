@@ -6,3 +6,7 @@ implement PartFactory.h
 implement PartFactory.cpp
 implement IPartFactory.h
 implement IPartFactory.cpp
+
+test clearMasure()
+test clearLayer()
+test clear() - noteGroup

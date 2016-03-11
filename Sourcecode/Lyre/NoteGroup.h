@@ -25,6 +25,8 @@ namespace Lyre
         virtual NoteGroupUP copyNoteGroup() const;
         virtual std::ostream& toStream( std::ostream& os ) const ;
         
+        virtual void clear();
+        
         virtual bool getIsEmpty() const ;
         virtual int getCount() const ;
         virtual Rational getTotalDuration() const ;

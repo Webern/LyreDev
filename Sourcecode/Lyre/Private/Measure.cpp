@@ -127,6 +127,19 @@ namespace Lyre
             return myTimeSignature->clone();
         }
         
+        void Measure::clearLayer()
+        {
+            LAYER->clear();
+        }
+        
+        void Measure::clearMeasure()
+        {
+            for ( auto it = myLayers.begin(); it != myLayers.end(); ++it )
+            {
+                it->second->clear();
+            }
+        }
+        
         bool Measure::getIsEmpty() const
         {
             return LAYER->getIsEmpty();

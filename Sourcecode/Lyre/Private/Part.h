@@ -36,10 +36,10 @@ namespace Lyre
             int getLayerContext() const;
             
             IMeasureUP getMeasure( int index ) const;
-            void addMeasure( const IMeasureUP&& measure );
-            void replaceMeasure( const IMeasureUP&& measure, int index );
-            void insertMeasureAfter( const IMeasureUP&& measure, int index );
-            void insertMeasureBefore( const IMeasureUP&& measure, int index );
+            void addMeasure( IMeasureUP&& measure );
+            void replaceMeasure( IMeasureUP&& measure, int index );
+            void insertMeasureAfter( IMeasureUP&& measure, int index );
+            void insertMeasureBefore( IMeasureUP&& measure, int index );
             void removeMeasure( int index );
             void clearMeasure( int index );
 

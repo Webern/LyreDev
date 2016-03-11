@@ -23,6 +23,9 @@ namespace Lyre
         virtual int getLayerContext() const = 0;
         virtual ITimeSignatureUP getTimeSignature() const = 0;
 
+        virtual void clearLayer() = 0;
+        virtual void clearMeasure() = 0;
+        
         virtual bool getIsEmpty() const = 0;
         virtual bool getIsComplete() const = 0;
         virtual int getCount() const = 0;

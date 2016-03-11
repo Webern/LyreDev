@@ -32,7 +32,10 @@ namespace Lyre
             virtual void setLayerContext( int layer );
             virtual int getLayerContext() const;
             virtual ITimeSignatureUP getTimeSignature() const;
-
+            
+            virtual void clearLayer();
+            virtual void clearMeasure();
+            
             virtual bool getIsEmpty() const;
             virtual bool getIsComplete() const;
             virtual Rational getUnusedRemaining() const;

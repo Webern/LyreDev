@@ -1147,7 +1147,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "304"
             endingLineNumber = "304"
-            landmarkName = "NoteGroup::removeNote( int noteIndex )"
+            landmarkName = "NoteGroup::getNote( int noteIndex )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1163,7 +1163,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "303"
             endingLineNumber = "303"
-            landmarkName = "NoteGroup::removeNote( int noteIndex )"
+            landmarkName = "NoteGroup::getNote( int noteIndex )"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

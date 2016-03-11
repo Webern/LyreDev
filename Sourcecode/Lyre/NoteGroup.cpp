@@ -204,10 +204,18 @@ namespace Lyre
 
 	std::ostream& NoteGroup::toStream( std::ostream& os ) const
 	{
-        
 		return myImplP->toStreamImpl( os );
 	}
 
+    void NoteGroup::clear()
+	{
+		myImplP->noteGroups.clear();
+        myImplP->countCache = 0;
+        myImplP->isCountCacheDirty = false;
+        myImplP->durCache = Rational{ 0, 1 };
+        myImplP->isDurCacheDirty = false;
+	}
+    
 	bool NoteGroup::getIsEmpty() const
 	{
 		return getCount() == 0;

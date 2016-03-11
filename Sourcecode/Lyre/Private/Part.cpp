@@ -14,8 +14,8 @@ namespace Lyre
 
         #define LAYER ( getCurrentLayer() )
         #define LAYERC ( getCurrentLayerConst() )
-        #define MEASURE( index_number ) ( *getMeasureIter(##index_number) )
-        #define MEASUREC( index_number ) ( *getMeasureIterConst(##index_number) )
+        #define MEASURE( index_number ) ( *getMeasureIter( index_number) )
+        #define MEASUREC( index_number ) ( *getMeasureIterConst( index_number) )
 
         Part::~Part()
         {
@@ -51,7 +51,7 @@ namespace Lyre
             , myInstrument( other.myInstrument->clone() )
             , myStaffContext( other.myStaffContext )
             , myLayerContext( other.myLayerContext )
-            , myStaves( other.myNumStaves )
+            , myStaves( static_cast<size_t>( other.myNumStaves ) )
         {
             StaffIter my_staff = myStaves.begin();
             for ( StaffIterConst other_staff = other.myStaves.cbegin();
@@ -175,34 +175,37 @@ namespace Lyre
             return MEASUREC( index )->clone();
         }
 
-        void Part::addMeasure( const IMeasureUP && measure )
+        void Part::addMeasure( IMeasureUP&& measure )
         {
-
+            UNUSED_PARAMETER( measure )
         }
 
-        void Part::replaceMeasure( const IMeasureUP && measure, int index )
+        void Part::replaceMeasure( IMeasureUP&& measure, int index )
         {
-
+            UNUSED_PARAMETER( measure )
+            UNUSED_PARAMETER( index )
         }
 
-        void Part::insertMeasureAfter( const IMeasureUP && measure, int index )
+        void Part::insertMeasureAfter( IMeasureUP&& measure, int index )
         {
-
+            UNUSED_PARAMETER( measure )
+            UNUSED_PARAMETER( index )
         }
 
-        void Part::insertMeasureBefore( const IMeasureUP && measure, int index )
+        void Part::insertMeasureBefore( IMeasureUP&& measure, int index )
         {
-
+            UNUSED_PARAMETER( measure )
+            UNUSED_PARAMETER( index )
         }
 
         void Part::removeMeasure( int index )
         {
-
+            UNUSED_PARAMETER( index )
         }
 
         void Part::clearMeasure( int index )
         {
-
+            UNUSED_PARAMETER( index )
         }
 
         Part::StaffIter Part::getCurrentStaff()
@@ -212,7 +215,7 @@ namespace Lyre
 
         Part::StaffIterConst Part::getCurrentStaffConst() const
         {
-            return std::cbegin( myStaves ) + myStaffContext;
+            return std::begin( myStaves ) + myStaffContext;
         }
 
         Part::MeasureIter Part::getMeasureIter( int index )

@@ -16,6 +16,8 @@ namespace Lyre
         virtual INoteGroupUP move() = 0;
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         
+        virtual void clear() = 0;
+        
         virtual bool getIsEmpty() const = 0;
         virtual int getCount() const = 0;
         virtual Rational getTotalDuration() const = 0;
