@@ -3,6 +3,7 @@
 #include "Lyre/Lyre.h"
 #include "Lyre/IPart.h"
 #include "Lyre/IInstrument.h"
+#include "Lyre/IMasterTrack.h"
 
 namespace Lyre
 {
@@ -23,9 +24,11 @@ namespace Lyre
     {
     public:
         virtual ~IPartFactory() {}
+
         virtual IPartUP create(
                 int numStaves,
-                const IInstrumentUP& instrument ) const = 0;
+                const IInstrumentUP& instrument,
+                const IMasterTrackSPC& masterTrack ) const = 0;
 
     };
 }

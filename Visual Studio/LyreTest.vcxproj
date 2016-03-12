@@ -59,6 +59,7 @@
     <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockPitchName.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Mock\MockStep.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMasterTrack.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPart.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestInstrument.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestRange.cpp" />

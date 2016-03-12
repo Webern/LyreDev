@@ -37,7 +37,8 @@ namespace
 TEST( toStream, Part )
 {
     Factories f;
-    IPartUP part = f.partFactory->create( 1, f.instrument1->clone() );
+    IMasterTrackSPC masterTrack;
+    IPartUP part = f.partFactory->create( 1, f.instrument1->clone(), masterTrack );
     std::stringstream ss;
     part->toStream( ss );
     String expected = "//////////   Instrument 1   //////////";

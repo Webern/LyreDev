@@ -25,21 +25,27 @@ namespace Lyre
             : myNumStaves(0)
             , myInstrument( nullptr )
             , myStaffContext( 0 )
+            , myMeasureContext( 0 )
             , myLayerContext( 0 )
             , myStaves()
+            , myMasterTrack( nullptr )
         {
             // unusable object - do not expose to clients
         }
 
         Part::Part(
                 int numStaves,
-                const IInstrumentUP& instrument )
+                const IInstrumentUP& instrument,
+                const IMasterTrackSPC& masterTrack )
             : myNumStaves( numStaves )
             , myInstrument( instrument->clone() )
-            , myStaves( static_cast<std::size_t>( numStaves ) )
             , myStaffContext( 0 )
+            , myMeasureContext( 0 )
             , myLayerContext( 0 )
+            , myStaves( static_cast<std::size_t>( numStaves ) )
+            , myMasterTrack( masterTrack )
         {
+            THROW_IF_NULL( myMasterTrack )
             if ( numStaves < 1 )
             {
                 THROW( "invalid number of staves - must be at least 1" )
@@ -50,8 +56,10 @@ namespace Lyre
             : myNumStaves( other.myNumStaves )
             , myInstrument( other.myInstrument->clone() )
             , myStaffContext( other.myStaffContext )
+            , myMeasureContext( other.myMeasureContext )
             , myLayerContext( other.myLayerContext )
             , myStaves( static_cast<size_t>( other.myNumStaves ) )
+            , myMasterTrack( other.myMasterTrack )
         {
             StaffIter my_staff = myStaves.begin();
             for ( StaffIterConst other_staff = other.myStaves.cbegin();
@@ -71,8 +79,10 @@ namespace Lyre
            :  myNumStaves( std::move( other.myNumStaves ) )
             , myInstrument( std::move( other.myInstrument ) )
             , myStaffContext( std::move( other.myStaffContext ) )
+            , myMeasureContext( std::move( other.myMeasureContext ) )
             , myLayerContext( std::move( other.myLayerContext ) )
             , myStaves( std::move( other.myStaves ) )
+            , myMasterTrack( std::move(other.myMasterTrack ) )
         {
 
         }
@@ -82,8 +92,10 @@ namespace Lyre
             myNumStaves = other.myNumStaves;
             myInstrument = other.myInstrument->clone();
             myStaffContext = other.myStaffContext;
+            myMeasureContext = other.myMeasureContext;
             myLayerContext = other.myLayerContext;
             myStaves = Staves{ static_cast<std::size_t>( myNumStaves ) };
+            myMasterTrack = other.myMasterTrack;
             StaffIter my_staff = myStaves.begin();
             for ( StaffIterConst other_staff = other.myStaves.cbegin();
                   other_staff != other.myStaves.cend();
@@ -106,6 +118,7 @@ namespace Lyre
             myStaffContext = std::move( other.myStaffContext );
             myLayerContext = std::move( other.myLayerContext );
             myStaves = std::move( other.myStaves );
+            myMasterTrack = std::move( other.myMasterTrack );
             
             return *this;
         }
@@ -124,12 +137,14 @@ namespace Lyre
             part->myStaffContext = std::move( this->myStaffContext );
             part->myLayerContext = std::move( this->myLayerContext );
             part->myStaves = std::move( this->myStaves );
+            part->myMasterTrack = this->myMasterTrack;
             IPartUP newPartUP{ part };
 
-            // re-initialize the guts of "this"
+            // re-initialize the guts of "this" to avoid nullptr crashes
             this->myNumStaves = 1;
             this->myInstrument = IInstrumentUP{ new Instrument{ InstrumentName{ "default", "default" }, IRangeUP{ new Range{} } } };
             this->myStaffContext = 0;
+            this->myMeasureContext = 0;
             this->myLayerContext = 0;
             this->myStaves = Staves( 1 );
 
@@ -157,6 +172,20 @@ namespace Lyre
             return myStaffContext;
         }
 
+        void Part::setMessureContext( int measureIndex )
+        {
+            if ( measureIndex < 0 )
+            {
+                THROW( "index out of range" )
+            }
+            myMeasureContext = measureIndex;
+        }
+
+        int Part::getMeasureContext() const
+        {
+            return 0;
+        }
+
         void Part::setLayerContext( int layerContext )
         {
             if ( layerContext < 0 || layerContext > MAX_NUMBER_OF_LAYERS - 1 )
@@ -170,43 +199,96 @@ namespace Lyre
             return myLayerContext;
         }
 
-        IMeasureUP Part::getMeasure( int index ) const
+        ITimeSignatureUP Part::getTimeSignature() const
         {
-            return MEASUREC( index )->clone();
+            return ITimeSignatureUP();
         }
 
-        void Part::addMeasure( IMeasureUP&& measure )
+        void Part::clearLayer()
         {
-            UNUSED_PARAMETER( measure )
         }
 
-        void Part::replaceMeasure( IMeasureUP&& measure, int index )
+        void Part::clearMeasure()
         {
-            UNUSED_PARAMETER( measure )
-            UNUSED_PARAMETER( index )
         }
 
-        void Part::insertMeasureAfter( IMeasureUP&& measure, int index )
+        bool Part::getIsEmpty() const
         {
-            UNUSED_PARAMETER( measure )
-            UNUSED_PARAMETER( index )
+            return false;
         }
 
-        void Part::insertMeasureBefore( IMeasureUP&& measure, int index )
+        bool Part::getIsComplete() const
         {
-            UNUSED_PARAMETER( measure )
-            UNUSED_PARAMETER( index )
+            return false;
         }
 
-        void Part::removeMeasure( int index )
+        int Part::getCount() const
         {
-            UNUSED_PARAMETER( index )
+            return 0;
         }
 
-        void Part::clearMeasure( int index )
+        Rational Part::getUnusedRemaining() const
         {
-            UNUSED_PARAMETER( index )
+            return Rational();
         }
+
+        Rational Part::getTotalDuration() const
+        {
+            return Rational();
+        }
+
+        INoteUP Part::getNote( int noteIndex ) const
+        {
+            UNUSED_PARAMETER( noteIndex )
+            return INoteUP();
+        }
+
+        void Part::addNote( const INoteUP & note )
+        {
+            UNUSED_PARAMETER( note )
+        }
+
+        void Part::removeNote( int noteIndex )
+        {
+            UNUSED_PARAMETER( noteIndex )
+        }
+
+        int Part::getGroupCount() const
+        {
+            return 0;
+        }
+
+        bool Part::getIsInGroup( int noteIndex ) const
+        {
+            UNUSED_PARAMETER( noteIndex )
+            return false;
+        }
+
+        int Part::getGroupIndex( int noteIndex ) const
+        {
+            UNUSED_PARAMETER( noteIndex )
+            return 0;
+        }
+
+        INoteGroupUP Part::getGroup( int groupIndex ) const
+        {
+            UNUSED_PARAMETER( groupIndex )
+            return INoteGroupUP();
+        }
+
+        void Part::addGroup( const INoteGroupUP & group )
+        {
+            UNUSED_PARAMETER( group )
+        }
+
+        void Part::removeGroup( int groupIndex )
+        {
+            UNUSED_PARAMETER( groupIndex )
+        }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PRIVATE
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         Part::StaffIter Part::getCurrentStaff()
         {

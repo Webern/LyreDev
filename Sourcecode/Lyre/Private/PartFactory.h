@@ -17,7 +17,8 @@ namespace Lyre
             
             virtual IPartUP create(
                 int numStaves,
-                const IInstrumentUP& instrument ) const;
+                const IInstrumentUP& instrument,
+                const IMasterTrackSPC& masterTrack ) const;
         };
     }
 }

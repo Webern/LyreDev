@@ -21,6 +21,10 @@
   <ItemGroup>
     <ClInclude Include="..\Sourcecode\Lyre\ForwardDeclare.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IAlter.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMasterTrack.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMasterTrackFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MasterTrack.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MasterTrackFactory.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IPart.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IPartFactory.h" />
     <ClInclude Include="..\Sourcecode\Lyre\Private\Part.h" />
@@ -106,6 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sourcecode\Lyre\IAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IMasterTrackFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MasterTrack.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MasterTrackFactory.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\IPartFactory.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\Part.cpp" />
     <ClCompile Include="..\Sourcecode\Lyre\Private\PartFactory.cpp" />
