@@ -66,6 +66,9 @@
 		299A620A1C7A0C73009C5B19 /* StepStrings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299A62081C7A0C73009C5B19 /* StepStrings.cpp */; };
 		29C3858E1C03611D00250931 /* ITupletDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C3858C1C03611D00250931 /* ITupletDef.cpp */; };
 		29C385911C03637800250931 /* IDurDot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C3858F1C03637800250931 /* IDurDot.cpp */; };
+		29CF96251C93E61000CBF5A7 /* IMasterTrackFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CF96231C93E61000CBF5A7 /* IMasterTrackFactory.cpp */; };
+		29CF962A1C93E64000CBF5A7 /* MasterTrackFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CF96271C93E64000CBF5A7 /* MasterTrackFactory.cpp */; };
+		29CF962B1C93E64000CBF5A7 /* MasterTrack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CF96291C93E64000CBF5A7 /* MasterTrack.cpp */; };
 		29D7D9571C759DA60055E912 /* DurBaseEighth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7D9551C759DA60055E912 /* DurBaseEighth.cpp */; };
 		29DA8BD51C5DB385007BCE4E /* NoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DA8BD31C5DB385007BCE4E /* NoteGroup.cpp */; };
 		29E0B2171C14165B002790B5 /* IDurationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E0B2151C14165B002790B5 /* IDurationFactory.cpp */; };
@@ -210,6 +213,13 @@
 		29C3858D1C03611D00250931 /* ITupletDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITupletDef.h; path = ../../Sourcecode/Lyre/ITupletDef.h; sourceTree = "<group>"; };
 		29C3858F1C03637800250931 /* IDurDot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IDurDot.cpp; path = ../../Sourcecode/Lyre/IDurDot.cpp; sourceTree = "<group>"; };
 		29C385901C03637800250931 /* IDurDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDurDot.h; path = ../../Sourcecode/Lyre/IDurDot.h; sourceTree = "<group>"; };
+		29CF96221C93E61000CBF5A7 /* IMasterTrackFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMasterTrackFactory.h; path = ../../Sourcecode/Lyre/IMasterTrackFactory.h; sourceTree = "<group>"; };
+		29CF96231C93E61000CBF5A7 /* IMasterTrackFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IMasterTrackFactory.cpp; path = ../../Sourcecode/Lyre/IMasterTrackFactory.cpp; sourceTree = "<group>"; };
+		29CF96241C93E61000CBF5A7 /* IMasterTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMasterTrack.h; path = ../../Sourcecode/Lyre/IMasterTrack.h; sourceTree = "<group>"; };
+		29CF96261C93E64000CBF5A7 /* MasterTrackFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterTrackFactory.h; path = ../../Sourcecode/Lyre/Private/MasterTrackFactory.h; sourceTree = "<group>"; };
+		29CF96271C93E64000CBF5A7 /* MasterTrackFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MasterTrackFactory.cpp; path = ../../Sourcecode/Lyre/Private/MasterTrackFactory.cpp; sourceTree = "<group>"; };
+		29CF96281C93E64000CBF5A7 /* MasterTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterTrack.h; path = ../../Sourcecode/Lyre/Private/MasterTrack.h; sourceTree = "<group>"; };
+		29CF96291C93E64000CBF5A7 /* MasterTrack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MasterTrack.cpp; path = ../../Sourcecode/Lyre/Private/MasterTrack.cpp; sourceTree = "<group>"; };
 		29D7D9551C759DA60055E912 /* DurBaseEighth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DurBaseEighth.cpp; path = ../../Sourcecode/Lyre/Private/DurBaseEighth.cpp; sourceTree = "<group>"; };
 		29D7D9561C759DA60055E912 /* DurBaseEighth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurBaseEighth.h; path = ../../Sourcecode/Lyre/Private/DurBaseEighth.h; sourceTree = "<group>"; };
 		29DA8BD21C5DB385007BCE4E /* INoteGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INoteGroup.h; path = ../../Sourcecode/Lyre/INoteGroup.h; sourceTree = "<group>"; };
@@ -260,6 +270,13 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				29CF96261C93E64000CBF5A7 /* MasterTrackFactory.h */,
+				29CF96271C93E64000CBF5A7 /* MasterTrackFactory.cpp */,
+				29CF96281C93E64000CBF5A7 /* MasterTrack.h */,
+				29CF96291C93E64000CBF5A7 /* MasterTrack.cpp */,
+				29CF96221C93E61000CBF5A7 /* IMasterTrackFactory.h */,
+				29CF96231C93E61000CBF5A7 /* IMasterTrackFactory.cpp */,
+				29CF96241C93E61000CBF5A7 /* IMasterTrack.h */,
 				291FB0681C8FF91100C838B5 /* PartFactory.h */,
 				291FB0691C8FF91100C838B5 /* PartFactory.cpp */,
 				291FB06A1C8FF91100C838B5 /* Part.h */,
@@ -468,6 +485,7 @@
 				296D726D1BF8E9EE0049B0EA /* DurBaseWhole.cpp in Sources */,
 				291659F61C8EA4E50046E63F /* Instrument.cpp in Sources */,
 				29DA8BD51C5DB385007BCE4E /* NoteGroup.cpp in Sources */,
+				29CF96251C93E61000CBF5A7 /* IMasterTrackFactory.cpp in Sources */,
 				2973E96D1C8C99240021E067 /* RangeFactory.cpp in Sources */,
 				29109E461BE55A1B001FF3E6 /* Step.cpp in Sources */,
 				29187A5E1C06B63300F89779 /* ITupletDefFactory.cpp in Sources */,
@@ -517,6 +535,7 @@
 				29C3858E1C03611D00250931 /* ITupletDef.cpp in Sources */,
 				29109DF91BE559F2001FF3E6 /* Rational.cpp in Sources */,
 				291F98111BF03F89008026BF /* INote.cpp in Sources */,
+				29CF962B1C93E64000CBF5A7 /* MasterTrack.cpp in Sources */,
 				299A620A1C7A0C73009C5B19 /* StepStrings.cpp in Sources */,
 				290989CD1C0390B20040138E /* IDurDotFactory.cpp in Sources */,
 				290989D71C03AA1A0040138E /* DurDot.cpp in Sources */,
@@ -528,6 +547,7 @@
 				291FB06D1C8FF91100C838B5 /* Part.cpp in Sources */,
 				291FB06C1C8FF91100C838B5 /* PartFactory.cpp in Sources */,
 				296D72671BF8E9EE0049B0EA /* DurBase256th.cpp in Sources */,
+				29CF962A1C93E64000CBF5A7 /* MasterTrackFactory.cpp in Sources */,
 				296D72631BF8E9EE0049B0EA /* DurBase16th.cpp in Sources */,
 				29109E401BE55A1B001FF3E6 /* Pitch.cpp in Sources */,
 				29109DF71BE559F2001FF3E6 /* IStep.cpp in Sources */,

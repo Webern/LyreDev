@@ -5,6 +5,8 @@
 #include "Lyre/IPart.h"
 #include "Lyre/IInstrumentFactory.h"
 #include "Lyre/IRangeFactory.h"
+#include "Lyre/IMasterTrackFactory.h"
+
 #include <sstream>
 
 using namespace Lyre;
@@ -18,6 +20,7 @@ namespace
         IPartFactoryUPC partFactory;
         IInstrumentFactoryUPC instrumentFactory;
         IRangeFactoryUPC rangeFactory;
+        IMasterTrackFactoryUPC masterTrackFactory;
         
         InstrumentName name1;
         IRangeUPC range1;
@@ -27,6 +30,7 @@ namespace
         :partFactory( createPartFactory() )
         ,instrumentFactory( createInstrumentFactory() )
         ,rangeFactory( createRangeFactory() )
+        ,masterTrackFactory( createMasterTrackFactory() )
         ,name1( "Instrument 1", "Instr 1" )
         ,range1( rangeFactory->create( "A2", "C7" ) )
         ,instrument1( instrumentFactory->create( name1, range1->clone() ) )
@@ -37,7 +41,9 @@ namespace
 TEST( toStream, Part )
 {
     Factories f;
-    IMasterTrackSPC masterTrack;
+    MasterTrackParams params;
+    params.measureCount = 10;
+    IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
     IPartUP part = f.partFactory->create( 1, f.instrument1->clone(), masterTrack );
     std::stringstream ss;
     part->toStream( ss );

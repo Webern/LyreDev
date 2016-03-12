@@ -15,7 +15,8 @@ namespace Lyre
         public:
             virtual ~MasterTrackFactory();
             
-            virtual IMasterTrackUP create() const;
+            virtual IMasterTrackUP create( const MasterTrackParams& params ) const;
+            virtual IMasterTrackUP create( MasterTrackParams&& params ) const;
         };
     }
 }

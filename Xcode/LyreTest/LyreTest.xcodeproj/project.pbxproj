@@ -68,6 +68,7 @@
 		29CAD4511BE6673C00C0CA90 /* MockPitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4491BE6673C00C0CA90 /* MockPitchName.cpp */; };
 		29CAD4521BE6673C00C0CA90 /* MockStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD44B1BE6673C00C0CA90 /* MockStep.cpp */; };
 		29CAD4551BE66B0800C0CA90 /* MockEnumCats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD4531BE66B0800C0CA90 /* MockEnumCats.cpp */; };
+		29CF96211C93E5F400CBF5A7 /* TestMasterTrack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CF96201C93E5F400CBF5A7 /* TestMasterTrack.cpp */; };
 		29E4D2201C06C5260038E6FC /* TestITupletDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E4D21E1C06C5260038E6FC /* TestITupletDef.cpp */; };
 		29E4D2211C06C5260038E6FC /* TestITupletDefFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E4D21F1C06C5260038E6FC /* TestITupletDefFactory.cpp */; };
 		29F3B5171C0223C100746DA5 /* TestThrow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29F3B5161C0223C100746DA5 /* TestThrow.cpp */; };
@@ -168,6 +169,7 @@
 		29CAD44C1BE6673C00C0CA90 /* MockStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockStep.h; path = ../../Sourcecode/LyreTest/Mock/MockStep.h; sourceTree = "<group>"; };
 		29CAD4531BE66B0800C0CA90 /* MockEnumCats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockEnumCats.cpp; path = ../../Sourcecode/LyreTest/Mock/MockEnumCats.cpp; sourceTree = "<group>"; };
 		29CAD4541BE66B0800C0CA90 /* MockEnumCats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockEnumCats.h; path = ../../Sourcecode/LyreTest/Mock/MockEnumCats.h; sourceTree = "<group>"; };
+		29CF96201C93E5F400CBF5A7 /* TestMasterTrack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestMasterTrack.cpp; path = ../../Sourcecode/LyreTest/Tests/TestMasterTrack.cpp; sourceTree = "<group>"; };
 		29D7D9581C759FF60055E912 /* VsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VsTest.h; path = ../../Sourcecode/LyreTest/VsTest/VsTest.h; sourceTree = "<group>"; };
 		29E4D21E1C06C5260038E6FC /* TestITupletDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestITupletDef.cpp; path = ../../Sourcecode/LyreTest/Tests/TestITupletDef.cpp; sourceTree = "<group>"; };
 		29E4D21F1C06C5260038E6FC /* TestITupletDefFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestITupletDefFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestITupletDefFactory.cpp; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		29CAD43E1BE661F500C0CA90 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				29CF96201C93E5F400CBF5A7 /* TestMasterTrack.cpp */,
 				291FB0621C8FF8E200C838B5 /* TestPart.cpp */,
 				291659F21C8EA33D0046E63F /* TestInstrument.cpp */,
 				2973E9621C8C98E70021E067 /* TestRange.cpp */,
@@ -388,6 +391,7 @@
 				29E4D2201C06C5260038E6FC /* TestITupletDef.cpp in Sources */,
 				29F3B5191C022AD300746DA5 /* TestDurBaseFactory.cpp in Sources */,
 				29CAD4041BE6613400C0CA90 /* main.cpp in Sources */,
+				29CF96211C93E5F400CBF5A7 /* TestMasterTrack.cpp in Sources */,
 				29CAD4021BE6613400C0CA90 /* cpulTestRegistry.cpp in Sources */,
 				296D72971BF8EB960049B0EA /* TestDurBaseLonga.cpp in Sources */,
 				291FB0631C8FF8E200C838B5 /* TestPart.cpp in Sources */,

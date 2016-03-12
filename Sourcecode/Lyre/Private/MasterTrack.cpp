@@ -7,9 +7,21 @@ namespace Lyre
     {
         MasterTrack::~MasterTrack()
         {
+            
         }
 
-        MasterTrack::MasterTrack()
+        MasterTrack::MasterTrack( const MasterTrackParams& params )
+        :myTimeTrack()
+        {
+            for ( auto it = params.timeTrack.cbegin();
+                  it != params.timeTrack.cend(); ++it )
+            {
+                myTimeTrack[it->first] = it->second->clone();
+            }
+        }
+        
+        MasterTrack::MasterTrack( MasterTrackParams&& params )
+        :myTimeTrack( std::move( params.timeTrack ) )
         {
 
         }
@@ -44,6 +56,11 @@ namespace Lyre
         std::ostream& MasterTrack::toStream( std::ostream& os ) const
         {
             return os << "MasterTrack not implemented";
+        }
+        
+        const TimeTrack& MasterTrack::getTimeTrack() const
+        {
+            return myTimeTrack;
         }
     }
 }

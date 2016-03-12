@@ -13,7 +13,8 @@ namespace Lyre
         {
         public:
             virtual ~MasterTrack();
-            MasterTrack();
+            MasterTrack( const MasterTrackParams& params );
+            MasterTrack( MasterTrackParams&& params );
             MasterTrack( const MasterTrack& other );
             MasterTrack( MasterTrack&& other );
             MasterTrack& operator=( const MasterTrack& other );
@@ -22,8 +23,10 @@ namespace Lyre
             virtual IMasterTrackUP clone() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
             
-        private:
+            virtual const TimeTrack& getTimeTrack() const;
             
+        private:
+            TimeTrack myTimeTrack;
         };
     } 
 }

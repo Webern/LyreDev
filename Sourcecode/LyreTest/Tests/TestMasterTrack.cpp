@@ -16,7 +16,10 @@ namespace
 
 TEST( toStream, MasterTrack )
 {
-    IMasterTrackUP ts = factory->create();
+    MasterTrackParams params;
+    params.measureCount = 10;
+    
+    IMasterTrackUP ts = factory->create( params );
     std::stringstream ss;
     ts->toStream( ss );
     String expected = "MasterTrack not implemented";
