@@ -23,6 +23,7 @@ namespace Lyre
         virtual ~IMasterTrack() {};
         virtual IMasterTrackUP clone() const = 0;
         
+		virtual int getMeasureCount() const = 0;
         virtual ITimeSignatureUPC getTimeSignature( int measureIndex ) const = 0;
         
     };

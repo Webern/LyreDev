@@ -34,11 +34,11 @@ namespace Lyre
             virtual IPartUP move() noexcept;
             virtual std::ostream& toStream( std::ostream& os ) const;
 
-            void setStaffContext( int staffIndex );
-            int getStaffContext() const;
+            virtual void setStaffContext( int staffIndex );
+            virtual int getStaffContext() const;
             
-            int getMeasureCount() const;
-            const IMeasureUP& getMeasure( int measureIndex ) const;
+            virtual int getMeasureCount() const;
+            virtual const IMeasureUP& getMeasure( int measureIndex ) const;
 
         private:
 
@@ -75,7 +75,6 @@ namespace Lyre
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             void initializeMeasures();
-            StaffIter getCurrentStaff();
 
         };
     } 

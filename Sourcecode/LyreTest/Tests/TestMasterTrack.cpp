@@ -47,6 +47,7 @@ TEST( ctorThrowTimeTrackIndex0, MasterTrack )
     }
     catch( std::exception& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -71,6 +72,7 @@ TEST( ctorThrowTimeTrackIndexOutOfRange, MasterTrack )
     }
     catch( std::exception& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -93,6 +95,7 @@ TEST( ctorThrowMeasureCountNegative, MasterTrack )
     }
     catch( std::exception& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -117,6 +120,7 @@ TEST( ctorThrowTimeTrackHasNegative, MasterTrack )
     }
     catch( std::exception& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -190,6 +194,7 @@ TEST( getTimeSignatureThrowNegative, MasterTrack )
     }
     catch( std::exception& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
@@ -212,8 +217,22 @@ TEST( getTimeSignatureThrowOutOfRange, MasterTrack )
     }
     catch( std::exception& e )
     {
+        UNUSED_PARAMETER( e )
         isExceptionThrown = true;
     }
     CHECK( isExceptionThrown )
+}
+T_END
+
+
+TEST( getMeasureCount, MasterTrack )
+{
+	Factories f;
+	MasterTrackParams params;
+	params.measureCount = 101;
+	params.timeTrack[0] = f.fourFour->clone();
+	params.timeTrack[6] = f.threeFour->clone();
+	IMasterTrackUP masterTrack = factory->create( params );
+	CHECK_EQUAL( 101, masterTrack->getMeasureCount() );
 }
 T_END

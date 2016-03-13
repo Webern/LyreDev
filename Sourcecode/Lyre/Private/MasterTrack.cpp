@@ -51,7 +51,11 @@ namespace Lyre
         {
             return IMasterTrackUP{ new MasterTrack{ *this } };
         }
-        
+        
+		int MasterTrack::getMeasureCount() const
+		{
+			return myMeasureCount;
+		}
         ITimeSignatureUPC MasterTrack::getTimeSignature( int measureIndex ) const
         {
             THROW_IF_BAD_VALUE( measureIndex, 0, myMeasureCount - 1 )

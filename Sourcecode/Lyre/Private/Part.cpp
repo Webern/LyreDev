@@ -42,12 +42,63 @@ namespace Lyre
         }
 
         
+		IPartUP Part::clone() const
+        {
+			throw "not implemented";
+        }
+
+
+		IPartUP Part::move() noexcept
+        {
+			throw "not implemented";
+        }
+
         
+		std::ostream& Part::toStream( std::ostream& os ) const
+        {
+			UNUSED_PARAMETER( os );
+			throw "not implemented";
+        }
+
+        
+		void Part::setStaffContext( int staffIndex )
+        {
+			UNUSED_PARAMETER( staffIndex );
+			throw "not implemented";
+        }
+
+        
+		int Part::getStaffContext() const
+        {
+			throw "not implemented";
+        }
+        
+
+		int Part::getMeasureCount() const
+        {
+			throw "not implemented";
+        }
+
+        
+		const IMeasureUP& Part::getMeasure( int measureIndex ) const
+        {
+			UNUSED_PARAMETER( measureIndex );
+			throw "not implemented";
+        }
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+		void Part::initializeMeasures()
+		{
+			for ( int i = 0; i < myMasterTrack->getMeasureCount(); ++i )
+			{
+
+			}
+		}
 
     }
 }
