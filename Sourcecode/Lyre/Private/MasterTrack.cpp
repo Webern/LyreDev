@@ -79,6 +79,7 @@ namespace Lyre
             THROW_IF_BAD_VALUE( timeTrack.size(), 1, INT_MAX )
             if( timeTrack.cbegin()->first != 0 )
             {
+                THROW_IF_BAD_VALUE( timeTrack.cbegin()->first, 0, INT_MAX )
                 THROW( "time track must specify a time signature for measure 0" )
             }
             for ( auto it = timeTrack.cbegin();

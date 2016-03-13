@@ -122,3 +122,98 @@ TEST( ctorThrowTimeTrackHasNegative, MasterTrack )
     CHECK( isExceptionThrown )
 }
 T_END
+
+
+TEST( getTimeTrack, MasterTrack )
+{
+    Factories f;
+    MasterTrackParams params;
+    params.measureCount = 10;
+    params.timeTrack[0] = f.fourFour->clone();
+    params.timeTrack[6] = f.threeFour->clone();
+    IMasterTrackUP masterTrack = factory->create( params );
+    ITimeSignatureUPC actual = masterTrack->getTimeSignature( 0 );
+    ITimeSignatureUPC expected = f.fourFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+    
+    actual = masterTrack->getTimeSignature( 1 );
+    expected = f.fourFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+    
+    actual = masterTrack->getTimeSignature( 2 );
+    expected = f.fourFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+    
+    actual = masterTrack->getTimeSignature( 3 );
+    expected = f.fourFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+    
+    actual = masterTrack->getTimeSignature( 4 );
+    expected = f.fourFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+    
+    actual = masterTrack->getTimeSignature( 5 );
+    expected = f.fourFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+    
+    actual = masterTrack->getTimeSignature( 6 );
+    expected = f.threeFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+    
+    actual = masterTrack->getTimeSignature( 7 );
+    expected = f.threeFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+    
+    actual = masterTrack->getTimeSignature( 8 );
+    expected = f.threeFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+    
+    actual = masterTrack->getTimeSignature( 9 );
+    expected = f.threeFour->clone();
+    CHECK_EQUAL( expected->getTop(), actual->getTop() );
+}
+T_END
+
+TEST( getTimeSignatureThrowNegative, MasterTrack )
+{
+    Factories f;
+    MasterTrackParams params;
+    params.measureCount = 10;
+    params.timeTrack[0] = f.fourFour->clone();
+    params.timeTrack[5] = f.threeFour->clone();
+    IMasterTrackUP masterTrack = factory->create( params );
+    bool isExceptionThrown = false;
+    try
+    {
+        auto t  = masterTrack->getTimeSignature( -1 );
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch( std::exception& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+TEST( getTimeSignatureThrowOutOfRange, MasterTrack )
+{
+    Factories f;
+    MasterTrackParams params;
+    params.measureCount = 10;
+    params.timeTrack[0] = f.fourFour->clone();
+    params.timeTrack[5] = f.threeFour->clone();
+    IMasterTrackUP masterTrack = factory->create( params );
+    bool isExceptionThrown = false;
+    try
+    {
+        auto t  = masterTrack->getTimeSignature( 10 );
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch( std::exception& e )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
