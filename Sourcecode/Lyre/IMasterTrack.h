@@ -17,14 +17,13 @@ namespace Lyre
         TimeTrack timeTrack;
     };
     
-    class PUBLIC IMasterTrack : public IStreamable
+    class PUBLIC IMasterTrack
     {
     public:
         virtual ~IMasterTrack() {};
         virtual IMasterTrackUP clone() const = 0;
-        virtual std::ostream& toStream( std::ostream& os ) const = 0;
         
-        virtual const TimeTrack& getTimeTrack() const = 0;
+        virtual ITimeSignatureUPC getTimeSignature( int measureIndex ) const = 0;
         
     };
 }

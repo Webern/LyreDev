@@ -21,12 +21,15 @@ namespace Lyre
             MasterTrack& operator=( MasterTrack&& other );
             
             virtual IMasterTrackUP clone() const;
-            virtual std::ostream& toStream( std::ostream& os ) const;
             
-            virtual const TimeTrack& getTimeTrack() const;
+            virtual ITimeSignatureUPC getTimeSignature( int measureIndex ) const;
             
         private:
+            int myMeasureCount;
             TimeTrack myTimeTrack;
+            
+            void setMeasureCountIfValid( int measureCount );
+            void setTimeTrackIfValid( const TimeTrack& timeTrack );
         };
     } 
 }

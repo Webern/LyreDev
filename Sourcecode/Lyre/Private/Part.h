@@ -18,17 +18,17 @@ namespace Lyre
         public:
             virtual ~Part();
 
-            Part();
+            //Part();
             
             Part(
                 int numStaves,
                 const IInstrumentUP& instrument,
                 const IMasterTrackSPC& masterTrack );
 
-            Part( const Part& other );
-            Part( Part&& other )  noexcept;
-            Part& operator=( const Part& other );
-            Part& operator=( Part&& other )  noexcept;
+            //Part( const Part& other );
+            //Part( Part&& other )  noexcept;
+            //Part& operator=( const Part& other );
+            //Part& operator=( Part&& other )  noexcept;
 
             virtual IPartUP clone() const;
             virtual IPartUP move() noexcept;
@@ -36,34 +36,16 @@ namespace Lyre
 
             void setStaffContext( int staffIndex );
             int getStaffContext() const;
-            void setMessureContext( int measureIndex );
-            int getMeasureContext() const;
-            void setLayerContext( int layerContext );
-            int getLayerContext() const;
-
-            virtual ITimeSignatureUP getTimeSignature() const;
-
-            virtual void clearLayer();
-            virtual void clearMeasure();
-        
-            virtual bool getIsEmpty() const;
-            virtual bool getIsComplete() const;
-            virtual int getCount() const;
-            virtual Rational getUnusedRemaining() const;
-            virtual Rational getTotalDuration() const;
-            virtual INoteUP getNote( int noteIndex ) const;
-            virtual void addNote( const INoteUP& note );
-            virtual void removeNote( int noteIndex );
             
-            virtual int getGroupCount() const;
-            virtual bool getIsInGroup( int noteIndex ) const;
-            virtual int getGroupIndex( int noteIndex ) const;
-            virtual INoteGroupUP getGroup( int groupIndex ) const;
-            virtual void addGroup( const INoteGroupUP& group );
-            virtual void removeGroup( int groupIndex );
+            int getMeasureCount() const;
+            const IMeasureUP& getMeasure( int measureIndex ) const;
 
         private:
-            
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PRIVATE TYPEDEFS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             using Measures = VecIMeasureUP;
             using MeasureIter = VecIMeasureUPIter;
             using MeasureIterConst = VecIMeasureUPIterC;
@@ -72,22 +54,29 @@ namespace Lyre
             using StaffIter = Staves::iterator;
             using StaffIterConst = Staves::const_iterator;
             
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PRIVATE DATA
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
             int myNumStaves;
             IInstrumentUPC myInstrument;
             int myStaffContext;
-            int myMeasureContext;
-            int myLayerContext;
-            Staves myStaves;
             IMasterTrackSPC myMasterTrack;
+            Staves myStaves;
+            
+            // caching
+            mutable int myCurrentStaffIndex;
+            mutable StaffIter myCurrentStaff;
+            mutable int myCurrentMeasureIndex;
+            mutable MeasureIter myCurrentMeasure;
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PRIVATE FUNCTIONS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            void initializeMeasures();
             StaffIter getCurrentStaff();
-            StaffIterConst getCurrentStaffConst() const;
-            MeasureIter getMeasureIter( int index );
-            MeasureIterConst getMeasureIterConst( int index ) const;
 
-            // callbacks from MasterTrack
-            // void deleteMeasures( const std::vector<int>& measureToDelete );
-            // void appendMeasures( std::map<int, ITimeSignatureUPC>& timeSignatureMap );
         };
     } 
 }
