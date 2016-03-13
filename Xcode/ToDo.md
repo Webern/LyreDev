@@ -12,21 +12,3 @@ implement IPartFactory.cpp
 test clearMasure()
 test clearLayer()
 test clear() - noteGroup
-
-**Add MasterTrack to Xcode**
-add to Xcode IMasterTrack.h
-add to Xcode IMasterTrackFactory.h
-add to Xcode IMasterTrackFactory.cpp
-add to Xcode MasterTrack.h
-add to Xcode MasterTrack.cpp
-add to Xcode MasterTrackFactory.h
-add to Xcode MasterTrackFactory.cpp
-
-**Implement MasterTrack**
-implement MasterTrack.h
-implement MasterTrack.cpp
-implement IMasterTrack.h
-implement MasterTrackFactory.h
-implement MasterTrackFactory.cpp
-implement IMasterTrackFactory.h
-implement IMasterTrackFactory.cpp
