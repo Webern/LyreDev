@@ -11,13 +11,12 @@ namespace Lyre
         }
 
         MasterTrack::MasterTrack( const MasterTrackParams& params )
-        :myTimeTrack()
+        : myMeasureCount( 1 )
+        , myTimeTrack()
         {
-            for ( auto it = params.timeTrack.cbegin();
-                  it != params.timeTrack.cend(); ++it )
-            {
-                myTimeTrack[it->first] = it->second->clone();
-            }
+            setMeasureCountIfValid( params.measureCount );
+            setTimeTrackIfValid( params.timeTrack );
+            
         }
         
         MasterTrack::MasterTrack( MasterTrackParams&& params )
@@ -52,15 +51,42 @@ namespace Lyre
         {
             return IMasterTrackUP{ new MasterTrack{ *this } };
         }
-
-        std::ostream& MasterTrack::toStream( std::ostream& os ) const
+        
+        ITimeSignatureUPC MasterTrack::getTimeSignature( int measureIndex ) const
         {
-            return os << "MasterTrack not implemented";
+            THROW_IF_BAD_VALUE( measureIndex, 0, myMeasureCount - 1 )
+            auto previousIter = myTimeTrack.cbegin();
+            for ( auto it = myTimeTrack.cbegin();
+                  it != myTimeTrack.cend(); ++it )
+            {
+                if ( it->first > measureIndex )
+                {
+                    break;
+                }
+                previousIter = it;
+            }
+            return previousIter->second->clone();
         }
         
-        const TimeTrack& MasterTrack::getTimeTrack() const
+        void MasterTrack::setMeasureCountIfValid( int measureCount )
         {
-            return myTimeTrack;
+            THROW_IF_BAD_VALUE( measureCount, 0, INT_MAX )
+            myMeasureCount = measureCount;
+        }
+        
+        void MasterTrack::setTimeTrackIfValid( const TimeTrack& timeTrack )
+        {
+            THROW_IF_BAD_VALUE( timeTrack.size(), 1, INT_MAX )
+            if( timeTrack.cbegin()->first != 0 )
+            {
+                THROW( "time track must specify a time signature for measure 0" )
+            }
+            for ( auto it = timeTrack.cbegin();
+                 it != timeTrack.cend(); ++it )
+            {
+                THROW_IF_BAD_VALUE( it->first, 0, myMeasureCount-1 );
+                myTimeTrack[it->first] = it->second->clone();
+            }
         }
     }
 }
