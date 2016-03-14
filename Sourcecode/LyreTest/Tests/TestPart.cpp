@@ -38,17 +38,16 @@ namespace
     };
 }
 
-TEST( toStream, Part )
+TEST( abortProblemOnVisualStudio, Part )
 {
+
     Factories f;
-    MasterTrackParams params;
-    params.measureCount = 10;
+
+	MasterTrackParams params;
+	params.measureCount = 10;
     IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
-    IPartUP part = f.partFactory->create( 1, f.instrument1->clone(), masterTrack );
-    std::stringstream ss;
-    part->toStream( ss );
-    String expected = "//////////   Instrument 1   //////////";
-    String actual = ss.str();
-    CHECK_EQUAL( expected, actual )
+	auto i = f.instrument1->clone();
+    IPartUP part = f.partFactory->create( 1, std::move( i ), masterTrack );
+
 }
 T_END
