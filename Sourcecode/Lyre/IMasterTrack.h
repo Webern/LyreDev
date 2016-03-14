@@ -7,7 +7,9 @@
 namespace Lyre
 {
     FORWARD_DECLARE(IMasterTrack)
-    
+    FORWARD_DECLARE(IMeasure)
+	FORWARD_DECLARE(IMeasureFactory)
+
     using MeasureIndex = int;
     using TimeTrack = std::map<MeasureIndex,ITimeSignatureUPC>;
     
@@ -25,6 +27,7 @@ namespace Lyre
         
 		virtual int getMeasureCount() const = 0;
         virtual ITimeSignatureUPC getTimeSignature( int measureIndex ) const = 0;
+		virtual std::vector<IMeasureUP> createMeasures() const = 0;
         
     };
 }

@@ -1,5 +1,6 @@
 #include "Lyre/Private/MasterTrack.h"
 #include "Lyre/Private/throw.h"
+#include "Lyre/IMeasureFactory.h"
 
 namespace Lyre
 {
@@ -13,7 +14,9 @@ namespace Lyre
         MasterTrack::MasterTrack( const MasterTrackParams& params )
         : myMeasureCount( 1 )
         , myTimeTrack()
+		, myMeasureFactory( nullptr )
         {
+			myMeasureFactory = createMeasureFactory();
             setMeasureCountIfValid( params.measureCount );
             setTimeTrackIfValid( params.timeTrack );
             
@@ -71,6 +74,23 @@ namespace Lyre
             }
             return previousIter->second->clone();
         }
+
+		std::vector<IMeasureUP> MasterTrack::createMeasures() const
+		{
+			std::vector<IMeasureUP> measures;
+			int measureIndex = 0;
+			auto timeSignature = myTimeTrack.cbegin()->second->clone();
+			for ( auto it = myTimeTrack.cbegin();
+			      it != myTimeTrack.cend(); ++it )
+			{
+				for ( ; measureIndex < it->first; ++measureIndex )
+				{
+					measures.push_back( myMeasureFactory->create( timeSignature ) );
+				}
+				timeSignature = it->second->clone();
+			}
+			return std::move( measures );
+		}
         
         void MasterTrack::setMeasureCountIfValid( int measureCount )
         {

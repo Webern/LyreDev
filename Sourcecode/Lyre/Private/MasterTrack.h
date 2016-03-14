@@ -8,7 +8,7 @@ namespace Lyre
     namespace Private
     {
         FORWARD_DECLARE(MasterTrack)
-        
+
         class MasterTrack : public IMasterTrack
         {
         public:
@@ -24,11 +24,13 @@ namespace Lyre
             
 			virtual int getMeasureCount() const;
             virtual ITimeSignatureUPC getTimeSignature( int measureIndex ) const;
+			virtual std::vector<IMeasureUP> createMeasures() const;
             
         private:
             int myMeasureCount;
             TimeTrack myTimeTrack;
-            
+			IMeasureFactoryUPC myMeasureFactory;
+
             void setMeasureCountIfValid( int measureCount );
             void setTimeTrackIfValid( const TimeTrack& timeTrack );
         };
