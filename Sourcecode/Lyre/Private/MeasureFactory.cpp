@@ -10,18 +10,18 @@ namespace Lyre
     {
         MeasureFactory::~MeasureFactory() {}
         
-        IMeasureUP MeasureFactory::create()
+        IMeasureUP MeasureFactory::create() const
         {
             return create( DEFAULT_TIME_SIGNATURE_TOP, DEFAULT_TIME_SIGNATURE_BOTTOM );
         }
 
-        IMeasureUP MeasureFactory::create( int timeSignatureTop, int timeSignatureBottom )
+        IMeasureUP MeasureFactory::create( int timeSignatureTop, int timeSignatureBottom ) const
         {
             ITimeSignatureFactoryUP t = createTimeSignatureFactory();
             return IMeasureUP{ new Measure{ t->create( timeSignatureTop, timeSignatureBottom ) } };
         }
 
-        IMeasureUP MeasureFactory::create( const ITimeSignatureUP& timeSignature )
+        IMeasureUP MeasureFactory::create( const ITimeSignatureUP& timeSignature ) const
         {
             return IMeasureUP( new Measure{ timeSignature->clone() } );
         }
