@@ -15,10 +15,11 @@ namespace Lyre
         public:
             virtual ~TimeSignatureFactory();
             
-            virtual ITimeSignatureUP create( const IBeatPatternUP& beatPattern,
-                                             int top, int bottom );
+            virtual ITimeSignatureUP create(
+                const IBeatPatternUP& beatPattern,
+                int top, int bottom ) const;
             
-            virtual ITimeSignatureUP create( int top, int bottom );
+            virtual ITimeSignatureUP create( int top, int bottom ) const;
         };
     }
 }

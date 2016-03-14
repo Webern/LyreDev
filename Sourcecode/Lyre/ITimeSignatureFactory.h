@@ -22,11 +22,11 @@ namespace Lyre
     {
     public:
         virtual ~ITimeSignatureFactory() {}
-        virtual ITimeSignatureUP create( int top, int bottom ) = 0;
+        virtual ITimeSignatureUP create( int top, int bottom ) const = 0;
         
         virtual ITimeSignatureUP create(
             const IBeatPatternUP& beatPattern,
             int top,
-            int bottom ) = 0;
+            int bottom ) const = 0;
     };
 }

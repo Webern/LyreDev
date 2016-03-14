@@ -14,7 +14,6 @@ namespace Lyre
         public:
             virtual ~MasterTrack();
             MasterTrack( const MasterTrackParams& params );
-            MasterTrack( MasterTrackParams&& params );
             MasterTrack( const MasterTrack& other );
             MasterTrack( MasterTrack&& other );
             MasterTrack& operator=( const MasterTrack& other );

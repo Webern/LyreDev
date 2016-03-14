@@ -21,12 +21,6 @@ namespace Lyre
             setTimeTrackIfValid( params.timeTrack );
             
         }
-        
-        MasterTrack::MasterTrack( MasterTrackParams&& params )
-        :myTimeTrack( std::move( params.timeTrack ) )
-        {
-
-        }
 
         MasterTrack::MasterTrack( const MasterTrack& other )
         {
@@ -54,7 +48,8 @@ namespace Lyre
         {
             return IMasterTrackUP{ new MasterTrack{ *this } };
         }
-        
+        
+
 		int MasterTrack::getMeasureCount() const
 		{
 			return myMeasureCount;
@@ -89,7 +84,12 @@ namespace Lyre
 				}
 				timeSignature = it->second->clone();
 			}
-			return std::move( measures );
+			for ( ; measureIndex < myMeasureCount; ++measureIndex )
+            {
+                measures.push_back( myMeasureFactory->create( timeSignature ) );
+            }
+            return std::move( measures );
+            
 		}
         
         void MasterTrack::setMeasureCountIfValid( int measureCount )

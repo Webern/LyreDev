@@ -12,14 +12,14 @@ namespace Lyre
         ITimeSignatureUP TimeSignatureFactory::create(
             const IBeatPatternUP& beatPattern,
             int top,
-            int bottom )
+            int bottom ) const
         {
             return ITimeSignatureUP{ new TimeSignature{ beatPattern->clone(), top, bottom } };
         }
         
         ITimeSignatureUP TimeSignatureFactory::create(
             int top,
-            int bottom )
+            int bottom ) const
         {
             return ITimeSignatureUP{ new TimeSignature{ top, bottom } };
         }
