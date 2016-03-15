@@ -41,11 +41,9 @@ namespace
     };
 }
 
-TEST( abortProblemOnVisualStudio, Part )
+TEST( ctorWorks, Part )
 {
-
     Factories f;
-
 	MasterTrackParams params;
 	params.measureCount = 10;
     params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
@@ -54,5 +52,20 @@ TEST( abortProblemOnVisualStudio, Part )
 	auto i = f.instrument1->clone();
     IPartUP part = f.partFactory->create( 1, std::move( i ), masterTrack );
     CHECK( part != nullptr )
+}
+T_END
+
+
+TEST( ax, Part )
+{
+	Factories f;
+	MasterTrackParams params;
+	params.measureCount = 10;
+	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
+	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
+	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
+	auto i = f.instrument1->clone();
+	IPartUP part = f.partFactory->create( 1, std::move( i ), masterTrack );
+	CHECK( part != nullptr )
 }
 T_END

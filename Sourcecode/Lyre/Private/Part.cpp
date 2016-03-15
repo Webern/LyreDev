@@ -97,10 +97,8 @@ namespace Lyre
 		{
 			for ( int i = 0; i < myNumStaves; ++i )
 			{
-				// this line crashes in visual studio
 				myStaves.push_back( std::move( myMasterTrack->createMeasures() ) );
 			}
 		}
-
     }
 }
