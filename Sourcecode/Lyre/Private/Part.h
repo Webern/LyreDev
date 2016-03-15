@@ -25,10 +25,10 @@ namespace Lyre
                 const IInstrumentUP& instrument,
                 const IMasterTrackSPC& masterTrack );
 
-            //Part( const Part& other );
-            //Part( Part&& other )  noexcept;
-            //Part& operator=( const Part& other );
-            //Part& operator=( Part&& other )  noexcept;
+            Part( const Part& other );
+            Part( Part&& other )  noexcept;
+            Part& operator=( const Part& other );
+            Part& operator=( Part&& other )  noexcept;
 
             virtual IPartUP clone() const;
             virtual IPartUP move() noexcept;
@@ -54,28 +54,33 @@ namespace Lyre
             using StaffIter = Staves::iterator;
             using StaffIterConst = Staves::const_iterator;
             
+            struct Context
+            {
+                int staffIndex;
+                StaffIter staffIter;
+                bool isStaffDirty;
+                int measureIndex;
+                MeasureIter measureIter;
+                bool isMeasureDirty;
+            };
+            
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE DATA
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
-            int myNumStaves;
             IInstrumentUPC myInstrument;
-            int myStaffContext;
             IMasterTrackSPC myMasterTrack;
             Staves myStaves;
-            
-            // caching
-            mutable int myCurrentStaffIndex;
-            mutable StaffIter myCurrentStaff;
-            mutable int myCurrentMeasureIndex;
-            mutable MeasureIter myCurrentMeasure;
+            mutable Context myContext;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE FUNCTIONS
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+            
+            void initializeStaves( int numStaves );
             void initializeMeasures();
-
+            StaffIter getStaffIter() const;
+            MeasureIter getMeasureIter() const;
         };
     } 
 }

@@ -1,6 +1,7 @@
 //PUBLIC
 #pragma once
 #include "Lyre/Lyre.h"
+#include "Lyre/IMeasure.h"
 
 namespace Lyre
 {
@@ -11,7 +12,13 @@ namespace Lyre
     public:
         virtual ~IPart() {};
         virtual IPartUP clone() const = 0;
+        virtual IPartUP move() noexcept = 0;
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         
+        virtual void setStaffContext( int staffIndex ) = 0;
+        virtual int getStaffContext() const = 0;
+        
+        virtual int getMeasureCount() const = 0;
+        virtual const IMeasureUP& getMeasure( int measureIndex ) const = 0;
     };
 }

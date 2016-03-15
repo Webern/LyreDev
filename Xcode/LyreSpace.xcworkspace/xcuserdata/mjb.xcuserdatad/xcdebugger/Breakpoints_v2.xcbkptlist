@@ -1258,9 +1258,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "TEST( abortProblemOnVisualStudio, Part )"
-            landmarkType = "7">
+            endingLineNumber = "56">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
