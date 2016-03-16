@@ -22,41 +22,78 @@ namespace Lyre
 			int numStaves,
 			const IInstrumentUP& instrument,
 			const IMasterTrackSPC & masterTrack )
+        : myInstrument( instrument->clone() )
+        , myMasterTrack( masterTrack )
+        , myStaves( static_cast<size_t>( numStaves ) )
+        , myContext()
 		{
-
+            initializeMeasures();
 		}
 
 		Part::Part( const Part& other )
+        : myInstrument( other.myInstrument->clone() )
+        , myMasterTrack( other.myMasterTrack )
+        , myStaves()
+        , myContext( other.myContext )
 		{
+            cloneStaves( other.myStaves );
+            myContext.isStaffDirty = true;
+            myContext.isMeasureDirty = true;
 		}
 
 		Part::Part( Part&& other ) noexcept
+        : myInstrument( std::move( other.myInstrument ) )
+        , myMasterTrack( std::move( other.myMasterTrack ) )
+        , myStaves( std::move( other.myStaves ) )
+        , myContext( std::move( other.myContext ) )
 		{
+            myContext.isStaffDirty = true;
+            myContext.isMeasureDirty = true;
 		}
 
 		Part& Part::operator=( const Part& other )
 		{
-			// TODO: insert return statement here
+			myInstrument = other.myInstrument->clone();
+            myMasterTrack = other.myMasterTrack;
+            myStaves.clear();
+            cloneStaves( other.myStaves );
+            myContext = other.myContext;
+            myContext.isStaffDirty = true;
+            myContext.isMeasureDirty = true;
+            return *this;
 		}
 
 		Part& Part::operator=( Part&& other ) noexcept
 		{
-			// TODO: insert return statement here
+			myInstrument = std::move( other.myInstrument->clone() );
+            myMasterTrack = std::move( other.myMasterTrack );
+            myStaves = std::move( other.myStaves );
+            myContext = std::move( other.myContext );
+            myContext.isStaffDirty = true;
+            myContext.isMeasureDirty = true;
+            return *this;
 		}
 
 		IPartUP Part::clone() const
 		{
-			return IPartUP();
+			return IPartUP( new Part( *this ) );
 		}
 
 		IPartUP Part::move() noexcept
 		{
-			return IPartUP();
+            Part* newPart = new Part( );
+            newPart->myInstrument = std::move( this->myInstrument->clone() );
+            newPart->myMasterTrack = std::move( this->myMasterTrack );
+            newPart->myStaves = std::move( this->myStaves );
+            newPart->myContext = std::move( this->myContext );
+            newPart->myContext.isStaffDirty = true;
+            newPart->myContext.isMeasureDirty = true;
+			return IPartUP( newPart );
 		}
 
 		std::ostream & Part::toStream( std::ostream & os ) const
 		{
-			// TODO: insert return statement here
+			return os << "not implemented";
 		}
 
 		void Part::setStaffContext( int staffIndex )
@@ -91,15 +128,15 @@ namespace Lyre
 // PRIVATE
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-		void Part::initializeStaves( int numStaves )
-		{
-			for ( int i = 0; i < numStaves; ++i )
-			{
-				myStaves.push_back( Measures{} );
-			}
-		}
-
+        Part::Part()
+        : myInstrument( nullptr )
+        , myMasterTrack( nullptr )
+        , myStaves()
+        , myContext()
+        {
+            
+        }
+        
 		void Part::initializeMeasures()
 		{
 			for ( auto staff = myStaves.begin();
@@ -113,7 +150,7 @@ namespace Lyre
 		{
 			if ( myContext.isStaffDirty )
 			{
-				myContext.staffIter = ( myStaves.begin() + myContext.staffIndex );
+                // TODO myContext.staffIter = myStaves.begin();//( myStaves.begin() + myContext.staffIndex );
 				myContext.isStaffDirty = false;
 				myContext.isMeasureDirty = true;
 			}
@@ -130,5 +167,20 @@ namespace Lyre
 			}
 			return myContext.measureIter;
 		}
+        
+        void Part::cloneStaves( const Staves& otherStaves )
+        {
+            for ( auto staff = otherStaves.cbegin();
+                  staff != otherStaves.cend(); ++staff )
+            {
+                Measures copiedMeasures{};
+                for ( auto measure = staff->cbegin();
+                      measure != staff->cend(); ++measure )
+                {
+                    copiedMeasures.push_back( (*measure)->clone() );
+                }
+                myStaves.push_back( std::move( copiedMeasures ) );
+            }
+        }
     }
 }

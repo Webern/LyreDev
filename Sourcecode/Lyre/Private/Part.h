@@ -17,8 +17,6 @@ namespace Lyre
         {
         public:
             virtual ~Part();
-
-            //Part();
             
             Part(
                 int numStaves,
@@ -62,6 +60,8 @@ namespace Lyre
                 int measureIndex;
                 MeasureIter measureIter;
                 bool isMeasureDirty;
+                Context() : staffIndex(0), staffIter(), isStaffDirty(true),
+                measureIndex(0), measureIter(), isMeasureDirty(true) {}
             };
             
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -77,10 +77,11 @@ namespace Lyre
 // PRIVATE FUNCTIONS
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
-            void initializeStaves( int numStaves );
+            Part();
             void initializeMeasures();
             StaffIter getStaffIter() const;
             MeasureIter getMeasureIter() const;
+            void cloneStaves( const Staves& otherStaves );
         };
     } 
 }
