@@ -56,7 +56,7 @@ TEST( ctorWorks, Part )
 T_END
 
 
-TEST( ax, Part )
+TEST( staffContextGetSet, Part )
 {
 	Factories f;
 	MasterTrackParams params;
@@ -64,8 +64,75 @@ TEST( ax, Part )
 	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
 	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
-	auto i = f.instrument1->clone();
-	IPartUP part = f.partFactory->create( 1, std::move( i ), masterTrack );
-	CHECK( part != nullptr )
+	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	part->setStaffContext( 1 );
+    CHECK_EQUAL( 1, part->getStaffContext() )
+}
+T_END
+
+
+TEST( staffContextThrowOutOfRangeHigh, Part )
+{
+	Factories f;
+	MasterTrackParams params;
+	params.measureCount = 10;
+	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
+	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
+	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
+	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	bool isExceptionThrown = false;
+    part->setStaffContext( 2 );
+    try
+    {
+        part->setStaffContext( 3 );
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch ( std::runtime_error& e )
+    {
+        UNUSED_PARAMETER( e )
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+    CHECK_EQUAL( 2, part->getStaffContext() )
+}
+T_END
+
+
+TEST( staffContextThrowOutOfRangeLow, Part )
+{
+	Factories f;
+	MasterTrackParams params;
+	params.measureCount = 10;
+	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
+	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
+	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
+	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	bool isExceptionThrown = false;
+    part->setStaffContext( 2 );
+    try
+    {
+        part->setStaffContext( -1 );
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch ( std::runtime_error& e )
+    {
+        UNUSED_PARAMETER( e )
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+    CHECK_EQUAL( 2, part->getStaffContext() )
+}
+T_END
+
+
+TEST( getMeasureCount, Part )
+{
+	Factories f;
+	MasterTrackParams params;
+	params.measureCount = 1;
+	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
+	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
+	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+    CHECK_EQUAL( 1, part->getMeasureCount() )
 }
 T_END

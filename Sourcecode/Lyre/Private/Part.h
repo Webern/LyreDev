@@ -55,7 +55,7 @@ namespace Lyre
             struct Context
             {
                 int staffIndex;
-                StaffIter staffIter;
+                StaffIterConst staffIter;
                 bool isStaffDirty;
                 int measureIndex;
                 MeasureIter measureIter;
@@ -79,7 +79,7 @@ namespace Lyre
             
             Part();
             void initializeMeasures();
-            StaffIter getStaffIter() const;
+            StaffIterConst getStaffIter() const;
             MeasureIter getMeasureIter() const;
             void cloneStaves( const Staves& otherStaves );
         };

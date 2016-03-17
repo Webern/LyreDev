@@ -98,13 +98,14 @@ namespace Lyre
 
 		void Part::setStaffContext( int staffIndex )
 		{
+            THROW_IF_BAD_VALUE( staffIndex, 0, static_cast<int>( myStaves.size() - 1 ) )
 			myContext.staffIndex = staffIndex;
 			myContext.isStaffDirty = true;
 		}
 
 		int Part::getStaffContext() const
 		{
-			return myContext.staffIndex;;
+			return myContext.staffIndex;
 		}
 
 		int Part::getMeasureCount() const
@@ -146,11 +147,11 @@ namespace Lyre
 			}
 		}
 
-		Part::StaffIter Part::getStaffIter() const
+		Part::StaffIterConst Part::getStaffIter() const
 		{
 			if ( myContext.isStaffDirty )
 			{
-                // TODO myContext.staffIter = myStaves.begin();//( myStaves.begin() + myContext.staffIndex );
+                myContext.staffIter = myStaves.cbegin();//( myStaves.begin() + myContext.staffIndex );
 				myContext.isStaffDirty = false;
 				myContext.isMeasureDirty = true;
 			}
@@ -162,7 +163,8 @@ namespace Lyre
 			auto staff = getStaffIter();
 			if ( myContext.isMeasureDirty )
 			{
-				myContext.measureIter = ( staff->begin() + myContext.measureIndex );
+                auto x = staff->cbegin() + myContext.measureIndex;
+				myContext.measureIter = ( staff->cbegin() + myContext.measureIndex );
 				myContext.isMeasureDirty = false;
 			}
 			return myContext.measureIter;

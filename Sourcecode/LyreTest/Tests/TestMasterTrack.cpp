@@ -31,6 +31,30 @@ namespace
     };
 }
 
+
+TEST( ctorMeasureCountLessThan1, MasterTrack )
+{
+    // MeasureCount must be >= 1
+    Factories f;
+    MasterTrackParams params;
+    params.measureCount = 0;
+    params.timeTrack[0] = f.fourFour->clone();
+    bool isExceptionThrown = false;
+    try
+    {
+        IMasterTrackUP masterTrack = factory->create( params );
+        CHECK_FAIL( "exception was expected but not thrown" )
+    }
+    catch( std::exception& e )
+    {
+        UNUSED_PARAMETER( e )
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown )
+}
+T_END
+
+
 TEST( ctorThrowTimeTrackIndex0, MasterTrack )
 {
     // TimeTrack must have an initial

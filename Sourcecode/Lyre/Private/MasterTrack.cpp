@@ -19,7 +19,6 @@ namespace Lyre
 			myMeasureFactory = createMeasureFactory();
             setMeasureCountIfValid( params.measureCount );
             setTimeTrackIfValid( params.timeTrack );
-            
         }
 
         MasterTrack::MasterTrack( const MasterTrack& other )
@@ -94,7 +93,7 @@ namespace Lyre
         
         void MasterTrack::setMeasureCountIfValid( int measureCount )
         {
-            THROW_IF_BAD_VALUE( measureCount, 0, INT_MAX )
+            THROW_IF_BAD_VALUE( measureCount, 1, INT_MAX )
             myMeasureCount = measureCount;
         }
         
