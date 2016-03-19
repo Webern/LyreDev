@@ -36,9 +36,10 @@ namespace Lyre
             virtual int getStaffContext() const;
             
             virtual int getMeasureCount() const;
-            virtual const IMeasureUP& getMeasure( int measureIndex ) const;
+            virtual IMeasure* const getMeasure( int measureIndex );
+			virtual const IMeasure* const getMeasure( int measureIndex ) const;
 
-        private:
+		private:
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE TYPEDEFS
@@ -52,18 +53,6 @@ namespace Lyre
             using StaffIter = Staves::iterator;
             using StaffIterConst = Staves::const_iterator;
             
-            struct Context
-            {
-                int staffIndex;
-                StaffIterConst staffIter;
-                bool isStaffDirty;
-                int measureIndex;
-                MeasureIter measureIter;
-                bool isMeasureDirty;
-                Context() : staffIndex(0), staffIter(), isStaffDirty(true),
-                measureIndex(0), measureIter(), isMeasureDirty(true) {}
-            };
-            
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE DATA
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -71,7 +60,7 @@ namespace Lyre
             IInstrumentUPC myInstrument;
             IMasterTrackSPC myMasterTrack;
             Staves myStaves;
-            mutable Context myContext;
+			int myStaffContext;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE FUNCTIONS
@@ -79,8 +68,6 @@ namespace Lyre
             
             Part();
             void initializeMeasures();
-            StaffIterConst getStaffIter() const;
-            MeasureIter getMeasureIter() const;
             void cloneStaves( const Staves& otherStaves );
         };
     } 

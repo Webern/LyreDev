@@ -7,6 +7,9 @@
 #include "Lyre/IRangeFactory.h"
 #include "Lyre/IMasterTrackFactory.h"
 #include "Lyre/ITimeSignatureFactory.h"
+#include "Lyre/IPitchFactory.h"
+#include "Lyre/IDurationFactory.h"
+#include "Lyre/INoteFactory.h"
 
 #include <sstream>
 
@@ -23,20 +26,33 @@ namespace
         IRangeFactoryUPC rangeFactory;
         IMasterTrackFactoryUPC masterTrackFactory;
         ITimeSignatureFactoryUPC timeSignatureFactory;
-        
+		IPitchFactoryUP pitchFactory;
+		IDurationFactoryUPC durationFactory;
+		INoteFactoryUPC noteFactory;
+
         InstrumentName name1;
         IRangeUPC range1;
         IInstrumentUPC instrument1;
         
+		INoteUP createNote( std::string pitchName, std::string durName ) const
+		{
+			auto p = pitchFactory->createPitch( pitchName );
+			auto d = durationFactory->createDuration( durName );
+			return noteFactory->createNote( p, d );
+		}
+
         Factories()
-        :partFactory( createPartFactory() )
-        ,instrumentFactory( createInstrumentFactory() )
-        ,rangeFactory( createRangeFactory() )
-        ,masterTrackFactory( createMasterTrackFactory() )
-        ,timeSignatureFactory( createTimeSignatureFactory() )
-        ,name1( "Instrument 1", "Instr 1" )
-        ,range1( rangeFactory->create( "A2", "C7" ) )
-        ,instrument1( instrumentFactory->create( name1, range1->clone() ) )
+        : partFactory( createPartFactory() )
+        , instrumentFactory( createInstrumentFactory() )
+        , rangeFactory( createRangeFactory() )
+        , masterTrackFactory( createMasterTrackFactory() )
+        , timeSignatureFactory( createTimeSignatureFactory() )
+        , pitchFactory( createPitchFactory() )
+		, durationFactory( createDurationFactory() )
+		, name1( "Instrument 1", "Instr 1" )
+        , range1( rangeFactory->create( "A2", "C7" ) )
+        , instrument1( instrumentFactory->create( name1, range1->clone() ) )
+
         {}
     };
 }
@@ -134,5 +150,29 @@ TEST( getMeasureCount, Part )
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
 	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
     CHECK_EQUAL( 1, part->getMeasureCount() )
+}
+T_END
+
+const IMeasure* const getConst( const IPart* const part, int measureNumber )
+{
+	return part->getMeasure( measureNumber );
+}
+
+TEST( getMeasureNonCost, Part )
+{
+	Factories f;
+	MasterTrackParams params;
+	params.measureCount = 10;
+	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
+	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
+	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
+	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	bool isExceptionThrown = false;
+	part->setStaffContext( 2 );
+	//auto measure = part->getMeasure( 5 );
+	//measure->addNote( f.createNote( "C4", "Half" ) );
+	//int expected = 1;
+	//int actual = getConst( part.get(), 5 )->getCount();
+	//CHECK_EQUAL( expected, actual )
 }
 T_END

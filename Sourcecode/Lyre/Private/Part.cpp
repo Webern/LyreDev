@@ -25,7 +25,7 @@ namespace Lyre
         : myInstrument( instrument->clone() )
         , myMasterTrack( masterTrack )
         , myStaves( static_cast<size_t>( numStaves ) )
-        , myContext()
+		, myStaffContext( 0 )
 		{
             initializeMeasures();
 		}
@@ -34,21 +34,18 @@ namespace Lyre
         : myInstrument( other.myInstrument->clone() )
         , myMasterTrack( other.myMasterTrack )
         , myStaves()
-        , myContext( other.myContext )
+		, myStaffContext( other.myStaffContext )
 		{
             cloneStaves( other.myStaves );
-            myContext.isStaffDirty = true;
-            myContext.isMeasureDirty = true;
 		}
 
 		Part::Part( Part&& other ) noexcept
         : myInstrument( std::move( other.myInstrument ) )
         , myMasterTrack( std::move( other.myMasterTrack ) )
         , myStaves( std::move( other.myStaves ) )
-        , myContext( std::move( other.myContext ) )
+		, myStaffContext( std::move( other.myStaffContext ) )
 		{
-            myContext.isStaffDirty = true;
-            myContext.isMeasureDirty = true;
+
 		}
 
 		Part& Part::operator=( const Part& other )
@@ -57,9 +54,7 @@ namespace Lyre
             myMasterTrack = other.myMasterTrack;
             myStaves.clear();
             cloneStaves( other.myStaves );
-            myContext = other.myContext;
-            myContext.isStaffDirty = true;
-            myContext.isMeasureDirty = true;
+			myStaffContext = other.myStaffContext;
             return *this;
 		}
 
@@ -68,9 +63,7 @@ namespace Lyre
 			myInstrument = std::move( other.myInstrument->clone() );
             myMasterTrack = std::move( other.myMasterTrack );
             myStaves = std::move( other.myStaves );
-            myContext = std::move( other.myContext );
-            myContext.isStaffDirty = true;
-            myContext.isMeasureDirty = true;
+			myStaffContext = std::move( other.myStaffContext );
             return *this;
 		}
 
@@ -85,9 +78,8 @@ namespace Lyre
             newPart->myInstrument = std::move( this->myInstrument->clone() );
             newPart->myMasterTrack = std::move( this->myMasterTrack );
             newPart->myStaves = std::move( this->myStaves );
-            newPart->myContext = std::move( this->myContext );
-            newPart->myContext.isStaffDirty = true;
-            newPart->myContext.isMeasureDirty = true;
+			newPart->myStaffContext = std::move( this->myStaffContext );
+			// this becomes an unusable object
 			return IPartUP( newPart );
 		}
 
@@ -98,32 +90,35 @@ namespace Lyre
 
 		void Part::setStaffContext( int staffIndex )
 		{
-            THROW_IF_BAD_VALUE( staffIndex, 0, static_cast<int>( myStaves.size() - 1 ) )
-			myContext.staffIndex = staffIndex;
-			myContext.isStaffDirty = true;
+			THROW_IF_BAD_VALUE( staffIndex, 0, static_cast<int>( myStaves.size() - 1 ) );
+			myStaffContext = staffIndex;
 		}
 
 		int Part::getStaffContext() const
 		{
-			return myContext.staffIndex;
+			return myStaffContext;
 		}
 
 		int Part::getMeasureCount() const
 		{
-			return static_cast<int>( getStaffIter()->size() );
+			return static_cast<int>( (myStaves.cbegin() + myStaffContext)->size() );
 		}
 
-		const IMeasureUP& Part::getMeasure( int measureIndex ) const
+		IMeasure* const Part::getMeasure( int measureIndex )
 		{
-			if ( myContext.measureIndex != measureIndex )
-			{
-				myContext.measureIndex = measureIndex;
-				myContext.isMeasureDirty = true;
-			}
-			return *getMeasureIter();
+			THROW_IF_BAD_VALUE( measureIndex, 0, myMasterTrack->getMeasureCount() );
+			StaffIter staffIter = myStaves.begin() + measureIndex;
+			MeasureIter iter = staffIter->begin();
+			return iter->get();
 		}
 
-
+		const IMeasure* const Part::getMeasure( int measureIndex ) const
+		{
+			THROW_IF_BAD_VALUE( measureIndex, 0, myMasterTrack->getMeasureCount() );
+			StaffIterConst staffIter = myStaves.begin() + measureIndex;
+			MeasureIterConst iter = staffIter->begin();
+			return iter->get();
+		}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE
@@ -133,7 +128,6 @@ namespace Lyre
         : myInstrument( nullptr )
         , myMasterTrack( nullptr )
         , myStaves()
-        , myContext()
         {
             
         }
@@ -145,29 +139,6 @@ namespace Lyre
 			{
 				*staff = std::move( myMasterTrack->createMeasures() );
 			}
-		}
-
-		Part::StaffIterConst Part::getStaffIter() const
-		{
-			if ( myContext.isStaffDirty )
-			{
-                myContext.staffIter = myStaves.cbegin();//( myStaves.begin() + myContext.staffIndex );
-				myContext.isStaffDirty = false;
-				myContext.isMeasureDirty = true;
-			}
-			return myContext.staffIter;
-		}
-
-		Part::MeasureIter Part::getMeasureIter() const
-		{
-			auto staff = getStaffIter();
-			if ( myContext.isMeasureDirty )
-			{
-                auto x = staff->cbegin() + myContext.measureIndex;
-				myContext.measureIter = ( staff->cbegin() + myContext.measureIndex );
-				myContext.isMeasureDirty = false;
-			}
-			return myContext.measureIter;
 		}
         
         void Part::cloneStaves( const Staves& otherStaves )
