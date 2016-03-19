@@ -49,6 +49,7 @@ namespace
         , timeSignatureFactory( createTimeSignatureFactory() )
         , pitchFactory( createPitchFactory() )
 		, durationFactory( createDurationFactory() )
+		, noteFactory( createNoteFactory() )
 		, name1( "Instrument 1", "Instr 1" )
         , range1( rangeFactory->create( "A2", "C7" ) )
         , instrument1( instrumentFactory->create( name1, range1->clone() ) )
@@ -167,12 +168,11 @@ TEST( getMeasureNonCost, Part )
 	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
 	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
-	bool isExceptionThrown = false;
 	part->setStaffContext( 2 );
-	//auto measure = part->getMeasure( 5 );
-	//measure->addNote( f.createNote( "C4", "Half" ) );
-	//int expected = 1;
-	//int actual = getConst( part.get(), 5 )->getCount();
-	//CHECK_EQUAL( expected, actual )
+	auto measure = part->getMeasure( 5 );
+	measure->addNote( f.createNote( "C4", "Half" ) );
+	int expected = 1;
+	int actual = getConst( part.get(), 5 )->getCount();
+	CHECK_EQUAL( expected, actual )
 }
 T_END
