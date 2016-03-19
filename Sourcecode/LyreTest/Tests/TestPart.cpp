@@ -176,3 +176,18 @@ TEST( getMeasureNonCost, Part )
 	CHECK_EQUAL( expected, actual )
 }
 T_END
+
+TEST( OH_NO, Part )
+{
+	Factories f;
+	MasterTrackParams params;
+	params.measureCount = 10;
+	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
+	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
+	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
+	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	part->setStaffContext( 2 );
+	auto measure = part->getMeasure( 5 );
+	//delete measure;
+}
+T_END
