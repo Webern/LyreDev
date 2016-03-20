@@ -78,7 +78,7 @@ namespace Lyre
 
 		const T* const operator->() const
 		{
-			return *myPtr.get();
+			return myPtr.get();
 		}
 
 		T* const get()
@@ -148,7 +148,7 @@ namespace Lyre
 
 		const T* const operator->() const
 		{
-			return *myPtr.get();
+			return myPtr.get();
 		}
 
 		const T* const get() const

@@ -9,8 +9,8 @@
 namespace Lyre
 {
     FORWARD_DECLARE(IMeasure)
-    using IMeasureH = Handle<IMeasure>;
-    using IMeasureHC = HandleConst<IMeasure>;
+    using IMeasureH = Handle<IMeasureUP>;
+    using IMeasureHC = HandleConst<IMeasureUP>;
     
     static const int MAX_NUMBER_OF_LAYERS = 4;
     

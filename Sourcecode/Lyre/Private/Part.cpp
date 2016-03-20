@@ -109,7 +109,7 @@ namespace Lyre
 			THROW_IF_BAD_VALUE( measureIndex, 0, myMasterTrack->getMeasureCount() );
 			StaffIter staffIter = myStaves.begin() + myStaffContext;
 			MeasureIter iter = staffIter->begin() + measureIndex;
-			return IMeasureH{ iter->get() };
+			return IMeasureH{ *iter };
 		}
 
 		const IMeasureHC Part::getMeasure( int measureIndex ) const
@@ -122,7 +122,7 @@ namespace Lyre
             THROW_IF_BAD_VALUE( measureIndex, 0, myMasterTrack->getMeasureCount() );
 			StaffIterConst staffIter = myStaves.cbegin() + myStaffContext;
 			MeasureIterConst iter = staffIter->cbegin() + measureIndex;
-			return IMeasureHC{ iter->get() };
+			return IMeasureHC{ *iter };
         }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
