@@ -7,6 +7,8 @@
 namespace Lyre
 {
     FORWARD_DECLARE(IPart)
+    using IPartH = Handle<IPartUP>;
+    using IPartHC = HandleConst<IPartUP>;
 
     class PUBLIC IPart : public IStreamable
     {

@@ -7,11 +7,17 @@ namespace Lyre
     {
         Movement::~Movement()
         {
+            
         }
-
+        
         Movement::Movement()
         {
+            
+        }
 
+        Movement::Movement( const IMasterTrackSPC& masterTrack )
+        {
+            UNUSED_PARAMETER( masterTrack )
         }
 
         Movement::Movement( const Movement& other )
@@ -19,7 +25,7 @@ namespace Lyre
             UNUSED_PARAMETER( other )
         }
 
-        Movement::Movement( Movement&& other )
+        Movement::Movement( Movement&& other ) noexcept
         {
             UNUSED_PARAMETER( other )
         }
@@ -30,16 +36,24 @@ namespace Lyre
             return *this;
         }
 
-        Movement& Movement::operator=( Movement&& other )
+        Movement& Movement::operator=( Movement&& other ) noexcept
         {
             UNUSED_PARAMETER( other )
             return *this;
         }
 
+        
         IMovementUP Movement::clone() const
         {
             return IMovementUP{ new Movement{ *this } };
         }
+        
+        
+        IMovementUP Movement::move() noexcept
+        {
+            return IMovementUP{};
+        }
+        
 
         std::ostream& Movement::toStream( std::ostream& os ) const
         {

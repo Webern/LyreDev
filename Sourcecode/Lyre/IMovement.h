@@ -1,9 +1,17 @@
 //PUBLIC
 #pragma once
 #include "Lyre/Lyre.h"
+#include "Lyre/IPart.h"
+#include "Lyre/IMasterTrack.h"
 
 namespace Lyre
 {
+    
+    struct MovementMetadata
+    {
+        char* title;
+    };
+    
     FORWARD_DECLARE(IMovement)
     
     class PUBLIC IMovement : public IStreamable
