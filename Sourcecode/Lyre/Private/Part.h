@@ -36,8 +36,9 @@ namespace Lyre
             virtual int getStaffContext() const;
             
             virtual int getMeasureCount() const;
-            virtual IMeasure* const getMeasure( int measureIndex );
-			virtual const IMeasure* const getMeasure( int measureIndex ) const;
+            virtual IMeasureH getMeasure( int measureIndex );
+			virtual const IMeasureHC getMeasure( int measureIndex ) const;
+            virtual const IMeasureHC getMeasureConst( int measureIndex ) const;
 
 		private:
 

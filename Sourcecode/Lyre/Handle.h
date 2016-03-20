@@ -9,38 +9,6 @@ namespace Lyre
     class Handle
     {
     public:
-        Handle( T object )
-        :myObject( object )
-        {}
-        
-        T& operator*()
-        {
-            return myObject;
-        }
-        
-        T& operator*() const
-        {
-            return myObject;
-        }
-        
-        T& operator->()
-        {
-            return myObject;
-        }
-        
-        const T& operator->() const
-        {
-            return myObject;
-        }
-        
-    private:
-        T myObject;
-    };
-    
-    template<typename T>
-    class Handle<T*>
-    {
-    public:
         Handle( T* ptr )
         :myPtr( ptr )
         {}
@@ -55,18 +23,54 @@ namespace Lyre
             return *myPtr;
         }
         
-        T& operator->()
+        T* const operator->()
+        {
+            return myPtr;
+        }
+        
+        const T* const operator->() const
         {
             return *myPtr;
         }
         
-        const T& operator->() const
+        T* const get()
         {
-            return *myPtr;
+            return myPtr;
+        }
+        
+        const T* const get() const
+        {
+            return myPtr;
         }
         
     private:
         T* myPtr;
     };
- 
+    
+    template<typename T>
+    class HandleConst
+    {
+    public:
+        HandleConst( T* ptr )
+        :myPtr( ptr )
+        {}
+        
+        HandleConst( Handle<T*> nonConstHandle )
+        :myPtr( nonConstHandle.operator->() )
+        {}
+        
+        const T& operator*() const
+        {
+            return *myPtr;
+        }
+        
+        const T* const operator->() const
+        {
+            return myPtr;
+        }
+        
+    private:
+        const T* myPtr;
+    };
+    
 }

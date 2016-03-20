@@ -23,7 +23,7 @@ namespace
 TEST( mutablePtrInt, Handle )
 {
     int* x = new int{ 1 };
-    Handle<int*> h{ x };
+    Handle<int> h{ x };
     *h = 5;
     CHECK_EQUAL( 5, *h )
     delete x;
@@ -33,8 +33,10 @@ T_END
 TEST( mutablePtrObj, Handle )
 {
     std::unique_ptr<TestObject> uptr{ new TestObject{} };
-    Handle<TestObject*> h{ uptr.get() };
-    //(h->);
-    //delete p;
+    Handle<TestObject> h{ uptr.get() };
+    h->publicValue = 10;
+    h->setPrivateValue( 11 );
+    CHECK_EQUAL( 10, h->publicValue )
+    CHECK_EQUAL( 11, h->getPrivateValue() )
 }
 T_END

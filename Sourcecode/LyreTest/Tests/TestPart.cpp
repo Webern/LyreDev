@@ -154,10 +154,6 @@ TEST( getMeasureCount, Part )
 }
 T_END
 
-const IMeasure* const getConst( const IPart* const part, int measureNumber )
-{
-	return part->getMeasure( measureNumber );
-}
 
 TEST( getMeasureNonCost, Part )
 {
@@ -172,12 +168,12 @@ TEST( getMeasureNonCost, Part )
 	auto measure = part->getMeasure( 5 );
 	measure->addNote( f.createNote( "C4", "Half" ) );
 	int expected = 1;
-	int actual = getConst( part.get(), 5 )->getCount();
+	int actual = part->getMeasure( 5 )->getCount();
 	CHECK_EQUAL( expected, actual )
 }
 T_END
 
-TEST( OH_NO, Part )
+TEST( getMeasureConst, Part )
 {
 	Factories f;
 	MasterTrackParams params;
@@ -186,8 +182,8 @@ TEST( OH_NO, Part )
 	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
 	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
-	part->setStaffContext( 2 );
-	auto measure = part->getMeasure( 5 );
-	//delete measure;
+	part->setStaffContext( 1 );
+    auto measure = part->getMeasureConst( 3 );
+    CHECK_EQUAL( Rational(4,1), measure->getUnusedRemaining() )
 }
 T_END

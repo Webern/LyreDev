@@ -104,21 +104,26 @@ namespace Lyre
 			return static_cast<int>( (myStaves.cbegin() + myStaffContext)->size() );
 		}
 
-		IMeasure* const Part::getMeasure( int measureIndex )
+		IMeasureH Part::getMeasure( int measureIndex )
 		{
 			THROW_IF_BAD_VALUE( measureIndex, 0, myMasterTrack->getMeasureCount() );
 			StaffIter staffIter = myStaves.begin() + myStaffContext;
 			MeasureIter iter = staffIter->begin() + measureIndex;
-			return iter->get();
+			return IMeasureH{ iter->get() };
 		}
 
-		const IMeasure* const Part::getMeasure( int measureIndex ) const
+		const IMeasureHC Part::getMeasure( int measureIndex ) const
 		{
-			THROW_IF_BAD_VALUE( measureIndex, 0, myMasterTrack->getMeasureCount() );
+			return getMeasureConst( measureIndex );
+		}
+        
+        const IMeasureHC Part::getMeasureConst( int measureIndex ) const
+        {
+            THROW_IF_BAD_VALUE( measureIndex, 0, myMasterTrack->getMeasureCount() );
 			StaffIterConst staffIter = myStaves.cbegin() + myStaffContext;
 			MeasureIterConst iter = staffIter->cbegin() + measureIndex;
-			return iter->get();
-		}
+			return IMeasureHC{ iter->get() };
+        }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE

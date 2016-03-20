@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/IMeasure.h"
+#include "Lyre/Handle.h"
 
 namespace Lyre
 {
@@ -19,7 +20,8 @@ namespace Lyre
         virtual int getStaffContext() const = 0;
         
         virtual int getMeasureCount() const = 0;
-        virtual IMeasure* const getMeasure( int measureIndex ) = 0;
-		virtual const IMeasure* const getMeasure( int measureIndex ) const = 0;
+        virtual IMeasureH getMeasure( int measureIndex ) = 0;
+		virtual const IMeasureHC getMeasure( int measureIndex ) const = 0;
+        virtual const IMeasureHC getMeasureConst( int measureIndex ) const = 0;
     };
 }

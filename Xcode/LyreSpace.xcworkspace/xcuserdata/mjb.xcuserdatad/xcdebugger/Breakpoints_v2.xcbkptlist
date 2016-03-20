@@ -1344,11 +1344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Part.cpp"
-            timestampString = "479886420.922127"
+            timestampString = "480130606.793352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "Part::cloneStaves( const Staves&amp; otherStaves )"
             landmarkType = "5">
          </BreakpointContent>
@@ -1360,11 +1360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/TestPart.cpp"
-            timestampString = "480103428.394903"
+            timestampString = "480130606.793352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "TEST( getMeasureNonCost, Part )"
             landmarkType = "7">
          </BreakpointContent>
@@ -1383,52 +1383,6 @@
             endingLineNumber = "30"
             landmarkName = "Part::Part( int numStaves, const IInstrumentUP&amp; instrument, const IMasterTrackSPC &amp; masterTrack )"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/Lyre/Private/Part.cpp"
-            timestampString = "480103444.560404"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "Part::getMeasure( int measureIndex )"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Lyre::Private::Part::getMeasure(int) const"
-                  moduleName = "LyreTest"
-                  urlString = "file:///Volumes/Lyre/Sourcecode/Lyre/Private/Part.cpp"
-                  timestampString = "480103531.33418"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Lyre::Private::Part::getMeasure(int) const"
-                  moduleName = "LyreTest"
-                  urlString = "file:///Volumes/Lyre/Sourcecode/Lyre/Private/Part.cpp"
-                  timestampString = "480103531.334455"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "1427">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
