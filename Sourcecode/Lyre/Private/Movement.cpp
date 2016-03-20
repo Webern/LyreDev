@@ -59,5 +59,33 @@ namespace Lyre
         {
             return os << "Movement not implemented";
         }
+
+
+		int Movement::getPartCount() const
+		{
+			return 0;
+		}
+
+
+		IPartH Movement::getPart( int measureIndex )
+		{
+			UNUSED_PARAMETER( measureIndex )
+			return IPartH( nullptr );
+		}
+
+
+		const IPartHC Movement::getPart( int measureIndex ) const
+		{
+			UNUSED_PARAMETER( measureIndex )
+			return getPartConst( measureIndex );
+		}
+
+
+		const IPartHC Movement::getPartConst( int measureIndex ) const
+		{
+			UNUSED_PARAMETER( measureIndex )
+			return IPartHC( nullptr );
+		}
+
     }
 }

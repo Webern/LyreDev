@@ -27,10 +27,10 @@ namespace Lyre
             virtual IMovementUP move() noexcept;
             virtual std::ostream& toStream( std::ostream& os ) const;
             
-            virtual int getPartCount() const;
-            virtual IPartH getPart( int measureIndex );
+			virtual int getPartCount() const;
+			virtual IPartH getPart( int measureIndex );
 			virtual const IPartHC getPart( int measureIndex ) const;
-            virtual const IPartHC getPartConst( int measureIndex ) const;
+			virtual const IPartHC getPartConst( int measureIndex ) const;
             
 		private:
             
