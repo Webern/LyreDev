@@ -1,0 +1,17 @@
+#include "Lyre/Private/PartSpecFactory.h"
+#include "Lyre/IPartSpec.h"
+#include "Lyre/Private/PartSpec.h"
+
+
+namespace Lyre
+{
+    namespace Private
+    {
+        PartSpecFactory::~PartSpecFactory() {}
+        
+        IPartSpecUP PartSpecFactory::create( const IInstrumentUP& instrument ) const
+        {
+            return IPartSpecUP{ new PartSpec{ instrument } };
+        }
+    }
+}

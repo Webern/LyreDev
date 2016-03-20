@@ -51,6 +51,9 @@
 		29314A941C9EF44900EF3CF5 /* IMovementSpecFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A921C9EF44900EF3CF5 /* IMovementSpecFactory.cpp */; };
 		29314A991C9EF45F00EF3CF5 /* MovementSpecFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A961C9EF45F00EF3CF5 /* MovementSpecFactory.cpp */; };
 		29314A9A1C9EF45F00EF3CF5 /* MovementSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A981C9EF45F00EF3CF5 /* MovementSpec.cpp */; };
+		29314AA01C9EFFDC00EF3CF5 /* IPartSpecFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A9E1C9EFFDC00EF3CF5 /* IPartSpecFactory.cpp */; };
+		29314AA51C9EFFED00EF3CF5 /* PartSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314AA11C9EFFED00EF3CF5 /* PartSpec.cpp */; };
+		29314AA61C9EFFED00EF3CF5 /* PartSpecFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314AA31C9EFFED00EF3CF5 /* PartSpecFactory.cpp */; };
 		293F25DF1C09ADD4006096F2 /* Duration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25DD1C09ADD4006096F2 /* Duration.cpp */; };
 		296D72631BF8E9EE0049B0EA /* DurBase16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */; };
 		296D72641BF8E9EE0049B0EA /* DurBase32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724F1BF8E9EE0049B0EA /* DurBase32nd.cpp */; };
@@ -186,6 +189,13 @@
 		29314A961C9EF45F00EF3CF5 /* MovementSpecFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MovementSpecFactory.cpp; path = ../../Sourcecode/Lyre/Private/MovementSpecFactory.cpp; sourceTree = "<group>"; };
 		29314A971C9EF45F00EF3CF5 /* MovementSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovementSpec.h; path = ../../Sourcecode/Lyre/Private/MovementSpec.h; sourceTree = "<group>"; };
 		29314A981C9EF45F00EF3CF5 /* MovementSpec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MovementSpec.cpp; path = ../../Sourcecode/Lyre/Private/MovementSpec.cpp; sourceTree = "<group>"; };
+		29314A9D1C9EFFDC00EF3CF5 /* IPartSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPartSpec.h; path = ../../Sourcecode/Lyre/IPartSpec.h; sourceTree = "<group>"; };
+		29314A9E1C9EFFDC00EF3CF5 /* IPartSpecFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IPartSpecFactory.cpp; path = ../../Sourcecode/Lyre/IPartSpecFactory.cpp; sourceTree = "<group>"; };
+		29314A9F1C9EFFDC00EF3CF5 /* IPartSpecFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPartSpecFactory.h; path = ../../Sourcecode/Lyre/IPartSpecFactory.h; sourceTree = "<group>"; };
+		29314AA11C9EFFED00EF3CF5 /* PartSpec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PartSpec.cpp; path = ../../Sourcecode/Lyre/Private/PartSpec.cpp; sourceTree = "<group>"; };
+		29314AA21C9EFFED00EF3CF5 /* PartSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PartSpec.h; path = ../../Sourcecode/Lyre/Private/PartSpec.h; sourceTree = "<group>"; };
+		29314AA31C9EFFED00EF3CF5 /* PartSpecFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PartSpecFactory.cpp; path = ../../Sourcecode/Lyre/Private/PartSpecFactory.cpp; sourceTree = "<group>"; };
+		29314AA41C9EFFED00EF3CF5 /* PartSpecFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PartSpecFactory.h; path = ../../Sourcecode/Lyre/Private/PartSpecFactory.h; sourceTree = "<group>"; };
 		293F25DD1C09ADD4006096F2 /* Duration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Duration.cpp; path = ../../Sourcecode/Lyre/Private/Duration.cpp; sourceTree = "<group>"; };
 		293F25DE1C09ADD4006096F2 /* Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Duration.h; path = ../../Sourcecode/Lyre/Private/Duration.h; sourceTree = "<group>"; };
 		296379841C67B46000760195 /* Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Collection.h; path = ../../Sourcecode/Lyre/Private/Collection.h; sourceTree = "<group>"; };
@@ -291,6 +301,13 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				29314AA11C9EFFED00EF3CF5 /* PartSpec.cpp */,
+				29314AA21C9EFFED00EF3CF5 /* PartSpec.h */,
+				29314AA31C9EFFED00EF3CF5 /* PartSpecFactory.cpp */,
+				29314AA41C9EFFED00EF3CF5 /* PartSpecFactory.h */,
+				29314A9D1C9EFFDC00EF3CF5 /* IPartSpec.h */,
+				29314A9E1C9EFFDC00EF3CF5 /* IPartSpecFactory.cpp */,
+				29314A9F1C9EFFDC00EF3CF5 /* IPartSpecFactory.h */,
 				29314A951C9EF45F00EF3CF5 /* MovementSpecFactory.h */,
 				29314A961C9EF45F00EF3CF5 /* MovementSpecFactory.cpp */,
 				29314A971C9EF45F00EF3CF5 /* MovementSpec.h */,
@@ -540,6 +557,7 @@
 				296D726C1BF8E9EE0049B0EA /* DurBaseQuarter.cpp in Sources */,
 				29109DE91BE559F2001FF3E6 /* IAlter.cpp in Sources */,
 				292E99101C841125007FE1C7 /* Layer.cpp in Sources */,
+				29314AA61C9EFFED00EF3CF5 /* PartSpecFactory.cpp in Sources */,
 				29E4D2241C06C7400038E6FC /* TupletDefFatory.cpp in Sources */,
 				29109E421BE55A1B001FF3E6 /* PitchFactory.cpp in Sources */,
 				296D72641BF8E9EE0049B0EA /* DurBase32nd.cpp in Sources */,
@@ -550,6 +568,7 @@
 				29FE9DBF1C66C76B00BE0787 /* IBeatPatternFactory.cpp in Sources */,
 				296D72661BF8E9EE0049B0EA /* DurBase128th.cpp in Sources */,
 				29109E231BE55A1B001FF3E6 /* Alter.cpp in Sources */,
+				29314AA51C9EFFED00EF3CF5 /* PartSpec.cpp in Sources */,
 				292348291C3E2D4A002494EC /* INoteFactory.cpp in Sources */,
 				296D726B1BF8E9EE0049B0EA /* DurBaseLonga.cpp in Sources */,
 				2973E9671C8C990E0021E067 /* IRangeFactory.cpp in Sources */,
@@ -582,6 +601,7 @@
 				290989D71C03AA1A0040138E /* DurDot.cpp in Sources */,
 				29929FCC1C0766BD001CDDC8 /* TupletDef.cpp in Sources */,
 				29FE9DC41C66C78C00BE0787 /* BeatPattern.cpp in Sources */,
+				29314AA01C9EFFDC00EF3CF5 /* IPartSpecFactory.cpp in Sources */,
 				291FB0671C8FF8FE00C838B5 /* IPartFactory.cpp in Sources */,
 				2926C87A1C0D717200C5D4C0 /* IDuration.cpp in Sources */,
 				29314A8D1C9EEBF900EF3CF5 /* MovementFactory.cpp in Sources */,
