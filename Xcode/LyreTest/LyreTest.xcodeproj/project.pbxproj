@@ -20,6 +20,7 @@
 		2928FB011C5531EE00644429 /* TestNoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB001C5531EE00644429 /* TestNoteGroup.cpp */; };
 		2928FB061C55437300644429 /* MockNoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2928FB051C55437300644429 /* MockNoteGroup.cpp */; };
 		292E99131C841156007FE1C7 /* TestLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E99121C841156007FE1C7 /* TestLayer.cpp */; };
+		29314A901C9EEC2100EF3CF5 /* TestMovement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A8F1C9EEC2100EF3CF5 /* TestMovement.cpp */; };
 		293F25E11C09B12D006096F2 /* TestToShared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25E01C09B12D006096F2 /* TestToShared.cpp */; };
 		296379861C67B5A300760195 /* TestCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296379851C67B5A300760195 /* TestCollection.cpp */; };
 		296D728F1BF8EB960049B0EA /* TestDurBaseEighth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D72841BF8EB960049B0EA /* TestDurBaseEighth.cpp */; };
@@ -105,6 +106,7 @@
 		2928FB031C55426E00644429 /* MockNoteGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockNoteGroup.h; path = ../../Sourcecode/LyreTest/Mock/MockNoteGroup.h; sourceTree = "<group>"; };
 		2928FB051C55437300644429 /* MockNoteGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockNoteGroup.cpp; path = ../../Sourcecode/LyreTest/Mock/MockNoteGroup.cpp; sourceTree = "<group>"; };
 		292E99121C841156007FE1C7 /* TestLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestLayer.cpp; path = ../../Sourcecode/LyreTest/Tests/TestLayer.cpp; sourceTree = "<group>"; };
+		29314A8F1C9EEC2100EF3CF5 /* TestMovement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestMovement.cpp; path = ../../Sourcecode/LyreTest/Tests/TestMovement.cpp; sourceTree = "<group>"; };
 		293F25E01C09B12D006096F2 /* TestToShared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestToShared.cpp; path = ../../Sourcecode/LyreTest/Tests/TestToShared.cpp; sourceTree = "<group>"; };
 		296379851C67B5A300760195 /* TestCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestCollection.cpp; path = ../../Sourcecode/LyreTest/Tests/TestCollection.cpp; sourceTree = "<group>"; };
 		296D72841BF8EB960049B0EA /* TestDurBaseEighth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurBaseEighth.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurBaseEighth.cpp; sourceTree = "<group>"; };
@@ -235,12 +237,7 @@
 		29CAD43E1BE661F500C0CA90 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2977C9281C9DCFC50035C273 /* TestHandle.cpp */,
-				29CF96201C93E5F400CBF5A7 /* TestMasterTrack.cpp */,
-				291FB0621C8FF8E200C838B5 /* TestPart.cpp */,
-				291659F21C8EA33D0046E63F /* TestInstrument.cpp */,
-				2973E9621C8C98E70021E067 /* TestRange.cpp */,
-				297157811C851DD80001A761 /* TestMeasure.cpp */,
+				29314A8F1C9EEC2100EF3CF5 /* TestMovement.cpp */,
 				29CAD4051BE661B400C0CA90 /* TestAlter.cpp */,
 				29FE9DC61C66C86C00BE0787 /* TestBeatPattern.cpp */,
 				29FE9DC71C66C86C00BE0787 /* TestBeatPatternFactory.cpp */,
@@ -261,12 +258,14 @@
 				296D728E1BF8EB960049B0EA /* TestDurBaseWhole.cpp */,
 				29CAD4121BE661B400C0CA90 /* TestEnum.cpp */,
 				2928FAFD1C54979000644429 /* TestForwardDec.cpp */,
+				2977C9281C9DCFC50035C273 /* TestHandle.cpp */,
 				29CAD4131BE661B400C0CA90 /* TestIAlter.cpp */,
 				2926C87B1C0D785500C5D4C0 /* TestIDuration.cpp */,
 				29CAD4141BE661B400C0CA90 /* TestIDurBase.cpp */,
 				29CAD4151BE661B400C0CA90 /* TestIDurBaseFactory.cpp */,
 				290989D31C0398FD0040138E /* TestIDurDot.cpp */,
 				29CAD4161BE661B400C0CA90 /* TestIEnum.cpp */,
+				291659F21C8EA33D0046E63F /* TestInstrument.cpp */,
 				29CAD4171BE661B400C0CA90 /* TestIPitch.cpp */,
 				29CAD4181BE661B400C0CA90 /* TestIPitchFactory.cpp */,
 				29CAD4191BE661B400C0CA90 /* TestIPitchName.cpp */,
@@ -275,12 +274,16 @@
 				29E4D21F1C06C5260038E6FC /* TestITupletDefFactory.cpp */,
 				292E99121C841156007FE1C7 /* TestLayer.cpp */,
 				298227481BF99B4500277C67 /* TestMakeUnique.cpp */,
+				29CF96201C93E5F400CBF5A7 /* TestMasterTrack.cpp */,
+				297157811C851DD80001A761 /* TestMeasure.cpp */,
 				29CAD41B1BE661B400C0CA90 /* TestMod.cpp */,
 				292348301C3E36D6002494EC /* TestNote.cpp */,
 				2928FB001C5531EE00644429 /* TestNoteGroup.cpp */,
+				291FB0621C8FF8E200C838B5 /* TestPart.cpp */,
 				29CAD41C1BE661B400C0CA90 /* TestPitch.cpp */,
 				290D2A7C1C5DE85700F9BC13 /* TestPitchFactory.cpp */,
 				29CAD41D1BE661B400C0CA90 /* TestPitchName.cpp */,
+				2973E9621C8C98E70021E067 /* TestRange.cpp */,
 				29CAD41E1BE661B400C0CA90 /* TestRational.cpp */,
 				29CAD41F1BE661B400C0CA90 /* TestStep.cpp */,
 				29F3B5161C0223C100746DA5 /* TestThrow.cpp */,
@@ -410,6 +413,7 @@
 				29E4D2211C06C5260038E6FC /* TestITupletDefFactory.cpp in Sources */,
 				29CAD42E1BE661B400C0CA90 /* TestIAlter.cpp in Sources */,
 				29CAD4381BE661B400C0CA90 /* TestPitchName.cpp in Sources */,
+				29314A901C9EEC2100EF3CF5 /* TestMovement.cpp in Sources */,
 				29FE9DC81C66C86C00BE0787 /* TestBeatPattern.cpp in Sources */,
 				296D72901BF8EB960049B0EA /* TestDurBase16th.cpp in Sources */,
 				2928FB011C5531EE00644429 /* TestNoteGroup.cpp in Sources */,

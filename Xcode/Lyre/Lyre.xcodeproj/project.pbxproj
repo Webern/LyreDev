@@ -45,6 +45,9 @@
 		292E990B1C841114007FE1C7 /* ILayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E99091C841114007FE1C7 /* ILayerFactory.cpp */; };
 		292E99101C841125007FE1C7 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E990C1C841125007FE1C7 /* Layer.cpp */; };
 		292E99111C841125007FE1C7 /* LayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E990E1C841125007FE1C7 /* LayerFactory.cpp */; };
+		29314A881C9EEBBD00EF3CF5 /* IMovementFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A861C9EEBBD00EF3CF5 /* IMovementFactory.cpp */; };
+		29314A8D1C9EEBF900EF3CF5 /* MovementFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A8A1C9EEBF900EF3CF5 /* MovementFactory.cpp */; };
+		29314A8E1C9EEBF900EF3CF5 /* Movement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A8C1C9EEBF900EF3CF5 /* Movement.cpp */; };
 		293F25DF1C09ADD4006096F2 /* Duration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25DD1C09ADD4006096F2 /* Duration.cpp */; };
 		296D72631BF8E9EE0049B0EA /* DurBase16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */; };
 		296D72641BF8E9EE0049B0EA /* DurBase32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724F1BF8E9EE0049B0EA /* DurBase32nd.cpp */; };
@@ -166,6 +169,13 @@
 		292E990D1C841125007FE1C7 /* Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Layer.h; path = ../../Sourcecode/Lyre/Private/Layer.h; sourceTree = "<group>"; };
 		292E990E1C841125007FE1C7 /* LayerFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LayerFactory.cpp; path = ../../Sourcecode/Lyre/Private/LayerFactory.cpp; sourceTree = "<group>"; };
 		292E990F1C841125007FE1C7 /* LayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayerFactory.h; path = ../../Sourcecode/Lyre/Private/LayerFactory.h; sourceTree = "<group>"; };
+		29314A851C9EEBBD00EF3CF5 /* IMovementFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMovementFactory.h; path = ../../Sourcecode/Lyre/IMovementFactory.h; sourceTree = "<group>"; };
+		29314A861C9EEBBD00EF3CF5 /* IMovementFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IMovementFactory.cpp; path = ../../Sourcecode/Lyre/IMovementFactory.cpp; sourceTree = "<group>"; };
+		29314A871C9EEBBD00EF3CF5 /* IMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMovement.h; path = ../../Sourcecode/Lyre/IMovement.h; sourceTree = "<group>"; };
+		29314A891C9EEBF900EF3CF5 /* MovementFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovementFactory.h; path = ../../Sourcecode/Lyre/Private/MovementFactory.h; sourceTree = "<group>"; };
+		29314A8A1C9EEBF900EF3CF5 /* MovementFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MovementFactory.cpp; path = ../../Sourcecode/Lyre/Private/MovementFactory.cpp; sourceTree = "<group>"; };
+		29314A8B1C9EEBF900EF3CF5 /* Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Movement.h; path = ../../Sourcecode/Lyre/Private/Movement.h; sourceTree = "<group>"; };
+		29314A8C1C9EEBF900EF3CF5 /* Movement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Movement.cpp; path = ../../Sourcecode/Lyre/Private/Movement.cpp; sourceTree = "<group>"; };
 		293F25DD1C09ADD4006096F2 /* Duration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Duration.cpp; path = ../../Sourcecode/Lyre/Private/Duration.cpp; sourceTree = "<group>"; };
 		293F25DE1C09ADD4006096F2 /* Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Duration.h; path = ../../Sourcecode/Lyre/Private/Duration.h; sourceTree = "<group>"; };
 		296379841C67B46000760195 /* Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Collection.h; path = ../../Sourcecode/Lyre/Private/Collection.h; sourceTree = "<group>"; };
@@ -271,28 +281,13 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
-				2977C9271C9DCDD40035C273 /* Handle.h */,
-				29CF96261C93E64000CBF5A7 /* MasterTrackFactory.h */,
-				29CF96271C93E64000CBF5A7 /* MasterTrackFactory.cpp */,
-				29CF96281C93E64000CBF5A7 /* MasterTrack.h */,
-				29CF96291C93E64000CBF5A7 /* MasterTrack.cpp */,
-				29CF96221C93E61000CBF5A7 /* IMasterTrackFactory.h */,
-				29CF96231C93E61000CBF5A7 /* IMasterTrackFactory.cpp */,
-				29CF96241C93E61000CBF5A7 /* IMasterTrack.h */,
-				291FB0681C8FF91100C838B5 /* PartFactory.h */,
-				291FB0691C8FF91100C838B5 /* PartFactory.cpp */,
-				291FB06A1C8FF91100C838B5 /* Part.h */,
-				291FB06B1C8FF91100C838B5 /* Part.cpp */,
-				291FB0641C8FF8FE00C838B5 /* IPartFactory.h */,
-				291FB0651C8FF8FE00C838B5 /* IPartFactory.cpp */,
-				291FB0661C8FF8FE00C838B5 /* IPart.h */,
-				291659F41C8EA4E50046E63F /* Instrument.h */,
-				291659F51C8EA4E50046E63F /* Instrument.cpp */,
-				291659EF1C8EA30C0046E63F /* InstrumentFactory.cpp */,
-				291659F01C8EA30C0046E63F /* InstrumentFactory.h */,
-				291659EB1C8EA2E00046E63F /* IInstrument.h */,
-				291659EC1C8EA2E00046E63F /* IInstrumentFactory.cpp */,
-				291659ED1C8EA2E00046E63F /* IInstrumentFactory.h */,
+				29314A891C9EEBF900EF3CF5 /* MovementFactory.h */,
+				29314A8A1C9EEBF900EF3CF5 /* MovementFactory.cpp */,
+				29314A8B1C9EEBF900EF3CF5 /* Movement.h */,
+				29314A8C1C9EEBF900EF3CF5 /* Movement.cpp */,
+				29314A851C9EEBBD00EF3CF5 /* IMovementFactory.h */,
+				29314A861C9EEBBD00EF3CF5 /* IMovementFactory.cpp */,
+				29314A871C9EEBBD00EF3CF5 /* IMovement.h */,
 				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
 				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
 				29FE9DC01C66C78C00BE0787 /* BeatPattern.cpp */,
@@ -335,6 +330,7 @@
 				29109E181BE55A1B001FF3E6 /* Enum.cpp */,
 				29109E191BE55A1B001FF3E6 /* Enum.h */,
 				2928FAFF1C549F2000644429 /* ForwardDeclare.h */,
+				2977C9271C9DCDD40035C273 /* Handle.h */,
 				29109DD61BE559F2001FF3E6 /* IAlter.cpp */,
 				29109DD71BE559F2001FF3E6 /* IAlter.h */,
 				29FE9DBC1C66C76B00BE0787 /* IBeatPattern.h */,
@@ -354,9 +350,15 @@
 				290989CC1C0390B20040138E /* IDurDotFactory.h */,
 				29109DDC1BE559F2001FF3E6 /* IEnum.cpp */,
 				29109DDD1BE559F2001FF3E6 /* IEnum.h */,
+				291659EB1C8EA2E00046E63F /* IInstrument.h */,
+				291659EC1C8EA2E00046E63F /* IInstrumentFactory.cpp */,
+				291659ED1C8EA2E00046E63F /* IInstrumentFactory.h */,
 				292E99081C841114007FE1C7 /* ILayer.h */,
 				292E99091C841114007FE1C7 /* ILayerFactory.cpp */,
 				292E990A1C841114007FE1C7 /* ILayerFactory.h */,
+				29CF96241C93E61000CBF5A7 /* IMasterTrack.h */,
+				29CF96231C93E61000CBF5A7 /* IMasterTrackFactory.cpp */,
+				29CF96221C93E61000CBF5A7 /* IMasterTrackFactory.h */,
 				297157771C851DA20001A761 /* IMeasure.h */,
 				297157781C851DA20001A761 /* IMeasureFactory.cpp */,
 				297157791C851DA20001A761 /* IMeasureFactory.h */,
@@ -365,6 +367,13 @@
 				292348271C3E2D4A002494EC /* INoteFactory.cpp */,
 				292348281C3E2D4A002494EC /* INoteFactory.h */,
 				29DA8BD21C5DB385007BCE4E /* INoteGroup.h */,
+				291659F51C8EA4E50046E63F /* Instrument.cpp */,
+				291659F41C8EA4E50046E63F /* Instrument.h */,
+				291659EF1C8EA30C0046E63F /* InstrumentFactory.cpp */,
+				291659F01C8EA30C0046E63F /* InstrumentFactory.h */,
+				291FB0661C8FF8FE00C838B5 /* IPart.h */,
+				291FB0651C8FF8FE00C838B5 /* IPartFactory.cpp */,
+				291FB0641C8FF8FE00C838B5 /* IPartFactory.h */,
 				29109DDE1BE559F2001FF3E6 /* IPitch.cpp */,
 				29109DDF1BE559F2001FF3E6 /* IPitch.h */,
 				29109DE01BE559F2001FF3E6 /* IPitchFactory.cpp */,
@@ -391,6 +400,10 @@
 				291E420A1C665C5A004C3432 /* Lyre.h */,
 				291E420B1C665C5A004C3432 /* LyreApiExport.h */,
 				298227441BF9997500277C67 /* makeUnique.h */,
+				29CF96291C93E64000CBF5A7 /* MasterTrack.cpp */,
+				29CF96281C93E64000CBF5A7 /* MasterTrack.h */,
+				29CF96271C93E64000CBF5A7 /* MasterTrackFactory.cpp */,
+				29CF96261C93E64000CBF5A7 /* MasterTrackFactory.h */,
 				2971577B1C851DC60001A761 /* Measure.cpp */,
 				2971577C1C851DC60001A761 /* Measure.h */,
 				2971577D1C851DC60001A761 /* MeasureFactory.cpp */,
@@ -402,6 +415,10 @@
 				2923482B1C3E2F01002494EC /* NoteFactory.h */,
 				29DA8BD31C5DB385007BCE4E /* NoteGroup.cpp */,
 				29DA8BD41C5DB385007BCE4E /* NoteGroup.h */,
+				291FB06B1C8FF91100C838B5 /* Part.cpp */,
+				291FB06A1C8FF91100C838B5 /* Part.h */,
+				291FB0691C8FF91100C838B5 /* PartFactory.cpp */,
+				291FB0681C8FF91100C838B5 /* PartFactory.h */,
 				29109E1B1BE55A1B001FF3E6 /* Pitch.cpp */,
 				29109E1C1BE55A1B001FF3E6 /* Pitch.h */,
 				29109E1D1BE55A1B001FF3E6 /* PitchFactory.cpp */,
@@ -507,6 +524,7 @@
 				29E4D2241C06C7400038E6FC /* TupletDefFatory.cpp in Sources */,
 				29109E421BE55A1B001FF3E6 /* PitchFactory.cpp in Sources */,
 				296D72641BF8E9EE0049B0EA /* DurBase32nd.cpp in Sources */,
+				29314A881C9EEBBD00EF3CF5 /* IMovementFactory.cpp in Sources */,
 				29109DED1BE559F2001FF3E6 /* IDurBaseFactory.cpp in Sources */,
 				291E42181C666344004C3432 /* TimeSignatureFactory.cpp in Sources */,
 				291659EE1C8EA2E00046E63F /* IInstrumentFactory.cpp in Sources */,
@@ -539,12 +557,14 @@
 				291F98111BF03F89008026BF /* INote.cpp in Sources */,
 				29CF962B1C93E64000CBF5A7 /* MasterTrack.cpp in Sources */,
 				299A620A1C7A0C73009C5B19 /* StepStrings.cpp in Sources */,
+				29314A8E1C9EEBF900EF3CF5 /* Movement.cpp in Sources */,
 				290989CD1C0390B20040138E /* IDurDotFactory.cpp in Sources */,
 				290989D71C03AA1A0040138E /* DurDot.cpp in Sources */,
 				29929FCC1C0766BD001CDDC8 /* TupletDef.cpp in Sources */,
 				29FE9DC41C66C78C00BE0787 /* BeatPattern.cpp in Sources */,
 				291FB0671C8FF8FE00C838B5 /* IPartFactory.cpp in Sources */,
 				2926C87A1C0D717200C5D4C0 /* IDuration.cpp in Sources */,
+				29314A8D1C9EEBF900EF3CF5 /* MovementFactory.cpp in Sources */,
 				297157801C851DC60001A761 /* MeasureFactory.cpp in Sources */,
 				291FB06D1C8FF91100C838B5 /* Part.cpp in Sources */,
 				291FB06C1C8FF91100C838B5 /* PartFactory.cpp in Sources */,
