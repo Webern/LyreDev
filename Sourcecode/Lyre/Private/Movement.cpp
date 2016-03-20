@@ -15,7 +15,10 @@ namespace Lyre
             
         }
 
-        Movement::Movement( const IMasterTrackSPC& masterTrack )
+        Movement::Movement( const IMovementSpecUP& info,
+                            const IMasterTrackSPC& masterTrack )
+        : myInfo( info->clone() )
+        , myMasterTrack( masterTrack )
         {
             UNUSED_PARAMETER( masterTrack )
         }
@@ -60,7 +63,13 @@ namespace Lyre
             return os << "Movement not implemented";
         }
 
-
+        
+        const IMovementSpecUPC Movement::getInfo() const
+        {
+            return myInfo->clone();
+        }
+        
+        
 		int Movement::getPartCount() const
 		{
 			return 0;

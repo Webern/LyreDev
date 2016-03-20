@@ -48,6 +48,9 @@
 		29314A881C9EEBBD00EF3CF5 /* IMovementFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A861C9EEBBD00EF3CF5 /* IMovementFactory.cpp */; };
 		29314A8D1C9EEBF900EF3CF5 /* MovementFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A8A1C9EEBF900EF3CF5 /* MovementFactory.cpp */; };
 		29314A8E1C9EEBF900EF3CF5 /* Movement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A8C1C9EEBF900EF3CF5 /* Movement.cpp */; };
+		29314A941C9EF44900EF3CF5 /* IMovementSpecFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A921C9EF44900EF3CF5 /* IMovementSpecFactory.cpp */; };
+		29314A991C9EF45F00EF3CF5 /* MovementSpecFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A961C9EF45F00EF3CF5 /* MovementSpecFactory.cpp */; };
+		29314A9A1C9EF45F00EF3CF5 /* MovementSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A981C9EF45F00EF3CF5 /* MovementSpec.cpp */; };
 		293F25DF1C09ADD4006096F2 /* Duration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 293F25DD1C09ADD4006096F2 /* Duration.cpp */; };
 		296D72631BF8E9EE0049B0EA /* DurBase16th.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724D1BF8E9EE0049B0EA /* DurBase16th.cpp */; };
 		296D72641BF8E9EE0049B0EA /* DurBase32nd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 296D724F1BF8E9EE0049B0EA /* DurBase32nd.cpp */; };
@@ -176,6 +179,13 @@
 		29314A8A1C9EEBF900EF3CF5 /* MovementFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MovementFactory.cpp; path = ../../Sourcecode/Lyre/Private/MovementFactory.cpp; sourceTree = "<group>"; };
 		29314A8B1C9EEBF900EF3CF5 /* Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Movement.h; path = ../../Sourcecode/Lyre/Private/Movement.h; sourceTree = "<group>"; };
 		29314A8C1C9EEBF900EF3CF5 /* Movement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Movement.cpp; path = ../../Sourcecode/Lyre/Private/Movement.cpp; sourceTree = "<group>"; };
+		29314A911C9EF44900EF3CF5 /* IMovementSpecFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMovementSpecFactory.h; path = ../../Sourcecode/Lyre/IMovementSpecFactory.h; sourceTree = "<group>"; };
+		29314A921C9EF44900EF3CF5 /* IMovementSpecFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IMovementSpecFactory.cpp; path = ../../Sourcecode/Lyre/IMovementSpecFactory.cpp; sourceTree = "<group>"; };
+		29314A931C9EF44900EF3CF5 /* IMovementSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMovementSpec.h; path = ../../Sourcecode/Lyre/IMovementSpec.h; sourceTree = "<group>"; };
+		29314A951C9EF45F00EF3CF5 /* MovementSpecFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovementSpecFactory.h; path = ../../Sourcecode/Lyre/Private/MovementSpecFactory.h; sourceTree = "<group>"; };
+		29314A961C9EF45F00EF3CF5 /* MovementSpecFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MovementSpecFactory.cpp; path = ../../Sourcecode/Lyre/Private/MovementSpecFactory.cpp; sourceTree = "<group>"; };
+		29314A971C9EF45F00EF3CF5 /* MovementSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovementSpec.h; path = ../../Sourcecode/Lyre/Private/MovementSpec.h; sourceTree = "<group>"; };
+		29314A981C9EF45F00EF3CF5 /* MovementSpec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MovementSpec.cpp; path = ../../Sourcecode/Lyre/Private/MovementSpec.cpp; sourceTree = "<group>"; };
 		293F25DD1C09ADD4006096F2 /* Duration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Duration.cpp; path = ../../Sourcecode/Lyre/Private/Duration.cpp; sourceTree = "<group>"; };
 		293F25DE1C09ADD4006096F2 /* Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Duration.h; path = ../../Sourcecode/Lyre/Private/Duration.h; sourceTree = "<group>"; };
 		296379841C67B46000760195 /* Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Collection.h; path = ../../Sourcecode/Lyre/Private/Collection.h; sourceTree = "<group>"; };
@@ -281,6 +291,13 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				29314A951C9EF45F00EF3CF5 /* MovementSpecFactory.h */,
+				29314A961C9EF45F00EF3CF5 /* MovementSpecFactory.cpp */,
+				29314A971C9EF45F00EF3CF5 /* MovementSpec.h */,
+				29314A981C9EF45F00EF3CF5 /* MovementSpec.cpp */,
+				29314A911C9EF44900EF3CF5 /* IMovementSpecFactory.h */,
+				29314A921C9EF44900EF3CF5 /* IMovementSpecFactory.cpp */,
+				29314A931C9EF44900EF3CF5 /* IMovementSpec.h */,
 				29314A891C9EEBF900EF3CF5 /* MovementFactory.h */,
 				29314A8A1C9EEBF900EF3CF5 /* MovementFactory.cpp */,
 				29314A8B1C9EEBF900EF3CF5 /* Movement.h */,
@@ -512,12 +529,14 @@
 				290989D01C0391CC0040138E /* DurDotFactory.cpp in Sources */,
 				29E0B2171C14165B002790B5 /* IDurationFactory.cpp in Sources */,
 				29109DEF1BE559F2001FF3E6 /* IEnum.cpp in Sources */,
+				29314A991C9EF45F00EF3CF5 /* MovementSpecFactory.cpp in Sources */,
 				29109DF31BE559F2001FF3E6 /* IPitchFactory.cpp in Sources */,
 				296D72651BF8E9EE0049B0EA /* DurBase64th.cpp in Sources */,
 				293F25DF1C09ADD4006096F2 /* Duration.cpp in Sources */,
 				29FE9DC51C66C78C00BE0787 /* BeatPatternFactory.cpp in Sources */,
 				2973E96C1C8C99240021E067 /* Range.cpp in Sources */,
 				291E42171C666344004C3432 /* TimeSignature.cpp in Sources */,
+				29314A941C9EF44900EF3CF5 /* IMovementSpecFactory.cpp in Sources */,
 				296D726C1BF8E9EE0049B0EA /* DurBaseQuarter.cpp in Sources */,
 				29109DE91BE559F2001FF3E6 /* IAlter.cpp in Sources */,
 				292E99101C841125007FE1C7 /* Layer.cpp in Sources */,
@@ -549,6 +568,7 @@
 				29109E441BE55A1B001FF3E6 /* PitchName.cpp in Sources */,
 				2971577F1C851DC60001A761 /* Measure.cpp in Sources */,
 				296D726A1BF8E9EE0049B0EA /* DurBaseHalf.cpp in Sources */,
+				29314A9A1C9EF45F00EF3CF5 /* MovementSpec.cpp in Sources */,
 				29109DF51BE559F2001FF3E6 /* IPitchName.cpp in Sources */,
 				29C385911C03637800250931 /* IDurDot.cpp in Sources */,
 				29109E331BE55A1B001FF3E6 /* DurBaseFactory.cpp in Sources */,

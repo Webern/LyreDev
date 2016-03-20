@@ -1,6 +1,7 @@
 //PUBLIC
 #pragma once
 #include "Lyre/Lyre.h"
+#include "Lyre/IMovementSpec.h"
 #include "Lyre/IPart.h"
 #include "Lyre/IMasterTrack.h"
 
@@ -20,6 +21,8 @@ namespace Lyre
         virtual ~IMovement() {};
         virtual IMovementUP clone() const = 0;
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
+        
+        virtual const IMovementSpecUPC getInfo() const = 0;
         
     };
 }
