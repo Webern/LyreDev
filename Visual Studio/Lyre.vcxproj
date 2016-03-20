@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sourcecode\Lyre\ForwardDeclare.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Handle.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IAlter.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IMasterTrack.h" />
     <ClInclude Include="..\Sourcecode\Lyre\IMasterTrackFactory.h" />
