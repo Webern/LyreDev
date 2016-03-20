@@ -30,7 +30,9 @@ namespace
 		IDurationFactoryUPC durationFactory;
 		INoteFactoryUPC noteFactory;
 
-        InstrumentName name1;
+        String name1;
+        String shortName1;
+        
         IRangeUPC range1;
         IInstrumentUPC instrument1;
         
@@ -50,9 +52,10 @@ namespace
         , pitchFactory( createPitchFactory() )
 		, durationFactory( createDurationFactory() )
 		, noteFactory( createNoteFactory() )
-		, name1( "Instrument 1", "Instr 1" )
+		, name1( "Instrument 1" )
+        , shortName1( "Instr 1" )
         , range1( rangeFactory->create( "A2", "C7" ) )
-        , instrument1( instrumentFactory->create( name1, range1->clone() ) )
+        , instrument1( instrumentFactory->create( name1, shortName1, range1->clone() ) )
 
         {}
     };

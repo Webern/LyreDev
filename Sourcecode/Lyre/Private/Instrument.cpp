@@ -14,10 +14,11 @@ namespace Lyre
         }
 
         Instrument::Instrument(
-            const InstrumentName& name,
+            const String& name,
+            const String& shortName,
             const IRangeUP& range )
-        :myName( name.Name )
-        ,myShortName( name.ShortName )
+        :myName( name )
+        ,myShortName( shortName )
         ,myRange( range->clone() )
         {
             if ( !myRange )

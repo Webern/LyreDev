@@ -24,7 +24,8 @@ namespace Lyre
         virtual ~IInstrumentFactory() {}
         
         virtual IInstrumentUP create(
-            const InstrumentName& name,
+            const String& name,
+            const String& shortName,
             const IRangeUP& range ) const = 0;
 
     };

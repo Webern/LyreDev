@@ -31,10 +31,9 @@ TEST( toStream, PartSpec )
 {
     Factories f;
     auto r = f.rangeFactory->create( "C#1", "Fb2" );
-    InstrumentName name;
-    name.Name = "Crazy Trumpet";
-    name.ShortName = "Cr. Trp";
-    auto i = f.instrumentFactory->create( name, r );
+    String name = "Crazy Trumpet";
+    String shortName = "Cr. Trp";
+    auto i = f.instrumentFactory->create( name, shortName, r );
     auto ps = f.partSpecFactory->create( i );
     ps->setName( "Crazy Trumpet Part" );
     ps->setUniqueId( "CRTRP1" );

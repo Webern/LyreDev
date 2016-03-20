@@ -17,12 +17,11 @@ namespace
 
 TEST( toStream, Instrument )
 {
-    InstrumentName name;
-    name.Name = "Trumpet in Bb";
-    name.ShortName = "Bb Trp";
+    String name = "Trumpet in Bb";
+    String shortName = "Bb Trp";
     auto range = createRangeFactory()->create( "Bb3", "C5" );
     
-    IInstrumentUP inst = factory->create( name, range );
+    IInstrumentUP inst = factory->create( name, shortName, range );
     std::stringstream ss;
     inst->toStream( ss );
     String expected = "Trumpet in Bb";

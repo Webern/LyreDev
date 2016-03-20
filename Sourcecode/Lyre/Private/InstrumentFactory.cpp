@@ -10,10 +10,11 @@ namespace Lyre
         InstrumentFactory::~InstrumentFactory() {}
         
         IInstrumentUP InstrumentFactory::create(
-            const InstrumentName& name,
+            const String& name,
+            const String& shortName,
             const IRangeUP& range ) const
         {
-            return IInstrumentUP{ new Instrument{ name, range } };
+            return IInstrumentUP{ new Instrument{ name, shortName, range } };
         }
     }
 }

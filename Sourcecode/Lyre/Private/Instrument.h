@@ -13,7 +13,12 @@ namespace Lyre
         {
         public:
             virtual ~Instrument();
-            Instrument( const InstrumentName& name, const IRangeUP& range );
+
+            Instrument(
+                const String& name,
+                const String& shortName,
+                const IRangeUP& range );
+            
             Instrument( const Instrument& other );
             Instrument( Instrument&& other ) noexcept;
             Instrument& operator=( const Instrument& other );

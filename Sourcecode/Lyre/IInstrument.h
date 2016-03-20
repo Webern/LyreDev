@@ -5,19 +5,6 @@
 
 namespace Lyre
 {
-    
-    struct PUBLIC InstrumentName
-    {
-        InstrumentName( String name, String shortName )
-        :Name( name )
-        ,ShortName( shortName )
-        {}
-        
-        InstrumentName(){}
-        
-        String Name;
-        String ShortName;
-    };
 
     FORWARD_DECLARE(IInstrument)
     
