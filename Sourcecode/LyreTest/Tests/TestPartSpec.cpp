@@ -35,11 +35,11 @@ TEST( toStream, PartSpec )
     String shortName = "Cr. Trp";
     auto i = f.instrumentFactory->create( name, shortName, r );
     auto ps = f.partSpecFactory->create( i );
-    ps->setName( "Crazy Trumpet Part" );
+    ps->setName( "Crazy Trumpet 1" );
     ps->setUniqueId( "CRTRP1" );
     std::stringstream ss;
     ps->toStream( ss );
-    String expected = "{ Crazy Trumpet Part: CRTRP1: Crazy Trumpet }";
+    String expected = "{ Crazy Trumpet 1: CRTRP1: Crazy Trumpet }";
     String actual = ss.str();
     CHECK_EQUAL( expected, actual )
 }
