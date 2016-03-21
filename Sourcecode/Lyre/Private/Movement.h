@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/IMovement.h"
+#include "Lyre/IPartFactory.h"
 
 namespace Lyre
 {
@@ -16,8 +17,11 @@ namespace Lyre
             
             Movement();
             
-            Movement( const IMovementSpecUP& info,
-                      const IMasterTrackSPC& masterTrack );
+            Movement(
+                const IMovementSpecUP& info,
+                const VecIPartSpecUP& partSpecs,
+                const IMasterTrackSPC& masterTrack,
+                const IPartFactoryUP& partFactory );
             
             Movement( const Movement& other );
             Movement( Movement&& other )  noexcept;
@@ -49,11 +53,15 @@ namespace Lyre
             
             IMovementSpecUP myInfo;
             IMasterTrackSPC myMasterTrack;
+            VecIPartUP myParts;
             
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE FUNCTIONS
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
+            void initializeParts(
+                const VecIPartSpecUP& partSpecs,
+                const IPartFactoryUP& partFactory );
             
             
         };

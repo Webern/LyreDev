@@ -1,21 +1,30 @@
 #include "Lyre/Private/PartSpec.h"
 #include "Lyre/Private/throw.h"
+#include <ctype.h>
 
 namespace Lyre
 {
     namespace Private
     {
+        int PartSpec::ourUniqueInt = 100000;
+        
         PartSpec::~PartSpec()
         {
         }
 
-        PartSpec::PartSpec( const IInstrumentUP& instrument )
-        : myName( "default name" )
-        , myId( "default id" )
+        PartSpec::PartSpec(
+            int numStaves,
+            const IInstrumentUP& instrument )
+        : myName()
+        , myId()
         , myInstrument( nullptr )
+        , myNumStaves( numStaves )
         {
+            THROW_IF_BAD_VALUE( numStaves, 0, INT_MAX )
             THROW_IF_NULL( instrument )
             myInstrument = instrument->clone();
+            deduceName();
+            autoGenId( myName );
         }
 
         
@@ -23,6 +32,7 @@ namespace Lyre
         : myName( other.myName )
         , myId( other.myId )
         , myInstrument( nullptr )
+        , myNumStaves( other.myNumStaves )
         {
             THROW_IF_NULL( other.myInstrument )
             myInstrument = other.myInstrument->clone();
@@ -33,6 +43,7 @@ namespace Lyre
         : myName( std::move( other.myName ) )
         , myId( std::move( other.myId ) )
         , myInstrument( std::move( other.myInstrument ) )
+        , myNumStaves( std::move( other.myNumStaves ) )
         {
 
         }
@@ -44,6 +55,7 @@ namespace Lyre
             myName = other.myName;
             myId = other.myId;
             myInstrument = other.myInstrument->clone();
+            myNumStaves = other.myNumStaves;
             return *this;
         }
 
@@ -53,6 +65,7 @@ namespace Lyre
             myName = std::move( other.myName );
             myId = std::move( other.myId );
             myInstrument = std::move( other.myInstrument );
+            myNumStaves = std::move( other.myNumStaves );
             return *this;
         }
 
@@ -92,6 +105,12 @@ namespace Lyre
         }
         
         
+        int PartSpec::getNumStaves() const
+        {
+            return myNumStaves;
+        }
+        
+        
         void PartSpec::setName( const String& name )
         {
             myName = name;
@@ -107,12 +126,41 @@ namespace Lyre
             myId = uniqueId;
         }
         
-        
-        void PartSpec::setInstrument( const IInstrumentUP& instrument )
+        void PartSpec::autoGenerateUniqueIdFromName()
         {
-            THROW_IF_NULL( instrument )
-            myInstrument = instrument->clone();
+            autoGenId( myName );
         }
         
+        void PartSpec::deduceName()
+        {
+            myName = myInstrument->getName();
+        }
+        
+        
+        void PartSpec::autoGenId( const String& name )
+        {
+            std::stringstream ss;
+            for ( auto c : name )
+            {
+                if ( c >= 'a' && c <= 'z' )
+                {
+                    ss << static_cast<char>( toupper( c ) );
+                }
+                else if ( c >= 'A' && c <= 'Z' )
+                {
+                    ss << c;
+                }
+                else if ( c >= '0' && c <= '1' )
+                {
+                    ss << c;
+                }
+                else if ( c == ' ' )
+                {
+                    ss << '_';
+                }
+            }
+            ss << '_' << ourUniqueInt++;
+            myId = ss.str();
+        }
     }
 }

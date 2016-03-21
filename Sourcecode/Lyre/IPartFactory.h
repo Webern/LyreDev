@@ -4,6 +4,7 @@
 #include "Lyre/IPart.h"
 #include "Lyre/IInstrument.h"
 #include "Lyre/IMasterTrack.h"
+#include "Lyre/IPartSpec.h"
 
 namespace Lyre
 {
@@ -26,8 +27,7 @@ namespace Lyre
         virtual ~IPartFactory() {}
 
         virtual IPartUP create(
-                int numStaves,
-                const IInstrumentUP& instrument,
+                const IPartSpecUP& partSpec,
                 const IMasterTrackSPC& masterTrack ) const = 0;
 
     };

@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/IMovementSpec.h"
+#include "Lyre/IPartSpec.h"
 #include "Lyre/IPart.h"
 #include "Lyre/IMasterTrack.h"
 

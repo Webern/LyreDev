@@ -21,7 +21,10 @@ namespace Lyre
     {
     public:
         virtual ~IPartSpecFactory() {}
-        virtual IPartSpecUP create( const IInstrumentUP& instrument ) const = 0;
+        
+        virtual IPartSpecUP create(
+            int numStaves,
+            const IInstrumentUP& instrument ) const = 0;
 
     };
 }

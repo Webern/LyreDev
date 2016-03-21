@@ -34,13 +34,15 @@ TEST( toStream, PartSpec )
     String name = "Crazy Trumpet";
     String shortName = "Cr. Trp";
     auto i = f.instrumentFactory->create( name, shortName, r );
-    auto ps = f.partSpecFactory->create( i );
+    auto ps = f.partSpecFactory->create( 3, i );
     ps->setName( "Crazy Trumpet 1" );
-    ps->setUniqueId( "CRTRP1" );
+    ps->autoGenerateUniqueIdFromName();
     std::stringstream ss;
     ps->toStream( ss );
-    String expected = "{ Crazy Trumpet 1: CRTRP1: Crazy Trumpet }";
+    //{ Crazy Trumpet 1: CRAZY_TRUMPET_1_100008: Crazy Trumpet }
+    String expected = "{ Crazy Trumpet 1: CRAZY_TRUMPET_1_100008: Crazy Trumpet }";
     String actual = ss.str();
-    CHECK_EQUAL( expected, actual )
+    CHECK_EQUAL( expected.substr( 0, 34), actual.substr( 0, 34 ) )
+    CHECK_EQUAL( expected.substr( expected.size() - 17 ), actual.substr( actual.size() - 17 ) )
 }
 T_END

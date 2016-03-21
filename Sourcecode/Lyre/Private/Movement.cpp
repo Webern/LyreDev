@@ -15,12 +15,20 @@ namespace Lyre
             
         }
 
-        Movement::Movement( const IMovementSpecUP& info,
-                            const IMasterTrackSPC& masterTrack )
+        Movement::Movement(
+            const IMovementSpecUP& info,
+            const VecIPartSpecUP& partSpecs,
+            const IMasterTrackSPC& masterTrack,
+            const IPartFactoryUP& partFactory  )
+        
         : myInfo( info->clone() )
         , myMasterTrack( masterTrack )
+        , myParts()
         {
-            UNUSED_PARAMETER( masterTrack )
+            THROW_IF_NULL( masterTrack )
+            THROW_IF_NULL( partFactory )
+            THROW_IF_BAD_VALUE( partSpecs.size(), 0, INT_MAX )
+            initializeParts( partSpecs, partFactory );
         }
 
         Movement::Movement( const Movement& other )
@@ -95,6 +103,23 @@ namespace Lyre
 			UNUSED_PARAMETER( measureIndex )
 			return IPartHC( nullptr );
 		}
-
+        
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PRIVATE FUNCTIONS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        void Movement::initializeParts(
+            const VecIPartSpecUP& partSpecs,
+            const IPartFactoryUP& partFactory )
+        {
+            
+            for ( auto it = partSpecs.cbegin(); it != partSpecs.cend(); ++it )
+            {
+                THROW_IF_NULL( *it )
+                UNUSED_PARAMETER( partFactory )
+                auto part = partFactory->create( *it, myMasterTrack );
+            }
+        }
+        
     }
 }

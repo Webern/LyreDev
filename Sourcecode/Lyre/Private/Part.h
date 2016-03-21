@@ -5,6 +5,7 @@
 #include "Lyre/IMeasure.h"
 #include "Lyre/IInstrument.h"
 #include "Lyre/IMasterTrack.h"
+#include "Lyre/IPartSpec.h"
 #include <map>
 
 namespace Lyre
@@ -19,8 +20,7 @@ namespace Lyre
             virtual ~Part();
             
             Part(
-                int numStaves,
-                const IInstrumentUP& instrument,
+                const IPartSpecUP& spec,
                 const IMasterTrackSPC& masterTrack );
 
             Part( const Part& other );
@@ -58,7 +58,7 @@ namespace Lyre
 // PRIVATE DATA
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
-            IInstrumentUPC myInstrument;
+            IPartSpecUP myPartSpec;
             IMasterTrackSPC myMasterTrack;
             Staves myStaves;
 			int myStaffContext;
@@ -68,7 +68,7 @@ namespace Lyre
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
             Part();
-            void initializeMeasures();
+            void initializeMeasures( int numStaves );
             void cloneStaves( const Staves& otherStaves );
         };
     } 

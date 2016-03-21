@@ -19,19 +19,22 @@ namespace Lyre
 		}
 
 		Part::Part(
-			int numStaves,
-			const IInstrumentUP& instrument,
+			const IPartSpecUP& spec,
 			const IMasterTrackSPC & masterTrack )
-        : myInstrument( instrument->clone() )
+        : myPartSpec( nullptr )
         , myMasterTrack( masterTrack )
-        , myStaves( static_cast<size_t>( numStaves ) )
+        , myStaves()
 		, myStaffContext( 0 )
 		{
-            initializeMeasures();
+            THROW_IF_NULL( spec )
+            THROW_IF_NULL( masterTrack )
+            myPartSpec = spec->clone();
+            initializeMeasures( myPartSpec->getNumStaves() );
 		}
 
+        
 		Part::Part( const Part& other )
-        : myInstrument( other.myInstrument->clone() )
+        : myPartSpec( other.myPartSpec->clone() )
         , myMasterTrack( other.myMasterTrack )
         , myStaves()
 		, myStaffContext( other.myStaffContext )
@@ -39,28 +42,31 @@ namespace Lyre
             cloneStaves( other.myStaves );
 		}
 
+        
 		Part::Part( Part&& other ) noexcept
-        : myInstrument( std::move( other.myInstrument ) )
+        : myPartSpec( std::move( other.myPartSpec ) )
         , myMasterTrack( std::move( other.myMasterTrack ) )
         , myStaves( std::move( other.myStaves ) )
 		, myStaffContext( std::move( other.myStaffContext ) )
 		{
 
 		}
+        
 
 		Part& Part::operator=( const Part& other )
 		{
-			myInstrument = other.myInstrument->clone();
+			myPartSpec = other.myPartSpec->clone();
             myMasterTrack = other.myMasterTrack;
             myStaves.clear();
             cloneStaves( other.myStaves );
 			myStaffContext = other.myStaffContext;
             return *this;
 		}
+        
 
 		Part& Part::operator=( Part&& other ) noexcept
 		{
-			myInstrument = std::move( other.myInstrument->clone() );
+			myPartSpec = std::move( other.myPartSpec );
             myMasterTrack = std::move( other.myMasterTrack );
             myStaves = std::move( other.myStaves );
 			myStaffContext = std::move( other.myStaffContext );
@@ -71,15 +77,16 @@ namespace Lyre
 		{
 			return IPartUP( new Part( *this ) );
 		}
+        
 
 		IPartUP Part::move() noexcept
 		{
             Part* newPart = new Part( );
-            newPart->myInstrument = std::move( this->myInstrument->clone() );
+            newPart->myPartSpec = std::move( this->myPartSpec );
             newPart->myMasterTrack = std::move( this->myMasterTrack );
             newPart->myStaves = std::move( this->myStaves );
 			newPart->myStaffContext = std::move( this->myStaffContext );
-			// this becomes an unusable object
+			// *this becomes an unusable object
 			return IPartUP( newPart );
 		}
 
@@ -87,22 +94,26 @@ namespace Lyre
 		{
 			return os << "not implemented";
 		}
+        
 
 		void Part::setStaffContext( int staffIndex )
 		{
 			THROW_IF_BAD_VALUE( staffIndex, 0, static_cast<int>( myStaves.size() - 1 ) );
 			myStaffContext = staffIndex;
 		}
+        
 
 		int Part::getStaffContext() const
 		{
 			return myStaffContext;
 		}
+        
 
 		int Part::getMeasureCount() const
 		{
 			return static_cast<int>( (myStaves.cbegin() + myStaffContext)->size() );
 		}
+        
 
 		IMeasureH Part::getMeasure( int measureIndex )
 		{
@@ -111,11 +122,13 @@ namespace Lyre
 			MeasureIter iter = staffIter->begin() + measureIndex;
 			return IMeasureH{ *iter };
 		}
+        
 
 		const IMeasureHC Part::getMeasure( int measureIndex ) const
 		{
 			return getMeasureConst( measureIndex );
 		}
+        
         
         const IMeasureHC Part::getMeasureConst( int measureIndex ) const
         {
@@ -124,27 +137,31 @@ namespace Lyre
 			MeasureIterConst iter = staffIter->cbegin() + measureIndex;
 			return IMeasureHC{ *iter };
         }
+        
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         Part::Part()
-        : myInstrument( nullptr )
+        : myPartSpec( nullptr )
         , myMasterTrack( nullptr )
         , myStaves()
         {
             
         }
         
-		void Part::initializeMeasures()
+        
+		void Part::initializeMeasures( int numStaves )
 		{
-			for ( auto staff = myStaves.begin();
-				  staff != myStaves.end(); ++staff )
-			{
+            for( int i = 0; i < numStaves; ++i )
+            {
+                myStaves.push_back( Measures{} );
+                auto staff = ( myStaves.begin() + i );
 				*staff = std::move( myMasterTrack->createMeasures() );
 			}
 		}
+        
         
         void Part::cloneStaves( const Staves& otherStaves )
         {
@@ -160,5 +177,6 @@ namespace Lyre
                 myStaves.push_back( std::move( copiedMeasures ) );
             }
         }
+        
     }
 }

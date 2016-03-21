@@ -16,8 +16,7 @@ namespace Lyre
             virtual ~PartFactory();
             
             virtual IPartUP create(
-                int numStaves,
-                const IInstrumentUP& instrument,
+                const IPartSpecUP& partSpec,
                 const IMasterTrackSPC& masterTrack ) const;
         };
     }

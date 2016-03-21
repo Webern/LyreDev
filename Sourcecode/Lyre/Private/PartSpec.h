@@ -13,7 +13,11 @@ namespace Lyre
         {
         public:
             virtual ~PartSpec();
-            PartSpec( const IInstrumentUP& instrument );
+            
+            PartSpec(
+                int numStaves,
+                const IInstrumentUP& instrument );
+            
             PartSpec( const PartSpec& other );
             PartSpec( PartSpec&& other );
             PartSpec& operator=( const PartSpec& other );
@@ -25,16 +29,21 @@ namespace Lyre
             virtual String getName() const;
             virtual String getUniqueId() const;
             virtual IInstrumentUP getInstrument() const;
+            virtual int getNumStaves() const;
             
             virtual void setName( const String& name );
             virtual void setUniqueId( const String& uniqueId );
-            virtual void setInstrument( const IInstrumentUP& instrument );
+            virtual void autoGenerateUniqueIdFromName();
             
         private:
             String myName;
             String myId;
             IInstrumentUPC myInstrument;
+            int myNumStaves;
+            static int ourUniqueInt;
             
+            void deduceName();
+            void autoGenId( const String& name );
         };
     } 
 }

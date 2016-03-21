@@ -9,9 +9,11 @@ namespace Lyre
     {
         PartSpecFactory::~PartSpecFactory() {}
         
-        IPartSpecUP PartSpecFactory::create( const IInstrumentUP& instrument ) const
+        IPartSpecUP PartSpecFactory::create(
+            int numStaves,
+            const IInstrumentUP& instrument ) const
         {
-            return IPartSpecUP{ new PartSpec{ instrument } };
+            return IPartSpecUP{ new PartSpec{ numStaves, instrument } };
         }
     }
 }

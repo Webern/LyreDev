@@ -10,6 +10,7 @@
 #include "Lyre/IPitchFactory.h"
 #include "Lyre/IDurationFactory.h"
 #include "Lyre/INoteFactory.h"
+#include "Lyre/IPartSpecFactory.h"
 
 #include <sstream>
 
@@ -29,6 +30,7 @@ namespace
 		IPitchFactoryUP pitchFactory;
 		IDurationFactoryUPC durationFactory;
 		INoteFactoryUPC noteFactory;
+        IPartSpecFactoryUPC partSpecFactory;
 
         String name1;
         String shortName1;
@@ -52,6 +54,7 @@ namespace
         , pitchFactory( createPitchFactory() )
 		, durationFactory( createDurationFactory() )
 		, noteFactory( createNoteFactory() )
+        , partSpecFactory( createPartSpecFactory() )
 		, name1( "Instrument 1" )
         , shortName1( "Instr 1" )
         , range1( rangeFactory->create( "A2", "C7" ) )
@@ -69,8 +72,8 @@ TEST( ctorWorks, Part )
     params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
     params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
     IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
-	auto i = f.instrument1->clone();
-    IPartUP part = f.partFactory->create( 1, std::move( i ), masterTrack );
+	auto spec = f.partSpecFactory->create( 3, f.instrument1->clone() );
+    IPartUP part = f.partFactory->create( spec, masterTrack );
     CHECK( part != nullptr )
 }
 T_END
@@ -84,7 +87,8 @@ TEST( staffContextGetSet, Part )
 	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
 	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
-	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	auto spec = f.partSpecFactory->create( 3, f.instrument1->clone() );
+	IPartUP part = f.partFactory->create( spec, masterTrack );
 	part->setStaffContext( 1 );
     CHECK_EQUAL( 1, part->getStaffContext() )
 }
@@ -99,7 +103,8 @@ TEST( staffContextThrowOutOfRangeHigh, Part )
 	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
 	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
-	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	auto spec = f.partSpecFactory->create( 3, f.instrument1->clone() );
+	IPartUP part = f.partFactory->create( spec, masterTrack );
 	bool isExceptionThrown = false;
     part->setStaffContext( 2 );
     try
@@ -126,7 +131,8 @@ TEST( staffContextThrowOutOfRangeLow, Part )
 	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
 	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
-	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	auto spec = f.partSpecFactory->create( 3, f.instrument1->clone() );
+	IPartUP part = f.partFactory->create( spec, masterTrack );
 	bool isExceptionThrown = false;
     part->setStaffContext( 2 );
     try
@@ -152,7 +158,8 @@ TEST( getMeasureCount, Part )
 	params.measureCount = 1;
 	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
-	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	auto spec = f.partSpecFactory->create( 3, f.instrument1->clone() );
+	IPartUP part = f.partFactory->create( spec, masterTrack );
     CHECK_EQUAL( 1, part->getMeasureCount() )
 }
 T_END
@@ -166,7 +173,8 @@ TEST( getMeasureNonCost, Part )
 	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
 	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
-	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	auto spec = f.partSpecFactory->create( 3, f.instrument1->clone() );
+	IPartUP part = f.partFactory->create( spec, masterTrack );
 	part->setStaffContext( 2 );
 	auto measure = part->getMeasure( 5 );
 	measure->addNote( f.createNote( "C4", "Half" ) );
@@ -184,7 +192,8 @@ TEST( getMeasureConst, Part )
 	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
 	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
 	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
-	IPartUP part = f.partFactory->create( 3, f.instrument1->clone(), masterTrack );
+	auto spec = f.partSpecFactory->create( 3, f.instrument1->clone() );
+	IPartUP part = f.partFactory->create( spec, masterTrack );
 	part->setStaffContext( 1 );
     auto measure = part->getMeasureConst( 3 );
     CHECK_EQUAL( Rational(4,1), measure->getUnusedRemaining() )

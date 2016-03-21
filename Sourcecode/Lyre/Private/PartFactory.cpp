@@ -10,11 +10,10 @@ namespace Lyre
         PartFactory::~PartFactory() {}
         
         IPartUP PartFactory::create(
-                int numStaves,
-                const IInstrumentUP& instrument,
+                const IPartSpecUP& partSpec,
                 const IMasterTrackSPC& masterTrack ) const
         {
-            return IPartUP{ new Part( numStaves, instrument, masterTrack ) };
+            return IPartUP{ new Part( partSpec, masterTrack ) };
         }
     }
 }
