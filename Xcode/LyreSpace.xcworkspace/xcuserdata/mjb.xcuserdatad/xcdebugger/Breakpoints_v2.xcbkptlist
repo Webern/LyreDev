@@ -1344,11 +1344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Part.cpp"
-            timestampString = "480227650.490103"
+            timestampString = "480317787.262821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "Part::cloneStaves( const Staves&amp; otherStaves )"
             landmarkType = "5">
          </BreakpointContent>

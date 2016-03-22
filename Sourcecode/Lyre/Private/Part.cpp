@@ -92,7 +92,35 @@ namespace Lyre
 
 		std::ostream & Part::toStream( std::ostream & os ) const
 		{
-			return os << "not implemented";
+            os << "Part " << myPartSpec->getName() << std::endl;
+            os << "{";
+            int staffIndex = 0;
+			for ( auto s = myStaves.cbegin(); s != myStaves.cend(); ++s )
+            {
+                os << "    " << myPartSpec->getUniqueId() << " STAFF " << staffIndex << std::endl;
+                os << "    {" << std::endl;
+                int measureIndex = 0;
+                for ( auto m = s->cbegin(); m != s->cend(); ++m )
+                {
+                    
+                    std::istringstream iss( (*m)->toString() );
+                    std::string line;
+                    while( std::getline( iss, line ) )
+                    {
+                        os << "        " << line;
+                        if( line == "Measure" )
+                        {
+                            os << " " << measureIndex;
+                        }
+                        os << std::endl;
+                    }
+                    ++measureIndex;
+                }
+                os << "    }" << std::endl;
+                ++staffIndex;
+            }
+            os << "}";
+            return os;
 		}
         
 
