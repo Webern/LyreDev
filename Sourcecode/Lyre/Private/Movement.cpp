@@ -16,40 +16,59 @@ namespace Lyre
         }
 
         Movement::Movement(
-            const IMovementSpecUP& info,
+            const IMovementSpecUP& spec,
             const VecIPartSpecUP& partSpecs,
             const IMasterTrackSPC& masterTrack,
             const IPartFactoryUP& partFactory  )
-        
-        : myInfo( info->clone() )
+        : mySpec( nullptr )
         , myMasterTrack( masterTrack )
         , myParts()
+        , myPartFactory( nullptr )
         {
+            THROW_IF_NULL( spec )
+            mySpec = spec->clone();
             THROW_IF_NULL( masterTrack )
-            THROW_IF_NULL( partFactory )
-            THROW_IF_BAD_VALUE( partSpecs.size(), 0, INT_MAX )
+            THROW_IF_NULL( myPartFactory )
+            myPartFactory = partFactory->clone();
+            THROW_IF_BAD_VALUE( partSpecs.size(), 1, INT_MAX )
             initializeParts( partSpecs, partFactory );
         }
 
         Movement::Movement( const Movement& other )
+        : mySpec( other.mySpec->clone() )
+        , myMasterTrack( other.myMasterTrack )
+        , myParts()
+        , myPartFactory( other.myPartFactory->clone() )
         {
-            UNUSED_PARAMETER( other )
+            copyParts( other.myParts );
         }
 
         Movement::Movement( Movement&& other ) noexcept
+        : mySpec( std::move( other.mySpec ) )
+        , myMasterTrack( std::move( other.myMasterTrack ) )
+        , myParts( std::move ( other.myParts ) )
+        , myPartFactory( std::move( other.myPartFactory ) )
         {
-            UNUSED_PARAMETER( other )
+            
         }
 
         Movement& Movement::operator=( const Movement& other )
         {
-            UNUSED_PARAMETER( other )
+            THROW_IF_NULL( other.mySpec );
+            mySpec = other.mySpec->clone();
+            THROW_IF_NULL( other.myMasterTrack );
+            myMasterTrack = other.myMasterTrack;
+            myPartFactory = other.myPartFactory->clone();
+            copyParts( other.myParts );
             return *this;
         }
 
         Movement& Movement::operator=( Movement&& other ) noexcept
         {
-            UNUSED_PARAMETER( other )
+            mySpec = std::move( other.mySpec );
+            myMasterTrack = std::move( other.myMasterTrack );
+            myParts = std::move( other.myParts );
+            myPartFactory = std::move( other.myPartFactory );
             return *this;
         }
 
@@ -62,46 +81,59 @@ namespace Lyre
         
         IMovementUP Movement::move() noexcept
         {
-            return IMovementUP{};
+            try
+            {
+                return IMovementUP{ new Movement{ std::move(*this ) } };
+            }
+            catch( ... )
+            {
+                return IMovementUP{};
+            }
         }
         
 
         std::ostream& Movement::toStream( std::ostream& os ) const
         {
-            return os << "Movement not implemented";
+            for ( auto it = myParts.cbegin();
+                 it != myParts.cend(); ++it )
+            {
+                (*it)->toStream( os );
+            }
+            return os;
         }
 
         
-        const IMovementSpecUPC Movement::getInfo() const
+        const IMovementSpecUPC Movement::getSpec() const
         {
-            return myInfo->clone();
+            return mySpec->clone();
         }
         
         
 		int Movement::getPartCount() const
 		{
-			return 0;
+			return static_cast<int>( myParts.size() );
 		}
 
 
-		IPartH Movement::getPart( int measureIndex )
+		IPartH Movement::getPart( int partIndex )
 		{
-			UNUSED_PARAMETER( measureIndex )
-			return IPartH( nullptr );
+            THROW_IF_BAD_VALUE( partIndex, 0, getPartCount() )
+            auto it = ( myParts.begin() + partIndex );
+			return IPartH( *it );
 		}
 
 
-		const IPartHC Movement::getPart( int measureIndex ) const
+		const IPartHC Movement::getPart( int partIndex ) const
 		{
-			UNUSED_PARAMETER( measureIndex )
-			return getPartConst( measureIndex );
+			return getPartConst( partIndex );
 		}
 
 
-		const IPartHC Movement::getPartConst( int measureIndex ) const
+		const IPartHC Movement::getPartConst( int partIndex ) const
 		{
-			UNUSED_PARAMETER( measureIndex )
-			return IPartHC( nullptr );
+			THROW_IF_BAD_VALUE( partIndex, 0, getPartCount() )
+            auto it = ( myParts.cbegin() + partIndex );
+			return IPartHC( *it );
 		}
         
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -116,8 +148,18 @@ namespace Lyre
             for ( auto it = partSpecs.cbegin(); it != partSpecs.cend(); ++it )
             {
                 THROW_IF_NULL( *it )
-                UNUSED_PARAMETER( partFactory )
                 auto part = partFactory->create( *it, myMasterTrack );
+            }
+        }
+        
+        void Movement::copyParts( const VecIPartUP& other )
+        {
+            myParts.clear();
+            for ( auto it = other.cbegin();
+                  it != other.cend(); ++it )
+            {
+                THROW_IF_NULL( *it );
+                myParts.push_back( (*it)->clone() );
             }
         }
         

@@ -18,7 +18,7 @@ namespace Lyre
             Movement();
             
             Movement(
-                const IMovementSpecUP& info,
+                const IMovementSpecUP& spec,
                 const VecIPartSpecUP& partSpecs,
                 const IMasterTrackSPC& masterTrack,
                 const IPartFactoryUP& partFactory );
@@ -32,12 +32,12 @@ namespace Lyre
             virtual IMovementUP move() noexcept;
             virtual std::ostream& toStream( std::ostream& os ) const;
             
-            virtual const IMovementSpecUPC getInfo() const;
+            virtual const IMovementSpecUPC getSpec() const;
             
 			virtual int getPartCount() const;
-			virtual IPartH getPart( int measureIndex );
-			virtual const IPartHC getPart( int measureIndex ) const;
-			virtual const IPartHC getPartConst( int measureIndex ) const;
+			virtual IPartH getPart( int partIndex );
+			virtual const IPartHC getPart( int partIndex ) const;
+			virtual const IPartHC getPartConst( int partIndex ) const;
             
 		private:
             
@@ -51,9 +51,10 @@ namespace Lyre
 // PRIVATE DATA
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
-            IMovementSpecUP myInfo;
+            IMovementSpecUP mySpec;
             IMasterTrackSPC myMasterTrack;
             VecIPartUP myParts;
+            IPartFactoryUP myPartFactory;
             
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE FUNCTIONS
@@ -63,6 +64,7 @@ namespace Lyre
                 const VecIPartSpecUP& partSpecs,
                 const IPartFactoryUP& partFactory );
             
+            void copyParts( const VecIPartUP& other );
             
         };
     } 

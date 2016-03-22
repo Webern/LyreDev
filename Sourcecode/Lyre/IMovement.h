@@ -9,11 +9,6 @@
 namespace Lyre
 {
     
-    struct MovementMetadata
-    {
-        char* title;
-    };
-    
     FORWARD_DECLARE(IMovement)
     
     class PUBLIC IMovement : public IStreamable
@@ -23,7 +18,12 @@ namespace Lyre
         virtual IMovementUP clone() const = 0;
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         
-        virtual const IMovementSpecUPC getInfo() const = 0;
+        virtual const IMovementSpecUPC getSpec() const = 0;
+        
+        virtual int getPartCount() const = 0;
+        virtual IPartH getPart( int partIndex ) = 0;
+        virtual const IPartHC getPart( int partIndex ) const = 0;
+        virtual const IPartHC getPartConst( int partIndex ) const = 0;
         
     };
 }

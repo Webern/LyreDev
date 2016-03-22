@@ -15,6 +15,8 @@ namespace Lyre
         public:
             virtual ~PartFactory();
             
+            virtual IPartFactoryUP clone() const;
+            
             virtual IPartUP create(
                 const IPartSpecUP& partSpec,
                 const IMasterTrackSPC& masterTrack ) const;

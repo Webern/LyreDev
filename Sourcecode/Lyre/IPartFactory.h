@@ -25,6 +25,7 @@ namespace Lyre
     {
     public:
         virtual ~IPartFactory() {}
+        virtual IPartFactoryUP clone() const = 0;
 
         virtual IPartUP create(
                 const IPartSpecUP& partSpec,

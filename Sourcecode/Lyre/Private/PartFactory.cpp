@@ -9,6 +9,11 @@ namespace Lyre
     {
         PartFactory::~PartFactory() {}
         
+        IPartFactoryUP PartFactory::clone() const
+        {
+            return IPartFactoryUP{ new PartFactory{ *this } };
+        }
+        
         IPartUP PartFactory::create(
                 const IPartSpecUP& partSpec,
                 const IMasterTrackSPC& masterTrack ) const
