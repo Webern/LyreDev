@@ -148,7 +148,7 @@ TEST( acceptanceTest, Movement )
     ss << "            {" << std::endl;
     ss << "            }" << std::endl;
     ss << "        }" << std::endl;
-    ss << "        HARP_100011 STAFF 1" << std::endl;
+    ss << "        HARP STAFF 1" << std::endl;
     ss << "        {" << std::endl;
     ss << "            Measure 0" << std::endl;
     ss << "            {" << std::endl;

@@ -150,7 +150,7 @@ namespace Lyre
                 {
                     ss << c;
                 }
-                else if ( c >= '1' && c <= '0' )
+                else if ( c >= '0' && c <= '9' )
                 {
                     ss << c;
                 }

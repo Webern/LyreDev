@@ -1551,7 +1551,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
             endingLineNumber = "14"
-            landmarkName = "TEST( basicTest, Movement )"
+            landmarkName = "TEST( acceptanceTest, Movement )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1687,7 +1687,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "TEST( basicTest, Movement )"
+            landmarkName = "TEST( acceptanceTest, Movement )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1719,7 +1719,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "TEST( basicTest, Movement )"
+            landmarkName = "TEST( acceptanceTest, Movement )"
             landmarkType = "7">
             <Locations>
                <Location
