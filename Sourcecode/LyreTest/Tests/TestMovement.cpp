@@ -1,5 +1,5 @@
 //PUBLIC
-#include "TestMovment.h"
+#include "TestMovement.h"
 
 #include <sstream>
 
