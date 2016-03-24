@@ -20,7 +20,7 @@ TEST( acceptanceTest, ScoreSpec )
 	spec->setTitle( "AstroMusic Part 1" );
 	spec->setComposer( "Matthew James Briggs" );
 	spec->setCompletionDate( "03/23/2016" );
-	spec->setCopyright( "© 2016 by Matthew James Briggs" );
+	spec->setCopyright( "(c) 2016 by Matthew James Briggs" );
 	spec->setStartDate( "09/01/2014" );
     std::stringstream ss;
 	spec->toStream( ss );
@@ -28,7 +28,7 @@ TEST( acceptanceTest, ScoreSpec )
 	exp << "*******************************************************************" << std::endl;
 	exp << "Title           : AstroMusic Part 1"                                 << std::endl;
 	exp << "Composer        : Matthew James Briggs"                              << std::endl;
-	exp << "Copyright       : © 2016 by Matthew James Briggs"                    << std::endl;
+	exp << "Copyright       : (c) 2016 by Matthew James Briggs"                    << std::endl;
 	exp << "Start Date      : 09/01/2014"                                        << std::endl;
 	exp << "Completion Date : 03/23/2016"                                        << std::endl;
 	exp << "*******************************************************************" << std::endl;
