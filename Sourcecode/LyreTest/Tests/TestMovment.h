@@ -62,15 +62,21 @@ namespace
         VecIPartSpecUP createPartSpecs() const
         {
             VecIPartSpecUP parts;
-            parts.push_back( partSpecFactory->create( 1, this->createInstrument( "Flute 1", "Fl 1", "C4", "C7" ) ) );
-            parts.push_back( partSpecFactory->create( 1, this->createInstrument( "Flute 2", "Fl 2", "C4", "C7" ) ) );
-            parts.push_back( partSpecFactory->create( 2, this->createInstrument( "Harp", "Hp", "C2", "C7" ) ) );
+			auto p1 = partSpecFactory->create( 1, this->createInstrument( "Flute 1", "Fl 1", "C4", "C7" ) );
+			p1->setUniqueId( "FLUTE_1" );
+            parts.push_back( std::move( p1 ) );
+			auto p2 = partSpecFactory->create( 1, this->createInstrument( "Flute 2", "Fl 2", "C4", "C7" ) );
+			p2->setUniqueId( "FLUTE_2" );
+			parts.push_back( std::move( p2 ) );
+			auto p3 = partSpecFactory->create( 2, this->createInstrument( "Harp", "Hp", "C2", "C7" ) );
+			p3->setUniqueId( "HARP" );
+			parts.push_back( std::move( p3 ) );
             return parts;
         }
         
         IMovementSpecUP createMovementSpec( int num, String title ) const
         {
-            auto mspec = movementSpecFactory->create( 1 );
+            auto mspec = movementSpecFactory->create( num );
             mspec->setTitle( title );
             return std::move( mspec );
         }

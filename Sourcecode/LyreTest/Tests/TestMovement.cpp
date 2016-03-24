@@ -35,7 +35,7 @@ TEST( acceptanceTest, Movement )
     ss << "{" << std::endl;
     ss << "    Part Flute 1" << std::endl;
     ss << "    {" << std::endl;
-    ss << "        FLUTE_1_100009 STAFF 0" << std::endl;
+    ss << "        FLUTE_1 STAFF 0" << std::endl;
     ss << "        {" << std::endl;
     ss << "            Measure 0" << std::endl;
     ss << "            {" << std::endl;
@@ -78,7 +78,7 @@ TEST( acceptanceTest, Movement )
     ss << "" << std::endl;
     ss << "    Part Flute 2" << std::endl;
     ss << "    {" << std::endl;
-    ss << "        FLUTE__100010 STAFF 0" << std::endl;
+    ss << "        FLUTE_2 STAFF 0" << std::endl;
     ss << "        {" << std::endl;
     ss << "            Measure 0" << std::endl;
     ss << "            {" << std::endl;
@@ -115,7 +115,7 @@ TEST( acceptanceTest, Movement )
     ss << "" << std::endl;
     ss << "    Part Harp" << std::endl;
     ss << "    {" << std::endl;
-    ss << "        HARP_100011 STAFF 0" << std::endl;
+    ss << "        HARP STAFF 0" << std::endl;
     ss << "        {" << std::endl;
     ss << "            Measure 0" << std::endl;
     ss << "            {" << std::endl;

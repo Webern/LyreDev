@@ -129,6 +129,7 @@
     <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitchFactory.h" />
     <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockPitchName.h" />
     <ClInclude Include="..\Sourcecode\LyreTest\Mock\MockStep.h" />
+    <ClInclude Include="..\Sourcecode\LyreTest\Tests\TestMovment.h" />
     <ClInclude Include="..\Sourcecode\LyreTest\Tests\TestTimer.h" />
     <ClInclude Include="..\Sourcecode\LyreTest\VsTest\VsTest.h" />
   </ItemGroup>
