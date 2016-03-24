@@ -58,7 +58,6 @@
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestAlter.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestScore.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestScoreSpec.cpp" />
-    <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestScoreSpec.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestPartSpec.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMovementSpec.cpp" />
     <ClCompile Include="..\Sourcecode\LyreTest\Tests\TestMovement.cpp" />
