@@ -55,3 +55,33 @@ Articulations (esp Stacc, Accent)
 Slurs
 Rehearsal Markings
 Glissandi
+
+add to Xcode IScoreSpec.h
+add to Xcode IScoreSpecFactory.h
+add to Xcode IScoreSpecFactory.cpp
+add to Xcode ScoreSpec.h
+add to Xcode ScoreSpec.cpp
+add to Xcode ScoreSpecFactory.h
+add to Xcode ScoreSpecFactory.cpp
+implement ScoreSpec.h
+implement ScoreSpec.cpp
+implement IScoreSpec.h
+implement ScoreSpecFactory.h
+implement ScoreSpecFactory.cpp
+implement IScoreSpecFactory.h
+implement IScoreSpecFactory.cpp
+
+add to Xcode IScore.h
+add to Xcode IScoreFactory.h
+add to Xcode IScoreFactory.cpp
+add to Xcode Score.h
+add to Xcode Score.cpp
+add to Xcode ScoreFactory.h
+add to Xcode ScoreFactory.cpp
+implement Score.h
+implement Score.cpp
+implement IScore.h
+implement ScoreFactory.h
+implement ScoreFactory.cpp
+implement IScoreFactory.h
+implement IScoreFactory.cpp
