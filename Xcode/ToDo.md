@@ -46,3 +46,12 @@ implement ScoreSpecFactory.h
 implement ScoreSpecFactory.cpp
 implement IScoreSpecFactory.h
 implement IScoreSpecFactory.cpp
+
+
+***features to add***
+Dynamic markings (i.e. pp, ff)
+Hairpins
+Articulations (esp Stacc, Accent)
+Slurs
+Rehearsal Markings
+Glissandi

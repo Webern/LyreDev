@@ -15,7 +15,11 @@ namespace Lyre
         public:
             virtual ~MovementFactory();
             
-            virtual IMovementUP create() const;
+            virtual IMovementUP create(
+                const IMovementSpecUP& spec,
+                const VecIPartSpecUP& partSpecs,
+                const IMasterTrackSPC& masterTrack,
+                const IPartFactoryUP& partFactory ) const;
         };
     }
 }

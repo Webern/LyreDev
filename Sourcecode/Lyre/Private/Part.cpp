@@ -93,7 +93,7 @@ namespace Lyre
 		std::ostream & Part::toStream( std::ostream & os ) const
 		{
             os << "Part " << myPartSpec->getName() << std::endl;
-            os << "{";
+            os << "{" << std::endl;
             int staffIndex = 0;
 			for ( auto s = myStaves.cbegin(); s != myStaves.cend(); ++s )
             {

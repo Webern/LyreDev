@@ -14,10 +14,10 @@ namespace Lyre
         public:
             virtual ~MovementSpec();
             MovementSpec( int number );
-            MovementSpec( const MovementSpec& other );
-            MovementSpec( MovementSpec&& other );
-            MovementSpec& operator=( const MovementSpec& other );
-            MovementSpec& operator=( MovementSpec&& other );
+            //MovementSpec( const MovementSpec& other );
+            //MovementSpec( MovementSpec&& other );
+            //MovementSpec& operator=( const MovementSpec& other );
+            //MovementSpec& operator=( MovementSpec&& other );
             
             virtual IMovementSpecUP clone() const;
             virtual std::ostream& toStream( std::ostream& os ) const;

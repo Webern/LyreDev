@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/IMovement.h"
+#include "Lyre/IPartFactory.h"
 
 namespace Lyre
 {
@@ -21,7 +22,11 @@ namespace Lyre
     {
     public:
         virtual ~IMovementFactory() {}
-        virtual IMovementUP create() const = 0;
+        virtual IMovementUP create(
+       const IMovementSpecUP& spec,
+           const VecIPartSpecUP& partSpecs,
+           const IMasterTrackSPC& masterTrack,
+           const IPartFactoryUP& partFactory ) const = 0;
 
     };
 }

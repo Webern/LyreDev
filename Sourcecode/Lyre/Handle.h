@@ -23,22 +23,22 @@ namespace Lyre
             return *myPtr;
         }
         
-        T* const operator->()
+        T* operator->()
         {
             return myPtr;
         }
         
-        const T* const operator->() const
+        T* const operator->() const
         {
             return *myPtr;
         }
         
-        T* const get()
+        T* get()
         {
             return myPtr;
         }
         
-        const T* const get() const
+        T* const get() const
         {
             return myPtr;
         }
@@ -58,7 +58,7 @@ namespace Lyre
 	{
 	public:
 		Handle( const std::unique_ptr<T>& ptr )
-			: myPtr( ptr )
+			: myPtr( ptr.get() )
 		{}
 
 		T& operator*()
@@ -71,24 +71,24 @@ namespace Lyre
 			return *myPtr;
 		}
 
-		T* const operator->()
+		T* operator->()
 		{
-			return myPtr.get();
+			return myPtr;
 		}
 
-		const T* const operator->() const
+		T* const operator->() const
 		{
-			return myPtr.get();
+			return myPtr;
 		}
 
-		T* const get()
+		T* get()
 		{
-			return myPtr.get();
+			return myPtr;
 		}
 
-		const T* const get() const
+		T* const get() const
 		{
-			return myPtr.get();
+			return myPtr;
 		}
 
 		operator bool() const
@@ -97,7 +97,7 @@ namespace Lyre
 		}
 
 	private:
-		const std::unique_ptr<T>& myPtr;
+		T* myPtr;
 	};
 
 
@@ -118,7 +118,7 @@ namespace Lyre
             return *myPtr;
         }
         
-        const T* const operator->() const
+        T* const operator->() const
         {
             return myPtr;
         }
@@ -129,7 +129,7 @@ namespace Lyre
 		}
         
     private:
-        const T* myPtr;
+        T* myPtr;
     };
 
 
@@ -138,7 +138,7 @@ namespace Lyre
 	{
 	public:
 		HandleConst( const std::unique_ptr<T>& ptr )
-			: myPtr( ptr )
+			: myPtr( ptr.get() )
 		{}
 
 		const T& operator*() const
@@ -146,14 +146,14 @@ namespace Lyre
 			return *myPtr;
 		}
 
-		const T* const operator->() const
+		T* const operator->() const
 		{
-			return myPtr.get();
+			return myPtr;
 		}
 
-		const T* const get() const
+		T* const get() const
 		{
-			return myPtr.get();
+			return myPtr;
 		}
 
 		operator bool() const
@@ -162,7 +162,7 @@ namespace Lyre
 		}
 
 	private:
-		const std::unique_ptr<T>& myPtr;
+		T* myPtr;
 	};
     
 }

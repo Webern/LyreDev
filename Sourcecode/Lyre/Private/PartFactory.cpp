@@ -11,7 +11,7 @@ namespace Lyre
         
         IPartFactoryUP PartFactory::clone() const
         {
-            return IPartFactoryUP{ new PartFactory{ *this } };
+            return IPartFactoryUP{ new PartFactory{} };
         }
         
         IPartUP PartFactory::create(

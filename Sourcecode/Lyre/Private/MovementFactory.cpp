@@ -9,9 +9,13 @@ namespace Lyre
     {
         MovementFactory::~MovementFactory() {}
         
-        IMovementUP MovementFactory::create() const
+        IMovementUP MovementFactory::create(
+            const IMovementSpecUP& spec,
+            const VecIPartSpecUP& partSpecs,
+            const IMasterTrackSPC& masterTrack,
+            const IPartFactoryUP& partFactory ) const
         {
-            return IMovementUP{ new Movement{} };
+            return IMovementUP{ new Movement( spec, partSpecs, masterTrack, partFactory ) };
         }
     }
 }

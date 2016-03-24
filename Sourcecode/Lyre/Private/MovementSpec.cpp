@@ -18,8 +18,10 @@ namespace Lyre
         {
 
         }
-        
 
+// These are not needed for now
+// because the members are not ptrs
+#if 1==0
         MovementSpec::MovementSpec( const MovementSpec& other )
         {
             UNUSED_PARAMETER( other )
@@ -44,7 +46,7 @@ namespace Lyre
             UNUSED_PARAMETER( other )
             return *this;
         }
-
+#endif
         
         IMovementSpecUP MovementSpec::clone() const
         {

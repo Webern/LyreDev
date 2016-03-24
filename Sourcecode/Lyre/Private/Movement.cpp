@@ -28,7 +28,7 @@ namespace Lyre
             THROW_IF_NULL( spec )
             mySpec = spec->clone();
             THROW_IF_NULL( masterTrack )
-            THROW_IF_NULL( myPartFactory )
+            THROW_IF_NULL( partFactory )
             myPartFactory = partFactory->clone();
             THROW_IF_BAD_VALUE( partSpecs.size(), 1, INT_MAX )
             initializeParts( partSpecs, partFactory );
@@ -94,11 +94,21 @@ namespace Lyre
 
         std::ostream& Movement::toStream( std::ostream& os ) const
         {
+            os  << "Movement '" << mySpec->getDisplayTitle() << "'" << std::endl;
+            os << "{";
             for ( auto it = myParts.cbegin();
-                 it != myParts.cend(); ++it )
+                  it != myParts.cend(); ++it )
             {
-                (*it)->toStream( os );
+                os << std::endl;
+                std::istringstream iss( (*it)->toString() );
+                std::string line;
+                while( std::getline( iss, line ) )
+                {
+                    os << "    " << line;
+                    os << std::endl;
+                }
             }
+            os << "}" << std::endl;
             return os;
         }
 
@@ -148,7 +158,7 @@ namespace Lyre
             for ( auto it = partSpecs.cbegin(); it != partSpecs.cend(); ++it )
             {
                 THROW_IF_NULL( *it )
-                auto part = partFactory->create( *it, myMasterTrack );
+                myParts.push_back( partFactory->create( *it, myMasterTrack ) );
             }
         }
         
