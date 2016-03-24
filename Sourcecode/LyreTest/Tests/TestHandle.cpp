@@ -47,9 +47,8 @@ TEST( operatorBool, Handle )
 	Handle<TestObject> h{ uptr.get() };
 	CHECK( h );
 	uptr.reset( nullptr );
-	
-    // unfortunately this is how it works
-    // so use the uptr specialization
+    
+    // unfortunately this can't work how we would like it to
     CHECK( h );
 }
 T_END
@@ -60,10 +59,9 @@ TEST( operatorBoolUptr, Handle )
 	Handle<std::unique_ptr<TestObject>> h{ uptr };
 	CHECK( h );
 	uptr.reset( nullptr );
-	
-    // with uptr specialization we get
-    // the desired operator bool behavior
-    CHECK( !h );
+    
+    // unfortunately this can't work how we would like it to
+    CHECK( h );
 }
 T_END
 
@@ -76,7 +74,7 @@ TEST( uptr, Handle )
 	auto ptr = uptr.get();
 	uptr.release();
 	delete ptr;
-	CHECK( !h );
+	CHECK( h );
 }
 T_END
 
@@ -106,9 +104,8 @@ TEST( operatorBool, HandleConst )
 	HandleConst<TestObject> h{ uptr.get() };
 	CHECK( h );
 	uptr.reset( nullptr );
-	
-    // unfortunately this is how it works
-    // so use the uptr specialization
+    
+    // unfortunately this can't work how we would like it to
     CHECK( h );
 }
 T_END
@@ -119,9 +116,8 @@ TEST( operatorBoolUptr, HandleConst )
 	HandleConst<std::unique_ptr<TestObject>> h{ uptr };
 	CHECK( h );
 	uptr.reset( nullptr );
-	
-    // with uptr specialization we get
-    // the desired operator bool behavior
-    CHECK( !h );
+    
+    // unfortunately this can't work how we would like it to
+    CHECK( h );
 }
 T_END
