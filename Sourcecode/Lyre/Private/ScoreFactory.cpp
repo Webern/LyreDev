@@ -9,9 +9,9 @@ namespace Lyre
     {
         ScoreFactory::~ScoreFactory() {}
         
-        IScoreUP ScoreFactory::create() const
+        IScoreUP ScoreFactory::create( const IScoreSpecUP& spec ) const
         {
-            return IScoreUP{ new Score{} };
+            return IScoreUP{ new Score{ spec } };
         }
     }
 }
