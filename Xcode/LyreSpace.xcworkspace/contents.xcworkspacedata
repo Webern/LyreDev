@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../Submodule/MusicXML-Class-Library/Xcode/Mx.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Submodule/MusicXML-Class-Library/Xcode/MxSample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Submodule/MusicXML-Class-Library/Xcode/MxTest.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ToDo.md">
    </FileRef>
    <FileRef

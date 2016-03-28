@@ -143,6 +143,6 @@ TEST( toStream, Score )
     score->addMovement( f.createMovement( 2, "Fake Too" ) );
     std::string actual = score->toString();
     std::stringstream exp;
-    score->toStream( std::cout );
+    //score->toStream( std::cout );
 }
 T_END
