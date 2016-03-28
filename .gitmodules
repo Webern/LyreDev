@@ -1,0 +1,3 @@
+[submodule "Submodule/MusicXML-Class-Library"]
+	path = Submodule/MusicXML-Class-Library
+	url = https://github.com/Webern/MusicXML-Class-Library.git
