@@ -21,7 +21,7 @@ using namespace std;
 
 namespace
 {
-	struct Factories
+    struct Factories
     {
     public:
         IMovementSpecFactoryUPC movementSpecFactory;
@@ -31,9 +31,9 @@ namespace
         IRangeFactoryUPC rangeFactory;
         IMasterTrackFactoryUPC masterTrackFactory;
         ITimeSignatureFactoryUPC timeSignatureFactory;
-		IPitchFactoryUP pitchFactory;
-		IDurationFactoryUPC durationFactory;
-		INoteFactoryUPC noteFactory;
+        IPitchFactoryUP pitchFactory;
+        IDurationFactoryUPC durationFactory;
+        INoteFactoryUPC noteFactory;
         IPartSpecFactoryUPC partSpecFactory;
         
         String name1;
@@ -42,12 +42,12 @@ namespace
         IRangeUPC range1;
         IInstrumentUPC instrument1;
         
-		INoteUP createNote( std::string pitchName, std::string durName ) const
-		{
-			auto p = pitchFactory->createPitch( pitchName );
-			auto d = durationFactory->createDuration( durName );
-			return noteFactory->createNote( p, d );
-		}
+        INoteUP createNote( std::string pitchName, std::string durName ) const
+        {
+            auto p = pitchFactory->createPitch( pitchName );
+            auto d = durationFactory->createDuration( durName );
+            return noteFactory->createNote( p, d );
+        }
         
         IInstrumentUP createInstrument(
             const String& name,
@@ -62,15 +62,15 @@ namespace
         VecIPartSpecUP createPartSpecs() const
         {
             VecIPartSpecUP parts;
-			auto p1 = partSpecFactory->create( 1, this->createInstrument( "Flute 1", "Fl 1", "C4", "C7" ) );
-			p1->setUniqueId( "FLUTE_1" );
+            auto p1 = partSpecFactory->create( 1, this->createInstrument( "Flute 1", "Fl 1", "C4", "C7" ) );
+            p1->setUniqueId( "FLUTE_1" );
             parts.push_back( std::move( p1 ) );
-			auto p2 = partSpecFactory->create( 1, this->createInstrument( "Flute 2", "Fl 2", "C4", "C7" ) );
-			p2->setUniqueId( "FLUTE_2" );
-			parts.push_back( std::move( p2 ) );
-			auto p3 = partSpecFactory->create( 2, this->createInstrument( "Harp", "Hp", "C2", "C7" ) );
-			p3->setUniqueId( "HARP" );
-			parts.push_back( std::move( p3 ) );
+            auto p2 = partSpecFactory->create( 1, this->createInstrument( "Flute 2", "Fl 2", "C4", "C7" ) );
+            p2->setUniqueId( "FLUTE_2" );
+            parts.push_back( std::move( p2 ) );
+            auto p3 = partSpecFactory->create( 2, this->createInstrument( "Harp", "Hp", "C2", "C7" ) );
+            p3->setUniqueId( "HARP" );
+            parts.push_back( std::move( p3 ) );
             return parts;
         }
         
@@ -109,10 +109,10 @@ namespace
         , masterTrackFactory( createMasterTrackFactory() )
         , timeSignatureFactory( createTimeSignatureFactory() )
         , pitchFactory( createPitchFactory() )
-		, durationFactory( createDurationFactory() )
-		, noteFactory( createNoteFactory() )
+        , durationFactory( createDurationFactory() )
+        , noteFactory( createNoteFactory() )
         , partSpecFactory( createPartSpecFactory() )
-		, name1( "Instrument 1" )
+        , name1( "Instrument 1" )
         , shortName1( "Instr 1" )
         , range1( rangeFactory->create( "A2", "C7" ) )
         , instrument1( instrumentFactory->create( name1, shortName1, range1->clone() ) )

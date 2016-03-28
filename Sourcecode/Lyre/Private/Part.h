@@ -37,10 +37,10 @@ namespace Lyre
             
             virtual int getMeasureCount() const;
             virtual IMeasureH getMeasure( int measureIndex );
-			virtual const IMeasureHC getMeasure( int measureIndex ) const;
+            virtual const IMeasureHC getMeasure( int measureIndex ) const;
             virtual const IMeasureHC getMeasureConst( int measureIndex ) const;
 
-		private:
+        private:
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE TYPEDEFS
@@ -61,7 +61,7 @@ namespace Lyre
             IPartSpecUP myPartSpec;
             IMasterTrackSPC myMasterTrack;
             Staves myStaves;
-			int myStaffContext;
+            int myStaffContext;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PRIVATE FUNCTIONS

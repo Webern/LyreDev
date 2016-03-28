@@ -15,7 +15,7 @@ namespace Lyre
         public:
             virtual ~ScoreFactory();
             
-            virtual IScoreUP create() const;
+            virtual IScoreUP create( const IScoreSpecUP& spec ) const;
         };
     }
 }

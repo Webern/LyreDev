@@ -10,17 +10,17 @@ namespace Lyre
         }
 
         ScoreSpec::ScoreSpec()
-			: myTitle()
-			, myComposer()
-			, myCopyright()
-			, myStartDate()
-			, myCompletionDate()
+            : myTitle()
+            , myComposer()
+            , myCopyright()
+            , myStartDate()
+            , myCompletionDate()
         {
 
         }
 
-		// not needed, no ptrs
-		#if 1== 0
+        // not needed, no ptrs
+        #if 1== 0
         ScoreSpec::ScoreSpec( const ScoreSpec& other )
         {
             UNUSED_PARAMETER( other )
@@ -45,7 +45,7 @@ namespace Lyre
             UNUSED_PARAMETER( other )
             return *this;
         }
-		#endif
+        #endif
 
         IScoreSpecUP ScoreSpec::clone() const
         {
@@ -55,74 +55,74 @@ namespace Lyre
 
         std::ostream& ScoreSpec::toStream( std::ostream& os ) const
         {
-			os << "*******************************************************************" << std::endl;
-			os << "Title           : " << myTitle << std::endl;
-			os << "Composer        : " << myComposer << std::endl;
-			os << "Copyright       : " << myCopyright << std::endl;
-			os << "Start Date      : " << myStartDate << std::endl;
-			os << "Completion Date : " << myCompletionDate << std::endl;
-			os << "*******************************************************************" << std::endl;
-			return os;
+            os << "*******************************************************************" << std::endl;
+            os << "Title           : " << myTitle << std::endl;
+            os << "Composer        : " << myComposer << std::endl;
+            os << "Copyright       : " << myCopyright << std::endl;
+            os << "Start Date      : " << myStartDate << std::endl;
+            os << "Completion Date : " << myCompletionDate << std::endl;
+            os << "*******************************************************************" << std::endl;
+            return os;
         }
 
 
-		String ScoreSpec::getTitle() const
-		{
-			return myTitle;
-		}
+        String ScoreSpec::getTitle() const
+        {
+            return myTitle;
+        }
 
 
-		String ScoreSpec::getComposer() const
-		{
-			return myComposer;
-		}
+        String ScoreSpec::getComposer() const
+        {
+            return myComposer;
+        }
 
 
-		String ScoreSpec::getCopyright() const
-		{
-			return myCopyright;
-		}
+        String ScoreSpec::getCopyright() const
+        {
+            return myCopyright;
+        }
 
 
-		String ScoreSpec::getStartDate() const
-		{
-			return myStartDate;
-		}
+        String ScoreSpec::getStartDate() const
+        {
+            return myStartDate;
+        }
 
 
-		String ScoreSpec::getCompletionDate() const
-		{
-			return myCompletionDate;
-		}
+        String ScoreSpec::getCompletionDate() const
+        {
+            return myCompletionDate;
+        }
 
 
-		void ScoreSpec::setTitle( const String & value )
-		{
-			myTitle = value;
-		}
+        void ScoreSpec::setTitle( const String & value )
+        {
+            myTitle = value;
+        }
 
 
-		void ScoreSpec::setComposer( const String & value )
-		{
-			myComposer = value;
-		}
+        void ScoreSpec::setComposer( const String & value )
+        {
+            myComposer = value;
+        }
 
 
-		void ScoreSpec::setCopyright( const String & value )
-		{
-			myCopyright = value;
-		}
+        void ScoreSpec::setCopyright( const String & value )
+        {
+            myCopyright = value;
+        }
 
 
-		void ScoreSpec::setStartDate( const String & value )
-		{
-			myStartDate = value;
-		}
+        void ScoreSpec::setStartDate( const String & value )
+        {
+            myStartDate = value;
+        }
 
 
-		void ScoreSpec::setCompletionDate( const String & value )
-		{
-			myCompletionDate = value;
-		}
+        void ScoreSpec::setCompletionDate( const String & value )
+        {
+            myCompletionDate = value;
+        }
     }
 }

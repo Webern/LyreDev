@@ -5,12 +5,15 @@
 #include "Lyre/IPartSpec.h"
 #include "Lyre/IPart.h"
 #include "Lyre/IMasterTrack.h"
+#include "Lyre/Handle.h"
 
 namespace Lyre
 {
-    
-    FORWARD_DECLARE(IMovement)
-    
+
+    FORWARD_DECLARE( IMovement )
+    using IMovementH = Handle<IMovementUP>;
+    using IMovementHC = HandleConst<IMovementUP>;
+
     class PUBLIC IMovement : public IStreamable
     {
     public:
@@ -24,6 +27,6 @@ namespace Lyre
         virtual IPartH getPart( int partIndex ) = 0;
         virtual const IPartHC getPart( int partIndex ) const = 0;
         virtual const IPartHC getPartConst( int partIndex ) const = 0;
-        
+
     };
 }

@@ -12,18 +12,29 @@ namespace Lyre
         class Score : public IScore
         {
         public:
-            virtual ~Score();
-            Score();
+            ~Score();
+            Score( const IScoreSpecUP& spec );
             Score( const Score& other );
             Score( Score&& other );
             Score& operator=( const Score& other );
             Score& operator=( Score&& other );
             
-            virtual IScoreUP clone() const;
-            virtual std::ostream& toStream( std::ostream& os ) const;
+            IScoreUP clone() const;
+            std::ostream& toStream( std::ostream& os ) const;
+        
+            IScoreSpecUP getSpec() const;
+            void setSpec( const IScoreSpecUP spec );
+
+            int getMovementCount() const;
+            void addMovement( IMovementUP&& movement );
+            void addMovement( const IMovementUP& movement );
+            IMovementH getMovement( int movementIndex );
+            IMovementHC getMovement( int movementIndex ) const;
+            IMovementHC getMovementConst( int movementIndex ) const;
             
         private:
-            
+            IScoreSpecUP mySpec;
+            VecIMovementUP myMovements;
         };
     } 
 }

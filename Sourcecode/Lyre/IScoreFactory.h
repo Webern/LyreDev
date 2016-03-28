@@ -21,7 +21,7 @@ namespace Lyre
     {
     public:
         virtual ~IScoreFactory() {}
-        virtual IScoreUP create() const = 0;
+        virtual IScoreUP create( const IScoreSpecUP& spec ) const = 0;
 
     };
 }
