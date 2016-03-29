@@ -14,7 +14,8 @@ namespace Lyre
         Standard = 0
     };
     
-    ITupletDefFactoryUP PUBLIC createTupletDefFactory( const TupletDefFactoryType  t);
+    ITupletDefFactoryUP PUBLIC createTupletDefFactory(
+        const TupletDefFactoryType  t = TupletDefFactoryType::Standard );
     
     class PUBLIC ITupletDefFactory
     {

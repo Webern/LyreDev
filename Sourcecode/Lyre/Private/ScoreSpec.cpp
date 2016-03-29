@@ -15,37 +15,57 @@ namespace Lyre
             , myCopyright()
             , myStartDate()
             , myCompletionDate()
+            , myPartSpecs()
         {
 
         }
 
-        // not needed, no ptrs
-        #if 1== 0
+
         ScoreSpec::ScoreSpec( const ScoreSpec& other )
         {
-            UNUSED_PARAMETER( other )
+            myTitle = other.myTitle;
+            myComposer = other.myComposer;
+            myCopyright = other.myCopyright;
+            myStartDate = other.myStartDate;
+            myCompletionDate = other.myCompletionDate;
+            myPartSpecs = copyPartSpecs( other.myPartSpecs );
         }
 
 
         ScoreSpec::ScoreSpec( ScoreSpec&& other )
         {
-            UNUSED_PARAMETER( other )
+            myTitle = std::move( other.myTitle );
+            myComposer = std::move( other.myComposer );
+            myCopyright = std::move( other.myCopyright );
+            myStartDate = std::move( other.myStartDate );
+            myCompletionDate = std::move( other.myCompletionDate );
+            myPartSpecs = std::move( other.myPartSpecs );
         }
 
 
         ScoreSpec& ScoreSpec::operator=( const ScoreSpec& other )
         {
-            UNUSED_PARAMETER( other )
+            myTitle = other.myTitle;
+            myComposer = other.myComposer;
+            myCopyright = other.myCopyright;
+            myStartDate = other.myStartDate;
+            myCompletionDate = other.myCompletionDate;
+            myPartSpecs = copyPartSpecs( other.myPartSpecs );
             return *this;
         }
 
 
         ScoreSpec& ScoreSpec::operator=( ScoreSpec&& other )
         {
-            UNUSED_PARAMETER( other )
+            myTitle = std::move( other.myTitle );
+            myComposer = std::move( other.myComposer );
+            myCopyright = std::move( other.myCopyright );
+            myStartDate = std::move( other.myStartDate );
+            myCompletionDate = std::move( other.myCompletionDate );
+            myPartSpecs = std::move( other.myPartSpecs );
             return *this;
         }
-        #endif
+
 
         IScoreSpecUP ScoreSpec::clone() const
         {
@@ -94,6 +114,12 @@ namespace Lyre
         {
             return myCompletionDate;
         }
+        
+        
+        VecIPartSpecUP ScoreSpec::getPartSpecs() const
+        {
+            return std::move( copyPartSpecs( myPartSpecs ) );
+        }
 
 
         void ScoreSpec::setTitle( const String & value )
@@ -123,6 +149,24 @@ namespace Lyre
         void ScoreSpec::setCompletionDate( const String & value )
         {
             myCompletionDate = value;
+        }
+        
+        
+        void ScoreSpec::setPartSpecs( const VecIPartSpecUP& parts )
+        {
+            myPartSpecs = copyPartSpecs( parts );
+        }
+        
+        
+        VecIPartSpecUP ScoreSpec::copyPartSpecs( const VecIPartSpecUP& partSpecs ) const
+        {
+            VecIPartSpecUP copy;
+            for ( auto it = partSpecs.cbegin(); it != partSpecs.cend(); ++it )
+            {
+                THROW_IF_NULL( *it );
+                copy.push_back( (*it)->clone() );
+            }
+            return std::move( copy );
         }
     }
 }

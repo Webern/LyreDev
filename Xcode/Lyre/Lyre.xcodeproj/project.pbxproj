@@ -43,7 +43,6 @@
 		2926C8771C0D704400C5D4C0 /* DurationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2926C8751C0D704400C5D4C0 /* DurationFactory.cpp */; };
 		2926C87A1C0D717200C5D4C0 /* IDuration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2926C8781C0D717200C5D4C0 /* IDuration.cpp */; };
 		292D17A61CA8F382008EAAEF /* libMx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 292D17A51CA8F382008EAAEF /* libMx.a */; };
-		292E990B1C841114007FE1C7 /* ILayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E99091C841114007FE1C7 /* ILayerFactory.cpp */; };
 		292E99101C841125007FE1C7 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E990C1C841125007FE1C7 /* Layer.cpp */; };
 		292E99111C841125007FE1C7 /* LayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292E990E1C841125007FE1C7 /* LayerFactory.cpp */; };
 		29314A881C9EEBBD00EF3CF5 /* IMovementFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29314A861C9EEBBD00EF3CF5 /* IMovementFactory.cpp */; };
@@ -72,6 +71,10 @@
 		2973E9671C8C990E0021E067 /* IRangeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2973E9651C8C990E0021E067 /* IRangeFactory.cpp */; };
 		2973E96C1C8C99240021E067 /* Range.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2973E9681C8C99240021E067 /* Range.cpp */; };
 		2973E96D1C8C99240021E067 /* RangeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2973E96A1C8C99240021E067 /* RangeFactory.cpp */; };
+		297CCB541CAA3584007765D1 /* IExporterFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297CCB521CAA3584007765D1 /* IExporterFactory.cpp */; };
+		297CCB591CAA3597007765D1 /* MusicXmlExporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297CCB551CAA3597007765D1 /* MusicXmlExporter.cpp */; };
+		297CCB5A1CAA3597007765D1 /* MusicXmlExporterFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297CCB571CAA3597007765D1 /* MusicXmlExporterFactory.cpp */; };
+		297CCB5D1CAA3B2B007765D1 /* MusicFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 297CCB5B1CAA3B2B007765D1 /* MusicFactory.cpp */; };
 		29890CBA1CA3B644005B318B /* IScoreFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29890CB51CA3B644005B318B /* IScoreFactory.cpp */; };
 		29890CBB1CA3B644005B318B /* IScoreSpecFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29890CB81CA3B644005B318B /* IScoreSpecFactory.cpp */; };
 		29890CC41CA3B654005B318B /* Score.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29890CBC1CA3B654005B318B /* Score.cpp */; };
@@ -177,8 +180,6 @@
 		2928FAFF1C549F2000644429 /* ForwardDeclare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForwardDeclare.h; path = ../../Sourcecode/Lyre/ForwardDeclare.h; sourceTree = "<group>"; };
 		292D17A51CA8F382008EAAEF /* libMx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMx.a; path = ../Build/Products/Debug/libMx.a; sourceTree = "<group>"; };
 		292E99081C841114007FE1C7 /* ILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ILayer.h; path = ../../Sourcecode/Lyre/ILayer.h; sourceTree = "<group>"; };
-		292E99091C841114007FE1C7 /* ILayerFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ILayerFactory.cpp; path = ../../Sourcecode/Lyre/ILayerFactory.cpp; sourceTree = "<group>"; };
-		292E990A1C841114007FE1C7 /* ILayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ILayerFactory.h; path = ../../Sourcecode/Lyre/ILayerFactory.h; sourceTree = "<group>"; };
 		292E990C1C841125007FE1C7 /* Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Layer.cpp; path = ../../Sourcecode/Lyre/Private/Layer.cpp; sourceTree = "<group>"; };
 		292E990D1C841125007FE1C7 /* Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Layer.h; path = ../../Sourcecode/Lyre/Private/Layer.h; sourceTree = "<group>"; };
 		292E990E1C841125007FE1C7 /* LayerFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LayerFactory.cpp; path = ../../Sourcecode/Lyre/Private/LayerFactory.cpp; sourceTree = "<group>"; };
@@ -242,6 +243,15 @@
 		2973E96A1C8C99240021E067 /* RangeFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RangeFactory.cpp; path = ../../Sourcecode/Lyre/Private/RangeFactory.cpp; sourceTree = "<group>"; };
 		2973E96B1C8C99240021E067 /* RangeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RangeFactory.h; path = ../../Sourcecode/Lyre/Private/RangeFactory.h; sourceTree = "<group>"; };
 		2977C9271C9DCDD40035C273 /* Handle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Handle.h; path = ../../Sourcecode/Lyre/Handle.h; sourceTree = "<group>"; };
+		297CCB511CAA3584007765D1 /* IExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IExporter.h; path = ../../Sourcecode/Lyre/IExporter.h; sourceTree = "<group>"; };
+		297CCB521CAA3584007765D1 /* IExporterFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IExporterFactory.cpp; path = ../../Sourcecode/Lyre/IExporterFactory.cpp; sourceTree = "<group>"; };
+		297CCB531CAA3584007765D1 /* IExporterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IExporterFactory.h; path = ../../Sourcecode/Lyre/IExporterFactory.h; sourceTree = "<group>"; };
+		297CCB551CAA3597007765D1 /* MusicXmlExporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MusicXmlExporter.cpp; path = ../../Sourcecode/Lyre/Private/MusicXmlExporter.cpp; sourceTree = "<group>"; };
+		297CCB561CAA3597007765D1 /* MusicXmlExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicXmlExporter.h; path = ../../Sourcecode/Lyre/Private/MusicXmlExporter.h; sourceTree = "<group>"; };
+		297CCB571CAA3597007765D1 /* MusicXmlExporterFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MusicXmlExporterFactory.cpp; path = ../../Sourcecode/Lyre/Private/MusicXmlExporterFactory.cpp; sourceTree = "<group>"; };
+		297CCB581CAA3597007765D1 /* MusicXmlExporterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicXmlExporterFactory.h; path = ../../Sourcecode/Lyre/Private/MusicXmlExporterFactory.h; sourceTree = "<group>"; };
+		297CCB5B1CAA3B2B007765D1 /* MusicFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MusicFactory.cpp; path = ../../Sourcecode/Lyre/MusicFactory.cpp; sourceTree = "<group>"; };
+		297CCB5C1CAA3B2B007765D1 /* MusicFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicFactory.h; path = ../../Sourcecode/Lyre/MusicFactory.h; sourceTree = "<group>"; };
 		298227441BF9997500277C67 /* makeUnique.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = makeUnique.h; path = ../../Sourcecode/Lyre/Private/makeUnique.h; sourceTree = "<group>"; };
 		29890CB41CA3B644005B318B /* IScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IScore.h; path = ../../Sourcecode/Lyre/IScore.h; sourceTree = "<group>"; };
 		29890CB51CA3B644005B318B /* IScoreFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IScoreFactory.cpp; path = ../../Sourcecode/Lyre/IScoreFactory.cpp; sourceTree = "<group>"; };
@@ -325,6 +335,15 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				297CCB5B1CAA3B2B007765D1 /* MusicFactory.cpp */,
+				297CCB5C1CAA3B2B007765D1 /* MusicFactory.h */,
+				297CCB551CAA3597007765D1 /* MusicXmlExporter.cpp */,
+				297CCB561CAA3597007765D1 /* MusicXmlExporter.h */,
+				297CCB571CAA3597007765D1 /* MusicXmlExporterFactory.cpp */,
+				297CCB581CAA3597007765D1 /* MusicXmlExporterFactory.h */,
+				297CCB511CAA3584007765D1 /* IExporter.h */,
+				297CCB521CAA3584007765D1 /* IExporterFactory.cpp */,
+				297CCB531CAA3584007765D1 /* IExporterFactory.h */,
 				29890CBC1CA3B654005B318B /* Score.cpp */,
 				29890CBD1CA3B654005B318B /* Score.h */,
 				29890CBE1CA3B654005B318B /* ScoreFactory.cpp */,
@@ -405,8 +424,6 @@
 				291659EC1C8EA2E00046E63F /* IInstrumentFactory.cpp */,
 				291659ED1C8EA2E00046E63F /* IInstrumentFactory.h */,
 				292E99081C841114007FE1C7 /* ILayer.h */,
-				292E99091C841114007FE1C7 /* ILayerFactory.cpp */,
-				292E990A1C841114007FE1C7 /* ILayerFactory.h */,
 				29CF96241C93E61000CBF5A7 /* IMasterTrack.h */,
 				29CF96231C93E61000CBF5A7 /* IMasterTrackFactory.cpp */,
 				29CF96221C93E61000CBF5A7 /* IMasterTrackFactory.h */,
@@ -576,16 +593,17 @@
 				296D726D1BF8E9EE0049B0EA /* DurBaseWhole.cpp in Sources */,
 				291659F61C8EA4E50046E63F /* Instrument.cpp in Sources */,
 				29DA8BD51C5DB385007BCE4E /* NoteGroup.cpp in Sources */,
+				297CCB541CAA3584007765D1 /* IExporterFactory.cpp in Sources */,
 				29CF96251C93E61000CBF5A7 /* IMasterTrackFactory.cpp in Sources */,
 				2973E96D1C8C99240021E067 /* RangeFactory.cpp in Sources */,
 				29109E461BE55A1B001FF3E6 /* Step.cpp in Sources */,
 				29187A5E1C06B63300F89779 /* ITupletDefFactory.cpp in Sources */,
-				292E990B1C841114007FE1C7 /* ILayerFactory.cpp in Sources */,
 				290989D01C0391CC0040138E /* DurDotFactory.cpp in Sources */,
 				29E0B2171C14165B002790B5 /* IDurationFactory.cpp in Sources */,
 				29109DEF1BE559F2001FF3E6 /* IEnum.cpp in Sources */,
 				29314A991C9EF45F00EF3CF5 /* MovementSpecFactory.cpp in Sources */,
 				29109DF31BE559F2001FF3E6 /* IPitchFactory.cpp in Sources */,
+				297CCB5A1CAA3597007765D1 /* MusicXmlExporterFactory.cpp in Sources */,
 				296D72651BF8E9EE0049B0EA /* DurBase64th.cpp in Sources */,
 				293F25DF1C09ADD4006096F2 /* Duration.cpp in Sources */,
 				29FE9DC51C66C78C00BE0787 /* BeatPatternFactory.cpp in Sources */,
@@ -638,12 +656,14 @@
 				29109DF91BE559F2001FF3E6 /* Rational.cpp in Sources */,
 				291F98111BF03F89008026BF /* INote.cpp in Sources */,
 				29CF962B1C93E64000CBF5A7 /* MasterTrack.cpp in Sources */,
+				297CCB591CAA3597007765D1 /* MusicXmlExporter.cpp in Sources */,
 				299A620A1C7A0C73009C5B19 /* StepStrings.cpp in Sources */,
 				29314A8E1C9EEBF900EF3CF5 /* Movement.cpp in Sources */,
 				290989CD1C0390B20040138E /* IDurDotFactory.cpp in Sources */,
 				290989D71C03AA1A0040138E /* DurDot.cpp in Sources */,
 				29929FCC1C0766BD001CDDC8 /* TupletDef.cpp in Sources */,
 				29FE9DC41C66C78C00BE0787 /* BeatPattern.cpp in Sources */,
+				297CCB5D1CAA3B2B007765D1 /* MusicFactory.cpp in Sources */,
 				29314AA01C9EFFDC00EF3CF5 /* IPartSpecFactory.cpp in Sources */,
 				291FB0671C8FF8FE00C838B5 /* IPartFactory.cpp in Sources */,
 				2926C87A1C0D717200C5D4C0 /* IDuration.cpp in Sources */,
@@ -715,7 +735,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = ../../Sourcecode/;
+				USER_HEADER_SEARCH_PATHS = "../../Sourcecode/ ../../Submodule/MusicXML-Class-Library/Sourcecode";
 			};
 			name = Debug;
 		};
@@ -765,7 +785,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = ../../Sourcecode/;
+				USER_HEADER_SEARCH_PATHS = "../../Sourcecode/ ../../Submodule/MusicXML-Class-Library/Sourcecode";
 			};
 			name = Release;
 		};

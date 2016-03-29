@@ -1,6 +1,7 @@
 //PUBLIC
 #pragma once
 #include "Lyre/Lyre.h"
+#include "Lyre/IPartSpec.h"
 
 namespace Lyre
 {
@@ -18,11 +19,13 @@ namespace Lyre
 		virtual String getCopyright() const = 0;
 		virtual String getStartDate() const = 0;
 		virtual String getCompletionDate() const = 0;
+        virtual VecIPartSpecUP getPartSpecs() const = 0;
 
 		virtual void setTitle( const String& value ) = 0;
 		virtual void setComposer( const String& value ) = 0;
 		virtual void setCopyright( const String& value ) = 0;
 		virtual void setStartDate( const String& value ) = 0;
 		virtual void setCompletionDate( const String& value ) = 0;
+        virtual void setPartSpecs( const VecIPartSpecUP& parts ) = 0;
     };
 }

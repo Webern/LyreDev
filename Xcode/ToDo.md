@@ -85,3 +85,33 @@ implement ScoreFactory.h
 implement ScoreFactory.cpp
 implement IScoreFactory.h
 implement IScoreFactory.cpp
+
+add to Xcode IExporter.h
+add to Xcode IExporterFactory.h
+add to Xcode IExporterFactory.cpp
+add to Xcode Exporter.h
+add to Xcode Exporter.cpp
+add to Xcode ExporterFactory.h
+add to Xcode ExporterFactory.cpp
+implement Exporter.h
+implement Exporter.cpp
+implement IExporter.h
+implement ExporterFactory.h
+implement ExporterFactory.cpp
+implement IExporterFactory.h
+implement IExporterFactory.cpp
+
+add to Xcode IMusicFactory.h
+add to Xcode IMusicFactoryFactory.h
+add to Xcode IMusicFactoryFactory.cpp
+add to Xcode MusicFactory.h
+add to Xcode MusicFactory.cpp
+add to Xcode MusicFactoryFactory.h
+add to Xcode MusicFactoryFactory.cpp
+implement MusicFactory.h
+implement MusicFactory.cpp
+implement IMusicFactory.h
+implement MusicFactoryFactory.h
+implement MusicFactoryFactory.cpp
+implement IMusicFactoryFactory.h
+implement IMusicFactoryFactory.cpp

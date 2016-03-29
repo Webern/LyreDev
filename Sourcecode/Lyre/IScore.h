@@ -8,6 +8,8 @@
 namespace Lyre
 {
     FORWARD_DECLARE(IScore)
+    using IScoreH = Handle<IScoreUP>;
+    using IScoreHC = HandleConst<IScoreUP>;
     
     class PUBLIC IScore : public IStreamable
     {
