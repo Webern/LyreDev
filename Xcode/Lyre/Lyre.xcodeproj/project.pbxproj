@@ -26,6 +26,7 @@
 		29109E421BE55A1B001FF3E6 /* PitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29109E1D1BE55A1B001FF3E6 /* PitchFactory.cpp */; };
 		29109E441BE55A1B001FF3E6 /* PitchName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29109E1F1BE55A1B001FF3E6 /* PitchName.cpp */; };
 		29109E461BE55A1B001FF3E6 /* Step.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29109E211BE55A1B001FF3E6 /* Step.cpp */; };
+		291321F11CAF803E00E7A5DD /* MusicXml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291321EF1CAF803E00E7A5DD /* MusicXml.cpp */; };
 		291659EE1C8EA2E00046E63F /* IInstrumentFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291659EC1C8EA2E00046E63F /* IInstrumentFactory.cpp */; };
 		291659F11C8EA30C0046E63F /* InstrumentFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291659EF1C8EA30C0046E63F /* InstrumentFactory.cpp */; };
 		291659F61C8EA4E50046E63F /* Instrument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291659F51C8EA4E50046E63F /* Instrument.cpp */; };
@@ -139,6 +140,8 @@
 		29109E201BE55A1B001FF3E6 /* PitchName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PitchName.h; path = ../../Sourcecode/Lyre/Private/PitchName.h; sourceTree = "<group>"; };
 		29109E211BE55A1B001FF3E6 /* Step.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Step.cpp; path = ../../Sourcecode/Lyre/Private/Step.cpp; sourceTree = "<group>"; };
 		29109E221BE55A1B001FF3E6 /* Step.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Step.h; path = ../../Sourcecode/Lyre/Private/Step.h; sourceTree = "<group>"; };
+		291321EF1CAF803E00E7A5DD /* MusicXml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MusicXml.cpp; path = ../../Sourcecode/Lyre/Private/MusicXml.cpp; sourceTree = "<group>"; };
+		291321F01CAF803E00E7A5DD /* MusicXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicXml.h; path = ../../Sourcecode/Lyre/Private/MusicXml.h; sourceTree = "<group>"; };
 		291659EB1C8EA2E00046E63F /* IInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IInstrument.h; path = ../../Sourcecode/Lyre/IInstrument.h; sourceTree = "<group>"; };
 		291659EC1C8EA2E00046E63F /* IInstrumentFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IInstrumentFactory.cpp; path = ../../Sourcecode/Lyre/IInstrumentFactory.cpp; sourceTree = "<group>"; };
 		291659ED1C8EA2E00046E63F /* IInstrumentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IInstrumentFactory.h; path = ../../Sourcecode/Lyre/IInstrumentFactory.h; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				291321EF1CAF803E00E7A5DD /* MusicXml.cpp */,
+				291321F01CAF803E00E7A5DD /* MusicXml.h */,
 				297CCB5B1CAA3B2B007765D1 /* MusicFactory.cpp */,
 				297CCB5C1CAA3B2B007765D1 /* MusicFactory.h */,
 				297CCB551CAA3597007765D1 /* MusicXmlExporter.cpp */,
@@ -597,6 +602,7 @@
 				29CF96251C93E61000CBF5A7 /* IMasterTrackFactory.cpp in Sources */,
 				2973E96D1C8C99240021E067 /* RangeFactory.cpp in Sources */,
 				29109E461BE55A1B001FF3E6 /* Step.cpp in Sources */,
+				291321F11CAF803E00E7A5DD /* MusicXml.cpp in Sources */,
 				29187A5E1C06B63300F89779 /* ITupletDefFactory.cpp in Sources */,
 				290989D01C0391CC0040138E /* DurDotFactory.cpp in Sources */,
 				29E0B2171C14165B002790B5 /* IDurationFactory.cpp in Sources */,
