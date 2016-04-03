@@ -115,3 +115,18 @@ implement MusicFactoryFactory.h
 implement MusicFactoryFactory.cpp
 implement IMusicFactoryFactory.h
 implement IMusicFactoryFactory.cpp
+
+add to Xcode IPartGroupSpec.h
+add to Xcode IPartGroupSpecFactory.h
+add to Xcode IPartGroupSpecFactory.cpp
+add to Xcode PartGroupSpec.h
+add to Xcode PartGroupSpec.cpp
+add to Xcode PartGroupSpecFactory.h
+add to Xcode PartGroupSpecFactory.cpp
+implement PartGroupSpec.h
+implement PartGroupSpec.cpp
+implement IPartGroupSpec.h
+implement PartGroupSpecFactory.h
+implement PartGroupSpecFactory.cpp
+implement IPartGroupSpecFactory.h
+implement IPartGroupSpecFactory.cpp

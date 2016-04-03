@@ -133,6 +133,28 @@ private:
     }\
 }
 
+#define CHECK_RAISES( statement )\
+{\
+    bool isExceptionRaised = false; \
+    try{ statement; } \
+    catch( ... ) { isExceptionRaised = true; } \
+    if( ! isExceptionRaised ) \
+    { \
+        rEsUlT_.addFailure (Failure ("exception was expected but not raised", __FILE__, __LINE__)); \
+    } \
+}
+        
+#define CHECK_NOT_RAISES( statement )\
+{\
+    bool isExceptionRaised = false; \
+    try{ statement; } \
+    catch( ... ) { isExceptionRaised = true; } \
+    if( isExceptionRaised ) \
+    { \
+        rEsUlT_.addFailure (Failure ("exception was raised but not expected", __FILE__, __LINE__)); \
+    } \
+}
+
 // needed to for VS_TEST option
 // each test block needs to end with this so that, when
 // USE_VS_TEST is defined, the Microsoft Test Framework

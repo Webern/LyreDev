@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2905BD521CB01E3600ADA810 /* TestMusicFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2905BD511CB01E3600ADA810 /* TestMusicFactory.cpp */; };
+		2905BD541CB01F3800ADA810 /* TestPartGroupSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2905BD531CB01F3800ADA810 /* TestPartGroupSpec.cpp */; };
 		290989D21C0395A30040138E /* TestDurationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290989D11C0395A30040138E /* TestDurationFactory.cpp */; };
 		290989D41C0398FD0040138E /* TestIDurDot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290989D31C0398FD0040138E /* TestIDurDot.cpp */; };
 		290D2A7D1C5DE85700F9BC13 /* TestPitchFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 290D2A7C1C5DE85700F9BC13 /* TestPitchFactory.cpp */; };
@@ -98,6 +100,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2905BD511CB01E3600ADA810 /* TestMusicFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestMusicFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestMusicFactory.cpp; sourceTree = "<group>"; };
+		2905BD531CB01F3800ADA810 /* TestPartGroupSpec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestPartGroupSpec.cpp; path = ../../Sourcecode/LyreTest/Tests/TestPartGroupSpec.cpp; sourceTree = "<group>"; };
 		290989D11C0395A30040138E /* TestDurationFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestDurationFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestDurationFactory.cpp; sourceTree = "<group>"; };
 		290989D31C0398FD0040138E /* TestIDurDot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestIDurDot.cpp; path = ../../Sourcecode/LyreTest/Tests/TestIDurDot.cpp; sourceTree = "<group>"; };
 		290D2A7C1C5DE85700F9BC13 /* TestPitchFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestPitchFactory.cpp; path = ../../Sourcecode/LyreTest/Tests/TestPitchFactory.cpp; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 		29CAD43E1BE661F500C0CA90 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				2905BD531CB01F3800ADA810 /* TestPartGroupSpec.cpp */,
+				2905BD511CB01E3600ADA810 /* TestMusicFactory.cpp */,
 				297CCB4F1CAA3576007765D1 /* MxExporterBasic.cpp */,
 				292D17A71CA8F3FB008EAAEF /* TestMx.cpp */,
 				292D17A81CA8F3FB008EAAEF /* TestMx.h */,
@@ -433,6 +439,7 @@
 				29CAD44F1BE6673C00C0CA90 /* MockPitch.cpp in Sources */,
 				296379861C67B5A300760195 /* TestCollection.cpp in Sources */,
 				296D72941BF8EB960049B0EA /* TestDurBase256th.cpp in Sources */,
+				2905BD521CB01E3600ADA810 /* TestMusicFactory.cpp in Sources */,
 				29E4D2211C06C5260038E6FC /* TestITupletDefFactory.cpp in Sources */,
 				29CAD42E1BE661B400C0CA90 /* TestIAlter.cpp in Sources */,
 				29CAD4381BE661B400C0CA90 /* TestPitchName.cpp in Sources */,
@@ -456,6 +463,7 @@
 				291659F31C8EA33D0046E63F /* TestInstrument.cpp in Sources */,
 				297CCB501CAA3576007765D1 /* MxExporterBasic.cpp in Sources */,
 				2926C87C1C0D785500C5D4C0 /* TestIDuration.cpp in Sources */,
+				2905BD541CB01F3800ADA810 /* TestPartGroupSpec.cpp in Sources */,
 				296D72921BF8EB960049B0EA /* TestDurBase64th.cpp in Sources */,
 				29CAD4501BE6673C00C0CA90 /* MockPitchFactory.cpp in Sources */,
 				292D17A91CA8F3FB008EAAEF /* TestMx.cpp in Sources */,
