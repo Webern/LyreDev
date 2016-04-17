@@ -42,6 +42,7 @@ namespace Lyre
             auto partGroupSpecs = myScore->getSpec()->getPartGroupSpecs();
             setPartList( doc, partSpecs, partGroupSpecs );
             addParts( doc, partSpecs );
+            addEmptyMeasures( doc, myScore );
             doc->toStream( os );
             std::ofstream file( "/Volumes/Macintosh HD/Users/mjb/Desktop/out.xml" );
             doc->toStream( file );

@@ -45,7 +45,22 @@ TEST( ScoreItems, MxExporterBasic )
     partGroups.push_back( std::move( str ) );
     scoreSpec->setPartGroupSpecs( partGroups );
     
+    auto movementSpec = f.movementSpecFactory->create( 1 );
+    movementSpec->setTitle( "Movement Number 1" );
+    movementSpec->setDisplayTitle( "Movement Number 1" );
+    MasterTrackParams masterTrackParams;
+    masterTrackParams.measureCount = 10;
+    masterTrackParams.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
+    masterTrackParams.timeTrack[1] = f.timeSignatureFactory->create( 2, 4 );
+    masterTrackParams.timeTrack[3] = f.timeSignatureFactory->create( 3, 4 );
+    masterTrackParams.timeTrack[7] = f.timeSignatureFactory->create( 4, 4 );
+    IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( masterTrackParams ) );
+
+    auto movement = f.movementFactory->create(
+        movementSpec, parts, masterTrack, f.partFactory->clone());
+    
     auto score = f.scoreFactory->create( scoreSpec );
+    score->addMovement( movement );
     auto mx = f.exporterFactory->create( score );
     mx->exportMusic( std::cout );
 }

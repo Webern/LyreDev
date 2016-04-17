@@ -1,4 +1,5 @@
 #include "Lyre/Private/MusicXml.h"
+#include "Mx/Elements.h"
 #include <string>
 #include <sstream>
 
@@ -193,6 +194,38 @@ namespace Lyre
             } // end for loop
 
         } // end function addParts
+        
+        
+        void addEmptyMeasures( const MxDoc& doc, const IScoreH& score )
+        {
+            UNUSED_PARAMETER(doc);
+            UNUSED_PARAMETER(score);
+            
+            auto movement = score->getMovement( 0 );
+            for ( int p = 0; p < movement->getPartCount(); ++p )
+            {
+                auto part = movement->getPart( p );
+                for ( int m = 0; m < part->getMeasureCount(); ++m )
+                {
+                    //auto measure = part->getMeasure( m );
+
+                    auto mxPart = *( doc->getScorePartwise()->getPartwisePartSet().begin() + p );
+                    PartwiseMeasurePtr mxMeasure;
+                    if( m == 0 )
+                    {
+                        mxMeasure = *mxPart->getPartwiseMeasureSet().begin();
+                    }
+                    else
+                    {
+                        mxMeasure = makePartwiseMeasure();
+                        mxPart->addPartwiseMeasure( mxMeasure );
+                    }
+                    mxMeasure->getAttributes()->number = XsToken( std::to_string( m+1 ) );
+                } // end measure loop
+                
+            } // end part loop
+            
+        } // end function addEmptyMeasures
 
     } // end namespace MxPrivate
 
