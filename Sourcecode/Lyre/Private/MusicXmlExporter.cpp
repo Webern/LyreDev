@@ -3,6 +3,7 @@
 #include "Lyre/Private/MusicXml.h"
 
 #include "Mx/DocumentPartwise.h"
+#include <fstream>
 
 using namespace mx;
 using namespace mx::d;
@@ -37,7 +38,13 @@ namespace Lyre
             setCopyright( doc, spec->getCopyright() );
             setComposer( doc, spec->getComposer() );
             setSoftware( doc, "Lyre" );
+            auto partSpecs = myScore->getSpec()->getPartSpecs();
+            auto partGroupSpecs = myScore->getSpec()->getPartGroupSpecs();
+            setPartList( doc, partSpecs, partGroupSpecs );
+            addParts( doc, partSpecs );
             doc->toStream( os );
+            std::ofstream file( "/Volumes/Macintosh HD/Users/mjb/Desktop/out.xml" );
+            doc->toStream( file );
         }
     }
 }

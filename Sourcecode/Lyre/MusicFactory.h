@@ -12,6 +12,7 @@
 #include "Lyre/IMovementSpecFactory.h"
 #include "Lyre/INoteFactory.h"
 #include "Lyre/IPartFactory.h"
+#include "Lyre/IPartGroupSpecFactory.h"
 #include "Lyre/IPartSpecFactory.h"
 #include "Lyre/IPitchFactory.h"
 #include "Lyre/IRangeFactory.h"
@@ -42,6 +43,7 @@ namespace Lyre
 		INoteFactoryUPC noteFactory;
 		IPartFactoryUPC partFactory;
 		IPartSpecFactoryUPC partSpecFactory;
+		IPartGroupSpecFactoryUPC partGroupSpecFactory;
 		IPitchFactoryUPC pitchFactory;
 		IRangeFactoryUPC rangeFactory;
 		IScoreFactoryUPC scoreFactory;

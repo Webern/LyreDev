@@ -17,6 +17,7 @@ namespace Lyre
     , noteFactory( createNoteFactory() )
     , partFactory( createPartFactory() )
     , partSpecFactory( createPartSpecFactory() )
+    , partGroupSpecFactory( createPartGroupSpecFactory() )
     , pitchFactory( createPitchFactory() )
     , rangeFactory( createRangeFactory() )
     , scoreFactory( createScoreFactory() )

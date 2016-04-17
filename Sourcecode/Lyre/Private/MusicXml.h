@@ -20,7 +20,16 @@ namespace Lyre
         void setComposer( const MxDoc& doc, const std::string& composer  );
         void setCopyright( const MxDoc& doc, const std::string& copyright  );
         void setSoftware( const MxDoc& doc, const std::string& software );
-        void setPartList( const MxDoc& doc, const VecIPartSpecUP& specs );
+        
+        void setPartList(
+            const MxDoc& doc,
+            const VecIPartSpecUP& specs,
+            const VecIPartGroupSpecUP& groups );
+        
+        void addParts(
+            const MxDoc& doc,
+            const VecIPartSpecUP& specs );
+
     }
 
 }

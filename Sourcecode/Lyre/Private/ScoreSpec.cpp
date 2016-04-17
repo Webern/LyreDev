@@ -16,6 +16,7 @@ namespace Lyre
             , myStartDate()
             , myCompletionDate()
             , myPartSpecs()
+            , myPartGroupSpecs()
         {
 
         }
@@ -29,6 +30,7 @@ namespace Lyre
             myStartDate = other.myStartDate;
             myCompletionDate = other.myCompletionDate;
             myPartSpecs = copyPartSpecs( other.myPartSpecs );
+            myPartGroupSpecs = copyPartGroupSpecs( other.myPartGroupSpecs );
         }
 
 
@@ -40,6 +42,7 @@ namespace Lyre
             myStartDate = std::move( other.myStartDate );
             myCompletionDate = std::move( other.myCompletionDate );
             myPartSpecs = std::move( other.myPartSpecs );
+            myPartGroupSpecs = std::move( other.myPartGroupSpecs );
         }
 
 
@@ -51,6 +54,7 @@ namespace Lyre
             myStartDate = other.myStartDate;
             myCompletionDate = other.myCompletionDate;
             myPartSpecs = copyPartSpecs( other.myPartSpecs );
+            myPartGroupSpecs = copyPartGroupSpecs( other.myPartGroupSpecs );
             return *this;
         }
 
@@ -63,6 +67,7 @@ namespace Lyre
             myStartDate = std::move( other.myStartDate );
             myCompletionDate = std::move( other.myCompletionDate );
             myPartSpecs = std::move( other.myPartSpecs );
+            myPartGroupSpecs = std::move( other.myPartGroupSpecs );
             return *this;
         }
 
@@ -120,6 +125,12 @@ namespace Lyre
         {
             return std::move( copyPartSpecs( myPartSpecs ) );
         }
+        
+        
+        VecIPartGroupSpecUP ScoreSpec::getPartGroupSpecs() const
+        {
+            return std::move( copyPartGroupSpecs( myPartGroupSpecs ) );
+        }
 
 
         void ScoreSpec::setTitle( const String & value )
@@ -158,10 +169,28 @@ namespace Lyre
         }
         
         
+        void ScoreSpec::setPartGroupSpecs( const VecIPartGroupSpecUP& partGroups )
+        {
+            myPartGroupSpecs = copyPartGroupSpecs( partGroups );
+        }
+        
+        
         VecIPartSpecUP ScoreSpec::copyPartSpecs( const VecIPartSpecUP& partSpecs ) const
         {
             VecIPartSpecUP copy;
             for ( auto it = partSpecs.cbegin(); it != partSpecs.cend(); ++it )
+            {
+                THROW_IF_NULL( *it );
+                copy.push_back( (*it)->clone() );
+            }
+            return std::move( copy );
+        }
+        
+        
+        VecIPartGroupSpecUP ScoreSpec::copyPartGroupSpecs( const VecIPartGroupSpecUP& partGroupSpecs ) const
+        {
+            VecIPartGroupSpecUP copy;
+            for ( auto it = partGroupSpecs.cbegin(); it != partGroupSpecs.cend(); ++it )
             {
                 THROW_IF_NULL( *it );
                 copy.push_back( (*it)->clone() );

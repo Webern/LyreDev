@@ -29,6 +29,7 @@ namespace Lyre
 			String getStartDate() const;
 			String getCompletionDate() const;
             VecIPartSpecUP getPartSpecs() const;
+            VecIPartGroupSpecUP getPartGroupSpecs() const;
 
 			void setTitle( const String& value );
 			void setComposer( const String& value );
@@ -36,6 +37,7 @@ namespace Lyre
 			void setStartDate( const String& value );
 			void setCompletionDate( const String& value );
             void setPartSpecs( const VecIPartSpecUP& parts );
+            void setPartGroupSpecs( const VecIPartGroupSpecUP& partGroups );
             
         private:
 			String myTitle;
@@ -44,7 +46,9 @@ namespace Lyre
 			String myStartDate;
 			String myCompletionDate;
             VecIPartSpecUP myPartSpecs;
+            VecIPartGroupSpecUP myPartGroupSpecs;
             VecIPartSpecUP copyPartSpecs( const VecIPartSpecUP& partSpecs ) const;
+            VecIPartGroupSpecUP copyPartGroupSpecs( const VecIPartGroupSpecUP& partGroupSpecs ) const;
         };
     } 
 }
