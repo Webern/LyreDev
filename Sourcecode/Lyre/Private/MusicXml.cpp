@@ -89,6 +89,7 @@ namespace Lyre
             auto partIndex = 0;
             auto groupIter = groups.cbegin();
             auto groupEnd = groups.cend();
+            int groupIndex = 0;
             auto groupFirstPartIndex = -1;
             auto groupLastPartIndex = -1;
             PartGroupPtr currentGroup = nullptr;
@@ -107,12 +108,22 @@ namespace Lyre
                 {
                     currentGroup = makePartGroup();
                     currentGroup->getAttributes()->type = StartStop::start;
+                    currentGroup->getAttributes()->hasNumber = true;
+                    currentGroup->getAttributes()->number = XsToken( std::to_string( groupIndex + 1 ) );
                     currentGroup->setHasGroupName( true );
                     currentGroup->getGroupName()->setValue( XsString( (*groupIter)->getName() ) );
                     currentGroup->setHasGroupAbbreviation( true );
                     currentGroup->getGroupAbbreviation()->setValue( XsString( (*groupIter)->getShortName() ) );
                     currentGroup->setHasGroupBarline( true );
                     currentGroup->getGroupBarline()->setValue( GroupBarlineValue::yes );
+                    currentGroup->setHasGroupSymbol( true );
+                    currentGroup->getGroupSymbol()->setValue( GroupSymbolValue::bracket );
+                    currentGroup->setHasGroupNameDisplay( true );
+                    currentGroup->getGroupNameDisplay()->setChoice( GroupNameDisplay::Choice::displayText );
+                    currentGroup->getGroupNameDisplay()->getDisplayText()->setValue( XsString( "" ) );
+                    currentGroup->setHasGroupAbbreviationDisplay( true );
+                    currentGroup->getGroupAbbreviationDisplay()->setChoice( GroupAbbreviationDisplay::Choice::displayText );
+                    currentGroup->getGroupAbbreviationDisplay()->getDisplayText()->setValue( XsString( "" ) );
                     
                     if( partIndex == 0 )
                     {
@@ -162,6 +173,7 @@ namespace Lyre
                     addthis->setPartGroup( endOfGroup );
                     doc->getScorePartwise()->getScoreHeaderGroup()->getPartList()->addPartGroupOrScorePart( addthis );
                     ++groupIter;
+                    ++groupIndex;
                 }
             }
         }
@@ -200,15 +212,24 @@ namespace Lyre
         {
             UNUSED_PARAMETER(doc);
             UNUSED_PARAMETER(score);
-            
+            ITimeSignatureUP previousTimeSignature;
             auto movement = score->getMovement( 0 );
             for ( int p = 0; p < movement->getPartCount(); ++p )
             {
                 auto part = movement->getPart( p );
                 for ( int m = 0; m < part->getMeasureCount(); ++m )
                 {
-                    //auto measure = part->getMeasure( m );
-
+                    auto measure = part->getMeasure( m );
+                    auto timeSignature = measure->getTimeSignature();
+                    bool doAddTimeSignature = !previousTimeSignature;
+                    if( previousTimeSignature )
+                    {
+                        doAddTimeSignature =
+                            ( timeSignature->getTop() != previousTimeSignature->getTop() )
+                        ||  ( timeSignature->getBottom() != previousTimeSignature->getBottom() );
+                    }
+                    
+                    
                     auto mxPart = *( doc->getScorePartwise()->getPartwisePartSet().begin() + p );
                     PartwiseMeasurePtr mxMeasure;
                     if( m == 0 )
@@ -220,7 +241,24 @@ namespace Lyre
                         mxMeasure = makePartwiseMeasure();
                         mxPart->addPartwiseMeasure( mxMeasure );
                     }
+                
                     mxMeasure->getAttributes()->number = XsToken( std::to_string( m+1 ) );
+                    if ( doAddTimeSignature )
+                    {
+                        auto grp = mxMeasure->getMusicDataGroup();
+                        auto sig = makeMusicDataChoice();
+                        grp->addMusicDataChoice( sig );
+                        sig->setChoice( MusicDataChoice::Choice::properties );
+                        auto time = makeTime();
+                        sig->getProperties()->addTime( time );
+                        time->getTimeChoice()->setChoice( TimeChoice::Choice::timeSignature );
+                        time->getTimeChoice()->getTimeSignature()->getBeats()->setValue( XsString( std::to_string( timeSignature->getTop() ) ) );
+                        time->getTimeChoice()->getTimeSignature()->getBeatType()->setValue( XsString( std::to_string( timeSignature->getBottom() ) ) );
+                    }
+                    
+                    
+                    previousTimeSignature = std::move( timeSignature );
+                    
                 } // end measure loop
                 
             } // end part loop
