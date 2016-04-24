@@ -7,6 +7,7 @@
 #include "Mx/DocumentPartwise.h"
 
 using MxDoc = mx::d::DocumentPartwisePtr;
+using MxMeasure = mx::e::PartwiseMeasurePtr;
 
 namespace Lyre
 {
@@ -31,6 +32,11 @@ namespace Lyre
             const VecIPartSpecUP& specs );
         
         void addEmptyMeasures( const MxDoc& doc, const IScoreH& score );
+        
+        void addNoteToMeasure(
+            const MxMeasure& mxMeasure,
+            const INoteUP& lyreNote,
+            int divisionsPerQuarterNote );
 
     }
 

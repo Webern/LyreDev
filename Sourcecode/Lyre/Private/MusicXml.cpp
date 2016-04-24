@@ -264,6 +264,22 @@ namespace Lyre
             } // end part loop
             
         } // end function addEmptyMeasures
+        
+        void addNoteToMeasure(
+            const MxMeasure& mxMeasure,
+            const INoteUP& lyreNote,
+            int divisionsPerQuarterNote )
+        {
+            auto notesChoice = makeMusicDataChoice();
+            notesChoice->setChoice( MusicDataChoice::Choice::note );
+            auto noteElement = notesChoice->getNote();
+            noteElement->getNoteChoice()->setChoice( NoteChoice::Choice::normal );
+            auto note = noteElement->getNoteChoice()->getNormalNoteGroup();
+            auto divisionsRational = Rational{ divisionsPerQuarterNote, 1 } * lyreNote->getDuration()->getValue();
+            int divisions = divisionsRational.getNumerator() / divisionsRational.getDenominator();
+            note->getDuration()->setValue( PositiveDivisionsValue{ static_cast<DecimalType>( divisions ) } );
+            mxMeasure->getMusicDataGroup()->addMusicDataChoice( notesChoice );
+        } // end function addNotesToMeasure
 
     } // end namespace MxPrivate
 

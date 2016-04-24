@@ -43,6 +43,23 @@ namespace Lyre
             setPartList( doc, partSpecs, partGroupSpecs );
             addParts( doc, partSpecs );
             addEmptyMeasures( doc, myScore );
+
+            for ( int p = 0; p < myScore->getMovement( 0 )->getPartCount(); ++ p )
+            {
+                auto part = myScore->getMovement( 0 )->getPart( p );
+                auto mxPart = *( doc->getScorePartwise()->getPartwisePartSet().begin() + p );
+                for ( int m = 0; m < part->getMeasureCount(); ++m )
+                {
+                    auto measure = part->getMeasure( m );
+                    auto mxMeasure = *( mxPart->getPartwiseMeasureSet().begin() );
+                    for( int n = 0; n < measure->getCount(); ++n )
+                    {
+                        auto note = measure->getNote( n );
+                        addNoteToMeasure( mxMeasure, note, 93024 );
+                    }
+                }
+            }
+            
             doc->toStream( os );
             std::ofstream file( "/Volumes/Macintosh HD/Users/mjb/Desktop/out.xml" );
             doc->toStream( file );

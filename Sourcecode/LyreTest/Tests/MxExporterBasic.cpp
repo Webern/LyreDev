@@ -45,6 +45,7 @@ TEST( ScoreItems, MxExporterBasic )
     partGroups.push_back( std::move( str ) );
     scoreSpec->setPartGroupSpecs( partGroups );
     
+    // create a movement
     auto movementSpec = f.movementSpecFactory->create( 1 );
     movementSpec->setTitle( "Movement Number 1" );
     movementSpec->setDisplayTitle( "Movement Number 1" );
@@ -59,8 +60,34 @@ TEST( ScoreItems, MxExporterBasic )
     auto movement = f.movementFactory->create(
         movementSpec, parts, masterTrack, f.partFactory->clone());
     
+    // create a score
     auto score = f.scoreFactory->create( scoreSpec );
     score->addMovement( movement );
+    
+    // add notes
+    for ( int p = 0; p < movement->getPartCount(); ++p )
+    {
+        auto part = movement->getPart( p );
+        int m = 0;
+        auto measure = part->getMeasure( m );
+        int counter = 1;
+        while ( m < part->getMeasureCount() )
+        {
+            while ( ! measure->getIsComplete() )
+            {
+                bool isRest = ! ( ( counter % (p+1) == 0 ) || ( counter % 15 == 0 ) );
+                auto pitch = f.pitchFactory->createPitch( p + m + 50 );
+                auto dur = f.durationFactory->createDuration( "16th" );
+                auto note = f.noteFactory->createNote( pitch, dur );
+                note->setIsRest( isRest );
+                measure->addNote( note );
+                ++counter;
+            }
+            ++m;
+        }
+    }
+    
+    // create musicxml
     auto mx = f.exporterFactory->create( score );
     mx->exportMusic( std::cout );
 }
