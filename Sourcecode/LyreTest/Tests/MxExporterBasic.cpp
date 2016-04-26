@@ -63,11 +63,12 @@ TEST( ScoreItems, MxExporterBasic )
     // create a score
     auto score = f.scoreFactory->create( scoreSpec );
     score->addMovement( movement );
+    auto hmovement = score->getMovement( 0 );
     
     // add notes
-    for ( int p = 0; p < movement->getPartCount(); ++p )
+    for ( int p = 0; p < hmovement->getPartCount(); ++p )
     {
-        auto part = movement->getPart( p );
+        auto part = hmovement->getPart( p );
         int m = 0;
         auto measure = part->getMeasure( m );
         int counter = 1;

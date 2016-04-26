@@ -274,11 +274,96 @@ namespace Lyre
             notesChoice->setChoice( MusicDataChoice::Choice::note );
             auto noteElement = notesChoice->getNote();
             noteElement->getNoteChoice()->setChoice( NoteChoice::Choice::normal );
+            noteElement->setHasType( true );
+            
+            auto durtype = lyreNote->getDuration()->getDurBaseValue();
+            auto ntype = NoteTypeValue::oneHundredTwentyEighth;
+            if( durtype == Rational{ 16, 1 } )
+            {
+                ntype = NoteTypeValue::long_;
+            }
+            else if ( durtype == Rational{ 8, 1 } )
+            {
+                ntype = NoteTypeValue::breve;
+            }
+            else if ( durtype == Rational{ 4, 1 } )
+            {
+                ntype = NoteTypeValue::whole;
+            }
+            else if ( durtype == Rational{ 2, 1 } )
+            {
+                ntype = NoteTypeValue::half;
+            }
+            else if ( durtype == Rational{ 1, 1 } )
+            {
+                ntype = NoteTypeValue::quarter;
+            }
+            else if ( durtype == Rational{ 1, 2 } )
+            {
+                ntype = NoteTypeValue::eighth;
+            }
+            else if ( durtype == Rational{ 1, 4 } )
+            {
+                ntype = NoteTypeValue::sixteenth;
+            }
+            else if ( durtype == Rational{ 1, 8 } )
+            {
+                ntype = NoteTypeValue::thirtySecond;
+            }
+            else if ( durtype == Rational{ 1, 16 } )
+            {
+                ntype = NoteTypeValue::sixtyFourth;
+            }
+            else if ( durtype == Rational{ 1, 32 } )
+            {
+                ntype = NoteTypeValue::oneHundredTwentyEighth;
+            }
+            
+            noteElement->getType()->setValue( ntype );
+            
+            mxMeasure->getMusicDataGroup()->addMusicDataChoice( notesChoice );
             auto note = noteElement->getNoteChoice()->getNormalNoteGroup();
             auto divisionsRational = Rational{ divisionsPerQuarterNote, 1 } * lyreNote->getDuration()->getValue();
             int divisions = divisionsRational.getNumerator() / divisionsRational.getDenominator();
             note->getDuration()->setValue( PositiveDivisionsValue{ static_cast<DecimalType>( divisions ) } );
-            mxMeasure->getMusicDataGroup()->addMusicDataChoice( notesChoice );
+            if( lyreNote->getIsRest() )
+            {
+                note->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::rest );
+                
+            }
+            else
+            {
+                auto mxpitch = note->getFullNoteGroup()->getFullNoteTypeChoice()->getPitch();
+                note->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::pitch );
+                switch( lyreNote->getPitch()->getStepValue() )
+                {
+                    case 0:
+                        mxpitch->getStep()->setValue( StepEnum:: c );
+                        break;
+                    case 1:
+                        mxpitch->getStep()->setValue( StepEnum:: d );
+                        break;
+                    case 2:
+                        mxpitch->getStep()->setValue( StepEnum:: e );
+                        break;
+                    case 3:
+                        mxpitch->getStep()->setValue( StepEnum:: f );
+                        break;
+                    case 4:
+                        mxpitch->getStep()->setValue( StepEnum:: g );
+                        break;
+                    case 5:
+                        mxpitch->getStep()->setValue( StepEnum:: a );
+                        break;
+                    case 6:
+                        mxpitch->getStep()->setValue( StepEnum:: b );
+                        break;
+                }
+                mxpitch->getOctave()->setValue( OctaveValue{ lyreNote->getPitch()->getOctaveValue() } );
+                mxpitch->setHasAlter( true );
+                mxpitch->getAlter()->setValue( Semitones{ static_cast<DecimalType>( lyreNote->getPitch()->getAlterValue() ) } );
+            }
+            
         } // end function addNotesToMeasure
 
     } // end namespace MxPrivate

@@ -51,7 +51,7 @@ namespace Lyre
                 for ( int m = 0; m < part->getMeasureCount(); ++m )
                 {
                     auto measure = part->getMeasure( m );
-                    auto mxMeasure = *( mxPart->getPartwiseMeasureSet().begin() );
+                    auto mxMeasure = *( mxPart->getPartwiseMeasureSet().begin() + m );
                     for( int n = 0; n < measure->getCount(); ++n )
                     {
                         auto note = measure->getNote( n );
