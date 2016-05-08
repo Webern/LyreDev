@@ -1790,11 +1790,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/MxExporterBasic.cpp"
-            timestampString = "483337441.047978"
+            timestampString = "484359534.639686"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "TEST( ScoreItems, MxExporterBasic )"
             landmarkType = "7">
          </BreakpointContent>
@@ -1806,11 +1806,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/MxExporterBasic.cpp"
-            timestampString = "483337441.047978"
+            timestampString = "484359531.570117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "TEST( ScoreItems, MxExporterBasic )"
             landmarkType = "7">
          </BreakpointContent>
@@ -1821,13 +1821,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/LyreTest/Tests/MxExporterBasic.cpp"
-            timestampString = "483337441.047978"
+            filePath = "../Sourcecode/Lyre/Private/MusicXml.cpp"
+            timestampString = "484359609.146597"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "TEST( ScoreItems, MxExporterBasic )"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
+            landmarkName = "addNoteToMeasure( const MxMeasure&amp; mxMeasure, const INoteUP&amp; lyreNote, int divisionsPerQuarterNote )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1837,14 +1837,30 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Sourcecode/LyreTest/Tests/MxExporterBasic.cpp"
-            timestampString = "483337441.047978"
+            filePath = "../Sourcecode/Lyre/Private/MusicXml.cpp"
+            timestampString = "484359624.919449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "TEST( ScoreItems, MxExporterBasic )"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "addNoteToMeasure( const MxMeasure&amp; mxMeasure, const INoteUP&amp; lyreNote, int divisionsPerQuarterNote )"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/Note.cpp"
+            timestampString = "484359723.565875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "Note::getIsRest()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

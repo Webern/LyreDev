@@ -24,6 +24,7 @@ namespace Lyre
         INoteUP Note::clone() const
         {
 			auto ret = INoteUP{ new Note{ myPitch, myDuration } };
+            ret->setIsRest( myIsRest );
 			return std::move( ret );
         }
         

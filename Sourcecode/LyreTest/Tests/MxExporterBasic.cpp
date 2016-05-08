@@ -69,22 +69,27 @@ TEST( ScoreItems, MxExporterBasic )
     for ( int p = 0; p < hmovement->getPartCount(); ++p )
     {
         auto part = hmovement->getPart( p );
-        int m = 0;
-        auto measure = part->getMeasure( m );
         int counter = 1;
-        while ( m < part->getMeasureCount() )
+        for ( int m = 0; m < part->getMeasureCount(); ++m )
         {
+            auto measure = part->getMeasure( m );
             while ( ! measure->getIsComplete() )
             {
-                bool isRest = ! ( ( counter % (p+1) == 0 ) || ( counter % 15 == 0 ) );
-                auto pitch = f.pitchFactory->createPitch( p + m + 50 );
+                if( counter > 50 )
+                {
+                    counter = 0;
+                }
+                bool isRest = counter % 3 == 0;
+                auto pitch = f.pitchFactory->createPitch( counter + 50 );
                 auto dur = f.durationFactory->createDuration( "16th" );
                 auto note = f.noteFactory->createNote( pitch, dur );
-                note->setIsRest( isRest );
+                if( isRest )
+                {
+                    note->setIsRest( true );
+                }
                 measure->addNote( note );
                 ++counter;
             }
-            ++m;
         }
     }
     

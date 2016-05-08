@@ -1,4 +1,6 @@
 #include "Lyre/Private/MusicXml.h"
+#include "Lyre/Lyre.h"
+#include "Lyre/Private/throw.h"
 #include "Mx/Elements.h"
 #include <string>
 #include <sstream>
@@ -270,6 +272,7 @@ namespace Lyre
             const INoteUP& lyreNote,
             int divisionsPerQuarterNote )
         {
+            bool doShowAccidental = true; // note later parameterize
             auto notesChoice = makeMusicDataChoice();
             notesChoice->setChoice( MusicDataChoice::Choice::note );
             auto noteElement = notesChoice->getNote();
@@ -328,8 +331,7 @@ namespace Lyre
             note->getDuration()->setValue( PositiveDivisionsValue{ static_cast<DecimalType>( divisions ) } );
             if( lyreNote->getIsRest() )
             {
-                note->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::rest );
-                
+                note->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::rest ); 
             }
             else
             {
@@ -362,6 +364,34 @@ namespace Lyre
                 mxpitch->getOctave()->setValue( OctaveValue{ lyreNote->getPitch()->getOctaveValue() } );
                 mxpitch->setHasAlter( true );
                 mxpitch->getAlter()->setValue( Semitones{ static_cast<DecimalType>( lyreNote->getPitch()->getAlterValue() ) } );
+                if( doShowAccidental )
+                {
+                    noteElement->setHasAccidental( doShowAccidental );
+                    if( lyreNote->getPitch()->getAlterValue() > 2 ||
+                        lyreNote->getPitch()->getAlterValue() < -2 )
+                    {
+                        THROW( "accidentals beyond x and bb not supported by musicxml" );
+                    }
+                    AccidentalValue accidental = AccidentalValue::natural;
+                    switch ( lyreNote->getPitch()->getAlterValue() )
+                    {
+                        case -2:
+                            accidental = AccidentalValue::flatFlat;
+                            break;
+                        case -1:
+                            accidental = AccidentalValue::flat;
+                            break;
+                        case 1:
+                            accidental = AccidentalValue::sharp;
+                            break;
+                        case 2:
+                            accidental = AccidentalValue::doubleSharp;
+                            break;
+                        default:
+                            break;
+                    }
+                    noteElement->getAccidental()->setValue( accidental );
+                }
             }
             
         } // end function addNotesToMeasure
