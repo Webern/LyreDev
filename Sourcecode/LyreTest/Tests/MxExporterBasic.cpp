@@ -51,10 +51,10 @@ TEST( ScoreItems, MxExporterBasic )
     movementSpec->setDisplayTitle( "Movement Number 1" );
     MasterTrackParams masterTrackParams;
     masterTrackParams.measureCount = 10;
-    masterTrackParams.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
-    masterTrackParams.timeTrack[1] = f.timeSignatureFactory->create( 2, 4 );
-    masterTrackParams.timeTrack[3] = f.timeSignatureFactory->create( 3, 4 );
-    masterTrackParams.timeTrack[7] = f.timeSignatureFactory->create( 4, 4 );
+    masterTrackParams.timeTrack[0] = f.timeSignatureFactory->create( 7, 4 );
+    //masterTrackParams.timeTrack[1] = f.timeSignatureFactory->create( 2, 4 );
+    //masterTrackParams.timeTrack[3] = f.timeSignatureFactory->create( 3, 4 );
+    //masterTrackParams.timeTrack[7] = f.timeSignatureFactory->create( 4, 4 );
     IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( masterTrackParams ) );
 
     auto movement = f.movementFactory->create(
@@ -81,7 +81,7 @@ TEST( ScoreItems, MxExporterBasic )
                 }
                 bool isRest = counter % 3 == 0;
                 auto pitch = f.pitchFactory->createPitch( counter + 50 );
-                auto dur = f.durationFactory->createDuration( "16th" );
+                auto dur = f.durationFactory->createDuration( "Quarter", 2 );
                 auto note = f.noteFactory->createNote( pitch, dur );
                 if( isRest )
                 {

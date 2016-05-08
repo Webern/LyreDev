@@ -321,7 +321,10 @@ namespace Lyre
             {
                 ntype = NoteTypeValue::oneHundredTwentyEighth;
             }
-            
+            for( int i = 0; i < lyreNote->getDuration()->getDotCount(); ++i )
+            {
+                noteElement->addDot( makeDot() );
+            }
             noteElement->getType()->setValue( ntype );
             
             mxMeasure->getMusicDataGroup()->addMusicDataChoice( notesChoice );
