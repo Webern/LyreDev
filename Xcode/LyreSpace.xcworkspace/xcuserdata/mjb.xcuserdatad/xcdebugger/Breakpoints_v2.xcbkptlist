@@ -1845,5 +1845,67 @@
             endingLineNumber = "124">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityTest.cpp"
+            timestampString = "484719019.769829"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "TEST( setComposer, MxUtility )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MxUtilitysetComposerTest::runTest(TestResult&amp;)"
+                  moduleName = "MxUtilityTest"
+                  urlString = "file:///Volumes/Lyre/Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityTest.cpp"
+                  timestampString = "484718422.496008"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "259">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MxUtilitysetComposerTest::runTest(TestResult&amp;)"
+                  moduleName = "MxUtilityTest"
+                  urlString = "file:///Volumes/Lyre/Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityTest.cpp"
+                  timestampString = "484718422.496222"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "1563">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityTest.cpp"
+            timestampString = "484719019.769829"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "TEST( setComposer, MxUtility )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
