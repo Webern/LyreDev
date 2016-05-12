@@ -2,6 +2,8 @@
 #include "Lyre/Lyre.h"
 #include "Lyre/Private/throw.h"
 #include "Mx/Elements.h"
+#include "Mx/Utility.h"
+
 #include <string>
 #include <sstream>
 
@@ -21,28 +23,19 @@ namespace Lyre
         
         void setTitle( const MxDoc& doc, const std::string& title )
         {
-            auto header = doc->getScorePartwise()->getScoreHeaderGroup();
-            header->setHasWork( true );
-            header->getWork()->setHasWorkTitle( true );
-            header->getWork()->getWorkTitle()->setValue( XsString( title ) );
+            mx::utility::setTitle( doc, title );
         }
         
         
         void setMovementTitle( const MxDoc& doc, const std::string& title )
         {
-            auto header = doc->getScorePartwise()->getScoreHeaderGroup();
-            header->setHasMovementTitle( true );
-            header->getMovementTitle()->setValue( XsString( title ) );
+            mx::utility::setMovementTitle( doc, title );
         }
         
         
         void setMovementNumber( const MxDoc& doc, int movementNumber )
         {
-            std::stringstream num;
-            num << movementNumber;
-            auto header = doc->getScorePartwise()->getScoreHeaderGroup();
-            header->setHasMovementNumber( true );
-            header->getMovementNumber()->setValue( XsString( num.str() ) );
+            mx::utility::setMovementNumber( doc, movementNumber );
         }
         
         
