@@ -41,35 +41,19 @@ namespace Lyre
         
         void setComposer( const MxDoc& doc, const std::string& composer )
         {
-            auto header = doc->getScorePartwise()->getScoreHeaderGroup();
-            auto composerCreator = makeCreator();
-            composerCreator->getAttributes()->hasType = true;
-            composerCreator->getAttributes()->type = XsToken( "composer" );
-            composerCreator->setValue( XsString( composer ) );
-            header->setHasIdentification( true );
-            header->getIdentification()->addCreator( composerCreator );
+            mx::utility::setComposer( doc, composer );
         }
         
         
         void setCopyright( const MxDoc& doc, const std::string& copyright )
         {
-            auto header = doc->getScorePartwise()->getScoreHeaderGroup();
-            auto copyrightObj = makeRights();
-            copyrightObj->getAttributes()->hasType = true;
-            copyrightObj->getAttributes()->type = XsToken( "copyright" );
-            copyrightObj->setValue( XsString( copyright ) );
-            header->setHasIdentification( true );
-            header->getIdentification()->addRights( copyrightObj );
+            mx::utility::setCopyright( doc, copyright );
         }
         
         
         void setSoftware( const MxDoc& doc, const std::string& software )
         {
-            auto header = doc->getScorePartwise()->getScoreHeaderGroup();
-            header->setHasIdentification( true );
-            header->getIdentification()->setHasEncoding( true );
-            header->getIdentification()->getEncoding()->setChoice( Encoding::Choice::software );
-            header->getIdentification()->getEncoding()->getSoftware()->setValue( XsString( software ) );
+            mx::utility::setSoftware( doc, software );
         }
         
         
