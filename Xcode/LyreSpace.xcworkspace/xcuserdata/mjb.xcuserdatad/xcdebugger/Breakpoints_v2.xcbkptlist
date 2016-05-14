@@ -1907,5 +1907,65 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityImplTest.cpp"
+            timestampString = "484879169.897752"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "TEST( isPartListInitializedTrue1, MxUtilityImpl )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MxUtilityImplisPartListInitializedTrue1Test::runTest(TestResult&amp;)"
+                  moduleName = "MxUtilityTest"
+                  urlString = "file:///Volumes/Lyre/Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityImplTest.cpp"
+                  timestampString = "484879363.060981"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "655">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MxUtilityImplisPartListInitializedTrue1Test::runTest(TestResult&amp;)"
+                  moduleName = "MxUtilityTest"
+                  urlString = "file:///Volumes/Lyre/Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityImplTest.cpp"
+                  timestampString = "484879363.061159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "697">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MxUtilityImplisPartListInitializedTrue1Test::runTest(TestResult&amp;)"
+                  moduleName = "MxUtilityTest"
+                  urlString = "file:///Volumes/Lyre/Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityImplTest.cpp"
+                  timestampString = "484879363.061287"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "1445">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
