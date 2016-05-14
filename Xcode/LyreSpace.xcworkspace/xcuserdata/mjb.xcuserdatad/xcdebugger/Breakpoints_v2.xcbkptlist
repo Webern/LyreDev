@@ -1967,5 +1967,81 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityImplTest.cpp"
+            timestampString = "484931668.101221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "TEST( makePartDeclarationWithInstrument, MxUtilityImpl )"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MxUtilityImplmakePartDeclarationWithInstrumentTest::runTest(TestResult&amp;)"
+                  moduleName = "MxUtilityTest"
+                  urlString = "file:///Volumes/Lyre/Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityImplTest.cpp"
+                  timestampString = "484931670.902948"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "312"
+                  endingLineNumber = "312"
+                  offsetFromSymbolStart = "7844">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MxUtilityImplmakePartDeclarationWithInstrumentTest::runTest(TestResult&amp;)"
+                  moduleName = "MxUtilityTest"
+                  urlString = "file:///Volumes/Lyre/Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityImplTest.cpp"
+                  timestampString = "484931670.903261"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "312"
+                  endingLineNumber = "312"
+                  offsetFromSymbolStart = "9124">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MxUtilityImplmakePartDeclarationWithInstrumentTest::runTest(TestResult&amp;)"
+                  moduleName = "MxUtilityTest"
+                  urlString = "file:///Volumes/Lyre/Submodule/MusicXML-Class-Library/Sourcecode/MxUtilityTest/MxUtilityImplTest.cpp"
+                  timestampString = "484931670.903482"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "312"
+                  endingLineNumber = "312"
+                  offsetFromSymbolStart = "10011">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Submodule/MusicXML-Class-Library/Sourcecode/Mx/UtilityImpl.cpp"
+            timestampString = "484934033.31074"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "addVirtualInstrumentToScoreInstrument( e::ScorePartPtr&amp; part, const PartParams&amp; params )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
