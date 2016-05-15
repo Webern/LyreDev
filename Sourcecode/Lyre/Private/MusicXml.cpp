@@ -151,6 +151,30 @@ namespace Lyre
                     {
                         mx::utility::addTimeSignature( mxMeasure, timeSignature->getTop(), timeSignature->getBottom() );
                     }
+                    if ( part->getPartSpec()->getNumStaves() > 1 )
+                    {
+                        mx::utility::addStaveCount( mxMeasure, part->getPartSpec()->getNumStaves() );
+                    }
+                    
+                    // TODO - refactor - calculate divisions
+                    
+                    int largestDenominator = 1;
+                    for(int n = 0; n < measure->getCount(); ++ n )
+                    {
+                        auto currentNote = measure->getNote( n );
+                        auto currentDenominator = currentNote->getDuration()->getValue().getDenominator();
+                        if ( currentDenominator > largestDenominator )
+                        {
+                            largestDenominator = currentDenominator;
+                        }
+                    }
+                    Rational divisions = Rational{ largestDenominator, 1 } * timeSignature->getTotalDuration();
+                    if( divisions.getMixedFractionalPart().getNumerator() != 0 )
+                    {
+                        THROW( "the measure divisions calculation is defective" );
+                    }
+                    mx::utility::addDivisions( mxMeasure, divisions.getMixedWholePart() );
+                    // END - refactor - calculate divisions
                     
                     previousTimeSignature = std::move( timeSignature );
                     
