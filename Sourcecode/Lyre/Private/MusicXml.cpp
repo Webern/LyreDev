@@ -149,17 +149,8 @@ namespace Lyre
                     mxMeasure->getAttributes()->number = XsToken( std::to_string( m+1 ) );
                     if ( doAddTimeSignature )
                     {
-                        auto grp = mxMeasure->getMusicDataGroup();
-                        auto sig = makeMusicDataChoice();
-                        grp->addMusicDataChoice( sig );
-                        sig->setChoice( MusicDataChoice::Choice::properties );
-                        auto time = makeTime();
-                        sig->getProperties()->addTime( time );
-                        time->getTimeChoice()->setChoice( TimeChoice::Choice::timeSignature );
-                        time->getTimeChoice()->getTimeSignature()->getBeats()->setValue( XsString( std::to_string( timeSignature->getTop() ) ) );
-                        time->getTimeChoice()->getTimeSignature()->getBeatType()->setValue( XsString( std::to_string( timeSignature->getBottom() ) ) );
+                        mx::utility::addTimeSignature( mxMeasure, timeSignature->getTop(), timeSignature->getBottom() );
                     }
-                    
                     
                     previousTimeSignature = std::move( timeSignature );
                     
