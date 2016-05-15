@@ -27,10 +27,6 @@ namespace Lyre
             const VecIPartSpecUP& specs,
             const VecIPartGroupSpecUP& groups );
         
-        void addParts(
-            const MxDoc& doc,
-            const VecIPartSpecUP& specs );
-        
         void addEmptyMeasures( const MxDoc& doc, const IScoreH& score );
         
         void addNoteToMeasure(

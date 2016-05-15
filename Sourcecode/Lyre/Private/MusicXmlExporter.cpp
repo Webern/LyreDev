@@ -41,7 +41,6 @@ namespace Lyre
             auto partSpecs = myScore->getSpec()->getPartSpecs();
             auto partGroupSpecs = myScore->getSpec()->getPartGroupSpecs();
             setPartList( doc, partSpecs, partGroupSpecs );
-            addParts( doc, partSpecs );
             addEmptyMeasures( doc, myScore );
 
             for ( int p = 0; p < myScore->getMovement( 0 )->getPartCount(); ++ p )
