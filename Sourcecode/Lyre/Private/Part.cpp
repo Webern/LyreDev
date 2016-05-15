@@ -136,6 +136,12 @@ namespace Lyre
 			return myStaffContext;
 		}
         
+        
+        IPartSpecUP Part::getPartSpec() const
+        {
+            return myPartSpec->clone();
+        }
+        
 
 		int Part::getMeasureCount() const
 		{

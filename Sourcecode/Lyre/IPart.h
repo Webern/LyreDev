@@ -7,6 +7,7 @@
 namespace Lyre
 {
     FORWARD_DECLARE(IPart)
+    FORWARD_DECLARE(IPartSpec)
     using IPartH = Handle<IPartUP>;
     using IPartHC = HandleConst<IPartUP>;
 
@@ -20,6 +21,8 @@ namespace Lyre
         
         virtual void setStaffContext( int staffIndex ) = 0;
         virtual int getStaffContext() const = 0;
+        
+        virtual IPartSpecUP getPartSpec() const = 0;
         
         virtual int getMeasureCount() const = 0;
         virtual IMeasureH getMeasure( int measureIndex ) = 0;

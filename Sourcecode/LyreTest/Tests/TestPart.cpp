@@ -199,3 +199,20 @@ TEST( getMeasureConst, Part )
     CHECK_EQUAL( Rational(4,1), measure->getUnusedRemaining() )
 }
 T_END
+
+
+TEST( getPartSpec, Part )
+{
+	Factories f;
+	MasterTrackParams params;
+	params.measureCount = 10;
+	params.timeTrack[0] = f.timeSignatureFactory->create( 4, 4 );
+	params.timeTrack[5] = f.timeSignatureFactory->create( 7, 8 );
+	IMasterTrackSPC masterTrack = f.masterTrackFactory->create( std::move( params ) );
+	auto spec = f.partSpecFactory->create( 3, f.instrument1->clone() );
+	IPartUP part = f.partFactory->create( spec, masterTrack );
+    IPartSpecUP actualSpec = part->getPartSpec();
+    CHECK_EQUAL( "Instrument 1", actualSpec->getName() )
+    CHECK_EQUAL( 3, actualSpec->getNumStaves() )
+}
+T_END
