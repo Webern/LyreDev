@@ -1774,11 +1774,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/MusicXmlExporter.cpp"
-            timestampString = "484975374.760238"
+            timestampString = "485024990.608991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "MusicXmlExporter::exportMusic( std::ostream&amp; os )"
             landmarkType = "5">
          </BreakpointContent>

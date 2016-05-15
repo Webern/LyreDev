@@ -2,7 +2,9 @@
 #include "Lyre/Private/throw.h"
 #include "Lyre/Private/MusicXml.h"
 
+#include "Mx/Utility.h"
 #include "Mx/DocumentPartwise.h"
+
 #include <fstream>
 
 using namespace mx;
@@ -54,7 +56,13 @@ namespace Lyre
                     for( int n = 0; n < measure->getCount(); ++n )
                     {
                         auto note = measure->getNote( n );
-                        addNoteToMeasure( mxMeasure, note, 93024 );
+                        Rational divisionsPerQuarterRational{ mx::utility::getDivisions( mxMeasure ), 1 };
+                        Rational divs = divisionsPerQuarterRational * ( note->getDuration()->getValue() );
+                        if( divs.getMixedFractionalPart().getNumerator() != 0 )
+                        {
+                            THROW( "duration calculation failed, divs should be a whole number" )
+                        }
+                        addNoteToMeasure( mxMeasure, note, divs.getMixedWholePart() );
                     }
                 }
             }

@@ -124,15 +124,19 @@ namespace Lyre
                 for ( int m = 0; m < part->getMeasureCount(); ++m )
                 {
                     auto measure = part->getMeasure( m );
+                    bool doAddTimeSignature = true;
                     auto timeSignature = measure->getTimeSignature();
-                    bool doAddTimeSignature = !previousTimeSignature;
-                    if( previousTimeSignature )
-                    {
-                        doAddTimeSignature =
-                            ( timeSignature->getTop() != previousTimeSignature->getTop() )
-                        ||  ( timeSignature->getBottom() != previousTimeSignature->getBottom() );
-                    }
                     
+                    if( m != 0 )
+                    {
+                        doAddTimeSignature = !previousTimeSignature;
+                        if( previousTimeSignature )
+                        {
+                            doAddTimeSignature =
+                            ( timeSignature->getTop() != previousTimeSignature->getTop() )
+                            ||  ( timeSignature->getBottom() != previousTimeSignature->getBottom() );
+                        }
+                    }
                     
                     auto mxPart = *( doc->getScorePartwise()->getPartwisePartSet().begin() + p );
                     PartwiseMeasurePtr mxMeasure;
@@ -158,22 +162,15 @@ namespace Lyre
                     
                     // TODO - refactor - calculate divisions
                     
-                    int largestDenominator = 1;
+                    ints denominators;
+                    denominators.push_back( 1 );
                     for(int n = 0; n < measure->getCount(); ++ n )
                     {
                         auto currentNote = measure->getNote( n );
-                        auto currentDenominator = currentNote->getDuration()->getValue().getDenominator();
-                        if ( currentDenominator > largestDenominator )
-                        {
-                            largestDenominator = currentDenominator;
-                        }
+                        denominators.push_back( currentNote->getDuration()->getValue().getDenominator() );
                     }
-                    Rational divisions = Rational{ largestDenominator, 1 } * timeSignature->getTotalDuration();
-                    if( divisions.getMixedFractionalPart().getNumerator() != 0 )
-                    {
-                        THROW( "the measure divisions calculation is defective" );
-                    }
-                    mx::utility::addDivisions( mxMeasure, divisions.getMixedWholePart() );
+                    int divisionsPerQuarter = Rational::lcm( denominators );
+                    mx::utility::addDivisions( mxMeasure, divisionsPerQuarter );
                     // END - refactor - calculate divisions
                     
                     previousTimeSignature = std::move( timeSignature );
@@ -182,12 +179,13 @@ namespace Lyre
                 
             } // end part loop
             
+            
         } // end function addEmptyMeasures
         
         void addNoteToMeasure(
             const MxMeasure& mxMeasure,
             const INoteUP& lyreNote,
-            int divisionsPerQuarterNote )
+            int divisions )
         {
             bool doShowAccidental = true; // note later parameterize
             auto notesChoice = makeMusicDataChoice();
@@ -246,9 +244,8 @@ namespace Lyre
             
             mxMeasure->getMusicDataGroup()->addMusicDataChoice( notesChoice );
             auto note = noteElement->getNoteChoice()->getNormalNoteGroup();
-            auto divisionsRational = Rational{ divisionsPerQuarterNote, 1 } * lyreNote->getDuration()->getValue();
-            int divisions = divisionsRational.getNumerator() / divisionsRational.getDenominator();
             note->getDuration()->setValue( PositiveDivisionsValue{ static_cast<DecimalType>( divisions ) } );
+            
             if( lyreNote->getIsRest() )
             {
                 note->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::rest ); 
