@@ -188,9 +188,9 @@ namespace Lyre
             int divisions )
         {
             bool doShowAccidental = true; // note later parameterize
-            auto notesChoice = makeMusicDataChoice();
-            notesChoice->setChoice( MusicDataChoice::Choice::note );
-            auto noteElement = notesChoice->getNote();
+            auto musicDataChoice = makeMusicDataChoice();
+            musicDataChoice->setChoice( MusicDataChoice::Choice::note );
+            auto noteElement = musicDataChoice->getNote();
             noteElement->getNoteChoice()->setChoice( NoteChoice::Choice::normal );
             noteElement->setHasType( true );
             
@@ -242,7 +242,7 @@ namespace Lyre
             }
             noteElement->getType()->setValue( ntype );
             
-            mxMeasure->getMusicDataGroup()->addMusicDataChoice( notesChoice );
+            mxMeasure->getMusicDataGroup()->addMusicDataChoice( musicDataChoice );
             auto note = noteElement->getNoteChoice()->getNormalNoteGroup();
             note->getDuration()->setValue( PositiveDivisionsValue{ static_cast<DecimalType>( divisions ) } );
             

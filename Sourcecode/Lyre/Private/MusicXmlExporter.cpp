@@ -67,7 +67,8 @@ namespace Lyre
                 }
             }
             
-            doc->toStream( os );
+            UNUSED_PARAMETER( os );
+            //doc->toStream( os );
             std::ofstream file( "/Volumes/Macintosh HD/Users/mjb/Desktop/out.xml" );
             doc->toStream( file );
         }
