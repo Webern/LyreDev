@@ -179,7 +179,6 @@ namespace Lyre
                 
             } // end part loop
             
-            
         } // end function addEmptyMeasures
         
         void addNoteToMeasure(
@@ -187,12 +186,19 @@ namespace Lyre
             const INoteUP& lyreNote,
             int divisions )
         {
-            bool doShowAccidental = true; // note later parameterize
-            auto musicDataChoice = makeMusicDataChoice();
-            musicDataChoice->setChoice( MusicDataChoice::Choice::note );
-            auto noteElement = musicDataChoice->getNote();
-            noteElement->getNoteChoice()->setChoice( NoteChoice::Choice::normal );
-            noteElement->setHasType( true );
+            mx::utility::NoteParams params;
+            params.showAccidental = true; // TODO fix this with logic
+            params.step = lyreNote->getPitch()->getStepValue();
+            params.octave = lyreNote->getPitch()->getOctaveValue();
+            params.alter = lyreNote->getPitch()->getAlterValue();
+            params.durationDots = lyreNote->getDuration()->getDotCount();
+            
+
+            //auto musicDataChoice = makeMusicDataChoice();
+            //musicDataChoice->setChoice( MusicDataChoice::Choice::note );
+            //auto noteElement = musicDataChoice->getNote();
+            //noteElement->getNoteChoice()->setChoice( NoteChoice::Choice::normal );
+            //noteElement->setHasType( true );
             
             auto durtype = lyreNote->getDuration()->getDurBaseValue();
             auto ntype = NoteTypeValue::oneHundredTwentyEighth;
@@ -236,59 +242,58 @@ namespace Lyre
             {
                 ntype = NoteTypeValue::oneHundredTwentyEighth;
             }
-            for( int i = 0; i < lyreNote->getDuration()->getDotCount(); ++i )
-            {
-                noteElement->addDot( makeDot() );
-            }
-            noteElement->getType()->setValue( ntype );
-            
-            mxMeasure->getMusicDataGroup()->addMusicDataChoice( musicDataChoice );
-            auto note = noteElement->getNoteChoice()->getNormalNoteGroup();
-            note->getDuration()->setValue( PositiveDivisionsValue{ static_cast<DecimalType>( divisions ) } );
+            //for( int i = 0; i < lyreNote->getDuration()->getDotCount(); ++i )
+                //{
+                //noteElement->addDot( makeDot() );
+                //}
+            //noteElement->getType()->setValue( ntype );
+            params.durationType = ntype;
+            params.duration = divisions;
+            //note->getDuration()->setValue( PositiveDivisionsValue{ static_cast<DecimalType>( divisions ) } );
             
             if( lyreNote->getIsRest() )
             {
-                note->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::rest ); 
+                THROW( "rests need to be dealt with" )
             }
-            else
-            {
-                auto mxpitch = note->getFullNoteGroup()->getFullNoteTypeChoice()->getPitch();
-                note->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::pitch );
-                switch( lyreNote->getPitch()->getStepValue() )
-                {
-                    case 0:
-                        mxpitch->getStep()->setValue( StepEnum:: c );
-                        break;
-                    case 1:
-                        mxpitch->getStep()->setValue( StepEnum:: d );
-                        break;
-                    case 2:
-                        mxpitch->getStep()->setValue( StepEnum:: e );
-                        break;
-                    case 3:
-                        mxpitch->getStep()->setValue( StepEnum:: f );
-                        break;
-                    case 4:
-                        mxpitch->getStep()->setValue( StepEnum:: g );
-                        break;
-                    case 5:
-                        mxpitch->getStep()->setValue( StepEnum:: a );
-                        break;
-                    case 6:
-                        mxpitch->getStep()->setValue( StepEnum:: b );
-                        break;
-                }
-                mxpitch->getOctave()->setValue( OctaveValue{ lyreNote->getPitch()->getOctaveValue() } );
-                mxpitch->setHasAlter( true );
-                mxpitch->getAlter()->setValue( Semitones{ static_cast<DecimalType>( lyreNote->getPitch()->getAlterValue() ) } );
-                if( doShowAccidental )
-                {
-                    noteElement->setHasAccidental( doShowAccidental );
-                    if( lyreNote->getPitch()->getAlterValue() > 2 ||
-                        lyreNote->getPitch()->getAlterValue() < -2 )
-                    {
-                        THROW( "accidentals beyond x and bb not supported by musicxml" );
-                    }
+            //else
+            //{
+            //auto mxpitch = note->getFullNoteGroup()->getFullNoteTypeChoice()->getPitch();
+            //  note->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::pitch );
+            //switch( lyreNote->getPitch()->getStepValue() )
+            //   {
+            //      case 0:
+            ///          mxpitch->getStep()->setValue( StepEnum:: c );
+            //         break;
+            //      case 1:
+            //          mxpitch->getStep()->setValue( StepEnum:: d );
+            //          break;
+            //      case 2:
+            //          mxpitch->getStep()->setValue( StepEnum:: e );
+            //          break;
+            //      case 3:
+            //          mxpitch->getStep()->setValue( StepEnum:: f );
+            //          break;
+            //      case 4:
+            //          mxpitch->getStep()->setValue( StepEnum:: g );
+            //          break;
+            //      case 5:
+            //          mxpitch->getStep()->setValue( StepEnum:: a );
+            //          break;
+            //      case 6:
+            //          mxpitch->getStep()->setValue( StepEnum:: b );
+            //          break;
+            //  }
+            //  mxpitch->getOctave()->setValue( OctaveValue{ lyreNote->getPitch()->getOctaveValue() } );
+            //  mxpitch->setHasAlter( true );
+            //  mxpitch->getAlter()->setValue( Semitones{ static_cast<DecimalType>( lyreNote->getPitch()->getAlterValue() ) } );
+            //  if( doShowAccidental )
+            //  {
+            //      noteElement->setHasAccidental( doShowAccidental );
+            //      if( lyreNote->getPitch()->getAlterValue() > 2 ||
+            //          lyreNote->getPitch()->getAlterValue() < -2 )
+            //      {
+            //          THROW( "accidentals beyond x and bb not supported by musicxml" );
+            //      }
                     AccidentalValue accidental = AccidentalValue::natural;
                     switch ( lyreNote->getPitch()->getAlterValue() )
                     {
@@ -307,11 +312,15 @@ namespace Lyre
                         default:
                             break;
                     }
-                    noteElement->getAccidental()->setValue( accidental );
-                }
-            }
+                    params.accidental = accidental;
+            //noteElement->getAccidental()->setValue( accidental );
+            //  }
+            //}
             
-        } // end function addNotesToMeasure
+            auto mdc = mx::utility::createNote( params );
+            mxMeasure->getMusicDataGroup()->addMusicDataChoice( mdc );
+            
+        } // end function addNoteToMeasure
 
     } // end namespace MxPrivate
 
