@@ -25,15 +25,18 @@ namespace Lyre
             virtual bool getIsRest() const;
             virtual void setIsRest( const bool isRest );
             
+            virtual int getBeams() const;
+            virtual void setBeams( int value );
+            virtual int getMaxBeams() const;
+            
             virtual std::ostream& toStream( std::ostream& os ) const;
             virtual String toString() const;
             
-            //virtual bool getIsGroupMember() const;
-            //virtual int getGroupMembershipCount() const;
         private:
             IPitchUP myPitch;
             IDurationUP myDuration;
             bool myIsRest;
+            int myBeams;
         };
     }
 }

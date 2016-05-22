@@ -11,6 +11,7 @@ namespace
 {
     Rational value{ 1, 1 };
     String name{ STR_QUARTER };
+    int maxBeams{ DUR_MAX_BEAMS_QUARTER };
 }
 
 TEST( getValue, DurBaseQuarter )
@@ -42,5 +43,12 @@ TEST( toString, DurBaseQuarter )
 {
     DurBaseQuarter d;
     CHECK_EQUAL( name, d.toString() )
+}
+T_END
+
+TEST( getMaxBeams, DurBaseQuarter )
+{
+    DurBaseQuarter d;
+    CHECK_EQUAL( maxBeams, d.getMaxBeams() )
 }
 T_END

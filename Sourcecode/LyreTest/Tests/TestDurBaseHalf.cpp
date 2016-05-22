@@ -11,6 +11,7 @@ namespace
 {
     Rational value{ 2, 1 };
     String name{ STR_HALF };
+    int maxBeams{ DUR_MAX_BEAMS_HALF };
 }
 
 TEST( getValue, DurBaseHalf )
@@ -42,6 +43,13 @@ TEST( toString, DurBaseHalf )
 {
     DurBaseHalf d;
     CHECK_EQUAL( name, d.toString() )
+}
+T_END
+
+TEST( getMaxBeams, DurBaseHalf )
+{
+    DurBaseHalf d;
+    CHECK_EQUAL( maxBeams, d.getMaxBeams() )
 }
 T_END
 

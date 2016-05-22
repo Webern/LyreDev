@@ -88,6 +88,11 @@
 		2989ADC11CF218D800E3D59F /* LmxConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2989ADBF1CF218D800E3D59F /* LmxConversions.cpp */; };
 		29929FCC1C0766BD001CDDC8 /* TupletDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29929FCA1C0766BD001CDDC8 /* TupletDef.cpp */; };
 		299A620A1C7A0C73009C5B19 /* StepStrings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299A62081C7A0C73009C5B19 /* StepStrings.cpp */; };
+		29B673081CF2678200324305 /* StrategyFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B673061CF2678200324305 /* StrategyFactory.cpp */; };
+		29B6730C1CF268F800324305 /* IBeatPatternFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B6730A1CF268F800324305 /* IBeatPatternFactory.cpp */; };
+		29B673111CF2693500324305 /* BeatPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B6730D1CF2693500324305 /* BeatPattern.cpp */; };
+		29B673121CF2693500324305 /* BeatPatternFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B6730F1CF2693500324305 /* BeatPatternFactory.cpp */; };
+		29B673151CF26AE900324305 /* BeamingStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B673131CF26AE900324305 /* BeamingStrategy.cpp */; };
 		29B9720A1CF21D8F00EF58AC /* LmxDivisions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B972091CF21D8F00EF58AC /* LmxDivisions.cpp */; };
 		29C3858E1C03611D00250931 /* ITupletDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C3858C1C03611D00250931 /* ITupletDef.cpp */; };
 		29C385911C03637800250931 /* IDurDot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C3858F1C03637800250931 /* IDurDot.cpp */; };
@@ -98,8 +103,6 @@
 		29DA8BD51C5DB385007BCE4E /* NoteGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DA8BD31C5DB385007BCE4E /* NoteGroup.cpp */; };
 		29E0B2171C14165B002790B5 /* IDurationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E0B2151C14165B002790B5 /* IDurationFactory.cpp */; };
 		29E4D2241C06C7400038E6FC /* TupletDefFatory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29E4D2221C06C7400038E6FC /* TupletDefFatory.cpp */; };
-		29FE9DBF1C66C76B00BE0787 /* IBeatPatternFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FE9DBD1C66C76B00BE0787 /* IBeatPatternFactory.cpp */; };
-		29FE9DC41C66C78C00BE0787 /* BeatPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FE9DC01C66C78C00BE0787 /* BeatPattern.cpp */; };
 		29FE9DC51C66C78C00BE0787 /* BeatPatternFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29FE9DC21C66C78C00BE0787 /* BeatPatternFactory.cpp */; };
 /* End PBXBuildFile section */
 
@@ -290,6 +293,17 @@
 		299A62081C7A0C73009C5B19 /* StepStrings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StepStrings.cpp; path = ../../Sourcecode/Lyre/Private/StepStrings.cpp; sourceTree = "<group>"; };
 		299A62091C7A0C73009C5B19 /* StepStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StepStrings.h; path = ../../Sourcecode/Lyre/Private/StepStrings.h; sourceTree = "<group>"; };
 		29AAC7351C5D122D00B1EBA1 /* toShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = toShared.h; path = ../../Sourcecode/Lyre/toShared.h; sourceTree = "<group>"; };
+		29B672FF1CF2636D00324305 /* IMeasureStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMeasureStrategy.h; path = ../../Sourcecode/Lyre/IMeasureStrategy.h; sourceTree = "<group>"; };
+		29B673061CF2678200324305 /* StrategyFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StrategyFactory.cpp; path = ../../Sourcecode/Lyre/StrategyFactory.cpp; sourceTree = "<group>"; };
+		29B673071CF2678200324305 /* StrategyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StrategyFactory.h; path = ../../Sourcecode/Lyre/StrategyFactory.h; sourceTree = "<group>"; };
+		29B673091CF268F800324305 /* IBeatPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBeatPattern.h; path = ../../Sourcecode/Lyre/IBeatPattern.h; sourceTree = "<group>"; };
+		29B6730A1CF268F800324305 /* IBeatPatternFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IBeatPatternFactory.cpp; path = ../../Sourcecode/Lyre/IBeatPatternFactory.cpp; sourceTree = "<group>"; };
+		29B6730B1CF268F800324305 /* IBeatPatternFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBeatPatternFactory.h; path = ../../Sourcecode/Lyre/IBeatPatternFactory.h; sourceTree = "<group>"; };
+		29B6730D1CF2693500324305 /* BeatPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BeatPattern.cpp; path = ../../Sourcecode/Lyre/Private/BeatPattern.cpp; sourceTree = "<group>"; };
+		29B6730E1CF2693500324305 /* BeatPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeatPattern.h; path = ../../Sourcecode/Lyre/Private/BeatPattern.h; sourceTree = "<group>"; };
+		29B6730F1CF2693500324305 /* BeatPatternFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BeatPatternFactory.cpp; path = ../../Sourcecode/Lyre/Private/BeatPatternFactory.cpp; sourceTree = "<group>"; };
+		29B673131CF26AE900324305 /* BeamingStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BeamingStrategy.cpp; path = ../../Sourcecode/Lyre/Private/BeamingStrategy.cpp; sourceTree = "<group>"; };
+		29B673141CF26AE900324305 /* BeamingStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeamingStrategy.h; path = ../../Sourcecode/Lyre/Private/BeamingStrategy.h; sourceTree = "<group>"; };
 		29B972091CF21D8F00EF58AC /* LmxDivisions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LmxDivisions.cpp; path = ../../Sourcecode/Lyre/Lmx/LmxDivisions.cpp; sourceTree = "<group>"; };
 		29B9720B1CF21D9C00EF58AC /* LmxDivisions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LmxDivisions.h; path = ../../Sourcecode/Lyre/Lmx/LmxDivisions.h; sourceTree = "<group>"; };
 		29C3858C1C03611D00250931 /* ITupletDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ITupletDef.cpp; path = ../../Sourcecode/Lyre/ITupletDef.cpp; sourceTree = "<group>"; };
@@ -314,11 +328,6 @@
 		29E4D2221C06C7400038E6FC /* TupletDefFatory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TupletDefFatory.cpp; path = ../../Sourcecode/Lyre/Private/TupletDefFatory.cpp; sourceTree = "<group>"; };
 		29E4D2231C06C7400038E6FC /* TupletDefFatory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TupletDefFatory.h; path = ../../Sourcecode/Lyre/Private/TupletDefFatory.h; sourceTree = "<group>"; };
 		29F3B5151C02238A00746DA5 /* throw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = throw.h; path = ../../Sourcecode/Lyre/Private/throw.h; sourceTree = "<group>"; };
-		29FE9DBC1C66C76B00BE0787 /* IBeatPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBeatPattern.h; path = ../../Sourcecode/Lyre/IBeatPattern.h; sourceTree = "<group>"; };
-		29FE9DBD1C66C76B00BE0787 /* IBeatPatternFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IBeatPatternFactory.cpp; path = ../../Sourcecode/Lyre/IBeatPatternFactory.cpp; sourceTree = "<group>"; };
-		29FE9DBE1C66C76B00BE0787 /* IBeatPatternFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBeatPatternFactory.h; path = ../../Sourcecode/Lyre/IBeatPatternFactory.h; sourceTree = "<group>"; };
-		29FE9DC01C66C78C00BE0787 /* BeatPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BeatPattern.cpp; path = ../../Sourcecode/Lyre/Private/BeatPattern.cpp; sourceTree = "<group>"; };
-		29FE9DC11C66C78C00BE0787 /* BeatPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeatPattern.h; path = ../../Sourcecode/Lyre/Private/BeatPattern.h; sourceTree = "<group>"; };
 		29FE9DC21C66C78C00BE0787 /* BeatPatternFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BeatPatternFactory.cpp; path = ../../Sourcecode/Lyre/Private/BeatPatternFactory.cpp; sourceTree = "<group>"; };
 		29FE9DC31C66C78C00BE0787 /* BeatPatternFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeatPatternFactory.h; path = ../../Sourcecode/Lyre/Private/BeatPatternFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -370,9 +379,9 @@
 				2977C9271C9DCDD40035C273 /* Handle.h */,
 				29109DD61BE559F2001FF3E6 /* IAlter.cpp */,
 				29109DD71BE559F2001FF3E6 /* IAlter.h */,
-				29FE9DBC1C66C76B00BE0787 /* IBeatPattern.h */,
-				29FE9DBD1C66C76B00BE0787 /* IBeatPatternFactory.cpp */,
-				29FE9DBE1C66C76B00BE0787 /* IBeatPatternFactory.h */,
+				29B673091CF268F800324305 /* IBeatPattern.h */,
+				29B6730A1CF268F800324305 /* IBeatPatternFactory.cpp */,
+				29B6730B1CF268F800324305 /* IBeatPatternFactory.h */,
 				2926C8781C0D717200C5D4C0 /* IDuration.cpp */,
 				2926C8791C0D717200C5D4C0 /* IDuration.h */,
 				29E0B2151C14165B002790B5 /* IDurationFactory.cpp */,
@@ -400,6 +409,7 @@
 				297157771C851DA20001A761 /* IMeasure.h */,
 				297157781C851DA20001A761 /* IMeasureFactory.cpp */,
 				297157791C851DA20001A761 /* IMeasureFactory.h */,
+				29B672FF1CF2636D00324305 /* IMeasureStrategy.h */,
 				29314A871C9EEBBD00EF3CF5 /* IMovement.h */,
 				29314A861C9EEBBD00EF3CF5 /* IMovementFactory.cpp */,
 				29314A851C9EEBBD00EF3CF5 /* IMovementFactory.h */,
@@ -451,6 +461,8 @@
 				297CCB5C1CAA3B2B007765D1 /* MusicFactory.h */,
 				29109DE61BE559F2001FF3E6 /* Rational.cpp */,
 				29109DE71BE559F2001FF3E6 /* Rational.h */,
+				29B673061CF2678200324305 /* StrategyFactory.cpp */,
+				29B673071CF2678200324305 /* StrategyFactory.h */,
 				29AAC7351C5D122D00B1EBA1 /* toShared.h */,
 				29109DE81BE559F2001FF3E6 /* TypeDefs.h */,
 				29E05A7E1C7838E20012FD81 /* unusedParameter.h */,
@@ -461,10 +473,13 @@
 		2989ADBD1CF20F9D00E3D59F /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				29B673131CF26AE900324305 /* BeamingStrategy.cpp */,
+				29B673141CF26AE900324305 /* BeamingStrategy.h */,
 				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
 				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
-				29FE9DC01C66C78C00BE0787 /* BeatPattern.cpp */,
-				29FE9DC11C66C78C00BE0787 /* BeatPattern.h */,
+				29B6730D1CF2693500324305 /* BeatPattern.cpp */,
+				29B6730E1CF2693500324305 /* BeatPattern.h */,
+				29B6730F1CF2693500324305 /* BeatPatternFactory.cpp */,
 				29FE9DC21C66C78C00BE0787 /* BeatPatternFactory.cpp */,
 				29FE9DC31C66C78C00BE0787 /* BeatPatternFactory.h */,
 				296379841C67B46000760195 /* Collection.h */,
@@ -577,6 +592,7 @@
 				29929FCB1C0766BD001CDDC8 /* TupletDef.h */,
 				29E4D2221C06C7400038E6FC /* TupletDefFatory.cpp */,
 				29E4D2231C06C7400038E6FC /* TupletDefFatory.h */,
+				29FE9DC31C66C78C00BE0787 /* BeatPatternFactory.h */,
 			);
 			name = Private;
 			sourceTree = "<group>";
@@ -649,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				296D726D1BF8E9EE0049B0EA /* DurBaseWhole.cpp in Sources */,
+				29B6730C1CF268F800324305 /* IBeatPatternFactory.cpp in Sources */,
 				291659F61C8EA4E50046E63F /* Instrument.cpp in Sources */,
 				29DA8BD51C5DB385007BCE4E /* NoteGroup.cpp in Sources */,
 				297CCB541CAA3584007765D1 /* IExporterFactory.cpp in Sources */,
@@ -671,6 +688,7 @@
 				2973E96C1C8C99240021E067 /* Range.cpp in Sources */,
 				291E42171C666344004C3432 /* TimeSignature.cpp in Sources */,
 				29314A941C9EF44900EF3CF5 /* IMovementSpecFactory.cpp in Sources */,
+				29B673111CF2693500324305 /* BeatPattern.cpp in Sources */,
 				296D726C1BF8E9EE0049B0EA /* DurBaseQuarter.cpp in Sources */,
 				29109DE91BE559F2001FF3E6 /* IAlter.cpp in Sources */,
 				292E99101C841125007FE1C7 /* Layer.cpp in Sources */,
@@ -682,7 +700,6 @@
 				29109DED1BE559F2001FF3E6 /* IDurBaseFactory.cpp in Sources */,
 				291E42181C666344004C3432 /* TimeSignatureFactory.cpp in Sources */,
 				291659EE1C8EA2E00046E63F /* IInstrumentFactory.cpp in Sources */,
-				29FE9DBF1C66C76B00BE0787 /* IBeatPatternFactory.cpp in Sources */,
 				296D72661BF8E9EE0049B0EA /* DurBase128th.cpp in Sources */,
 				29890CC71CA3B654005B318B /* ScoreSpecFactory.cpp in Sources */,
 				2989ADC11CF218D800E3D59F /* LmxConversions.cpp in Sources */,
@@ -704,6 +721,7 @@
 				29890CC51CA3B654005B318B /* ScoreFactory.cpp in Sources */,
 				29109DF11BE559F2001FF3E6 /* IPitch.cpp in Sources */,
 				29109E3D1BE55A1B001FF3E6 /* Enum.cpp in Sources */,
+				29B673081CF2678200324305 /* StrategyFactory.cpp in Sources */,
 				29890CBA1CA3B644005B318B /* IScoreFactory.cpp in Sources */,
 				2923482C1C3E2F01002494EC /* NoteFactory.cpp in Sources */,
 				29109E441BE55A1B001FF3E6 /* PitchName.cpp in Sources */,
@@ -712,6 +730,7 @@
 				29314A9A1C9EF45F00EF3CF5 /* MovementSpec.cpp in Sources */,
 				29109DF51BE559F2001FF3E6 /* IPitchName.cpp in Sources */,
 				29C385911C03637800250931 /* IDurDot.cpp in Sources */,
+				29B673121CF2693500324305 /* BeatPatternFactory.cpp in Sources */,
 				29890CC61CA3B654005B318B /* ScoreSpec.cpp in Sources */,
 				29109E331BE55A1B001FF3E6 /* DurBaseFactory.cpp in Sources */,
 				29C3858E1C03611D00250931 /* ITupletDef.cpp in Sources */,
@@ -719,13 +738,13 @@
 				291F98111BF03F89008026BF /* INote.cpp in Sources */,
 				29CF962B1C93E64000CBF5A7 /* MasterTrack.cpp in Sources */,
 				297CCB591CAA3597007765D1 /* MusicXmlExporter.cpp in Sources */,
+				29B673151CF26AE900324305 /* BeamingStrategy.cpp in Sources */,
 				299A620A1C7A0C73009C5B19 /* StepStrings.cpp in Sources */,
 				29314A8E1C9EEBF900EF3CF5 /* Movement.cpp in Sources */,
 				290989CD1C0390B20040138E /* IDurDotFactory.cpp in Sources */,
 				290989D71C03AA1A0040138E /* DurDot.cpp in Sources */,
 				29929FCC1C0766BD001CDDC8 /* TupletDef.cpp in Sources */,
 				2905BD4A1CB01E1400ADA810 /* IPartGroupSpecFactory.cpp in Sources */,
-				29FE9DC41C66C78C00BE0787 /* BeatPattern.cpp in Sources */,
 				297CCB5D1CAA3B2B007765D1 /* MusicFactory.cpp in Sources */,
 				29314AA01C9EFFDC00EF3CF5 /* IPartSpecFactory.cpp in Sources */,
 				291FB0671C8FF8FE00C838B5 /* IPartFactory.cpp in Sources */,

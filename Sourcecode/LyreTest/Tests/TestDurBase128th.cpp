@@ -11,6 +11,7 @@ namespace
 {
     Rational value{ 1, 32 };
     String name{ STR_128TH };
+    int maxBeams{ DUR_MAX_BEAMS_128TH };
 }
 
 TEST( getValue, DurBase128th )
@@ -42,6 +43,13 @@ TEST( toString, DurBase128th )
 {
     DurBase128th d;
     CHECK_EQUAL( name, d.toString() )
+}
+T_END
+
+TEST( getMaxBeams, DurBase128th )
+{
+    DurBase128th d;
+    CHECK_EQUAL( maxBeams, d.getMaxBeams() )
 }
 T_END
 

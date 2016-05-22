@@ -49,6 +49,7 @@
 		29890CB31CA3B4DD005B318B /* TestScoreSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29890CB21CA3B4DD005B318B /* TestScoreSpec.cpp */; };
 		29935EAA1BE6C18C0003552B /* MockDurBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EA81BE6C18C0003552B /* MockDurBase.cpp */; };
 		29935EAD1BE6C3700003552B /* MockDurBaseFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */; };
+		29B673171CF270FE00324305 /* TestBeamingStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B673161CF270FE00324305 /* TestBeamingStrategy.cpp */; };
 		29B9720E1CF21F2A00EF58AC /* TestLmxConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B9720C1CF21F2A00EF58AC /* TestLmxConversions.cpp */; };
 		29B9720F1CF21F2A00EF58AC /* TestLmxDivisions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B9720D1CF21F2A00EF58AC /* TestLmxDivisions.cpp */; };
 		29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */; };
@@ -150,6 +151,7 @@
 		29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockDurBaseFactory.cpp; path = ../../Sourcecode/LyreTest/Mock/MockDurBaseFactory.cpp; sourceTree = "<group>"; };
 		29935EAC1BE6C3700003552B /* MockDurBaseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDurBaseFactory.h; path = ../../Sourcecode/LyreTest/Mock/MockDurBaseFactory.h; sourceTree = "<group>"; };
 		29AEEA291C714D4400681388 /* TestTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestTimer.h; path = ../../Sourcecode/LyreTest/Tests/TestTimer.h; sourceTree = "<group>"; };
+		29B673161CF270FE00324305 /* TestBeamingStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestBeamingStrategy.cpp; path = ../../Sourcecode/LyreTest/Tests/TestBeamingStrategy.cpp; sourceTree = "<group>"; };
 		29B9720C1CF21F2A00EF58AC /* TestLmxConversions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestLmxConversions.cpp; path = ../../Sourcecode/LyreTest/Tests/TestLmxConversions.cpp; sourceTree = "<group>"; };
 		29B9720D1CF21F2A00EF58AC /* TestLmxDivisions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestLmxDivisions.cpp; path = ../../Sourcecode/LyreTest/Tests/TestLmxDivisions.cpp; sourceTree = "<group>"; };
 		29CAD3E71BE6610F00C0CA90 /* LyreTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +271,7 @@
 		29CAD43E1BE661F500C0CA90 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				29B673161CF270FE00324305 /* TestBeamingStrategy.cpp */,
 				2905BD531CB01F3800ADA810 /* TestPartGroupSpec.cpp */,
 				2905BD511CB01E3600ADA810 /* TestMusicFactory.cpp */,
 				297CCB4F1CAA3576007765D1 /* MxExporterBasic.cpp */,
@@ -501,6 +504,7 @@
 				29CAD4361BE661B400C0CA90 /* TestMod.cpp in Sources */,
 				29B9720E1CF21F2A00EF58AC /* TestLmxConversions.cpp in Sources */,
 				2928FAFE1C54979000644429 /* TestForwardDec.cpp in Sources */,
+				29B673171CF270FE00324305 /* TestBeamingStrategy.cpp in Sources */,
 				293F25E11C09B12D006096F2 /* TestToShared.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

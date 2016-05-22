@@ -23,6 +23,10 @@ namespace Lyre
         virtual bool getIsRest() const = 0;
         virtual void setIsRest( const bool isRest ) = 0;
         
+        virtual int getBeams() const = 0;
+        virtual void setBeams( int value ) = 0;
+        virtual int getMaxBeams() const = 0;
+        
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         virtual String toString() const = 0;
         

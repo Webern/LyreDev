@@ -191,3 +191,123 @@ TEST( streamingOperator, INote )
     CHECK_EQUAL( expected, actual )
 }
 T_END
+
+TEST( setBeamsThrowNegative, INote )
+{
+    auto pitchFactory = createPitchFactory( PitchFactoryType::StandardChromatic );
+    auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
+    auto noteFactory = createNoteFactory( NoteFactoryType::Standard );
+    
+    auto pitch = pitchFactory->createPitch();
+    
+    pitch->setAlterValue( 2 );
+    pitch->setStepValue( 5 );
+    pitch->setOctaveValue( 3 );
+    
+    
+    auto duration = durationFactory->createDuration( STR_16TH );
+    auto note = noteFactory->createNote( pitch, duration );
+    bool isExceptionThrown = false;
+    try
+    {
+        note->setBeams( -1 );
+    }
+    catch ( std::exception& )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown );
+}
+T_END
+
+TEST( setBeamsThrowTooMany, INote )
+{
+    auto pitchFactory = createPitchFactory( PitchFactoryType::StandardChromatic );
+    auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
+    auto noteFactory = createNoteFactory( NoteFactoryType::Standard );
+    
+    auto pitch = pitchFactory->createPitch();
+    
+    pitch->setAlterValue( 2 );
+    pitch->setStepValue( 5 );
+    pitch->setOctaveValue( 3 );
+    
+    
+    auto duration = durationFactory->createDuration( STR_EIGHTH );
+    auto note = noteFactory->createNote( pitch, duration );
+    bool isExceptionThrown = false;
+    try
+    {
+        note->setBeams( 2 );
+    }
+    catch ( std::exception& )
+    {
+        isExceptionThrown = true;
+    }
+    CHECK( isExceptionThrown );
+}
+T_END
+
+TEST( setBeams, INote )
+{
+    auto pitchFactory = createPitchFactory( PitchFactoryType::StandardChromatic );
+    auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
+    auto noteFactory = createNoteFactory( NoteFactoryType::Standard );
+    
+    auto pitch = pitchFactory->createPitch();
+    
+    pitch->setAlterValue( 2 );
+    pitch->setStepValue( 5 );
+    pitch->setOctaveValue( 3 );
+    
+    
+    auto duration = durationFactory->createDuration( STR_16TH );
+    auto note = noteFactory->createNote( pitch, duration );
+    note->setBeams( 2 );
+    int expected = 2;
+    int actual = note->getBeams();
+    CHECK_EQUAL( expected, actual );
+}
+T_END
+
+TEST( getMaxBeams16th, INote )
+{
+    auto pitchFactory = createPitchFactory( PitchFactoryType::StandardChromatic );
+    auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
+    auto noteFactory = createNoteFactory( NoteFactoryType::Standard );
+    
+    auto pitch = pitchFactory->createPitch();
+    
+    pitch->setAlterValue( 2 );
+    pitch->setStepValue( 5 );
+    pitch->setOctaveValue( 3 );
+    
+    
+    auto duration = durationFactory->createDuration( STR_16TH );
+    auto note = noteFactory->createNote( pitch, duration );
+    int expected = 2;
+    int actual = note->getMaxBeams();
+    CHECK_EQUAL( expected, actual );
+}
+T_END
+
+TEST( getMaxBeamsWhole, INote )
+{
+    auto pitchFactory = createPitchFactory( PitchFactoryType::StandardChromatic );
+    auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
+    auto noteFactory = createNoteFactory( NoteFactoryType::Standard );
+    
+    auto pitch = pitchFactory->createPitch();
+    
+    pitch->setAlterValue( 2 );
+    pitch->setStepValue( 5 );
+    pitch->setOctaveValue( 3 );
+    
+    
+    auto duration = durationFactory->createDuration( STR_WHOLE );
+    auto note = noteFactory->createNote( pitch, duration );
+    int expected = 0;
+    int actual = note->getMaxBeams();
+    CHECK_EQUAL( expected, actual );
+}
+T_END
