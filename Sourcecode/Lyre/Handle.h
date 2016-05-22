@@ -1,4 +1,4 @@
-//PRIVATE
+//PUBLIC
 #pragma once
 #include "Lyre/Lyre.h"
 #include <memory>

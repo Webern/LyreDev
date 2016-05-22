@@ -1,7 +1,7 @@
 // PUBLIC
 #pragma once
 
-// Sorry for the global pragma disable.  Proper
+// Sorry for the global pragma disable.
 
 #ifdef EXPORT_LYRE_API_SYMBOLS
 	#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
