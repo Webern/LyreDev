@@ -41,6 +41,14 @@ namespace Lyre
         }
         
         IDurationUP DurationFactory::createDuration(
+            const ITupletDefUP& tupletDef,
+            const String& durName,
+            const int dotCount ) const
+        {
+            return IDurationUP{ new Duration { tupletDef, durName, dotCount } };
+        }
+        
+        IDurationUP DurationFactory::createDuration(
             const Rational& rational,
             bool doThrowOnBadInput ) const
         {

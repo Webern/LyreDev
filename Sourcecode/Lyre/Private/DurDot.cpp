@@ -56,6 +56,11 @@ namespace Lyre
             return temp;
         }
         
+        IDurBaseUP DurDot::getDurBase() const
+        {
+            return myDurBase->clone();
+        }
+        
         Rational DurDot::getDurBaseValue() const
         {
             return myDurBase->getValue();

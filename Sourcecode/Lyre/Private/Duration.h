@@ -30,11 +30,17 @@ namespace Lyre
                 const String& durName,
                 const int dotCount );
             
+            Duration(
+                const ITupletDefUP& tupletDef,
+                const String& durName,
+                const int dotCount );
+            
             static IDurationUP findDuration(
                 Rational rational,
                 bool doThrowOnBadInput );
             
             IDurationUP clone() const;
+            IDurBaseUP getDurBase() const;
             Rational getDurBaseValue() const;
             String getDurBaseName() const;
             int getDotCount() const;

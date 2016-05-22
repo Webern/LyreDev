@@ -12,7 +12,7 @@ namespace Lyre
             const int count,
             const String& noteTypeDurBaseName,
             const int inTheSpaceOf,
-            const String& inTheSpaceOfTypeDurBaseName )
+            const String& inTheSpaceOfTypeDurBaseName ) const
         {
             return ITupletDefUP{ new Private::TupletDef{ count, noteTypeDurBaseName, inTheSpaceOf, inTheSpaceOfTypeDurBaseName } };
         }
@@ -21,7 +21,7 @@ namespace Lyre
             const int count,
             const Lyre::IDurDot& countType,
             const int inTheSpaceOf,
-            const Lyre::IDurDot& inTheSpaceOfType )
+            const Lyre::IDurDot& inTheSpaceOfType ) const
         {
             return ITupletDefUP{ new Private::TupletDef{ count, countType, inTheSpaceOf, inTheSpaceOfType } };
         }
@@ -29,7 +29,7 @@ namespace Lyre
         ITupletDefUP TupletDefFactory::createTupletDef(
             const int count,
             const int inTheSpaceOf,
-            const IDurDot& durationType )
+            const IDurDot& durationType ) const
         {
             return ITupletDefUP{ new Private::TupletDef{ count, inTheSpaceOf, durationType } };
         }
@@ -37,7 +37,7 @@ namespace Lyre
         ITupletDefUP TupletDefFactory::createTupletDef(
            const int count,
            const int inTheSpaceOf,
-           const String& durBaseName )
+           const String& durBaseName ) const
         {
             return ITupletDefUP{ new Private::TupletDef{ count, inTheSpaceOf, durBaseName } };
         }

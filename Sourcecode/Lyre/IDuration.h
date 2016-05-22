@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/Rational.h"
+#include "Lyre/IDurBase.h"
 #include "Lyre/ITupletDef.h"
 #include "Lyre/DurationConstants.h"
 
@@ -14,6 +15,7 @@ namespace Lyre
     public:
         virtual ~IDuration() = default;
         virtual IDurationUP clone() const = 0;
+        virtual IDurBaseUP getDurBase() const = 0;
         virtual Rational getDurBaseValue() const = 0;
         virtual String getDurBaseName() const = 0;
         virtual int getDotCount() const = 0;

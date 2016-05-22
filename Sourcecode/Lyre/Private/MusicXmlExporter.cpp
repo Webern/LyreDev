@@ -67,7 +67,8 @@ namespace Lyre
                             {
                                 auto note = measure->getNote( n );
                                 Rational divisionsPerQuarterRational{ mx::utility::getDivisions( mxMeasure ), 1 };
-                                Rational divs = divisionsPerQuarterRational * ( note->getDuration()->getValue() );
+                                Rational noteDurationValueRational = note->getDuration()->getValue();
+                                Rational divs = divisionsPerQuarterRational * noteDurationValueRational;
                                 if( divs.getMixedFractionalPart().getNumerator() != 0 )
                                 {
                                     THROW( "duration calculation failed, divs should be a whole number" )

@@ -31,6 +31,11 @@ namespace Lyre
                 const int dotCount ) const;
             
             virtual IDurationUP createDuration(
+                const ITupletDefUP& tupletDef,
+                const String& durName,
+                const int dotCount ) const;
+            
+            virtual IDurationUP createDuration(
                 const Rational& rational,
                 bool doThrowOnBadInput = false ) const;
         

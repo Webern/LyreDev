@@ -49,6 +49,17 @@ namespace Lyre
 
         }
         
+        Duration::Duration(
+            const ITupletDefUP& tupletDef,
+            const String& durName,
+            const int dotCount )
+        :myDurDotFactory( createDurDotFactory( DurDotFactoryType::Standard ) )
+        ,myDurDot( myDurDotFactory->createDurDot( durName, dotCount ) )
+        ,myTuplets()
+        {
+            myTuplets.push_back( tupletDef->clone() );
+        }
+        
         IDurationUP Duration::findDuration(
             Rational rational,
             bool doThrowOnBadInput )
@@ -101,6 +112,11 @@ namespace Lyre
                 d->myTuplets.push_back( t->clone() );
             }
             return IDurationUP{ d };
+        }
+        
+        IDurBaseUP Duration::getDurBase() const
+        {
+            return myDurDot->getDurBase();
         }
         
         Rational Duration::getDurBaseValue() const

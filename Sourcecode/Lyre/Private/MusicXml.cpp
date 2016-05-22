@@ -1,6 +1,8 @@
 #include "Lyre/Private/MusicXml.h"
 #include "Lyre/Lyre.h"
 #include "Lyre/Private/throw.h"
+#include "Lyre/Lmx/LmxConversions.h"
+#include "Lyre/Lmx/LmxDivisions.h"
 #include "Mx/Elements.h"
 #include "Mx/Utility.h"
 
@@ -155,31 +157,8 @@ namespace Lyre
                     }
                     mx::utility::addStaveCount( mxMeasure, part->getPartSpec()->getNumStaves() );
                     
-                    // TODO - refactor - calculate divisions
-                    
-                    ints denominators;
-                    denominators.push_back( 1 );
-                    for( int staff = 0; staff < part->getPartSpec()->getNumStaves(); ++ staff )
-                    {
-                        part->setStaffContext( staff );
-                        measure = part->getMeasure( m );
-                        for( int layer = 0; layer < MAX_NUMBER_OF_LAYERS; ++layer )
-                        {
-                            measure->setLayerContext( layer );
-                            for(int n = 0; n < measure->getCount(); ++ n )
-                            {
-                                auto currentNote = measure->getNote( n );
-                                denominators.push_back( currentNote->getDuration()->getValue().getDenominator() );
-                            }
-                        }
-                    }
-                    measure->setLayerContext( 0 );
-                    part->setStaffContext( 0 );
-                    measure = part->getMeasure( m );
-                    
-                    int divisionsPerQuarter = Rational::lcm( denominators );
+                    int divisionsPerQuarter = Lmx::findLcmDurDenominatorForAllPartStavesInOneMeasure( part, m );
                     mx::utility::addDivisions( mxMeasure, divisionsPerQuarter );
-                    // END - refactor - calculate divisions
                     
                     previousTimeSignature = std::move( timeSignature );
                     
@@ -202,7 +181,7 @@ namespace Lyre
             params.octave = lyreNote->getPitch()->getOctaveValue();
             params.alter = lyreNote->getPitch()->getAlterValue();
             params.durationDots = lyreNote->getDuration()->getDotCount();
-            params.durationType = convertLyreDurBaseToMxNoteType( lyreNote->getDuration()->getDurBaseValue() );
+            params.durationType = Lmx::convertDur( lyreNote->getDuration()->getDurBase() );
             params.duration = divisions;
             params.isRest = lyreNote->getIsRest();
             params.voiceNumber = voice;
@@ -211,53 +190,6 @@ namespace Lyre
             mxMeasure->getMusicDataGroup()->addMusicDataChoice( mdc );
             
         } // end function addNoteToMeasure
-        
-        
-        mx::t::NoteTypeValue convertLyreDurBaseToMxNoteType( const Rational& durBaseValue )
-        {
-            auto ntype = NoteTypeValue::oneHundredTwentyEighth;
-            if( durBaseValue == VAL_LONGA )
-            {
-                ntype = NoteTypeValue::long_;
-            }
-            else if ( durBaseValue == VAL_BREVE )
-            {
-                ntype = NoteTypeValue::breve;
-            }
-            else if ( durBaseValue == VAL_WHOLE )
-            {
-                ntype = NoteTypeValue::whole;
-            }
-            else if ( durBaseValue == VAL_HALF )
-            {
-                ntype = NoteTypeValue::half;
-            }
-            else if ( durBaseValue == VAL_QUARTER )
-            {
-                ntype = NoteTypeValue::quarter;
-            }
-            else if ( durBaseValue == VAL_EIGHTH )
-            {
-                ntype = NoteTypeValue::eighth;
-            }
-            else if ( durBaseValue == VAL_16TH )
-            {
-                ntype = NoteTypeValue::sixteenth;
-            }
-            else if ( durBaseValue == VAL_32ND )
-            {
-                ntype = NoteTypeValue::thirtySecond;
-            }
-            else if ( durBaseValue == VAL_64TH )
-            {
-                ntype = NoteTypeValue::sixtyFourth;
-            }
-            else if ( durBaseValue == VAL_128TH )
-            {
-                ntype = NoteTypeValue::oneHundredTwentyEighth;
-            }
-            return ntype;
-        }
 
     } // end namespace MxPrivate
 

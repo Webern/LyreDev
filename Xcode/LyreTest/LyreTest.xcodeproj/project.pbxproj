@@ -49,6 +49,8 @@
 		29890CB31CA3B4DD005B318B /* TestScoreSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29890CB21CA3B4DD005B318B /* TestScoreSpec.cpp */; };
 		29935EAA1BE6C18C0003552B /* MockDurBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EA81BE6C18C0003552B /* MockDurBase.cpp */; };
 		29935EAD1BE6C3700003552B /* MockDurBaseFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */; };
+		29B9720E1CF21F2A00EF58AC /* TestLmxConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B9720C1CF21F2A00EF58AC /* TestLmxConversions.cpp */; };
+		29B9720F1CF21F2A00EF58AC /* TestLmxDivisions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B9720D1CF21F2A00EF58AC /* TestLmxDivisions.cpp */; };
 		29CAD3FF1BE6613400C0CA90 /* cpulFailure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */; };
 		29CAD4001BE6613400C0CA90 /* cpulRun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F51BE6613400C0CA90 /* cpulRun.cpp */; };
 		29CAD4011BE6613400C0CA90 /* cpulTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CAD3F71BE6613400C0CA90 /* cpulTest.cpp */; };
@@ -148,6 +150,8 @@
 		29935EAB1BE6C3700003552B /* MockDurBaseFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MockDurBaseFactory.cpp; path = ../../Sourcecode/LyreTest/Mock/MockDurBaseFactory.cpp; sourceTree = "<group>"; };
 		29935EAC1BE6C3700003552B /* MockDurBaseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDurBaseFactory.h; path = ../../Sourcecode/LyreTest/Mock/MockDurBaseFactory.h; sourceTree = "<group>"; };
 		29AEEA291C714D4400681388 /* TestTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestTimer.h; path = ../../Sourcecode/LyreTest/Tests/TestTimer.h; sourceTree = "<group>"; };
+		29B9720C1CF21F2A00EF58AC /* TestLmxConversions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestLmxConversions.cpp; path = ../../Sourcecode/LyreTest/Tests/TestLmxConversions.cpp; sourceTree = "<group>"; };
+		29B9720D1CF21F2A00EF58AC /* TestLmxDivisions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestLmxDivisions.cpp; path = ../../Sourcecode/LyreTest/Tests/TestLmxDivisions.cpp; sourceTree = "<group>"; };
 		29CAD3E71BE6610F00C0CA90 /* LyreTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LyreTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CAD3F31BE6613400C0CA90 /* cpulTestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cpulTestResult.h; path = ../../Sourcecode/LyreTest/Cpul/cpulTestResult.h; sourceTree = "<group>"; };
 		29CAD3F41BE6613400C0CA90 /* cpulFailure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cpulFailure.cpp; path = ../../Sourcecode/LyreTest/Cpul/cpulFailure.cpp; sourceTree = "<group>"; };
@@ -213,9 +217,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2989ADC21CF218DF00E3D59F /* LmxTests */ = {
+			isa = PBXGroup;
+			children = (
+				29B9720C1CF21F2A00EF58AC /* TestLmxConversions.cpp */,
+				29B9720D1CF21F2A00EF58AC /* TestLmxDivisions.cpp */,
+			);
+			name = LmxTests;
+			sourceTree = "<group>";
+		};
 		29CAD3DE1BE6610F00C0CA90 = {
 			isa = PBXGroup;
 			children = (
+				2989ADC21CF218DF00E3D59F /* LmxTests */,
 				29CAD4401BE6649C00C0CA90 /* Mock */,
 				29CAD43F1BE6621300C0CA90 /* Bin */,
 				29CAD43D1BE661EB00C0CA90 /* Cpul */,
@@ -481,9 +495,11 @@
 				292348311C3E36D6002494EC /* TestNote.cpp in Sources */,
 				29F3B5171C0223C100746DA5 /* TestThrow.cpp in Sources */,
 				29890CB31CA3B4DD005B318B /* TestScoreSpec.cpp in Sources */,
+				29B9720F1CF21F2A00EF58AC /* TestLmxDivisions.cpp in Sources */,
 				290989D41C0398FD0040138E /* TestIDurDot.cpp in Sources */,
 				29890C9B1CA3B43D005B318B /* TestScore.cpp in Sources */,
 				29CAD4361BE661B400C0CA90 /* TestMod.cpp in Sources */,
+				29B9720E1CF21F2A00EF58AC /* TestLmxConversions.cpp in Sources */,
 				2928FAFE1C54979000644429 /* TestForwardDec.cpp in Sources */,
 				293F25E11C09B12D006096F2 /* TestToShared.cpp in Sources */,
 			);

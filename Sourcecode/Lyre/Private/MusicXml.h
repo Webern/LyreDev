@@ -22,7 +22,6 @@ namespace Lyre
         void setComposer( const MxDoc& doc, const std::string& composer  );
         void setCopyright( const MxDoc& doc, const std::string& copyright  );
         void setSoftware( const MxDoc& doc, const std::string& software );
-        mx::t::NoteTypeValue convertLyreDurBaseToMxNoteType( const Rational& durBaseValue );
         
         void setPartList(
             const MxDoc& doc,

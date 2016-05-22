@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "DurDot::setDotCount( const int dots )"
+            landmarkName = "DurDot::getDotCount()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -111,7 +111,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "DurDot::getValue()"
+            landmarkName = "DurDot::clone()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -446,12 +446,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
-            timestampString = "485578381.034654"
+            timestampString = "485632037.26942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "Duration::getTupletsBegin()"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "Duration::getTupletNestingCount()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -462,12 +462,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
-            timestampString = "485578381.034654"
+            timestampString = "485632037.26942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "Duration::getTupletsBegin()"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "Duration::getTupletNestingCount()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -478,11 +478,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
-            timestampString = "485578381.034654"
+            timestampString = "485632037.26942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "Duration::getValue()"
             landmarkType = "5">
          </BreakpointContent>
@@ -608,13 +608,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
-            timestampString = "485578381.034654"
+            timestampString = "485632037.26942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "Duration::addTuplet( const char* durName, int dots, int tupNum, int inTheSpaceOf )"
-            landmarkType = "5">
+            startingLineNumber = "268"
+            endingLineNumber = "268">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -624,11 +622,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
-            timestampString = "485578381.034654"
+            timestampString = "485632037.26942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "Duration::addTupletGroup( const char* durName, int tupNum, int inTheSpaceOf )"
             landmarkType = "5">
          </BreakpointContent>
@@ -640,13 +638,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
-            timestampString = "485578381.034654"
+            timestampString = "485632037.26942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "Duration::addTupletGroup( const char* durName, int tupNum, int inTheSpaceOf )"
-            landmarkType = "5">
+            startingLineNumber = "288"
+            endingLineNumber = "288">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -656,11 +652,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/Duration.cpp"
-            timestampString = "485578381.034654"
+            timestampString = "485632037.26942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292">
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "Duration::addTupletGroups( const char* durName )"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2034,11 +2032,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/MusicXml.cpp"
-            timestampString = "485580064.764513"
+            timestampString = "485635267.447772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "addEmptyMeasures( const MxDoc&amp; doc, const IScoreH&amp; score )"
             landmarkType = "7">
          </BreakpointContent>
@@ -2082,13 +2080,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/MusicXmlExporter.cpp"
-            timestampString = "485581617.458943"
+            timestampString = "485636454.653217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "MusicXmlExporter::exportMusic( std::ostream&amp; os )"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Lmx/LmxConversions.cpp"
+            timestampString = "485630332.69883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "convertDur( const mx::t::NoteTypeValue&amp; mxDurVal )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Lmx/LmxDivisions.cpp"
+            timestampString = "485635857.636023"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "findLcmDurDenominatorForAllPartStavesInOneMeasure( const IPartH&amp; part, const IMeasureH&amp; measure )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Lmx/LmxDivisions.cpp"
+            timestampString = "485635872.965835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "findLcmDurDenominatorInCurrentLayer( const IMeasureH&amp; measure )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Lmx/LmxDivisions.cpp"
+            timestampString = "485635874.551689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "findLcmDurDenominatorInAllLayers( const IMeasureH&amp; measure )"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

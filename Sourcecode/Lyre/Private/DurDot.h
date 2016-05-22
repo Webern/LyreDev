@@ -28,6 +28,8 @@ namespace Lyre
             virtual IDurDotUP clone() const;
             
             virtual Rational getValue() const;
+
+            IDurBaseUP getDurBase() const;
             virtual Rational getDurBaseValue() const;
             
             virtual int getDotCount() const;

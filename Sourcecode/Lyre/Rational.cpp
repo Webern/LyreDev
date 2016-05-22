@@ -22,10 +22,13 @@ namespace Lyre
         return ((Float)myNumerator)/((Float)myDenominator);
     }
     
+    
     void Rational::setNumerator( const int value )
     {
         myNumerator = value;
     }
+    
+    
     void Rational::setDenominator( const int value )
     {
         if ( value != 0 )
@@ -34,14 +37,19 @@ namespace Lyre
         }
     }
     
+    
     int Rational::getDenominator() const
     {
         return myDenominator;
     }
+    
+    
     int Rational::getNumerator() const
     {
         return myNumerator;
     }
+    
+    
     int Rational::gcd( int a, int b )
     {
         a = std::abs( a );
@@ -55,6 +63,8 @@ namespace Lyre
             a %= b;
         }
     }
+    
+    
     int Rational::gcd( std::initializer_list<int> integers )
     {
         int gcd = 1;
@@ -91,6 +101,8 @@ namespace Lyre
         }
         return gcd;
     }
+    
+    
     int Rational::lcm( int a, int b )
     {
         // http://stackoverflow.com/a/4229930/2779792
@@ -103,6 +115,8 @@ namespace Lyre
         }
         return answer;
     }
+    
+    
     int Rational::lcm( const ints& integers )
     {
         int answer = 0;
@@ -140,12 +154,16 @@ namespace Lyre
         }
         return answer;
     }
+    
+    
     int Rational::lcm( std::initializer_list<int> integers )
     {
         ints ints( integers.size() );
         std::copy( integers.begin(), integers.end(), ints.begin() );
         return Rational::lcm( ints );
     }
+    
+    
     void Rational::lcd( Rational& a, Rational& b, const bool firstReduce )
     {
         Rationals rats = { a, b };
@@ -162,6 +180,8 @@ namespace Lyre
             b = *r;
         }
     }
+    
+    
     void Rational::lcd( Rationals& rationals, const bool firstReduce )
     {
         if ( firstReduce )
@@ -187,6 +207,8 @@ namespace Lyre
             }
         }
     }
+    
+    
     bool Rational::reduce()
     {
         int gcf = Rational::gcd( this->getNumerator(), this->getDenominator() );
@@ -208,6 +230,8 @@ namespace Lyre
         }
         return changed;
     }
+    
+    
     bool operator==( const Rational& left, const Rational& right )
     {
         if ( left.getDenominator() == right.getDenominator() )
@@ -222,10 +246,14 @@ namespace Lyre
             return copy_left == copy_right;
         }
     }
+    
+    
     bool operator!=( const Rational& left, const Rational& right )
     {
         return ! ( left == right );
     }
+    
+    
     bool operator<( const Rational& left, const Rational& right )
     {
         if ( left.getDenominator() == right.getDenominator() )
@@ -240,22 +268,32 @@ namespace Lyre
             return copy_left < copy_right;
         }
     }
+    
+    
     bool operator>( const Rational& left, const Rational& right )
     {
         return right < left;
     }
+    
+    
     bool operator<=( const Rational& left, const Rational& right )
     {
         return ( left < right ) || ( left == right );
     }
+    
+    
     bool operator>=( const Rational& left, const Rational& right )
     {
         return ( right < left ) || ( left == right );
     }
+    
+    
     PUBLIC std::ostream& operator<<( std::ostream& os, const Rational& right )
     {
         return os << "( " << right.getNumerator() << " / " << right.getDenominator() << " )";
     }
+    
+    
     void Rational::reciprocal()
     {
         if ( getNumerator() != 0 )
@@ -265,6 +303,8 @@ namespace Lyre
             setDenominator( tempNumerator );
         }
     }
+    
+    
     /* returns true if the fraction
      represents a number less than zero */
     bool Rational::getIsNegative() const
@@ -283,6 +323,8 @@ namespace Lyre
         }
         return true;
     }
+    
+    
     bool Rational::getIsPositive() const
     {
         if ( getNumerator() == 0 )
@@ -299,6 +341,8 @@ namespace Lyre
         }
         return false;
     }
+    
+    
     /* if the fraction were written as a mixed
      number (i.e.  1 1/2 instead of 3/2), get
      the whole number part (i.e. 1) and the
@@ -314,6 +358,8 @@ namespace Lyre
         temp.setNumerator( getNumerator() - ( whole * getDenominator() ) );
         return temp;
     }
+    
+    
     /* returns true of both numerators are equal
      and both denominators are equal.  Note this
      is different than the behavior of == */
@@ -321,12 +367,16 @@ namespace Lyre
     {
         return ( getNumerator() == other.getNumerator() ) && ( getDenominator() == other.getDenominator() );
     }
+    
+    
     Rational& Rational::operator*=( const Rational& right )
     {
         auto result = *this * right;
         *this = result;
         return *this;
     }
+    
+    
     /* attempting to divide by 0 (i.e. 0/x) is a no op */
     Rational& Rational::operator/=( const Rational& right )
     {
@@ -337,18 +387,24 @@ namespace Lyre
         }
         return *this;
     }
+    
+    
     Rational& Rational::operator+=( const Rational& right )
     {
         auto result = *this + right;
         *this = result;
         return *this;
     }
+    
+    
     Rational& Rational::operator-=( const Rational& right )
     {
         auto result = *this - right;
         *this = result;
         return *this;
     }
+    
+    
     /* divide by zero (i.e. 0/x) returns 0/1 (i.e. instead of throwing) */
     Rational operator/( const Rational& r, const Rational& l )
     {
@@ -360,12 +416,16 @@ namespace Lyre
         value.reduce();
         return value;
     }
+    
+    
     Rational operator*( const Rational& r, const Rational& l )
     {
         Rational temp{ r.getNumerator() * l.getNumerator(), r.getDenominator() * l.getDenominator() };
         temp.reduce();
         return temp;
     }
+    
+    
     Rational operator+( const Rational& r, const Rational& l )
     {
         auto copy_r = r;
@@ -375,6 +435,8 @@ namespace Lyre
         output.reduce();
         return output;
     }
+    
+    
     Rational operator-( const Rational& r, const Rational& l )
     {
         auto copy_r = r;
@@ -384,5 +446,4 @@ namespace Lyre
         output.reduce();
         return output;
     }
-    
 }

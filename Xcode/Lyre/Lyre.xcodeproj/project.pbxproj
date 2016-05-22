@@ -85,8 +85,10 @@
 		29890CC51CA3B654005B318B /* ScoreFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29890CBE1CA3B654005B318B /* ScoreFactory.cpp */; };
 		29890CC61CA3B654005B318B /* ScoreSpec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29890CC01CA3B654005B318B /* ScoreSpec.cpp */; };
 		29890CC71CA3B654005B318B /* ScoreSpecFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29890CC21CA3B654005B318B /* ScoreSpecFactory.cpp */; };
+		2989ADC11CF218D800E3D59F /* LmxConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2989ADBF1CF218D800E3D59F /* LmxConversions.cpp */; };
 		29929FCC1C0766BD001CDDC8 /* TupletDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29929FCA1C0766BD001CDDC8 /* TupletDef.cpp */; };
 		299A620A1C7A0C73009C5B19 /* StepStrings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 299A62081C7A0C73009C5B19 /* StepStrings.cpp */; };
+		29B9720A1CF21D8F00EF58AC /* LmxDivisions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B972091CF21D8F00EF58AC /* LmxDivisions.cpp */; };
 		29C3858E1C03611D00250931 /* ITupletDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C3858C1C03611D00250931 /* ITupletDef.cpp */; };
 		29C385911C03637800250931 /* IDurDot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29C3858F1C03637800250931 /* IDurDot.cpp */; };
 		29CF96251C93E61000CBF5A7 /* IMasterTrackFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CF96231C93E61000CBF5A7 /* IMasterTrackFactory.cpp */; };
@@ -281,11 +283,15 @@
 		29890CC21CA3B654005B318B /* ScoreSpecFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScoreSpecFactory.cpp; path = ../../Sourcecode/Lyre/Private/ScoreSpecFactory.cpp; sourceTree = "<group>"; };
 		29890CC31CA3B654005B318B /* ScoreSpecFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreSpecFactory.h; path = ../../Sourcecode/Lyre/Private/ScoreSpecFactory.h; sourceTree = "<group>"; };
 		2989ADBB1CF1534300E3D59F /* DurationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurationConstants.h; path = ../../Sourcecode/Lyre/DurationConstants.h; sourceTree = "<group>"; };
+		2989ADBF1CF218D800E3D59F /* LmxConversions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LmxConversions.cpp; path = ../../Sourcecode/Lyre/Lmx/LmxConversions.cpp; sourceTree = "<group>"; };
+		2989ADC01CF218D800E3D59F /* LmxConversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LmxConversions.h; path = ../../Sourcecode/Lyre/Lmx/LmxConversions.h; sourceTree = "<group>"; };
 		29929FCA1C0766BD001CDDC8 /* TupletDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TupletDef.cpp; path = ../../Sourcecode/Lyre/Private/TupletDef.cpp; sourceTree = "<group>"; };
 		29929FCB1C0766BD001CDDC8 /* TupletDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TupletDef.h; path = ../../Sourcecode/Lyre/Private/TupletDef.h; sourceTree = "<group>"; };
 		299A62081C7A0C73009C5B19 /* StepStrings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StepStrings.cpp; path = ../../Sourcecode/Lyre/Private/StepStrings.cpp; sourceTree = "<group>"; };
 		299A62091C7A0C73009C5B19 /* StepStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StepStrings.h; path = ../../Sourcecode/Lyre/Private/StepStrings.h; sourceTree = "<group>"; };
 		29AAC7351C5D122D00B1EBA1 /* toShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = toShared.h; path = ../../Sourcecode/Lyre/toShared.h; sourceTree = "<group>"; };
+		29B972091CF21D8F00EF58AC /* LmxDivisions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LmxDivisions.cpp; path = ../../Sourcecode/Lyre/Lmx/LmxDivisions.cpp; sourceTree = "<group>"; };
+		29B9720B1CF21D9C00EF58AC /* LmxDivisions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LmxDivisions.h; path = ../../Sourcecode/Lyre/Lmx/LmxDivisions.h; sourceTree = "<group>"; };
 		29C3858C1C03611D00250931 /* ITupletDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ITupletDef.cpp; path = ../../Sourcecode/Lyre/ITupletDef.cpp; sourceTree = "<group>"; };
 		29C3858D1C03611D00250931 /* ITupletDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITupletDef.h; path = ../../Sourcecode/Lyre/ITupletDef.h; sourceTree = "<group>"; };
 		29C3858F1C03637800250931 /* IDurDot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IDurDot.cpp; path = ../../Sourcecode/Lyre/IDurDot.cpp; sourceTree = "<group>"; };
@@ -443,6 +449,8 @@
 				291E420B1C665C5A004C3432 /* LyreApiExport.h */,
 				297CCB5B1CAA3B2B007765D1 /* MusicFactory.cpp */,
 				297CCB5C1CAA3B2B007765D1 /* MusicFactory.h */,
+				29109DE61BE559F2001FF3E6 /* Rational.cpp */,
+				29109DE71BE559F2001FF3E6 /* Rational.h */,
 				29AAC7351C5D122D00B1EBA1 /* toShared.h */,
 				29109DE81BE559F2001FF3E6 /* TypeDefs.h */,
 				29E05A7E1C7838E20012FD81 /* unusedParameter.h */,
@@ -548,8 +556,6 @@
 				2973E9691C8C99240021E067 /* Range.h */,
 				2973E96A1C8C99240021E067 /* RangeFactory.cpp */,
 				2973E96B1C8C99240021E067 /* RangeFactory.h */,
-				29109DE61BE559F2001FF3E6 /* Rational.cpp */,
-				29109DE71BE559F2001FF3E6 /* Rational.h */,
 				29890CBC1CA3B654005B318B /* Score.cpp */,
 				29890CBD1CA3B654005B318B /* Score.h */,
 				29890CBE1CA3B654005B318B /* ScoreFactory.cpp */,
@@ -578,6 +584,10 @@
 		2989ADBE1CF211B800E3D59F /* MusicXML */ = {
 			isa = PBXGroup;
 			children = (
+				29B9720B1CF21D9C00EF58AC /* LmxDivisions.h */,
+				29B972091CF21D8F00EF58AC /* LmxDivisions.cpp */,
+				2989ADBF1CF218D800E3D59F /* LmxConversions.cpp */,
+				2989ADC01CF218D800E3D59F /* LmxConversions.h */,
 				291321EF1CAF803E00E7A5DD /* MusicXml.cpp */,
 				291321F01CAF803E00E7A5DD /* MusicXml.h */,
 				297CCB551CAA3597007765D1 /* MusicXmlExporter.cpp */,
@@ -675,6 +685,7 @@
 				29FE9DBF1C66C76B00BE0787 /* IBeatPatternFactory.cpp in Sources */,
 				296D72661BF8E9EE0049B0EA /* DurBase128th.cpp in Sources */,
 				29890CC71CA3B654005B318B /* ScoreSpecFactory.cpp in Sources */,
+				2989ADC11CF218D800E3D59F /* LmxConversions.cpp in Sources */,
 				29109E231BE55A1B001FF3E6 /* Alter.cpp in Sources */,
 				29890CC41CA3B654005B318B /* Score.cpp in Sources */,
 				29314AA51C9EFFED00EF3CF5 /* PartSpec.cpp in Sources */,
@@ -718,6 +729,7 @@
 				297CCB5D1CAA3B2B007765D1 /* MusicFactory.cpp in Sources */,
 				29314AA01C9EFFDC00EF3CF5 /* IPartSpecFactory.cpp in Sources */,
 				291FB0671C8FF8FE00C838B5 /* IPartFactory.cpp in Sources */,
+				29B9720A1CF21D8F00EF58AC /* LmxDivisions.cpp in Sources */,
 				2926C87A1C0D717200C5D4C0 /* IDuration.cpp in Sources */,
 				29314A8D1C9EEBF900EF3CF5 /* MovementFactory.cpp in Sources */,
 				297157801C851DC60001A761 /* MeasureFactory.cpp in Sources */,

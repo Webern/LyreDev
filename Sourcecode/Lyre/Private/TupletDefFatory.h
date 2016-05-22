@@ -18,23 +18,23 @@ namespace Lyre
                 const int noteCount,
                 const String& noteTypeDurBaseName,
                 const int inTheSpaceOfCount,
-                const String& inTheSpaceOfTypeDurBaseName );
+                const String& inTheSpaceOfTypeDurBaseName ) const;
             
             virtual ITupletDefUP createTupletDef(
                 const int countCount,
                 const IDurDot& countType,
                 const int inTheSpaceOf,
-                const IDurDot& inTheSpaceOfType );
+                const IDurDot& inTheSpaceOfType ) const;
             
             virtual ITupletDefUP createTupletDef(
                 const int count,
                 const int inTheSpaceOf,
-                const IDurDot& durationType );
+                const IDurDot& durationType ) const;
             
             virtual ITupletDefUP createTupletDef(
                 const int count,
                 const int inTheSpaceOf,
-                const String& durBaseName );
+                const String& durBaseName ) const;
         };
     }
 }

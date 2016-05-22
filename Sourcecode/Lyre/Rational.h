@@ -153,5 +153,6 @@ namespace Lyre
 	PUBLIC Rational operator-( const Rational& r, const Rational& l );
     
     /* stream a textual representation of the Rational number */
-    PUBLIC std::ostream& operator<<( std::ostream& os, const Rational& right );    
+    PUBLIC std::ostream& operator<<( std::ostream& os, const Rational& right );
+    
 }
