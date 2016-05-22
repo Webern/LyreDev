@@ -6,8 +6,8 @@ namespace Lyre
     namespace Private
     {
         DurBaseWhole::DurBaseWhole()
-        :myRational( 4, 1 )
-        ,myName( "Whole" )
+        :myRational( VAL_WHOLE )
+        ,myName( STR_WHOLE )
         {}
         
         DurBaseWhole::~DurBaseWhole() {}

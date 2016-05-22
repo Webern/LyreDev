@@ -144,7 +144,7 @@ namespace Lyre
         auto bpFactory = createBeatPatternFactory();
         auto durFactory = createDurationFactory( DurationFactoryType::Standard );
         Rational remaining = getTotalDuration();
-        auto currDur = durFactory->createDuration( "Quarter" );
+        auto currDur = durFactory->createDuration( STR_QUARTER );
         VecIDurationUP durs;
         while ( remaining >= currDur->getValue() )
         {
@@ -152,42 +152,42 @@ namespace Lyre
             remaining -= currDur->getValue();
         }
         remaining.reduce();
-        currDur = durFactory->createDuration( "Eighth" );
+        currDur = durFactory->createDuration( STR_EIGHTH );
         while ( remaining >= currDur->getValue() )
         {
             durs.push_back( currDur->clone() );
             remaining -= currDur->getValue();
         }
         remaining.reduce();
-        currDur = durFactory->createDuration( "16th" );
+        currDur = durFactory->createDuration( STR_16TH );
         while ( remaining >= currDur->getValue() )
         {
             durs.push_back( currDur->clone() );
             remaining -= currDur->getValue();
         }
         remaining.reduce();
-        currDur = durFactory->createDuration( "32nd" );
+        currDur = durFactory->createDuration( STR_32ND );
         while ( remaining >= currDur->getValue() )
         {
             durs.push_back( currDur->clone() );
             remaining -= currDur->getValue();
         }
         remaining.reduce();
-        currDur = durFactory->createDuration( "64th" );
+        currDur = durFactory->createDuration( STR_64TH );
         while ( remaining >= currDur->getValue() )
         {
             durs.push_back( currDur->clone() );
             remaining -= currDur->getValue();
         }
         remaining.reduce();
-        currDur = durFactory->createDuration( "128th" );
+        currDur = durFactory->createDuration( STR_128TH );
         while ( remaining >= currDur->getValue() )
         {
             durs.push_back( currDur->clone() );
             remaining -= currDur->getValue();
         }
         remaining.reduce();
-        currDur = durFactory->createDuration( "256th" );
+        currDur = durFactory->createDuration( STR_256TH );
         while ( remaining >= currDur->getValue() )
         {
             durs.push_back( currDur->clone() );

@@ -10,7 +10,7 @@ using namespace Lyre::Private;
 namespace
 {
     Rational value{ 1, 1 };
-    String name{ "Quarter" };
+    String name{ STR_QUARTER };
 }
 
 TEST( getValue, DurBaseQuarter )

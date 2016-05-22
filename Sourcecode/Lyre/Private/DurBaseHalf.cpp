@@ -6,8 +6,8 @@ namespace Lyre
     namespace Private
     {
         DurBaseHalf::DurBaseHalf()
-        :myRational( 2, 1 )
-        ,myName( "Half" )
+        :myRational( VAL_HALF )
+        ,myName( STR_HALF )
         {}
         
         DurBaseHalf::~DurBaseHalf() {}

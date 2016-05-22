@@ -3,6 +3,7 @@
 #include "Lyre/Lyre.h"
 #include "Lyre/IScore.h"
 #include "Lyre/IPartSpec.h"
+#include "Lyre/IDurBase.h"
 
 #include "Mx/DocumentPartwise.h"
 
@@ -21,6 +22,7 @@ namespace Lyre
         void setComposer( const MxDoc& doc, const std::string& composer  );
         void setCopyright( const MxDoc& doc, const std::string& copyright  );
         void setSoftware( const MxDoc& doc, const std::string& software );
+        mx::t::NoteTypeValue convertLyreDurBaseToMxNoteType( const Rational& durBaseValue );
         
         void setPartList(
             const MxDoc& doc,

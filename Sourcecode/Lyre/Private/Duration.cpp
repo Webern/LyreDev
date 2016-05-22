@@ -1,6 +1,7 @@
 #include "Lyre/Private/Duration.h"
 #include "Lyre/Private/TupletDef.h"
 #include "Lyre/Private/throw.h"
+#include "Lyre/DurationConstants.h"
 #include <sstream>
 
 namespace Lyre
@@ -77,7 +78,7 @@ namespace Lyre
                 }
                 else
                 {
-                    return IDurationUP{ new Duration{ "Quarter" } };
+                    return IDurationUP{ new Duration{ STR_QUARTER } };
                 }
             }
             if ( value->getValue() == rational )
@@ -290,17 +291,17 @@ namespace Lyre
         
         void Duration::addAllTuplets()
         {
-            addTupletGroups( "256th" );
-            addTupletGroups( "128th" );
-            addTupletGroups( "64th" );
-            addTupletGroups( "32nd" );
-            addTupletGroups( "16th" );
-            addTupletGroups( "Eighth" );
-            addTupletGroups( "Quarter" );
-            addTupletGroups( "Half" );
-            addTupletGroups( "Whole" );
-            addTupletGroups( "Breve" );
-            addTupletGroups( "Longa" );
+            addTupletGroups( STR_256TH.c_str() );
+            addTupletGroups( STR_128TH.c_str() );
+            addTupletGroups( STR_64TH.c_str() );
+            addTupletGroups( STR_32ND.c_str() );
+            addTupletGroups( STR_16TH.c_str() );
+            addTupletGroups( STR_EIGHTH.c_str() );
+            addTupletGroups( STR_QUARTER.c_str() );
+            addTupletGroups( STR_HALF.c_str() );
+            addTupletGroups( STR_WHOLE.c_str() );
+            addTupletGroups( STR_BREVE.c_str() );
+            addTupletGroups( STR_LONGA.c_str() );
         }
         
         void Duration::addDurDots( const char* durName )
@@ -323,17 +324,17 @@ namespace Lyre
         
         void Duration::addAllDurDots()
         {
-            addDurDots( "256th" );
-            addDurDots( "128th" );
-            addDurDots( "64th" );
-            addDurDots( "32nd" );
-            addDurDots( "16th" );
-            addDurDots( "Eighth" );
-            addDurDots( "Quarter" );
-            addDurDots( "Half" );
-            addDurDots( "Whole" );
-            addDurDots( "Breve" );
-            addDurDots( "Longa" );
+            addDurDots( STR_256TH.c_str() );
+            addDurDots( STR_128TH.c_str() );
+            addDurDots( STR_64TH.c_str() );
+            addDurDots( STR_32ND.c_str() );
+            addDurDots( STR_16TH.c_str() );
+            addDurDots( STR_EIGHTH.c_str() );
+            addDurDots( STR_QUARTER.c_str() );
+            addDurDots( STR_HALF.c_str() );
+            addDurDots( STR_WHOLE.c_str() );
+            addDurDots( STR_BREVE.c_str() );
+            addDurDots( STR_LONGA.c_str() );
         }
     }
 }

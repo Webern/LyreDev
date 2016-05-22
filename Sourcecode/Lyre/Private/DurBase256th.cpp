@@ -6,8 +6,8 @@ namespace Lyre
     namespace Private
     {
         DurBase256th::DurBase256th()
-        :myRational( 1, 64 )
-        ,myName( "256th" )
+        :myRational( VAL_256TH )
+        ,myName( STR_256TH )
         {}
         
         DurBase256th::~DurBase256th() {}

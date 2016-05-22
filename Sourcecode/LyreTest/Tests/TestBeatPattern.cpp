@@ -21,12 +21,12 @@ namespace
     }
     inline IDurationUP quarter()
     {
-        return durfact()->createDuration( "Quarter" );
+        return durfact()->createDuration( STR_QUARTER );
     }
     
     inline IDurationUP dottedQuarter()
     {
-        return durfact()->createDuration( "Quarter", 1 );
+        return durfact()->createDuration( STR_QUARTER, 1 );
     }
     
     inline VecIDurationUP quarterDottedQuarter()

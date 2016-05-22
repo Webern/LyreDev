@@ -81,7 +81,7 @@ TEST( ScoreItems, MxExporterBasic )
                 }
                 bool isRest = counter % 3 == 0;
                 auto pitch = f.pitchFactory->createPitch( counter + 50 );
-                auto dur = f.durationFactory->createDuration( "Quarter", 2 );
+                auto dur = f.durationFactory->createDuration( STR_QUARTER, 2 );
                 auto note = f.noteFactory->createNote( pitch, dur );
                 if( isRest )
                 {

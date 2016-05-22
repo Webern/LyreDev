@@ -6,8 +6,8 @@ namespace Lyre
     namespace Private
     {
         DurBaseBreve::DurBaseBreve()
-        :myRational( 8, 1 )
-        ,myName( "Breve" )
+        :myRational( VAL_BREVE )
+        ,myName( STR_BREVE )
         {}
         
         DurBaseBreve::~DurBaseBreve() {}

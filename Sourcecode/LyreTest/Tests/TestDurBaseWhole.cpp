@@ -10,7 +10,7 @@ using namespace Lyre::Private;
 namespace
 {
     Rational value{ 4, 1 };
-    String name{ "Whole" };
+    String name{ STR_WHOLE };
 }
 
 TEST( getValue, DurBaseWhole )

@@ -17,13 +17,13 @@ TEST( ctor1, ITupletDef )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-        5, *( durDotFactory->createDurDot( "16th", 0 ) ),
-        4, *( durDotFactory->createDurDot( "32nd", 0 ) ) );
+        5, *( durDotFactory->createDurDot( STR_16TH, 0 ) ),
+        4, *( durDotFactory->createDurDot( STR_32ND, 0 ) ) );
     
     CHECK_EQUAL( 5 , t->getCount() )
-    CHECK_EQUAL( "16th" , t->getCountType()->toString() )
+    CHECK_EQUAL( STR_16TH , t->getCountType()->toString() )
     CHECK_EQUAL( 4 , t->getInTheSpaceOf() )
-    CHECK_EQUAL( "32nd" , t->getInTheSpaceOfType()->toString() )
+    CHECK_EQUAL( STR_32ND , t->getInTheSpaceOfType()->toString() )
 }
 T_END
 
@@ -33,12 +33,12 @@ TEST( ctor2, ITupletDef )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-        3, 2, *( durDotFactory->createDurDot( "Quarter", 0 ) ) );
+        3, 2, *( durDotFactory->createDurDot( STR_QUARTER, 0 ) ) );
     
     CHECK_EQUAL( 3 , t->getCount() )
-    CHECK_EQUAL( "Quarter" , t->getCountType()->toString() )
+    CHECK_EQUAL( STR_QUARTER , t->getCountType()->toString() )
     CHECK_EQUAL( 2 , t->getInTheSpaceOf() )
-    CHECK_EQUAL( "Quarter" , t->getInTheSpaceOfType()->toString() )
+    CHECK_EQUAL( STR_QUARTER , t->getInTheSpaceOfType()->toString() )
 }
 T_END
 
@@ -47,12 +47,12 @@ TEST( ctor3, ITupletDef )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-        7, 6, "Eighth" );
+        7, 6, STR_EIGHTH );
     
     CHECK_EQUAL( 7 , t->getCount() )
-    CHECK_EQUAL( "Eighth" , t->getCountType()->toString() )
+    CHECK_EQUAL( STR_EIGHTH , t->getCountType()->toString() )
     CHECK_EQUAL( 6 , t->getInTheSpaceOf() )
-    CHECK_EQUAL( "Eighth" , t->getInTheSpaceOfType()->toString() )
+    CHECK_EQUAL( STR_EIGHTH , t->getInTheSpaceOfType()->toString() )
 }
 T_END
 
@@ -61,7 +61,7 @@ TEST( clone, ITupletDef )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP orig = tupletFactory->createTupletDef(
-        7, 6, "Eighth" );
+        7, 6, STR_EIGHTH );
     ITupletDefUP cloned = orig->clone();
     CHECK( orig.get() != nullptr )
     CHECK( cloned.get() != nullptr )
@@ -76,7 +76,7 @@ TEST( getMultiplier1, ITupletDef )
 {
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     ITupletDefUP t = tupletFactory->createTupletDef(
-     3, 2, "Quarter" );
+     3, 2, STR_QUARTER );
     Rational expected{ 2, 3 };
     Rational actual = t->getMultiplier();
     CHECK_EQUAL( expected, actual )
@@ -87,7 +87,7 @@ TEST( getMultiplier2, ITupletDef )
 {
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     ITupletDefUP t = tupletFactory->createTupletDef(
-        7, 6, "16th" );
+        7, 6, STR_16TH );
     Rational expected{ 6, 7 };
     Rational actual = t->getMultiplier();
     CHECK_EQUAL( expected, actual )
@@ -98,7 +98,7 @@ TEST( getMultiplier3, ITupletDef )
 {
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     ITupletDefUP t = tupletFactory->createTupletDef(
-        7, 6, "32nd" );
+        7, 6, STR_32ND );
     Rational expected{ 6, 7 };
     Rational actual = t->getMultiplier();
     CHECK_EQUAL( expected, actual )
@@ -111,8 +111,8 @@ TEST( getTotalLength1, ITupletDef )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-        6, *( durDotFactory->createDurDot( "16th", 0 ) ),
-        5, *( durDotFactory->createDurDot( "32nd", 0 ) ) );
+        6, *( durDotFactory->createDurDot( STR_16TH, 0 ) ),
+        5, *( durDotFactory->createDurDot( STR_32ND, 0 ) ) );
     auto expected = Rational{ 1, 8 } * Rational( 5, 1 );
     auto actual = t->getTotalLength();
     CHECK_EQUAL( expected, actual )
@@ -125,7 +125,7 @@ TEST( getTotalLength2, ITupletDef )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-        3, 2, *( durDotFactory->createDurDot( "Quarter", 0 ) ) );
+        3, 2, *( durDotFactory->createDurDot( STR_QUARTER, 0 ) ) );
     auto expected = Rational{ 2, 1 };
     auto actual = t->getTotalLength();
     CHECK_EQUAL( expected, actual )
@@ -137,7 +137,7 @@ TEST( getTotalLength3, ITupletDef )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-        7, 6, "Eighth" );
+        7, 6, STR_EIGHTH );
     auto expected = Rational{ 3, 1 };
     auto actual = t->getTotalLength();
     CHECK_EQUAL( expected, actual )
@@ -150,8 +150,8 @@ TEST( getTotalLength4, ITupletDef )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-        4, *( durDotFactory->createDurDot( "Quarter", 0 ) ),
-        2, *( durDotFactory->createDurDot( "Quarter", 1 ) ) );
+        4, *( durDotFactory->createDurDot( STR_QUARTER, 0 ) ),
+        2, *( durDotFactory->createDurDot( STR_QUARTER, 1 ) ) );
     auto expected = Rational{ 3, 1 };
     auto actual = t->getTotalLength();
     CHECK_EQUAL( expected, actual )
@@ -167,8 +167,8 @@ TEST( getters, ITupletDef )
     auto durDotFactory = createDurDotFactory( DurDotFactoryType::Standard );
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
-    auto countType = durDotFactory->createDurDot( "16th", 2 );
-    auto itspoType = durDotFactory->createDurDot( "128th", 3 );
+    auto countType = durDotFactory->createDurDot( STR_16TH, 2 );
+    auto itspoType = durDotFactory->createDurDot( STR_128TH, 3 );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
         15, *countType, 17, *itspoType );
@@ -185,8 +185,8 @@ TEST( toStream, ITupletDef )
     auto durDotFactory = createDurDotFactory( DurDotFactoryType::Standard );
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
-    auto countType = durDotFactory->createDurDot( "16th", 2 );
-    auto itspoType = durDotFactory->createDurDot( "128th", 3 );
+    auto countType = durDotFactory->createDurDot( STR_16TH, 2 );
+    auto itspoType = durDotFactory->createDurDot( STR_128TH, 3 );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
         15, *countType, 17, *itspoType );
@@ -204,8 +204,8 @@ TEST( streamingOperator, ITupletDef )
     auto durDotFactory = createDurDotFactory( DurDotFactoryType::Standard );
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
-    auto countType = durDotFactory->createDurDot( "Quarter", 0 );
-    auto itspoType = durDotFactory->createDurDot( "Quarter", 0 );
+    auto countType = durDotFactory->createDurDot( STR_QUARTER, 0 );
+    auto itspoType = durDotFactory->createDurDot( STR_QUARTER, 0 );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
         3, *countType, 2, *itspoType );
@@ -223,8 +223,8 @@ TEST( toString, ITupletDef )
     auto durDotFactory = createDurDotFactory( DurDotFactoryType::Standard );
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
-    auto countType = durDotFactory->createDurDot( "32nd", 0 );
-    auto itspoType = durDotFactory->createDurDot( "32nd", 0 );
+    auto countType = durDotFactory->createDurDot( STR_32ND, 0 );
+    auto itspoType = durDotFactory->createDurDot( STR_32ND, 0 );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
         9, *countType, 8, *itspoType );
@@ -239,7 +239,7 @@ TEST( getIsValid1, ITupletDef )
 {
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     ITupletDefUP t = tupletFactory->createTupletDef(
-        1, 1, "32nd" );
+        1, 1, STR_32ND );
     CHECK( ! ( t->getIsValid() ) )
 }
 T_END
@@ -248,7 +248,7 @@ TEST( getIsValid2, ITupletDef )
 {
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     ITupletDefUP t = tupletFactory->createTupletDef(
-        3, 2, "32nd" );
+        3, 2, STR_32ND );
     CHECK( t->getIsValid() )
 }
 T_END

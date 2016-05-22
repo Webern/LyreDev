@@ -60,8 +60,8 @@ T_END
 TEST( isEqualTo1, IDurBase )
 {
     IDurBaseFactoryUP factory = createDurBaseFactory( DurBaseFactoryType::Standard );
-    auto durA = factory->createDur( "Eighth" );
-    auto durB = createMockDurBase( Rational{ 1, 2 }, "Eighth" );
+    auto durA = factory->createDur( STR_EIGHTH );
+    auto durB = createMockDurBase( Rational{ 1, 2 }, STR_EIGHTH );
     CHECK(   durA->isIdenticalTo( *durB ) )
     CHECK(   durA->isIdenticalTo( *durB ) )
     CHECK(   durA->isEqualTo( *durB ) )
@@ -89,7 +89,7 @@ T_END
 TEST( isEqualTo2, IDurBase )
 {
     IDurBaseFactoryUP factory = createDurBaseFactory( DurBaseFactoryType::Standard );
-    auto durA = factory->createDur( "Eighth" );
+    auto durA = factory->createDur( STR_EIGHTH );
     auto durB = createMockDurBase( Rational{ 1, 2 }, "Different" );
     CHECK( ! durA->isIdenticalTo( *durB ) )
     CHECK( ! durA->isIdenticalTo( *durB ) )
@@ -118,8 +118,8 @@ T_END
 TEST( isGreaterThan, IDurBase )
 {
     IDurBaseFactoryUP factory = createDurBaseFactory( DurBaseFactoryType::Standard );
-    auto durA = factory->createDur( "Half" );
-    auto durB = createMockDurBase( Rational{ 1, 1 }, "Quarter" );
+    auto durA = factory->createDur( STR_HALF );
+    auto durB = createMockDurBase( Rational{ 1, 1 }, STR_QUARTER );
     CHECK( ! durA->isIdenticalTo( *durB ) )
     CHECK( ! durA->isIdenticalTo( *durB ) )
     CHECK( ! durA->isEqualTo( *durB ) )
@@ -147,7 +147,7 @@ T_END
 TEST( isLessThan, IDurBase )
 {
     IDurBaseFactoryUP factory = createDurBaseFactory( DurBaseFactoryType::Standard );
-    auto durA = factory->createDur( "128th" );
+    auto durA = factory->createDur( STR_128TH );
     auto durB = createMockDurBase( Rational{ 1000, 1 }, "Very Large" );
     CHECK( ! durA->isIdenticalTo( *durB ) )
     CHECK( ! durA->isIdenticalTo( *durB ) )

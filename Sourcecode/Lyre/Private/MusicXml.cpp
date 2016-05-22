@@ -192,135 +192,60 @@ namespace Lyre
             params.octave = lyreNote->getPitch()->getOctaveValue();
             params.alter = lyreNote->getPitch()->getAlterValue();
             params.durationDots = lyreNote->getDuration()->getDotCount();
-            
-
-            //auto musicDataChoice = makeMusicDataChoice();
-            //musicDataChoice->setChoice( MusicDataChoice::Choice::note );
-            //auto noteElement = musicDataChoice->getNote();
-            //noteElement->getNoteChoice()->setChoice( NoteChoice::Choice::normal );
-            //noteElement->setHasType( true );
-            
-            auto durtype = lyreNote->getDuration()->getDurBaseValue();
-            auto ntype = NoteTypeValue::oneHundredTwentyEighth;
-            if( durtype == Rational{ 16, 1 } )
-            {
-                ntype = NoteTypeValue::long_;
-            }
-            else if ( durtype == Rational{ 8, 1 } )
-            {
-                ntype = NoteTypeValue::breve;
-            }
-            else if ( durtype == Rational{ 4, 1 } )
-            {
-                ntype = NoteTypeValue::whole;
-            }
-            else if ( durtype == Rational{ 2, 1 } )
-            {
-                ntype = NoteTypeValue::half;
-            }
-            else if ( durtype == Rational{ 1, 1 } )
-            {
-                ntype = NoteTypeValue::quarter;
-            }
-            else if ( durtype == Rational{ 1, 2 } )
-            {
-                ntype = NoteTypeValue::eighth;
-            }
-            else if ( durtype == Rational{ 1, 4 } )
-            {
-                ntype = NoteTypeValue::sixteenth;
-            }
-            else if ( durtype == Rational{ 1, 8 } )
-            {
-                ntype = NoteTypeValue::thirtySecond;
-            }
-            else if ( durtype == Rational{ 1, 16 } )
-            {
-                ntype = NoteTypeValue::sixtyFourth;
-            }
-            else if ( durtype == Rational{ 1, 32 } )
-            {
-                ntype = NoteTypeValue::oneHundredTwentyEighth;
-            }
-            //for( int i = 0; i < lyreNote->getDuration()->getDotCount(); ++i )
-                //{
-                //noteElement->addDot( makeDot() );
-                //}
-            //noteElement->getType()->setValue( ntype );
-            params.durationType = ntype;
+            params.durationType = convertLyreDurBaseToMxNoteType( lyreNote->getDuration()->getDurBaseValue() );
             params.duration = divisions;
-            //note->getDuration()->setValue( PositiveDivisionsValue{ static_cast<DecimalType>( divisions ) } );
-            
-            if( lyreNote->getIsRest() )
-            {
-                THROW( "rests need to be dealt with" )
-            }
-            //else
-            //{
-            //auto mxpitch = note->getFullNoteGroup()->getFullNoteTypeChoice()->getPitch();
-            //  note->getFullNoteGroup()->getFullNoteTypeChoice()->setChoice( FullNoteTypeChoice::Choice::pitch );
-            //switch( lyreNote->getPitch()->getStepValue() )
-            //   {
-            //      case 0:
-            ///          mxpitch->getStep()->setValue( StepEnum:: c );
-            //         break;
-            //      case 1:
-            //          mxpitch->getStep()->setValue( StepEnum:: d );
-            //          break;
-            //      case 2:
-            //          mxpitch->getStep()->setValue( StepEnum:: e );
-            //          break;
-            //      case 3:
-            //          mxpitch->getStep()->setValue( StepEnum:: f );
-            //          break;
-            //      case 4:
-            //          mxpitch->getStep()->setValue( StepEnum:: g );
-            //          break;
-            //      case 5:
-            //          mxpitch->getStep()->setValue( StepEnum:: a );
-            //          break;
-            //      case 6:
-            //          mxpitch->getStep()->setValue( StepEnum:: b );
-            //          break;
-            //  }
-            //  mxpitch->getOctave()->setValue( OctaveValue{ lyreNote->getPitch()->getOctaveValue() } );
-            //  mxpitch->setHasAlter( true );
-            //  mxpitch->getAlter()->setValue( Semitones{ static_cast<DecimalType>( lyreNote->getPitch()->getAlterValue() ) } );
-            //  if( doShowAccidental )
-            //  {
-            //      noteElement->setHasAccidental( doShowAccidental );
-            //      if( lyreNote->getPitch()->getAlterValue() > 2 ||
-            //          lyreNote->getPitch()->getAlterValue() < -2 )
-            //      {
-            //          THROW( "accidentals beyond x and bb not supported by musicxml" );
-            //      }
-                    AccidentalValue accidental = AccidentalValue::natural;
-                    switch ( lyreNote->getPitch()->getAlterValue() )
-                    {
-                        case -2:
-                            accidental = AccidentalValue::flatFlat;
-                            break;
-                        case -1:
-                            accidental = AccidentalValue::flat;
-                            break;
-                        case 1:
-                            accidental = AccidentalValue::sharp;
-                            break;
-                        case 2:
-                            accidental = AccidentalValue::doubleSharp;
-                            break;
-                        default:
-                            break;
-                    }
-                    params.accidental = accidental;
-            //noteElement->getAccidental()->setValue( accidental );
-            //  }
-            //}
-            
+            params.isRest = lyreNote->getIsRest();
             auto mdc = mx::utility::createNote( params );
             mxMeasure->getMusicDataGroup()->addMusicDataChoice( mdc );
             
         } // end function addNoteToMeasure
+        
+        
+        mx::t::NoteTypeValue convertLyreDurBaseToMxNoteType( const Rational& durBaseValue )
+        {
+            auto ntype = NoteTypeValue::oneHundredTwentyEighth;
+            if( durBaseValue == VAL_LONGA )
+            {
+                ntype = NoteTypeValue::long_;
+            }
+            else if ( durBaseValue == VAL_BREVE )
+            {
+                ntype = NoteTypeValue::breve;
+            }
+            else if ( durBaseValue == VAL_WHOLE )
+            {
+                ntype = NoteTypeValue::whole;
+            }
+            else if ( durBaseValue == VAL_HALF )
+            {
+                ntype = NoteTypeValue::half;
+            }
+            else if ( durBaseValue == VAL_QUARTER )
+            {
+                ntype = NoteTypeValue::quarter;
+            }
+            else if ( durBaseValue == VAL_EIGHTH )
+            {
+                ntype = NoteTypeValue::eighth;
+            }
+            else if ( durBaseValue == VAL_16TH )
+            {
+                ntype = NoteTypeValue::sixteenth;
+            }
+            else if ( durBaseValue == VAL_32ND )
+            {
+                ntype = NoteTypeValue::thirtySecond;
+            }
+            else if ( durBaseValue == VAL_64TH )
+            {
+                ntype = NoteTypeValue::sixtyFourth;
+            }
+            else if ( durBaseValue == VAL_128TH )
+            {
+                ntype = NoteTypeValue::oneHundredTwentyEighth;
+            }
+            return ntype;
+        }
 
     } // end namespace MxPrivate
 

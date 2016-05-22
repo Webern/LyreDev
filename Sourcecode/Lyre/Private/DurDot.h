@@ -5,6 +5,7 @@
 #include "Lyre/Rational.h"
 #include "Lyre/IDurBase.h"
 #include "Lyre/IDurBaseFactory.h"
+#include "Lyre/DurationConstants.h"
 
 namespace Lyre
 {

@@ -28,28 +28,28 @@ namespace
         INoteUP c4Quarter()
         {
             pitch->setPitch( 60 );
-            auto d = duration->createDuration( "Quarter" );
+            auto d = duration->createDuration( STR_QUARTER );
             return note->createNote( pitch->createPitch(), d );
         }
         
         INoteUP d4Eighth()
         {
             pitch->setPitch( 62 );
-            auto d = duration->createDuration( "Eighth" );
+            auto d = duration->createDuration( STR_EIGHTH );
             return note->createNote( pitch->createPitch(), d );
         }
         
         INoteUP e2Sixteenth()
         {
             pitch->setPitch( 40 );
-            auto d = duration->createDuration( "16th" );
+            auto d = duration->createDuration( STR_16TH );
             return note->createNote( pitch->createPitch(), d );
         }
         
         INoteUP f2Half()
         {
             pitch->setPitch( 41 );
-            auto d = duration->createDuration( "Half" );
+            auto d = duration->createDuration( STR_HALF );
             return note->createNote( pitch->createPitch(), d );
         }
         
@@ -122,7 +122,7 @@ namespace
         auto sub6 = newLayer();
         auto sub7 = newLayer();
         
-        String dur = "Quarter";
+        String dur = STR_QUARTER;
         
         mainLayer->add( f.makeNote( cVal( 0 ), dur ) );
         sub2->add( f.makeNote( cVal( 1 ), dur ) );

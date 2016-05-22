@@ -10,7 +10,7 @@ using namespace Lyre::Private;
 namespace
 {
     Rational value{ 16, 1 };
-    String name{ "Longa" };
+    String name{ STR_LONGA };
 }
 
 TEST( getValue, DurBaseLonga )

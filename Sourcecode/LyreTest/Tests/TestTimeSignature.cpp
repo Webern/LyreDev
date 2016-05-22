@@ -33,7 +33,7 @@ TEST( getBeatPattern, TimeSignature )
 {
     auto beatPatternFactory = createBeatPatternFactory();
     auto durationFactory = createDurationFactory( DurationFactoryType::Standard );
-    IBeatPatternUP beatPattern = beatPatternFactory->create( 2, durationFactory->createDuration( "Quarter", 1 ) );
+    IBeatPatternUP beatPattern = beatPatternFactory->create( 2, durationFactory->createDuration( STR_QUARTER, 1 ) );
     ITimeSignatureUP ts = factory->create( std::move( beatPattern ), 3, 4 );
     String expected = "TimeSignature[3/4(BeatPattern<Quarter.,Quarter.>)]";
     String actual = ts->toString();

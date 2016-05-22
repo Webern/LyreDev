@@ -6,8 +6,8 @@ namespace Lyre
     namespace Private
     {
         DurBase128th::DurBase128th()
-        :myRational( 1, 32 )
-        ,myName( "128th" )
+        :myRational( VAL_128TH )
+        ,myName( STR_128TH )
         {}
         
         DurBase128th::~DurBase128th() {}

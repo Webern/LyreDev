@@ -11,7 +11,7 @@ using namespace std;
 
 TEST( CtorString, IDuration )
 {
-    String name = "Eighth";
+    String name = STR_EIGHTH;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( name );
     String expected = name;
@@ -24,7 +24,7 @@ T_END
 
 TEST( CtorStringDots, IDuration )
 {
-    String name = "16th";
+    String name = STR_16TH;
     int dots = 2;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( name, dots );
@@ -42,9 +42,9 @@ TEST( CtorTuplet, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
     
-    String name = "Eighth";
+    String name = STR_EIGHTH;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -62,9 +62,9 @@ TEST( getDurBaseValue, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 5, "16th", 4, "16th" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, STR_16TH, 4, STR_16TH ) );
     
-    String name = "Eighth";
+    String name = STR_EIGHTH;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -80,9 +80,9 @@ TEST( getDurBaseName, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 7, "16th", 4, "16th" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 7, STR_16TH, 4, STR_16TH ) );
     
-    String name = "32nd";
+    String name = STR_32ND;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -98,9 +98,9 @@ TEST( getDotCount, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 7, "16th", 4, "16th" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 7, STR_16TH, 4, STR_16TH ) );
     
-    String name = "32nd";
+    String name = STR_32ND;
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -116,9 +116,9 @@ TEST( getDottedBaseValue, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_WHOLE, 1, STR_WHOLE ) );
     
-    String name = "32nd";
+    String name = STR_32ND;
     int dots = 2;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -134,9 +134,9 @@ TEST( getDottedBaseName, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_WHOLE, 1, STR_WHOLE ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -152,9 +152,9 @@ TEST( getIsTuplet_false, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_WHOLE, 1, STR_WHOLE ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -170,9 +170,9 @@ TEST( getIsTuplet_true, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_WHOLE, 2, STR_WHOLE ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -188,9 +188,9 @@ TEST( getIsNestedTuplet_false_01, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     //VecITupletDefSPC tuplets;
-    //tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
+    //tuplets.push_back( tupletFactory->createTupletDef( 3, STR_WHOLE, 2, STR_WHOLE ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 3;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( name, dots );
@@ -206,9 +206,9 @@ TEST( getIsNestedTuplet_false_02, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_WHOLE, 1, STR_WHOLE ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -224,10 +224,10 @@ TEST( getIsNestedTuplet_false_03, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Eighth", 1, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_WHOLE, 1, STR_WHOLE ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_EIGHTH, 1, STR_EIGHTH ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -243,10 +243,10 @@ TEST( getIsNestedTuplet_false_04, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_WHOLE, 1, STR_WHOLE ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -262,10 +262,10 @@ TEST( getIsNestedTuplet_true_01, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 5, "Whole", 4, "Whole" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, STR_WHOLE, 4, STR_WHOLE ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -281,10 +281,10 @@ TEST( getTupletNestingCount_A, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 1, "Whole" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Eighth", 1, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_WHOLE, 1, STR_WHOLE ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_EIGHTH, 1, STR_EIGHTH ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -300,10 +300,10 @@ TEST( getTupletNestingCount_B, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Eighth", 1, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_WHOLE, 2, STR_WHOLE ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_EIGHTH, 1, STR_EIGHTH ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -319,10 +319,10 @@ TEST( getTupletNestingCount_C, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 5, "Eighth", 4, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_WHOLE, 2, STR_WHOLE ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, STR_EIGHTH, 4, STR_EIGHTH ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -338,10 +338,10 @@ TEST( getTupletBegin, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Whole", 2, "Whole" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 5, "Eighth", 4, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_WHOLE, 2, STR_WHOLE ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, STR_EIGHTH, 4, STR_EIGHTH ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -357,11 +357,11 @@ TEST( getTupletEnd, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 1, "Whole", 2, "Whole" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 2, "Eighth", 4, "Eighth" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "16th", 4, "16th" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, STR_WHOLE, 2, STR_WHOLE ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 2, STR_EIGHTH, 4, STR_EIGHTH ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_16TH, 4, STR_16TH ) );
     
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -381,7 +381,7 @@ T_END
 
 TEST( getValue01, IDuration )
 {
-    String name = "Eighth";
+    String name = STR_EIGHTH;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( name, dots );
@@ -395,7 +395,7 @@ T_END
 
 TEST( getValue02, IDuration )
 {
-    String name = "Half";
+    String name = STR_HALF;
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( /*tuplets,*/ name, dots );
@@ -411,9 +411,9 @@ TEST( getValue03, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
 
-    String name = "Quarter";
+    String name = STR_QUARTER;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -429,9 +429,9 @@ TEST( getValue04, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
     
-    String name = "Quarter";
+    String name = STR_QUARTER;
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -447,9 +447,9 @@ TEST( getValue05, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    String name = "Eighth";
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, STR_QUARTER, 4, STR_QUARTER ) );
+    String name = STR_EIGHTH;
     int dots = 0;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -465,9 +465,9 @@ TEST( getValue06, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    String name = "Eighth";
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, STR_QUARTER, 4, STR_QUARTER ) );
+    String name = STR_EIGHTH;
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -488,9 +488,9 @@ TEST( toStream, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    String name = "Eighth";
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, STR_QUARTER, 4, STR_QUARTER ) );
+    String name = STR_EIGHTH;
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -508,9 +508,9 @@ TEST( streamingOperator, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    String name = "Eighth";
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, STR_QUARTER, 4, STR_QUARTER ) );
+    String name = STR_EIGHTH;
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );
@@ -528,9 +528,9 @@ TEST( toString, IDuration )
 {
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
-    tuplets.push_back( tupletFactory->createTupletDef( 3, "Eighth", 2, "Eighth" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 5, "Quarter", 4, "Quarter" ) );
-    String name = "Eighth";
+    tuplets.push_back( tupletFactory->createTupletDef( 3, STR_EIGHTH, 2, STR_EIGHTH ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, STR_QUARTER, 4, STR_QUARTER ) );
+    String name = STR_EIGHTH;
     int dots = 1;
     auto f = createDurationFactory( DurationFactoryType::Standard );
     auto d = f->createDuration( tuplets, name, dots );

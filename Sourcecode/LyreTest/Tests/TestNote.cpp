@@ -25,7 +25,7 @@ TEST( clone_getPitch_setPitch, INote )
     pitch->setStepValue( 2 );
     pitch->setOctaveValue( 2 );
     
-    auto duration = durationFactory->createDuration( "Half", 0 );
+    auto duration = durationFactory->createDuration( STR_HALF, 0 );
     auto orig = noteFactory->createNote( pitch, duration );
     auto cloned = orig->clone();
     
@@ -56,7 +56,7 @@ TEST( getDuration, INote )
     pitch->setStepValue( 2 );
     pitch->setOctaveValue( 2 );
     
-    auto duration = durationFactory->createDuration( "Half", 0 );
+    auto duration = durationFactory->createDuration( STR_HALF, 0 );
     auto note = noteFactory->createNote( pitch, duration );
     auto copiedDuration = note->getDuration();
     CHECK( copiedDuration != nullptr )
@@ -78,7 +78,7 @@ TEST( isRest, INote )
     pitch->setStepValue( 3 );
     pitch->setOctaveValue( 6 );
     
-    auto duration = durationFactory->createDuration( "Half", 0 );
+    auto duration = durationFactory->createDuration( STR_HALF, 0 );
     auto note = noteFactory->createNote( pitch, duration );
     
     CHECK_EQUAL( 0, note->getPitch()->getAlterValue() )
@@ -117,10 +117,10 @@ TEST( toString, INote )
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
     
-    tuplets.push_back( tupletFactory->createTupletDef( 5, 4, "Eighth" ) );
-    tuplets.push_back( tupletFactory->createTupletDef( 3, 2, "Eighth" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, 4, STR_EIGHTH ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 3, 2, STR_EIGHTH ) );
     
-    auto duration = durationFactory->createDuration( tuplets, "Eighth", 1 );
+    auto duration = durationFactory->createDuration( tuplets, STR_EIGHTH, 1 );
     auto note = noteFactory->createNote( pitch, duration );
     
     String expected =
@@ -147,9 +147,9 @@ TEST( toStream, INote )
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
     
-    tuplets.push_back( tupletFactory->createTupletDef( 5, 4, "16th" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 5, 4, STR_16TH ) );
     
-    auto duration = durationFactory->createDuration( tuplets, "Quarter", 0 );
+    auto duration = durationFactory->createDuration( tuplets, STR_QUARTER, 0 );
     auto note = noteFactory->createNote( pitch, duration );
     
     std::stringstream ss;
@@ -177,9 +177,9 @@ TEST( streamingOperator, INote )
     auto tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     VecITupletDefSPC tuplets;
     
-    tuplets.push_back( tupletFactory->createTupletDef( 1, 1, "16th" ) );
+    tuplets.push_back( tupletFactory->createTupletDef( 1, 1, STR_16TH ) );
     
-    auto duration = durationFactory->createDuration( tuplets, "32nd", 4 );
+    auto duration = durationFactory->createDuration( tuplets, STR_32ND, 4 );
     auto note = noteFactory->createNote( pitch, duration );
     
     std::stringstream ss;

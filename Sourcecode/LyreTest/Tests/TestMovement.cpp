@@ -19,17 +19,17 @@ TEST( acceptanceTest, Movement )
     auto measure = part->getMeasure( 5 );
     CHECK_EQUAL( 7, measure->getTimeSignature()->getTop() )
     CHECK_EQUAL( 8, measure->getTimeSignature()->getBottom() )
-    measure->addNote( f.createNote( "G4", "Quarter", 1 ) );
-    measure->addNote( f.createNote( "A4", "Quarter" ) );
-    measure->addNote( f.createNote( "B4", "Quarter" ) );
+    measure->addNote( f.createNote( "G4", STR_QUARTER, 1 ) );
+    measure->addNote( f.createNote( "A4", STR_QUARTER ) );
+    measure->addNote( f.createNote( "B4", STR_QUARTER ) );
     part = movement->getPart( 2 );
     part->setStaffContext( 1 );
     measure = part->getMeasure( 3 );
     measure->setLayerContext( 1 );
-    measure->addNote( f.createNote( "B4", "Quarter" ) );
-    measure->addNote( f.createNote( "C5", "Quarter" ) );
-    measure->addNote( f.createNote( "D6", "Quarter" ) );
-    measure->addNote( f.createNote( "E6", "Quarter" ) );
+    measure->addNote( f.createNote( "B4", STR_QUARTER ) );
+    measure->addNote( f.createNote( "C5", STR_QUARTER ) );
+    measure->addNote( f.createNote( "D6", STR_QUARTER ) );
+    measure->addNote( f.createNote( "E6", STR_QUARTER ) );
     std::stringstream ss;
     ss << "Movement '1. Mladic'" << std::endl;
     ss << "{" << std::endl;

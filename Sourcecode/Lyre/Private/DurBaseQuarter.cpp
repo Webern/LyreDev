@@ -6,8 +6,8 @@ namespace Lyre
     namespace Private
     {
         DurBaseQuarter::DurBaseQuarter()
-        :myRational( 1, 1 )
-        ,myName( "Quarter" )
+        :myRational( VAL_QUARTER )
+        ,myName( STR_QUARTER )
         {}
         
         DurBaseQuarter::~DurBaseQuarter() {}

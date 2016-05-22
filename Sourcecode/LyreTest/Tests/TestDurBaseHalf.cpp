@@ -10,7 +10,7 @@ using namespace Lyre::Private;
 namespace
 {
     Rational value{ 2, 1 };
-    String name{ "Half" };
+    String name{ STR_HALF };
 }
 
 TEST( getValue, DurBaseHalf )

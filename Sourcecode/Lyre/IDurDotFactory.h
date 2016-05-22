@@ -2,6 +2,7 @@
 #pragma once
 #include "Lyre/Lyre.h"
 #include "Lyre/IDurDot.h"
+#include "Lyre/DurationConstants.h"
 
 namespace Lyre
 {

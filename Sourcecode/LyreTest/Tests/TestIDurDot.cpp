@@ -14,7 +14,7 @@ namespace
 
 TEST( testSetupWorks, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Quarter", 0 );
+    IDurDotUP dur = factory()->createDurDot( STR_QUARTER, 0 );
     CHECK( factory != nullptr )
     CHECK( dur != nullptr )
 }
@@ -22,7 +22,7 @@ T_END
 
 TEST( constructorA_1, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Quarter", 1 );
+    IDurDotUP dur = factory()->createDurDot( STR_QUARTER, 1 );
     CHECK_EQUAL( 1, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 1 ), dur->getDurBaseValue() )
 }
@@ -30,7 +30,7 @@ T_END
 
 TEST( constructorA_2, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth", 0 );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH, 0 );
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 2 ), dur->getDurBaseValue() )
 }
@@ -38,7 +38,7 @@ T_END
 
 TEST( constructorA_3_InvalidDotInput, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth", -1 );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH, -1 );
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 2 ), dur->getDurBaseValue() )
 }
@@ -62,7 +62,7 @@ T_END
 
 TEST( constructorB_1, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Quarter" );
+    IDurDotUP dur = factory()->createDurDot( STR_QUARTER );
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 1 ), dur->getDurBaseValue() )
 }
@@ -70,7 +70,7 @@ T_END
 
 TEST( constructorB_2, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth" );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH );
     CHECK_EQUAL( 0, dur->getDotCount() )
     CHECK_EQUAL( Rational( 1, 2 ), dur->getDurBaseValue() )
 }
@@ -94,7 +94,7 @@ T_END
 
 TEST( setDotsInvalid, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth", 1 );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH, 1 );
     CHECK_EQUAL( 1, dur->getDotCount() )
     dur->setDotCount( -1 );
     CHECK_EQUAL( 0, dur->getDotCount() )
@@ -103,7 +103,7 @@ T_END
 
 TEST( setDotsValid, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth", 1 );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH, 1 );
     CHECK_EQUAL( 1, dur->getDotCount() )
     dur->setDotCount( 2 );
     CHECK_EQUAL( 2, dur->getDotCount() )
@@ -112,7 +112,7 @@ T_END
 
 TEST( getValue_noDots, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth", 0 );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH, 0 );
     Rational expected{ 1, 2 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
@@ -121,7 +121,7 @@ T_END
 
 TEST( getValue_with1Dot, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth", 1 );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH, 1 );
     Rational expected{ 3, 4 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
@@ -130,7 +130,7 @@ T_END
 
 TEST( getValue_with2Dots, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth", 2 );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH, 2 );
     Rational expected{ 7, 8 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
@@ -139,7 +139,7 @@ T_END
 
 TEST( getValue_with3Dots, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth", 3 );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH, 3 );
     Rational expected{ 15, 16 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
@@ -148,7 +148,7 @@ T_END
 
 TEST( getValue_with4Dots, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Eighth", 4 );
+    IDurDotUP dur = factory()->createDurDot( STR_EIGHTH, 4 );
     Rational expected{ 31, 32 };
     Rational actual = dur->getValue();
     CHECK_EQUAL( expected, actual )
@@ -157,7 +157,7 @@ T_END
 
 TEST( getValue_withMaxDots, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Quarter", DURATION_MAX_DOTS );
+    IDurDotUP dur = factory()->createDurDot( STR_QUARTER, DURATION_MAX_DOTS );
     Float expected = 1.9999999999999;
     Float actual = dur->getValue().getFloat();
     CHECK_DOUBLES_EQUAL( expected, actual, static_cast<Float>( 0.0001 ) )
@@ -171,7 +171,7 @@ TEST( getValue_withTooManyDots, IDurDot )
     String actual = "no exception was thrown";
     try
     {
-        IDurDotUP dur = factory()->createDurDot( "Quarter" );
+        IDurDotUP dur = factory()->createDurDot( STR_QUARTER );
         dur->setDotCount( tooManyDots );
     }
     catch (std::runtime_error& e)
@@ -184,7 +184,7 @@ T_END
 
 TEST( clone, IDurDot )
 {
-    IDurDotUP orig = factory()->createDurDot( "Half", 1 );
+    IDurDotUP orig = factory()->createDurDot( STR_HALF, 1 );
     IDurDotUP cloned = orig->clone();
     orig->setDotCount( 2 );
     cloned->setDotCount( 3 );
@@ -198,7 +198,7 @@ T_END
 
 TEST( toStream, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Half", 1 );
+    IDurDotUP dur = factory()->createDurDot( STR_HALF, 1 );
     stringstream ss;
     dur->toStream( ss );
     String expected = "Half.";
@@ -209,8 +209,8 @@ T_END
 
 TEST( toString, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "Whole", 0 );
-    String expected = "Whole";
+    IDurDotUP dur = factory()->createDurDot( STR_WHOLE, 0 );
+    String expected = STR_WHOLE;
     String actual = dur->toString();
     CHECK_EQUAL( expected, actual )
 }
@@ -218,7 +218,7 @@ T_END
 
 TEST( streamingOperator, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "64th", 7 );
+    IDurDotUP dur = factory()->createDurDot( STR_64TH, 7 );
     stringstream ss;
     ss << ( *dur );
     String expected = "64th.......";
@@ -229,7 +229,7 @@ T_END
 
 TEST( getDurBaseName, IDurDot )
 {
-    IDurDotUP dur = factory()->createDurDot( "32nd", 2 );
+    IDurDotUP dur = factory()->createDurDot( STR_32ND, 2 );
     String expected = "32nd..";
     String actual = dur->toString();
     CHECK_EQUAL( expected, actual )
@@ -238,8 +238,8 @@ T_END
 
 TEST( isEqualTo1, IDurDot )
 {
-    auto durA = factory()->createDurDot( "16th", 1 );
-    auto durB = factory()->createDurDot( "16th", 1 );
+    auto durA = factory()->createDurDot( STR_16TH, 1 );
+    auto durB = factory()->createDurDot( STR_16TH, 1 );
     CHECK(   durA->isEqualTo( *durB ) )
     CHECK(   durB->isEqualTo( *durA ) )
     CHECK( ! durA->isGreaterThan( *durB ) )
@@ -264,8 +264,8 @@ T_END
 
 TEST( isEqualTo2, IDurDot )
 {
-    auto durA = factory()->createDurDot( "Whole", 0 );
-    auto durB = factory()->createDurDot( "Whole", 0 );
+    auto durA = factory()->createDurDot( STR_WHOLE, 0 );
+    auto durB = factory()->createDurDot( STR_WHOLE, 0 );
     CHECK(   durA->isEqualTo( *durB ) )
     CHECK(   durB->isEqualTo( *durA ) )
     CHECK( ! durA->isGreaterThan( *durB ) )
@@ -290,8 +290,8 @@ T_END
 
 TEST( isGreaterThan, IDurDot )
 {
-    auto durA = factory()->createDurDot( "Eighth", 2 );
-    auto durB = factory()->createDurDot( "Eighth", 1 );
+    auto durA = factory()->createDurDot( STR_EIGHTH, 2 );
+    auto durB = factory()->createDurDot( STR_EIGHTH, 1 );
     CHECK( ! durA->isEqualTo( *durB ) )
     CHECK( ! durB->isEqualTo( *durA ) )
     CHECK(   durA->isGreaterThan( *durB ) )
@@ -316,8 +316,8 @@ T_END
 
 TEST( isLessThan, IDurDot )
 {
-    auto durA = factory()->createDurDot( "32nd", 0 );
-    auto durB = factory()->createDurDot( "Quarter", 0 );
+    auto durA = factory()->createDurDot( STR_32ND, 0 );
+    auto durB = factory()->createDurDot( STR_QUARTER, 0 );
     CHECK( ! durA->isEqualTo( *durB ) )
     CHECK( ! durB->isEqualTo( *durA ) )
     CHECK( ! durA->isGreaterThan( *durB ) )

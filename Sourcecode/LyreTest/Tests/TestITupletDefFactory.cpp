@@ -19,8 +19,8 @@ TEST( createTupletDef1, ITupletDefFactory )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-        3, *( durDotFactory->createDurDot( "Quarter", 0 ) ),
-        2, *( durDotFactory->createDurDot( "Quarter", 0 ) ) );
+        3, *( durDotFactory->createDurDot( STR_QUARTER, 0 ) ),
+        2, *( durDotFactory->createDurDot( STR_QUARTER, 0 ) ) );
     
     CHECK( t != nullptr )
 }
@@ -32,7 +32,7 @@ TEST( createTupletDef2, ITupletDefFactory )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-        3, 2, *( durDotFactory->createDurDot( "Quarter", 0 ) ) );
+        3, 2, *( durDotFactory->createDurDot( STR_QUARTER, 0 ) ) );
     
     CHECK( t != nullptr )
 }
@@ -43,7 +43,7 @@ TEST( createTupletDef3, ITupletDefFactory )
     ITupletDefFactoryUP tupletFactory = createTupletDefFactory( TupletDefFactoryType::Standard );
     
     ITupletDefUP t = tupletFactory->createTupletDef(
-     3, 2, "Quarter" );
+     3, 2, STR_QUARTER );
     
     CHECK( t != nullptr )
 }

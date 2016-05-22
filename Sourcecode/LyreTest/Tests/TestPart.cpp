@@ -177,7 +177,7 @@ TEST( getMeasureNonCost, Part )
 	IPartUP part = f.partFactory->create( spec, masterTrack );
 	part->setStaffContext( 2 );
 	auto measure = part->getMeasure( 5 );
-	measure->addNote( f.createNote( "C4", "Half" ) );
+	measure->addNote( f.createNote( "C4", STR_HALF ) );
 	int expected = 1;
 	int actual = part->getMeasure( 5 )->getCount();
 	CHECK_EQUAL( expected, actual )

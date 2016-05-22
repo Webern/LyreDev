@@ -6,8 +6,8 @@ namespace Lyre
     namespace Private
     {
         DurBase32nd::DurBase32nd()
-        :myRational( 1, 8 )
-        ,myName( "32nd" )
+        :myRational( VAL_32ND )
+        ,myName( STR_32ND )
         {}
         
         DurBase32nd::~DurBase32nd() {}

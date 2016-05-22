@@ -280,6 +280,7 @@
 		29890CC11CA3B654005B318B /* ScoreSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreSpec.h; path = ../../Sourcecode/Lyre/Private/ScoreSpec.h; sourceTree = "<group>"; };
 		29890CC21CA3B654005B318B /* ScoreSpecFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScoreSpecFactory.cpp; path = ../../Sourcecode/Lyre/Private/ScoreSpecFactory.cpp; sourceTree = "<group>"; };
 		29890CC31CA3B654005B318B /* ScoreSpecFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreSpecFactory.h; path = ../../Sourcecode/Lyre/Private/ScoreSpecFactory.h; sourceTree = "<group>"; };
+		2989ADBB1CF1534300E3D59F /* DurationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurationConstants.h; path = ../../Sourcecode/Lyre/DurationConstants.h; sourceTree = "<group>"; };
 		29929FCA1C0766BD001CDDC8 /* TupletDef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TupletDef.cpp; path = ../../Sourcecode/Lyre/Private/TupletDef.cpp; sourceTree = "<group>"; };
 		29929FCB1C0766BD001CDDC8 /* TupletDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TupletDef.h; path = ../../Sourcecode/Lyre/Private/TupletDef.h; sourceTree = "<group>"; };
 		299A62081C7A0C73009C5B19 /* StepStrings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StepStrings.cpp; path = ../../Sourcecode/Lyre/Private/StepStrings.cpp; sourceTree = "<group>"; };
@@ -348,6 +349,7 @@
 		29109DFC1BE559FB001FF3E6 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				2989ADBB1CF1534300E3D59F /* DurationConstants.h */,
 				29109DFE1BE55A1B001FF3E6 /* Alter.cpp */,
 				29109DFF1BE55A1B001FF3E6 /* Alter.h */,
 				29FE9DC01C66C78C00BE0787 /* BeatPattern.cpp */,

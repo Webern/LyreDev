@@ -6,8 +6,8 @@ namespace Lyre
     namespace Private
     {
         DurBaseEighth::DurBaseEighth()
-        :myRational( 1, 2 )
-        ,myName( "Eighth" )
+        :myRational( VAL_EIGHTH )
+        ,myName( STR_EIGHTH )
         {}
         
         DurBaseEighth::~DurBaseEighth() {}

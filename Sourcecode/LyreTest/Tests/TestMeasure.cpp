@@ -65,27 +65,27 @@ namespace
         inline INoteGroupUP noteGroup1()
         {
             INoteGroupUP noteGroup{ new NoteGroup{} };
-            noteGroup->addNote( note( 1, "Quarter") );
-            noteGroup->addNote( note( 2, "Quarter") );
-            noteGroup->addNote( note( 3, "Quarter") );
+            noteGroup->addNote( note( 1, STR_QUARTER) );
+            noteGroup->addNote( note( 2, STR_QUARTER) );
+            noteGroup->addNote( note( 3, STR_QUARTER) );
             return std::move( noteGroup );
         }
         
         inline INoteGroupUP noteGroup2()
         {
             INoteGroupUP noteGroup{ new NoteGroup{} };
-            noteGroup->addNote( note( 11, "Eighth") );
-            noteGroup->addNote( note( 12, "Eighth") );
-            noteGroup->addNote( note( 13, "Eighth") );
+            noteGroup->addNote( note( 11, STR_EIGHTH) );
+            noteGroup->addNote( note( 12, STR_EIGHTH) );
+            noteGroup->addNote( note( 13, STR_EIGHTH) );
             return std::move( noteGroup );
         }
         
         inline INoteGroupUP noteGroup3()
         {
             INoteGroupUP noteGroup{ new NoteGroup{} };
-            noteGroup->addNote( note( 21, "16th") );
-            noteGroup->addNote( note( 22, "16th") );
-            noteGroup->addNote( note( 23, "16th") );
+            noteGroup->addNote( note( 21, STR_16TH) );
+            noteGroup->addNote( note( 22, STR_16TH) );
+            noteGroup->addNote( note( 23, STR_16TH) );
             return std::move( noteGroup );
         }
         
@@ -110,7 +110,7 @@ namespace
             m->addGroup( noteGroup3() );
             m->addGroup( noteGroup3() );
             m->addGroup( noteGroup3() );
-            m->addNote( note( 55, "Eighth" ) );
+            m->addNote( note( 55, STR_EIGHTH ) );
             return m;
         }
     };
@@ -388,7 +388,7 @@ TEST( getIsEmpty3, Measure )
     Factories f;
     IMeasureUP m = f.measureFactory->create( 2, 8 );
     m->setLayerContext( MAX_NUMBER_OF_LAYERS - 1 );
-    m->addNote( f.note( 33, "Eighth" ) );
+    m->addNote( f.note( 33, STR_EIGHTH ) );
     CHECK( ! m->getIsEmpty() )
     m->setLayerContext( 0 );
     CHECK( m->getIsEmpty() );
@@ -423,7 +423,7 @@ TEST( getIsComplete2, Measure )
     m->setLayerContext( MAX_NUMBER_OF_LAYERS - 1 );
     for ( int i = 0; i < size; ++i )
     {
-		m->addNote( f.note( i, "Eighth" ) );
+		m->addNote( f.note( i, STR_EIGHTH ) );
 		bool expected = ( i == size - 1 );
         bool actual = m->getIsComplete();
         CHECK_EQUAL( expected, actual )
@@ -438,7 +438,7 @@ TEST( getUnusedRemainingSimple, Measure )
     Rational expected{ 4, 1 };
     CHECK_EQUAL( expected, m->getUnusedRemaining() );
     
-    m->addNote( f.note( 1, "Quarter" ) );
+    m->addNote( f.note( 1, STR_QUARTER ) );
     
     expected = Rational{ 3, 1 };
     CHECK_EQUAL( expected, m->getUnusedRemaining() );
@@ -454,7 +454,7 @@ TEST( getUnusedRemainingLoop, Measure )
     Rational max{ size, 1 };
     for ( int i = 0; i < size; ++i )
     {
-		m->addNote( f.note( i, "Quarter" ) );
+		m->addNote( f.note( i, STR_QUARTER ) );
 		Rational added{ ( i + 1 ), 1 };
         Rational expected = max - added;
         Rational actual = m->getUnusedRemaining();
@@ -478,8 +478,8 @@ TEST( getTotalDuration2, Measure )
     Factories f;
     IMeasureUP m = f.measureFactory->create( 7, 4 );
     m->setLayerContext( 1 );
-    m->addNote( f.note( 50, "16th" ) );
-    m->addNote( f.note( 51, "Eighth" ) );
+    m->addNote( f.note( 50, STR_16TH ) );
+    m->addNote( f.note( 51, STR_EIGHTH ) );
     Rational expected{ 3, 4 };
     CHECK_EQUAL( expected, m->getTotalDuration() )
 }
@@ -490,12 +490,12 @@ TEST( getTotalDuration3, Measure )
     Factories f;
     IMeasureUP m = f.measureFactory->create( 4, 4 );
     m->setLayerContext( 1 );
-    m->addNote( f.note( 50, "16th" ) );
-    m->addNote( f.note( 51, "Eighth" ) );
-    m->addNote( f.note( 50, "16th" ) );
-    m->addNote( f.note( 51, "Eighth" ) );
-    m->addNote( f.note( 51, "Eighth" ) );
-    m->addNote( f.note( 51, "Half" ) );
+    m->addNote( f.note( 50, STR_16TH ) );
+    m->addNote( f.note( 51, STR_EIGHTH ) );
+    m->addNote( f.note( 50, STR_16TH ) );
+    m->addNote( f.note( 51, STR_EIGHTH ) );
+    m->addNote( f.note( 51, STR_EIGHTH ) );
+    m->addNote( f.note( 51, STR_HALF ) );
     Rational expected{ 4, 1 };
     CHECK_EQUAL( expected, m->getTotalDuration() )
     m->setLayerContext( 0 );
@@ -590,7 +590,7 @@ TEST( addNote, Measure )
     Factories f;
     IMeasureUP m = f.measureFactory->create( 2, 4 );
     CHECK( m->getIsEmpty() )
-    m->addNote( f.note( 77, "Half" ) );
+    m->addNote( f.note( 77, STR_HALF ) );
     CHECK( m->getIsComplete() );
 }
 T_END
@@ -600,11 +600,11 @@ TEST( addNoteThrowFull, Measure )
     Factories f;
     IMeasureUP m = f.measureFactory->create( 2, 4 );
     m->setLayerContext( 1 );
-    m->addNote( f.note( 77, "Half" ) );
+    m->addNote( f.note( 77, STR_HALF ) );
     bool isExceptionThrown = false;
     try
     {
-        m->addNote( f.note( 31, "16th" ) );
+        m->addNote( f.note( 31, STR_16TH ) );
         CHECK_FAIL( "exception was expected but not thrown" )
     }
     catch ( std::runtime_error& e )
@@ -621,7 +621,7 @@ TEST( addNoteNull, Measure )
     Factories f;
     IMeasureUP m = f.measureFactory->create( 2, 4 );
     m->setLayerContext( 1 );
-    m->addNote( f.note( 77, "Half" ) );
+    m->addNote( f.note( 77, STR_HALF ) );
     bool isExceptionThrown = false;
     try
     {
@@ -643,11 +643,11 @@ TEST( removeNote, Measure )
     int quarters = 5;
     IMeasureUP m = f.measureFactory->create( quarters, 4 );
     m->setLayerContext( 1 );
-    m->addNote( f.note( 100, "Quarter" ) );
-    m->addNote( f.note( 101, "Quarter" ) );
-    m->addNote( f.note( 102, "Quarter" ) ); // remove this
-    m->addNote( f.note( 103, "Quarter" ) );
-    m->addNote( f.note( 104, "Quarter" ) );
+    m->addNote( f.note( 100, STR_QUARTER ) );
+    m->addNote( f.note( 101, STR_QUARTER ) );
+    m->addNote( f.note( 102, STR_QUARTER ) ); // remove this
+    m->addNote( f.note( 103, STR_QUARTER ) );
+    m->addNote( f.note( 104, STR_QUARTER ) );
     CHECK_EQUAL( quarters, m->getCount() )
     int index = 2;
     m->removeNote( index );
@@ -663,11 +663,11 @@ TEST( removeNoteAll, Measure )
     int quarters = 5;
     IMeasureUP m = f.measureFactory->create( quarters, 4 );
     m->setLayerContext( 1 );
-    m->addNote( f.note( 100, "Quarter" ) );
-    m->addNote( f.note( 101, "Quarter" ) );
-    m->addNote( f.note( 102, "Quarter" ) );
-    m->addNote( f.note( 103, "Quarter" ) );
-    m->addNote( f.note( 104, "Quarter" ) );
+    m->addNote( f.note( 100, STR_QUARTER ) );
+    m->addNote( f.note( 101, STR_QUARTER ) );
+    m->addNote( f.note( 102, STR_QUARTER ) );
+    m->addNote( f.note( 103, STR_QUARTER ) );
+    m->addNote( f.note( 104, STR_QUARTER ) );
     CHECK_EQUAL( quarters, m->getCount() )
     m->removeNote( --quarters );
     m->removeNote( --quarters );
@@ -890,9 +890,9 @@ TEST( addGroup, Measure )
     auto m = f.measureFactory->create( 3, 4 );
     m->setLayerContext( 1 );
     INoteGroupUP ng{ new NoteGroup{} };
-    ng->addNote( f.note( 50, "Quarter" ) );
-    ng->addNote( f.note( 51, "Quarter" ) );
-    ng->addNote( f.note( 52, "Quarter" ) );
+    ng->addNote( f.note( 50, STR_QUARTER ) );
+    ng->addNote( f.note( 51, STR_QUARTER ) );
+    ng->addNote( f.note( 52, STR_QUARTER ) );
     CHECK_EQUAL( 0, m->getGroupCount() )
     m->addGroup( ng );
     CHECK_EQUAL( 1, m->getGroupCount() )
@@ -905,10 +905,10 @@ TEST( addGroupThrowTooBig, Measure )
     auto m = f.measureFactory->create( 3, 4 );
     m->setLayerContext( 1 );
     INoteGroupUP ng{ new NoteGroup{} };
-    ng->addNote( f.note( 50, "Quarter" ) );
-    ng->addNote( f.note( 51, "Quarter" ) );
-    ng->addNote( f.note( 52, "Quarter" ) );
-    ng->addNote( f.note( 53, "Quarter" ) );
+    ng->addNote( f.note( 50, STR_QUARTER ) );
+    ng->addNote( f.note( 51, STR_QUARTER ) );
+    ng->addNote( f.note( 52, STR_QUARTER ) );
+    ng->addNote( f.note( 53, STR_QUARTER ) );
     CHECK_EQUAL( 0, m->getGroupCount() )
     bool isExceptionThrown = false;
     try
@@ -955,9 +955,9 @@ TEST( removeGroup, Measure )
     auto m = f.measureFactory->create( 3, 4 );
     m->setLayerContext( 1 );
     INoteGroupUP ng{ new NoteGroup{} };
-    ng->addNote( f.note( 50, "Quarter" ) );
-    ng->addNote( f.note( 51, "Quarter" ) );
-    ng->addNote( f.note( 52, "Quarter" ) );
+    ng->addNote( f.note( 50, STR_QUARTER ) );
+    ng->addNote( f.note( 51, STR_QUARTER ) );
+    ng->addNote( f.note( 52, STR_QUARTER ) );
     m->addGroup( ng );
     CHECK_EQUAL( 1, m->getGroupCount() )
     m->removeGroup( 0 );
@@ -971,9 +971,9 @@ TEST( removeThrow, Measure )
     auto m = f.measureFactory->create( 3, 4 );
     m->setLayerContext( 1 );
     INoteGroupUP ng{ new NoteGroup{} };
-    ng->addNote( f.note( 50, "Quarter" ) );
-    ng->addNote( f.note( 51, "Quarter" ) );
-    ng->addNote( f.note( 52, "Quarter" ) );
+    ng->addNote( f.note( 50, STR_QUARTER ) );
+    ng->addNote( f.note( 51, STR_QUARTER ) );
+    ng->addNote( f.note( 52, STR_QUARTER ) );
     m->addGroup( ng );
     CHECK_EQUAL( 1, m->getGroupCount() )
     bool isExceptionThrown = false;

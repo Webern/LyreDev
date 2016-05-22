@@ -10,7 +10,7 @@ using namespace Lyre::Private;
 namespace
 {
     Rational value{ 1, 16 };
-    String name{ "64th" };
+    String name{ STR_64TH };
 }
 
 TEST( getValue, DurBase64th )

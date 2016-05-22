@@ -21,17 +21,17 @@ namespace Lyre
         DurMap::DurPairMap DurMap::makeValues()
         {
             DurPairMap map;
-            map.insert( DurPair{ "256th", makeUnique<DurBase256th>() } );
-			map.insert( DurPair{ "128th", makeUnique<DurBase128th>() } );
-			map.insert( DurPair{ "64th", makeUnique<DurBase64th>() } );
-			map.insert( DurPair{ "32nd", makeUnique<DurBase32nd>() } );
-			map.insert( DurPair{ "16th", makeUnique<DurBase16th>() } );
-			map.insert( DurPair{ "Eighth", makeUnique<DurBaseEighth>() } );
-			map.insert( DurPair{ "Quarter", makeUnique<DurBaseQuarter>() } );
-			map.insert( DurPair{ "Half", makeUnique<DurBaseHalf>() } );
-			map.insert( DurPair{ "Whole", makeUnique<DurBaseWhole>() } );
-			map.insert( DurPair{ "Breve", makeUnique<DurBaseBreve>() } );
-			map.insert( DurPair{ "Longa", makeUnique<DurBaseLonga>() } );
+            map.insert( DurPair{ STR_256TH, makeUnique<DurBase256th>() } );
+			map.insert( DurPair{ STR_128TH, makeUnique<DurBase128th>() } );
+			map.insert( DurPair{ STR_64TH, makeUnique<DurBase64th>() } );
+			map.insert( DurPair{ STR_32ND, makeUnique<DurBase32nd>() } );
+			map.insert( DurPair{ STR_16TH, makeUnique<DurBase16th>() } );
+			map.insert( DurPair{ STR_EIGHTH, makeUnique<DurBaseEighth>() } );
+			map.insert( DurPair{ STR_QUARTER, makeUnique<DurBaseQuarter>() } );
+			map.insert( DurPair{ STR_HALF, makeUnique<DurBaseHalf>() } );
+			map.insert( DurPair{ STR_WHOLE, makeUnique<DurBaseWhole>() } );
+			map.insert( DurPair{ STR_BREVE, makeUnique<DurBaseBreve>() } );
+			map.insert( DurPair{ STR_LONGA, makeUnique<DurBaseLonga>() } );
             return std::move( map );
         }
 		DurMap::DurPairMap DurMap::values = DurMap::makeValues();

@@ -3,6 +3,7 @@
 #include "Lyre/Lyre.h"
 #include "Lyre/IDurBase.h"
 #include "Lyre/Rational.h"
+#include "Lyre/DurationConstants.h"
 
 namespace Lyre
 {
