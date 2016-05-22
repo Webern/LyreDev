@@ -8,6 +8,7 @@ namespace Lyre
         DurBaseLonga::DurBaseLonga()
         :myRational( VAL_LONGA )
         ,myName( STR_LONGA )
+        ,myMaxBeams( DUR_MAX_BEAMS_LONGA )
         {}
         
         DurBaseLonga::~DurBaseLonga() {}
@@ -21,6 +22,12 @@ namespace Lyre
         {
             return myRational;
         }
+        
+        int DurBaseLonga::getMaxBeams() const
+        {
+            return myMaxBeams;
+        }
+        
         std::ostream& DurBaseLonga::toStream( std::ostream& os ) const
         {
             return os << myName;

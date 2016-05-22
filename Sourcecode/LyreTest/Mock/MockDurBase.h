@@ -20,6 +20,7 @@ namespace Lyre
             MockDurBase( const Rational value, const String name );
             virtual IDurBaseUP clone() const;
             Rational getValue() const;
+            int getMaxBeams() const;
             std::ostream& toStream( std::ostream& os ) const;
         private:
             Lyre::Rational myRational;

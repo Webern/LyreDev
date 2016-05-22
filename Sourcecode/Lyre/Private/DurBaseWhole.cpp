@@ -8,6 +8,7 @@ namespace Lyre
         DurBaseWhole::DurBaseWhole()
         :myRational( VAL_WHOLE )
         ,myName( STR_WHOLE )
+        ,myMaxBeams( DUR_MAX_BEAMS_WHOLE )
         {}
         
         DurBaseWhole::~DurBaseWhole() {}
@@ -21,6 +22,12 @@ namespace Lyre
         {
             return myRational;
         }
+        
+        int DurBaseWhole::getMaxBeams() const
+        {
+            return myMaxBeams;
+        }
+        
         std::ostream& DurBaseWhole::toStream( std::ostream& os ) const
         {
             return os << myName;

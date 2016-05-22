@@ -25,6 +25,11 @@ namespace Lyre
             return myRational;
         }
         
+        int MockDurBase::getMaxBeams() const
+        {
+            return -1;
+        }
+        
         std::ostream& MockDurBase::toStream( std::ostream& os ) const
         {
             return os << myName;

@@ -8,6 +8,7 @@ namespace Lyre
         DurBase64th::DurBase64th()
         :myRational( VAL_64TH )
         ,myName( STR_64TH )
+        ,myMaxBeams( DUR_MAX_BEAMS_64TH )
         {}
         
         DurBase64th::~DurBase64th() {}
@@ -21,6 +22,12 @@ namespace Lyre
         {
             return myRational;
         }
+        
+        int DurBase64th::getMaxBeams() const
+        {
+            return myMaxBeams;
+        }
+        
         std::ostream& DurBase64th::toStream( std::ostream& os ) const
         {
             return os << myName;

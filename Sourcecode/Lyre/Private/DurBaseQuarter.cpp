@@ -8,6 +8,7 @@ namespace Lyre
         DurBaseQuarter::DurBaseQuarter()
         :myRational( VAL_QUARTER )
         ,myName( STR_QUARTER )
+        ,myMaxBeams( DUR_MAX_BEAMS_QUARTER )
         {}
         
         DurBaseQuarter::~DurBaseQuarter() {}
@@ -21,6 +22,12 @@ namespace Lyre
         {
             return myRational;
         }
+        
+        int DurBaseQuarter::getMaxBeams() const
+        {
+            return myMaxBeams;
+        }
+        
         std::ostream& DurBaseQuarter::toStream( std::ostream& os ) const
         {
             return os << myName;

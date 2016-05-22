@@ -8,6 +8,7 @@ namespace Lyre
         DurBase32nd::DurBase32nd()
         :myRational( VAL_32ND )
         ,myName( STR_32ND )
+        ,myMaxBeams( DUR_MAX_BEAMS_32ND )
         {}
         
         DurBase32nd::~DurBase32nd() {}
@@ -21,6 +22,12 @@ namespace Lyre
         {
             return myRational;
         }
+        
+        int DurBase32nd::getMaxBeams() const
+        {
+            return myMaxBeams;
+        }
+        
         std::ostream& DurBase32nd::toStream( std::ostream& os ) const
         {
             return os << myName;

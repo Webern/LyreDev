@@ -9,6 +9,7 @@ namespace Lyre
         DurBase16th::DurBase16th()
         :myRational( VAL_16TH )
         ,myName( STR_16TH )
+        ,myMaxBeams( DUR_MAX_BEAMS_16TH )
         {}
         
         DurBase16th::~DurBase16th() {}
@@ -22,6 +23,12 @@ namespace Lyre
         {
             return myRational;
         }
+        
+        int DurBase16th::getMaxBeams() const
+        {
+            return myMaxBeams;
+        }
+        
         std::ostream& DurBase16th::toStream( std::ostream& os ) const
         {
             return os << myName;

@@ -8,6 +8,7 @@ namespace Lyre
         DurBaseEighth::DurBaseEighth()
         :myRational( VAL_EIGHTH )
         ,myName( STR_EIGHTH )
+        ,myMaxBeams( DUR_MAX_BEAMS_EIGHTH )
         {}
         
         DurBaseEighth::~DurBaseEighth() {}
@@ -21,6 +22,12 @@ namespace Lyre
         {
             return myRational;
         }
+        
+        int DurBaseEighth::getMaxBeams() const
+        {
+            return myMaxBeams;
+        }
+        
         std::ostream& DurBaseEighth::toStream( std::ostream& os ) const
         {
             return os << myName;

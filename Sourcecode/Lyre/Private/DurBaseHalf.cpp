@@ -8,6 +8,7 @@ namespace Lyre
         DurBaseHalf::DurBaseHalf()
         :myRational( VAL_HALF )
         ,myName( STR_HALF )
+        ,myMaxBeams( DUR_MAX_BEAMS_HALF )
         {}
         
         DurBaseHalf::~DurBaseHalf() {}
@@ -21,6 +22,12 @@ namespace Lyre
         {
             return myRational;
         }
+        
+        int DurBaseHalf::getMaxBeams() const
+        {
+            return myMaxBeams;
+        }
+        
         std::ostream& DurBaseHalf::toStream( std::ostream& os ) const
         {
             return os << myName;

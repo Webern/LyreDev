@@ -18,10 +18,12 @@ namespace Lyre
             virtual ~DurBaseEighth();
             virtual IDurBaseUP clone() const;
             virtual Rational getValue() const;
+            virtual int getMaxBeams() const;
             virtual std::ostream& toStream( std::ostream& os ) const;
         private:
             Rational myRational;
             String myName;
+            int myMaxBeams;
         };
     }
 }

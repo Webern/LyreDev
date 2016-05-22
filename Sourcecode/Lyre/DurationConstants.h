@@ -29,4 +29,16 @@ namespace Lyre
     const String STR_64TH   { "64th"    };
     const String STR_128TH  { "128th"   };
     const String STR_256TH  { "256th"   };
+    
+    const int DUR_MAX_BEAMS_LONGA  { 0 };
+    const int DUR_MAX_BEAMS_BREVE  { 0 };
+    const int DUR_MAX_BEAMS_WHOLE  { 0 };
+    const int DUR_MAX_BEAMS_HALF   { 0 };
+    const int DUR_MAX_BEAMS_QUARTER{ 0 };
+    const int DUR_MAX_BEAMS_EIGHTH { 1 };
+    const int DUR_MAX_BEAMS_16TH   { 2 };
+    const int DUR_MAX_BEAMS_32ND   { 3 };
+    const int DUR_MAX_BEAMS_64TH   { 4 };
+    const int DUR_MAX_BEAMS_128TH  { 5 };
+    const int DUR_MAX_BEAMS_256TH  { 6 };
 }

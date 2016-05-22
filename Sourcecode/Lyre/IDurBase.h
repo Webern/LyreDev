@@ -15,6 +15,7 @@ namespace Lyre
         virtual IDurBaseUP clone() const = 0;
         
         virtual Rational getValue() const = 0;
+        virtual int getMaxBeams() const = 0;
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         virtual String toString() const;
         

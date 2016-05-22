@@ -8,6 +8,7 @@ namespace Lyre
         DurBaseBreve::DurBaseBreve()
         :myRational( VAL_BREVE )
         ,myName( STR_BREVE )
+        ,myMaxBeams( DUR_MAX_BEAMS_BREVE )
         {}
         
         DurBaseBreve::~DurBaseBreve() {}
@@ -21,6 +22,12 @@ namespace Lyre
         {
             return myRational;
         }
+        
+        int DurBaseBreve::getMaxBeams() const
+        {
+            return myMaxBeams;
+        }
+        
         std::ostream& DurBaseBreve::toStream( std::ostream& os ) const
         {
             return os << myName;
