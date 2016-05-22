@@ -51,21 +51,37 @@ namespace Lyre
                 auto mxPart = *( doc->getScorePartwise()->getPartwisePartSet().begin() + p );
                 for ( int m = 0; m < part->getMeasureCount(); ++m )
                 {
-                    auto measure = part->getMeasure( m );
+                    
                     auto mxMeasure = *( mxPart->getPartwiseMeasureSet().begin() + m );
-                    for( int n = 0; n < measure->getCount(); ++n )
+                    
+                    part->getPartSpec()->getNumStaves();
+                    
+                    for( int staff = 0; staff < part->getPartSpec()->getNumStaves(); ++ staff )
                     {
-                        auto note = measure->getNote( n );
-                        Rational divisionsPerQuarterRational{ mx::utility::getDivisions( mxMeasure ), 1 };
-                        Rational divs = divisionsPerQuarterRational * ( note->getDuration()->getValue() );
-                        if( divs.getMixedFractionalPart().getNumerator() != 0 )
+                        part->setStaffContext( staff );
+                        auto measure = part->getMeasure( m );
+                        for ( int layer = 0; layer < MAX_NUMBER_OF_LAYERS; ++layer)
                         {
-                            THROW( "duration calculation failed, divs should be a whole number" )
-                        }
-                        addNoteToMeasure( mxMeasure, note, divs.getMixedWholePart() );
-                    }
-                }
-            }
+                            measure->setLayerContext( layer );
+                            for( int n = 0; n < measure->getCount(); ++n )
+                            {
+                                auto note = measure->getNote( n );
+                                Rational divisionsPerQuarterRational{ mx::utility::getDivisions( mxMeasure ), 1 };
+                                Rational divs = divisionsPerQuarterRational * ( note->getDuration()->getValue() );
+                                if( divs.getMixedFractionalPart().getNumerator() != 0 )
+                                {
+                                    THROW( "duration calculation failed, divs should be a whole number" )
+                                }
+                                addNoteToMeasure( mxMeasure, note, divs.getMixedWholePart(), layer+1, staff+1 );
+                            } // foreach note
+                            
+                        } // foreach layer
+                        
+                    } // foreach staff
+                    
+                } // foreach measure
+                
+            } // foreach part
             
             UNUSED_PARAMETER( os );
             //doc->toStream( os );

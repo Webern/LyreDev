@@ -34,7 +34,9 @@ namespace Lyre
         void addNoteToMeasure(
             const MxMeasure& mxMeasure,
             const INoteUP& lyreNote,
-            int divisionsPerQuarterNote );
+            int divisionsPerQuarterNote,
+            int voice = 1,
+            int staff = 1  );
 
     }
 

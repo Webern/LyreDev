@@ -21,10 +21,12 @@ TEST( ScoreItems, MxExporterBasic )
     auto oboe = f.instrumentFactory->create( "Oboe", "Ob.", f.rangeFactory->create( "C4", "E6" ) );
     auto viola = f.instrumentFactory->create( "Viola", "Vla.", f.rangeFactory->create( "C3", "C6" ) );
     auto cello = f.instrumentFactory->create( "Cello", "Vlc.", f.rangeFactory->create( "C2", "C5" ) );
+    auto piano = f.instrumentFactory->create( "Piano", "Pno.", f.rangeFactory->create( "A-1", "C9" ) );
     parts.push_back( f.partSpecFactory->create( 1, flute ) );
     parts.push_back( f.partSpecFactory->create( 1, oboe ) );
     parts.push_back( f.partSpecFactory->create( 1, viola ) );
     parts.push_back( f.partSpecFactory->create( 1, cello ) );
+    parts.push_back( f.partSpecFactory->create( 2, piano ) );
     scoreSpec->setPartSpecs( parts );
     
     // group parts
@@ -89,6 +91,28 @@ TEST( ScoreItems, MxExporterBasic )
                 }
                 measure->addNote( note );
                 ++counter;
+            }
+            if ( part->getPartSpec()->getNumStaves() == 2 )
+            {
+                measure->setLayerContext( 1 );
+                part->setStaffContext( 1 );
+                while ( ! measure->getIsComplete() )
+                {
+                    if( counter > 50 )
+                    {
+                        counter = 0;
+                    }
+                    bool isRest = counter % 3 == 0;
+                    auto pitch = f.pitchFactory->createPitch( counter + 38 );
+                    auto dur = f.durationFactory->createDuration( STR_QUARTER, 2 );
+                    auto note = f.noteFactory->createNote( pitch, dur );
+                    if( isRest )
+                    {
+                        note->setIsRest( true );
+                    }
+                    measure->addNote( note );
+                    ++counter;
+                }
             }
         }
     }

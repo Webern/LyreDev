@@ -114,8 +114,6 @@ namespace Lyre
         
         void addEmptyMeasures( const MxDoc& doc, const IScoreH& score )
         {
-            UNUSED_PARAMETER(doc);
-            UNUSED_PARAMETER(score);
             ITimeSignatureUP previousTimeSignature;
             auto movement = score->getMovement( 0 );
             for ( int p = 0; p < movement->getPartCount(); ++p )
@@ -133,8 +131,8 @@ namespace Lyre
                         if( previousTimeSignature )
                         {
                             doAddTimeSignature =
-                            ( timeSignature->getTop() != previousTimeSignature->getTop() )
-                            ||  ( timeSignature->getBottom() != previousTimeSignature->getBottom() );
+                               ( timeSignature->getTop() != previousTimeSignature->getTop() )
+                            || ( timeSignature->getBottom() != previousTimeSignature->getBottom() );
                         }
                     }
                     
@@ -155,20 +153,30 @@ namespace Lyre
                     {
                         mx::utility::addTimeSignature( mxMeasure, timeSignature->getTop(), timeSignature->getBottom() );
                     }
-                    if ( part->getPartSpec()->getNumStaves() > 1 )
-                    {
-                        mx::utility::addStaveCount( mxMeasure, part->getPartSpec()->getNumStaves() );
-                    }
+                    mx::utility::addStaveCount( mxMeasure, part->getPartSpec()->getNumStaves() );
                     
                     // TODO - refactor - calculate divisions
                     
                     ints denominators;
                     denominators.push_back( 1 );
-                    for(int n = 0; n < measure->getCount(); ++ n )
+                    for( int staff = 0; staff < part->getPartSpec()->getNumStaves(); ++ staff )
                     {
-                        auto currentNote = measure->getNote( n );
-                        denominators.push_back( currentNote->getDuration()->getValue().getDenominator() );
+                        part->setStaffContext( staff );
+                        measure = part->getMeasure( m );
+                        for( int layer = 0; layer < MAX_NUMBER_OF_LAYERS; ++layer )
+                        {
+                            measure->setLayerContext( layer );
+                            for(int n = 0; n < measure->getCount(); ++ n )
+                            {
+                                auto currentNote = measure->getNote( n );
+                                denominators.push_back( currentNote->getDuration()->getValue().getDenominator() );
+                            }
+                        }
                     }
+                    measure->setLayerContext( 0 );
+                    part->setStaffContext( 0 );
+                    measure = part->getMeasure( m );
+                    
                     int divisionsPerQuarter = Rational::lcm( denominators );
                     mx::utility::addDivisions( mxMeasure, divisionsPerQuarter );
                     // END - refactor - calculate divisions
@@ -184,7 +192,9 @@ namespace Lyre
         void addNoteToMeasure(
             const MxMeasure& mxMeasure,
             const INoteUP& lyreNote,
-            int divisions )
+            int divisions,
+            int voice,
+            int staff )
         {
             mx::utility::NoteParams params;
             params.showAccidental = true; // TODO fix this with logic
@@ -195,6 +205,8 @@ namespace Lyre
             params.durationType = convertLyreDurBaseToMxNoteType( lyreNote->getDuration()->getDurBaseValue() );
             params.duration = divisions;
             params.isRest = lyreNote->getIsRest();
+            params.voiceNumber = voice;
+            params.staffNumber = staff;
             auto mdc = mx::utility::createNote( params );
             mxMeasure->getMusicDataGroup()->addMusicDataChoice( mdc );
             
