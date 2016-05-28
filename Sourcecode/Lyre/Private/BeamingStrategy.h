@@ -9,6 +9,8 @@ namespace Lyre
 {
     namespace Private
     {
+        FORWARD_DECLARE( BeamingStrategy );
+        
         class EXPORT_FOR_TESTS BeamingStrategy : public IMeasureStrategy
         {
         public:

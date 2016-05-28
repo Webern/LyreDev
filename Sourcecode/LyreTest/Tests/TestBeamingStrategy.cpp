@@ -1,11 +1,13 @@
-//PUBLIC
+//PRIVATE???
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "Lyre/MusicFactory.h"
 #include "Lyre/IMeasure.h"
 #include "Lyre/INoteGroup.h"
 #include "Lyre/NoteGroup.h"
+#include "Lyre/Private/BeamingStrategy.h"
 
 using namespace Lyre;
+using namespace Lyre::Private;
 
 namespace
 {
@@ -80,6 +82,10 @@ TEST( XXX, BeamingStrategy )
     measure->addGroup( pattern2() );
     measure->addGroup( pattern3() );
     measure->addGroup( pattern4() );
+    
+    BeamingStrategyUP beamingStrategy{ new BeamingStrategy{ measure->getTimeSignature()->getBeatPattern() } };
+    beamingStrategy->applyStrategy( measure );
+    
     int noteIndex = 0;
     INoteUP note;
     

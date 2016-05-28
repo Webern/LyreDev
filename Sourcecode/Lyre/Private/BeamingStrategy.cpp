@@ -52,7 +52,21 @@ namespace Lyre
         
         void BeamingStrategy::applyStrategy( const IMeasureUP& measure )
         {
+            std::vector<Rational> breakPoints;
             auto beatPattern = chooseCorrectBeatPattern( measure );
+            Rational position{ 0, 1 };
+            for( int i = 0; i <  beatPattern->getCount(); ++i )
+            {
+                position += beatPattern->get( i )->getValue();
+                breakPoints.push_back( position );
+            }
+            position = Rational{ 0, 1 };
+            //auto lastBreakIter = breakPoints.cbegin();
+            //auto beakPointsEnd = breakPoints.cend();
+            for( int i = 0; i < measure->getCount(); ++i )
+            {
+                
+            }
             UNUSED_PARAMETER( beatPattern );
         }
         
