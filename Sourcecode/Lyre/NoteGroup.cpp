@@ -398,6 +398,7 @@ Impl
         
         const INoteUP& getNote( int noteIndex ) const
         {
+            // breaking condition - leaf node is reached
             if ( noteIndex < 0 || noteIndex > getCount() - 1 )
             {
                 THROW( "index out of range" )
@@ -411,9 +412,11 @@ Impl
                 THROW_IF_NULL( note )
                 return note;
             }
+            
+            // main recursive section
             int counter = 0;
             for ( auto i = noteGroups.begin();
-                 i != noteGroups.end(); ++i )
+                  i != noteGroups.end(); ++i )
             {
                 if ( counter == noteIndex )
                 {
@@ -422,11 +425,15 @@ Impl
                 int currItemGetCount = i->second->getCount();
                 if( currItemGetCount == 1 )
                 {
+                    // current item is a leaf node, continue
                     ++counter;
                 }
                 else
                 {
-                    int rangeEnd = counter + currItemGetCount;
+                    // current item is a group, calculate the
+                    // desired item's index within the group
+                    // and make the recursive call
+                    int rangeEnd = counter + currItemGetCount - 1;
                     if ( noteIndex <= rangeEnd )
                     {
                         return i->second->getNote( noteIndex - counter );
