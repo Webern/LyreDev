@@ -87,49 +87,26 @@ TEST( XXX, BeamingStrategy )
     beamingStrategy->applyStrategy( measure );
     
     int noteIndex = 0;
-    INoteUP note;
     
     // pattern1 * **
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 2, note->getBeams() );
-    
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 2, note->getBeams() );
-    
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 2, note->getBeams() );
-    
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 0, note->getBeams() );
+    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
+    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
+    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
+    CHECK_EQUAL( 0, measure->getNote( noteIndex++ )->getBeams() );
     
     // pattern2 ***
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 2, note->getBeams() );
-    
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 1, note->getBeams() );
-    
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 0, note->getBeams() );
+    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
+    CHECK_EQUAL( 1, measure->getNote( noteIndex++ )->getBeams() );
+    CHECK_EQUAL( 0, measure->getNote( noteIndex++ )->getBeams() );
     
     // pattern3 * **
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 1, note->getBeams() );
-    
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 2, note->getBeams() );
-    
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 0, note->getBeams() );
+    CHECK_EQUAL( 1, measure->getNote( noteIndex++ )->getBeams() );
+    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
+    CHECK_EQUAL( 0, measure->getNote( noteIndex++ )->getBeams() );
     
     // pattern4 *? *
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 1, note->getBeams() );
-    
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 1, note->getBeams() );
-    
-    note = measure->getNote( noteIndex++ );
-    CHECK_EQUAL( 0, note->getBeams() );
+    CHECK_EQUAL( 1, measure->getNote( noteIndex++ )->getBeams() );
+    CHECK_EQUAL( 1, measure->getNote( noteIndex++ )->getBeams() );
+    CHECK_EQUAL( 0, measure->getNote( noteIndex++ )->getBeams() );
 }
 T_END

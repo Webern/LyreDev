@@ -166,7 +166,7 @@ namespace Lyre
             return LAYER->getTotalDuration();
         }
         
-        INoteUP Measure::getNote( int noteIndex ) const
+        const INoteUP& Measure::getNote( int noteIndex ) const
         {
             return LAYER->getNote( noteIndex );
         }
@@ -206,7 +206,7 @@ namespace Lyre
             return LAYER->getGroupIndex( noteIndex );
         }
         
-        INoteGroupUP Measure::getGroup( int groupIndex ) const
+        const INoteGroupUP& Measure::getGroup( int groupIndex ) const
         {
             return LAYER->getGroup( groupIndex );
         }

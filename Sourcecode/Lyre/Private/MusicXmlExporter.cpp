@@ -65,7 +65,7 @@ namespace Lyre
                             measure->setLayerContext( layer );
                             for( int n = 0; n < measure->getCount(); ++n )
                             {
-                                auto note = measure->getNote( n );
+                                auto& note = measure->getNote( n );
                                 Rational divisionsPerQuarterRational{ mx::utility::getDivisions( mxMeasure ), 1 };
                                 Rational noteDurationValueRational = note->getDuration()->getValue();
                                 Rational divs = divisionsPerQuarterRational * noteDurationValueRational;

@@ -511,7 +511,7 @@ TEST( getNote1, Measure )
     Factories f;
     IMeasureUP m = f.measureB();
     m->setLayerContext( 1 );
-    auto n = m->getNote( 0 );
+    auto& n = m->getNote( 0 );
     String expected = "{ D-1 : Quarter }";
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -523,7 +523,7 @@ TEST( getNote2, Measure )
     Factories f;
     IMeasureUP m = f.measureB();
     m->setLayerContext( 1 );
-    auto n = m->getNote( 1 );
+    auto& n = m->getNote( 1 );
     String expected = "{ Eb-1 : Quarter }";
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -538,7 +538,7 @@ TEST( getNote3Throw, Measure )
     bool isExceptionThrown = false;
     try
     {
-        auto n = m->getNote( 5 );
+        auto& n = m->getNote( 5 );
         String expected = "unreachable code";
         String actual = n->toString();
         CHECK_EQUAL( expected, actual )
@@ -559,7 +559,7 @@ TEST( getNote4Throw, Measure )
     bool isExceptionThrown = false;
     try
     {
-        auto n = m->getNote( -1 );
+        auto& n = m->getNote( -1 );
         String expected = "unreachable code";
         String actual = n->toString();
         CHECK_EQUAL( expected, actual )
@@ -578,7 +578,7 @@ TEST( getNote5, Measure )
     Factories f;
     IMeasureUP m = f.measureB();
     m->setLayerContext( 2 );
-    auto n = m->getNote( 1 );
+    auto& n = m->getNote( 1 );
     String expected = "{ Bb0 : 16th }";
     String actual = n->toString();
     CHECK_EQUAL( expected, actual )
@@ -652,7 +652,7 @@ TEST( removeNote, Measure )
     int index = 2;
     m->removeNote( index );
     CHECK_EQUAL( quarters-1, m->getCount() )
-    auto n = m->getNote( index );
+    auto& n = m->getNote( index );
     CHECK_EQUAL( 103, n->getPitch()->getValue() )
 }
 T_END
@@ -699,8 +699,8 @@ TEST( getGroupA2_0, Measure )
 {
     Factories f;
     auto m = f.measureA();
-    INoteGroupUP group = m->getGroup( 2 );
-    auto n = group->getNote( 0 );
+    auto& group = m->getGroup( 2 );
+    auto& n = group->getNote( 0 );
     CHECK_EQUAL( 11, n->getPitch()->getValue() )
 }
 T_END
@@ -709,8 +709,8 @@ TEST( getGroupA2_1, Measure )
 {
     Factories f;
     auto m = f.measureA();
-    INoteGroupUP group = m->getGroup( 2 );
-    auto n = group->getNote( 1 );
+    auto& group = m->getGroup( 2 );
+    auto& n = group->getNote( 1 );
     CHECK_EQUAL( 12, n->getPitch()->getValue() )
 }
 T_END
@@ -719,8 +719,8 @@ TEST( getGroupA2_2, Measure )
 {
     Factories f;
     auto m = f.measureA();
-    INoteGroupUP group = m->getGroup( 2 );
-    auto n = group->getNote( 2 );
+    auto& group = m->getGroup( 2 );
+    auto& n = group->getNote( 2 );
     CHECK_EQUAL( 13, n->getPitch()->getValue() )
 }
 T_END
@@ -729,11 +729,11 @@ TEST( getGroupA3Throw, Measure )
 {
     Factories f;
     auto m = f.measureA();
-    INoteGroupUP group = m->getGroup( 2 );
+    auto& group = m->getGroup( 2 );
     bool isExceptionThrown = false;
     try
     {
-        auto n = group->getNote( 3 );
+        auto& n = group->getNote( 3 );
         CHECK_EQUAL( 13, n->getPitch()->getValue() )
         CHECK_FAIL( "exception was expected but not thrown" )
     }

@@ -333,7 +333,7 @@ Impl
         }
         
         
-        INoteGroupUP getGroup( int groupIndex ) const
+        const INoteGroupUP& getGroup( int groupIndex ) const
         {
             if ( groupIndex < 0 )
             {
@@ -348,7 +348,7 @@ Impl
                     ++groupCounter;
                     if ( groupCounter == groupIndex )
                     {
-                        return i->second->clone();
+                        return i->second;
                     }
                 }
             }
@@ -396,7 +396,7 @@ Impl
         }
         
         
-        INoteUP getNote( int noteIndex ) const
+        const INoteUP& getNote( int noteIndex ) const
         {
             if ( noteIndex < 0 || noteIndex > getCount() - 1 )
             {
@@ -409,7 +409,7 @@ Impl
                     THROW( "index out of range" )
                 }
                 THROW_IF_NULL( note )
-                return note->clone();
+                return note;
             }
             int counter = 0;
             for ( auto i = noteGroups.begin();
@@ -560,7 +560,7 @@ NoteGroup
 	}
     
 
-	INoteUP NoteGroup::getNote( int noteIndex ) const
+	const INoteUP& NoteGroup::getNote( int noteIndex ) const
 	{
         return myImplP->getNote( noteIndex );
 	}
@@ -596,7 +596,7 @@ NoteGroup
 	}
 
     
-	INoteGroupUP NoteGroup::getGroup( int groupIndex ) const
+	const INoteGroupUP& NoteGroup::getGroup( int groupIndex ) const
 	{
         return myImplP->getGroup( groupIndex );
 	}

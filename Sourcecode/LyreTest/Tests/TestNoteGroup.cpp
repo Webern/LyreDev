@@ -353,7 +353,8 @@ TEST( getNote_throwEmpty, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        auto n = noteGroup->getNote( 0 );
+        auto& n = noteGroup->getNote( 0 );
+        UNUSED_PARAMETER( n );
         CHECK_FAIL( "exception was expected but not thrown" )
     }
     catch ( std::runtime_error& e )
@@ -371,7 +372,8 @@ TEST( getNote_throwOutOfRange, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        auto n = noteGroup->getNote( 7 );
+        auto& n = noteGroup->getNote( 7 );
+        UNUSED_PARAMETER( n );
         CHECK_FAIL( "exception was expected but not thrown" )
     }
     catch ( std::runtime_error& e )
@@ -668,7 +670,7 @@ TEST( getGroup_throwNoGroups, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        auto x = noteGroup->getGroup( 0 );
+        auto& x = noteGroup->getGroup( 0 );
 		if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
         CHECK_FAIL( "exception was expected but not thrown" )
     }
@@ -687,7 +689,7 @@ TEST( getGroup_throwOutOfRange, NoteGroup )
     bool isExceptionThrown = false;
     try
     {
-        auto x = noteGroup->getGroup( 2 );
+        auto& x = noteGroup->getGroup( 2 );
 		if ( x > 0 ) { std::cout << "unreachable" << std::endl; }
         CHECK_FAIL( "exception was expected but not thrown" )
     }
@@ -703,8 +705,8 @@ T_END
 TEST( getGroup_0, NoteGroup )
 {
     auto noteGroup = newNestedGroup1();
-    auto subGroup = noteGroup->getGroup( 0 );
-    auto firstSubGroupNote = subGroup->getNote( 0 );
+    auto& subGroup = noteGroup->getGroup( 0 );
+    auto& firstSubGroupNote = subGroup->getNote( 0 );
     String expected = "{ D4 : Eighth }";
     String actual = firstSubGroupNote->toString();
     CHECK_EQUAL( expected, actual )
@@ -722,8 +724,8 @@ TEST( getGroup_2, NoteGroup )
     auto addedGroup2 = newNoteGroup();
     addedGroup2->addNote( f.e2Sixteenth() );
     noteGroup->addGroup( addedGroup2 );
-    auto index2Group = noteGroup->getGroup( 2 );
-    auto firstNote = index2Group->getNote( 0 );
+    auto& index2Group = noteGroup->getGroup( 2 );
+    auto& firstNote = index2Group->getNote( 0 );
     String expected = "{ E2 : 16th }";
     String actual = firstNote->toString();
     CHECK_EQUAL( expected, actual )
@@ -800,7 +802,7 @@ TEST( removeGroup_2, NoteGroup )
     noteGroup->removeGroup( 2 );
     CHECK_EQUAL( 8, noteGroup->getCount() )
     CHECK_EQUAL( 3, noteGroup->getGroupCount() )
-    auto returnedGroup = noteGroup->getGroup( 2 );
+    auto& returnedGroup = noteGroup->getGroup( 2 );
     String expected = "{ F2 : Half }";
     String actual = returnedGroup->getNote( 0 )->toString();
     CHECK_EQUAL( expected, actual )
@@ -825,7 +827,7 @@ TEST( removeGroup_0, NoteGroup )
     noteGroup->removeGroup( 0 );
     CHECK_EQUAL( 5, noteGroup->getCount() )
     CHECK_EQUAL( 3, noteGroup->getGroupCount() )
-    auto returnedGroup = noteGroup->getGroup( 0 );
+    auto& returnedGroup = noteGroup->getGroup( 0 );
     String expected = "{ C4 : Quarter }";
     String actual = returnedGroup->getNote( 0 )->toString();
     CHECK_EQUAL( expected, actual )
