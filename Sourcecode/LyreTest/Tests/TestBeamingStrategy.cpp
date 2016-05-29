@@ -27,7 +27,7 @@ namespace
         return grp;
     }
     
-    INoteGroupUP pattern2() // ***
+    INoteGroupUP pattern2() // **-
     {
         INoteGroupUP grp{ new NoteGroup{} };
         auto pitch = f.pitchFactory->createPitch( 51 );
@@ -36,6 +36,7 @@ namespace
         grp->addNote( note );
         grp->addNote( note );
         dur = f.durationFactory->createDuration( STR_EIGHTH );
+        note = f.noteFactory->createNote( pitch, dur );
         grp->addNote( note );
         return grp;
     }
@@ -48,6 +49,7 @@ namespace
         auto note = f.noteFactory->createNote( pitch, dur );
         grp->addNote( note );
         dur = f.durationFactory->createDuration( STR_16TH );
+        note = f.noteFactory->createNote( pitch, dur );
         grp->addNote( note );
         grp->addNote( note );
         return grp;
@@ -65,10 +67,12 @@ namespace
         grp->addNote( note );
         
         dur = f.durationFactory->createDuration( STR_EIGHTH );
+        note = f.noteFactory->createNote( pitch, dur );
         note->setIsRest( true );
         grp->addNote( note );
         
         dur = f.durationFactory->createDuration( STR_16TH );
+        note = f.noteFactory->createNote( pitch, dur );
         note->setIsRest( false );
         grp->addNote( note );
         return grp;
@@ -89,24 +93,46 @@ TEST( XXX, BeamingStrategy )
     int noteIndex = 0;
     
     // pattern1 * **
-    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
-    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
-    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
-    CHECK_EQUAL( 0, measure->getNote( noteIndex++ )->getBeams() );
+    auto actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 2, actual );
     
-    // pattern2 ***
-    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
-    CHECK_EQUAL( 1, measure->getNote( noteIndex++ )->getBeams() );
-    CHECK_EQUAL( 0, measure->getNote( noteIndex++ )->getBeams() );
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 2, actual );
+    
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 2, actual );
+    
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 0, actual );
+    
+    // pattern2 **-
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 2, actual );
+    
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 1, actual );
+    
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 0, actual );
     
     // pattern3 * **
-    CHECK_EQUAL( 1, measure->getNote( noteIndex++ )->getBeams() );
-    CHECK_EQUAL( 2, measure->getNote( noteIndex++ )->getBeams() );
-    CHECK_EQUAL( 0, measure->getNote( noteIndex++ )->getBeams() );
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 1, actual );
+    
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 2, actual );
+    
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 0, actual );
     
     // pattern4 *? *
-    CHECK_EQUAL( 1, measure->getNote( noteIndex++ )->getBeams() );
-    CHECK_EQUAL( 1, measure->getNote( noteIndex++ )->getBeams() );
-    CHECK_EQUAL( 0, measure->getNote( noteIndex++ )->getBeams() );
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 1, actual );
+    
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 1, actual );
+    
+    actual = measure->getNote( noteIndex++ )->getBeams();
+    CHECK_EQUAL( 0, actual );
 }
 T_END

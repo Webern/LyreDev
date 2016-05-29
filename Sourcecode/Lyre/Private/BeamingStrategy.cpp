@@ -69,16 +69,18 @@ namespace Lyre
             auto breakPointsEnd = breakPoints.cend();
             for( int i = 0; i < measure->getCount(); ++i )
             {
-                //int lastIndex = measure->getCount() - 1;
+                int lastIndex = measure->getCount() - 1;
                 //bool currIsFirst = i == 0;
-                //bool currIsLast = i == measure->getCount() - 1;
+                bool currIsLast = i == measure->getCount() - 1;
                 //auto prevIndex = ( currIsFirst ? 0 : i - 1 );
-                //auto nextIndex = ( currIsLast ? lastIndex : i + 1 );
+                auto nextIndex = ( currIsLast ? lastIndex : i + 1 );
                 const auto& currNote = measure->getNote( i );
                 //const auto& prevNote = measure->getNote( prevIndex );
-                //const auto& nextNote = measure->getNote( nextIndex );
+                const auto& nextNote = measure->getNote( nextIndex );
                 position += currNote->getDuration()->getValue();
                 
+                // set beams to 0 if we are at a breakpoint,
+                // or if we are at the end of the measure
                 bool isPrevBreakpoint = false;
                 if( breakPointsItr == breakPointsEnd )
                 {
@@ -89,7 +91,36 @@ namespace Lyre
                     isPrevBreakpoint = true;
                     ++breakPointsItr;
                 }
+                
                 if( isPrevBreakpoint )
+                {
+                    currNote->setBeams( 0 );
+                }
+                
+                // set beams if next note is a rest
+                else if( !currIsLast && nextNote->getIsRest() )
+                {
+                    if( nextNote->getMaxBeams() == 0 || nextNote->getMaxBeams() > currNote->getMaxBeams() )
+                    {
+                        currNote->setBeams( 0 );
+                    }
+                    else
+                    {
+                        currNote->setBeams( currNote->getMaxBeams() - nextNote->getMaxBeams() );
+                    }
+                }
+                else if( !currIsLast )
+                {
+                    if ( nextNote->getMaxBeams() < currNote->getMaxBeams() )
+                    {
+                        currNote->setBeams( nextNote->getMaxBeams() );
+                    }
+                    else
+                    {
+                        currNote->setBeams( currNote->getMaxBeams() );
+                    }
+                }
+                else if ( currIsLast )
                 {
                     currNote->setBeams( 0 );
                 }
