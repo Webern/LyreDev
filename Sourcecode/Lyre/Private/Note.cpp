@@ -23,11 +23,49 @@ namespace Lyre
         }
         
         
+        Note::Note( const Note& other )
+        :myPitch( other.myPitch->clone() )
+        ,myDuration( other.myDuration->clone() )
+        ,myIsRest( other.myIsRest )
+        ,myBeams( other.myBeams )
+        {
+            
+        }
+        
+        
+        Note::Note( Note&& other )
+        :myPitch( std::move( other.myPitch ) )
+        ,myDuration( std::move( other.myDuration ) )
+        ,myIsRest( std::move( other.myIsRest ) )
+        ,myBeams( std::move( other.myBeams ) )
+        {
+            
+        }
+        
+        
+        Note& Note::operator=( const Note& other )
+        {
+            myPitch = other.myPitch->clone();
+            myDuration = other.myDuration->clone();
+            myIsRest = other.myIsRest;
+            myBeams = other.myBeams;
+            return *this;
+        }
+        
+        
+        Note& Note::operator=( Note&& other )
+        {
+            myPitch = std::move( other.myPitch );
+            myDuration = std::move( myDuration );
+            myIsRest = std::move( myIsRest );
+            myBeams = std::move( myBeams );
+            return *this;
+        }
+        
+        
         INoteUP Note::clone() const
         {
-			auto ret = INoteUP{ new Note{ myPitch, myDuration } };
-            ret->setIsRest( myIsRest );
-			return std::move( ret );
+			return INoteUP{ new Note{ *this } };
         }
         
         

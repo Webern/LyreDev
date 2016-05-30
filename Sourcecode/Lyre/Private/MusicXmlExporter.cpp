@@ -62,10 +62,21 @@ namespace Lyre
                         auto measure = part->getMeasure( m );
                         for ( int layer = 0; layer < MAX_NUMBER_OF_LAYERS; ++layer)
                         {
+                            
                             measure->setLayerContext( layer );
                             for( int n = 0; n < measure->getCount(); ++n )
                             {
+                                INoteUP previousNote = nullptr;
+                                INoteUP nextNote = nullptr;
                                 auto& note = measure->getNote( n );
+                                if( n > 0 )
+                                {
+                                    previousNote = measure->getNote( n - 1 )->clone();
+                                }
+                                if( n < measure->getCount() - 1 )
+                                {
+                                    nextNote = measure->getNote( n + 1 )->clone();
+                                }
                                 Rational divisionsPerQuarterRational{ mx::utility::getDivisions( mxMeasure ), 1 };
                                 Rational noteDurationValueRational = note->getDuration()->getValue();
                                 Rational divs = divisionsPerQuarterRational * noteDurationValueRational;
@@ -73,7 +84,8 @@ namespace Lyre
                                 {
                                     THROW( "duration calculation failed, divs should be a whole number" )
                                 }
-                                addNoteToMeasure( mxMeasure, note, divs.getMixedWholePart(), layer+1, staff+1 );
+                                addNoteToMeasure( mxMeasure, measure, n, divs.getMixedWholePart(), layer+1, staff+1, previousNote, nextNote );
+                            
                             } // foreach note
                             
                         } // foreach layer

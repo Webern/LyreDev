@@ -71,6 +71,20 @@ namespace Lyre
             return total;
         }
         
+        
+        std::vector<Rational> BeatPattern::getBeatPositions() const
+        {
+            std::vector<Rational> beatPositions;
+            Rational positionCounter{ 0, 1 };
+            for ( int i = 0; i < myDurations.getCount(); ++ i )
+            {
+                beatPositions.push_back( positionCounter );
+                positionCounter += myDurations.get( i )->getValue();
+            }
+            return beatPositions;
+        }
+        
+        
         void BeatPattern::loadDurations( int count, const IDurationUP& dur )
         {
             if ( count < 1 )

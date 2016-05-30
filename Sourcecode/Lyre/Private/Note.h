@@ -15,6 +15,11 @@ namespace Lyre
         public:
             virtual ~Note();
             Note( const IPitchUP& pitch, const IDurationUP& duration );
+            Note( const Note& other );
+            Note( Note&& other );
+            Note& operator=( const Note& other );
+            Note& operator=( Note&& other );
+            
             virtual INoteUP clone() const;
             
             virtual IPitchUP getPitch() const;

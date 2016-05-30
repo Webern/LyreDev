@@ -31,11 +31,18 @@ namespace Lyre
         void addEmptyMeasures( const MxDoc& doc, const IScoreH& score );
         
         void addNoteToMeasure(
-            const MxMeasure& mxMeasure,
-            const INoteUP& lyreNote,
+                              const MxMeasure& mxMeasure,
+                              const IMeasureH& lyreMeasure,
+            int lyreNoteIndex,
             int divisionsPerQuarterNote,
             int voice = 1,
-            int staff = 1  );
+            int staff = 1,
+            const INoteUP& prevNote = nullptr,
+            const INoteUP& nextNote = nullptr );
+        
+        std::vector<mx::t::BeamValue> calculateBeams(
+            const IMeasureH& measure,
+            int noteIndex );
 
     }
 

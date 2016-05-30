@@ -241,6 +241,20 @@ namespace Lyre
             return it;
         }
         
+        
+        Rational Measure::getNotePosition( int index ) const
+        {
+            THROW_IF_BAD_VALUE( index, 0, getCount() - 1 );
+            Rational accumulator{ 0, 1 };
+            for ( int i = 0; i < getCount(); ++i )
+            {
+                accumulator += getNote( i )->getDuration()->getValue();
+            }
+            return accumulator;
+        }
+        
+        
+        
         LayerIterConst Measure::getLayer() const
         {
             LayerIterConst it = myLayers.find( myCurrentLayer );

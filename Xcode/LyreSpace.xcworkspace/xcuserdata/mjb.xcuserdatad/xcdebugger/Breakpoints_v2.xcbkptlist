@@ -1740,11 +1740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/MxExporterBasic.cpp"
-            timestampString = "485580700.417634"
+            timestampString = "486229368.868214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "TEST( ScoreItems, MxExporterBasic )"
             landmarkType = "7">
          </BreakpointContent>
@@ -1756,11 +1756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/MxExporterBasic.cpp"
-            timestampString = "485580422.176332"
+            timestampString = "486229368.868214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "TEST( ScoreItems, MxExporterBasic )"
             landmarkType = "7">
          </BreakpointContent>
@@ -1984,11 +1984,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/MusicXml.cpp"
-            timestampString = "485635267.447772"
+            timestampString = "486256855.136639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "addEmptyMeasures( const MxDoc&amp; doc, const IScoreH&amp; score )"
             landmarkType = "7">
          </BreakpointContent>
@@ -2000,11 +2000,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/MxExporterBasic.cpp"
-            timestampString = "485580717.498323"
+            timestampString = "486229368.868214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "TEST( ScoreItems, MxExporterBasic )"
             landmarkType = "7">
          </BreakpointContent>
@@ -2016,11 +2016,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/MxExporterBasic.cpp"
-            timestampString = "485580863.091538"
+            timestampString = "486229368.868214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "TEST( ScoreItems, MxExporterBasic )"
             landmarkType = "7">
          </BreakpointContent>
@@ -2032,11 +2032,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/MusicXmlExporter.cpp"
-            timestampString = "485636454.653217"
+            timestampString = "486228858.574374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "MusicXmlExporter::exportMusic( std::ostream&amp; os )"
             landmarkType = "5">
          </BreakpointContent>
@@ -2112,11 +2112,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/BeamingStrategy.cpp"
-            timestampString = "486225810.743928"
+            timestampString = "486262803.036507"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "BeamingStrategy::applyStrategy( const IMeasureUP&amp; measure )"
             landmarkType = "5">
             <Locations>
@@ -2158,11 +2158,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/BeamingStrategy.cpp"
-            timestampString = "486223626.916293"
+            timestampString = "486255158.146398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "BeamingStrategy::applyStrategy( const IMeasureUP&amp; measure )"
             landmarkType = "5">
          </BreakpointContent>
@@ -2174,11 +2174,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/BeamingStrategy.cpp"
-            timestampString = "486223666.657566"
+            timestampString = "486255158.146398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "BeamingStrategy::applyStrategy( const IMeasureUP&amp; measure )"
             landmarkType = "5">
          </BreakpointContent>
@@ -2190,11 +2190,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/LyreTest/Tests/TestBeamingStrategy.cpp"
-            timestampString = "486226332.980474"
+            timestampString = "486257809.350417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "TEST( XXX, BeamingStrategy )"
             landmarkType = "7">
             <Locations>
@@ -2236,11 +2236,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Sourcecode/Lyre/Private/BeamingStrategy.cpp"
-            timestampString = "486225372.540474"
+            timestampString = "486255158.146398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "BeamingStrategy::applyStrategy( const IMeasureUP&amp; measure )"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/MusicXml.cpp"
+            timestampString = "486256855.136639"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "addNoteToMeasure( const MxMeasure&amp; mxMeasure, const IMeasureH&amp; lyreMeasure, int lyreNoteIndex, int divisions, int voice, int staff, const INoteUP&amp; prevNote, const INoteUP&amp; nextNote )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/MusicXml.cpp"
+            timestampString = "486256855.136639"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "calculateBeams( const IMeasureH&amp; measure, int noteIndex )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/MusicXml.cpp"
+            timestampString = "486256679.666967"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "calculateBeams( const IMeasureH&amp; measure, int noteIndex )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/BeamingStrategy.cpp"
+            timestampString = "486262803.036507"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "isBeamConnectionOutgoing( const IMeasureH&amp; measure, int noteIndex, int beamIndex )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sourcecode/Lyre/Private/BeamingStrategy.cpp"
+            timestampString = "486258012.650556"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "BeamingStrategy::applyStrategy( const IMeasureUP&amp; measure )"
             landmarkType = "5">
          </BreakpointContent>

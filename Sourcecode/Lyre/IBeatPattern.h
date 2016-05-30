@@ -16,6 +16,7 @@ namespace Lyre
         virtual std::ostream& toStream( std::ostream& os ) const = 0;
         
         virtual Rational getTotalDuration() const = 0;
+        virtual std::vector<Rational> getBeatPositions() const = 0;
         
         virtual bool getIsEmpty() const = 0;
         virtual bool getIsEnd() const = 0;

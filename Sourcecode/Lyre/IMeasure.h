@@ -45,5 +45,6 @@ namespace Lyre
         virtual void addGroup( const INoteGroupUP& group ) = 0;
         virtual void removeGroup( int groupIndex ) = 0;
         
+        virtual Rational getNotePosition( int index ) const = 0;
     };
 }

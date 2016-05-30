@@ -5,6 +5,8 @@
 #include "Lyre/Lmx/LmxDivisions.h"
 #include "Mx/Elements.h"
 #include "Mx/Utility.h"
+#include "Lyre/IBeatPatternFactory.h"
+#include "Lyre/Private/BeamingStrategy.h"
 
 #include <string>
 #include <sstream>
@@ -170,11 +172,17 @@ namespace Lyre
         
         void addNoteToMeasure(
             const MxMeasure& mxMeasure,
-            const INoteUP& lyreNote,
+                              const IMeasureH& lyreMeasure,
+            int lyreNoteIndex,
             int divisions,
             int voice,
-            int staff )
+            int staff,
+            const INoteUP& prevNote,
+            const INoteUP& nextNote )
         {
+            UNUSED_PARAMETER( prevNote );
+            UNUSED_PARAMETER( nextNote );
+            const auto& lyreNote = lyreMeasure->getNote( lyreNoteIndex );
             mx::utility::NoteParams params;
             params.showAccidental = true; // TODO fix this with logic
             params.step = lyreNote->getPitch()->getStepValue();
@@ -186,11 +194,67 @@ namespace Lyre
             params.isRest = lyreNote->getIsRest();
             params.voiceNumber = voice;
             params.staffNumber = staff;
+            params.beams = calculateBeams( lyreMeasure, lyreNoteIndex );
             auto mdc = mx::utility::createNote( params );
             mxMeasure->getMusicDataGroup()->addMusicDataChoice( mdc );
             
         } // end function addNoteToMeasure
 
+        std::vector<mx::t::BeamValue> calculateBeams(
+            const IMeasureH& measure,
+            int noteIndex )
+        {
+            std::vector<mx::t::BeamValue> beams;
+            const auto& note = measure->getNote( noteIndex );
+            if( note->getIsRest() )
+            {
+                return beams;
+            }
+            auto beamCount = note->getMaxBeams();
+            
+            // TODO where should this come from?
+            auto beatPattern = measure->getTimeSignature()->getBeatPattern();
+            
+            
+            for ( int beamIndex = 0; beamIndex < beamCount; ++beamIndex )
+            {
+                using namespace Private;
+                auto isBeamIncoming = isBeamConnectionIncoming( measure, noteIndex, beamIndex);
+                auto isBeamOutgoing = isBeamConnectionOutgoing( measure, noteIndex, beamIndex);
+                if( isBeamIncoming && isBeamOutgoing )
+                {
+                    beams.push_back( mx::t::BeamValue::continue_ );
+                    continue;
+                }
+                else if ( isBeamIncoming && !isBeamOutgoing )
+                {
+                    beams.push_back( mx::t::BeamValue::end );
+                    continue;
+                }
+                else if ( !isBeamIncoming && isBeamOutgoing )
+                {
+                    beams.push_back( mx::t::BeamValue::begin );
+                    continue;
+                }
+                // if !isBeamIncoming && !isBeamOutgoing
+                // we need a "crook" but we need to figure
+                // out which direction it is going
+                if( isNoteFirstInGroup( measure, noteIndex, beatPattern ) || isFollowedByRest( measure, noteIndex ) )
+                {
+                    beams.push_back( mx::t::BeamValue::forwardHook );
+                    continue;
+                }
+                else if ( isNoteLastInGroup( measure, noteIndex,  beatPattern ) || isPrecededByRest( measure, noteIndex ) )
+                {
+                    beams.push_back( mx::t::BeamValue::backwardHook );
+                    continue;
+                }
+                THROW( "the beaming algorithm failed" )
+            }
+            return beams;
+            
+        } // end function calculateBeams
+        
     } // end namespace MxPrivate
 
 } // end namespace Lyre

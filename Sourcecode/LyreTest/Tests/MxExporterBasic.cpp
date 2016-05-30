@@ -1,6 +1,7 @@
 //PUBLIC
 #include "LyreTest/cpul/cpulTestHarness.h"
 #include "Lyre/MusicFactory.h"
+#include "Lyre/Private/BeamingStrategy.h" // TODO private?
 #include <sstream>
 
 using namespace Lyre;
@@ -75,6 +76,7 @@ TEST( ScoreItems, MxExporterBasic )
         for ( int m = 0; m < part->getMeasureCount(); ++m )
         {
             auto measure = part->getMeasure( m );
+            Lyre::Private::BeamingStrategyUP beamingStrategy{ new Lyre::Private::BeamingStrategy {} };
             while ( ! measure->getIsComplete() )
             {
                 if( counter > 50 )
@@ -83,7 +85,7 @@ TEST( ScoreItems, MxExporterBasic )
                 }
                 bool isRest = counter % 3 == 0;
                 auto pitch = f.pitchFactory->createPitch( counter + 50 );
-                auto dur = f.durationFactory->createDuration( STR_QUARTER, 2 );
+                auto dur = f.durationFactory->createDuration( STR_16TH, 0 );
                 auto note = f.noteFactory->createNote( pitch, dur );
                 if( isRest )
                 {
@@ -92,6 +94,8 @@ TEST( ScoreItems, MxExporterBasic )
                 measure->addNote( note );
                 ++counter;
             }
+            beamingStrategy->applyStrategy( measure );
+            /*
             if ( part->getPartSpec()->getNumStaves() == 2 )
             {
                 measure->setLayerContext( 1 );
@@ -104,7 +108,7 @@ TEST( ScoreItems, MxExporterBasic )
                     }
                     bool isRest = counter % 3 == 0;
                     auto pitch = f.pitchFactory->createPitch( counter + 38 );
-                    auto dur = f.durationFactory->createDuration( STR_QUARTER, 2 );
+                    auto dur = f.durationFactory->createDuration( STR_16TH, 0 );
                     auto note = f.noteFactory->createNote( pitch, dur );
                     if( isRest )
                     {
@@ -113,7 +117,7 @@ TEST( ScoreItems, MxExporterBasic )
                     measure->addNote( note );
                     ++counter;
                 }
-            }
+            }*/
         }
     }
     

@@ -21,10 +21,44 @@ namespace Lyre
             BeamingStrategy& operator=( const BeamingStrategy& other );
             IMeasureStrategyUP clone() const;
             void applyStrategy( const IMeasureUP& measure );
+            void applyStrategy( const IMeasureH& measure );
+            
         private:
             IBeatPatternUP myBeatPattern;
-            IBeatPatternUP chooseCorrectBeatPattern(  const IMeasureUP& measure );
+            IBeatPatternUP chooseCorrectBeatPattern(  const IMeasureH& measure );
         };
+        
+        bool isBeamConnectionIncoming(
+            const IMeasureH& measure,
+            int noteIndex,
+            int beamIndex );
+        
+        bool isBeamConnectionOutgoing(
+            const IMeasureH& measure,
+            int noteIndex,
+            int beamIndex );
+        
+        bool isBeamExistenceRequirementSatisfied(
+            const IMeasureH& measure,
+            int noteIndex,
+            int beamIndex );
+        
+        bool isNoteFirstInGroup(
+            const IMeasureH& measure,
+            int noteIndex,
+            const IBeatPatternUP& beatPattern );
+        
+        bool isNoteLastInGroup(
+            const IMeasureH& measure,
+            int noteIndex,
+            const IBeatPatternUP& beatPattern  );
+        
+        bool isFollowedByRest(
+            const IMeasureH& measure,
+            int noteIndex );
+        
+        bool isPrecededByRest(
+            const IMeasureH& measure,
+            int noteIndex );
     }
-
 }
