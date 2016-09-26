@@ -1,6 +1,6 @@
 [submodule "Submodule/MusicXML-Class-Library"]
 	path = Submodule/MusicXML-Class-Library
-	url = https://github.com/Webern/MusicXML-Class-Library.git
+url=https://github.com/Webern/MusicXML-Class-Library
 [submodule "Submodule/MusicXML"]
 	path = Submodule/MusicXML
 	url = https://github.com/w3c/musicxml.git
