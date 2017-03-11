@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Sourcecode\Lyre\ForwardDeclare.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Handle.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IAlter.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMeasureStrategy.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMeasureStrategyFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MeasureStrategy.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MeasureStrategyFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IPartGroupSpec.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IPartGroupSpecFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\PartGroupSpec.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\PartGroupSpecFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMusicFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMusicFactoryFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MusicFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MusicFactoryFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IExporter.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IExporterFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Exporter.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\ExporterFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IScore.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IScoreFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Score.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\ScoreFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IScoreSpec.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IScoreSpecFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\ScoreSpec.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\ScoreSpecFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IPartSpec.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IPartSpecFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\PartSpec.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\PartSpecFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMovementSpec.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMovementSpecFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MovementSpec.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MovementSpecFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMovement.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMovementFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Movement.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MovementFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMasterTrack.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMasterTrackFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MasterTrack.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MasterTrackFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IPart.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IPartFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Part.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\PartFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IInstrument.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IInstrumentFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Instrument.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\InstrumentFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IRange.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IRangeFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Range.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\RangeFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMeasure.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IMeasureFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Measure.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\MeasureFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\ILayer.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\ILayerFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Layer.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\LayerFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IBeatPattern.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IBeatPatternFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IDuration.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IDurationFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IDurBase.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IDurBaseFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IDurDot.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IDurDotFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IEnum.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\INote.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\INoteFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\INoteGroup.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IPitch.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IPitchFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IPitchName.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IStep.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\IStreameable.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\ITimeSignature.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\ITimeSignatureFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\ITupletDef.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\ITupletDefFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Lyre.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\LyreApiExport.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\NoteGroup.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Alter.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\BeatPattern.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\BeatPatternFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Collection.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Duration.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurationFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBase128th.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBase16th.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBase256th.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBase32nd.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBase64th.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBaseEighth.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBaseBreve.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBaseFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBaseHalf.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBaseLonga.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBaseQuarter.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurBaseWhole.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurDot.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\DurDotFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Enum.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\makeUnique.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Mod.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Note.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\NoteFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Pitch.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\PitchFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\PitchName.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\Step.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\StepStrings.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\throw.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\TimeSignature.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\TimeSignatureFactory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\TupletDef.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Private\TupletDefFatory.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\Rational.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\toShared.h" />
+    <ClInclude Include="..\Sourcecode\Lyre\TypeDefs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Sourcecode\Lyre\IAlter.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IMeasureStrategyFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MeasureStrategy.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MeasureStrategyFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IPartGroupSpecFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\PartGroupSpec.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\PartGroupSpecFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IMusicFactoryFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MusicFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MusicFactoryFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IExporterFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Exporter.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\ExporterFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IScoreFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Score.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\ScoreFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IScoreSpecFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\ScoreSpec.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\ScoreSpecFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IPartSpecFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\PartSpec.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\PartSpecFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IMovementSpecFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MovementSpec.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MovementSpecFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IMovementFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Movement.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MovementFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IMasterTrackFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MasterTrack.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MasterTrackFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IPartFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Part.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\PartFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IInstrumentFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Instrument.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\InstrumentFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IRangeFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Range.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\RangeFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IMeasureFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Measure.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\MeasureFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\ILayerFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Layer.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\LayerFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IBeatPatternFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IDuration.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IDurationFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IDurBase.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IDurBaseFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IDurDot.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IDurDotFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IEnum.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\INote.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\INoteFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IPitch.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IPitchFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IPitchName.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\IStep.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\ITimeSignatureFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\ITupletDef.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\ITupletDefFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\NoteGroup.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Alter.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\BeatPattern.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\BeatPatternFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Duration.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurationFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBase128th.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBase16th.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBase256th.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBase32nd.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBase64th.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBaseEighth.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBaseBreve.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBaseFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBaseHalf.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBaseLonga.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBaseQuarter.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurBaseWhole.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurDot.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\DurDotFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Enum.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Note.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\NoteFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Pitch.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\PitchFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\PitchName.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\Step.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\StepStrings.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\TimeSignature.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\TimeSignatureFactory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\TupletDef.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Private\TupletDefFatory.cpp" />
+    <ClCompile Include="..\Sourcecode\Lyre\Rational.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F765E151-6073-4B26-874F-6F839CEFF126}</ProjectGuid>
+    <RootNamespace>Lyre</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(PlatformConfigFolder)' == '' ">
+    <PlatformConfigFolder>$(Platform)_$(Configuration)</PlatformConfigFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(UniqueIntFolder)' == '' ">
+    <UniqueFolder>$(ProjectName)_$(PlatformConfigFolder)</UniqueFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
+    <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
+    <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
+    <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IntDir>.\Intermediates\$(UniqueFolder)\</IntDir>
+    <OutDir>.\Outputs\$(PlatformConfigFolder)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Sourcecode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EXPORT_LYRE_API_SYMBOLS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

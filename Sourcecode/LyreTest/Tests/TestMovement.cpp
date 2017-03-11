@@ -1,0 +1,197 @@
+//PUBLIC
+#include "TestMovement.h"
+
+#include <sstream>
+
+using namespace Lyre;
+using namespace std;
+
+
+
+TEST( acceptanceTest, Movement )
+{
+    Factories f;
+    auto movement = f.createMovement( 1, "Mladic" );
+    CHECK_EQUAL( 3, movement->getPartCount() )
+    CHECK_EQUAL( "1. Mladic", movement->getSpec()->getDisplayTitle() )
+    auto part = movement->getPart( 0 );
+    CHECK_EQUAL( 10, part->getMeasureCount() )
+    auto measure = part->getMeasure( 5 );
+    CHECK_EQUAL( 7, measure->getTimeSignature()->getTop() )
+    CHECK_EQUAL( 8, measure->getTimeSignature()->getBottom() )
+    measure->addNote( f.createNote( "G4", STR_QUARTER, 1 ) );
+    measure->addNote( f.createNote( "A4", STR_QUARTER ) );
+    measure->addNote( f.createNote( "B4", STR_QUARTER ) );
+    part = movement->getPart( 2 );
+    part->setStaffContext( 1 );
+    measure = part->getMeasure( 3 );
+    measure->setLayerContext( 1 );
+    measure->addNote( f.createNote( "B4", STR_QUARTER ) );
+    measure->addNote( f.createNote( "C5", STR_QUARTER ) );
+    measure->addNote( f.createNote( "D6", STR_QUARTER ) );
+    measure->addNote( f.createNote( "E6", STR_QUARTER ) );
+    std::stringstream ss;
+    ss << "Movement '1. Mladic'" << std::endl;
+    ss << "{" << std::endl;
+    ss << "    Part Flute 1" << std::endl;
+    ss << "    {" << std::endl;
+    ss << "        FLUTE_1 STAFF 0" << std::endl;
+    ss << "        {" << std::endl;
+    ss << "            Measure 0" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 1" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 2" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 3" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 4" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 5" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "              Layer 0" << std::endl;
+    ss << "              {" << std::endl;
+    ss << "                  { G4 : Quarter. }" << std::endl;
+    ss << "                  { A4 : Quarter }" << std::endl;
+    ss << "                  { B4 : Quarter }" << std::endl;
+    ss << "              }" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 6" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 7" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 8" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 9" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "        }" << std::endl;
+    ss << "    }" << std::endl;
+    ss << "" << std::endl;
+    ss << "    Part Flute 2" << std::endl;
+    ss << "    {" << std::endl;
+    ss << "        FLUTE_2 STAFF 0" << std::endl;
+    ss << "        {" << std::endl;
+    ss << "            Measure 0" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 1" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 2" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 3" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 4" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 5" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 6" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 7" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 8" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 9" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "        }" << std::endl;
+    ss << "    }" << std::endl;
+    ss << "" << std::endl;
+    ss << "    Part Harp" << std::endl;
+    ss << "    {" << std::endl;
+    ss << "        HARP STAFF 0" << std::endl;
+    ss << "        {" << std::endl;
+    ss << "            Measure 0" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 1" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 2" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 3" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 4" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 5" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 6" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 7" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 8" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 9" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "        }" << std::endl;
+    ss << "        HARP STAFF 1" << std::endl;
+    ss << "        {" << std::endl;
+    ss << "            Measure 0" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 1" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 2" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 3" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "              Layer 1" << std::endl;
+    ss << "              {" << std::endl;
+    ss << "                  { B4 : Quarter }" << std::endl;
+    ss << "                  { C5 : Quarter }" << std::endl;
+    ss << "                  { D6 : Quarter }" << std::endl;
+    ss << "                  { E6 : Quarter }" << std::endl;
+    ss << "              }" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 4" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 5" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 6" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 7" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 8" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "            Measure 9" << std::endl;
+    ss << "            {" << std::endl;
+    ss << "            }" << std::endl;
+    ss << "        }" << std::endl;
+    ss << "    }" << std::endl;
+    ss << "}" << std::endl;
+    String expected = ss.str();
+    String actual = movement->toString();
+    CHECK_EQUAL( expected, actual )
+}
+T_END

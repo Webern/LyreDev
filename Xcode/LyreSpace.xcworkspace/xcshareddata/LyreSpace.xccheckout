@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4300DB61-51A0-4746-A8F5-E0B21BA33866</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LyreSpace</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C8600F38-0CE3-464F-87BF-FF59111167DA</key>
+		<string>https://github.com/Webern/MusicXML-Class-Library.git</string>
+		<key>CA98B22A-4370-4721-A063-553F1DBC330B</key>
+		<string>https://github.com/Webern/Lyre.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Xcode/LyreSpace.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C8600F38-0CE3-464F-87BF-FF59111167DA</key>
+		<string>../../Submodule/MusicXML-Class-Library</string>
+		<key>CA98B22A-4370-4721-A063-553F1DBC330B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Webern/Lyre.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CA98B22A-4370-4721-A063-553F1DBC330B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CA98B22A-4370-4721-A063-553F1DBC330B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Lyre</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C8600F38-0CE3-464F-87BF-FF59111167DA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MusicXML-Class-Library</string>
+		</dict>
+	</array>
+</dict>
+</plist>
