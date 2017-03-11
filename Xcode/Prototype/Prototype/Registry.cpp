@@ -5,4 +5,10 @@
 namespace lyre
 {
 
+    RegistryObject Registry::create()
+    {
+        const auto current = mID++;
+        mRegistry[current] = std::make_unique<RegistryObject>( current, *this );
+        return *mRegistry[current];
+    }
 }

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "RegistryObject.h"
+#include <memory>
 #include <map>
 
 namespace lyre
@@ -11,6 +12,10 @@ namespace lyre
     {
     public:
 
+        RegistryObject create();
+
     private:
+        ID mID;
+        std::map<ID, std::unique_ptr<RegistryObject>> mRegistry;
     };
 }
