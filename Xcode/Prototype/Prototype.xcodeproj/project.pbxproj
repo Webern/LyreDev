@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		29061AFA1E745BCB0061DC21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29061AF91E745BCB0061DC21 /* main.cpp */; };
-		29061B021E745C400061DC21 /* RegistryObject.cc in Sources */ = {isa = PBXBuildFile; fileRef = 29061B001E745C400061DC21 /* RegistryObject.cc */; };
+		29061B021E745C400061DC21 /* RegistryObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29061B001E745C400061DC21 /* RegistryObject.cpp */; };
 		29061B051E7461100061DC21 /* Registry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29061B031E7461100061DC21 /* Registry.cpp */; };
 		29061B081E7466B10061DC21 /* SampleObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29061B061E7466B10061DC21 /* SampleObject.cpp */; };
+		29A290E11E76F1EF001CC53C /* SharedPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29A290DF1E76F1EF001CC53C /* SharedPtr.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,12 +29,14 @@
 /* Begin PBXFileReference section */
 		29061AF61E745BCB0061DC21 /* Prototype */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Prototype; sourceTree = BUILT_PRODUCTS_DIR; };
 		29061AF91E745BCB0061DC21 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		29061B001E745C400061DC21 /* RegistryObject.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegistryObject.cc; sourceTree = "<group>"; };
+		29061B001E745C400061DC21 /* RegistryObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegistryObject.cpp; sourceTree = "<group>"; };
 		29061B011E745C400061DC21 /* RegistryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistryObject.h; sourceTree = "<group>"; };
 		29061B031E7461100061DC21 /* Registry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Registry.cpp; sourceTree = "<group>"; };
 		29061B041E7461100061DC21 /* Registry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Registry.h; sourceTree = "<group>"; };
 		29061B061E7466B10061DC21 /* SampleObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SampleObject.cpp; sourceTree = "<group>"; };
 		29061B071E7466B10061DC21 /* SampleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleObject.h; sourceTree = "<group>"; };
+		29A290DF1E76F1EF001CC53C /* SharedPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SharedPtr.cpp; sourceTree = "<group>"; };
+		29A290E01E76F1EF001CC53C /* SharedPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedPtr.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				29061AF91E745BCB0061DC21 /* main.cpp */,
-				29061B001E745C400061DC21 /* RegistryObject.cc */,
+				29061B001E745C400061DC21 /* RegistryObject.cpp */,
 				29061B011E745C400061DC21 /* RegistryObject.h */,
 				29061B031E7461100061DC21 /* Registry.cpp */,
 				29061B041E7461100061DC21 /* Registry.h */,
 				29061B061E7466B10061DC21 /* SampleObject.cpp */,
 				29061B071E7466B10061DC21 /* SampleObject.h */,
+				29A290DF1E76F1EF001CC53C /* SharedPtr.cpp */,
+				29A290E01E76F1EF001CC53C /* SharedPtr.h */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
@@ -137,7 +142,8 @@
 				29061B051E7461100061DC21 /* Registry.cpp in Sources */,
 				29061AFA1E745BCB0061DC21 /* main.cpp in Sources */,
 				29061B081E7466B10061DC21 /* SampleObject.cpp in Sources */,
-				29061B021E745C400061DC21 /* RegistryObject.cc in Sources */,
+				29A290E11E76F1EF001CC53C /* SharedPtr.cpp in Sources */,
+				29061B021E745C400061DC21 /* RegistryObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +274,7 @@
 				29061AFF1E745BCB0061DC21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

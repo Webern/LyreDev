@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "SharedPtr.h"
 #include "RegistryObject.h"
 #include <memory>
 #include <map>
@@ -13,6 +14,14 @@ namespace lyre
     public:
 
         RegistryObject create();
+        SharedPtr getShared(ID inID) const;
+
+    private:
+        friend class SharedPtr;
+        friend class WeakPtr;
+
+    private:
+        RegistryObject* get(ID inID) const;
 
     private:
         ID mID;

@@ -11,4 +11,16 @@ namespace lyre
         mRegistry[current] = std::make_unique<RegistryObject>( current, *this );
         return *mRegistry[current];
     }
+
+
+//    SharedPtr Registry::getShared(ID inID) const
+//    {
+//        return SharedPtr{inID, *this};
+//    }
+
+
+    RegistryObject* Registry::get(ID inID) const
+    {
+        return mRegistry.at(inID).get();
+    }
 }
