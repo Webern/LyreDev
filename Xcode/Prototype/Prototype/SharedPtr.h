@@ -15,11 +15,16 @@ namespace lyre
     class SharedPtr
     {
     public:
-        SharedPtr(ID inID, const Registry& inRegistry);
+        SharedPtr(ID inID, Registry& registry);
+        ~SharedPtr();
+
+    private:
+        friend class Registry;
+
 
     private:
         ID mID;
-        std::reference_wrapper<const Registry> mRegistry;
+        Registry* mRegistry;
         RegistryObject* mObject;
     };
 }

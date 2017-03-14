@@ -6,11 +6,18 @@
 
 namespace lyre
 {
-    SharedPtr::SharedPtr(ID inID, const Registry& inRegistry)
+    SharedPtr::SharedPtr(ID inID, Registry& registry)
     : mID{inID}
-    , mRegistry{inRegistry}
-    , mObject{inRegistry.get(inID)}
+    , mRegistry{&registry}
+    , mObject{registry.get(inID)}
     {
 
     }
+
+    SharedPtr::~SharedPtr()
+    {
+        mRegistry->destroyShared(mID);
+    }
+    
+
 }

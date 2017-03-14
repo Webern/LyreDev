@@ -13,7 +13,7 @@ namespace lyre
     }
 
 
-    SharedPtr Registry::getShared(ID inID) const
+    SharedPtr Registry::getShared(ID inID)
     {
         return SharedPtr{inID, *this};
     }
@@ -22,5 +22,11 @@ namespace lyre
     RegistryObject* Registry::get(ID inID) const
     {
         return mRegistry.at(inID).get();
+    }
+
+
+    void Registry::destroyShared(ID inID)
+    {
+        
     }
 }

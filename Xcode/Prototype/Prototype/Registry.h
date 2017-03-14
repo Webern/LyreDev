@@ -14,7 +14,7 @@ namespace lyre
     public:
 
         RegistryObject create();
-        SharedPtr getShared(ID inID) const;
+        SharedPtr getShared(ID inID);
 
     private:
         friend class SharedPtr;
@@ -22,6 +22,7 @@ namespace lyre
 
     private:
         RegistryObject* get(ID inID) const;
+        void destroyShared(ID inID);
 
     private:
         ID mID;
