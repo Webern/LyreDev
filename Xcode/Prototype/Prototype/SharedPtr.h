@@ -2,22 +2,24 @@
 
 #pragma once
 
-#include "Registry.h"
+#include "Lyre.h"
 #include <memory>
 #include <map>
 
 namespace lyre
 {
+
+    class Registry;
     class RegistryObject;
 
     class SharedPtr
     {
     public:
-        SharedPtr(ID inID, Registry& inRegistry);
+        SharedPtr(ID inID, const Registry& inRegistry);
 
     private:
         ID mID;
-        std::reference_wrapper<Registry> mRegistry;
+        std::reference_wrapper<const Registry> mRegistry;
         RegistryObject* mObject;
     };
 }

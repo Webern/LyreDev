@@ -6,7 +6,7 @@
 
 namespace lyre
 {
-    SharedPtr::SharedPtr(ID inID, Registry& inRegistry)
+    SharedPtr::SharedPtr(ID inID, const Registry& inRegistry)
     : mID{inID}
     , mRegistry{inRegistry}
     , mObject{inRegistry.get(inID)}

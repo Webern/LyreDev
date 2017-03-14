@@ -13,10 +13,10 @@ namespace lyre
     }
 
 
-//    SharedPtr Registry::getShared(ID inID) const
-//    {
-//        return SharedPtr{inID, *this};
-//    }
+    SharedPtr Registry::getShared(ID inID) const
+    {
+        return SharedPtr{inID, *this};
+    }
 
 
     RegistryObject* Registry::get(ID inID) const

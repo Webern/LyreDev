@@ -10,5 +10,6 @@ int main()
     Registry registry;
     SampleObject a{registry};
     SampleObject b{registry};
+    auto aPtr = registry.getShared(a.getID());
     return 0;
 }
