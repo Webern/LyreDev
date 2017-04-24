@@ -11,15 +11,15 @@
 
 namespace lyre
 {
-    using ID = std::size_t;
+    using ID = uint64_t;
     constexpr const ID BadID = std::numeric_limits<ID>::min();
     constexpr const ID FirstID = BadID + 1;
 
     using Lock = std::lock_guard<std::mutex>;
     #define LYRE_MUTEX mutable std::mutex mMutex;
-    #define LYRE_LOCK Lock LYRE_LOCK_GAURD_STD_MUTEX{mMutex};
+    #define LYRE_LOCK Lock LYRE_LOCK_GUARD_STD_MUTEX{mMutex};
 
-    LYRE_FORWARD_DECLARE(Registry);
+    LYRE_FORWARD_DECLARE( Registry );
     LYRE_FORWARD_DECLARE( RegistryObject );
     LYRE_FORWARD_DECLARE( SharedPtr );
 }

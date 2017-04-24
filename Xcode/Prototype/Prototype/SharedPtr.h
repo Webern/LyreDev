@@ -21,7 +21,6 @@ namespace lyre
     private:
         friend class Registry;
 
-
     private:
         ID mID;
         Registry* mRegistry;
