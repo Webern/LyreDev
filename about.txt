@@ -1,0 +1,1 @@
+This is a 7zip file, split into 1 MB segments.  Inside it we have the original git repo with all the original commits of the first attempt at Lyre.
